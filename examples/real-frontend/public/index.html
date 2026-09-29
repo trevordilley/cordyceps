@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Real harness consumer</title></head>
+<body>
+  <main>
+    <h1>Real harness consumer</h1>
+    <p>Claude Code runs locally. A Cordyceps mock controls model responses.</p>
+    <form id="prompt-form">
+      <label for="prompt">Prompt</label>
+      <textarea id="prompt" required></textarea>
+      <button id="send" type="submit">Send</button>
+      <button id="cancel" type="button" disabled>Cancel</button>
+    </form>
+    <p role="status">Ready</p>
+    <h2>Harness reply</h2>
+    <pre id="reply" aria-label="Harness reply"></pre>
+  </main>
+  <script src="/client.js" type="module"></script>
+</body>
+</html>

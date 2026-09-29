@@ -1,0 +1,7 @@
+{
+  "name": "cordyceps-real-frontend-consumer",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "playwright test", "start": "node demo.mjs" },
+  "devDependencies": { "@playwright/test": "1.56.1" }
+}
