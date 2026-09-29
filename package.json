@@ -30,7 +30,8 @@
     "check": "tsc --noEmit",
     "build": "bun scripts/build.ts",
     "test": "bun test tests",
-    "test:package": "node scripts/verify-package.mjs"
+    "test:package": "node scripts/verify-package.mjs",
+    "test:node": "bun scripts/verify-core-node.ts"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

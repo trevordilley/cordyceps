@@ -109,6 +109,7 @@ Local and bundled definitions use the same validator and renderer. Definitions d
 bun install --frozen-lockfile
 bun run check
 bun test tests
+bun run test:node
 bun run build
 node scripts/verify-package.mjs
 ```
