@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "registry-local-api",
+  "deck": "harness-registry-implementation",
+  "title": "Register settings; start the app normally",
+  "rank": 1020,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-1020-4674f2b7e0b3.svg",
+  "takeaway": "prepare starts only the mock backend and creates injection artifacts; the consumer launches its app.",
+  "reading_order": [
+    "usage",
+    "registration",
+    "resolution",
+    "ownership"
+  ],
+  "exception_rationale": "Code excerpts and comparison matrices align proposed contracts with controls, ownership and observable outcomes."
+}

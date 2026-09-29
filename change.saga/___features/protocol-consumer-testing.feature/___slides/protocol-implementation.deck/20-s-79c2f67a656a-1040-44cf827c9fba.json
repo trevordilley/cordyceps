@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "acp-sessions",
+  "deck": "protocol-implementation",
+  "title": "Stage 2: route by session; retain context",
+  "rank": 1040,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-1040-44cf827c9fba.svg",
+  "takeaway": "Separate session identity from JSON-RPC request identity and from provider request identity.",
+  "reading_order": [
+    "sessions",
+    "setup",
+    "followup",
+    "correlation"
+  ],
+  "exception_rationale": "Code walkthroughs and scenario matrices preserve indentation and align controls with state assertions."
+}

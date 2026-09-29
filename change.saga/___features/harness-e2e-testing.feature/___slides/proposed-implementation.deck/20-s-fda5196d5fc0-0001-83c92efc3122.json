@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "id": "delivered-package",
+  "deck": "proposed-implementation",
+  "title": "Delivered: One backend; consumer-owned execution",
+  "rank": 1,
+  "section": "Delivered implementation; original proposal slides follow",
+  "intent": "explain",
+  "layout": "diagram",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0001-83c92efc3122.svg",
+  "takeaway": "ESM core and an optional Playwright fixture prepare provider controls; applications keep executable and ACP ownership.",
+  "reading_order": [
+    "build",
+    "core",
+    "fixture",
+    "consumer",
+    "failure-surface"
+  ]
+}

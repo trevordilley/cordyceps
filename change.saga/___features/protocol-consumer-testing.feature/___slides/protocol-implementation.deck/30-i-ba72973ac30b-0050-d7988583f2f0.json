@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "limits",
+  "slide": "delivered-observation-boundary",
+  "rank": 50,
+  "kind": "node",
+  "label": "Evidence limits",
+  "description": "No installed-harness, real-tool, ACP lifecycle or frontend certification is claimed. Prior experiments stay historical. No additional surprises: these checks establish the library contracts described on the earlier slides.",
+  "selector": {
+    "type": "element",
+    "element_id": "limits"
+  }
+}

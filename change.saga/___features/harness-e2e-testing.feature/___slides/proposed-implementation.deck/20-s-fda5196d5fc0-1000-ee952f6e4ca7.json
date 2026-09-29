@@ -1,0 +1,22 @@
+{
+  "version": 4,
+  "id": "npm-core",
+  "deck": "proposed-implementation",
+  "title": "One npm core, two entry points",
+  "rank": 1000,
+  "section": "Original proposals and illustrative consumer scenarios",
+  "intent": "orient",
+  "layout": "diagram",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-1000-ee952f6e4ca7.svg",
+  "takeaway": "One mock-provider core serves standalone and Playwright callers; definitions supply injection data and consumers own binary execution.",
+  "reading_order": [
+    "standalone",
+    "playwright",
+    "core",
+    "adapter",
+    "standalone-core",
+    "fixture-core",
+    "core-adapter"
+  ]
+}

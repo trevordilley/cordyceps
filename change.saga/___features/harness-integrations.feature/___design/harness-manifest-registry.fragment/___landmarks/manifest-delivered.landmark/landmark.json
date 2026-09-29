@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "manifest-delivered",
+  "label": "Current delivered implementation",
+  "selector": {
+    "type": "heading",
+    "heading_id": "manifest-delivered"
+  },
+  "target": ""
+}

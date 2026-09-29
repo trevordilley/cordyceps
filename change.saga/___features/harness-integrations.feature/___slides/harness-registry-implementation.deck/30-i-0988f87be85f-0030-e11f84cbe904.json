@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "render",
+  "slide": "delivered-registry",
+  "rank": 30,
+  "kind": "node",
+  "label": "Injection renderer",
+  "description": "Finite substitution and structured JSON/TOML serialization produce env, args and config. environment(base) leaves caller and global environment unchanged; rollback and dispose remove only owned resources.",
+  "selector": {
+    "type": "element",
+    "element_id": "render"
+  }
+}

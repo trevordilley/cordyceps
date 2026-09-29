@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "id": "missing-acp",
+  "slide": "delivered-registry",
+  "rank": 40,
+  "kind": "callout",
+  "label": "Recipe selection is not negotiation",
+  "description": "Missing ACP configuration fails explicitly.",
+  "selector": {
+    "type": "element",
+    "element_id": "validate"
+  },
+  "about": "validate",
+  "body": "Choosing an ACP recipe supplies settings only. Missing recipes fail instead of using text mode; the application must select its adapter and negotiate actual capabilities with its real client."
+}

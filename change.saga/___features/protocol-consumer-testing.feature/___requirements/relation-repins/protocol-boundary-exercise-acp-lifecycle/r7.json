@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r7",
+  "relation": "urn:change-saga:cordyceps:relation:protocol-boundary-exercise-acp-lifecycle",
+  "from_content_digest": "sha256:f2d8f7570fc7bc90492cb2f11e84a943354f3f21e23b638c1e93953f456ccdf9",
+  "rationale": "Re-read current requirement and revised design: the added delivery section explains the implemented library boundary while preserving the original proposal as history. The design still addresses this requirement; real-harness, tool and ACP execution remain explicitly unverified, and no acceptance verdict is recorded.",
+  "created_at": "2026-09-29T22:57:11.24652Z"
+}

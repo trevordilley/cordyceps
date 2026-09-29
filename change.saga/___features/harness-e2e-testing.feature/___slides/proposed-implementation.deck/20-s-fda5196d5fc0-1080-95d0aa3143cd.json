@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "usage-playwright-setup",
+  "deck": "proposed-implementation",
+  "title": "Playwright: configure the AI fixture",
+  "rank": 1080,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-1080-95d0aa3143cd.svg",
+  "takeaway": "A test-scoped mock provides injection values that the app applies through its existing configuration boundary.",
+  "reading_order": [
+    "sample",
+    "note-0",
+    "note-1",
+    "note-2"
+  ],
+  "exception_rationale": "A code walkthrough with adjacent usage notes needs preserved indentation and line breaks; this is a proposed API sample without implementation evidence."
+}

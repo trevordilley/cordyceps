@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "routes",
+  "slide": "delivered-exchanges",
+  "rank": 20,
+  "kind": "node",
+  "label": "Routing and delivery",
+  "description": "The session owns listener, route precedence, held handlers, waits, response transcript and the failure ledger. Unknown requests never fall through to live model providers.",
+  "selector": {
+    "type": "element",
+    "element_id": "routes"
+  }
+}

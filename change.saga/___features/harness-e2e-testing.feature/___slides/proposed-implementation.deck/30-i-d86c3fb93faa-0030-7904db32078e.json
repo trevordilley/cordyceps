@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "codecs",
+  "slide": "delivered-exchanges",
+  "rank": 30,
+  "kind": "node",
+  "label": "Provider codecs",
+  "description": "Separate codecs decode actual offered tool schemas/results and encode controlled text, tool calls, scripted HTTP errors and streaming terminal frames. Tool execution stays with the real consumer integration.",
+  "selector": {
+    "type": "element",
+    "element_id": "codecs"
+  }
+}

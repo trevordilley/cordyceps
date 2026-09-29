@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "protocol-support-delivered",
+  "label": "Current delivered implementation",
+  "selector": {
+    "type": "heading",
+    "heading_id": "protocol-support-delivered"
+  },
+  "target": ""
+}

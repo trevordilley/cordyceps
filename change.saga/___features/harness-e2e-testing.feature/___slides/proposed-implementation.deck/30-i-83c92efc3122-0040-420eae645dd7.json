@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "consumer",
+  "slide": "delivered-package",
+  "rank": 40,
+  "kind": "node",
+  "label": "Application retains ownership",
+  "description": "Native process and ACP behavior stays outside Cordyceps. Consumer documentation distinguishes explicit input and protocol observation from provider traffic.",
+  "selector": {
+    "type": "element",
+    "element_id": "consumer"
+  }
+}

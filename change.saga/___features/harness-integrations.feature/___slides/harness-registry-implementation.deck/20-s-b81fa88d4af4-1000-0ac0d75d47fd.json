@@ -1,0 +1,21 @@
+{
+  "version": 4,
+  "id": "registry-boundaries",
+  "deck": "harness-registry-implementation",
+  "title": "Supply injection; the app owns its binary",
+  "rank": 1000,
+  "section": "Original proposals and illustrative consumer scenarios",
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-1000-0ac0d75d47fd.svg",
+  "takeaway": "The library owns provider mocking and injection data; executable and shell behavior belong to the app.",
+  "reading_order": [
+    "row-0",
+    "row-1",
+    "row-2",
+    "row-3",
+    "row-4"
+  ],
+  "exception_rationale": "Code excerpts and comparison matrices align proposed contracts with controls, ownership and observable outcomes."
+}

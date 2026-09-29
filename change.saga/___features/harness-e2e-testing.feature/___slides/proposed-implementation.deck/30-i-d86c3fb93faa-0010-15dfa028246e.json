@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "capture",
+  "slide": "delivered-exchanges",
+  "rank": 10,
+  "kind": "node",
+  "label": "Request contract",
+  "description": "Raw HTTP and normalized request/tool observations retain provider identities. Request capture does not infer ACP session IDs or process input.",
+  "selector": {
+    "type": "element",
+    "element_id": "capture"
+  }
+}

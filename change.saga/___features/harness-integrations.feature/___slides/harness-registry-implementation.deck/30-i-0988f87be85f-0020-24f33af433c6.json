@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "validate",
+  "slide": "delivered-registry",
+  "rank": 20,
+  "kind": "node",
+  "label": "Definition validation",
+  "description": "Reject missing mode/codec/input, unknown tokens, conflicting fields and unsafe generated paths before starting provider resources. No binary inspection or fallback mode selection.",
+  "selector": {
+    "type": "element",
+    "element_id": "validate"
+  }
+}

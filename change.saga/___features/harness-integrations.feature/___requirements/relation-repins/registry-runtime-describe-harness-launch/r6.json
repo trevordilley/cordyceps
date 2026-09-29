@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r6",
+  "relation": "urn:change-saga:cordyceps:relation:registry-runtime-describe-harness-launch",
+  "from_content_digest": "sha256:1587be7ef04164e2203a6d0159553f97b4dfd9950fc6b664a24dcc9223c0b125",
+  "rationale": "Re-read current requirement and revised design: the added delivery section explains the implemented library boundary while preserving the original proposal as history. The design still addresses this requirement; real-harness, tool and ACP execution remain explicitly unverified, and no acceptance verdict is recorded.",
+  "created_at": "2026-09-29T22:52:59.028021Z"
+}

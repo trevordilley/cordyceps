@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "acp-tool-provider",
+  "deck": "protocol-implementation",
+  "title": "Force a real tool round trip",
+  "rank": 1080,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-1080-e0a815210144.svg",
+  "takeaway": "The tool-call ID belongs to the provider exchange; ACP tool identity and lifecycle come from the real agent.",
+  "reading_order": [
+    "provider-script",
+    "setup",
+    "roundtrip",
+    "identity"
+  ],
+  "exception_rationale": "Code scenario with adjacent setup, request sequencing and identity assertions."
+}

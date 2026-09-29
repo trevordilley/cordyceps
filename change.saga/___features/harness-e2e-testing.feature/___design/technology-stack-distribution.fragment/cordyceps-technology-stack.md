@@ -1,3 +1,13 @@
+# Current implementation — 2026-09-29 {#distribution-delivered}
+
+The package now delivers ESM JavaScript and declarations for Node >=22, built with Bun 1.3.13 and strict tsc. The root export and optional cordyceps/playwright adapter share one Node HTTP backend; Playwright is an external optional peer. Bundled JSON definitions are included. There is no CLI or install hook. License terms and publication remain unconfigured. The reproducible build and packed-consumer checks live in package.json and scripts/; the current API is documented in README.md.
+
+This section describes delivered library behavior; exact code evidence is attached to its heading. Current implementation slides precede the retained proposal slides. Verification limits and consumer acceptance gaps are recorded in docs/verification.md; implementation evidence is not a product approval or a real-harness certification.
+
+# Original proposal and design context {#original-proposal-and-design-context}
+
+The material below preserves the original proposal. Its API sketches and statements that no implementation exists are historical; the current section above and package guides take precedence for shipped behavior.
+
 # Technology stack and distribution {#technology-stack}
 
 Status: proposed technical design. This records the requested TypeScript, Bun, tsc and npm direction and develops its package/runtime boundaries. No package implementation, published artifact or passing runtime checks are claimed. The optional CLI and unresolved choices below remain proposals.

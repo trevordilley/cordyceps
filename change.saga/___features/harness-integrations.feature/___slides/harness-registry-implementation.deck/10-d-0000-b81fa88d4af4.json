@@ -1,8 +1,8 @@
 {
   "version": 4,
   "id": "harness-registry-implementation",
-  "title": "Proposed injection registry implementation",
+  "title": "Injection registry implementation and proposal history",
   "role": "change",
   "rank": 0,
-  "objective": "Explain declarative injection settings and mock-provider control while consumers retain all binary, shell and process responsibilities."
+  "objective": "Delivered implementation slides come first. Original proposed API sketches and unexecuted consumer scenarios follow as design history; the current package guides and exact evidence describe shipped behavior."
 }

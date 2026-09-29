@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "fixture",
+  "slide": "delivered-package",
+  "rank": 30,
+  "kind": "node",
+  "label": "Optional fixture",
+  "description": "The ai fixture creates one core session per test and disposes it in finally, then checks asynchronous route failures. The consumer app fixture must depend on ai for teardown order.",
+  "selector": {
+    "type": "element",
+    "element_id": "fixture"
+  }
+}

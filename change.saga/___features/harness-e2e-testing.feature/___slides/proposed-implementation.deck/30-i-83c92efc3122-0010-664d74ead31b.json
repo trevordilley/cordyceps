@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "build",
+  "slide": "delivered-package",
+  "rank": 10,
+  "kind": "node",
+  "label": "Build and package",
+  "description": "Pinned Bun development dependencies and strict TypeScript produce an ESM Node artifact. The package allowlist excludes tests, experiments and Saga; no install hooks or publication.",
+  "selector": {
+    "type": "element",
+    "element_id": "build"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "version": 4,
   "id": "proposed-implementation",
-  "title": "Proposed implementation",
+  "title": "Library implementation and proposal history",
   "role": "change",
   "rank": 0,
-  "objective": "Review the proposed npm core, launch integration, request control, and validation boundaries before implementation."
+  "objective": "Delivered implementation slides come first. Original proposed API sketches and unexecuted consumer scenarios follow as design history; the current package guides and exact evidence describe shipped behavior."
 }

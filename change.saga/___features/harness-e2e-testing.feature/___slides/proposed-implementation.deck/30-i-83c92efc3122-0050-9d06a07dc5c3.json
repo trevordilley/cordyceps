@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "id": "failure-surface",
+  "slide": "delivered-package",
+  "rank": 50,
+  "kind": "callout",
+  "label": "Swallowed HTTP errors still fail tests",
+  "description": "Fixture teardown reports handler failures after cleanup.",
+  "selector": {
+    "type": "element",
+    "element_id": "fixture"
+  },
+  "about": "fixture",
+  "body": "An HTTP caller may ignore a failed route. The fixture checks recorded handler failures after cleanup, so a swallowed backend error still fails the test; standalone callers use assertHealthy()."
+}

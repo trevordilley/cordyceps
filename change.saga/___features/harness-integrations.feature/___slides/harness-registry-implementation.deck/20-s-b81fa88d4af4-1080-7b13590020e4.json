@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "registry-provider-codec",
+  "deck": "harness-registry-implementation",
+  "title": "Provider codecs implement the mock API",
+  "rank": 1080,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-1080-7b13590020e4.svg",
+  "takeaway": "A codec parses requests and encodes controlled replies; it has no executable-launch responsibilities.",
+  "reading_order": [
+    "codec",
+    "raw",
+    "errors",
+    "extensions"
+  ],
+  "exception_rationale": "Code excerpts and comparison matrices align proposed contracts with controls, ownership and observable outcomes."
+}

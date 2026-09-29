@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "id": "delivered-exchanges",
+  "deck": "proposed-implementation",
+  "title": "Delivered: Every provider exchange has an owned lifetime",
+  "rank": 2,
+  "section": "Delivered implementation; original proposal slides follow",
+  "intent": "explain",
+  "layout": "diagram",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0002-d86c3fb93faa.svg",
+  "takeaway": "Capture, route and encode synthetic provider responses; abort sockets and gated iterators during cleanup.",
+  "reading_order": [
+    "capture",
+    "routes",
+    "codecs",
+    "dispose",
+    "uncooperative-gate"
+  ]
+}

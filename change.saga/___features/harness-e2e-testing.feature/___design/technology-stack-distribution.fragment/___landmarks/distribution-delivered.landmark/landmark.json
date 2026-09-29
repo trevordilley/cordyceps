@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "distribution-delivered",
+  "label": "Current delivered implementation",
+  "selector": {
+    "type": "heading",
+    "heading_id": "distribution-delivered"
+  },
+  "target": ""
+}

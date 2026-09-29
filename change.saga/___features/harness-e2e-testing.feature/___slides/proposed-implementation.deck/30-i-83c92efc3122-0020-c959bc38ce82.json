@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "core",
+  "slide": "delivered-package",
+  "rank": 20,
+  "kind": "node",
+  "label": "Public standalone entry",
+  "description": "Exports preparation, registry, codecs and public types with no Playwright import. README and integration contracts explain the injection-only API and its consumer responsibilities.",
+  "selector": {
+    "type": "element",
+    "element_id": "core"
+  }
+}

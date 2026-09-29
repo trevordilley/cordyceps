@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "registry-runtime-delivered",
+  "label": "Current delivered implementation",
+  "selector": {
+    "type": "heading",
+    "heading_id": "registry-runtime-delivered"
+  },
+  "target": ""
+}

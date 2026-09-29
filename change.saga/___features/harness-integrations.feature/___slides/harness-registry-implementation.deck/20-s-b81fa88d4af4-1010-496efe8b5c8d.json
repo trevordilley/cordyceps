@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "registry-manifest",
+  "deck": "harness-registry-implementation",
+  "title": "Describe injection settings as data",
+  "rank": 1010,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-1010-496efe8b5c8d.svg",
+  "takeaway": "The definition describes settings around a binary; it does not describe how to manage that binary.",
+  "reading_order": [
+    "manifest",
+    "validation",
+    "versions",
+    "negotiation"
+  ],
+  "exception_rationale": "Code excerpts and comparison matrices align proposed contracts with controls, ownership and observable outcomes."
+}

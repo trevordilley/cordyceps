@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "acp-wire-messages",
+  "deck": "protocol-implementation",
+  "title": "Stage 3: assert the actual ACP envelope",
+  "rank": 1060,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-1060-660a3066c54d.svg",
+  "takeaway": "Store original frames; distinguish text chunks, session routing and the final prompt response.",
+  "reading_order": [
+    "frame",
+    "assertions",
+    "identity",
+    "scope"
+  ],
+  "exception_rationale": "Code walkthroughs and scenario matrices preserve indentation and align controls with state assertions."
+}

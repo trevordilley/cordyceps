@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "units",
+  "slide": "delivered-observation-boundary",
+  "rank": 10,
+  "kind": "node",
+  "label": "Focused synthetic tests",
+  "description": "Tests exercise injection validation/rendering, provider framing, held requests/streams, observations, isolation and cleanup. They do not substitute synthetic results for real tool execution evidence.",
+  "selector": {
+    "type": "element",
+    "element_id": "units"
+  }
+}

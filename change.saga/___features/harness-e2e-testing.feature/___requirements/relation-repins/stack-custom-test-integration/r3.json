@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r3",
+  "relation": "urn:change-saga:cordyceps:relation:stack-custom-test-integration",
+  "from_content_digest": "sha256:bf323737a01e7e0c592b2f2b0df36c99284ef6b8790d5f08440742340b982cc0",
+  "rationale": "Re-read current requirement and revised design: the added delivery section explains the implemented library boundary while preserving the original proposal as history. The design still addresses this requirement; real-harness, tool and ACP execution remain explicitly unverified, and no acceptance verdict is recorded.",
+  "created_at": "2026-09-29T22:57:12.816507Z"
+}

@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "id": "uncooperative-gate",
+  "slide": "delivered-exchanges",
+  "rank": 50,
+  "kind": "callout",
+  "label": "A held user gate cannot hold the listener open",
+  "description": "Network cleanup stops waiting for the producer.",
+  "selector": {
+    "type": "element",
+    "element_id": "dispose"
+  },
+  "about": "dispose",
+  "body": "A consumer generator can await forever. Disposal races network work against abort instead of waiting for that generator; sockets close, but arbitrary user-code side effects still require consumer cleanup."
+}

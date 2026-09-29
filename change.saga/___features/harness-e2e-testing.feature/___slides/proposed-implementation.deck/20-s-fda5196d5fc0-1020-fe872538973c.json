@@ -1,0 +1,18 @@
+{
+  "version": 4,
+  "id": "launch-surfaces",
+  "deck": "proposed-implementation",
+  "title": "Three injection outputs, one mock",
+  "rank": 1020,
+  "intent": "compare",
+  "layout": "before-after",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-1020-fe872538973c.svg",
+  "takeaway": "Expose environment, additional arguments and optional generated config without requiring a wrapper or executable resolver.",
+  "reading_order": [
+    "env",
+    "path",
+    "explicit",
+    "symlink"
+  ]
+}

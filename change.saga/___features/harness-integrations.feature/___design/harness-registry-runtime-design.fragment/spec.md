@@ -1,3 +1,13 @@
+# Current implementation — 2026-09-29 {#registry-runtime-delivered}
+
+The implementation now provides strict manifest validation, createRegistry/register/loadFile/get/list snapshots, pure environment merging, additional argv and isolated JSON/TOML config files. prepare validates before allocating the listener and rolls back failed rendering; dispose releases owned backend/config resources. Common and mode-specific environment conflicts fail, tokens expand once, unknown modes/codecs/inputs fail explicitly. Registry and renderer helpers are internal; consumers use the root prepare API. Bundled Claude Code and Codex recipes have interactive/nonInteractive modes only. Private definitions can declare ACP; no real ACP recipe is claimed verified.
+
+This section describes delivered library behavior; exact code evidence is attached to its heading. Current implementation slides precede the retained proposal slides. Verification limits and consumer acceptance gaps are recorded in docs/verification.md; implementation evidence is not a product approval or a real-harness certification.
+
+# Original proposal and design context {#original-proposal-and-design-context}
+
+The material below preserves the original proposal. Its API sketches and statements that no implementation exists are historical; the current section above and package guides take precedence for shipped behavior.
+
 # Injection registry implementation proposal {#injection-registry-implementation}
 
 The accepted scope is data-driven injection around a consumer-owned binary. Cordyceps owns its mock backend and configuration artifacts. The app owns binary selection, discovery, launching, shells and ACP clients. There is no harness runner, binary version probing, compatibility matrix or harness certification service.

@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "id": "acp-failure-boundaries",
+  "deck": "protocol-implementation",
+  "title": "Stage 8: inject failure at the right boundary",
+  "rank": 1120,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-1120-761650e5c7dc.svg",
+  "takeaway": "Choose the test mechanism that can actually produce the failure being asserted.",
+  "reading_order": [
+    "failure-0",
+    "failure-1",
+    "failure-2",
+    "failure-3",
+    "failure-4"
+  ],
+  "exception_rationale": "Code walkthroughs and scenario matrices preserve indentation and align controls with state assertions."
+}

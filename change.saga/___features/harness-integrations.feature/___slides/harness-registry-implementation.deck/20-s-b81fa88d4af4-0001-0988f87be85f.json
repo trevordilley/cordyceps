@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "delivered-registry",
+  "deck": "harness-registry-implementation",
+  "title": "Delivered: Validate data before allocating resources",
+  "rank": 1,
+  "section": "Delivered implementation; original proposal slides follow",
+  "intent": "explain",
+  "layout": "diagram",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-0001-0988f87be85f.svg",
+  "takeaway": "Local and bundled recipes share one validation and rendering path, with pure environment merging and owned files.",
+  "reading_order": [
+    "registry",
+    "validate",
+    "render",
+    "missing-acp"
+  ]
+}

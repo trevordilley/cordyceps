@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "node",
+  "slide": "delivered-observation-boundary",
+  "rank": 20,
+  "kind": "node",
+  "label": "Packed artifact checks",
+  "description": "Verification installs the tarball into a clean Node consumer with no Playwright, checks included/excluded files, local definitions, HTTP behavior, file/listener cleanup and exported declarations.",
+  "selector": {
+    "type": "element",
+    "element_id": "node"
+  }
+}

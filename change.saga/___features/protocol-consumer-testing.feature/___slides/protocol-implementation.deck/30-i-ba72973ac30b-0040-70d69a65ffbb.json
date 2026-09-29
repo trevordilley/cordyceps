@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "observations",
+  "slide": "delivered-observation-boundary",
+  "rank": 40,
+  "kind": "node",
+  "label": "Passive consumer hooks",
+  "description": "Native payload snapshots and input instrumentation preserve consumer data separately from provider transcripts. No transport proxy or ACP producer is supplied.",
+  "selector": {
+    "type": "element",
+    "element_id": "observations"
+  }
+}

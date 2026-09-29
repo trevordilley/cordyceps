@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "dispose",
+  "slide": "delivered-exchanges",
+  "rank": 40,
+  "kind": "node",
+  "label": "Bounded cleanup",
+  "description": "Disconnect/dispose aborts delivery and held request work, rejecting waits and removing session configuration. User callbacks remain cooperative JavaScript; stopping network work cannot cancel arbitrary side effects.",
+  "selector": {
+    "type": "element",
+    "element_id": "dispose"
+  }
+}

@@ -1,3 +1,13 @@
+# Current implementation — 2026-09-29 {#protocol-support-delivered}
+
+The shipped library provides provider response controls, held and gated streams, declarative mode selection, recordInput and recordProtocolMessage consumer hooks. Hooks clone caller-supplied observations, preserve complete native payloads and keep metadata separate. requests/responses record actual provider HTTP traffic independently. No ACP transport, client, peer, handshake, lifecycle state machine or process runner is supplied. No bundled ACP adapter recipe or real-harness/ACP scenario has been verified; the original lifecycle snippets remain illustrative consumer scenarios, not package exports or delivery evidence.
+
+This section describes delivered library behavior; exact code evidence is attached to its heading. Current implementation slides precede the retained proposal slides. Verification limits and consumer acceptance gaps are recorded in docs/verification.md; implementation evidence is not a product approval or a real-harness certification.
+
+# Original proposal and design context {#original-proposal-and-design-context}
+
+The material below preserves the original proposal. Its API sketches and statements that no implementation exists are historical; the current section above and package guides take precedence for shipped behavior.
+
 # Protocol consumers are a distinct integration surface {#protocol-consumers-are-a-distinct-integration-surface}
 
 ```mermaid

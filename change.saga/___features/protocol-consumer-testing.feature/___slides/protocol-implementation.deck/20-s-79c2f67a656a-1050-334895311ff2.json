@@ -1,0 +1,21 @@
+{
+  "version": 4,
+  "id": "acp-turn-state",
+  "deck": "protocol-implementation",
+  "title": "One prompt request spans the whole turn",
+  "rank": 1050,
+  "intent": "explain",
+  "layout": "diagram",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-1050-334895311ff2.svg",
+  "takeaway": "Await the prompt response to settle a turn; individual messages and tool completions are not turn completion.",
+  "reading_order": [
+    "idle",
+    "active",
+    "settled",
+    "start",
+    "finish",
+    "cancel",
+    "not-process"
+  ]
+}
