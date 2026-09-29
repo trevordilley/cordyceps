@@ -11,7 +11,7 @@ import { createRegistry } from "../src/registry.js";
 
 // Bun 1.3.13's node:http shim does not notify held handlers when the remote
 // socket closes. Run the complete suite on the supported Node >=22 runtime.
-const testNodeDisconnect = process.versions.bun ? test.skip : test;
+const testNodeDisconnect = process.versions.bun === "1.3.13" ? test.skip : test;
 
 function deferred<T = void>() {
   let resolve!: (value: T | PromiseLike<T>) => void;
