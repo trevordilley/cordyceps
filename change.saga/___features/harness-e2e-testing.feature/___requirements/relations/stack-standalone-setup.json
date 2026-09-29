@@ -1,0 +1,14 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "stack-standalone-setup",
+  "type": "addresses",
+  "from": "urn:change-saga:cordyceps:fragment:technology-stack-distribution",
+  "to": "urn:change-saga:cordyceps:story:standalone-programmatic-use:criterion:standalone-setup",
+  "scope": "self",
+  "rationale": "The proposed standalone package export provides Node-compatible mock preparation and injection without importing Playwright or requiring Bun at runtime; this is design intent, not delivered behavior.",
+  "to_revision": "urn:change-saga:cordyceps:story:standalone-programmatic-use:revision:r1",
+  "from_content_digest": "sha256:6a9b216b2d74b9b6796f27a9700aa34144119b804d1d2f9d0b8e1c0e06bbff24",
+  "state": "active",
+  "created_at": "2026-09-29T22:21:48.186624Z"
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "build-and-package",
+  "label": "Build and npm artifact",
+  "selector": {
+    "type": "heading",
+    "heading_id": "build-and-package"
+  },
+  "target": ""
+}

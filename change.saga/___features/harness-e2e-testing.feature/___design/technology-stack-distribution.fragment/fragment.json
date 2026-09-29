@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "id": "technology-stack-distribution",
+  "title": "Technology stack and distribution",
+  "media_type": "text/markdown",
+  "entrypoint": "cordyceps-technology-stack.md"
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "stack-custom-test-integration",
+  "type": "addresses",
+  "from": "urn:change-saga:cordyceps:fragment:technology-stack-distribution",
+  "to": "urn:change-saga:cordyceps:story:standalone-programmatic-use:criterion:custom-test-integration",
+  "scope": "self",
+  "rationale": "The library owns its backend lifecycle and exposes controls independently of the optional Playwright adapter or CLI, allowing consumer programs and custom frameworks to own their test lifecycle.",
+  "to_revision": "urn:change-saga:cordyceps:story:standalone-programmatic-use:revision:r1",
+  "from_content_digest": "sha256:6a9b216b2d74b9b6796f27a9700aa34144119b804d1d2f9d0b8e1c0e06bbff24",
+  "state": "active",
+  "created_at": "2026-09-29T22:21:48.411626Z"
+}

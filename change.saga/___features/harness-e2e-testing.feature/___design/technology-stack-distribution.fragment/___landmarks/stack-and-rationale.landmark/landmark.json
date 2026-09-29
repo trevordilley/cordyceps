@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "stack-and-rationale",
+  "label": "Stack and rationale",
+  "selector": {
+    "type": "heading",
+    "heading_id": "stack-and-rationale"
+  },
+  "target": ""
+}

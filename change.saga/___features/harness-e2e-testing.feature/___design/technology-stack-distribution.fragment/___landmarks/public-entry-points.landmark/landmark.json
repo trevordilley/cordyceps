@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "public-entry-points",
+  "label": "Public entry points and ownership",
+  "selector": {
+    "type": "heading",
+    "heading_id": "public-entry-points"
+  },
+  "target": ""
+}

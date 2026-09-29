@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "runtime-boundaries",
+  "label": "Runtime and resource boundaries",
+  "selector": {
+    "type": "heading",
+    "heading_id": "runtime-boundaries"
+  },
+  "target": ""
+}
