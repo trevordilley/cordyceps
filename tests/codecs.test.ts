@@ -42,6 +42,7 @@ async function* mixed(): AsyncGenerator<ProviderEvent> {
 test('registry exposes exactly the two codecs and rejects unknown/prototype names', () => {
   expect(codecIds).toEqual(['anthropic-messages', 'openai-responses']);
   expect(Object.isFrozen(codecIds)).toBe(true);
+  for (const id of codecIds) expect(Object.isFrozen(getCodec(id))).toBe(true);
   for (const id of ['missing', 'toString', '__proto__']) expect(() => getCodec(id)).toThrow('Unknown provider codec');
 });
 

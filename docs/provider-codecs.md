@@ -3,6 +3,8 @@
 `src/provider/index.ts` exports `codecIds` and `getCodec(id)`. The IDs are
 `anthropic-messages` and `openai-responses`; unknown IDs throw. Their shared
 interfaces live in `src/provider/types.ts`.
+Both the ID list and codec singleton objects are frozen, so callers cannot
+replace codec methods globally and affect another session.
 
 The codecs transform provider HTTP data only. Core owns request capture,
 the listener, socket writes, backpressure, route failures, and racing pending
@@ -19,6 +21,9 @@ results, launch harnesses, infer ACP identities, or contact a live provider.
 Query strings are accepted. Prefix paths, trailing slashes, other endpoints,
 and other HTTP methods do not match. The injection base URL must therefore
 produce these `/v1/...` paths.
+Only these two creation endpoints are implemented. Ancillary endpoints such
+as Messages `count_tokens`, model listings, and response retrieval/deletion
+are unsupported; this is not complete vendor API emulation.
 
 Decoding requires a JSON object with a nonempty string `model`. `stream`, when
 present, must be boolean; absent means false. Tool and message/input arrays
