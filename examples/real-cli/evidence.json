@@ -1,13 +1,13 @@
 {
-  "capturedAt": "2026-09-29T23:36:06.153Z",
+  "capturedAt": "2026-09-29T23:57:24.563Z",
   "artifact": {
     "name": "cordyceps-0.1.0.tgz",
-    "integrity": "sha512-N4CUI4MYVkRbc52kQAm4/vDwSa3lFJkxb8p7Rmv8kInw/rMR51rRkPKvW9pjUhn2SeVSzj2PH1refekbCFIE9Q==",
-    "shasum": "31f92729606e2383c2834f4ac0268681d8e8a834"
+    "integrity": "sha512-WKjBJCSdi7Ej5SRaWUBtvNEEanFXpx8lbSqi+TeD/NG6+m7vakcUvlS46KMb7ZqPopg+Olxtthcjk0YOuNQpYA==",
+    "shasum": "22e3acb3b1b52b2cecbfa4c4546979f344f02d19"
   },
   "node": "v22.22.3",
   "platform": "darwin",
-  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-cli-package-vnDFfY/consumer/node_modules/cordyceps/dist/index.js",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-cli-package-JCrrlR/consumer/node_modules/cordyceps/dist/index.js",
   "scope": "Exact selected request fields and CLI output. System prompts, unselected tool schemas and headers omitted; raw body SHA-256 ties each projection to full local evidence.",
   "cases": [
     {
@@ -38,7 +38,7 @@
       "process": {
         "code": 0,
         "signal": null,
-        "stdout": "{\"duration_api_ms\":159,\"stop_reason\":\"end_turn\",\"session_id\":\"e699f597-b046-4559-877c-f542f3985c34\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":0},\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-6\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":200000,\"maxOutputTokens\":32000,\"thinkingTokens\":0,\"canonicalModel\":\"claude-sonnet-4-6\",\"provider\":\"firstParty\",\"costBasis\":\"list\"}},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"fast_mode_disabled_reason\":\"sdk_opt_in_required\",\"subagent_stats\":{\"spawned\":0,\"requested\":{\"background\":0,\"foreground\":0,\"unset\":0},\"started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":false,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":null,\"result\":\"CORDYCEPS_claude-code_text_OK\",\"ttft_ms\":180,\"type\":\"result\",\"duration_ms\":212,\"uuid\":\"011d5940-8c92-4dce-ab10-f94100b7a751\",\"ttft_stream_ms\":179,\"time_to_request_ms\":57,\"first_content_frame_ms\":180,\"queued_turn_count\":0,\"result_index\":0}\n",
+        "stdout": "{\"duration_api_ms\":50,\"stop_reason\":\"end_turn\",\"session_id\":\"f0e0320b-e402-41ea-9d0a-2a01209e8bde\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":0},\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-6\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":200000,\"maxOutputTokens\":32000,\"thinkingTokens\":0,\"canonicalModel\":\"claude-sonnet-4-6\",\"provider\":\"firstParty\",\"costBasis\":\"list\"}},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"fast_mode_disabled_reason\":\"sdk_opt_in_required\",\"subagent_stats\":{\"spawned\":0,\"requested\":{\"background\":0,\"foreground\":0,\"unset\":0},\"started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":false,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":null,\"result\":\"CORDYCEPS_claude-code_text_OK\",\"ttft_ms\":73,\"type\":\"result\",\"duration_ms\":106,\"uuid\":\"e06e59f8-635e-41ee-8e42-68b9dfd0070c\",\"ttft_stream_ms\":72,\"time_to_request_ms\":59,\"first_content_frame_ms\":72,\"queued_turn_count\":0,\"result_index\":0}\n",
         "stderr": "",
         "timedOut": false
       },
@@ -50,14 +50,14 @@
           "path": "/v1/messages?beta=true",
           "model": "claude-sonnet-4-6",
           "stream": true,
-          "rawBodySha256": "44a244caca1d2f8f9ca57bcabc9559ec303a42b2a3cee123281cafb1b09ef8d6",
+          "rawBodySha256": "4d55bd5cc5ac86e70f6aac7fa5780f2193fdbd8221b3f9ee5922a6ceb461cf41",
           "promptMessages": [
             {
               "role": "user",
               "content": [
                 {
                   "type": "text",
-                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-BVNoDt/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
+                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-cNEpU8/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
                 },
                 {
                   "type": "text",
@@ -113,7 +113,7 @@
       "process": {
         "code": 0,
         "signal": null,
-        "stdout": "{\"duration_api_ms\":57,\"stop_reason\":\"end_turn\",\"session_id\":\"1aaac75f-e27c-4879-b882-69da3d1ce01d\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":0},\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-6\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":200000,\"maxOutputTokens\":32000,\"thinkingTokens\":0,\"canonicalModel\":\"claude-sonnet-4-6\",\"provider\":\"firstParty\",\"costBasis\":\"list\"}},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"fast_mode_disabled_reason\":\"sdk_opt_in_required\",\"subagent_stats\":{\"spawned\":0,\"requested\":{\"background\":0,\"foreground\":0,\"unset\":0},\"started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":false,\"num_turns\":2,\"subtype\":\"success\",\"api_error_status\":null,\"result\":\"CORDYCEPS_claude-code_tool_OK\",\"ttft_ms\":67,\"type\":\"result\",\"duration_ms\":216,\"uuid\":\"555739ec-aa31-47e3-a728-0645e431e70b\",\"ttft_stream_ms\":63,\"time_to_request_ms\":54,\"first_content_frame_ms\":64,\"queued_turn_count\":0,\"result_index\":0}\n",
+        "stdout": "{\"duration_api_ms\":59,\"stop_reason\":\"end_turn\",\"session_id\":\"13732863-b01e-42d2-8dae-7201dd0cced3\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":0},\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-6\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":200000,\"maxOutputTokens\":32000,\"thinkingTokens\":0,\"canonicalModel\":\"claude-sonnet-4-6\",\"provider\":\"firstParty\",\"costBasis\":\"list\"}},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"fast_mode_disabled_reason\":\"sdk_opt_in_required\",\"subagent_stats\":{\"spawned\":0,\"requested\":{\"background\":0,\"foreground\":0,\"unset\":0},\"started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":false,\"num_turns\":2,\"subtype\":\"success\",\"api_error_status\":null,\"result\":\"CORDYCEPS_claude-code_tool_OK\",\"ttft_ms\":53,\"type\":\"result\",\"duration_ms\":205,\"uuid\":\"63c77e14-83e7-4a60-b813-780d91d486bc\",\"ttft_stream_ms\":51,\"time_to_request_ms\":43,\"first_content_frame_ms\":52,\"queued_turn_count\":0,\"result_index\":0}\n",
         "stderr": "",
         "timedOut": false
       },
@@ -121,7 +121,7 @@
         "id": "call_fixture_read",
         "name": "Read",
         "input": {
-          "file_path": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-J9i2vu/work/fixture.txt"
+          "file_path": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-aK97Ws/work/fixture.txt"
         }
       },
       "passed": true,
@@ -132,14 +132,14 @@
           "path": "/v1/messages?beta=true",
           "model": "claude-sonnet-4-6",
           "stream": true,
-          "rawBodySha256": "2f3e087da1411b14028386ad1f5d1c46202868b08b4d6fb6a80bcc132284d39c",
+          "rawBodySha256": "bb8ad6d0e2a5547a3d7c4cb2dd64d16bccc02dc9a87ea437cc10e1e3e1760324",
           "promptMessages": [
             {
               "role": "user",
               "content": [
                 {
                   "type": "text",
-                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-J9i2vu/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
+                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-aK97Ws/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
                 },
                 {
                   "type": "text",
@@ -237,14 +237,14 @@
           "path": "/v1/messages?beta=true",
           "model": "claude-sonnet-4-6",
           "stream": true,
-          "rawBodySha256": "67eae3e467dddafc8573811f83eb9a254dcbcfd8a3c647ec95844bae69ed2e42",
+          "rawBodySha256": "d6c429d6b54acc250fe0fa76e948084f43d14619631b595876a69d68c10abfc4",
           "promptMessages": [
             {
               "role": "user",
               "content": [
                 {
                   "type": "text",
-                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-J9i2vu/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
+                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-aK97Ws/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
                 },
                 {
                   "type": "text",
@@ -335,12 +335,12 @@
           "toolResults": [
             {
               "id": "call_fixture_read",
-              "text": "1\tfixture-deb6826d-a459-47eb-b273-6c5712ff59bc\n2\n\n<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>",
+              "text": "1\tfixture-2556a2e0-60b9-43ce-bbf7-e4a24d918285\n2\n\n<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>",
               "isError": false,
               "raw": {
                 "tool_use_id": "call_fixture_read",
                 "type": "tool_result",
-                "content": "1\tfixture-deb6826d-a459-47eb-b273-6c5712ff59bc\n2\n\n<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>",
+                "content": "1\tfixture-2556a2e0-60b9-43ce-bbf7-e4a24d918285\n2\n\n<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>",
                 "cache_control": {
                   "type": "ephemeral"
                 }
@@ -371,7 +371,7 @@
       "process": {
         "code": 0,
         "signal": null,
-        "stdout": "{\"type\":\"thread.started\",\"thread_id\":\"01a0ef86-7344-7400-8fe0-22c77670205e\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"CORDYCEPS_codex_text_OK\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":0,\"cached_input_tokens\":0,\"cache_write_input_tokens\":0,\"output_tokens\":0,\"reasoning_output_tokens\":0}}\n",
+        "stdout": "{\"type\":\"thread.started\",\"thread_id\":\"01a0ef99-437b-7f00-af15-93729d118ac8\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"CORDYCEPS_codex_text_OK\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":0,\"cached_input_tokens\":0,\"cache_write_input_tokens\":0,\"output_tokens\":0,\"reasoning_output_tokens\":0}}\n",
         "stderr": "Reading additional input from stdin...\n",
         "timedOut": false
       },
@@ -383,11 +383,11 @@
           "path": "/v1/responses",
           "model": "gpt-5.4",
           "stream": true,
-          "rawBodySha256": "87706ee9267254bd91de7bcb84fda5f5da14f1624a248dd9e9405bbaf18cd4f2",
+          "rawBodySha256": "b12c33e80f8e4912f0b76ca284142ccaa00e6f2ccedfad9eff77b076a9717141",
           "promptMessages": [
             {
               "type": "message",
-              "id": "msg_01a0ef86-737d-7970-be63-39ea42a649b6",
+              "id": "msg_01a0ef99-43bf-7bd1-b772-33e1b2912d3c",
               "role": "user",
               "content": [
                 {
@@ -422,7 +422,7 @@
       "process": {
         "code": 0,
         "signal": null,
-        "stdout": "{\"type\":\"thread.started\",\"thread_id\":\"01a0ef86-7444-7e92-8f6d-56ebcacf68dc\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -c '/bin/cat fixture.txt'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -c '/bin/cat fixture.txt'\",\"aggregated_output\":\"fixture-1edda8a2-16f3-4fa6-9550-b808ed436f78\\n\",\"exit_code\":0,\"status\":\"completed\"}}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_1\",\"type\":\"agent_message\",\"text\":\"CORDYCEPS_codex_tool_OK\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":0,\"cached_input_tokens\":0,\"cache_write_input_tokens\":0,\"output_tokens\":0,\"reasoning_output_tokens\":0}}\n",
+        "stdout": "{\"type\":\"thread.started\",\"thread_id\":\"01a0ef99-4585-7092-9a16-50ec91b8389b\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -c '/bin/cat fixture.txt'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -c '/bin/cat fixture.txt'\",\"aggregated_output\":\"fixture-9340e026-4d23-48ab-93ee-041e855c421d\\n\",\"exit_code\":0,\"status\":\"completed\"}}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_1\",\"type\":\"agent_message\",\"text\":\"CORDYCEPS_codex_tool_OK\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":0,\"cached_input_tokens\":0,\"cache_write_input_tokens\":0,\"output_tokens\":0,\"reasoning_output_tokens\":0}}\n",
         "stderr": "Reading additional input from stdin...\n",
         "timedOut": false
       },
@@ -431,7 +431,7 @@
         "name": "exec_command",
         "input": {
           "cmd": "/bin/cat fixture.txt",
-          "workdir": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-codex-moqZRZ/work",
+          "workdir": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-codex-OEChGv/work",
           "login": false,
           "max_output_tokens": 1000
         }
@@ -444,11 +444,11 @@
           "path": "/v1/responses",
           "model": "gpt-5.4",
           "stream": true,
-          "rawBodySha256": "49698cf3fe54bd40441db453bb161bbec4e9674dc8c41b71060767195236a85b",
+          "rawBodySha256": "ec9dc742275f05c7ea745269b1b156ca49a9ee2f7b02410d4c26f45ea69f702c",
           "promptMessages": [
             {
               "type": "message",
-              "id": "msg_01a0ef86-7474-7fc2-ac8e-57dd4aee16e7",
+              "id": "msg_01a0ef99-45b8-7ce1-b034-23772359616e",
               "role": "user",
               "content": [
                 {
@@ -586,11 +586,11 @@
           "path": "/v1/responses",
           "model": "gpt-5.4",
           "stream": true,
-          "rawBodySha256": "21bfd9ea0e386abaa440ff96042adc78c1a2cf403f9608ca81e8ada0d1aa970c",
+          "rawBodySha256": "a354dbeb4d28c0cf5575bdefa63cc58aee5fd2ed28e47c2190d6a481b9236c31",
           "promptMessages": [
             {
               "type": "message",
-              "id": "msg_01a0ef86-7474-7fc2-ac8e-57dd4aee16e7",
+              "id": "msg_01a0ef99-45b8-7ce1-b034-23772359616e",
               "role": "user",
               "content": [
                 {
@@ -724,13 +724,13 @@
           "toolResults": [
             {
               "id": "call_fixture_read",
-              "text": "Chunk ID: 46ad8a\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 12\nOutput:\nfixture-1edda8a2-16f3-4fa6-9550-b808ed436f78\n",
+              "text": "Chunk ID: bb2ef2\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 12\nOutput:\nfixture-9340e026-4d23-48ab-93ee-041e855c421d\n",
               "isError": false,
               "raw": {
                 "type": "function_call_output",
-                "id": "fco_01a0ef86-74ad-7ef0-8dd0-529326428f65",
+                "id": "fco_01a0ef99-45f7-7da1-a835-568032e3cb13",
                 "call_id": "call_fixture_read",
-                "output": "Chunk ID: 46ad8a\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 12\nOutput:\nfixture-1edda8a2-16f3-4fa6-9550-b808ed436f78\n"
+                "output": "Chunk ID: bb2ef2\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 12\nOutput:\nfixture-9340e026-4d23-48ab-93ee-041e855c421d\n"
               }
             }
           ]

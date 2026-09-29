@@ -1,0 +1,93 @@
+{
+  "capturedAt": "2026-09-29T23:56:58.284Z",
+  "artifact": {
+    "name": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-WKjBJCSdi7Ej5SRaWUBtvNEEanFXpx8lbSqi+TeD/NG6+m7vakcUvlS46KMb7ZqPopg+Olxtthcjk0YOuNQpYA==",
+    "shasum": "22e3acb3b1b52b2cecbfa4c4546979f344f02d19"
+  },
+  "node": "v22.22.3",
+  "platform": "darwin",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-cli-package-vB6vEX/consumer/node_modules/cordyceps/dist/index.js",
+  "scope": "Exact selected request fields and CLI output. System prompts, unselected tool schemas and headers omitted; raw body SHA-256 ties each projection to full local evidence.",
+  "cases": [
+    {
+      "harness": "claude-code",
+      "scenario": "interactive",
+      "version": "2.1.283 (Claude Code)",
+      "args": [
+        "--debug-file",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-kQjhaJ/debug.log",
+        "--bare",
+        "--restricted",
+        "--safe-mode",
+        "--model",
+        "claude-sonnet-4-6",
+        "--setting-sources",
+        "",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--tools",
+        "",
+        "--permission-mode",
+        "dontAsk"
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"promptBytesSent\": true, \"trustSelectionSent\": false, \"observedReply\": true, \"termination\": \"consumer closed interactive process group\", \"waitStatus\": 9, \"transcript\": \"\\u001b7\\u001b[r\\u001b8\\u001b[?25h\\u001b[?2004h\\u001b[?2031h\\u001b[?1004h\\u001b]0;\\u2733 Claude Code\\u0007\\u001b[?1049h\\u001b[2J\\u001b[H\\u001b[?1000h\\u001b[?1002h\\u001b[?1003h\\u001b[?1006h\\u001b[?25l\\u001b[?25l\\u001b[H\\r\\u001b[11C\\u001b[1B\\u001b[1mClaude Code\\u001b[24G\\u001b[22m\\u001b[38;5;246mv2.1.283\\r\\u001b[11C\\u001b[1BSonnet 4.6 \\u00b7 API Usage Billing\\r\\u001b[11C\\u001b[1B/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-kQjhaJ/work\\r\\u001b[2B\\u001b[38;5;220m\\u26a0\\u001b[3GSafe mode: all customizations are disabled (CLAUDE.md, skills, plugins, hooks, MCP, agents, and more)\\r\\u001b[2C\\u001b[1B\\u001b[38;5;246mRestart without --safe-mode to re-enable\\r\\u001b[2B\\u001b[39m\\u001b[2m\\u258e\\u001b[3G\\u001b[22m\\u001b[38;5;246mDebug mode enabled \\u00b7 logging to /var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-kQjhaJ/debug.log\\r\\u001b[122C\\u001b[23B\\u25cf high \\u00b7 /effort\\r\\u001b[1B\\u001b[38;5;244m\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\r\\u001b[1B\\u001b[39m\\u276f\\u00a0\\u001b[7m \\r\\u001b[1B\\u001b[27m\\u001b[38;5;244m\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\u2500\\r\\u001b[2C\\u001b[1B\\u001b[38;5;211m\\u23f5\\u23f5 don't ask on\\u001b[38;5;246m (shift+tab to cycle) \\u00b7 \\u2190 for agents\\u001b[39m\\u001b[36;1H\\u001b[34;3H\\u001b[>0q\\u001b[?u\\u001b[c\\u001b[<u\\u001b[>5u\\u001b[>4;2m\\u001b[H\\r\\u001b[1B\\u001b[48;5;16m\\u001b[38;5;174m\\u259b\\u2588\\u001b[49m\\u2584\\r\\u001b[1B\\u001b[48;5;16m\\u2588\\u001b[49m\\u2588\\u2598\\r\\u001b[1B\\u259d\\u259d \\u001b[39m\\u001b[36;1H\\u001b[34;3H\\u001b[H\\r\\u001b[2C\\u001b[1B \\r\\u001b[2C\\u001b[1B\\u001b[38;5;174m\\u2580\\u001b[39m\\u001b[36;1H\\u001b[34;3H\\u001b[H\\r\\u001b[1B  \\r\\u001b[1B\\u001b[48;5;16m\\u001b[38;5;174m\\u259b\\u2588\\u001b[39m\\u001b[49m \\r\\u001b[1B\\u001b[48;5;16m\\u001b[38;5;174m\\u2588\\u001b[49m\\u2588\\u2580\\u001b[39m\\u001b[36;1H\\u001b[34;3H\\u001b[H\\r\\u001b[1B\\u001b[48;5;16m\\u001b[38;5;174m\\u2588\\u2588\\u2588\\u259b\\u2588\\u001b[49m\\u2584\\r\\u001b[1B\\u001b[48;5;16m\\u2588\\u001b[3G\\u2588\\u2588\\u001b[49m\\u2588\\u2598\\r\\u001b[1B   \\u259d\\u259d \\u001b[39m\\u001b[36;1H\\u001b[34;3H\\u001b[H\\r\\u001b[2C\\u001b[33Bcordyceps-real-cli-interactive:\\u001b[35GReply\\u001b[41Gwith\\u001b[46Gthe\\u001b[50Gcontrolled\\u001b[61Gtest\\u001b[66Gmessage.\\u001b[7m \\r\\u001b[38C\\u001b[2B\\u001b[27m\\u001b[K\\u001b[36;1H\\u001b[34;74H\\u001b[H\\r\\u001b[5C\\u001b[1B \\r\\u001b[5C\\u001b[1B\\u001b[38;5;174m\\u2580\\u001b[39m\\u001b[36;1H\\u001b[34;74H\\u001b[H\\r\\u001b[1B     \\r\\u001b[3C\\u001b[1B\\u001b[48;5;16m\\u001b[38;5;174m\\u259b\\u2588\\u001b[39m\\u001b[49m \\r\\u001b[1B\\u001b[48;5;16m\\u001b[38;5;174m\\u2588\\u2588\\u2588\\u2588\\u001b[49m\\u2588\\u2580\\u001b[39m\\u001b[36;1H\\u001b[34;74H\\u001b[H\\r\\u001b[1B\\u001b[38;5;174m\\u2597\\u259f\\u001b[48;5;16m\\u259b\\u2588\\u2588\\u2588\\u259b\\u2588\\u001b[49m\\u2584\\r\\u001b[1B \\u259c\\u001b[4G\\u001b[48;5;16m\\u2588\\u001b[6G\\u2588\\u2588\\u001b[49m\\u2588\\u2598\\r\\u001b[1B \\u259d\\u259d   \\u259d\\u259d \\u001b[39m\\u001b[36;1H\\u001b[34;74H\\u001b]0;\\u25d0 Claude Code\\u0007\\u001b[H\\r\\u001b[10B\\u001b[48;5;237m\\u001b[38;5;239m\\u276f \\u001b[38;5;246mcordyceps-real-cli-interactive: Reply with the controlled test message.\\u001b[39m                                                                   \\r\\u001b[20B\\u001b[49m\\u001b[38;5;174m\\u273b\\u001b[3GBootstrapping\\u2026 \\r\\u001b[3B\\u001b[38;5;246m\\u276f\\u00a0\\u001b[39m\\u001b[7m \\u001b[27m\\u001b[K\\r\\u001b[38C\\u001b[2B\\u001b[38;5;246m \\u00b7 esc to interrupt \\u00b7 \\u2190 for agents\\u001b[39m\\u001b[36;1H\\u001b[34;3H\\u001b]0;\\u2733 Local mock PTY\\u0007\\u001b[H\\r\\u001b[2C\\u001b[10B\\u001b[48;5;237m\\u001b[38;5;231mcordyceps-real-cli-interactive: Reply with the controlled test message.\\r\\u001b[2B\\u001b[49m\\u23fa\\u001b[3G\\u001b[39mCORDYCEPS_claude-code_interactive_OK\\r\\u001b[2B\\u001b[38;5;246m\\u273b\\u001b[3GChurned for 0s \\u00b7 done 4:55 PM\\r\\u001b[16B\\u001b[39m\\u001b[K\\r\\u001b[3B\\u276f\\u00a0\\r\\u001b[41C\\u001b[2B\\u001b[38;5;246m\\u2190 for agents\\u001b[39m\\u001b[K\\u001b[36;1H\\u001b[34;3H\"}\n",
+        "stderr": "CORDYCEPS_PTY_GROUP=5983\n",
+        "timedOut": false
+      },
+      "passed": true,
+      "cleanedUp": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-6",
+          "stream": true,
+          "rawBodySha256": "86a74a6eac10a23a8dee586d9a5f836940eb3a569bfc3783e3ce1cb5e99c9ed2",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<session>\ncordyceps-real-cli-interactive: Reply with the controlled test message.\n</session>\n\nWrite the title in the predominant language of the session — a stray word or code token in another language doesn't change it, and neither does the English of these instructions."
+                }
+              ]
+            }
+          ],
+          "toolResults": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-6",
+          "stream": true,
+          "rawBodySha256": "044112aa537a4346b3da7a49106459f608006083f4de607e8e5c9c93cfa1d4ea",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nToday's date is 2026-09-29.\n</system-reminder>\n"
+                },
+                {
+                  "type": "text",
+                  "text": "cordyceps-real-cli-interactive: Reply with the controlled test message.",
+                  "cache_control": {
+                    "type": "ephemeral"
+                  }
+                }
+              ]
+            }
+          ],
+          "toolResults": []
+        }
+      ]
+    }
+  ]
+}
