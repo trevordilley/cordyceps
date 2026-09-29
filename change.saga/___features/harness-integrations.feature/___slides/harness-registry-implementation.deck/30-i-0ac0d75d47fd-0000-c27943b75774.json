@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-0",
+  "slide": "registry-boundaries",
+  "rank": 0,
+  "kind": "statement",
+  "label": "Definition + registry",
+  "description": "Local or bundled JSON supplies settings Same data contract; no binary inspection",
+  "selector": {
+    "type": "element",
+    "element_id": "row-0"
+  }
+}

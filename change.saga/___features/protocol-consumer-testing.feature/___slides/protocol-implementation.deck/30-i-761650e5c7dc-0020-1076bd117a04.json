@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "failure-2",
+  "slide": "acp-failure-boundaries",
+  "rank": 20,
+  "kind": "risk",
+  "label": "Model request",
+  "description": "Provider HTTP error or broken stream. Assert: Observe actual retry/error mapping; bound waits. Control: Provider adapter.",
+  "selector": {
+    "type": "element",
+    "element_id": "failure-2"
+  }
+}

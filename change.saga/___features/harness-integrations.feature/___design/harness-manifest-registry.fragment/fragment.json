@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "id": "harness-manifest-registry",
+  "title": "Harness manifests and registry",
+  "media_type": "text/markdown",
+  "entrypoint": "cordyceps-harness-manifests.md"
+}

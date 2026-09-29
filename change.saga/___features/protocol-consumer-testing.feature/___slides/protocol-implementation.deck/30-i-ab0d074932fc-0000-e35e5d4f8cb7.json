@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "connection",
+  "slide": "acp-lifetimes",
+  "rank": 0,
+  "kind": "node",
+  "label": "Process + ACP connection",
+  "description": "Launch → negotiate → ready → disconnect Assert real executable, version, capabilities, transport errors",
+  "selector": {
+    "type": "element",
+    "element_id": "connection"
+  }
+}

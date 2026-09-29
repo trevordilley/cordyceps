@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "failure-3",
+  "slide": "acp-failure-boundaries",
+  "rank": 30,
+  "kind": "risk",
+  "label": "ACP parser",
+  "description": "Malformed frame; invalid result shape. Assert: Parser rejects it without corrupting state. Control: Separate mock peer / fault injector.",
+  "selector": {
+    "type": "element",
+    "element_id": "failure-3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "registry-local-api-usage",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:registry-local-api:item:usage",
+  "to": "urn:change-saga:cordyceps:story:register-custom-harness:criterion:local-definition",
+  "scope": "self",
+  "rationale": "Explains the proposed implementation mechanism and observable checks for this accepted product obligation; no delivery is claimed.",
+  "to_revision": "urn:change-saga:cordyceps:story:register-custom-harness:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T21:32:32.797093Z"
+}

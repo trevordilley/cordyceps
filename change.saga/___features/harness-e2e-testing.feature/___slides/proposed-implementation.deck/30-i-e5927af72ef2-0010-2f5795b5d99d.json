@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "capture",
+  "slide": "request-routing",
+  "rank": 10,
+  "kind": "node",
+  "label": "Capture request",
+  "description": "Raw body + headers Session and request identity Timestamp + parsed view",
+  "selector": {
+    "type": "element",
+    "element_id": "capture"
+  }
+}

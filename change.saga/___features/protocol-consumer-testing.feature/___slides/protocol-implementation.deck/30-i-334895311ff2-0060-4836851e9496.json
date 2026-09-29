@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "not-process",
+  "slide": "acp-turn-state",
+  "rank": 60,
+  "kind": "statement",
+  "label": "Completion is a protocol boundary",
+  "description": "A completed tool can lead to another model request in the same turn. Do not close the session on a text chunk, a tool result, or a cancel click.",
+  "selector": {
+    "type": "element",
+    "element_id": "not-process"
+  }
+}

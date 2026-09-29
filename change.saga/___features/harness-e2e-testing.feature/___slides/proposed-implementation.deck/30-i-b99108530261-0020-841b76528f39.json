@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "gate-two",
+  "slide": "validation-plan",
+  "rank": 20,
+  "kind": "node",
+  "label": "2  Provider codec",
+  "description": "Library-level tests exercise configuration rendering, provider codecs and mock lifecycle. Real-binary E2E scenarios belong to consumers.",
+  "selector": {
+    "type": "element",
+    "element_id": "gate-two"
+  }
+}

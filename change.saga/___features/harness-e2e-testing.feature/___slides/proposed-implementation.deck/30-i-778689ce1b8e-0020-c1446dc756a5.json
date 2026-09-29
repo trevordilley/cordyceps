@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-1",
+  "slide": "usage-playwright-test",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Two observations",
+  "description": "request.text is a proposed parsed view; raw.body keeps the provider request body.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-1"
+  }
+}

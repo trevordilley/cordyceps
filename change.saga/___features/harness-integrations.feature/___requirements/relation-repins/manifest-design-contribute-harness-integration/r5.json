@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r5",
+  "relation": "urn:change-saga:cordyceps:relation:manifest-design-contribute-harness-integration",
+  "from_content_digest": "sha256:3fd26582241d38a1dd4efdf70d2784e0b69aaa624c9ce6c8b95ee78b38c97c36",
+  "rationale": "Reviewed the revised examples: added explicit ownership of proposed Cordyceps controls, native ACP fields, standard Node/Playwright APIs and illustrative consumer helpers. The injection boundary and linked story obligations are unchanged.",
+  "created_at": "2026-09-29T22:13:35.683792Z"
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r3",
+  "relation": "urn:change-saga:cordyceps:relation:registry-runtime-contribute-harness-integration",
+  "to_revision": "urn:change-saga:cordyceps:story:contribute-harness-integration:revision:r2",
+  "from_content_digest": "sha256:d79a30b3f098999806e1edd6a2b98f8334bb968e274a4bac3aa017bc8ad2c53d",
+  "rationale": "The current design supplies injection settings and mock-provider control while the consumer owns discovery, launch, shells and binary tests. The revised source still addresses the named obligation without a binary-version or certification requirement.",
+  "created_at": "2026-09-29T21:49:17.752772Z"
+}

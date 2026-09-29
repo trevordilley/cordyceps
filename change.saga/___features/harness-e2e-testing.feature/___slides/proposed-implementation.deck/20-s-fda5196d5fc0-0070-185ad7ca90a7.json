@@ -1,0 +1,18 @@
+{
+  "version": 4,
+  "id": "observability",
+  "deck": "proposed-implementation",
+  "title": "Separate provider traffic from process I/O",
+  "rank": 70,
+  "intent": "risk",
+  "layout": "evidence",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0070-185ad7ca90a7.svg",
+  "takeaway": "The mock observes provider traffic; the consumer supplies process or ACP observations through its own integration.",
+  "reading_order": [
+    "provider-observation",
+    "invocation-observation",
+    "raw-input",
+    "raw-io-gap"
+  ]
+}

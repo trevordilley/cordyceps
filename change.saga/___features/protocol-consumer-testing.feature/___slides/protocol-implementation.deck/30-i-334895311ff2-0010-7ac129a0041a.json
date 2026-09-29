@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "active",
+  "slide": "acp-turn-state",
+  "rank": 10,
+  "kind": "node",
+  "label": "Prompt outstanding",
+  "description": "Model request → text updates Optional tools + permissions Further model requests may follow",
+  "selector": {
+    "type": "element",
+    "element_id": "active"
+  }
+}

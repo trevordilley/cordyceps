@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "codec",
+  "slide": "registry-provider-codec",
+  "rank": 0,
+  "kind": "example",
+  "label": "PROPOSED TYPESCRIPT CONTRACT",
+  "description": "Proposed internal Cordyceps types: ProviderAdapter and the named HTTP/request/event types; no SDK imports. Proposed example; not implemented.",
+  "selector": {
+    "type": "element",
+    "element_id": "codec"
+  }
+}

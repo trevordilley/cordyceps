@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r4",
+  "relation": "urn:change-saga:cordyceps:relation:launch-design-standalone",
+  "from_content_digest": "sha256:cb93b3e70c2f2e8aa31c3f553367e40c94ae12aee1bafab289bcec50887c4b80",
+  "rationale": "Reviewed the revised examples: added explicit ownership of proposed Cordyceps controls, native ACP fields, standard Node/Playwright APIs and illustrative consumer helpers. The injection boundary and linked story obligations are unchanged.",
+  "created_at": "2026-09-29T22:13:35.494067Z"
+}

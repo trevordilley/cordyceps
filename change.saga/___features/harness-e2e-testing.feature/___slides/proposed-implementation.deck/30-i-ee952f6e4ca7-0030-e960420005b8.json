@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "core",
+  "slide": "npm-core",
+  "rank": 30,
+  "kind": "node",
+  "label": "Session core",
+  "description": "Backend lifecycle Request routing + transcript Injection settings",
+  "selector": {
+    "type": "element",
+    "element_id": "core"
+  }
+}

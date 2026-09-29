@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-2",
+  "slide": "registry-resolution",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Explicit recipe",
+  "description": "Look up the consumer-selected mode No recipe: RECIPE_NOT_FOUND; no fallback",
+  "selector": {
+    "type": "element",
+    "element_id": "row-2"
+  }
+}

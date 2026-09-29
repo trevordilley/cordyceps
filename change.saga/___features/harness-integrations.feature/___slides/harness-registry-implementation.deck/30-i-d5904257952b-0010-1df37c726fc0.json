@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-1",
+  "slide": "registry-resolution",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Provider codec",
+  "description": "Check the named codec exists in the library Missing codec is a configuration error",
+  "selector": {
+    "type": "element",
+    "element_id": "row-1"
+  }
+}

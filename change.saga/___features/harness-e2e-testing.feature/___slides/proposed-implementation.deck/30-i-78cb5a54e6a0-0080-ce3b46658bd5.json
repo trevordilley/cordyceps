@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "process-boundary",
+  "slide": "launch-boundary",
+  "rank": 80,
+  "kind": "risk",
+  "label": "Process-tree isolation",
+  "description": "Already-running apps, cached shells and remote hosts require configuration at their own launch boundary.",
+  "selector": {
+    "type": "element",
+    "element_id": "process-boundary"
+  }
+}

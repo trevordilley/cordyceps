@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-2",
+  "slide": "usage-tool-call",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Adapter contract to prove",
+  "description": "tools / toolResults are proposed parsed views. Read + file_path depend on harness version.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-2"
+  }
+}

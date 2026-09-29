@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "setup-active",
+  "slide": "session-lifecycle",
+  "rank": 40,
+  "kind": "edge",
+  "label": "launch app",
+  "description": "launch app",
+  "selector": {
+    "type": "element",
+    "element_id": "setup-active"
+  }
+}

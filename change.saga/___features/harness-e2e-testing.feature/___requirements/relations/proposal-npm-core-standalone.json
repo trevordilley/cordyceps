@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "proposal-npm-core-standalone",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:npm-core:item:standalone",
+  "to": "urn:change-saga:cordyceps:story:standalone-programmatic-use:criterion:standalone-setup",
+  "scope": "self",
+  "rationale": "Explains the proposed implementation approach or unresolved design boundary for this requirement; does not claim delivered code or verified behavior.",
+  "to_revision": "urn:change-saga:cordyceps:story:standalone-programmatic-use:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T16:33:51.301307Z"
+}

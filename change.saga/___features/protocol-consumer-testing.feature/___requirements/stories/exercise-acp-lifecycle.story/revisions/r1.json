@@ -1,0 +1,30 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:exercise-acp-lifecycle",
+  "parents": [],
+  "title": "Verify my client handles ACP session lifecycles",
+  "statement": "As a developer building tools around AI harnesses, I can exercise ACP connection and session lifecycles through my own client against a real harness so that my library handles state transitions as well as message contents.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:protocol-consumer-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "initialize-and-session",
+      "statement": "The consumer can perform protocol initialization and session creation against a supported real ACP agent integration, and the test can assert the resulting consumer state."
+    },
+    {
+      "id": "turn-completion",
+      "statement": "The consumer can start a prompt turn, consume its updates under controlled provider behavior, and observe its completion through the protocol rather than treating process exit as turn completion."
+    },
+    {
+      "id": "cancel-turn",
+      "statement": "For a supported ACP integration, a test can keep a provider exchange pending, request cancellation through the consumer, and assert the resulting protocol and consumer state within a bounded wait."
+    }
+  ],
+  "created_at": "2026-09-29T19:18:26.911645Z"
+}

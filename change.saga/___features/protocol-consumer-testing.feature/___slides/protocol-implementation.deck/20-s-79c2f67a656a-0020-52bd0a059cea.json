@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "acp-test-fixture",
+  "deck": "protocol-implementation",
+  "title": "Put your real client in the fixture",
+  "rank": 20,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-0020-52bd0a059cea.svg",
+  "takeaway": "The consumer’s own helper applies injection values and launches its real ACP process; the mock owns only backend resources.",
+  "reading_order": [
+    "setup",
+    "launch",
+    "helpers",
+    "fixture"
+  ],
+  "exception_rationale": "Code walkthroughs and scenario matrices preserve indentation and align controls with state assertions."
+}

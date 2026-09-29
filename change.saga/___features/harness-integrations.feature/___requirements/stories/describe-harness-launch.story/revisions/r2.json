@@ -1,0 +1,33 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r2",
+  "story": "urn:change-saga:cordyceps:story:describe-harness-launch",
+  "parents": [
+    "urn:change-saga:cordyceps:story:describe-harness-launch:revision:r1"
+  ],
+  "title": "Describe provider and ACP injection settings",
+  "statement": "As a harness author or integration contributor, I can describe the environment, arguments and configuration needed for provider routing and ACP mode so that Cordyceps can prepare those settings while my application retains its existing binary discovery and launch behavior.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-integration-author"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:harness-extension-scope",
+    "urn:change-saga:cordyceps:citation:injection-only-library-boundary"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "provider-override-recipe",
+      "statement": "The definition expresses provider-routing environment values, removals, arguments or generated configuration that the consumer can apply around its binary."
+    },
+    {
+      "id": "acp-launch-recipe",
+      "statement": "The definition can declare additional settings or arguments for ACP mode; the consumer selects and launches its own binary or adapter and applies those settings."
+    },
+    {
+      "id": "explicit-unsupported",
+      "statement": "A missing requested recipe or provider codec is reported as a definition error. Cordyceps does not inspect executable versions, select version-specific binaries, or substitute a different invocation mode."
+    }
+  ],
+  "created_at": "2026-09-29T21:42:02.908799Z"
+}

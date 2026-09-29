@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "registry-acp-adapter-adapter",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:registry-acp-adapter:item:adapter",
+  "to": "urn:change-saga:cordyceps:story:describe-harness-launch:criterion:acp-launch-recipe",
+  "scope": "self",
+  "rationale": "Explains the proposed implementation mechanism and observable checks for this accepted product obligation; no delivery is claimed.",
+  "to_revision": "urn:change-saga:cordyceps:story:describe-harness-launch:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T21:32:33.467693Z"
+}

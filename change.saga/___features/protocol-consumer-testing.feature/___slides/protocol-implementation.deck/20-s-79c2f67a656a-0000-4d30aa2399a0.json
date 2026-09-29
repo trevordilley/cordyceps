@@ -1,0 +1,21 @@
+{
+  "version": 4,
+  "id": "native-acp-boundary",
+  "deck": "protocol-implementation",
+  "title": "Your client consumes native ACP",
+  "rank": 0,
+  "intent": "explain",
+  "layout": "diagram",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-0000-4d30aa2399a0.svg",
+  "takeaway": "Keep the consumer ACP client in the test path; the real agent emits ACP from controlled provider responses.",
+  "reading_order": [
+    "consumer",
+    "agent",
+    "provider",
+    "acp",
+    "model",
+    "native-payload",
+    "real-behavior"
+  ]
+}

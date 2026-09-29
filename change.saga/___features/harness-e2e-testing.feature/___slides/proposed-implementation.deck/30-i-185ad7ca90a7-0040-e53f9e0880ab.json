@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "raw-io-gap",
+  "slide": "observability",
+  "rank": 40,
+  "kind": "risk",
+  "label": "Consumer instrumentation observes raw I/O",
+  "description": "Raw input capture must preserve PTY behavior, signals and resizing; a transparent proxy has not been proved.",
+  "selector": {
+    "type": "element",
+    "element_id": "raw-io-gap"
+  }
+}

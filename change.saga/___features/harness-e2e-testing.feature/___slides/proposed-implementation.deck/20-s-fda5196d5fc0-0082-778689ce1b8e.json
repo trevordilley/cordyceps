@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "usage-playwright-test",
+  "deck": "proposed-implementation",
+  "title": "Playwright: drive the frontend, control the reply",
+  "rank": 82,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0082-778689ce1b8e.svg",
+  "takeaway": "Register a response, launch the app with session config, then assert both provider traffic and frontend output.",
+  "reading_order": [
+    "sample",
+    "note-0",
+    "note-1",
+    "note-2"
+  ],
+  "exception_rationale": "A code walkthrough with adjacent usage notes needs preserved indentation and line breaks; this is a proposed API sample without implementation evidence."
+}

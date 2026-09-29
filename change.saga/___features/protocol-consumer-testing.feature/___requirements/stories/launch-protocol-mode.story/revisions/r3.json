@@ -1,0 +1,38 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r3",
+  "story": "urn:change-saga:cordyceps:story:launch-protocol-mode",
+  "parents": [
+    "urn:change-saga:cordyceps:story:launch-protocol-mode:revision:r2"
+  ],
+  "title": "Apply ACP settings to my application’s real harness",
+  "statement": "As a developer building tools around AI harnesses, I can apply declarative provider and ACP settings while my application selects and launches its own installed harness or adapter, so I can test my actual ACP client against controlled model responses.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:protocol-consumer-scope",
+    "urn:change-saga:cordyceps:citation:native-acp-contract",
+    "urn:change-saga:cordyceps:citation:injection-only-library-boundary"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "explicit-interface",
+      "statement": "The consumer can select an ACP injection recipe and obtain its environment, arguments and generated configuration for applying through the application’s own process setup."
+    },
+    {
+      "id": "real-client-connection",
+      "statement": "The consuming application uses its own executable discovery, launch path, ACP client, types and connection implementation. Cordyceps does not supply a required harness runner or manage shell startup."
+    },
+    {
+      "id": "unsupported-combination",
+      "statement": "If the selected definition lacks an ACP recipe or its required provider codec, preparation reports that configuration error without falling back to text mode. It does not probe or gate installed-binary versions."
+    },
+    {
+      "id": "negotiated-contract",
+      "statement": "The consumer’s real ACP client negotiates protocol version and capabilities with the real harness or adapter. Cordyceps configuration must not invent protocol capabilities; consumer tests assert the actual negotiated behavior."
+    }
+  ],
+  "created_at": "2026-09-29T21:42:03.760868Z"
+}

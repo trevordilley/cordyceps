@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "negotiation",
+  "slide": "registry-manifest",
+  "rank": 30,
+  "kind": "risk",
+  "label": "ACP belongs to the client",
+  "description": "The consumer’s client negotiates with its real process. Selecting an ACP recipe only supplies settings; it does not assert protocol capabilities.",
+  "selector": {
+    "type": "element",
+    "element_id": "negotiation"
+  }
+}

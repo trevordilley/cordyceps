@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "separation",
+  "slide": "registry-launch-plan",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Settings are not proof",
+  "description": "Successful preparation means the mock and its injection values are ready. The consumer decides which traffic and frontend behavior to assert.",
+  "selector": {
+    "type": "element",
+    "element_id": "separation"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-0",
+  "slide": "usage-tool-call",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Provider semantics",
+  "description": "fulfill encodes a tool-call response for the adapter. The binary executes the read.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-0"
+  }
+}

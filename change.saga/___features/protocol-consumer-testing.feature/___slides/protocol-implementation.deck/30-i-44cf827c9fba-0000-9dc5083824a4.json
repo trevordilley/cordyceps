@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "sessions",
+  "slide": "acp-sessions",
+  "rank": 0,
+  "kind": "example",
+  "label": "SEQUENTIAL ISOLATION SCENARIO",
+  "description": "Cordyceps (proposed): ai + route. Yours: client API and setup. Node: assert. ACP: method names and payloads. Illustrative consumer example; not executed.",
+  "selector": {
+    "type": "element",
+    "element_id": "sessions"
+  }
+}

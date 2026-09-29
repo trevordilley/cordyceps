@@ -1,0 +1,8 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/feature.schema.json",
+  "version": 5,
+  "id": "harness-integrations",
+  "title": "Adding and contributing harness integrations",
+  "description": "Harness authors and integration contributors describe how installed binaries connect to Cordyceps, use their integrations locally, and contribute them to the supported suite. Configuration-based registration is the proposed extension mechanism.",
+  "created_at": "2026-09-29T21:23:15.100961Z"
+}

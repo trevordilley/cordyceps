@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "id": "harness-registry-runtime-design",
+  "title": "Harness registry implementation proposal",
+  "media_type": "text/markdown",
+  "entrypoint": "spec.md"
+}

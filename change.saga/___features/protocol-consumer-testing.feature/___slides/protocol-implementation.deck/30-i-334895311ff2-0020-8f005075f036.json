@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "settled",
+  "slide": "acp-turn-state",
+  "rank": 20,
+  "kind": "node",
+  "label": "Prompt resolved",
+  "description": "stopReason: end_turn or stopReason: cancelled Connection can remain open",
+  "selector": {
+    "type": "element",
+    "element_id": "settled"
+  }
+}

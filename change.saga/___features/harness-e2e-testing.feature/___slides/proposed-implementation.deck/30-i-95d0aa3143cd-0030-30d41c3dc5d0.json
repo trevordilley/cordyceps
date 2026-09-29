@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-2",
+  "slide": "usage-playwright-setup",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Consumer integration",
+  "description": "Pass ai.environment(...) through the app’s existing configuration boundary.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-2"
+  }
+}

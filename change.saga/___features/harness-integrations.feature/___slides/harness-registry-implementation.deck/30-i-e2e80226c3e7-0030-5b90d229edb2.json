@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "isolation",
+  "slide": "registry-launch-plan",
+  "rank": 30,
+  "kind": "risk",
+  "label": "Leave global state alone",
+  "description": "environment(baseEnv) is a pure merge. Parallel tests own separate mocks and generated files; no global process.env swapping.",
+  "selector": {
+    "type": "element",
+    "element_id": "isolation"
+  }
+}

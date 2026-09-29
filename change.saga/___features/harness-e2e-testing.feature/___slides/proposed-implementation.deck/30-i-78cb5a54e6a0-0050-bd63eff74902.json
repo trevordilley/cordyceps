@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "app-env",
+  "slide": "launch-boundary",
+  "rank": 50,
+  "kind": "edge",
+  "label": "launch env",
+  "description": "Pass the prepared environment into the application launch before any child shell or executable cache is created.",
+  "selector": {
+    "type": "element",
+    "element_id": "app-env"
+  }
+}

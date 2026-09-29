@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-1",
+  "slide": "registry-contribution",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Check transformation",
+  "description": "Fixture inputs → expected injection outputs Schema, merge and serialization tests",
+  "selector": {
+    "type": "element",
+    "element_id": "row-1"
+  }
+}

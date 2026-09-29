@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-2",
+  "slide": "registry-failure-tests",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Config rendering",
+  "description": "JSON/TOML values with paths and quoting Assert serialized file and generated references",
+  "selector": {
+    "type": "element",
+    "element_id": "row-2"
+  }
+}

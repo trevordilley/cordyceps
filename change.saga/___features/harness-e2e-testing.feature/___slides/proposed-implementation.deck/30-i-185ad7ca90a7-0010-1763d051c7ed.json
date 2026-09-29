@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "provider-observation",
+  "slide": "observability",
+  "rank": 10,
+  "kind": "node",
+  "label": "Provider requests and responses",
+  "description": "Source: mock backend. Available to both Playwright and standalone consumers.",
+  "selector": {
+    "type": "element",
+    "element_id": "provider-observation"
+  }
+}

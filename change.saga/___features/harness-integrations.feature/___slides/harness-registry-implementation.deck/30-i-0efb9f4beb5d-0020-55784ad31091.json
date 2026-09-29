@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "precedence",
+  "slide": "registry-config-files",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Pure data transformation",
+  "description": "Structured serializers own quoting. Environment merging leaves the input unchanged. Reject conflicting recipe fields; do not inspect arbitrary app flags.",
+  "selector": {
+    "type": "element",
+    "element_id": "precedence"
+  }
+}

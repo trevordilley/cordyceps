@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "id": "launch-injection",
+  "title": "Launch configuration and shell discovery investigation",
+  "media_type": "text/markdown",
+  "entrypoint": "cordyceps-launch-investigation.md"
+}

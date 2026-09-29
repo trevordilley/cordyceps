@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r2",
+  "relation": "urn:change-saga:cordyceps:relation:manifest-design-contribute-harness-integration",
+  "from_content_digest": "sha256:9121fb45549521c9849f7c009648e190e3ecf13b4cd041d8e3cbeb2edf14534e",
+  "rationale": "Only stable heading anchors were added; the reviewed design prose and its relationship to the accepted story are unchanged.",
+  "created_at": "2026-09-29T21:33:27.851706Z"
+}

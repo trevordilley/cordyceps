@@ -1,0 +1,8 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/feature.schema.json",
+  "version": 5,
+  "id": "protocol-consumer-testing",
+  "title": "Testing ACP consumers with real AI harnesses",
+  "description": "Exercise applications and libraries that consume real AI harnesses through structured client protocols. ACP is the concrete initial use case, including DevSwarm. Launch mode, protocol messages and session lifecycle are distinct from plain CLI text. Native JSON streams, MCP roles and other protocols remain candidates with separate compatibility requirements.",
+  "created_at": "2026-09-29T19:18:25.582869Z"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "registry-config-files-config",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:registry-config-files:item:config",
+  "to": "urn:change-saga:cordyceps:story:describe-harness-launch:criterion:provider-override-recipe",
+  "scope": "self",
+  "rationale": "Explains the proposed implementation mechanism and observable checks for this accepted product obligation; no delivery is claimed.",
+  "to_revision": "urn:change-saga:cordyceps:story:describe-harness-launch:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T21:32:33.26455Z"
+}

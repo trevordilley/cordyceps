@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-0",
+  "slide": "registry-delivery-plan",
+  "rank": 0,
+  "kind": "statement",
+  "label": "1 · Definitions",
+  "description": "Small JSON schema + local/bundled registry Known fields, tokens and recipe lookup",
+  "selector": {
+    "type": "element",
+    "element_id": "row-0"
+  }
+}

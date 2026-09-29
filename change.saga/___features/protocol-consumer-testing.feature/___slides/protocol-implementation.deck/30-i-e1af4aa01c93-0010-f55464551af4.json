@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "race",
+  "slide": "acp-cancel",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Accept legitimate late updates",
+  "description": "The agent can send pending updates after receiving cancel, before the prompt response. The client must not drop them merely because Cancel was clicked.",
+  "selector": {
+    "type": "element",
+    "element_id": "race"
+  }
+}

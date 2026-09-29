@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "acp",
+  "slide": "native-acp-boundary",
+  "rank": 30,
+  "kind": "edge",
+  "label": "ACP",
+  "description": "Native ACP requests, responses and notifications pass between the consumer and the real agent or adapter.",
+  "selector": {
+    "type": "element",
+    "element_id": "acp"
+  }
+}

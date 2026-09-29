@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "encode",
+  "slide": "request-routing",
+  "rank": 30,
+  "kind": "node",
+  "label": "Encode response",
+  "description": "Text or tool-call semantics Provider-specific format Streaming where supported",
+  "selector": {
+    "type": "element",
+    "element_id": "encode"
+  }
+}

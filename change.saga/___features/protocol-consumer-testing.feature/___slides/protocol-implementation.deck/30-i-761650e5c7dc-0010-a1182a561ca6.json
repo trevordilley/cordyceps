@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "failure-1",
+  "slide": "acp-failure-boundaries",
+  "rank": 10,
+  "kind": "risk",
+  "label": "Negotiation",
+  "description": "Incompatible version or auth result. Assert: Client never presents a ready session. Control: Real supported case or mock peer.",
+  "selector": {
+    "type": "element",
+    "element_id": "failure-1"
+  }
+}

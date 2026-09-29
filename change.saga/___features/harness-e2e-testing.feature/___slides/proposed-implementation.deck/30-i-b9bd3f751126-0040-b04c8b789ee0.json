@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "request",
+  "slide": "real-tools",
+  "rank": 40,
+  "kind": "edge",
+  "label": "1  Request / follow-up",
+  "description": "The binary sends a provider request, then later sends another request containing its actual tool result.",
+  "selector": {
+    "type": "element",
+    "element_id": "request"
+  }
+}

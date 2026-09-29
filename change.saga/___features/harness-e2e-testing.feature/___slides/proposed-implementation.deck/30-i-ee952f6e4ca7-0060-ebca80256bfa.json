@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "fixture-core",
+  "slide": "npm-core",
+  "rank": 60,
+  "kind": "edge",
+  "label": "wraps",
+  "description": "wraps",
+  "selector": {
+    "type": "element",
+    "element_id": "fixture-core"
+  }
+}

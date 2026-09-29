@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "discovery",
+  "slide": "launch-boundary",
+  "rank": 60,
+  "kind": "edge",
+  "label": "discover + launch",
+  "description": "The consuming application keeps its existing command lookup and process launch code.",
+  "selector": {
+    "type": "element",
+    "element_id": "discovery"
+  }
+}

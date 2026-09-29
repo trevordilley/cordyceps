@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "file-result",
+  "slide": "real-tools",
+  "rank": 70,
+  "kind": "edge",
+  "label": "4  Result",
+  "description": "4  Result",
+  "selector": {
+    "type": "element",
+    "element_id": "file-result"
+  }
+}

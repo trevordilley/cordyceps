@@ -1,0 +1,30 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:consume-acp-messages",
+  "parents": [],
+  "title": "Verify my client consumes real ACP messages",
+  "statement": "As a developer building tools around AI harnesses, I can prescribe provider responses while my ACP tool or library exchanges messages with a real harness so that I can verify my own message handling and resulting behavior.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:protocol-consumer-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "controlled-message-flow",
+      "statement": "A prompt sent through the consumer under test produces a request at the mock provider; a prescribed text response is handled by the real harness and reaches the consumer through its ACP message path."
+    },
+    {
+      "id": "protocol-observations",
+      "statement": "The test can observe ACP exchanges at the consumer boundary and distinguish them from provider API requests and responses, without requiring assertions against rendered CLI stdout."
+    },
+    {
+      "id": "tool-message-flow",
+      "statement": "For a supported tool scenario, the test can prescribe a provider tool call and verify the consumer handling of the resulting real ACP tool updates and any applicable client requests. Tool execution and permission handling follow the actual harness/client integration, not a fabricated tool result."
+    }
+  ],
+  "created_at": "2026-09-29T19:18:26.475652Z"
+}

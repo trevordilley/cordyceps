@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "id": "registry-resolution",
+  "deck": "harness-registry-implementation",
+  "title": "Validate definitions, not installed binaries",
+  "rank": 30,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-0030-d5904257952b.svg",
+  "takeaway": "Definition errors are actionable without probing a binary or deciding which versions the library supports.",
+  "reading_order": [
+    "row-0",
+    "row-1",
+    "row-2",
+    "row-3",
+    "row-4"
+  ],
+  "exception_rationale": "Code excerpts and comparison matrices align proposed contracts with controls, ownership and observable outcomes."
+}

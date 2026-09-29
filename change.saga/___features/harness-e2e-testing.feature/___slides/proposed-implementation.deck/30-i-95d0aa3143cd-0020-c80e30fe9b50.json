@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-1",
+  "slide": "usage-playwright-setup",
+  "rank": 20,
+  "kind": "statement",
+  "label": "App stays in control",
+  "description": "The test launches its app. The app discovers and starts the actual installed binary.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-1"
+  }
+}

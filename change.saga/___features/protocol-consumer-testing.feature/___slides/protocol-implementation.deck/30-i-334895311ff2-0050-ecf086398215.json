@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "cancel",
+  "slide": "acp-turn-state",
+  "rank": 50,
+  "kind": "edge",
+  "label": "cancel → drain → cancelled",
+  "description": "cancel → drain → cancelled is a distinct transition in the client turn lifecycle.",
+  "selector": {
+    "type": "element",
+    "element_id": "cancel"
+  }
+}

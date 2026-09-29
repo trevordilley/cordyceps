@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "handlers",
+  "slide": "acp-tools",
+  "rank": 30,
+  "kind": "risk",
+  "label": "Do not bypass your handlers",
+  "description": "Some integrations use client filesystem/terminal callbacks. Advertise and test those real handlers. A mock provider response must not manufacture the file-read result.",
+  "selector": {
+    "type": "element",
+    "element_id": "handlers"
+  }
+}

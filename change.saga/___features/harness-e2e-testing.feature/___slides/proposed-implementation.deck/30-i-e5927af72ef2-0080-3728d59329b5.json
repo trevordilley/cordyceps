@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "routing-decisions",
+  "slide": "request-routing",
+  "rank": 80,
+  "kind": "risk",
+  "label": "Routing decisions to confirm",
+  "description": "Proposed default: unmatched requests fail visibly. Handler precedence, retry semantics, raw responses and streaming controls remain open.",
+  "selector": {
+    "type": "element",
+    "element_id": "routing-decisions"
+  }
+}

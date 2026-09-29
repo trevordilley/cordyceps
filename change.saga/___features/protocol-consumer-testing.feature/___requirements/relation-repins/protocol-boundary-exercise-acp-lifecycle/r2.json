@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r2",
+  "relation": "urn:change-saga:cordyceps:relation:protocol-boundary-exercise-acp-lifecycle",
+  "from_content_digest": "sha256:80fcba8bcb1b3248fb09ada90363542804c4e852c75999abfd2d3364a8175de5",
+  "rationale": "Read the updated fragment: stable heading anchors were added; the proposed protocol boundary and story explanation are unchanged.",
+  "created_at": "2026-09-29T19:19:49.955167Z"
+}

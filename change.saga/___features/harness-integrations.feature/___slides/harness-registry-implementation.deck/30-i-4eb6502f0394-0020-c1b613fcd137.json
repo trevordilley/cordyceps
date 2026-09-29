@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "protocol",
+  "slide": "registry-playwright",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Test the consumer",
+  "description": "The frontend and its own ACP client handle the real agent’s output. This is the consumer’s E2E scenario, not a Cordyceps certification test.",
+  "selector": {
+    "type": "element",
+    "element_id": "protocol"
+  }
+}

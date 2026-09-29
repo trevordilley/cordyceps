@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "states",
+  "slide": "acp-tools",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Observe what the agent emits",
+  "description": "pending → in_progress → completed or failed. Not every intermediate status is guaranteed. Merge partial tool_call_update fields into the identified tool.",
+  "selector": {
+    "type": "element",
+    "element_id": "states"
+  }
+}

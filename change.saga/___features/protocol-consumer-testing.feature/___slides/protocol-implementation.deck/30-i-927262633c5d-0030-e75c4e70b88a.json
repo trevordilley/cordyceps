@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "proof-3",
+  "slide": "acp-proof-matrix",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Messages / tools / cancellation",
+  "description": "Consumer client + scripted provider. Consumer scenario; timing and callbacks unverified.",
+  "selector": {
+    "type": "element",
+    "element_id": "proof-3"
+  }
+}

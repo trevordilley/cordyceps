@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "dispose",
+  "slide": "session-lifecycle",
+  "rank": 30,
+  "kind": "node",
+  "label": "Dispose",
+  "description": "Close app and its AI processes Release backend + pending waits Remove session-owned files",
+  "selector": {
+    "type": "element",
+    "element_id": "dispose"
+  }
+}

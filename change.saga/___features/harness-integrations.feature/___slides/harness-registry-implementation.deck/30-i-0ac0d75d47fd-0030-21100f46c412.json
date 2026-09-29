@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-3",
+  "slide": "registry-boundaries",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Consumer application",
+  "description": "Find and launch its own binary or ACP adapter Own shells, terminals and process cleanup",
+  "selector": {
+    "type": "element",
+    "element_id": "row-3"
+  }
+}

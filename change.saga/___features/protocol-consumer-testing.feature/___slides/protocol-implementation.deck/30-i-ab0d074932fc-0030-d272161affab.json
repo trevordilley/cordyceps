@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "messages",
+  "slide": "acp-lifetimes",
+  "rank": 30,
+  "kind": "node",
+  "label": "Inside a turn: messages",
+  "description": "Chunks accumulate; optional messageId groups them A chunk is not a finished turn",
+  "selector": {
+    "type": "element",
+    "element_id": "messages"
+  }
+}

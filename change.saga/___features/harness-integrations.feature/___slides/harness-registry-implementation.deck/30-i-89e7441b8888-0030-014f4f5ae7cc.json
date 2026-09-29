@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "capabilities",
+  "slide": "registry-acp-adapter",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Keep the real ACP exchange",
+  "description": "The app’s client owns sessions, messages and capability negotiation. The mock controls provider responses that the real agent translates into ACP.",
+  "selector": {
+    "type": "element",
+    "element_id": "capabilities"
+  }
+}

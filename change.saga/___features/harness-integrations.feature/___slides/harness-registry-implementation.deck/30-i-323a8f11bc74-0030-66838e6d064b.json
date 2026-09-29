@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-3",
+  "slide": "registry-runtime-lifecycle",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Use mock",
+  "description": "App launches normally and sends provider requests Consumer drives its own application test",
+  "selector": {
+    "type": "element",
+    "element_id": "row-3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "session-b",
+  "slide": "acp-lifetimes",
+  "rank": 20,
+  "kind": "node",
+  "label": "Session B",
+  "description": "Different sessionId + context Assert messages route to B A must not receive B’s output Concurrency support is adapter-specific",
+  "selector": {
+    "type": "element",
+    "element_id": "session-b"
+  }
+}

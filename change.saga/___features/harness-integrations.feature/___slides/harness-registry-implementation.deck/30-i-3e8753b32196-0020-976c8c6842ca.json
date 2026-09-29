@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-2",
+  "slide": "registry-delivery-plan",
+  "rank": 20,
+  "kind": "statement",
+  "label": "3 · Mock API",
+  "description": "Codec, routes, streaming and observations Synthetic request/response tests",
+  "selector": {
+    "type": "element",
+    "element_id": "row-2"
+  }
+}

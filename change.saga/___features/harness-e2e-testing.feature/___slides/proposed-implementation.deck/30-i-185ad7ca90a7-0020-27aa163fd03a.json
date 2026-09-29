@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "invocation-observation",
+  "slide": "observability",
+  "rank": 20,
+  "kind": "node",
+  "label": "Consumer-supplied process observations",
+  "description": "Source: consumer instrumentation. Injection settings alone do not observe process invocation.",
+  "selector": {
+    "type": "element",
+    "element_id": "invocation-observation"
+  }
+}

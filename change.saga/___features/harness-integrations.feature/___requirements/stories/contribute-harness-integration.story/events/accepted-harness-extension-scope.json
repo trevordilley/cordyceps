@@ -1,0 +1,12 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-event.schema.json",
+  "version": 3,
+  "id": "accepted-harness-extension-scope",
+  "story": "urn:change-saga:cordyceps:story:contribute-harness-integration",
+  "parents": [
+    "urn:change-saga:cordyceps:story:contribute-harness-integration:event:proposed"
+  ],
+  "state": "accepted",
+  "reason": "The user reviewed the harness integration persona, stories and configuration-first direction, said \"Looks great, approve\", and requested a proposed implementation. This records product intent, not delivered implementation or review approval.",
+  "created_at": "2026-09-29T21:27:23.50694Z"
+}

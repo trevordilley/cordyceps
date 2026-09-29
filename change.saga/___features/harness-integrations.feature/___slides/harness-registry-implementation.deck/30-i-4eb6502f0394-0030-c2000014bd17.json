@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "parallel",
+  "slide": "registry-playwright",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Independent mock state",
+  "description": "Each fixture owns routes, backend scope and config files. Application shutdown remains in the consumer’s finally block.",
+  "selector": {
+    "type": "element",
+    "element_id": "parallel"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "fixture",
+  "slide": "registry-playwright",
+  "rank": 0,
+  "kind": "example",
+  "label": "PROPOSED PLAYWRIGHT USAGE",
+  "description": "Cordyceps (proposed): cordyceps + ai + route. Playwright: base (test alias), expect, page and use callback. Proposed example; not implemented.",
+  "selector": {
+    "type": "element",
+    "element_id": "fixture"
+  }
+}

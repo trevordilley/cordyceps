@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "tool-call",
+  "slide": "real-tools",
+  "rank": 50,
+  "kind": "edge",
+  "label": "2  Tool call",
+  "description": "The test returns the provider-specific tool name and arguments for the supported harness version.",
+  "selector": {
+    "type": "element",
+    "element_id": "tool-call"
+  }
+}

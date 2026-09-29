@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-1",
+  "slide": "registry-runtime-lifecycle",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Allocate mock",
+  "description": "Start listener; create owned config directory Track acquired resources for rollback",
+  "selector": {
+    "type": "element",
+    "element_id": "row-1"
+  }
+}

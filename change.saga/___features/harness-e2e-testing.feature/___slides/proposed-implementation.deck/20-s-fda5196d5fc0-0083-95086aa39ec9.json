@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "usage-standalone",
+  "deck": "proposed-implementation",
+  "title": "Standalone: run the real binary from a script",
+  "rank": 83,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0083-95086aa39ec9.svg",
+  "takeaway": "A standalone session configures a normal child process and exposes the same provider controls and transcript.",
+  "reading_order": [
+    "sample",
+    "note-0",
+    "note-1",
+    "note-2"
+  ],
+  "exception_rationale": "A code walkthrough with adjacent usage notes needs preserved indentation and line breaks; this is a proposed API sample without implementation evidence."
+}

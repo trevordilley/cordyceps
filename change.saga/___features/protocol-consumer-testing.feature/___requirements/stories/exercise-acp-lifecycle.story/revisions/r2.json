@@ -1,0 +1,33 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r2",
+  "story": "urn:change-saga:cordyceps:story:exercise-acp-lifecycle",
+  "parents": [
+    "urn:change-saga:cordyceps:story:exercise-acp-lifecycle:revision:r1"
+  ],
+  "title": "Verify my client handles ACP session lifecycles",
+  "statement": "As a developer building tools around AI harnesses, I can exercise ACP connection and session lifecycles through my own client against a real harness so that my library handles state transitions as well as message contents.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:protocol-consumer-scope",
+    "urn:change-saga:cordyceps:citation:native-acp-contract"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "initialize-and-session",
+      "statement": "The consumer performs real ACP version and capability negotiation followed by session creation, and can assert its resulting state from native ACP responses. Cordyceps does not substitute a successful handshake or session result."
+    },
+    {
+      "id": "turn-completion",
+      "statement": "The consumer starts a prompt turn and consumes native ACP updates under controlled provider behavior, then observes the protocol-defined prompt response and stop reason. Turn completion is distinct from process exit and connection teardown."
+    },
+    {
+      "id": "cancel-turn",
+      "statement": "For a supported ACP integration, a test can keep a provider exchange pending, request cancellation through the consumer ACP client, and assert the actual protocol and consumer state within a bounded wait, following the negotiated ACP cancellation semantics."
+    }
+  ],
+  "created_at": "2026-09-29T19:28:07.960195Z"
+}

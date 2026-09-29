@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "active-dispose",
+  "slide": "session-lifecycle",
+  "rank": 50,
+  "kind": "edge",
+  "label": "finally",
+  "description": "finally",
+  "selector": {
+    "type": "element",
+    "element_id": "active-dispose"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "idle",
+  "slide": "acp-turn-state",
+  "rank": 0,
+  "kind": "node",
+  "label": "Session ready",
+  "description": "No active prompt Existing conversation retained",
+  "selector": {
+    "type": "element",
+    "element_id": "idle"
+  }
+}

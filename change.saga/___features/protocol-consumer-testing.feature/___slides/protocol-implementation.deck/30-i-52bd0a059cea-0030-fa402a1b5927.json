@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "fixture",
+  "slide": "acp-test-fixture",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Your test helpers",
+  "description": "connectClientUnderTest and exercise are imported from your test helpers. The first owns the process and client; the second runs your assertions with bounded waits.",
+  "selector": {
+    "type": "element",
+    "element_id": "fixture"
+  }
+}

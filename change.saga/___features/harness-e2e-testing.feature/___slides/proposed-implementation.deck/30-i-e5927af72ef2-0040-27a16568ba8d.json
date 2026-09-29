@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "deliver",
+  "slide": "request-routing",
+  "rank": 40,
+  "kind": "node",
+  "label": "Deliver + observe",
+  "description": "Send to real binary Record response / failure Resolve waiting assertions",
+  "selector": {
+    "type": "element",
+    "element_id": "deliver"
+  }
+}

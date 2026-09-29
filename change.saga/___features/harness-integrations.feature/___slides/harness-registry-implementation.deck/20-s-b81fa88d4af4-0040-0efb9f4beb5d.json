@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "registry-config-files",
+  "deck": "harness-registry-implementation",
+  "title": "Generate configuration around the process",
+  "rank": 40,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-0040-0efb9f4beb5d.svg",
+  "takeaway": "Render the declared configuration; the app decides how to pass it to its own process.",
+  "reading_order": [
+    "config",
+    "tokens",
+    "precedence",
+    "shells"
+  ],
+  "exception_rationale": "Code excerpts and comparison matrices align proposed contracts with controls, ownership and observable outcomes."
+}

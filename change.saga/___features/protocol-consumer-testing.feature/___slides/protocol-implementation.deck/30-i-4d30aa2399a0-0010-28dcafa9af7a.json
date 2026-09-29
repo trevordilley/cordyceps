@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "agent",
+  "slide": "native-acp-boundary",
+  "rank": 10,
+  "kind": "node",
+  "label": "Real agent / adapter",
+  "description": "Configured for ACP invocation Handles real model responses Emits its actual ACP messages",
+  "selector": {
+    "type": "element",
+    "element_id": "agent"
+  }
+}

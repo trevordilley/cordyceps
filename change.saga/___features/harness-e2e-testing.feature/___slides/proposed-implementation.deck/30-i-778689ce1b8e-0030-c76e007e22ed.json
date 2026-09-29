@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-2",
+  "slide": "usage-playwright-test",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Consumer-owned cleanup",
+  "description": "Close the app and its children before fixture teardown. App path and locators vary.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-2"
+  }
+}

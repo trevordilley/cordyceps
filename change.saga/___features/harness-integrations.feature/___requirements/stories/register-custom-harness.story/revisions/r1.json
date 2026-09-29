@@ -1,0 +1,26 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:register-custom-harness",
+  "parents": [],
+  "title": "Use my own harness without a bundled integration",
+  "statement": "As a harness author or integration contributor, I can supply my harness integration definition and an installed binary so that I can use Cordyceps with my harness without first contributing it to the bundled suite.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-integration-author"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:harness-extension-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "local-definition",
+      "statement": "A consumer can provide a custom harness definition and an already-installed binary without that harness being bundled with Cordyceps."
+    },
+    {
+      "id": "mock-provider-exchange",
+      "statement": "For a supported definition and provider protocol, the real binary can reach the Cordyceps mock backend and process a response prescribed through the existing library API."
+    }
+  ],
+  "created_at": "2026-09-29T21:23:15.338856Z"
+}

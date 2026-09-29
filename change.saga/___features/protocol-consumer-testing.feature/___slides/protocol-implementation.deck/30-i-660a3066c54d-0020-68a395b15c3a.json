@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "identity",
+  "slide": "acp-wire-messages",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Message identity",
+  "description": "messageId is optional. Where supplied, group chunks with the same ID. Do not invent an ACP message ID or turn ID and present it as agent output.",
+  "selector": {
+    "type": "element",
+    "element_id": "identity"
+  }
+}

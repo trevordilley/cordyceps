@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "binary",
+  "slide": "launch-boundary",
+  "rank": 30,
+  "kind": "node",
+  "label": "3  Real binary",
+  "description": "Use selected mode + flags Keep real OS behavior Produce normal output",
+  "selector": {
+    "type": "element",
+    "element_id": "binary"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r2",
+  "relation": "urn:change-saga:cordyceps:relation:registry-config-files-config",
+  "to_revision": "urn:change-saga:cordyceps:story:describe-harness-launch:revision:r2",
+  "rationale": "The current design supplies injection settings and mock-provider control while the consumer owns discovery, launch, shells and binary tests. The revised source still addresses the named obligation without a binary-version or certification requirement.",
+  "created_at": "2026-09-29T21:49:17.065457Z"
+}

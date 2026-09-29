@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "cancel",
+  "slide": "acp-cancel",
+  "rank": 0,
+  "kind": "example",
+  "label": "PROPOSED HOLD UNTIL ABORT",
+  "description": "Cordyceps (proposed): ai + route.untilAborted. Yours: client API, deferred, within and session setup. Node: assert. Illustrative consumer example; not executed.",
+  "selector": {
+    "type": "element",
+    "element_id": "cancel"
+  }
+}

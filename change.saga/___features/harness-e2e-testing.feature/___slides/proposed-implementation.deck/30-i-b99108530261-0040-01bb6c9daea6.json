@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "gate-one-two",
+  "slide": "validation-plan",
+  "rank": 40,
+  "kind": "edge",
+  "label": "prove core",
+  "description": "Library-level tests exercise configuration rendering, provider codecs and mock lifecycle. Real-binary E2E scenarios belong to consumers.",
+  "selector": {
+    "type": "element",
+    "element_id": "gate-one-two"
+  }
+}

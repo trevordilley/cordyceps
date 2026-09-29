@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/citation.schema.json",
+  "version": 3,
+  "id": "native-acp-contract",
+  "kind": "decision",
+  "title": "Use standard ACP payloads at the consumer boundary",
+  "reference": "Current Cordyceps conversation, 2026-09-29: user asks whether ACP output follows the ACP specification so the consuming code can use that format, then explicitly requests updating the Saga stories and implementation specification. Agreed clarification: the real harness or adapter emits ACP for the negotiated version; consumers use their normal ACP client/types; observations preserve original payloads; provider controls do not imply an arbitrary fake ACP peer.",
+  "created_at": "2026-09-29T19:28:05.665942Z"
+}

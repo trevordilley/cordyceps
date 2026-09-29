@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "provider",
+  "slide": "launch-boundary",
+  "rank": 70,
+  "kind": "edge",
+  "label": "provider protocol",
+  "description": "The real harness makes provider API requests to the mock backend.",
+  "selector": {
+    "type": "element",
+    "element_id": "provider"
+  }
+}

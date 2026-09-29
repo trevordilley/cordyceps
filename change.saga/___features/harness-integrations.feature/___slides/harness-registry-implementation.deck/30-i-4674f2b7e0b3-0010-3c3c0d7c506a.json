@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "registration",
+  "slide": "registry-local-api",
+  "rank": 10,
+  "kind": "statement",
+  "label": "One registry contract",
+  "description": "Local and bundled definitions use the same loader. Reject duplicate IDs; snapshot data for a prepared mock so later registrations cannot change it.",
+  "selector": {
+    "type": "element",
+    "element_id": "registration"
+  }
+}

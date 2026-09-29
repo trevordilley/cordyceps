@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-1",
+  "slide": "usage-standalone",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Same control surface",
+  "description": "route + fulfill prescribe output. requests exposes the recorded provider transcript.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-1"
+  }
+}

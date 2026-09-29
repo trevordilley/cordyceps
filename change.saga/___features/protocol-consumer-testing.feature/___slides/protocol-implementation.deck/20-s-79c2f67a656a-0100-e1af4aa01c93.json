@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "acp-cancel",
+  "deck": "protocol-implementation",
+  "title": "Stage 6: cancellation finishes the active turn",
+  "rank": 100,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-0100-e1af4aa01c93.svg",
+  "takeaway": "Cancel is a notification; the original prompt response confirms cancellation and the session may continue.",
+  "reading_order": [
+    "cancel",
+    "race",
+    "nextturn",
+    "failure"
+  ],
+  "exception_rationale": "Code walkthroughs and scenario matrices preserve indentation and align controls with state assertions."
+}

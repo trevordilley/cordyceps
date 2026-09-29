@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "raw-input",
+  "slide": "observability",
+  "rank": 30,
+  "kind": "node",
+  "label": "Exact stdin / stdout / terminal interaction",
+  "description": "Consumer process hooks supply this data. Backend traffic cannot reconstruct exact process I/O.",
+  "selector": {
+    "type": "element",
+    "element_id": "raw-input"
+  }
+}

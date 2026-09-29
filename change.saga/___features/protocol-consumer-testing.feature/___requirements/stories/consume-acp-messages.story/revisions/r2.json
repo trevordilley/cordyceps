@@ -1,0 +1,37 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r2",
+  "story": "urn:change-saga:cordyceps:story:consume-acp-messages",
+  "parents": [
+    "urn:change-saga:cordyceps:story:consume-acp-messages:revision:r1"
+  ],
+  "title": "Verify my client consumes real ACP messages",
+  "statement": "As a developer building tools around AI harnesses, I can prescribe provider responses while my ACP tool or library exchanges messages with a real harness so that I can verify my own message handling and resulting behavior.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:protocol-consumer-scope",
+    "urn:change-saga:cordyceps:citation:native-acp-contract"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "controlled-message-flow",
+      "statement": "A prompt sent through the consumer under test produces a mock-provider request. The real harness or adapter processes the prescribed response and emits ACP messages conforming to the negotiated specification for the consumer to handle with its normal ACP code."
+    },
+    {
+      "id": "protocol-observations",
+      "statement": "The test can inspect the original ACP requests, responses and notifications at the consumer boundary, preserving protocol fields and payloads, including identifiers, errors and extension data when present. Observer metadata stays separate; provider traffic is recorded distinctly."
+    },
+    {
+      "id": "tool-message-flow",
+      "statement": "For a supported tool scenario, the test can prescribe a provider tool call and verify the consumer handling of the resulting real ACP tool updates and any applicable client requests. Tool execution and permission handling follow the actual harness/client integration, not a fabricated tool result."
+    },
+    {
+      "id": "native-consumer-format",
+      "statement": "The consumer can process messages with standard ACP types and client libraries without translating a proprietary Cordyceps event format into ACP. Cordyceps controls provider behavior; the actual harness or adapter remains the producer of its ACP messages."
+    }
+  ],
+  "created_at": "2026-09-29T19:28:06.083803Z"
+}

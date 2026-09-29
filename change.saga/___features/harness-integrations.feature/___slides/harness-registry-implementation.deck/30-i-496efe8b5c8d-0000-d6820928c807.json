@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "manifest",
+  "slide": "registry-manifest",
+  "rank": 0,
+  "kind": "example",
+  "label": "MANIFEST EXCERPT",
+  "description": "Proposed Cordyceps definition, shown as a JavaScript object; save its data as JSON in your definition file. Proposed example; not implemented.",
+  "selector": {
+    "type": "element",
+    "element_id": "manifest"
+  }
+}

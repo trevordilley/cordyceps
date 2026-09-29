@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "gate-one",
+  "slide": "validation-plan",
+  "rank": 10,
+  "kind": "node",
+  "label": "1  Injection data",
+  "description": "Library-level tests exercise configuration rendering, provider codecs and mock lifecycle. Real-binary E2E scenarios belong to consumers.",
+  "selector": {
+    "type": "element",
+    "element_id": "gate-one"
+  }
+}

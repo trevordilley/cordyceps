@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "chunks",
+  "slide": "acp-streaming",
+  "rank": 30,
+  "kind": "risk",
+  "label": "Avoid a false guarantee",
+  "description": "Do not assert one provider segment equals one ACP chunk. If a real adapter buffers all output, report that compatibility limitation rather than faking updates.",
+  "selector": {
+    "type": "element",
+    "element_id": "chunks"
+  }
+}

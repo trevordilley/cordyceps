@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "helpers",
+  "slide": "acp-test-fixture",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Your client API",
+  "description": "client.request, notify, onNotification and close illustrate your client facade. They are not Cordyceps exports or required ACP SDK methods. ACP defines the wire messages.",
+  "selector": {
+    "type": "element",
+    "element_id": "helpers"
+  }
+}

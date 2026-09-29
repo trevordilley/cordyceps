@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "resolution",
+  "slide": "registry-local-api",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Your app and test helpers",
+  "description": "startMyApp and exerciseMyFrontend come from your test helpers. Their names, options and app methods are illustrative consumer code. Cordyceps supplies mock controls and injection values.",
+  "selector": {
+    "type": "element",
+    "element_id": "resolution"
+  }
+}

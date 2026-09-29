@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "provider",
+  "slide": "native-acp-boundary",
+  "rank": 20,
+  "kind": "node",
+  "label": "Cordyceps provider",
+  "description": "Capture model API requests Prescribe text and tool calls Encode provider wire format",
+  "selector": {
+    "type": "element",
+    "element_id": "provider"
+  }
+}

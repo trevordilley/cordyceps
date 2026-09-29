@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r3",
+  "relation": "urn:change-saga:cordyceps:relation:protocol-boundary-launch-protocol-mode",
+  "to_revision": "urn:change-saga:cordyceps:story:launch-protocol-mode:revision:r2",
+  "from_content_digest": "sha256:9427cee90de1a5572d0be0187b1a3dbf42e058c62b081ff1d35ddedb0311251a",
+  "rationale": "Read the r2 story and revised specification: both now require the actual negotiated ACP contract, native payload preservation and the consumer client remaining under test. The specification still addresses this story.",
+  "created_at": "2026-09-29T19:28:10.260068Z"
+}

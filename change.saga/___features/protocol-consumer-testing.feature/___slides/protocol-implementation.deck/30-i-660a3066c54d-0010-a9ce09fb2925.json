@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "assertions",
+  "slide": "acp-wire-messages",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Assert native semantics",
+  "description": "Match responses by the JSON-RPC request id. Route updates by params.sessionId. Preserve unknown extension fields; keep timestamps outside the native payload.",
+  "selector": {
+    "type": "element",
+    "element_id": "assertions"
+  }
+}

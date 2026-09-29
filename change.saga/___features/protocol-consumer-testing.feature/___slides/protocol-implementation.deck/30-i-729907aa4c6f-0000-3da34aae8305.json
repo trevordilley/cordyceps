@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "initialize",
+  "slide": "acp-initialize",
+  "rank": 0,
+  "kind": "example",
+  "label": "CONSUMER TEST — NATIVE ACP PARAMS",
+  "description": "Yours: client API and fixtureDirectory. Node: assert. ACP: initialize / session/new methods and native payloads. Illustrative consumer example; not executed.",
+  "selector": {
+    "type": "element",
+    "element_id": "initialize"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-4",
+  "slide": "registry-contribution",
+  "rank": 40,
+  "kind": "statement",
+  "label": "Bundle and release",
+  "description": "Select that definition by ID through the registry No harness certification or OS/version matrix",
+  "selector": {
+    "type": "element",
+    "element_id": "row-4"
+  }
+}

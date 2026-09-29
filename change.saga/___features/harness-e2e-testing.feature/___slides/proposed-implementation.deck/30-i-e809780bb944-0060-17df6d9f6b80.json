@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "isolation",
+  "slide": "session-lifecycle",
+  "rank": 60,
+  "kind": "risk",
+  "label": "One isolated session per application process tree",
+  "description": "Do not mutate global process.env around parallel tests. Shared apps need an explicit routing contract.",
+  "selector": {
+    "type": "element",
+    "element_id": "isolation"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "start",
+  "slide": "acp-turn-state",
+  "rank": 30,
+  "kind": "edge",
+  "label": "session/prompt",
+  "description": "session/prompt is a distinct transition in the client turn lifecycle.",
+  "selector": {
+    "type": "element",
+    "element_id": "start"
+  }
+}

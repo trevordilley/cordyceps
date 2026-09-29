@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "id": "registry-contribution",
+  "deck": "harness-registry-implementation",
+  "title": "Contribute a definition, not a certification",
+  "rank": 110,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-b81fa88d4af4-0110-b1b968ecef43.svg",
+  "takeaway": "A PR contributes settings and relevant library-level tests; it does not establish binary-version support.",
+  "reading_order": [
+    "row-0",
+    "row-1",
+    "row-2",
+    "row-3",
+    "row-4"
+  ],
+  "exception_rationale": "Code excerpts and comparison matrices align proposed contracts with controls, ownership and observable outcomes."
+}

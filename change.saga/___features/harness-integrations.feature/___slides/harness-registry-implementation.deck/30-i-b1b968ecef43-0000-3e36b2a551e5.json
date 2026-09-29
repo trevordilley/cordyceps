@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-0",
+  "slide": "registry-contribution",
+  "rank": 0,
+  "kind": "statement",
+  "label": "Author definition",
+  "description": "Provider codec + env/args/config recipe No binary discovery or version-probe fields",
+  "selector": {
+    "type": "element",
+    "element_id": "row-0"
+  }
+}

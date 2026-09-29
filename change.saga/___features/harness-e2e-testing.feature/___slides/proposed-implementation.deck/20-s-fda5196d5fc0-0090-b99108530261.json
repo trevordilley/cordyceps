@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "id": "validation-plan",
+  "deck": "proposed-implementation",
+  "title": "Verify the library’s own contracts",
+  "rank": 90,
+  "intent": "conclude",
+  "layout": "evidence",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0090-b99108530261.svg",
+  "takeaway": "Test injection rendering, provider codecs and mock cleanup; consumer E2E tests own real-binary and platform behavior.",
+  "reading_order": [
+    "gate-one",
+    "gate-two",
+    "gate-three",
+    "gate-one-two",
+    "gate-two-three",
+    "known-evidence"
+  ]
+}

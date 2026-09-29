@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-0",
+  "slide": "usage-playwright-test",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Register before launch",
+  "description": "The handler is ready before the app can send requests. This example answers all. Reference: https://playwright.dev/docs/api/class-electron",
+  "selector": {
+    "type": "element",
+    "element_id": "note-0"
+  }
+}

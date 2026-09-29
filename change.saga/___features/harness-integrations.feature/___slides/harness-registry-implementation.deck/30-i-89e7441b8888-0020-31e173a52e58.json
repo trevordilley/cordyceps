@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "binding",
+  "slide": "registry-acp-adapter",
+  "rank": 20,
+  "kind": "risk",
+  "label": "Pass through caller inputs",
+  "description": "If a recipe needs a path, the consumer supplies it. Missing values are input errors; evaluating whether that binary works belongs to consumer tests.",
+  "selector": {
+    "type": "element",
+    "element_id": "binding"
+  }
+}

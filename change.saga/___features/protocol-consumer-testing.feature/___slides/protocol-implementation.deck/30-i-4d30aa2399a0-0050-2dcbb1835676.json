@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "native-payload",
+  "slide": "native-acp-boundary",
+  "rank": 50,
+  "kind": "statement",
+  "label": "Preserve the original ACP payload",
+  "description": "Keep identifiers, methods, params, results, errors and extensions when present. Observer metadata stays separate.",
+  "selector": {
+    "type": "element",
+    "element_id": "native-payload"
+  }
+}

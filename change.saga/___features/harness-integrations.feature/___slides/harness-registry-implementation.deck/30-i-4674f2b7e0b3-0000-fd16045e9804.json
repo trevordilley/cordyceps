@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "usage",
+  "slide": "registry-local-api",
+  "rank": 0,
+  "kind": "example",
+  "label": "PROPOSED STANDALONE API",
+  "description": "Cordyceps (proposed): cordyceps + registry + ai + route. Yours: both imported helpers and app.close. Proposed example; not implemented.",
+  "selector": {
+    "type": "element",
+    "element_id": "usage"
+  }
+}

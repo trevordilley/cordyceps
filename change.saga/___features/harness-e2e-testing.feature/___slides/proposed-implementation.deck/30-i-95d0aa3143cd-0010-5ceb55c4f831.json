@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-0",
+  "slide": "usage-playwright-setup",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Per-test session",
+  "description": "Proposed ai fixture prepares routing and temporary config, then disposes them after use. Reference: https://playwright.dev/docs/test-fixtures",
+  "selector": {
+    "type": "element",
+    "element_id": "note-0"
+  }
+}

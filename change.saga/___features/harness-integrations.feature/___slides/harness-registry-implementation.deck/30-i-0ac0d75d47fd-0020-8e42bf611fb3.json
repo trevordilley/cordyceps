@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-2",
+  "slide": "registry-boundaries",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Mock provider",
+  "description": "Capture HTTP; encode scripted replies Text, streams, tool calls and error controls",
+  "selector": {
+    "type": "element",
+    "element_id": "row-2"
+  }
+}

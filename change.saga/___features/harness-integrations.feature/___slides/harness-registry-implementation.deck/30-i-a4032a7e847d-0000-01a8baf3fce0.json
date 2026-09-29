@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-0",
+  "slide": "registry-failure-tests",
+  "rank": 0,
+  "kind": "statement",
+  "label": "Bad definition",
+  "description": "Unknown token, missing input or absent recipe Assert field-level diagnostics; no binary probes",
+  "selector": {
+    "type": "element",
+    "element_id": "row-0"
+  }
+}

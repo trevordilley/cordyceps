@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r4",
+  "relation": "urn:change-saga:cordyceps:relation:registry-runtime-register-custom-harness",
+  "from_content_digest": "sha256:519ea7ccd976c90ecfeaa14072a1e643da8d8ac9da43e30ad9accf82576886dc",
+  "rationale": "The examples now explicitly import startMyApp from consumer-owned test helpers and distinguish helper names/options from the Cordyceps API. Injection ownership and the story obligations are unchanged.",
+  "created_at": "2026-09-29T21:59:41.793908Z"
+}

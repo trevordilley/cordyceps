@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "arrange",
+  "slide": "acp-initialize",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Arrange",
+  "description": "Use an absolute fixture directory. Empty clientCapabilities deliberately does not advertise filesystem or terminal handlers.",
+  "selector": {
+    "type": "element",
+    "element_id": "arrange"
+  }
+}

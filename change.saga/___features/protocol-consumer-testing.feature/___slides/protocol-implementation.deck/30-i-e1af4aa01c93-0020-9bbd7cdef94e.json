@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "nextturn",
+  "slide": "acp-cancel",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Then test reuse",
+  "description": "Remove the held route, install a normal response, and prompt the same session again. Check the client can start a new turn after cancellation completes.",
+  "selector": {
+    "type": "element",
+    "element_id": "nextturn"
+  }
+}

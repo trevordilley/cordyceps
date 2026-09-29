@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "frame",
+  "slide": "acp-wire-messages",
+  "rank": 0,
+  "kind": "example",
+  "label": "EXAMPLE NOTIFICATION — AGENT → CLIENT",
+  "description": "ACP: illustrative native JSON-RPC envelopes from the real agent. Yours: assertions on received frames. Illustrative consumer example; not executed.",
+  "selector": {
+    "type": "element",
+    "element_id": "frame"
+  }
+}

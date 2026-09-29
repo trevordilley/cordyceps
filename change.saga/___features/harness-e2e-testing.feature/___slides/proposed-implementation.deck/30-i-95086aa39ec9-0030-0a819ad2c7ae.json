@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-2",
+  "slide": "usage-standalone",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Explicit ownership",
+  "description": "Await process completion, then dispose the mock session. This example is non-interactive.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-2"
+  }
+}

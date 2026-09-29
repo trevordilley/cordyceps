@@ -1,0 +1,37 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r2",
+  "story": "urn:change-saga:cordyceps:story:launch-protocol-mode",
+  "parents": [
+    "urn:change-saga:cordyceps:story:launch-protocol-mode:revision:r1"
+  ],
+  "title": "Launch a real harness in the protocol mode my consumer uses",
+  "statement": "As a developer building tools around AI harnesses, I can configure a real installed harness and any required installed adapter for a supported client protocol so that my application or library can exercise its actual protocol integration against a controlled provider.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:protocol-consumer-scope",
+    "urn:change-saga:cordyceps:citation:native-acp-contract"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "explicit-interface",
+      "statement": "The consumer can explicitly select ACP for a supported harness integration and obtain the launch configuration needed for that interface while routing model requests to the mock provider."
+    },
+    {
+      "id": "real-client-connection",
+      "statement": "The consuming application or library uses its own standard ACP client, types and connection implementation with the actual harness or required adapter. Setup selects the ACP launch contract explicitly rather than substituting text mode or a proprietary Cordyceps client protocol."
+    },
+    {
+      "id": "unsupported-combination",
+      "statement": "If the chosen harness, adapter and client interface combination is unsupported, setup reports that incompatibility rather than silently falling back to another launch or output mode."
+    },
+    {
+      "id": "negotiated-contract",
+      "statement": "A supported ACP integration establishes the protocol version and capabilities through ACP initialization. Subsequent exchanges follow that negotiated contract; setup metadata must not pretend an unsupported version or capability is available."
+    }
+  ],
+  "created_at": "2026-09-29T19:28:09.241435Z"
+}

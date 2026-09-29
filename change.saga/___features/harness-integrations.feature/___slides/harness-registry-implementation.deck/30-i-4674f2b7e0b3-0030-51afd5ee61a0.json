@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "ownership",
+  "slide": "registry-local-api",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Two owners",
+  "description": "The app closes its own processes. Cordyceps disposes its listener, held provider requests and generated files. There is no Cordyceps process runner.",
+  "selector": {
+    "type": "element",
+    "element_id": "ownership"
+  }
+}

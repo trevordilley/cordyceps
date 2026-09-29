@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "acp-tools",
+  "deck": "protocol-implementation",
+  "title": "Stage 5: a tool has its own lifecycle",
+  "rank": 90,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-0090-9b44601aa459.svg",
+  "takeaway": "Track partial tool updates by toolCallId and exercise real client permission or filesystem handlers when used.",
+  "reading_order": [
+    "tool",
+    "states",
+    "permissions",
+    "handlers"
+  ],
+  "exception_rationale": "Code walkthroughs and scenario matrices preserve indentation and align controls with state assertions."
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "registry-resolution-row-3",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:registry-resolution:item:row-3",
+  "to": "urn:change-saga:cordyceps:story:describe-harness-launch:criterion:explicit-unsupported",
+  "scope": "self",
+  "rationale": "Explains the proposed implementation mechanism and observable checks for this accepted product obligation; no delivery is claimed.",
+  "to_revision": "urn:change-saga:cordyceps:story:describe-harness-launch:revision:r1",
+  "state": "superseded",
+  "created_at": "2026-09-29T21:32:33.692381Z",
+  "superseded_at": "2026-09-29T21:48:48.644762Z"
+}

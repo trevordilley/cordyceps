@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "proof-2",
+  "slide": "acp-proof-matrix",
+  "rank": 20,
+  "kind": "statement",
+  "label": "ACP handshake / sessions",
+  "description": "Consumer’s real adapter and client. Consumer scenario; no run claimed.",
+  "selector": {
+    "type": "element",
+    "element_id": "proof-2"
+  }
+}

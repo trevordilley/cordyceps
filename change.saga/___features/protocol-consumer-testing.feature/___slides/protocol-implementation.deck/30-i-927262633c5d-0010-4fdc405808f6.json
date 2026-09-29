@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "proof-1",
+  "slide": "acp-proof-matrix",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Codex model route",
+  "description": "Real CLI + local Responses mock. Historical text exchange; not ACP.",
+  "selector": {
+    "type": "element",
+    "element_id": "proof-1"
+  }
+}

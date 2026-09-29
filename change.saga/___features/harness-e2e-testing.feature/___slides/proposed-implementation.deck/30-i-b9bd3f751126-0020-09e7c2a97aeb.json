@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "harness",
+  "slide": "real-tools",
+  "rank": 20,
+  "kind": "node",
+  "label": "Real AI harness",
+  "description": "Parse provider response Apply normal permissions Execute the built-in tool",
+  "selector": {
+    "type": "element",
+    "element_id": "harness"
+  }
+}

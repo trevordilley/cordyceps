@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "native",
+  "slide": "registry-acp-adapter",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Consumer-selected recipe",
+  "description": "The flags above are fictional examples. Definitions describe settings for a chosen invocation; Cordyceps does not discover or install an adapter.",
+  "selector": {
+    "type": "element",
+    "element_id": "native"
+  }
+}

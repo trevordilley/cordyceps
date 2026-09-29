@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "adapter",
+  "slide": "npm-core",
+  "rank": 40,
+  "kind": "node",
+  "label": "Injection definition",
+  "description": "Environment + args + config Select provider codec No binary management",
+  "selector": {
+    "type": "element",
+    "element_id": "adapter"
+  }
+}

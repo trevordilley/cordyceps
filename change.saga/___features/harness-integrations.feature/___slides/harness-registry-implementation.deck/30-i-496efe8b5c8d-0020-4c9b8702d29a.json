@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "versions",
+  "slide": "registry-manifest",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Schema format only",
+  "description": "schemaVersion identifies the JSON format. There are no binary version ranges, OS support tables or automatic compatibility selectors.",
+  "selector": {
+    "type": "element",
+    "element_id": "versions"
+  }
+}

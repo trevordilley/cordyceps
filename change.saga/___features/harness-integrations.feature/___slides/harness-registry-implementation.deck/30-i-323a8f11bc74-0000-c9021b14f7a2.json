@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-0",
+  "slide": "registry-runtime-lifecycle",
+  "rank": 0,
+  "kind": "statement",
+  "label": "Validate data",
+  "description": "Select definition, mode and required inputs No executable or shell interaction",
+  "selector": {
+    "type": "element",
+    "element_id": "row-0"
+  }
+}

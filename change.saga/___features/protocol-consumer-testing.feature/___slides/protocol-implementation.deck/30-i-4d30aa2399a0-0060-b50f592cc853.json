@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "real-behavior",
+  "slide": "native-acp-boundary",
+  "rank": 60,
+  "kind": "risk",
+  "label": "Provider control does not synthesize arbitrary ACP messages",
+  "description": "Negotiate and exercise the real lifecycle. A directly scripted ACP peer would be a separate capability.",
+  "selector": {
+    "type": "element",
+    "element_id": "real-behavior"
+  }
+}

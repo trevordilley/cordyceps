@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "known-evidence",
+  "slide": "validation-plan",
+  "rank": 60,
+  "kind": "risk",
+  "label": "Real-binary tests belong to the consumer",
+  "description": "Library-level tests exercise configuration rendering, provider codecs and mock lifecycle. Real-binary E2E scenarios belong to consumers.",
+  "selector": {
+    "type": "element",
+    "element_id": "known-evidence"
+  }
+}

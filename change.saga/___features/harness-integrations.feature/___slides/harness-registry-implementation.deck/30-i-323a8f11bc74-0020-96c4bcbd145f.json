@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-2",
+  "slide": "registry-runtime-lifecycle",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Render injection",
+  "description": "Substitute values; serialize optional config On failure, close listener and remove owned files",
+  "selector": {
+    "type": "element",
+    "element_id": "row-2"
+  }
+}

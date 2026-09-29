@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "active",
+  "slide": "session-lifecycle",
+  "rank": 20,
+  "kind": "node",
+  "label": "Exercise",
+  "description": "App owns real processes Session records provider traffic Test drives UI / assertions",
+  "selector": {
+    "type": "element",
+    "element_id": "active"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "proof-5",
+  "slide": "acp-proof-matrix",
+  "rank": 50,
+  "kind": "statement",
+  "label": "Malformed / arbitrary ACP frames",
+  "description": "Explicit mock peer or fault injector. Separate capability; not implemented.",
+  "selector": {
+    "type": "element",
+    "element_id": "proof-5"
+  }
+}

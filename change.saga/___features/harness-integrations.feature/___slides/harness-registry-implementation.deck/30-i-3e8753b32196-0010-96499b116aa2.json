@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-1",
+  "slide": "registry-delivery-plan",
+  "rank": 10,
+  "kind": "statement",
+  "label": "2 · Injection",
+  "description": "Pure env/args rendering + generated config Expected outputs with no process side effects",
+  "selector": {
+    "type": "element",
+    "element_id": "row-1"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r2",
+  "relation": "urn:change-saga:cordyceps:relation:launch-design-wiring",
+  "from_content_digest": "sha256:13c96059cf2034f74e491494969a65d75b979e80b02e31a90bdae5d5eda3a1ac",
+  "rationale": "Reviewed the complete design and criterion. The relationship is unchanged; use the CLI-resolved design content identity instead of the raw entrypoint byte digest.",
+  "created_at": "2026-09-29T16:23:36.246868Z"
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r2",
+  "relation": "urn:change-saga:cordyceps:relation:registry-runtime-register-custom-harness",
+  "from_content_digest": "sha256:21118165230cb7d0fee6a306594564addb59b6df77b9b6869dbbe1f8c24b8613",
+  "rationale": "Only stable heading anchors were added; the reviewed design prose and its relationship to the accepted story are unchanged.",
+  "created_at": "2026-09-29T21:33:30.471943Z"
+}

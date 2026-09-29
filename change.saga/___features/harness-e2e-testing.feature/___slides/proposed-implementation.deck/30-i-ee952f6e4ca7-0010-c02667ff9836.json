@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "standalone",
+  "slide": "npm-core",
+  "rank": 10,
+  "kind": "node",
+  "label": "Standalone consumer",
+  "description": "Scripts, experiments, custom test frameworks",
+  "selector": {
+    "type": "element",
+    "element_id": "standalone"
+  }
+}

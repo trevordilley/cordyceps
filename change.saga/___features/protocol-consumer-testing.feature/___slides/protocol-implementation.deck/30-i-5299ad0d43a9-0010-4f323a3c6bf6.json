@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "control",
+  "slide": "acp-streaming",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Your gate; our response",
+  "description": "deferred is your test utility returning a promise and resolve function. The stream events and fulfill API are proposed Cordyceps controls; the real agent emits ACP updates.",
+  "selector": {
+    "type": "element",
+    "element_id": "control"
+  }
+}

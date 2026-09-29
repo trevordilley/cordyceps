@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-3",
+  "slide": "registry-delivery-plan",
+  "rank": 30,
+  "kind": "statement",
+  "label": "4 · Lifecycle",
+  "description": "Standalone + Playwright backend ownership Isolation, cancellation and cleanup tests",
+  "selector": {
+    "type": "element",
+    "element_id": "row-3"
+  }
+}

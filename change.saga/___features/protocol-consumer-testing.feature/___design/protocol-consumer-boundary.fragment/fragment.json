@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "id": "protocol-consumer-boundary",
+  "title": "Client protocols and provider mocking are separate boundaries",
+  "media_type": "text/markdown",
+  "entrypoint": "cordyceps-protocol-boundary.md"
+}

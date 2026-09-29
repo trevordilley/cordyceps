@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "resume",
+  "slide": "acp-optional-lifecycle",
+  "rank": 10,
+  "kind": "node",
+  "label": "Resume: restore context",
+  "description": "Gate on sessionCapabilities.resume. Call session/resume with the required session setup. Assert no history replay before the response. Then prompt and verify the restored conversation.",
+  "selector": {
+    "type": "element",
+    "element_id": "resume"
+  }
+}

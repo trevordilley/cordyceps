@@ -1,0 +1,8 @@
+{
+  "version": 4,
+  "id": "harness-registry-implementation",
+  "title": "Proposed injection registry implementation",
+  "role": "change",
+  "rank": 0,
+  "objective": "Explain declarative injection settings and mock-provider control while consumers retain all binary, shell and process responsibilities."
+}

@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "id": "acp-lifetimes",
+  "deck": "protocol-implementation",
+  "title": "Test lifetimes independently",
+  "rank": 10,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-79c2f67a656a-0010-ab0d074932fc.svg",
+  "takeaway": "Process, connection, session, turn, message and tool state need distinct assertions.",
+  "reading_order": [
+    "connection",
+    "session",
+    "session-b",
+    "messages",
+    "tools"
+  ],
+  "exception_rationale": "Code walkthroughs and scenario matrices preserve indentation and align controls with state assertions."
+}

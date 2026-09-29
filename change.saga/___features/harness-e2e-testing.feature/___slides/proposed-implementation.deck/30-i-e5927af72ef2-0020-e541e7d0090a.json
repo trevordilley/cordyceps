@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "match",
+  "slide": "request-routing",
+  "rank": 20,
+  "kind": "node",
+  "label": "Select handler",
+  "description": "Match request predicates Await consumer callback Record handler outcome",
+  "selector": {
+    "type": "element",
+    "element_id": "match"
+  }
+}

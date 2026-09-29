@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r4",
+  "relation": "urn:change-saga:cordyceps:relation:protocol-boundary-exercise-acp-lifecycle",
+  "from_content_digest": "sha256:c856bd63871d6768009f9ee338fd1e8c5685401780a8548b7f1995d857f1dbd1",
+  "rationale": "The current design supplies injection settings and mock-provider control while the consumer owns discovery, launch, shells and binary tests. The revised source still addresses the named obligation without a binary-version or certification requirement.",
+  "created_at": "2026-09-29T21:49:16.628866Z"
+}

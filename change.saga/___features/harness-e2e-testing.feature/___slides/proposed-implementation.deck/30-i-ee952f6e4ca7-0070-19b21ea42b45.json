@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "core-adapter",
+  "slide": "npm-core",
+  "rank": 70,
+  "kind": "edge",
+  "label": "delegates",
+  "description": "delegates",
+  "selector": {
+    "type": "element",
+    "element_id": "core-adapter"
+  }
+}

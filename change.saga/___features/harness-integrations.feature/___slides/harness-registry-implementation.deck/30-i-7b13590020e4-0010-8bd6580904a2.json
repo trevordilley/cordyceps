@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "raw",
+  "slide": "registry-provider-codec",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Observe provider traffic",
+  "description": "Retain actual tool schemas and provider IDs. Do not infer ACP session state from HTTP traffic; consumer instrumentation observes its ACP client.",
+  "selector": {
+    "type": "element",
+    "element_id": "raw"
+  }
+}

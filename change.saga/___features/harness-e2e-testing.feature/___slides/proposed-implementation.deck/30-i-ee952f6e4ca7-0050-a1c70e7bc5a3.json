@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "standalone-core",
+  "slide": "npm-core",
+  "rank": 50,
+  "kind": "edge",
+  "label": "uses",
+  "description": "uses",
+  "selector": {
+    "type": "element",
+    "element_id": "standalone-core"
+  }
+}

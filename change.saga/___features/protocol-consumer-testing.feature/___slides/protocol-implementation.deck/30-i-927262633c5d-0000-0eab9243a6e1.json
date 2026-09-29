@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "proof-0",
+  "slide": "acp-proof-matrix",
+  "rank": 0,
+  "kind": "statement",
+  "label": "Launch mechanics",
+  "description": "Earlier exploratory experiments. Historical; no shell-support obligation.",
+  "selector": {
+    "type": "element",
+    "element_id": "proof-0"
+  }
+}

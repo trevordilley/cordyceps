@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "file-read",
+  "slide": "real-tools",
+  "rank": 60,
+  "kind": "edge",
+  "label": "3  Read",
+  "description": "3  Read",
+  "selector": {
+    "type": "element",
+    "element_id": "file-read"
+  }
+}

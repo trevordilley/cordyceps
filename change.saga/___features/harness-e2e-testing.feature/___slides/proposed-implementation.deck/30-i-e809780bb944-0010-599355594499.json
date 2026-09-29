@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "setup",
+  "slide": "session-lifecycle",
+  "rank": 10,
+  "kind": "node",
+  "label": "Prepare",
+  "description": "Library: backend + config Test: handlers + launch env Register routes before app start",
+  "selector": {
+    "type": "element",
+    "element_id": "setup"
+  }
+}

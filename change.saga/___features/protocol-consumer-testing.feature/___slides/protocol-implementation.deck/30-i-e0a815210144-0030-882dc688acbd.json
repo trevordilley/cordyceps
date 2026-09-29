@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "identity",
+  "slide": "acp-tool-provider",
+  "rank": 30,
+  "kind": "risk",
+  "label": "Keep IDs at their boundary",
+  "description": "tools and toolResults are proposed adapter views. Do not assume ACP toolCallId equals the provider call ID; assert the actual ACP identity on the client side.",
+  "selector": {
+    "type": "element",
+    "element_id": "identity"
+  }
+}

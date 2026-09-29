@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "encode-deliver",
+  "slide": "request-routing",
+  "rank": 70,
+  "kind": "edge",
+  "label": "respond",
+  "description": "respond",
+  "selector": {
+    "type": "element",
+    "element_id": "encode-deliver"
+  }
+}

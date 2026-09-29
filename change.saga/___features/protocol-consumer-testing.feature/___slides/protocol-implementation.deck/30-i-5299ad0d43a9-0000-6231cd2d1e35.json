@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "stream",
+  "slide": "acp-streaming",
+  "rank": 0,
+  "kind": "example",
+  "label": "PROPOSED STREAM CONTROL",
+  "description": "Cordyceps (proposed): ai + route + stream events. Yours: client API and deferred. Playwright: expect. Illustrative consumer example; not executed.",
+  "selector": {
+    "type": "element",
+    "element_id": "stream"
+  }
+}

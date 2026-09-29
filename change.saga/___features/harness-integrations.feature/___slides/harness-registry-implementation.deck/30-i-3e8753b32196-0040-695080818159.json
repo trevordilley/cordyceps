@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-4",
+  "slide": "registry-delivery-plan",
+  "rank": 40,
+  "kind": "statement",
+  "label": "5 · Contributions",
+  "description": "Add bundled recipes through the same loader Configuration-focused PR path; no certification",
+  "selector": {
+    "type": "element",
+    "element_id": "row-4"
+  }
+}

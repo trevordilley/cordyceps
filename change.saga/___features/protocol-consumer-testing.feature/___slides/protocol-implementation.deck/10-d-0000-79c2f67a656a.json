@@ -1,0 +1,8 @@
+{
+  "version": 4,
+  "id": "protocol-implementation",
+  "title": "ACP lifecycles and consumer testing",
+  "role": "change",
+  "rank": 0,
+  "objective": "Explain lifecycle-specific setup, native ACP actions, provider controls, consumer assertions and proof limits through concrete proposed test examples."
+}

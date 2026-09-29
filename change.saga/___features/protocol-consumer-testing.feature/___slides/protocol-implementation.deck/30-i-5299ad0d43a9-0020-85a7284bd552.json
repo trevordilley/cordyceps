@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "proof",
+  "slide": "acp-streaming",
+  "rank": 20,
+  "kind": "statement",
+  "label": "What the test proves",
+  "description": "An incremental consumer update occurs while the turn is still running, followed by final assembled text and a terminal prompt response.",
+  "selector": {
+    "type": "element",
+    "element_id": "proof"
+  }
+}

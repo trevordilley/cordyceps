@@ -1,0 +1,23 @@
+{
+  "version": 4,
+  "id": "launch-boundary",
+  "deck": "proposed-implementation",
+  "title": "Configure the app before it starts",
+  "rank": 20,
+  "intent": "trace",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0020-78cb5a54e6a0.svg",
+  "takeaway": "Prepare injection settings before the app needs them; the app owns executable discovery and launch.",
+  "reading_order": [
+    "prepare",
+    "app",
+    "binary",
+    "backend",
+    "app-env",
+    "discovery",
+    "provider",
+    "process-boundary"
+  ],
+  "exception_rationale": "Four stages and three directed transitions establish the flow; one additional risk Item explains the boundary below the diagram. Eight Items fit without reducing text size."
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "session",
+  "slide": "acp-lifetimes",
+  "rank": 10,
+  "kind": "node",
+  "label": "Session A",
+  "description": "session/new → ready Prompt 1 → complete Prompt 2 → cancelled Session remains addressable",
+  "selector": {
+    "type": "element",
+    "element_id": "session"
+  }
+}

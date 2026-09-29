@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "validation",
+  "slide": "registry-manifest",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Validate the file",
+  "description": "Check field types, known tokens, provider codec and requested recipe. No version probe, executable lookup or shell inspection.",
+  "selector": {
+    "type": "element",
+    "element_id": "validation"
+  }
+}

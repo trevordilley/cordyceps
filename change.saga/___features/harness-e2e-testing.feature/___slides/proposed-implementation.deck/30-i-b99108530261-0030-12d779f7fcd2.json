@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "gate-three",
+  "slide": "validation-plan",
+  "rank": 30,
+  "kind": "node",
+  "label": "3  Mock lifecycle",
+  "description": "Library-level tests exercise configuration rendering, provider codecs and mock lifecycle. Real-binary E2E scenarios belong to consumers.",
+  "selector": {
+    "type": "element",
+    "element_id": "gate-three"
+  }
+}

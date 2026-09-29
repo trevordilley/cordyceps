@@ -1,0 +1,30 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:describe-harness-launch",
+  "parents": [],
+  "title": "Describe provider overrides and ACP launch in configuration",
+  "statement": "As a harness author or integration contributor, I can describe the setup needed by my harness so that Cordyceps can derive its provider override and selected launch mode from the definition instead of requiring consumers to implement harness-specific wiring.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-integration-author"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:harness-extension-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "provider-override-recipe",
+      "statement": "The integration definition can express the configuration required to route the installed harness to the mock provider, including its supported environment or other configuration mechanism."
+    },
+    {
+      "id": "acp-launch-recipe",
+      "statement": "For an ACP-capable integration, the definition describes how to invoke the installed harness and any required installed adapter in ACP mode; Cordyceps derives the corresponding launch configuration."
+    },
+    {
+      "id": "explicit-unsupported",
+      "statement": "When the definition cannot support the selected mode or required provider adapter, setup reports the unsupported combination rather than substituting a different interface."
+    }
+  ],
+  "created_at": "2026-09-29T21:23:15.444149Z"
+}

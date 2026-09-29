@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "boundary",
+  "slide": "acp-initialize",
+  "rank": 30,
+  "kind": "risk",
+  "label": "What this does not prove",
+  "description": "A ready connection is not evidence that provider routing works. The next stage must produce a real model request. Auth failure and version mismatch need separate scenarios.",
+  "selector": {
+    "type": "element",
+    "element_id": "boundary"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "roundtrip",
+  "slide": "acp-tool-provider",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Observe two model requests",
+  "description": "First request: return tool-call semantics. Follow-up request: assert the real file content before sending final text. Additional retries or requests remain observable.",
+  "selector": {
+    "type": "element",
+    "element_id": "roundtrip"
+  }
+}

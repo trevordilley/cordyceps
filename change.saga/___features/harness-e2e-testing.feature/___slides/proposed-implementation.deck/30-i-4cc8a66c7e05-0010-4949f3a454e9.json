@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "initial",
+  "slide": "shell-startup",
+  "rank": 10,
+  "kind": "node",
+  "label": "Injection values",
+  "description": "The consuming app owns shell setup and executable invocation. Cordyceps supplies injection values without managing startup files.",
+  "selector": {
+    "type": "element",
+    "element_id": "initial"
+  }
+}

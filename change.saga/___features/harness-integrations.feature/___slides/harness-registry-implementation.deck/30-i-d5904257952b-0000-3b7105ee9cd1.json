@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-0",
+  "slide": "registry-resolution",
+  "rank": 0,
+  "kind": "statement",
+  "label": "JSON structure",
+  "description": "Validate IDs, fields and operation types Report definition ID and JSON field",
+  "selector": {
+    "type": "element",
+    "element_id": "row-0"
+  }
+}

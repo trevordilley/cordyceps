@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "setup",
+  "slide": "acp-tool-provider",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Arrange the real read",
+  "description": "Create a fixture containing \"fixture contents\". Use the harness’s actual permission path. Read and file_path are version-specific tool names and arguments.",
+  "selector": {
+    "type": "element",
+    "element_id": "setup"
+  }
+}

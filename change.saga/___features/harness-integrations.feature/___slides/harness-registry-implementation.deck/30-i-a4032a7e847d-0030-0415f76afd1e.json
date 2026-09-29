@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-3",
+  "slide": "registry-failure-tests",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Cleanup failure path",
+  "description": "Fail file write after backend allocation Assert listener closes and owned files vanish",
+  "selector": {
+    "type": "element",
+    "element_id": "row-3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "consumer",
+  "slide": "native-acp-boundary",
+  "rank": 0,
+  "kind": "node",
+  "label": "Consumer under test",
+  "description": "Existing ACP client + types Session state + client handlers Assertions on protocol behavior",
+  "selector": {
+    "type": "element",
+    "element_id": "consumer"
+  }
+}

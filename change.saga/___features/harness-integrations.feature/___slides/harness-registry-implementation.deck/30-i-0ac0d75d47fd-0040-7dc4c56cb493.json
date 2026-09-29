@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-4",
+  "slide": "registry-boundaries",
+  "rank": 40,
+  "kind": "statement",
+  "label": "Consumer test",
+  "description": "Drive its app and inspect the mock traffic Decide what real-binary behavior to exercise",
+  "selector": {
+    "type": "element",
+    "element_id": "row-4"
+  }
+}

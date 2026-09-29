@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "failure",
+  "slide": "acp-cancel",
+  "rank": 30,
+  "kind": "risk",
+  "label": "Timeout is a result",
+  "description": "A hung cancel is a failed scenario. Cleanup must terminate owned processes and abort held handlers; never turn a timeout into a fabricated ACP cancellation.",
+  "selector": {
+    "type": "element",
+    "element_id": "failure"
+  }
+}

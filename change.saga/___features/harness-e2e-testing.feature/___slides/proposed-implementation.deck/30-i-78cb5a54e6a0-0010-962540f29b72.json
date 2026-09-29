@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "prepare",
+  "slide": "launch-boundary",
+  "rank": 10,
+  "kind": "node",
+  "label": "1  Prepare session",
+  "description": "Start mock backend Render injection settings Prepare isolated config",
+  "selector": {
+    "type": "element",
+    "element_id": "prepare"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "scope",
+  "slide": "acp-wire-messages",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Consumer behavior",
+  "description": "Assert text assembly and state transitions. Keep thought, tool, plan and other update kinds distinct; a text-only assertion does not cover every message type.",
+  "selector": {
+    "type": "element",
+    "element_id": "scope"
+  }
+}

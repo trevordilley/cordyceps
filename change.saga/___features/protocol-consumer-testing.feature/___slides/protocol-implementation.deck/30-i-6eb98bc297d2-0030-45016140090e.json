@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "modes",
+  "slide": "acp-optional-lifecycle",
+  "rank": 30,
+  "kind": "node",
+  "label": "Modes: change advertised behavior",
+  "description": "Select only a mode in availableModes. Call session/set_mode with sessionId and modeId. Assert the consumer reflects the resulting mode. A session mode is not the CLI-versus-ACP launch mode.",
+  "selector": {
+    "type": "element",
+    "element_id": "modes"
+  }
+}

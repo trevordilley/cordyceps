@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "shells",
+  "slide": "registry-config-files",
+  "rank": 30,
+  "kind": "risk",
+  "label": "No shell knowledge",
+  "description": "The app applies the returned settings through its existing setup. Cordyceps never loads, forwards, patches or models .zshrc and other startup files.",
+  "selector": {
+    "type": "element",
+    "element_id": "shells"
+  }
+}

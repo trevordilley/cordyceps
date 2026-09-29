@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-1",
+  "slide": "usage-tool-call",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Real permissions apply",
+  "description": "Use a disposable fixture file. Grant normal test permissions or drive the permission prompt.",
+  "selector": {
+    "type": "element",
+    "element_id": "note-1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "restore",
+  "slide": "shell-startup",
+  "rank": 60,
+  "kind": "edge",
+  "label": "reapply",
+  "description": "The consuming app owns shell setup and executable invocation. Cordyceps supplies injection values without managing startup files.",
+  "selector": {
+    "type": "element",
+    "element_id": "restore"
+  }
+}

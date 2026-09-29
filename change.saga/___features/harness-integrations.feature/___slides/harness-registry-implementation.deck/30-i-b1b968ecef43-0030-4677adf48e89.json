@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-3",
+  "slide": "registry-contribution",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Submit PR",
+  "description": "Definition + examples or focused library tests New wire format adds codec code and fixtures",
+  "selector": {
+    "type": "element",
+    "element_id": "row-3"
+  }
+}

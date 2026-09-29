@@ -1,0 +1,14 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "launch-design-standalone",
+  "type": "addresses",
+  "from": "urn:change-saga:cordyceps:fragment:launch-injection",
+  "to": "urn:change-saga:cordyceps:story:standalone-programmatic-use:criterion:standalone-setup",
+  "scope": "self",
+  "rationale": "Proposes a prepared session with environment and optional launcher outputs usable by a standalone consumer.",
+  "to_revision": "urn:change-saga:cordyceps:story:standalone-programmatic-use:revision:r1",
+  "from_content_digest": "sha256:04dae1f300ef98ba490572dfdd3db94092633765fc0babc1b0135151b5aeeba0",
+  "state": "active",
+  "created_at": "2026-09-29T16:22:28.775747Z"
+}

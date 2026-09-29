@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "backend",
+  "slide": "launch-boundary",
+  "rank": 40,
+  "kind": "node",
+  "label": "4  Mock provider",
+  "description": "Observe model requests Invoke test handlers Return chosen responses",
+  "selector": {
+    "type": "element",
+    "element_id": "backend"
+  }
+}

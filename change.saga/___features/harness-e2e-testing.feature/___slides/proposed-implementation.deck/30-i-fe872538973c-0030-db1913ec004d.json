@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "explicit",
+  "slide": "launch-surfaces",
+  "rank": 30,
+  "kind": "node",
+  "label": "configFiles",
+  "description": "One of the environment, argument or generated-file injection surfaces applied by the consuming app; no required launcher or binary resolver.",
+  "selector": {
+    "type": "element",
+    "element_id": "explicit"
+  }
+}

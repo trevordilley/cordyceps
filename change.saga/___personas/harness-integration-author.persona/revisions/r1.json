@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/persona-revision.schema.json",
+  "version": 5,
+  "id": "r1",
+  "persona": "urn:change-saga:cordyceps:persona:harness-integration-author",
+  "parents": [],
+  "name": "Harness author or integration contributor",
+  "description": "Builds an AI harness or maintains an integration for an existing harness. Needs to describe how its installed binary launches and reaches a controlled provider so it can work with Cordyceps privately or be contributed to the supported suite.",
+  "created_at": "2026-09-29T21:23:15.182828Z"
+}

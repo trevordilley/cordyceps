@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-2",
+  "slide": "registry-contribution",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Show usage",
+  "description": "Example of applying settings in a consumer app Consumer chooses whether to run real-binary E2E",
+  "selector": {
+    "type": "element",
+    "element_id": "row-2"
+  }
+}

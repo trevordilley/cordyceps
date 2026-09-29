@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "sample",
+  "slide": "usage-tool-call",
+  "rank": 0,
+  "kind": "example",
+  "label": "Proposed code sample",
+  "description": "Cordyceps (proposed): ai + route + toolResults. Yours: fixturePath, file setup, app drive and assertions. Proposed example; not implemented.",
+  "selector": {
+    "type": "element",
+    "element_id": "sample"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "extensions",
+  "slide": "registry-provider-codec",
+  "rank": 30,
+  "kind": "risk",
+  "label": "Two contribution shapes",
+  "description": "Existing provider API: add JSON. New provider wire protocol: add a codec. Neither requires a Cordyceps harness runner or binary support policy.",
+  "selector": {
+    "type": "element",
+    "element_id": "extensions"
+  }
+}

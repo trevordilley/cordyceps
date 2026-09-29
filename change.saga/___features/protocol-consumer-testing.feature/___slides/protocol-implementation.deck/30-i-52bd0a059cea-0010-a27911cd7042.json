@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "launch",
+  "slide": "acp-test-fixture",
+  "rank": 10,
+  "kind": "statement",
+  "label": "What the helper receives",
+  "description": "The consumer helper applies ai.environment(baseEnv), ai.args and generated files through its own process setup and chooses its own binary.",
+  "selector": {
+    "type": "element",
+    "element_id": "launch"
+  }
+}

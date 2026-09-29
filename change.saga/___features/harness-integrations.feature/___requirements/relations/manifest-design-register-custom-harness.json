@@ -1,0 +1,14 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "manifest-design-register-custom-harness",
+  "type": "addresses",
+  "from": "urn:change-saga:cordyceps:fragment:harness-manifest-registry",
+  "to": "urn:change-saga:cordyceps:story:register-custom-harness",
+  "scope": "self",
+  "rationale": "The proposed shared manifest and registry contract explains local registration, declarative launch derivation and the path to a bundled contribution; it does not claim delivered implementation.",
+  "to_revision": "urn:change-saga:cordyceps:story:register-custom-harness:revision:r1",
+  "from_content_digest": "sha256:fcdd8dc2b5a4fc2ccbc5818eb59f2a9148f1471bda5e086d5bdf228aa26f9c8d",
+  "state": "active",
+  "created_at": "2026-09-29T21:23:26.681544Z"
+}

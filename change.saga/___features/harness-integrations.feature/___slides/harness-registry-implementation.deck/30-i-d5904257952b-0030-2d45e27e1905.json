@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-3",
+  "slide": "registry-resolution",
+  "rank": 30,
+  "kind": "statement",
+  "label": "Runtime values",
+  "description": "Check tokens and required caller inputs Unknown token or missing input fails clearly",
+  "selector": {
+    "type": "element",
+    "element_id": "row-3"
+  }
+}

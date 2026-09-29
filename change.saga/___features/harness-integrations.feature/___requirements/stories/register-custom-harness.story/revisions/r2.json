@@ -1,0 +1,29 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r2",
+  "story": "urn:change-saga:cordyceps:story:register-custom-harness",
+  "parents": [
+    "urn:change-saga:cordyceps:story:register-custom-harness:revision:r1"
+  ],
+  "title": "Register injection settings for my own harness",
+  "statement": "As a harness author or integration contributor, I can register my harness’s injection definition so that my application can use Cordyceps with the binary it already launches, without requiring a bundled integration.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-integration-author"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:harness-extension-scope",
+    "urn:change-saga:cordyceps:citation:injection-only-library-boundary"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "local-definition",
+      "statement": "A consumer can register a custom harness definition without contributing it to the bundled registry; Cordyceps does not require discovering, launching or probing the installed binary to prepare its injection settings."
+    },
+    {
+      "id": "mock-provider-exchange",
+      "statement": "When the consumer applies the definition’s injection settings through its own process setup, the mock backend can capture provider requests and return prescribed responses through the existing library API."
+    }
+  ],
+  "created_at": "2026-09-29T21:42:03.070397Z"
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-4",
+  "slide": "registry-runtime-lifecycle",
+  "rank": 40,
+  "kind": "statement",
+  "label": "Dispose mock",
+  "description": "Abort held routes; close backend; remove files Idempotent; never discover or kill app processes",
+  "selector": {
+    "type": "element",
+    "element_id": "row-4"
+  }
+}

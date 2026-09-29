@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-1",
+  "slide": "registry-failure-tests",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Environment merge",
+  "description": "Base env + removals + generated endpoint Assert output values and unchanged input",
+  "selector": {
+    "type": "element",
+    "element_id": "row-1"
+  }
+}

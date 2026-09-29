@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "close",
+  "slide": "acp-optional-lifecycle",
+  "rank": 20,
+  "kind": "node",
+  "label": "Close: release active session",
+  "description": "Gate on sessionCapabilities.close. Call session/close with sessionId. Assert pending work ends and resources are released. Closing one session is not killing the whole agent.",
+  "selector": {
+    "type": "element",
+    "element_id": "close"
+  }
+}

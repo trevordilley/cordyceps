@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "registry-contribution-row-3",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:registry-contribution:item:row-3",
+  "to": "urn:change-saga:cordyceps:story:contribute-harness-integration:criterion:contribution-path",
+  "scope": "self",
+  "rationale": "Explains the proposed implementation mechanism and observable checks for this accepted product obligation; no delivery is claimed.",
+  "to_revision": "urn:change-saga:cordyceps:story:contribute-harness-integration:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T21:32:33.922583Z"
+}

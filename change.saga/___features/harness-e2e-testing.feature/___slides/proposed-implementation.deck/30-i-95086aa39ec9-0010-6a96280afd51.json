@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "note-0",
+  "slide": "usage-standalone",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Normal process API",
+  "description": "execFile runs installed Claude. Use an absolute installed path when normal discovery needs it. Reference: https://nodejs.org/api/child_process.html",
+  "selector": {
+    "type": "element",
+    "element_id": "note-0"
+  }
+}

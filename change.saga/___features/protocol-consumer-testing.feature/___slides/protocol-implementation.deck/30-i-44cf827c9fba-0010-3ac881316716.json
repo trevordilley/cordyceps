@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "setup",
+  "slide": "acp-sessions",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Arrange",
+  "description": "setup = { cwd: absoluteFixtureDirectory, mcpServers: [] }. Use this scenario’s routes instead of the catch-all route from the fixture example.",
+  "selector": {
+    "type": "element",
+    "element_id": "setup"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "env",
+  "slide": "launch-surfaces",
+  "rank": 10,
+  "kind": "node",
+  "label": "environment(baseEnv)",
+  "description": "One of the environment, argument or generated-file injection surfaces applied by the consuming app; no required launcher or binary resolver.",
+  "selector": {
+    "type": "element",
+    "element_id": "env"
+  }
+}

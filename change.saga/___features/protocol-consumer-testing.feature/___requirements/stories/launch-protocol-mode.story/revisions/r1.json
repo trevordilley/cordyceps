@@ -1,0 +1,30 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:launch-protocol-mode",
+  "parents": [],
+  "title": "Launch a real harness in the protocol mode my consumer uses",
+  "statement": "As a developer building tools around AI harnesses, I can configure a real installed harness and any required installed adapter for a supported client protocol so that my application or library can exercise its actual protocol integration against a controlled provider.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:protocol-consumer-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "explicit-interface",
+      "statement": "The consumer can explicitly select ACP for a supported harness integration and obtain the launch configuration needed for that interface while routing model requests to the mock provider."
+    },
+    {
+      "id": "real-client-connection",
+      "statement": "The consuming application or library uses its own ACP connection implementation to communicate with the actual harness or required adapter; a text-mode invocation is not substituted for that connection."
+    },
+    {
+      "id": "unsupported-combination",
+      "statement": "If the chosen harness, adapter and client interface combination is unsupported, setup reports that incompatibility rather than silently falling back to another launch or output mode."
+    }
+  ],
+  "created_at": "2026-09-29T19:18:25.83863Z"
+}

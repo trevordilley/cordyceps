@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "app",
+  "slide": "registry-playwright",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Your helper, not Cordyceps",
+  "description": "startMyApp is imported from your test helpers. Its name, options and returned app are illustrative consumer code. Cordyceps supplies only the mock and injection values.",
+  "selector": {
+    "type": "element",
+    "element_id": "app"
+  }
+}

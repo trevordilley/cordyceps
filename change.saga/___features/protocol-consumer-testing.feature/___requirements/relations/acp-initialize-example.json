@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "acp-initialize-example",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:acp-initialize:item:initialize",
+  "to": "urn:change-saga:cordyceps:story:launch-protocol-mode:criterion:negotiated-contract",
+  "scope": "self",
+  "rationale": "The illustrative lifecycle scenario identifies setup, native protocol actions, provider control and consumer assertions for this criterion.",
+  "to_revision": "urn:change-saga:cordyceps:story:launch-protocol-mode:revision:r2",
+  "state": "active",
+  "created_at": "2026-09-29T20:02:41.725509Z"
+}

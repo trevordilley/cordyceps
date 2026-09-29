@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "filesystem",
+  "slide": "real-tools",
+  "rank": 30,
+  "kind": "node",
+  "label": "Fixture filesystem",
+  "description": "Actual test file Actual access permissions Actual read result",
+  "selector": {
+    "type": "element",
+    "element_id": "filesystem"
+  }
+}

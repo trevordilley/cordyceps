@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "tokens",
+  "slide": "registry-config-files",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Small token vocabulary",
+  "description": "Use mock.baseUrl, mock.apiKey, session.dir, config.\u003cid\u003e.path and explicit input.\u003cname\u003e values. No shell evaluation or executable expressions.",
+  "selector": {
+    "type": "element",
+    "element_id": "tokens"
+  }
+}

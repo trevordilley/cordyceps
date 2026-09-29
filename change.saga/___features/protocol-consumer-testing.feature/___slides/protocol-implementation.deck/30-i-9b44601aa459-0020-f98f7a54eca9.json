@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "permissions",
+  "slide": "acp-tools",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Separate test branches",
+  "description": "Allowed read: assert real file content. Denied read: assert the consumer’s refusal path. Pending permission: assert the UI and resolve the actual request ID.",
+  "selector": {
+    "type": "element",
+    "element_id": "permissions"
+  }
+}

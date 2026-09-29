@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "followup",
+  "slide": "acp-sessions",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Add a follow-up test",
+  "description": "Prompt A again after its first turn completes. Assert A retains the first turn and appends the second; B remains unchanged. Do not infer context from process reuse alone.",
+  "selector": {
+    "type": "element",
+    "element_id": "followup"
+  }
+}

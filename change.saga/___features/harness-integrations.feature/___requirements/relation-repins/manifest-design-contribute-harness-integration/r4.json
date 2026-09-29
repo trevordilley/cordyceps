@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r4",
+  "relation": "urn:change-saga:cordyceps:relation:manifest-design-contribute-harness-integration",
+  "from_content_digest": "sha256:4c15c4113fbc112bd45c229d1ba54b497c9253d0ec7a09c3323c890818089a22",
+  "rationale": "The examples now explicitly import startMyApp from consumer-owned test helpers and distinguish helper names/options from the Cordyceps API. Injection ownership and the story obligations are unchanged.",
+  "created_at": "2026-09-29T21:59:38.293094Z"
+}

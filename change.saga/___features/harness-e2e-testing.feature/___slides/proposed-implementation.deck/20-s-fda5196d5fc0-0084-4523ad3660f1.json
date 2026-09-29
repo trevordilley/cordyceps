@@ -1,0 +1,19 @@
+{
+  "version": 4,
+  "id": "usage-tool-call",
+  "deck": "proposed-implementation",
+  "title": "Script a tool call; inspect the real result",
+  "rank": 84,
+  "intent": "explain",
+  "layout": "custom",
+  "media_type": "image/svg+xml",
+  "entrypoint": "20-s-fda5196d5fc0-0084-4523ad3660f1.svg",
+  "takeaway": "Return tool-call semantics, inspect the actual follow-up tool result, and only then return the final text.",
+  "reading_order": [
+    "sample",
+    "note-0",
+    "note-1",
+    "note-2"
+  ],
+  "exception_rationale": "A code walkthrough with adjacent usage notes needs preserved indentation and line breaks; this is a proposed API sample without implementation evidence."
+}

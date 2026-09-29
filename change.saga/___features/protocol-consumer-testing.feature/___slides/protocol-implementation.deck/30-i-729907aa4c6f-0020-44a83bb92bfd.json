@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "assert",
+  "slide": "acp-initialize",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Assert",
+  "description": "Check the negotiated version and actual advertised capabilities. Verify your client becomes ready and stores the returned session identity.",
+  "selector": {
+    "type": "element",
+    "element_id": "assert"
+  }
+}

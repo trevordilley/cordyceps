@@ -1,0 +1,26 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:contribute-harness-integration",
+  "parents": [],
+  "title": "Contribute a harness to the supported suite",
+  "statement": "As a harness author or integration contributor, I can contribute my harness integration through a pull request so that other consumers can select it from the Cordyceps supported suite.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-integration-author"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:harness-extension-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "contribution-path",
+      "statement": "A contributor can submit the harness definition and any required integration support through a documented pull-request path."
+    },
+    {
+      "id": "bundled-selection",
+      "statement": "After the contribution is accepted and released, consumers can select that harness from the bundled suite and use its supplied setup definition."
+    }
+  ],
+  "created_at": "2026-09-29T21:23:15.622202Z"
+}

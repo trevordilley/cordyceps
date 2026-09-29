@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "symlink",
+  "slide": "launch-surfaces",
+  "rank": 40,
+  "kind": "risk",
+  "label": "The app remains responsible for invocation",
+  "description": "One of the environment, argument or generated-file injection surfaces applied by the consuming app; no required launcher or binary resolver.",
+  "selector": {
+    "type": "element",
+    "element_id": "symlink"
+  }
+}

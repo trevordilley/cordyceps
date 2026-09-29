@@ -1,0 +1,14 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "registry-runtime-register-custom-harness",
+  "type": "addresses",
+  "from": "urn:change-saga:cordyceps:fragment:harness-registry-runtime-design",
+  "to": "urn:change-saga:cordyceps:story:register-custom-harness",
+  "scope": "self",
+  "rationale": "Specifies runtime APIs, deterministic planning, resource ownership, provider codec boundaries and contribution checks for the accepted integration scope.",
+  "to_revision": "urn:change-saga:cordyceps:story:register-custom-harness:revision:r1",
+  "from_content_digest": "sha256:76f6747576e8f95fdd723848bc955bc809570b41fe3984e74d42b8c8c97304f8",
+  "state": "active",
+  "created_at": "2026-09-29T21:32:35.690999Z"
+}

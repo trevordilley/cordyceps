@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "load",
+  "slide": "acp-optional-lifecycle",
+  "rank": 0,
+  "kind": "node",
+  "label": "Load: replay history",
+  "description": "Gate on agentCapabilities.loadSession. Call session/load with sessionId, cwd, mcpServers. Collect replay updates before request resolution. Assert the consumer rebuilds history without duplicates.",
+  "selector": {
+    "type": "element",
+    "element_id": "load"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "playwright",
+  "slide": "npm-core",
+  "rank": 20,
+  "kind": "node",
+  "label": "Playwright fixture",
+  "description": "Test-scoped setup, observations and cleanup",
+  "selector": {
+    "type": "element",
+    "element_id": "playwright"
+  }
+}

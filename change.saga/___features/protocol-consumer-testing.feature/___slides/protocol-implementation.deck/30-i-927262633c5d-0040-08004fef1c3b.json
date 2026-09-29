@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "proof-4",
+  "slide": "acp-proof-matrix",
+  "rank": 40,
+  "kind": "statement",
+  "label": "Load / resume / close / modes",
+  "description": "Consumer tests negotiated features only when relevant. Consumer-owned optional coverage; no library compatibility matrix.",
+  "selector": {
+    "type": "element",
+    "element_id": "proof-4"
+  }
+}

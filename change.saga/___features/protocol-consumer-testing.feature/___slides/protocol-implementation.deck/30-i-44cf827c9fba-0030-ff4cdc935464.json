@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "correlation",
+  "slide": "acp-sessions",
+  "rank": 30,
+  "kind": "risk",
+  "label": "Correlation boundary",
+  "description": "ACP sessionId need not appear in provider HTTP traffic. Marker routing is a controlled test technique, not a general session-ID mapping.",
+  "selector": {
+    "type": "element",
+    "element_id": "correlation"
+  }
+}

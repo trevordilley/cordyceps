@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "row-1",
+  "slide": "registry-boundaries",
+  "rank": 10,
+  "kind": "statement",
+  "label": "Injection rendering",
+  "description": "Mock endpoint + recipe + caller inputs Return env, extra args and optional config files",
+  "selector": {
+    "type": "element",
+    "element_id": "row-1"
+  }
+}

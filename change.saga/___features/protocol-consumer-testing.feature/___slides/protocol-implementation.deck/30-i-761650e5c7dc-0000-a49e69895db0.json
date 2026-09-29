@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "failure-0",
+  "slide": "acp-failure-boundaries",
+  "rank": 0,
+  "kind": "risk",
+  "label": "Launch / transport",
+  "description": "Bad executable; kill owned agent. Assert: Client rejects pending calls; exposes disconnect. Control: Process fixture.",
+  "selector": {
+    "type": "element",
+    "element_id": "failure-0"
+  }
+}

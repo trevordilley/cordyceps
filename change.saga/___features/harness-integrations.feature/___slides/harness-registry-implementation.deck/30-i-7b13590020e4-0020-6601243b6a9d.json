@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "errors",
+  "slide": "registry-provider-codec",
+  "rank": 20,
+  "kind": "statement",
+  "label": "Keep test failures visible",
+  "description": "A route assertion failure is a consumer-test failure. A deliberately scripted provider error is a response for the app to handle.",
+  "selector": {
+    "type": "element",
+    "element_id": "errors"
+  }
+}

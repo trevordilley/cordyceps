@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "failure-4",
+  "slide": "acp-failure-boundaries",
+  "rank": 40,
+  "kind": "risk",
+  "label": "Teardown",
+  "description": "Fail assertion during held request. Assert: Client + child processes stop; backend closes. Control: Fixture cleanup.",
+  "selector": {
+    "type": "element",
+    "element_id": "failure-4"
+  }
+}

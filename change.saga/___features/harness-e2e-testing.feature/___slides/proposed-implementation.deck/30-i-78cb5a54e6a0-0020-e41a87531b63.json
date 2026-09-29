@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "id": "app",
+  "slide": "launch-boundary",
+  "rank": 20,
+  "kind": "node",
+  "label": "2  Launch app",
+  "description": "Apply injection settings Then run normal app logic Discovery stays in the app",
+  "selector": {
+    "type": "element",
+    "element_id": "app"
+  }
+}
