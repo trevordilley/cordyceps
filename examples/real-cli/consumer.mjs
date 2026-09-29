@@ -68,7 +68,7 @@ try {
         const binary = binaries[harness === 'codex' ? 'codex' : 'claude'];
         record.version = await launch(binary, ['--version'], work, env);
         assert.equal(record.version.code, 0, record.version.stderr);
-        assert.match(record.version.stdout, harness === 'codex' ? /0\.155\.1/ : /2\.1\.283/);
+        assert.ok(record.version.stdout.trim(), 'version probe returned no version');
         const marker = `CORDYCEPS_${harness}_${scenario}_OK`;
         const prompt = `cordyceps-real-cli-${scenario}: ${scenario === 'tool' ? 'Read fixture.txt, then report completion.' : 'Reply with the controlled test message.'}`;
         const callId = 'call_fixture_read';

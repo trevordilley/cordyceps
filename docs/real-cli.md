@@ -1,7 +1,8 @@
 # Installed CLI consumer dogfooding
 
 Run from the repository on macOS with **real Node >=22**, Bun (build only), npm,
-Claude Code **2.1.283**, and Codex **0.155.1** already installed on PATH:
+Claude Code and Codex already installed on PATH. The recorded run used Claude
+Code **2.1.283** and Codex **0.155.1**; versions are observations, not gates:
 
 ```sh
 hivecontrol exec oneshot 3m -- node examples/real-cli/run.mjs /tmp/cordyceps-real-cli-evidence.json
@@ -30,7 +31,7 @@ The file contains a fresh UUID token absent from both the prompt and scripted
 tool call. The consumer asserts that the real tool result contains it, uses the
 same call ID, and arrives in the second request. It checks process exit, final
 output, request count, captured input and library health. An absent binary,
-wrong version, failed file read, unexpected retry, or missing reply fails the run.
+failed version probe or file read, unexpected retry, or missing reply fails the run.
 The checked-in `examples/real-cli/evidence.json` records selected exact wire
 fields, actual CLI output, tarball integrity, and raw request body hashes.
 The command's full local JSON additionally retains all captured requests and
