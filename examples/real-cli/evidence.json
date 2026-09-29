@@ -1,0 +1,741 @@
+{
+  "capturedAt": "2026-09-29T23:36:06.153Z",
+  "artifact": {
+    "name": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-N4CUI4MYVkRbc52kQAm4/vDwSa3lFJkxb8p7Rmv8kInw/rMR51rRkPKvW9pjUhn2SeVSzj2PH1refekbCFIE9Q==",
+    "shasum": "31f92729606e2383c2834f4ac0268681d8e8a834"
+  },
+  "node": "v22.22.3",
+  "platform": "darwin",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-cli-package-vnDFfY/consumer/node_modules/cordyceps/dist/index.js",
+  "scope": "Exact selected request fields and CLI output. System prompts, unselected tool schemas and headers omitted; raw body SHA-256 ties each projection to full local evidence.",
+  "cases": [
+    {
+      "harness": "claude-code",
+      "scenario": "text",
+      "version": "2.1.283 (Claude Code)",
+      "args": [
+        "--print",
+        "--model",
+        "claude-sonnet-4-6",
+        "--setting-sources",
+        "",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--safe-mode",
+        "--no-session-persistence",
+        "--tools",
+        "",
+        "--allowedTools",
+        "Read",
+        "--permission-mode",
+        "dontAsk",
+        "--output-format",
+        "json",
+        "cordyceps-real-cli-text: Reply with the controlled test message."
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"duration_api_ms\":159,\"stop_reason\":\"end_turn\",\"session_id\":\"e699f597-b046-4559-877c-f542f3985c34\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":0},\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-6\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":200000,\"maxOutputTokens\":32000,\"thinkingTokens\":0,\"canonicalModel\":\"claude-sonnet-4-6\",\"provider\":\"firstParty\",\"costBasis\":\"list\"}},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"fast_mode_disabled_reason\":\"sdk_opt_in_required\",\"subagent_stats\":{\"spawned\":0,\"requested\":{\"background\":0,\"foreground\":0,\"unset\":0},\"started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":false,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":null,\"result\":\"CORDYCEPS_claude-code_text_OK\",\"ttft_ms\":180,\"type\":\"result\",\"duration_ms\":212,\"uuid\":\"011d5940-8c92-4dce-ab10-f94100b7a751\",\"ttft_stream_ms\":179,\"time_to_request_ms\":57,\"first_content_frame_ms\":180,\"queued_turn_count\":0,\"result_index\":0}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "passed": true,
+      "cleanedUp": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-6",
+          "stream": true,
+          "rawBodySha256": "44a244caca1d2f8f9ca57bcabc9559ec303a42b2a3cee123281cafb1b09ef8d6",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-BVNoDt/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nYou are powered by the model named Sonnet 4.6. The exact model ID is claude-sonnet-4-6. Assistant knowledge cutoff is August 2025.\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nToday's date is 2026-09-29.\n</system-reminder>\n"
+                },
+                {
+                  "type": "text",
+                  "text": "cordyceps-real-cli-text: Reply with the controlled test message.",
+                  "cache_control": {
+                    "type": "ephemeral"
+                  }
+                }
+              ]
+            }
+          ],
+          "toolResults": []
+        }
+      ]
+    },
+    {
+      "harness": "claude-code",
+      "scenario": "tool",
+      "version": "2.1.283 (Claude Code)",
+      "args": [
+        "--print",
+        "--model",
+        "claude-sonnet-4-6",
+        "--setting-sources",
+        "",
+        "--strict-mcp-config",
+        "--mcp-config",
+        "{\"mcpServers\":{}}",
+        "--safe-mode",
+        "--no-session-persistence",
+        "--tools",
+        "Read",
+        "--allowedTools",
+        "Read",
+        "--permission-mode",
+        "dontAsk",
+        "--output-format",
+        "json",
+        "cordyceps-real-cli-tool: Read fixture.txt, then report completion."
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"duration_api_ms\":57,\"stop_reason\":\"end_turn\",\"session_id\":\"1aaac75f-e27c-4879-b882-69da3d1ce01d\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"output_tokens_details\":{\"thinking_tokens\":0},\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-6\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":200000,\"maxOutputTokens\":32000,\"thinkingTokens\":0,\"canonicalModel\":\"claude-sonnet-4-6\",\"provider\":\"firstParty\",\"costBasis\":\"list\"}},\"permission_denials\":[],\"terminal_reason\":\"completed\",\"fast_mode_state\":\"off\",\"fast_mode_disabled_reason\":\"sdk_opt_in_required\",\"subagent_stats\":{\"spawned\":0,\"requested\":{\"background\":0,\"foreground\":0,\"unset\":0},\"started_in_background\":0,\"max_depth\":0,\"spawned_by_subagents\":0,\"completed\":0,\"failed\":0,\"killed\":{\"parent\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":false,\"num_turns\":2,\"subtype\":\"success\",\"api_error_status\":null,\"result\":\"CORDYCEPS_claude-code_tool_OK\",\"ttft_ms\":67,\"type\":\"result\",\"duration_ms\":216,\"uuid\":\"555739ec-aa31-47e3-a728-0645e431e70b\",\"ttft_stream_ms\":63,\"time_to_request_ms\":54,\"first_content_frame_ms\":64,\"queued_turn_count\":0,\"result_index\":0}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "scriptedCall": {
+        "id": "call_fixture_read",
+        "name": "Read",
+        "input": {
+          "file_path": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-J9i2vu/work/fixture.txt"
+        }
+      },
+      "passed": true,
+      "cleanedUp": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-6",
+          "stream": true,
+          "rawBodySha256": "2f3e087da1411b14028386ad1f5d1c46202868b08b4d6fb6a80bcc132284d39c",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-J9i2vu/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nYou are powered by the model named Sonnet 4.6. The exact model ID is claude-sonnet-4-6. Assistant knowledge cutoff is August 2025.\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nToday's date is 2026-09-29.\n</system-reminder>\n"
+                },
+                {
+                  "type": "text",
+                  "text": "cordyceps-real-cli-tool: Read fixture.txt, then report completion.",
+                  "cache_control": {
+                    "type": "ephemeral"
+                  }
+                }
+              ]
+            }
+          ],
+          "selectedTool": {
+            "name": "Read",
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "file_path": {
+                  "description": "The absolute path to the file to read",
+                  "type": "string"
+                },
+                "offset": {
+                  "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "limit": {
+                  "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "pages": {
+                  "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file_path"
+              ],
+              "additionalProperties": false
+            },
+            "raw": {
+              "name": "Read",
+              "description": "Reads a file from the local filesystem. You can access any file directly by using this tool.\nAssume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.\n\nUsage:\n- The file_path parameter must be an absolute path, not a relative path\n- By default, it reads up to 2000 lines starting from the beginning of the file\n- When you already know which part of the file you need, only read that part. This can be important for larger files.\n- Results are returned using cat -n format, with line numbers starting at 1\n- This tool allows Claude Code to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as Claude Code is a multimodal LLM.\n- This tool can read PDF files (.pdf). For large PDFs (more than 10 pages), you MUST provide the pages parameter to read specific page ranges (e.g., pages: \"1-5\"). Reading a large PDF without the pages parameter will fail. Maximum 20 pages per request.\n- This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.\n- This tool can only read files, not directories. To list files in a directory, use the registered shell tool.\n- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.\n- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.\n- Do NOT re-read a file you just edited to verify — Edit/Write would have errored if the change failed, and the harness tracks file state for you.",
+              "input_schema": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "properties": {
+                  "file_path": {
+                    "description": "The absolute path to the file to read",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "toolResults": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-6",
+          "stream": true,
+          "rawBodySha256": "67eae3e467dddafc8573811f83eb9a254dcbcfd8a3c647ec95844bae69ed2e42",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\n# Environment\nYou have been invoked in the following environment: \n - Primary working directory: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-claude-code-J9i2vu/work\n - Is a git repository: false\n - Platform: darwin\n - Shell: /bin/sh\n - OS Version: Darwin 24.6.0\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nYou are powered by the model named Sonnet 4.6. The exact model ID is claude-sonnet-4-6. Assistant knowledge cutoff is August 2025.\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nToday's date is 2026-09-29.\n</system-reminder>\n"
+                },
+                {
+                  "type": "text",
+                  "text": "cordyceps-real-cli-tool: Read fixture.txt, then report completion."
+                }
+              ]
+            }
+          ],
+          "selectedTool": {
+            "name": "Read",
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "file_path": {
+                  "description": "The absolute path to the file to read",
+                  "type": "string"
+                },
+                "offset": {
+                  "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "limit": {
+                  "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "pages": {
+                  "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file_path"
+              ],
+              "additionalProperties": false
+            },
+            "raw": {
+              "name": "Read",
+              "description": "Reads a file from the local filesystem. You can access any file directly by using this tool.\nAssume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.\n\nUsage:\n- The file_path parameter must be an absolute path, not a relative path\n- By default, it reads up to 2000 lines starting from the beginning of the file\n- When you already know which part of the file you need, only read that part. This can be important for larger files.\n- Results are returned using cat -n format, with line numbers starting at 1\n- This tool allows Claude Code to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as Claude Code is a multimodal LLM.\n- This tool can read PDF files (.pdf). For large PDFs (more than 10 pages), you MUST provide the pages parameter to read specific page ranges (e.g., pages: \"1-5\"). Reading a large PDF without the pages parameter will fail. Maximum 20 pages per request.\n- This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.\n- This tool can only read files, not directories. To list files in a directory, use the registered shell tool.\n- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.\n- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.\n- Do NOT re-read a file you just edited to verify — Edit/Write would have errored if the change failed, and the harness tracks file state for you.",
+              "input_schema": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "properties": {
+                  "file_path": {
+                    "description": "The absolute path to the file to read",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "toolResults": [
+            {
+              "id": "call_fixture_read",
+              "text": "1\tfixture-deb6826d-a459-47eb-b273-6c5712ff59bc\n2\n\n<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>",
+              "isError": false,
+              "raw": {
+                "tool_use_id": "call_fixture_read",
+                "type": "tool_result",
+                "content": "1\tfixture-deb6826d-a459-47eb-b273-6c5712ff59bc\n2\n\n<system-reminder>\n<total_tokens>15000000 tokens left</total_tokens>\n</system-reminder>",
+                "cache_control": {
+                  "type": "ephemeral"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "harness": "codex",
+      "scenario": "text",
+      "version": "codex-cli 0.155.1",
+      "args": [
+        "exec",
+        "--skip-git-repo-check",
+        "--ephemeral",
+        "--ignore-rules",
+        "--json",
+        "-m",
+        "gpt-5.4",
+        "-s",
+        "danger-full-access",
+        "-c",
+        "shell_environment_policy.inherit=\"none\"",
+        "cordyceps-real-cli-text: Reply with the controlled test message."
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"thread.started\",\"thread_id\":\"01a0ef86-7344-7400-8fe0-22c77670205e\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"agent_message\",\"text\":\"CORDYCEPS_codex_text_OK\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":0,\"cached_input_tokens\":0,\"cache_write_input_tokens\":0,\"output_tokens\":0,\"reasoning_output_tokens\":0}}\n",
+        "stderr": "Reading additional input from stdin...\n",
+        "timedOut": false
+      },
+      "passed": true,
+      "cleanedUp": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "gpt-5.4",
+          "stream": true,
+          "rawBodySha256": "87706ee9267254bd91de7bcb84fda5f5da14f1624a248dd9e9405bbaf18cd4f2",
+          "promptMessages": [
+            {
+              "type": "message",
+              "id": "msg_01a0ef86-737d-7970-be63-39ea42a649b6",
+              "role": "user",
+              "content": [
+                {
+                  "type": "input_text",
+                  "text": "cordyceps-real-cli-text: Reply with the controlled test message."
+                }
+              ]
+            }
+          ],
+          "toolResults": []
+        }
+      ]
+    },
+    {
+      "harness": "codex",
+      "scenario": "tool",
+      "version": "codex-cli 0.155.1",
+      "args": [
+        "exec",
+        "--skip-git-repo-check",
+        "--ephemeral",
+        "--ignore-rules",
+        "--json",
+        "-m",
+        "gpt-5.4",
+        "-s",
+        "danger-full-access",
+        "-c",
+        "shell_environment_policy.inherit=\"none\"",
+        "cordyceps-real-cli-tool: Read fixture.txt, then report completion."
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"thread.started\",\"thread_id\":\"01a0ef86-7444-7e92-8f6d-56ebcacf68dc\"}\n{\"type\":\"turn.started\"}\n{\"type\":\"item.started\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -c '/bin/cat fixture.txt'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_0\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -c '/bin/cat fixture.txt'\",\"aggregated_output\":\"fixture-1edda8a2-16f3-4fa6-9550-b808ed436f78\\n\",\"exit_code\":0,\"status\":\"completed\"}}\n{\"type\":\"item.completed\",\"item\":{\"id\":\"item_1\",\"type\":\"agent_message\",\"text\":\"CORDYCEPS_codex_tool_OK\"}}\n{\"type\":\"turn.completed\",\"usage\":{\"input_tokens\":0,\"cached_input_tokens\":0,\"cache_write_input_tokens\":0,\"output_tokens\":0,\"reasoning_output_tokens\":0}}\n",
+        "stderr": "Reading additional input from stdin...\n",
+        "timedOut": false
+      },
+      "scriptedCall": {
+        "id": "call_fixture_read",
+        "name": "exec_command",
+        "input": {
+          "cmd": "/bin/cat fixture.txt",
+          "workdir": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-codex-moqZRZ/work",
+          "login": false,
+          "max_output_tokens": 1000
+        }
+      },
+      "passed": true,
+      "cleanedUp": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "gpt-5.4",
+          "stream": true,
+          "rawBodySha256": "49698cf3fe54bd40441db453bb161bbec4e9674dc8c41b71060767195236a85b",
+          "promptMessages": [
+            {
+              "type": "message",
+              "id": "msg_01a0ef86-7474-7fc2-ac8e-57dd4aee16e7",
+              "role": "user",
+              "content": [
+                {
+                  "type": "input_text",
+                  "text": "cordyceps-real-cli-tool: Read fixture.txt, then report completion."
+                }
+              ]
+            }
+          ],
+          "selectedTool": {
+            "name": "exec_command",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "cmd": {
+                  "type": "string",
+                  "description": "Shell command to execute."
+                },
+                "justification": {
+                  "type": "string",
+                  "description": "User-facing approval question for `require_escalated`; omit otherwise."
+                },
+                "login": {
+                  "type": "boolean",
+                  "description": "True runs the shell with -l/-i semantics; false disables them. Defaults to true."
+                },
+                "max_output_tokens": {
+                  "type": "number",
+                  "description": "Output token budget. Defaults to 10000 tokens; larger requests may be capped by policy."
+                },
+                "prefix_rule": {
+                  "type": "array",
+                  "description": "Reusable approval prefix for `cmd`, only with `sandbox_permissions: \"require_escalated\"`; for example [\"git\", \"pull\"].",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sandbox_permissions": {
+                  "type": "string",
+                  "description": "Per-command sandbox override. Defaults to `use_default`; use `require_escalated` for unsandboxed execution.",
+                  "enum": [
+                    "use_default",
+                    "require_escalated"
+                  ]
+                },
+                "shell": {
+                  "type": "string",
+                  "description": "Shell binary to launch. Defaults to the user's default shell."
+                },
+                "tty": {
+                  "type": "boolean",
+                  "description": "True allocates a PTY for the command; false or omitted uses plain pipes."
+                },
+                "workdir": {
+                  "type": "string",
+                  "description": "Working directory for the command. Defaults to the turn cwd."
+                },
+                "yield_time_ms": {
+                  "type": "number",
+                  "description": "Wait before yielding output. Defaults to 10000 ms; effective range is 250-30000 ms."
+                }
+              },
+              "required": [
+                "cmd"
+              ],
+              "additionalProperties": false
+            },
+            "raw": {
+              "type": "function",
+              "name": "exec_command",
+              "description": "Runs a command in a PTY, returning output or a session ID for ongoing interaction.",
+              "strict": false,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "cmd": {
+                    "type": "string",
+                    "description": "Shell command to execute."
+                  },
+                  "justification": {
+                    "type": "string",
+                    "description": "User-facing approval question for `require_escalated`; omit otherwise."
+                  },
+                  "login": {
+                    "type": "boolean",
+                    "description": "True runs the shell with -l/-i semantics; false disables them. Defaults to true."
+                  },
+                  "max_output_tokens": {
+                    "type": "number",
+                    "description": "Output token budget. Defaults to 10000 tokens; larger requests may be capped by policy."
+                  },
+                  "prefix_rule": {
+                    "type": "array",
+                    "description": "Reusable approval prefix for `cmd`, only with `sandbox_permissions: \"require_escalated\"`; for example [\"git\", \"pull\"].",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "sandbox_permissions": {
+                    "type": "string",
+                    "description": "Per-command sandbox override. Defaults to `use_default`; use `require_escalated` for unsandboxed execution.",
+                    "enum": [
+                      "use_default",
+                      "require_escalated"
+                    ]
+                  },
+                  "shell": {
+                    "type": "string",
+                    "description": "Shell binary to launch. Defaults to the user's default shell."
+                  },
+                  "tty": {
+                    "type": "boolean",
+                    "description": "True allocates a PTY for the command; false or omitted uses plain pipes."
+                  },
+                  "workdir": {
+                    "type": "string",
+                    "description": "Working directory for the command. Defaults to the turn cwd."
+                  },
+                  "yield_time_ms": {
+                    "type": "number",
+                    "description": "Wait before yielding output. Defaults to 10000 ms; effective range is 250-30000 ms."
+                  }
+                },
+                "required": [
+                  "cmd"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "toolResults": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "gpt-5.4",
+          "stream": true,
+          "rawBodySha256": "21bfd9ea0e386abaa440ff96042adc78c1a2cf403f9608ca81e8ada0d1aa970c",
+          "promptMessages": [
+            {
+              "type": "message",
+              "id": "msg_01a0ef86-7474-7fc2-ac8e-57dd4aee16e7",
+              "role": "user",
+              "content": [
+                {
+                  "type": "input_text",
+                  "text": "cordyceps-real-cli-tool: Read fixture.txt, then report completion."
+                }
+              ]
+            }
+          ],
+          "selectedTool": {
+            "name": "exec_command",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "cmd": {
+                  "type": "string",
+                  "description": "Shell command to execute."
+                },
+                "justification": {
+                  "type": "string",
+                  "description": "User-facing approval question for `require_escalated`; omit otherwise."
+                },
+                "login": {
+                  "type": "boolean",
+                  "description": "True runs the shell with -l/-i semantics; false disables them. Defaults to true."
+                },
+                "max_output_tokens": {
+                  "type": "number",
+                  "description": "Output token budget. Defaults to 10000 tokens; larger requests may be capped by policy."
+                },
+                "prefix_rule": {
+                  "type": "array",
+                  "description": "Reusable approval prefix for `cmd`, only with `sandbox_permissions: \"require_escalated\"`; for example [\"git\", \"pull\"].",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sandbox_permissions": {
+                  "type": "string",
+                  "description": "Per-command sandbox override. Defaults to `use_default`; use `require_escalated` for unsandboxed execution.",
+                  "enum": [
+                    "use_default",
+                    "require_escalated"
+                  ]
+                },
+                "shell": {
+                  "type": "string",
+                  "description": "Shell binary to launch. Defaults to the user's default shell."
+                },
+                "tty": {
+                  "type": "boolean",
+                  "description": "True allocates a PTY for the command; false or omitted uses plain pipes."
+                },
+                "workdir": {
+                  "type": "string",
+                  "description": "Working directory for the command. Defaults to the turn cwd."
+                },
+                "yield_time_ms": {
+                  "type": "number",
+                  "description": "Wait before yielding output. Defaults to 10000 ms; effective range is 250-30000 ms."
+                }
+              },
+              "required": [
+                "cmd"
+              ],
+              "additionalProperties": false
+            },
+            "raw": {
+              "type": "function",
+              "name": "exec_command",
+              "description": "Runs a command in a PTY, returning output or a session ID for ongoing interaction.",
+              "strict": false,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "cmd": {
+                    "type": "string",
+                    "description": "Shell command to execute."
+                  },
+                  "justification": {
+                    "type": "string",
+                    "description": "User-facing approval question for `require_escalated`; omit otherwise."
+                  },
+                  "login": {
+                    "type": "boolean",
+                    "description": "True runs the shell with -l/-i semantics; false disables them. Defaults to true."
+                  },
+                  "max_output_tokens": {
+                    "type": "number",
+                    "description": "Output token budget. Defaults to 10000 tokens; larger requests may be capped by policy."
+                  },
+                  "prefix_rule": {
+                    "type": "array",
+                    "description": "Reusable approval prefix for `cmd`, only with `sandbox_permissions: \"require_escalated\"`; for example [\"git\", \"pull\"].",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "sandbox_permissions": {
+                    "type": "string",
+                    "description": "Per-command sandbox override. Defaults to `use_default`; use `require_escalated` for unsandboxed execution.",
+                    "enum": [
+                      "use_default",
+                      "require_escalated"
+                    ]
+                  },
+                  "shell": {
+                    "type": "string",
+                    "description": "Shell binary to launch. Defaults to the user's default shell."
+                  },
+                  "tty": {
+                    "type": "boolean",
+                    "description": "True allocates a PTY for the command; false or omitted uses plain pipes."
+                  },
+                  "workdir": {
+                    "type": "string",
+                    "description": "Working directory for the command. Defaults to the turn cwd."
+                  },
+                  "yield_time_ms": {
+                    "type": "number",
+                    "description": "Wait before yielding output. Defaults to 10000 ms; effective range is 250-30000 ms."
+                  }
+                },
+                "required": [
+                  "cmd"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "toolResults": [
+            {
+              "id": "call_fixture_read",
+              "text": "Chunk ID: 46ad8a\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 12\nOutput:\nfixture-1edda8a2-16f3-4fa6-9550-b808ed436f78\n",
+              "isError": false,
+              "raw": {
+                "type": "function_call_output",
+                "id": "fco_01a0ef86-74ad-7ef0-8dd0-529326428f65",
+                "call_id": "call_fixture_read",
+                "output": "Chunk ID: 46ad8a\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 12\nOutput:\nfixture-1edda8a2-16f3-4fa6-9550-b808ed436f78\n"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
