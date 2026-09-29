@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "codex",
+  "provider": {
+    "adapter": "openai-responses",
+    "override": {
+      "env": {
+        "CODEX_HOME": "${session.dir}",
+        "CORDYCEPS_API_KEY": "${mock.apiKey}"
+      },
+      "configFiles": [{
+        "id": "provider",
+        "path": "config.toml",
+        "format": "toml",
+        "values": {
+          "model_provider": "cordyceps",
+          "model_providers": {
+            "cordyceps": {
+              "name": "Cordyceps mock provider",
+              "base_url": "${mock.baseUrl}/v1",
+              "env_key": "CORDYCEPS_API_KEY",
+              "wire_api": "responses",
+              "supports_websockets": false
+            }
+          }
+        }
+      }]
+    }
+  },
+  "modes": {
+    "interactive": { "args": [] },
+    "nonInteractive": { "args": ["exec"] }
+  }
+}
