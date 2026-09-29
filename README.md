@@ -33,6 +33,8 @@ The example requires a consumer-installed Claude Code binary and its ordinary pe
 
 `prepare({ harness, mode = 'interactive', registry?, inputs?, signal? })` returns an isolated session with `baseUrl`, `apiKey`, `environment(baseEnv)`, `args` and `configFiles`. It does not launch or inspect an executable. An absent recipe or codec is an explicit configuration error.
 
+The optional preparation signal remains connected for the session lifetime: aborting it disposes the session. Provider request bodies are limited to 16 MiB by default (`maxRequestBodyBytes` can change this); transcripts remain in memory until the session is released.
+
 Register routes before starting the app. The newest matching route wins; `route(predicate, handler)` returns a function that removes that route. Predicates receive captured requests. Handlers receive a route with `request`, `signal`, `fulfill`, `abort` and `untilAborted`. Unmatched requests and handler failures are recorded in `failures`; no traffic falls through to a real provider. Call `assertHealthy()` in standalone tests to surface asynchronous handler failures. Deliberately scripted provider HTTP errors are ordinary responses, not handler failures.
 
 ```js

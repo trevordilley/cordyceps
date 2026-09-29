@@ -45,13 +45,15 @@ Common and selected-mode arguments concatenate in that order. Environment assign
 
 Templates support exactly `${mock.baseUrl}`, `${mock.apiKey}`, `${session.dir}`, `${config.<id>.path}`, and `${input.<name>}`. Substitution runs once on environment values, argv entries, and nested string **values** in config files. Keys and file paths are literal. Inputs are opaque strings; a path input is never resolved or inspected, and token-looking input text is not expanded recursively. Unknown or malformed tokens and references to absent config files fail at registration. Required input values are checked at selection time; empty strings count as supplied values.
 
-`validateSelection(definition, mode = 'interactive', inputs = {})` is synchronous and allocates no resources. Core calls it before allocating its listener. It validates a fresh definition snapshot, the requested mode and codec, conflicts, and required inputs. Modes have no fallback: requesting a missing `acp` recipe produces `RECIPE_NOT_FOUND`. Custom definitions may use `acp` or other names without Cordyceps making any claims about the selected executable's protocol support.
+Internally, `validateSelection(definition, mode = 'interactive', inputs = {})` is synchronous and allocates no resources. Core calls it before allocating its listener. It validates a fresh definition snapshot, the requested mode and codec, conflicts, and required inputs. Modes have no fallback: requesting a missing `acp` recipe produces `RECIPE_NOT_FOUND`. Custom definitions may use `acp` or other names without Cordyceps making any claims about the selected executable's protocol support.
 
 Validation failures are `DefinitionError` instances with `code`, `definitionId`, and `field`. Messages identify the definition and JSON field. Codes include `INVALID_DEFINITION`, `INVALID_JSON`, `DUPLICATE_ID`, `DEFINITION_NOT_FOUND`, `CODEC_NOT_FOUND`, `RECIPE_NOT_FOUND`, `UNKNOWN_TOKEN`, `MISSING_INPUT`, `INVALID_INPUT`, and `INJECTION_CONFLICT`. Filesystem errors retain their original errors and codes.
 
 ## Rendering and ownership
 
-`await renderInjection(definition, mode, inputs, { baseUrl, apiKey }, signal?)` captures definitions and inputs before its first asynchronous operation. It repeats selection validation, creates a private temporary directory, serializes config, and returns:
+Consumers use the root `prepare` export. `validateSelection` and `renderInjection` below are implementation helpers, not root package exports.
+
+Internally, `await renderInjection(definition, mode, inputs, { baseUrl, apiKey }, signal?)` captures definitions and inputs before its first asynchronous operation. It repeats selection validation, creates a private temporary directory, serializes config, and returns:
 
 - `environment(base)`: a new object containing the supplied base, declared removals, and rendered overrides. Neither the base nor global environment is changed; no implicit environment is read.
 - `args`: common then selected-mode argv values, without shell quoting or an executable name.
