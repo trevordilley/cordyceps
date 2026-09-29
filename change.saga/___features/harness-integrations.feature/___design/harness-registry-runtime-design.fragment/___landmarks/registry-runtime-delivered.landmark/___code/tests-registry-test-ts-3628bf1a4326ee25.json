@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "tests/registry.test.ts",
+      "start": 227,
+      "end": 245,
+      "digest": "sha256:bc9d4026d395375ce7010d198ef904d2693532c15ed76a20c4bb34d634d42e81",
+      "note": "Bundled/local parity and explicit mode checks include the separate ACP recipe."
+    }
+  ]
+}

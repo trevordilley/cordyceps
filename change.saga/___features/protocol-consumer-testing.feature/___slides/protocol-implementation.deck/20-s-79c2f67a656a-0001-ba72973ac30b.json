@@ -9,7 +9,7 @@
   "layout": "diagram",
   "media_type": "image/svg+xml",
   "entrypoint": "20-s-79c2f67a656a-0001-ba72973ac30b.svg",
-  "takeaway": "Synthetic fixtures and packed Node consumers verify library contracts; real harness and ACP scenarios remain consumer-owned.",
+  "takeaway": "Synthetic regressions and packed real CLI, ACP and browser consumers verify distinct boundaries; applications own execution.",
   "reading_order": [
     "units",
     "node",

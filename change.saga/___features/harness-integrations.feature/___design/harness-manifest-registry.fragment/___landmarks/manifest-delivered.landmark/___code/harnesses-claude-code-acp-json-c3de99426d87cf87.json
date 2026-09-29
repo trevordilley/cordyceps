@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "harnesses/claude-code-acp.json",
+      "start": 2,
+      "end": 16,
+      "digest": "sha256:401e93a4383d889e6d933fc24d070ca3ea896115b77b516d6fd24b6595e02cfd",
+      "note": "Bundled ACP definition is concrete injection data for the real selected adapter."
+    }
+  ]
+}

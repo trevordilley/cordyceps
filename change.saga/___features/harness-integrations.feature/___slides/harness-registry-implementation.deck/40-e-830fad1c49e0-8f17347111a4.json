@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "src/registry.ts",
       "start": 1,
       "end": 37,
-      "digest": "sha256:d0e0de7f9bba35072d0d18a39d00f37855742df88acdff5f2c025c5463bff66d",
+      "digest": "sha256:65c5f2f116292bd11e50b7a71c4adc8b058e1c3db7123022e7d75189d0533279",
       "note": "Declarative definition validation and isolated injection: registry; current implementation, not real-harness certification"
     }
   ]

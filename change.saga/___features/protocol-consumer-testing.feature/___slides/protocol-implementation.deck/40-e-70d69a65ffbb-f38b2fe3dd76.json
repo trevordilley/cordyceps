@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-acp/run.mjs",
+      "start": 94,
+      "end": 201,
+      "digest": "sha256:c4a8c82b24e46d48b1ff5c5aaf0d5bfc22c5077e953eafc8d45d9119447e7ed7",
+      "note": "Real native sessions, followup, incremental output, permissions, tool result, cancellation and same-session reuse are driven by provider routes."
+    }
+  ]
+}

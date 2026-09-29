@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "src/registry.ts",
       "start": 15,
       "end": 37,
-      "digest": "sha256:5ed69f2ee48bdb136ac10797930ad8c00986f3de4ea3ce071cdb914ba33d34d0",
+      "digest": "sha256:de0e2c7689c0315f099a2c19218df298a04bc46dff74d25c0c0843e6cc92e3f9",
       "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
     }
   ]

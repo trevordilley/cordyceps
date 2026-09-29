@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-frontend/frontend.spec.mjs",
+      "start": 45,
+      "end": 115,
+      "digest": "sha256:56ff3be40d3d15393342f07c3eeb71fccff2965c644409736a5626438ed15cb4",
+      "note": "Browser input/output, actual Read result and cancellation followed by a fresh process are asserted through installed Claude."
+    }
+  ]
+}

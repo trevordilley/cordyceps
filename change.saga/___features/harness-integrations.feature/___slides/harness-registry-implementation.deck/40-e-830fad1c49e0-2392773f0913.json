@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "docs/registry.md",
-      "digest": "sha256:626ba6ed26bd4d5fd9f8ae881422e3907324f3dda0ed5b3a05a00256e3d55edb",
+      "digest": "sha256:af2c61831eeaac8f0b82a6295f26b4444ffc8dfc5221da6c6fbecb68bc10a4f4",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "verification-a082dd6d267071ed1014",
+  "claim": "real-browser-packed-delivered",
+  "status": "verified",
+  "method": "test",
+  "summary": "Observed exit 0: three Chromium tests passed in 5.8 seconds with no skips/retries under real Node 22.22.3. Actual file-only token returned from Read; cancel aborted provider work, next UI turn succeeded; processes/groups, temporary files and consumer/mock listeners closed.",
+  "command": "CLAUDE_BINARY=/Users/20idemo/.local/bin/claude FRONTEND_EVIDENCE_DIR=/tmp/cordyceps-frontend-manager-final hivecontrol exec oneshot 5m -- /Users/20idemo/.nvm/versions/node/v22.22.3/bin/node examples/real-frontend/verify-packed.mjs",
+  "created_at": "2026-09-29T23:51:30.857069Z"
+}

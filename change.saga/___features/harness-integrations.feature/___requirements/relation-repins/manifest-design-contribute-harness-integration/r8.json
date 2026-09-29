@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r8",
+  "relation": "urn:change-saga:cordyceps:relation:manifest-design-contribute-harness-integration",
+  "to_revision": "urn:change-saga:cordyceps:story:contribute-harness-integration:revision:r2",
+  "from_content_digest": "sha256:c4453fc5d142cbd98ff54fee8f98c3431d39a6f6f47361208ed7b5152cfcaa96",
+  "rationale": "Re-read current requirements and retained proposal context. The updated delivery section adds packed real-consumer evidence while preserving injection-only library ownership, explicit consumer launch/client responsibility and the original design relationship; it records no user verdict.",
+  "created_at": "2026-09-29T23:53:16.994169Z"
+}

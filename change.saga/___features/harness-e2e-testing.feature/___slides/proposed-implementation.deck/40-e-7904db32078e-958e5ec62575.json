@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "docs/provider-codecs.md",
       "start": 1,
-      "end": 128,
-      "digest": "sha256:0626ee0cd47c9f6a30b2a2aa4aee7a1de4d08fd34ebfd670fc68eced79352644",
+      "end": 150,
+      "digest": "sha256:1fd28d24f586f8bc9e325e5948e0a95489032c9d4eb7daf23b8cd86da7b6acbd",
       "note": "Provider request control and lifetime: codecs; current implementation, not real-harness certification"
     }
   ]

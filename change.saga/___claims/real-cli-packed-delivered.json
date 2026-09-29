@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": "real-cli-packed-delivered",
+  "target": "urn:change-saga:cordyceps:fragment:technology-stack-distribution:landmark:distribution-delivered",
+  "kind": "test",
+  "statement": "At source 43dbab8, packed public imports drive installed Claude Code and Codex controlled text and real disposable file reads; actual outputs and one/two provider requests per text/tool case pass.",
+  "evidence": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-cli/consumer.mjs",
+      "start": 46,
+      "end": 139,
+      "digest": "sha256:af391b377aaadfda14b7dd7c7d785be1f1066d5d289d826e0bcf3e80541c4505"
+    }
+  ],
+  "created_at": "2026-09-29T23:51:30.435852Z"
+}

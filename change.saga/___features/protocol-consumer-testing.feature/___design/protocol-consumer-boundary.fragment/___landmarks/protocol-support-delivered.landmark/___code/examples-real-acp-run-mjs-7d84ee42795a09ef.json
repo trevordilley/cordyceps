@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-acp/run.mjs",
+      "start": 133,
+      "end": 201,
+      "digest": "sha256:741bea8ce35738af6d6b3d686a70ad1ffca7b64c0b9dc810e97f4f319ccfc59c",
+      "note": "Native ACP sessions and lifecycle assertions substantiate delivered real consumer evidence."
+    }
+  ]
+}

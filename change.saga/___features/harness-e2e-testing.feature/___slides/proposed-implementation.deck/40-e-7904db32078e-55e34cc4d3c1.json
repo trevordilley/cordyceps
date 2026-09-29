@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "src/provider/anthropic-messages.ts",
-      "digest": "sha256:de073ffbf6956f4e40bc43584dd458a98c2edd5610837c7deeb7c69fce3054c1",
+      "digest": "sha256:b8dd776a0ec0c448f03ed1228a0d4f934f39801c5803489b7653bab16f6b5035",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

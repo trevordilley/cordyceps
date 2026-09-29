@@ -4,8 +4,8 @@
   "slide": "delivered-observation-boundary",
   "rank": 40,
   "kind": "node",
-  "label": "Passive consumer hooks",
-  "description": "Native payload snapshots and input instrumentation preserve consumer data separately from provider transcripts. No transport proxy or ACP producer is supplied.",
+  "label": "Real ACP and passive observations",
+  "description": "Consumer-owned ACP SDK and official adapter verify native sessions, tools, permissions, incremental output, cancellation and reuse. Hooks preserve complete native payloads separately from provider traffic; no ACP client is exported.",
   "selector": {
     "type": "element",
     "element_id": "observations"

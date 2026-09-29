@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-frontend/verify-packed.mjs",
+      "start": 20,
+      "end": 54,
+      "digest": "sha256:a6dcdc859910ec3c32cbb83805a498bf19a3939d055ba1010fffba64b9fd026c",
+      "note": "Packed browser consumer verifies the installed artifact, three tests and final mock listener closure."
+    }
+  ]
+}

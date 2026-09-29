@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "src/provider/anthropic-messages.ts",
       "start": 1,
-      "end": 84,
-      "digest": "sha256:de073ffbf6956f4e40bc43584dd458a98c2edd5610837c7deeb7c69fce3054c1",
+      "end": 100,
+      "digest": "sha256:b8dd776a0ec0c448f03ed1228a0d4f934f39801c5803489b7653bab16f6b5035",
       "note": "Provider request control and lifetime: codecs; current implementation, not real-harness certification"
     }
   ]

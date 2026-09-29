@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "real-pw-frontend-output-path",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:delivered-observation-boundary:item:pw",
+  "to": "urn:change-saga:cordyceps:story:test-frontend-through-binary:criterion:frontend-output-path",
+  "scope": "self",
+  "rationale": "The UI renders parsed actual process output after prescribed backend replies and real tool completion.",
+  "to_revision": "urn:change-saga:cordyceps:story:test-frontend-through-binary:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T23:53:58.105294Z"
+}

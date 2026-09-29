@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "docs/acp-consumers.md",
       "start": 1,
-      "end": 41,
-      "digest": "sha256:91c958686d877caa0d6db6c846af95eb18fbf6a1fc93c8ebbfeecfa4ca9e0a35",
+      "end": 44,
+      "digest": "sha256:963be038874edad6efe5f92099476e6f6b844466f807a47130d71cf251470c4a",
       "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
     }
   ]

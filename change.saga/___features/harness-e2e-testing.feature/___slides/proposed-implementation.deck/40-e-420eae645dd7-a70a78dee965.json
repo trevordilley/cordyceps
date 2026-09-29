@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "docs/acp-consumers.md",
       "start": 1,
-      "end": 42,
-      "digest": "sha256:66a7f726d16db7ee0b8f1d116f5b09f3662dffe917d1fa5316a5b3ccf0629c99",
+      "end": 45,
+      "digest": "sha256:2947d4f93857daee5cd7b14e67565ac4d10e79de0fc44f96ebba716ac1e0520e",
       "note": "Package construction and consumer-owned invocation boundary: consumer; current implementation, not real-harness certification"
     }
   ]

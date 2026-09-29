@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-acp/run.mjs",
+      "start": 207,
+      "end": 240,
+      "digest": "sha256:9502a1ce382376c63b5198fa14e832cd4d7a6c026d5ff4d4fb07fc8cd11bb2ba",
+      "note": "Consumer releases gates, stops its process group, checks shutdown health and disposes mock/files."
+    }
+  ]
+}

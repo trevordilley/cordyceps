@@ -5,7 +5,7 @@
   "rank": 10,
   "kind": "node",
   "label": "One registry contract",
-  "description": "Definitions are strict data with duplicate-ID rejection and detached snapshots. Bundled Claude Code and Codex recipes cite actual documented provider settings and use the same loader as private JSON.",
+  "description": "Strict data, duplicate-ID rejection and snapshots apply to bundled and private JSON. Claude Code, Codex and the separate real-consumer-verified Claude ACP recipe use the same loader. Recipe selection never launches an executable.",
   "selector": {
     "type": "element",
     "element_id": "registry"

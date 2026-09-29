@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r4",
+  "relation": "urn:change-saga:cordyceps:relation:stack-standalone-setup",
+  "to_revision": "urn:change-saga:cordyceps:story:standalone-programmatic-use:revision:r1",
+  "from_content_digest": "sha256:4f9e4a3e40bc196d9a45780825454797e4737275596f92fec2ec0cfd2b11fde6",
+  "rationale": "Re-read current requirements and retained proposal context. The updated delivery section adds packed real-consumer evidence while preserving injection-only library ownership, explicit consumer launch/client responsibility and the original design relationship; it records no user verdict.",
+  "created_at": "2026-09-29T23:53:18.556453Z"
+}

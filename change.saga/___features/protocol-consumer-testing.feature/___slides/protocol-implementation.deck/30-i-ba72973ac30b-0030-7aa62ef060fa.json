@@ -5,7 +5,7 @@
   "rank": 30,
   "kind": "node",
   "label": "Optional peer checks",
-  "description": "A separate packed consumer installs Playwright and checks fixture behavior, public declarations and cleanup after success and intentionally ignored handler errors.",
+  "description": "The optional peer tests teardown behavior. A separate Chromium consumer drives browser input through installed Claude, renders actual output and real Read results, and verifies cancellation plus fresh-process reuse.",
   "selector": {
     "type": "element",
     "element_id": "pw"

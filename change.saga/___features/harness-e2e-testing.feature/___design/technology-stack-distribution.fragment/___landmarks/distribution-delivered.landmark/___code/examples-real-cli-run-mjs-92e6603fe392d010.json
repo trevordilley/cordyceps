@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-cli/run.mjs",
+      "start": 16,
+      "end": 32,
+      "digest": "sha256:c4dcc34c50e78ec1ab3eec9dde37f955cc896b108f7c6f327f6142c997344244",
+      "note": "Actual artifact installation substantiates the delivered package dogfooding description."
+    }
+  ]
+}

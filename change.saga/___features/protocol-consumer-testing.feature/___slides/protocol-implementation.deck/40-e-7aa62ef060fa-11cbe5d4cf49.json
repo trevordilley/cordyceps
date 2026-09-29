@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-frontend/frontend.spec.mjs",
+      "start": 8,
+      "end": 36,
+      "digest": "sha256:df7d73d128be8bb4df86dcf402982fec3e98e0141f04d49fed97765387136f83",
+      "note": "Consumer fixture depends on ai and verifies process group, files and listener cleanup."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "real-pw-frontend-assertions",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:delivered-observation-boundary:item:pw",
+  "to": "urn:change-saga:cordyceps:story:playwright-e2e-workflow:criterion:frontend-assertions",
+  "scope": "self",
+  "rationale": "Three Chromium tests drive the actual frontend through installed Claude and assert its rendered result.",
+  "to_revision": "urn:change-saga:cordyceps:story:playwright-e2e-workflow:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T23:53:57.858177Z"
+}

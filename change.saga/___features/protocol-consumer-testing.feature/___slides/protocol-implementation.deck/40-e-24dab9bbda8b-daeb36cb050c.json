@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "tests/anthropic-auxiliary.test.ts",
+      "start": 12,
+      "end": 71,
+      "digest": "sha256:4a5b71123f506526a3f2219e2c93900fb2822da3e76826efb8885bec3ef0e1cc",
+      "note": "Regression covers exact auxiliary endpoints, valid/invalid scripted replies, actual HTTP capture and visible unhandled-request failure."
+    }
+  ]
+}

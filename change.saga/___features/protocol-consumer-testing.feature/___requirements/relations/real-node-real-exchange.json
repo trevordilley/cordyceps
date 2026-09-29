@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "real-node-real-exchange",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:delivered-observation-boundary:item:node",
+  "to": "urn:change-saga:cordyceps:story:prove-installed-binary:criterion:real-exchange",
+  "scope": "self",
+  "rationale": "Packed real CLI tests assert provider capture and actual binary output.",
+  "to_revision": "urn:change-saga:cordyceps:story:prove-installed-binary:revision:r1",
+  "state": "active",
+  "created_at": "2026-09-29T23:53:57.486021Z"
+}

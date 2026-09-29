@@ -5,7 +5,7 @@
   "rank": 20,
   "kind": "node",
   "label": "Packed artifact checks",
-  "description": "Verification installs the tarball into a clean Node consumer with no Playwright, checks included/excluded files, local definitions, HTTP behavior, file/listener cleanup and exported declarations.",
+  "description": "Packed Node consumers verify declarations and provider contracts; real installed Claude Code and Codex also produce controlled text and actual fixture tool results using only public imports.",
   "selector": {
     "type": "element",
     "element_id": "node"

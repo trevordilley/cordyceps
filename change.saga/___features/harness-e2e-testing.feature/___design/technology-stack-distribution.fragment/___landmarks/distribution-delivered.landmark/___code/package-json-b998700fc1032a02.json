@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "package.json",
       "start": 1,
-      "end": 50,
-      "digest": "sha256:ba50667ebf34c5a29c1a6b10822ff7aea7840a45179c26f61b1df896adbd70d5",
+      "end": 57,
+      "digest": "sha256:fb0bb05c500f34d364ffaf30eb81aa5bb17e55608f64ebbbe1d4430059779cf2",
       "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
     }
   ]

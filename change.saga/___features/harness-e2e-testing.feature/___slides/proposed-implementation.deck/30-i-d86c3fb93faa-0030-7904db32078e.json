@@ -5,7 +5,7 @@
   "rank": 30,
   "kind": "node",
   "label": "Provider codecs",
-  "description": "Separate codecs decode actual offered tool schemas/results and encode controlled text, tool calls, scripted HTTP errors and streaming terminal frames. Tool execution stays with the real consumer integration.",
+  "description": "Codecs preserve actual tool schemas/results and encode text, tools, errors and SSE. Anthropic health and token-count requests use explicit scripted replies through ordinary capture/routes. Real tools execute in the consumer integration.",
   "selector": {
     "type": "element",
     "element_id": "codecs"

@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "scripts/verify-core-node.ts",
-      "digest": "sha256:7b4839674b8eebcd43c010a73122f5d9282754a3b306285a9019d3817ef83e79",
+      "digest": "sha256:bd9be227e31869c0e4a2c17db5d85673d6bf3a4c360cacd1b73048ad837f1e6a",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

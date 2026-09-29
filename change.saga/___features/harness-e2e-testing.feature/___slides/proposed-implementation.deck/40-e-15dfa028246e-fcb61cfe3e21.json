@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
       "path": "src/provider/types.ts",
       "start": 1,
-      "end": 41,
-      "digest": "sha256:9c2b57b569836b2b721290aca07b5627f69f8bb406f3aa349428965f0f2cabd3",
+      "end": 43,
+      "digest": "sha256:11dc82f2e39d64aa423e8ae98c4dc9fcb1d4fe6ed394d9261ae8cd1b23c52c90",
       "note": "Provider request control and lifetime: capture; current implementation, not real-harness certification"
     }
   ]

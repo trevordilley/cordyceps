@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": "real-acp-packed-delivered",
+  "target": "urn:change-saga:cordyceps:fragment:protocol-consumer-boundary:landmark:protocol-support-delivered",
+  "kind": "test",
+  "statement": "At source 43dbab8, the installed official ACP adapter and standard SDK complete real negotiation, separate sessions, eight turns, real tool/permission handling, incremental output, cancellation and same-session reuse against the packed provider.",
+  "evidence": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-acp/run.mjs",
+      "start": 133,
+      "end": 201,
+      "digest": "sha256:741bea8ce35738af6d6b3d686a70ad1ffca7b64c0b9dc810e97f4f319ccfc59c"
+    }
+  ],
+  "created_at": "2026-09-29T23:51:30.628888Z"
+}

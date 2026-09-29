@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "path": "examples/real-acp/verify.mjs",
+      "start": 18,
+      "end": 29,
+      "digest": "sha256:06b75aac6fac6ff46d727368d08d6bf11cc3c2a1c29507397c7e1bfff1c27f3c",
+      "note": "The ACP client and adapter run only after a built tarball is installed in an external consumer project."
+    }
+  ]
+}
