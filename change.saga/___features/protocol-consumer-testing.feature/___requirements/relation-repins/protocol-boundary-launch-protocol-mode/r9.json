@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r9",
+  "relation": "urn:change-saga:cordyceps:relation:protocol-boundary-launch-protocol-mode",
+  "from_content_digest": "sha256:05acb365c1c3734131681ac8bf22300045139faa420cb322dcffcd2fab88cf92",
+  "rationale": "The updated delivered section and preserved design still address the same requirements. Correct the prior entrypoint hash to the current design package digest reported by relation status; retain the earlier confirmation as history.",
+  "created_at": "2026-09-29T23:55:13.540859Z"
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r9",
+  "relation": "urn:change-saga:cordyceps:relation:registry-runtime-register-custom-harness",
+  "from_content_digest": "sha256:ba4b866ba88bedf3c9dabd56ba13eeb390347cd27dbea96fd244f765ca83cafd",
+  "rationale": "The updated delivered section and preserved design still address the same requirements. Correct the prior entrypoint hash to the current design package digest reported by relation status; retain the earlier confirmation as history.",
+  "created_at": "2026-09-29T23:55:13.972316Z"
+}

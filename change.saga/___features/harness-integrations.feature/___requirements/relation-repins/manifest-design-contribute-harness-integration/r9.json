@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r9",
+  "relation": "urn:change-saga:cordyceps:relation:manifest-design-contribute-harness-integration",
+  "from_content_digest": "sha256:7dd78c841266c4429414c098bc5ae9bfceedd390a0156b659eb2e216346f7ac1",
+  "rationale": "The updated delivered section and preserved design still address the same requirements. Correct the prior entrypoint hash to the current design package digest reported by relation status; retain the earlier confirmation as history.",
+  "created_at": "2026-09-29T23:55:12.822234Z"
+}

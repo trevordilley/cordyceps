@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r5",
+  "relation": "urn:change-saga:cordyceps:relation:stack-standalone-setup",
+  "from_content_digest": "sha256:13d94a57082508cfd8324e76fad98aaecf66a357eee3d1499d3b025660012b81",
+  "rationale": "The delivered section and preserved design still describe standalone public imports and consumer-owned execution; advance to the current design package digest rather than the entrypoint byte hash.",
+  "created_at": "2026-09-29T23:54:58.858055Z"
+}
