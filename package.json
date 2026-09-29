@@ -1,0 +1,27 @@
+{
+  "name": "cordyceps",
+  "version": "0.1.0",
+  "description": "Mock model providers and declarative injection for consumer-owned AI harness tests",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "packageManager": "bun@1.3.13",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./playwright": { "types": "./dist/playwright.d.ts", "import": "./dist/playwright.js" }
+  },
+  "files": ["dist", "harnesses", "README.md", "docs"],
+  "scripts": {
+    "check": "tsc --noEmit",
+    "build": "bun scripts/build.ts",
+    "test": "bun test tests",
+    "test:package": "node scripts/verify-package.mjs"
+  },
+  "peerDependencies": { "@playwright/test": ">=1.50.0 <2" },
+  "peerDependenciesMeta": { "@playwright/test": { "optional": true } },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/bun": "1.3.13",
+    "@types/node": "22.19.15",
+    "typescript": "5.9.3"
+  }
+}
