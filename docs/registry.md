@@ -87,3 +87,9 @@ Bundling means a documented data recipe, not certification of installed executab
 ## Verification
 
 `tests/registry.test.ts` covers strict validation, duplicates, snapshots, missing codecs/modes/inputs, finite tokens, conflicts, environment purity, single-pass opaque inputs, JSON/TOML rendering, bundled/local parity, concurrent isolation, partial-write rollback, abort rollback, and cleanup retries. TOML ordinary values round-trip through Bun's independent TOML parser; exact escape fixtures cover controls that Bun 1.3.13's parser mishandles. A separate verification with Python's standard `tomllib` confirmed the complete quoted/control-character/nested-value fixture round-trips. No TOML runtime dependency or package change is required.
+
+## Contributing a definition
+
+To keep a recipe private, register it or load its JSON file in your own test setup. To contribute a bundled recipe, submit a pull request with `harnesses/<id>.json`, add its ID to the bundled loader in `src/registry.ts`, and add focused rendering/validation tests in `tests/registry.test.ts`. Include links to the harness's actual documented provider settings and an example that leaves executable selection and launch in consumer code. Test the expected environment, arguments and generated config using synthetic values; an installed-binary certification report or version/OS matrix is not required.
+
+A new harness sharing an existing wire format uses the existing codec ID. A new wire format also needs a real codec implementation, registration in `src/provider/index.ts`, and synthetic wire fixtures covering its text, tools, streaming, errors and cancellation behavior. Fictional settings are suitable for clearly labeled private test fixtures, not bundled real-harness recipes. Acceptance of a contribution and npm release remain maintainer actions.

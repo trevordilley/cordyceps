@@ -381,7 +381,7 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
         });
       },
       assertHealthy() {
-        if (failures.length) throw new AggregateError(failures.map(failure => failure.error), `Cordyceps recorded ${failures.length} failure(s)`);
+        if (failures.length) throw new AggregateError(failures.map(failure => failure.error), `Cordyceps recorded ${failures.length} failure(s):\n${failures.map(failure => failure.error.message).join("\n")}`);
       },
       dispose,
     };
