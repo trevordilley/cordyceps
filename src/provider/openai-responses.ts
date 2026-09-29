@@ -109,6 +109,8 @@ export const openaiResponses: ProviderCodec = Object.freeze({
     return { model: body.model, stream: body.stream === true, text: text.join('\n'), tools, toolResults, body };
   },
   encode(request, response, signal) {
+    if (response.health !== undefined || response.inputTokens !== undefined)
+      throw new TypeError('OpenAI Responses does not support Anthropic auxiliary responses');
     if (response.error !== undefined) {
       const { status, message, type } = response.error;
       const result = encoded(json({ error: { message, type: type ?? (status === 429 ? 'rate_limit_error' : status >= 500 ? 'server_error' : 'invalid_request_error'), param: null, code: null } }), signal, false, errorStatus(response.error));

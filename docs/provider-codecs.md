@@ -21,11 +21,13 @@ results, launch harnesses, infer ACP identities, or contact a live provider.
 Query strings are accepted. Prefix paths, trailing slashes, other endpoints,
 and other HTTP methods do not match. The injection base URL must therefore
 produce these `/v1/...` paths.
-Only these two creation endpoints are implemented. Ancillary endpoints such
-as Messages `count_tokens`, model listings, and response retrieval/deletion
-are unsupported; this is not complete vendor API emulation.
+Anthropic also accepts exactly `HEAD /api/hello` and
+`POST /v1/messages/count_tokens` (including query strings), observed from real
+Claude SDK consumers. These use ordinary capture, consumer routes and failure
+reporting; there is no automatic reply. Model listings and response
+retrieval/deletion remain unsupported; this is not complete vendor API emulation.
 
-Decoding requires a JSON object with a nonempty string `model`. `stream`, when
+Except for the bodyless hello probe, decoding requires a JSON object with a nonempty string `model`. `stream`, when
 present, must be boolean; absent means false. Tool and message/input arrays
 must be arrays when supplied (Responses also accepts a string `input`). This
 is envelope validation, not a complete provider schema validator.
@@ -78,6 +80,26 @@ from the consumer's `call_id`. No Chat Completions `[DONE]` sentinel is emitted.
 Provider message/response IDs are generated locally. Usage counters are zero
 placeholders, not tokenizer estimates or billing evidence. Responses are not
 stored, and `previous_response_id` does not retrieve prior input or state.
+
+## Anthropic auxiliary requests
+
+Register specific routes after a catch-all model route (newest match wins):
+
+```js
+ai.route(r => r.raw.method === 'HEAD' && r.raw.path.split('?')[0] === '/api/hello',
+  route => route.fulfill({ health: true }));
+ai.route(r => r.raw.method === 'POST' && r.raw.path.split('?')[0] === '/v1/messages/count_tokens',
+  route => route.fulfill({ inputTokens: 100 }));
+```
+
+The hello request normalizes to empty `model`/`text`, no tools/results, `body:
+null`, and `stream: false`; its raw HTTP capture remains available. Its explicit
+health reply is HTTP 200 with no body. Token counting retains ordinary Messages
+normalization and raw body, always returns JSON `{input_tokens: 100}`, and requires
+a nonnegative safe integer. This number is scripted, never a tokenizer estimate.
+Each auxiliary response shape is rejected on other endpoints, including Responses.
+`{error}` can script errors for auxiliary requests too. An unhandled auxiliary
+request still fails session health, just like an unhandled model request.
 
 ## Gates, errors, and cancellation
 

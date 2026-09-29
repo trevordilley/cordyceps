@@ -1,6 +1,9 @@
 import type { CapturedRequest, ProviderCodec, ProviderEvent, ScriptedResponse, ToolDefinition, ToolResult } from './types.js';
 import { array, collect, encoded, errorStatus, events, json, matchesPath, object, parseRequest, sse, textContent, wireId } from './common.js';
 
+const isHello = (method: string, path: string) => method.toUpperCase() === 'HEAD' && path.split('?')[0] === '/api/hello';
+const isTokenCount = (method: string, path: string) => matchesPath(method, path, '/v1/messages/count_tokens');
+
 function block(event: ProviderEvent): Record<string, unknown> {
   return 'text' in event ? { type: 'text', text: event.text }
     : { type: 'tool_use', ...event.toolCall };
@@ -47,8 +50,10 @@ async function* body(request: CapturedRequest, response: ScriptedResponse, signa
 
 export const anthropicMessages: ProviderCodec = Object.freeze({
   id: 'anthropic-messages',
-  matches: (method: string, path: string) => matchesPath(method, path, '/v1/messages'),
+  matches: (method: string, path: string) => matchesPath(method, path, '/v1/messages') || isHello(method, path) || isTokenCount(method, path),
   decode(raw) {
+    // A bodyless connectivity probe has no model or provider conversation.
+    if (isHello(raw.method, raw.path)) return { model: '', stream: false, text: '', tools: [], toolResults: [], body: null };
     const body = parseRequest(raw);
     const text = textContent(body.system, ['text']);
     const tools: ToolDefinition[] = [];
@@ -68,7 +73,7 @@ export const anthropicMessages: ProviderCodec = Object.freeze({
         tools.push({ name: tool.name, inputSchema: tool.input_schema, raw: tool });
       }
     }
-    return { model: body.model, stream: body.stream === true, text: text.join('\n'), tools, toolResults, body };
+    return { model: body.model, stream: !isTokenCount(raw.method, raw.path) && body.stream === true, text: text.join('\n'), tools, toolResults, body };
   },
   encode(request, response, signal) {
     if (response.error !== undefined) {
@@ -79,6 +84,17 @@ export const anthropicMessages: ProviderCodec = Object.freeze({
       result.headers['request-id'] = requestId;
       return result;
     }
+    if (isHello(request.raw.method, request.raw.path)) {
+      if (response.health !== true) throw new TypeError('Anthropic HEAD /api/hello requires { health: true }');
+      return { status: 200, headers: { 'content-length': '0' }, body: (async function* () { signal.throwIfAborted(); })() };
+    }
+    if (isTokenCount(request.raw.method, request.raw.path)) {
+      if (!Number.isSafeInteger(response.inputTokens) || response.inputTokens! < 0)
+        throw new TypeError('Anthropic count_tokens requires a nonnegative safe integer inputTokens');
+      return encoded(json({ input_tokens: response.inputTokens }), signal, false);
+    }
+    if (response.health !== undefined || response.inputTokens !== undefined)
+      throw new TypeError('Anthropic auxiliary responses require their exact endpoint');
     return encoded(body(request, response, signal), signal, request.stream);
   },
 } satisfies ProviderCodec);
