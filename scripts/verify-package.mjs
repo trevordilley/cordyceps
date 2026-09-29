@@ -63,6 +63,27 @@ try {
   assert.equal(response.status, 200);
   assert.equal((await response.json()).content[0].text, 'Node packed artifact');
   assert.equal(ai.requests.length, 1);
+  // Synthetic consumer handler performs a real filesystem read. This proves the
+  // provider round-trip contract, not any installed harness's tool behavior.
+  const fixtureContents = await readFile(configPath, 'utf8');
+  ai.route(() => true, route => {
+    const result = route.request.toolResults.find(t => t.id === 'file-call');
+    if (result) {
+      assert.equal(result.text, fixtureContents);
+      return route.fulfill({ text: 'tool result received' });
+    }
+    assert.equal(route.request.tools[0].name, 'read_file');
+    return route.fulfill({ toolCall: { id: 'file-call', name: 'read_file', input: { path: configPath } } });
+  });
+  const toolReply = await fetch(ai.baseUrl + '/v1/messages', {
+    method: 'POST', body: JSON.stringify({ model: 'fixture', messages: [], tools: [{ name: 'read_file', input_schema: { type: 'object' } }] }),
+  });
+  const call = (await toolReply.json()).content.find(c => c.type === 'tool_use');
+  const actualResult = await readFile(call.input.path, 'utf8');
+  const final = await fetch(ai.baseUrl + '/v1/messages', {
+    method: 'POST', body: JSON.stringify({ model: 'fixture', messages: [{ role: 'user', content: [{ type: 'tool_result', tool_use_id: call.id, content: actualResult }] }] }),
+  });
+  assert.equal((await final.json()).content[0].text, 'tool result received');
   ai.assertHealthy();
 } finally { await ai.dispose(); }
 await assert.rejects(access(configPath));
