@@ -99,7 +99,7 @@ const event: ProviderEvent = { text: 'typed' };
 ai.route(() => true, route => route.fulfill(event));
 await ai.dispose();\n`);
   const tsc = resolve(repo, 'node_modules/typescript/bin/tsc');
-  const typeArgs = [tsc, '--noEmit', '--strict', '--target', 'ES2022', '--module', 'NodeNext', '--moduleResolution', 'NodeNext', '--typeRoots', resolve(repo, 'node_modules/@types'), 'consumer.ts'];
+  const typeArgs = [tsc, '--noEmit', '--strict', '--target', 'ES2022', '--module', 'NodeNext', '--moduleResolution', 'NodeNext', '--types', 'node', '--typeRoots', resolve(repo, 'node_modules/@types'), 'consumer.ts'];
   run(process.execPath, typeArgs, standalone);
   // Install the peer into a SEPARATE clean consumer, checking fixture ownership.
   const playwright = join(root, 'playwright');
@@ -127,7 +127,7 @@ test('fixture HTTP and automatic cleanup', async ({ ai }) => {
   const cleanup = JSON.parse(await readFile(join(playwright, 'cleanup.json'), 'utf8'));
   await assert.rejects(fetch(cleanup.url));
   await assert.rejects(readFile(cleanup.path));
-  run(process.execPath, [tsc, '--noEmit', '--strict', '--target', 'ES2022', '--module', 'NodeNext', '--moduleResolution', 'NodeNext', '--typeRoots', resolve(repo, 'node_modules/@types'), 'fixture.spec.ts'], playwright);
+  run(process.execPath, [tsc, '--noEmit', '--strict', '--target', 'ES2022', '--module', 'NodeNext', '--moduleResolution', 'NodeNext', '--types', 'node', '--typeRoots', resolve(repo, 'node_modules/@types'), 'fixture.spec.ts'], playwright);
   // A swallowed HTTP error must still fail through the fixture's health check.
   await writeFile(join(playwright, 'failure.spec.ts'), `
 import { test } from 'cordyceps/playwright';

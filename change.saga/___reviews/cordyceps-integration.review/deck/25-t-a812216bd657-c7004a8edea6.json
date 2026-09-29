@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "deck": "cordyceps-integration",
+  "slide": "exchange-lifecycle",
+  "current": "sha256:fd506cb93046e457985c56cf5f493df361c10a72a49c3a7e1deacfe8bd32f812",
+  "revisions": [
+    {
+      "snapshot": "sha256:fd506cb93046e457985c56cf5f493df361c10a72a49c3a7e1deacfe8bd32f812",
+      "request_id": "cordyceps-exchange-lifecycle",
+      "created_at": "2026-09-29T22:39:07.885702Z",
+      "asset": "24-a-652a4a675e57399732605c30d9f37430f380b4ad76633831b636.svg",
+      "asset_digest": "sha256:652a4a675e57399732605c30d9f37430f380b4ad76633831b6365efa8118e986",
+      "slide": {
+        "version": 4,
+        "id": "exchange-lifecycle",
+        "deck": "cordyceps-integration",
+        "title": "Every provider exchange has an owned lifetime",
+        "rank": 20,
+        "intent": "explain",
+        "layout": "diagram",
+        "media_type": "image/svg+xml",
+        "entrypoint": "24-a-652a4a675e57399732605c30d9f37430f380b4ad76633831b636.svg",
+        "takeaway": "Capture, route and encode synthetic provider responses; abort sockets and gated iterators during cleanup.",
+        "reading_order": [
+          "capture",
+          "routes",
+          "codecs",
+          "dispose",
+          "uncooperative-gate"
+        ]
+      },
+      "items": [
+        {
+          "item": {
+            "version": 4,
+            "id": "capture",
+            "slide": "exchange-lifecycle",
+            "rank": 10,
+            "kind": "node",
+            "label": "Request contract",
+            "description": "Raw HTTP and normalized request/tool observations retain provider identities. Request capture does not infer ACP session IDs or process input.",
+            "selector": {
+              "type": "element",
+              "element_id": "capture"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "routes",
+            "slide": "exchange-lifecycle",
+            "rank": 20,
+            "kind": "node",
+            "label": "Routing and delivery",
+            "description": "The session owns listener, route precedence, held handlers, waits, response transcript and the failure ledger. Unknown requests never fall through to live model providers.",
+            "selector": {
+              "type": "element",
+              "element_id": "routes"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "codecs",
+            "slide": "exchange-lifecycle",
+            "rank": 30,
+            "kind": "node",
+            "label": "Provider codecs",
+            "description": "Separate codecs decode actual offered tool schemas/results and encode controlled text, tool calls, scripted HTTP errors and streaming terminal frames. Tool execution stays with the real consumer integration.",
+            "selector": {
+              "type": "element",
+              "element_id": "codecs"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "dispose",
+            "slide": "exchange-lifecycle",
+            "rank": 40,
+            "kind": "node",
+            "label": "Bounded cleanup",
+            "description": "Disconnect/dispose aborts delivery and held request work, rejecting waits and removing session configuration. User callbacks remain cooperative JavaScript; stopping network work cannot cancel arbitrary side effects.",
+            "selector": {
+              "type": "element",
+              "element_id": "dispose"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "uncooperative-gate",
+            "slide": "exchange-lifecycle",
+            "rank": 50,
+            "kind": "callout",
+            "label": "A held user gate cannot hold the listener open",
+            "description": "Network cleanup stops waiting for the producer.",
+            "selector": {
+              "type": "element",
+              "element_id": "dispose"
+            },
+            "about": "dispose",
+            "body": "A consumer generator can await forever. Disposal races network work against abort instead of waiting for that generator; sockets close, but arbitrary user-code side effects still require consumer cleanup."
+          },
+          "evidence": [],
+          "criterion_links": []
+        }
+      ],
+      "diagram": {
+        "source": "24-a-f528c6ad26966c82fd10eff6d8d6ecf0a2bfa848e35661d39c04.json",
+        "source_digest": "sha256:f528c6ad26966c82fd10eff6d8d6ecf0a2bfa848e35661d39c04eb80c715070e",
+        "renderer": "change-saga-diagram/2"
+      }
+    }
+  ]
+}

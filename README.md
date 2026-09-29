@@ -55,7 +55,7 @@ ai.route(request => request.text.includes('read fixture'), async route => {
 
 `fixturePath` is a consumer-created file, and `Read`/`file_path` must match the actual tool schema offered by your harness. The real harness or its consumer-owned client handlers execute the operation with normal permissions. Cordyceps never supplies a fabricated file result.
 
-Both provider codecs support text, one tool call per response, scripted errors and asynchronous event streams:
+Both provider codecs support text, a single-tool-call shorthand, scripted errors and asynchronous text/tool event streams:
 
 ```js
 ai.route(() => true, route => route.fulfill({

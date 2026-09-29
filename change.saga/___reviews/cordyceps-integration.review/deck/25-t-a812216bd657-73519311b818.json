@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "deck": "cordyceps-integration",
+  "slide": "verification-boundary",
+  "current": "sha256:6d067cd0833dc88d8b72aeb0a1017eaf0ec11be8e5361bd016989167c9a9eab0",
+  "revisions": [
+    {
+      "snapshot": "sha256:6d067cd0833dc88d8b72aeb0a1017eaf0ec11be8e5361bd016989167c9a9eab0",
+      "request_id": "cordyceps-verification-boundary",
+      "created_at": "2026-09-29T22:39:08.033031Z",
+      "asset": "24-a-fb49a96e53409d28c2b16e6270dea032cc00bd58159afcc08be3.svg",
+      "asset_digest": "sha256:fb49a96e53409d28c2b16e6270dea032cc00bd58159afcc08be34a850ca3270e",
+      "slide": {
+        "version": 4,
+        "id": "verification-boundary",
+        "deck": "cordyceps-integration",
+        "title": "Verify the library at its actual boundaries",
+        "rank": 40,
+        "intent": "explain",
+        "layout": "diagram",
+        "media_type": "image/svg+xml",
+        "entrypoint": "24-a-fb49a96e53409d28c2b16e6270dea032cc00bd58159afcc08be3.svg",
+        "takeaway": "Synthetic fixtures and packed Node consumers verify library contracts; real harness and ACP scenarios remain consumer-owned.",
+        "reading_order": [
+          "units",
+          "node",
+          "pw",
+          "observations",
+          "limits"
+        ]
+      },
+      "items": [
+        {
+          "item": {
+            "version": 4,
+            "id": "units",
+            "slide": "verification-boundary",
+            "rank": 10,
+            "kind": "node",
+            "label": "Focused synthetic tests",
+            "description": "Tests exercise injection validation/rendering, provider framing, held requests/streams, observations, isolation and cleanup. They do not substitute synthetic results for real tool execution evidence.",
+            "selector": {
+              "type": "element",
+              "element_id": "units"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "node",
+            "slide": "verification-boundary",
+            "rank": 20,
+            "kind": "node",
+            "label": "Packed artifact checks",
+            "description": "Verification installs the tarball into a clean Node consumer with no Playwright, checks included/excluded files, local definitions, HTTP behavior, file/listener cleanup and exported declarations.",
+            "selector": {
+              "type": "element",
+              "element_id": "node"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "pw",
+            "slide": "verification-boundary",
+            "rank": 30,
+            "kind": "node",
+            "label": "Optional peer checks",
+            "description": "A separate packed consumer installs Playwright and checks fixture behavior, public declarations and cleanup after success and intentionally ignored handler errors.",
+            "selector": {
+              "type": "element",
+              "element_id": "pw"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "observations",
+            "slide": "verification-boundary",
+            "rank": 40,
+            "kind": "node",
+            "label": "Passive consumer hooks",
+            "description": "Native payload snapshots and input instrumentation preserve consumer data separately from provider transcripts. No transport proxy or ACP producer is supplied.",
+            "selector": {
+              "type": "element",
+              "element_id": "observations"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "limits",
+            "slide": "verification-boundary",
+            "rank": 50,
+            "kind": "node",
+            "label": "Evidence limits",
+            "description": "No installed-harness, real-tool, ACP lifecycle or frontend certification is claimed. Prior experiments stay historical. No additional surprises: these checks establish the library contracts described on the earlier slides.",
+            "selector": {
+              "type": "element",
+              "element_id": "limits"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        }
+      ],
+      "diagram": {
+        "source": "24-a-970c404a1a46a54f7be06dd4368710998a881f46516ed38586ab.json",
+        "source_digest": "sha256:970c404a1a46a54f7be06dd4368710998a881f46516ed38586ab2fb33e4385e3",
+        "renderer": "change-saga-diagram/2"
+      }
+    }
+  ]
+}

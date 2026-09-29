@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "width": 1280,
+  "height": 720,
+  "elements": [
+    {
+      "id": "title",
+      "kind": "text",
+      "label": "Every provider exchange has an owned lifetime",
+      "x": 50,
+      "y": 24,
+      "width": 1180,
+      "height": 60,
+      "style": "title",
+      "decorative": true
+    },
+    {
+      "id": "capture",
+      "kind": "node",
+      "shape": "service",
+      "label": "Capture HTTP request",
+      "detail": "Raw body + normalized view",
+      "x": 50,
+      "y": 155,
+      "width": 270,
+      "height": 110,
+      "style": "normal"
+    },
+    {
+      "id": "routes",
+      "kind": "node",
+      "shape": "service",
+      "label": "Choose newest route",
+      "detail": "Predicate + consumer callback",
+      "x": 380,
+      "y": 155,
+      "width": 310,
+      "height": 110,
+      "style": "primary"
+    },
+    {
+      "id": "codecs",
+      "kind": "node",
+      "shape": "service",
+      "label": "Encode provider response",
+      "detail": "Anthropic Messages / OpenAI Responses",
+      "x": 760,
+      "y": 155,
+      "width": 450,
+      "height": 110,
+      "style": "normal"
+    },
+    {
+      "id": "socket",
+      "kind": "node",
+      "shape": "service",
+      "label": "Deliver to real caller",
+      "detail": "JSON or SSE; backpressure",
+      "x": 770,
+      "y": 440,
+      "width": 440,
+      "height": 100,
+      "style": "normal"
+    },
+    {
+      "id": "failures",
+      "kind": "node",
+      "shape": "service",
+      "label": "Visible failure ledger",
+      "detail": "Unmatched / handler error",
+      "x": 70,
+      "y": 440,
+      "width": 300,
+      "height": 100,
+      "style": "warning"
+    },
+    {
+      "id": "dispose",
+      "kind": "node",
+      "shape": "service",
+      "label": "Abort and dispose",
+      "detail": "Waiters + sockets + config",
+      "x": 415,
+      "y": 440,
+      "width": 290,
+      "height": 100,
+      "style": "primary"
+    },
+    {
+      "id": "match",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "capture",
+      "to": "routes",
+      "points": [
+        {
+          "x": 320,
+          "y": 210
+        },
+        {
+          "x": 380,
+          "y": 210
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "encode",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "routes",
+      "to": "codecs",
+      "points": [
+        {
+          "x": 690,
+          "y": 210
+        },
+        {
+          "x": 760,
+          "y": 210
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "deliver",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "codecs",
+      "to": "socket",
+      "points": [
+        {
+          "x": 985,
+          "y": 265
+        },
+        {
+          "x": 985,
+          "y": 440
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "fail",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "routes",
+      "to": "failures",
+      "points": [
+        {
+          "x": 450,
+          "y": 265
+        },
+        {
+          "x": 220,
+          "y": 440
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "abort",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "dispose",
+      "to": "socket",
+      "points": [
+        {
+          "x": 705,
+          "y": 490
+        },
+        {
+          "x": 770,
+          "y": 490
+        }
+      ],
+      "head": "arrow"
+    }
+  ]
+}

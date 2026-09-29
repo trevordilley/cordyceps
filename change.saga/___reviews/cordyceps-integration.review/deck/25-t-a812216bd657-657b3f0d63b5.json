@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "deck": "cordyceps-integration",
+  "slide": "package-boundary",
+  "current": "sha256:69620f449adba6496bbd3a3e15ba3188ee2b1d92f752ef056e4a1f58417fffb3",
+  "revisions": [
+    {
+      "snapshot": "sha256:69620f449adba6496bbd3a3e15ba3188ee2b1d92f752ef056e4a1f58417fffb3",
+      "request_id": "cordyceps-package-boundary",
+      "created_at": "2026-09-29T22:39:07.807102Z",
+      "asset": "24-a-2f2afa94bca3f168167717998b6a01ac52afba1459809c484980.svg",
+      "asset_digest": "sha256:2f2afa94bca3f168167717998b6a01ac52afba1459809c484980070b0903f22e",
+      "slide": {
+        "version": 4,
+        "id": "package-boundary",
+        "deck": "cordyceps-integration",
+        "title": "One backend; consumer-owned execution",
+        "rank": 10,
+        "intent": "explain",
+        "layout": "diagram",
+        "media_type": "image/svg+xml",
+        "entrypoint": "24-a-2f2afa94bca3f168167717998b6a01ac52afba1459809c484980.svg",
+        "takeaway": "ESM core and an optional Playwright fixture prepare provider controls; applications keep executable and ACP ownership.",
+        "reading_order": [
+          "build",
+          "core",
+          "fixture",
+          "consumer",
+          "failure-surface"
+        ]
+      },
+      "items": [
+        {
+          "item": {
+            "version": 4,
+            "id": "build",
+            "slide": "package-boundary",
+            "rank": 10,
+            "kind": "node",
+            "label": "Build and package",
+            "description": "Pinned Bun development dependencies and strict TypeScript produce an ESM Node artifact. The package allowlist excludes tests, experiments and Saga; no install hooks or publication.",
+            "selector": {
+              "type": "element",
+              "element_id": "build"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "core",
+            "slide": "package-boundary",
+            "rank": 20,
+            "kind": "node",
+            "label": "Public standalone entry",
+            "description": "Exports preparation, registry, codecs and public types with no Playwright import. README and integration contracts explain the injection-only API and its consumer responsibilities.",
+            "selector": {
+              "type": "element",
+              "element_id": "core"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "fixture",
+            "slide": "package-boundary",
+            "rank": 30,
+            "kind": "node",
+            "label": "Optional fixture",
+            "description": "The ai fixture creates one core session per test and disposes it in finally, then checks asynchronous route failures. The consumer app fixture must depend on ai for teardown order.",
+            "selector": {
+              "type": "element",
+              "element_id": "fixture"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "consumer",
+            "slide": "package-boundary",
+            "rank": 40,
+            "kind": "node",
+            "label": "Application retains ownership",
+            "description": "Native process and ACP behavior stays outside Cordyceps. Consumer documentation distinguishes explicit input and protocol observation from provider traffic.",
+            "selector": {
+              "type": "element",
+              "element_id": "consumer"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "failure-surface",
+            "slide": "package-boundary",
+            "rank": 50,
+            "kind": "callout",
+            "label": "Swallowed HTTP errors still fail tests",
+            "description": "Fixture teardown reports handler failures after cleanup.",
+            "selector": {
+              "type": "element",
+              "element_id": "fixture"
+            },
+            "about": "fixture",
+            "body": "An HTTP caller may ignore a failed route. The fixture checks recorded handler failures after cleanup, so a swallowed backend error still fails the test; standalone callers use assertHealthy()."
+          },
+          "evidence": [],
+          "criterion_links": []
+        }
+      ],
+      "diagram": {
+        "source": "24-a-2e7eb2254074ac27219334152f3ffa631dca58932e8ad8913161.json",
+        "source_digest": "sha256:2e7eb2254074ac27219334152f3ffa631dca58932e8ad8913161831cadebeb6a",
+        "renderer": "change-saga-diagram/2"
+      }
+    }
+  ]
+}

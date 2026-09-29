@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "width": 1280,
+  "height": 720,
+  "elements": [
+    {
+      "id": "title",
+      "kind": "text",
+      "label": "Verify the library at its actual boundaries",
+      "x": 50,
+      "y": 24,
+      "width": 1180,
+      "height": 60,
+      "style": "title",
+      "decorative": true
+    },
+    {
+      "id": "units",
+      "kind": "node",
+      "shape": "service",
+      "label": "Bun contract tests",
+      "detail": "Registry, codecs, core lifecycle",
+      "x": 60,
+      "y": 170,
+      "width": 310,
+      "height": 120,
+      "style": "normal"
+    },
+    {
+      "id": "node",
+      "kind": "node",
+      "shape": "service",
+      "label": "Packed standalone consumer",
+      "detail": "Node HTTP + public declarations",
+      "x": 455,
+      "y": 170,
+      "width": 350,
+      "height": 120,
+      "style": "primary"
+    },
+    {
+      "id": "pw",
+      "kind": "node",
+      "shape": "service",
+      "label": "Packed Playwright consumer",
+      "detail": "Optional peer + teardown",
+      "x": 880,
+      "y": 170,
+      "width": 340,
+      "height": 120,
+      "style": "primary"
+    },
+    {
+      "id": "observations",
+      "kind": "node",
+      "shape": "service",
+      "label": "Consumer observation hooks",
+      "detail": "Input and native ACP snapshots",
+      "x": 70,
+      "y": 460,
+      "width": 360,
+      "height": 115,
+      "style": "normal"
+    },
+    {
+      "id": "limits",
+      "kind": "node",
+      "shape": "service",
+      "label": "Unverified consumer behavior",
+      "detail": "Installed binaries, real tools, ACP, frontend",
+      "x": 730,
+      "y": 460,
+      "width": 490,
+      "height": 115,
+      "style": "warning"
+    },
+    {
+      "id": "artifact",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "units",
+      "to": "node",
+      "points": [
+        {
+          "x": 370,
+          "y": 230
+        },
+        {
+          "x": 455,
+          "y": 230
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "peer",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "node",
+      "to": "pw",
+      "points": [
+        {
+          "x": 805,
+          "y": 230
+        },
+        {
+          "x": 890,
+          "y": 230
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "boundary",
+      "kind": "edge",
+      "label": "consumer tests",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "observations",
+      "to": "limits",
+      "points": [
+        {
+          "x": 430,
+          "y": 515
+        },
+        {
+          "x": 730,
+          "y": 515
+        }
+      ],
+      "head": "arrow",
+      "label_box": {
+        "x": 470,
+        "y": 470,
+        "width": 230,
+        "height": 35
+      }
+    }
+  ]
+}

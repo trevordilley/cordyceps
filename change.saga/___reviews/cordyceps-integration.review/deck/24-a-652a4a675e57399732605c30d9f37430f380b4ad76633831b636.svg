@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="diagram-title" data-renderer="change-saga-diagram/2" aria-describedby="diagram-desc">
+  <title id="diagram-title">Every provider exchange has an owned lifetime</title>
+  <desc id="diagram-desc">Capture, route and encode synthetic provider responses; abort sockets and gated iterators during cleanup.</desc>
+  <defs>
+    <style>@font-face{font-family:"Change Saga Diagram";src:url("/_diagram/fonts/go-regular.ttf") format("truetype")}text{font-family:"Change Saga Diagram",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:400}:root{color-scheme:light dark;--diagram-normal-fill:#ffffff;--diagram-normal-ink:#172033;--diagram-normal-stroke:#64748b;--diagram-primary-fill:#edf5ff;--diagram-primary-ink:#153869;--diagram-primary-stroke:#2563eb;--diagram-secondary-stroke:#94a3b8;--diagram-title-ink:#172033;--diagram-warning-fill:#fff7e6;--diagram-warning-ink:#805015;--diagram-warning-stroke:#b7791f;}@media (prefers-color-scheme:dark){:root{--diagram-normal-fill:#161b22;--diagram-normal-ink:#e6edf3;--diagram-normal-stroke:#6e7681;--diagram-primary-fill:#0c2d6b;--diagram-primary-ink:#cae8ff;--diagram-primary-stroke:#4493f8;--diagram-secondary-stroke:#6e7681;--diagram-title-ink:#e6edf3;--diagram-warning-fill:#2d240c;--diagram-warning-ink:#f2cc60;--diagram-warning-stroke:#d29922;}}</style>
+    <marker id="diagram-head-match" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#94a3b8" style="fill:var(--diagram-secondary-stroke,#94a3b8)"/>
+    </marker>
+    <marker id="diagram-head-encode" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#94a3b8" style="fill:var(--diagram-secondary-stroke,#94a3b8)"/>
+    </marker>
+    <marker id="diagram-head-deliver" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#94a3b8" style="fill:var(--diagram-secondary-stroke,#94a3b8)"/>
+    </marker>
+    <marker id="diagram-head-fail" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#94a3b8" style="fill:var(--diagram-secondary-stroke,#94a3b8)"/>
+    </marker>
+    <marker id="diagram-head-abort" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#94a3b8" style="fill:var(--diagram-secondary-stroke,#94a3b8)"/>
+    </marker>
+  </defs>
+  <g id="title" data-diagram-kind="text" transform="translate(50 24)" aria-hidden="true">
+    <text x="0" y="34" font-size="34" fill="#172033" xml:space="preserve" style="fill:var(--diagram-title-ink,#172033)"><tspan x="0" y="34">Every provider exchange has an owned lifetime</tspan></text>
+  </g>
+  <g id="capture" data-diagram-kind="node" transform="translate(50 155)" role="group" aria-label="Capture HTTP request">
+    <rect width="270" height="110" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="2" style="fill:var(--diagram-normal-fill,#ffffff);stroke:var(--diagram-normal-stroke,#64748b)"/>
+    <text x="18" y="40" font-size="22" fill="#172033" xml:space="preserve" style="fill:var(--diagram-normal-ink,#172033)"><tspan x="18" y="40">Capture HTTP request</tspan></text>
+    <text x="18" y="73" font-size="15" fill="#172033" xml:space="preserve" style="fill:var(--diagram-normal-ink,#172033)"><tspan x="18" y="73">Raw body + normalized view</tspan></text>
+  </g>
+  <g id="routes" data-diagram-kind="node" transform="translate(380 155)" role="group" aria-label="Choose newest route">
+    <rect width="310" height="110" rx="8" fill="#edf5ff" stroke="#2563eb" stroke-width="2" style="fill:var(--diagram-primary-fill,#edf5ff);stroke:var(--diagram-primary-stroke,#2563eb)"/>
+    <text x="18" y="40" font-size="22" fill="#153869" xml:space="preserve" style="fill:var(--diagram-primary-ink,#153869)"><tspan x="18" y="40">Choose newest route</tspan></text>
+    <text x="18" y="73" font-size="15" fill="#153869" xml:space="preserve" style="fill:var(--diagram-primary-ink,#153869)"><tspan x="18" y="73">Predicate + consumer callback</tspan></text>
+  </g>
+  <g id="codecs" data-diagram-kind="node" transform="translate(760 155)" role="group" aria-label="Encode provider response">
+    <rect width="450" height="110" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="2" style="fill:var(--diagram-normal-fill,#ffffff);stroke:var(--diagram-normal-stroke,#64748b)"/>
+    <text x="18" y="40" font-size="22" fill="#172033" xml:space="preserve" style="fill:var(--diagram-normal-ink,#172033)"><tspan x="18" y="40">Encode provider response</tspan></text>
+    <text x="18" y="73" font-size="15" fill="#172033" xml:space="preserve" style="fill:var(--diagram-normal-ink,#172033)"><tspan x="18" y="73">Anthropic Messages / OpenAI Responses</tspan></text>
+  </g>
+  <g id="socket" data-diagram-kind="node" transform="translate(770 440)" role="group" aria-label="Deliver to real caller">
+    <rect width="440" height="100" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="2" style="fill:var(--diagram-normal-fill,#ffffff);stroke:var(--diagram-normal-stroke,#64748b)"/>
+    <text x="18" y="40" font-size="22" fill="#172033" xml:space="preserve" style="fill:var(--diagram-normal-ink,#172033)"><tspan x="18" y="40">Deliver to real caller</tspan></text>
+    <text x="18" y="73" font-size="15" fill="#172033" xml:space="preserve" style="fill:var(--diagram-normal-ink,#172033)"><tspan x="18" y="73">JSON or SSE; backpressure</tspan></text>
+  </g>
+  <g id="failures" data-diagram-kind="node" transform="translate(70 440)" role="group" aria-label="Visible failure ledger">
+    <rect width="300" height="100" rx="8" fill="#fff7e6" stroke="#b7791f" stroke-width="2" style="fill:var(--diagram-warning-fill,#fff7e6);stroke:var(--diagram-warning-stroke,#b7791f)"/>
+    <text x="18" y="37" font-size="19" fill="#805015" xml:space="preserve" style="fill:var(--diagram-warning-ink,#805015)"><tspan x="18" y="37">Visible failure ledger</tspan></text>
+    <text x="18" y="73" font-size="15" fill="#805015" xml:space="preserve" style="fill:var(--diagram-warning-ink,#805015)"><tspan x="18" y="73">Unmatched / handler error</tspan></text>
+  </g>
+  <g id="dispose" data-diagram-kind="node" transform="translate(415 440)" role="group" aria-label="Abort and dispose">
+    <rect width="290" height="100" rx="8" fill="#edf5ff" stroke="#2563eb" stroke-width="2" style="fill:var(--diagram-primary-fill,#edf5ff);stroke:var(--diagram-primary-stroke,#2563eb)"/>
+    <text x="18" y="40" font-size="22" fill="#153869" xml:space="preserve" style="fill:var(--diagram-primary-ink,#153869)"><tspan x="18" y="40">Abort and dispose</tspan></text>
+    <text x="18" y="73" font-size="15" fill="#153869" xml:space="preserve" style="fill:var(--diagram-primary-ink,#153869)"><tspan x="18" y="73">Waiters + sockets + config</tspan></text>
+  </g>
+  <g id="match" data-diagram-kind="edge" transform="translate(0 0)" role="group" aria-label="capture to routes" data-from="capture" data-to="routes">
+    <path d="M320 210 L380 210" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round" marker-end="url(#diagram-head-match)" style="stroke:var(--diagram-secondary-stroke,#94a3b8)"/>
+  </g>
+  <g id="encode" data-diagram-kind="edge" transform="translate(0 0)" role="group" aria-label="routes to codecs" data-from="routes" data-to="codecs">
+    <path d="M690 210 L760 210" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round" marker-end="url(#diagram-head-encode)" style="stroke:var(--diagram-secondary-stroke,#94a3b8)"/>
+  </g>
+  <g id="deliver" data-diagram-kind="edge" transform="translate(0 0)" role="group" aria-label="codecs to socket" data-from="codecs" data-to="socket">
+    <path d="M985 265 L985 440" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round" marker-end="url(#diagram-head-deliver)" style="stroke:var(--diagram-secondary-stroke,#94a3b8)"/>
+  </g>
+  <g id="fail" data-diagram-kind="edge" transform="translate(0 0)" role="group" aria-label="routes to failures" data-from="routes" data-to="failures">
+    <path d="M450 265 L220 440" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round" marker-end="url(#diagram-head-fail)" style="stroke:var(--diagram-secondary-stroke,#94a3b8)"/>
+  </g>
+  <g id="abort" data-diagram-kind="edge" transform="translate(0 0)" role="group" aria-label="dispose to socket" data-from="dispose" data-to="socket">
+    <path d="M705 490 L770 490" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round" marker-end="url(#diagram-head-abort)" style="stroke:var(--diagram-secondary-stroke,#94a3b8)"/>
+  </g>
+</svg>

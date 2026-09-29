@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "deck": "cordyceps-integration",
+  "slide": "registry-injection",
+  "current": "sha256:a1d6250e071941ad44d66bf92e4a73a2f54f231273c9798abdc89debf2a9cb49",
+  "revisions": [
+    {
+      "snapshot": "sha256:a1d6250e071941ad44d66bf92e4a73a2f54f231273c9798abdc89debf2a9cb49",
+      "request_id": "cordyceps-registry-injection",
+      "created_at": "2026-09-29T22:39:07.965221Z",
+      "asset": "24-a-802d6b434665bb5adf53de9c0bc380f5698882a52a348195e365.svg",
+      "asset_digest": "sha256:802d6b434665bb5adf53de9c0bc380f5698882a52a348195e36507afe7e0e712",
+      "slide": {
+        "version": 4,
+        "id": "registry-injection",
+        "deck": "cordyceps-integration",
+        "title": "Validate data before allocating resources",
+        "rank": 30,
+        "intent": "explain",
+        "layout": "diagram",
+        "media_type": "image/svg+xml",
+        "entrypoint": "24-a-802d6b434665bb5adf53de9c0bc380f5698882a52a348195e365.svg",
+        "takeaway": "Local and bundled recipes share one validation and rendering path, with pure environment merging and owned files.",
+        "reading_order": [
+          "registry",
+          "validate",
+          "render",
+          "missing-acp"
+        ]
+      },
+      "items": [
+        {
+          "item": {
+            "version": 4,
+            "id": "registry",
+            "slide": "registry-injection",
+            "rank": 10,
+            "kind": "node",
+            "label": "One registry contract",
+            "description": "Definitions are strict data with duplicate-ID rejection and detached snapshots. Bundled Claude Code and Codex recipes cite actual documented provider settings and use the same loader as private JSON.",
+            "selector": {
+              "type": "element",
+              "element_id": "registry"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "validate",
+            "slide": "registry-injection",
+            "rank": 20,
+            "kind": "node",
+            "label": "Definition validation",
+            "description": "Reject missing mode/codec/input, unknown tokens, conflicting fields and unsafe generated paths before starting provider resources. No binary inspection or fallback mode selection.",
+            "selector": {
+              "type": "element",
+              "element_id": "validate"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "render",
+            "slide": "registry-injection",
+            "rank": 30,
+            "kind": "node",
+            "label": "Injection renderer",
+            "description": "Finite substitution and structured JSON/TOML serialization produce env, args and config. environment(base) leaves caller and global environment unchanged; rollback and dispose remove only owned resources.",
+            "selector": {
+              "type": "element",
+              "element_id": "render"
+            }
+          },
+          "evidence": [],
+          "criterion_links": []
+        },
+        {
+          "item": {
+            "version": 4,
+            "id": "missing-acp",
+            "slide": "registry-injection",
+            "rank": 40,
+            "kind": "callout",
+            "label": "Recipe selection is not negotiation",
+            "description": "Missing ACP configuration fails explicitly.",
+            "selector": {
+              "type": "element",
+              "element_id": "validate"
+            },
+            "about": "validate",
+            "body": "Choosing an ACP recipe supplies settings only. Missing recipes fail instead of using text mode; the application must select its adapter and negotiate actual capabilities with its real client."
+          },
+          "evidence": [],
+          "criterion_links": []
+        }
+      ],
+      "diagram": {
+        "source": "24-a-ec4d3398fc5510286751f6ad2844e6a4c42bb8e4f9bb79d91743.json",
+        "source_digest": "sha256:ec4d3398fc5510286751f6ad2844e6a4c42bb8e4f9bb79d91743276ad65a748c",
+        "renderer": "change-saga-diagram/2"
+      }
+    }
+  ]
+}

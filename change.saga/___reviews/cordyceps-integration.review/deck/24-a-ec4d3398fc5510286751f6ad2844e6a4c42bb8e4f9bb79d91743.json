@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "width": 1280,
+  "height": 720,
+  "elements": [
+    {
+      "id": "title",
+      "kind": "text",
+      "label": "Validate data before allocating resources",
+      "x": 50,
+      "y": 24,
+      "width": 1180,
+      "height": 60,
+      "style": "title",
+      "decorative": true
+    },
+    {
+      "id": "registry",
+      "kind": "node",
+      "shape": "datastore",
+      "label": "Registry snapshots",
+      "detail": "Bundled JSON or private file",
+      "x": 50,
+      "y": 160,
+      "width": 300,
+      "height": 115,
+      "style": "normal"
+    },
+    {
+      "id": "validate",
+      "kind": "node",
+      "shape": "service",
+      "label": "Validate selected recipe",
+      "detail": "Mode, codec, tokens, conflicts",
+      "x": 455,
+      "y": 160,
+      "width": 350,
+      "height": 115,
+      "style": "primary"
+    },
+    {
+      "id": "render",
+      "kind": "node",
+      "shape": "service",
+      "label": "Render injection",
+      "detail": "Structured JSON / TOML",
+      "x": 455,
+      "y": 420,
+      "width": 350,
+      "height": 115,
+      "style": "normal"
+    },
+    {
+      "id": "values",
+      "kind": "node",
+      "shape": "service",
+      "label": "Environment + argv",
+      "detail": "Pure merge into caller base",
+      "x": 890,
+      "y": 160,
+      "width": 330,
+      "height": 115,
+      "style": "normal"
+    },
+    {
+      "id": "files",
+      "kind": "node",
+      "shape": "document",
+      "label": "Owned temporary files",
+      "detail": "Removed on failure / dispose",
+      "x": 890,
+      "y": 420,
+      "width": 330,
+      "height": 115,
+      "style": "normal"
+    },
+    {
+      "id": "select",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "registry",
+      "to": "validate",
+      "points": [
+        {
+          "x": 350,
+          "y": 215
+        },
+        {
+          "x": 455,
+          "y": 215
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "allocate",
+      "kind": "edge",
+      "label": "then allocate",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "validate",
+      "to": "render",
+      "points": [
+        {
+          "x": 630,
+          "y": 275
+        },
+        {
+          "x": 630,
+          "y": 420
+        }
+      ],
+      "head": "arrow",
+      "label_box": {
+        "x": 665,
+        "y": 320,
+        "width": 210,
+        "height": 35
+      }
+    },
+    {
+      "id": "env",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "render",
+      "to": "values",
+      "points": [
+        {
+          "x": 805,
+          "y": 440
+        },
+        {
+          "x": 890,
+          "y": 255
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "write",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "render",
+      "to": "files",
+      "points": [
+        {
+          "x": 805,
+          "y": 480
+        },
+        {
+          "x": 890,
+          "y": 480
+        }
+      ],
+      "head": "arrow"
+    }
+  ]
+}

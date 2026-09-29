@@ -2,6 +2,7 @@ import { prepare } from './session.js';
 import { createRegistry } from './registry.js';
 
 export { prepare, createRegistry };
+export { DefinitionError } from './manifest.js';
 export { getCodec, codecIds } from './provider/index.js';
 export type * from './provider/types.js';
 export type * from './session.js';

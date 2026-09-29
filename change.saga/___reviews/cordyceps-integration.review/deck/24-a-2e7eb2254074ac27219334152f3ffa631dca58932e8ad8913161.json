@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "width": 1280,
+  "height": 720,
+  "elements": [
+    {
+      "id": "title",
+      "kind": "text",
+      "label": "One backend; consumer-owned execution",
+      "x": 50,
+      "y": 24,
+      "width": 1180,
+      "height": 60,
+      "style": "title",
+      "decorative": true
+    },
+    {
+      "id": "build",
+      "kind": "node",
+      "shape": "service",
+      "label": "Bun build + strict tsc",
+      "detail": "Development tooling",
+      "x": 60,
+      "y": 130,
+      "width": 300,
+      "height": 100,
+      "style": "normal"
+    },
+    {
+      "id": "package",
+      "kind": "node",
+      "shape": "document",
+      "label": "npm artifact",
+      "detail": "Node JS + types + definitions",
+      "x": 490,
+      "y": 130,
+      "width": 290,
+      "height": 100,
+      "style": "primary"
+    },
+    {
+      "id": "core",
+      "kind": "node",
+      "shape": "service",
+      "label": "cordyceps",
+      "detail": "Standalone prepare / dispose",
+      "x": 150,
+      "y": 330,
+      "width": 300,
+      "height": 110,
+      "style": "primary"
+    },
+    {
+      "id": "fixture",
+      "kind": "node",
+      "shape": "service",
+      "label": "cordyceps/playwright",
+      "detail": "External optional peer",
+      "x": 810,
+      "y": 130,
+      "width": 390,
+      "height": 100,
+      "style": "normal"
+    },
+    {
+      "id": "consumer",
+      "kind": "node",
+      "shape": "actor",
+      "label": "Consumer application",
+      "detail": "Own binary, client and tools",
+      "x": 810,
+      "y": 430,
+      "width": 390,
+      "height": 170,
+      "style": "normal"
+    },
+    {
+      "id": "pack",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "build",
+      "to": "package",
+      "points": [
+        {
+          "x": 360,
+          "y": 180
+        },
+        {
+          "x": 490,
+          "y": 180
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "exports",
+      "kind": "edge",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "package",
+      "to": "core",
+      "points": [
+        {
+          "x": 540,
+          "y": 230
+        },
+        {
+          "x": 300,
+          "y": 330
+        }
+      ],
+      "head": "arrow"
+    },
+    {
+      "id": "wraps",
+      "kind": "edge",
+      "label": "same core",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "fixture",
+      "to": "core",
+      "points": [
+        {
+          "x": 1000,
+          "y": 230
+        },
+        {
+          "x": 1000,
+          "y": 285
+        },
+        {
+          "x": 450,
+          "y": 375
+        }
+      ],
+      "head": "arrow",
+      "label_box": {
+        "x": 690,
+        "y": 260,
+        "width": 200,
+        "height": 30
+      }
+    },
+    {
+      "id": "inject",
+      "kind": "edge",
+      "label": "env / args / files",
+      "x": 0,
+      "y": 0,
+      "style": "secondary",
+      "from": "core",
+      "to": "consumer",
+      "points": [
+        {
+          "x": 450,
+          "y": 400
+        },
+        {
+          "x": 810,
+          "y": 500
+        }
+      ],
+      "head": "arrow",
+      "label_box": {
+        "x": 500,
+        "y": 415,
+        "width": 280,
+        "height": 35
+      }
+    }
+  ]
+}
