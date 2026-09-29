@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "tests/codecs.test.ts",
+      "digest": "sha256:e07ee3d535bd7af2c7b7251ee69eb0a7f427bf142dbf452432be995db9b03b8b",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}

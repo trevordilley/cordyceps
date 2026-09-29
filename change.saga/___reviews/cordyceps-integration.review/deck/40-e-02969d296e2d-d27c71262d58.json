@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/provider/openai-responses.ts",
+      "digest": "sha256:34fbf536bd55e7684e713191f03b9ee811852f4261f1bc234855cc1344cc91e5",
+      "note": "Provider request control and lifetime: codecs"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/provider/openai-responses.ts",
+      "start": 1,
+      "end": 120,
+      "digest": "sha256:34fbf536bd55e7684e713191f03b9ee811852f4261f1bc234855cc1344cc91e5",
+      "note": "Provider request control and lifetime: codecs"
+    }
+  ]
+}

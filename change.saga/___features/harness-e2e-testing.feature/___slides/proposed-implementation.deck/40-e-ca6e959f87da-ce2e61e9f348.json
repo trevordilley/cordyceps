@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 297,
+      "end": 319,
+      "digest": "sha256:1d50f4603a4c0999c1f979b19302c0c6ce45446ab8d5973157ea7b047a25f67f",
+      "note": "Provider request control and lifetime: dispose; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 388,
+      "end": 392,
+      "digest": "sha256:67656dd556a116be407ea612c20ba67b6c41ad14775eae7e3187bb244d2ed189",
+      "note": "Provider request control and lifetime: dispose; current implementation, not real-harness certification"
+    }
+  ]
+}

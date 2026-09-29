@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "tsconfig.json",
+      "digest": "sha256:f780e4e1e5dbc8842238772893afd52140746af192805b5d2f0c7fee74b057a0",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/injection.ts",
+      "start": 1,
+      "end": 124,
+      "digest": "sha256:68f0480c847be593d8ac7f0e608bf712cb2b726b9afe35152268f531a10a78a3",
+      "note": "Declarative definition validation and isolated injection: render; current implementation, not real-harness certification"
+    }
+  ]
+}

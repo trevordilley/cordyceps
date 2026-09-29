@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 1,
+      "end": 87,
+      "digest": "sha256:a74d06fc0f005214bff6f64813e86f03c7eccb9eb935dc65b7e47779393b2e26",
+      "note": "Provider request control and lifetime: routes; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 97,
+      "end": 100,
+      "digest": "sha256:1d5c71e5268ee6987d8c4889ec37c57b4403535fb393212ec2b617afbc2c5cd5",
+      "note": "Provider request control and lifetime: routes; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 123,
+      "end": 183,
+      "digest": "sha256:8735b0adbe08150a8dd5ebeba67e87a1ef957c4e69e2651c3ffbd2b57511ec8d",
+      "note": "Provider request control and lifetime: routes; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 193,
+      "end": 207,
+      "digest": "sha256:dcaf514e7e25ca06b0f6212b700804b6d07eea0d25fcc3698e92ff1996a92997",
+      "note": "Provider request control and lifetime: routes; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 220,
+      "end": 223,
+      "digest": "sha256:c7c68b41dd1e58d712baa1fae74b5d6c8e6ac238e76230fdefad5f88fe0b4552",
+      "note": "Provider request control and lifetime: routes; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 230,
+      "end": 296,
+      "digest": "sha256:0742c41d9316381684dbe7c093ae49dc808fa4a7ca98d36b2ed450f0940551f2",
+      "note": "Provider request control and lifetime: routes; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 320,
+      "end": 387,
+      "digest": "sha256:14e924ef85f059939fb23e7c078fb8495f2c7bd6350dca29594d8901d9041138",
+      "note": "Provider request control and lifetime: routes; current implementation, not real-harness certification"
+    }
+  ]
+}

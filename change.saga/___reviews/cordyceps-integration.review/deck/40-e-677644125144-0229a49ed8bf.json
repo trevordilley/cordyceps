@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/observations.ts",
+      "digest": "sha256:ca446d21456898044c1d51086f779ad8057c33f34a494da785ededb40426d2fe",
+      "note": "Synthetic validation and native observation evidence: observations"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/observations.ts",
+      "start": 1,
+      "end": 48,
+      "digest": "sha256:ca446d21456898044c1d51086f779ad8057c33f34a494da785ededb40426d2fe",
+      "note": "Synthetic validation and native observation evidence: observations"
+    }
+  ]
+}

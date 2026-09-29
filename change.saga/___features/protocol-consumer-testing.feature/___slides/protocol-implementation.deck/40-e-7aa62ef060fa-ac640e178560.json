@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "scripts/verify-package.mjs",
+      "start": 104,
+      "end": 152,
+      "digest": "sha256:0dfc4c0c04f6eb503bd79c80147eeb8be6b0424c559a1d9b1417955cd6ab61eb",
+      "note": "Synthetic validation and native observation evidence: pw; current implementation, not real-harness certification"
+    }
+  ]
+}

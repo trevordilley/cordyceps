@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "README.md",
+      "start": 1,
+      "end": 119,
+      "digest": "sha256:d908684e83e1df4e36cff507af9baf08e8f2ae4e3fe509fd046b66a2cbf1eb5b",
+      "note": "Package construction and consumer-owned invocation boundary: core; current implementation, not real-harness certification"
+    }
+  ]
+}

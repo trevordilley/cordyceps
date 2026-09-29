@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "docs/acp-consumers.md",
+      "start": 1,
+      "end": 41,
+      "digest": "sha256:91c958686d877caa0d6db6c846af95eb18fbf6a1fc93c8ebbfeecfa4ca9e0a35",
+      "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
+    }
+  ]
+}

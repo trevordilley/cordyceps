@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 88,
+      "end": 96,
+      "digest": "sha256:9aca3f09063abe31fea1b10a0d66417709f9e4f203828caad0db02d0d0e94824",
+      "note": "Provider request control and lifetime: uncooperative-gate; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 208,
+      "end": 219,
+      "digest": "sha256:172131a57c651f35e89142b2c239f58ed7b4b8b29a0d6d021a41df158d9089dc",
+      "note": "Provider request control and lifetime: uncooperative-gate; current implementation, not real-harness certification"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 224,
+      "end": 229,
+      "digest": "sha256:38d31c4dcd5eb18537fc709b981d9a07d6d692e4cb90ba69c50e456a6d336e1c",
+      "note": "Provider request control and lifetime: uncooperative-gate; current implementation, not real-harness certification"
+    }
+  ]
+}

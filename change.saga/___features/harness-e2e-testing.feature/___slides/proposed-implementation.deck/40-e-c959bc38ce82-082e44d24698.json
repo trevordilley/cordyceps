@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "docs/implementation-contracts.md",
+      "digest": "sha256:409c8047eade4f54641c848cee0225b719011e9ece4b09ba4966f4c4dd810b24",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}

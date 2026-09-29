@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/manifest.ts",
+      "start": 1,
+      "end": 25,
+      "digest": "sha256:71afc3151af20fb40651066ce3c052fe8f6e6194f2be82aeb003b2c8cf40986f",
+      "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/manifest.ts",
+      "start": 89,
+      "end": 99,
+      "digest": "sha256:523efc542703710e1b1cff3afa46ab28f191a04650c328eee069fdcd30da0578",
+      "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/manifest.ts",
+      "start": 144,
+      "end": 207,
+      "digest": "sha256:1b28a214cae2e6ad32605b3c008b96787a7a406a0bcbef017a02df0f69ef959e",
+      "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
+    }
+  ]
+}

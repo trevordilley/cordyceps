@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 101,
+      "end": 122,
+      "digest": "sha256:9e5cf27e5679cf18bc0a7c750d9782d14a9452028fa19468bddf2fe2319080ce",
+      "note": "Provider request control and lifetime: capture"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 184,
+      "end": 192,
+      "digest": "sha256:a196b1e56a12a5d5e3e7c360484b499163295e78ab553aecd6f25cc70bc1bdcd",
+      "note": "Provider request control and lifetime: capture"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "digest": "sha256:8b081369415e5c96d52fdd2f77eb312e346e8e7caca6658d2d4bffd8786a3a27",
+      "note": "Adds the shared mock-session backend; capture, stream gate and cleanup branches have separate Item line evidence."
+    }
+  ]
+}

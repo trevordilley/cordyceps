@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "scripts/verify-core-node.ts",
+      "digest": "sha256:7b4839674b8eebcd43c010a73122f5d9282754a3b306285a9019d3817ef83e79",
+      "note": "Synthetic validation and native observation evidence: units"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "scripts/verify-core-node.ts",
+      "start": 1,
+      "end": 22,
+      "digest": "sha256:7b4839674b8eebcd43c010a73122f5d9282754a3b306285a9019d3817ef83e79",
+      "note": "Synthetic validation and native observation evidence: units"
+    }
+  ]
+}

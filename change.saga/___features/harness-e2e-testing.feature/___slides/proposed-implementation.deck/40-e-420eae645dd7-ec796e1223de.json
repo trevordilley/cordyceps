@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "docs/acp-consumers.md",
+      "digest": "sha256:66a7f726d16db7ee0b8f1d116f5b09f3662dffe917d1fa5316a5b3ccf0629c99",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}

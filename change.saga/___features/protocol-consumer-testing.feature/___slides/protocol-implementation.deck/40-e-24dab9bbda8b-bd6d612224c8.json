@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "tests/core.test.ts",
+      "start": 1,
+      "end": 513,
+      "digest": "sha256:f903b132057d67a11c5e4248275993394f25d579255608e47d45aee9b8a0be51",
+      "note": "Synthetic validation and native observation evidence: units; current implementation, not real-harness certification"
+    }
+  ]
+}

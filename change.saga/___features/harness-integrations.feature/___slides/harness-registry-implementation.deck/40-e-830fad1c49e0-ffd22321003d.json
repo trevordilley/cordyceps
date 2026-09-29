@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "harnesses/claude-code.json",
+      "digest": "sha256:d8d056f19202d1eee8f329065931b233c1b70ff3aa08b04e795bbde7b66e26cc",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}

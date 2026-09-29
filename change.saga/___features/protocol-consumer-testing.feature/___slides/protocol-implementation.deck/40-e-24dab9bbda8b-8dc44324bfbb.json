@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "tests/registry.test.ts",
+      "digest": "sha256:613dfaa232b54667a791771a71868a9c338eb0211ce276f807cc22a64b25fd7f",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}

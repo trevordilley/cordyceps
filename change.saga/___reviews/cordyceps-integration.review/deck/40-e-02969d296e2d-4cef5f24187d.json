@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/provider/index.ts",
+      "digest": "sha256:a5e2a902a447b98a7d8f61f84717065b506f4f34a79d3136e45abe3189a31157",
+      "note": "Provider request control and lifetime: codecs"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/provider/index.ts",
+      "start": 1,
+      "end": 13,
+      "digest": "sha256:a5e2a902a447b98a7d8f61f84717065b506f4f34a79d3136e45abe3189a31157",
+      "note": "Provider request control and lifetime: codecs"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": "node-lifecycle-delivered",
+  "target": "urn:change-saga:cordyceps:fragment:harness-registry-runtime-design:landmark:registry-runtime-delivered",
+  "kind": "test",
+  "statement": "At source commit 2a0aa31, all 21 synthetic core lifecycle tests pass with zero skips under Node 22.22.3, including held and SSE client disconnect cleanup.",
+  "evidence": [
+    {
+      "commit": "2a0aa3178e12bc90462976b175e59f3446a70d1d",
+      "path": "tests/core.test.ts",
+      "start": 1,
+      "end": 513,
+      "digest": "sha256:f903b132057d67a11c5e4248275993394f25d579255608e47d45aee9b8a0be51"
+    }
+  ],
+  "created_at": "2026-09-29T23:03:07.113484Z"
+}

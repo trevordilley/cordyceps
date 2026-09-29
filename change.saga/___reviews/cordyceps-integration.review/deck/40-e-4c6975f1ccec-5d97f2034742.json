@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/manifest.ts",
+      "start": 147,
+      "end": 147,
+      "digest": "sha256:afc60399912fbaadb1d3335c210694b1811b546388245d695e245938838a0319",
+      "note": "Declarative definition validation and isolated injection: missing-acp"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": ".gitignore",
+      "digest": "sha256:ebb51a53bd5191eeafb485acbbceee4aeef5ed8ec6c3fe8fc923cda7e7af41f5",
+      "note": "Package construction and consumer-owned invocation boundary: build"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": ".gitignore",
+      "start": 1,
+      "end": 5,
+      "digest": "sha256:ebb51a53bd5191eeafb485acbbceee4aeef5ed8ec6c3fe8fc923cda7e7af41f5",
+      "note": "Package construction and consumer-owned invocation boundary: build"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/playwright.ts",
+      "digest": "sha256:9c991dd1345c536baeeb86deca8193736d81d5e5ddbdb3d96b2316ecc3e67ef7",
+      "note": "Adds the optional peer fixture entry point; teardown failure semantics separately explained."
+    }
+  ]
+}

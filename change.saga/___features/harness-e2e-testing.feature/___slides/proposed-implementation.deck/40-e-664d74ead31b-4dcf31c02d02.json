@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "scripts/build.ts",
+      "digest": "sha256:3ca66ef627f722aad611e9a742e7bf94e1b2993b4a540768ad1aa5370305ca47",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}

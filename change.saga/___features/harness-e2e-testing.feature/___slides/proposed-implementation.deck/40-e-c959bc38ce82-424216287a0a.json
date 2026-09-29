@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "docs/implementation-contracts.md",
+      "start": 1,
+      "end": 13,
+      "digest": "sha256:409c8047eade4f54641c848cee0225b719011e9ece4b09ba4966f4c4dd810b24",
+      "note": "Package construction and consumer-owned invocation boundary: core; current implementation, not real-harness certification"
+    }
+  ]
+}

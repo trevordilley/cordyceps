@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "bun.lock",
+      "digest": "sha256:1cafeb37f504d67167cbeb5608ed286b30ccda1749a7011202b9c9eaeeec4a71",
+      "note": "Package construction and consumer-owned invocation boundary: build"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "bun.lock",
+      "start": 1,
+      "end": 40,
+      "digest": "sha256:1cafeb37f504d67167cbeb5608ed286b30ccda1749a7011202b9c9eaeeec4a71",
+      "note": "Package construction and consumer-owned invocation boundary: build"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": "packed-consumers-delivered",
+  "target": "urn:change-saga:cordyceps:fragment:technology-stack-distribution:landmark:distribution-delivered",
+  "kind": "test",
+  "statement": "At source commit d293e9a, the built npm artifact runs in a Node 22.22.3 standalone consumer without Bun or Playwright, and its optional Playwright adapter passes success and failure-teardown consumer checks.",
+  "evidence": [
+    {
+      "commit": "d293e9ac6f677abca07dc542c0b36a69c8b94255",
+      "path": "scripts/verify-package.mjs",
+      "start": 1,
+      "end": 155,
+      "digest": "sha256:bfd66caa576f91784a683957d97dd3724e270d88d6acb5472ccafaf537771fb9"
+    }
+  ],
+  "created_at": "2026-09-29T23:03:11.82293Z"
+}

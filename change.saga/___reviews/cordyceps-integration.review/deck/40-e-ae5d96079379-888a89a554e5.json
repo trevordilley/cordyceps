@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/playwright.ts",
+      "start": 1,
+      "end": 16,
+      "digest": "sha256:dfff92922e3877e77cfdd915b10660cf23736b7435e6ed98a8cfa428cdf4abe2",
+      "note": "Package construction and consumer-owned invocation boundary: fixture"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/playwright.ts",
+      "start": 23,
+      "end": 25,
+      "digest": "sha256:64e52b810371993f0fe0a2ee58de90c0f1f5be6f17f255c954aa8ca2818cb60d",
+      "note": "Package construction and consumer-owned invocation boundary: fixture"
+    }
+  ]
+}

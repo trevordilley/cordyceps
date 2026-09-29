@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 14,
+      "end": 25,
+      "digest": "sha256:def2a94cdecb91d610b25bc12d316c17b4ef1651c1b1d5a071d33a8250435645",
+      "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 239,
+      "end": 252,
+      "digest": "sha256:66ca4ac6dbe5d26f4a69745f74dc5498a1426f4018a0f592b7fa1cccd4b6c284",
+      "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/session.ts",
+      "start": 341,
+      "end": 347,
+      "digest": "sha256:e7a8375ba1aa5acac75fe0682991ab65b9de60c4ef54ae107a3b690031b7c41b",
+      "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
+    }
+  ]
+}

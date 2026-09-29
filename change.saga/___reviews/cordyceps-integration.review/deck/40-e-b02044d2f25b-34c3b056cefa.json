@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "scripts/verify-package.mjs",
+      "digest": "sha256:bfd66caa576f91784a683957d97dd3724e270d88d6acb5472ccafaf537771fb9",
+      "note": "Adds the standalone and optional-peer packed artifact verification entry point; exact responsibilities have separate Item line evidence."
+    }
+  ]
+}

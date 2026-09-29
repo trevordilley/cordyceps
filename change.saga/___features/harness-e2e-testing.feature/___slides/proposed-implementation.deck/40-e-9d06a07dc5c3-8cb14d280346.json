@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/playwright.ts",
+      "start": 17,
+      "end": 22,
+      "digest": "sha256:355dde6ab38252313fd8b07dc21e10784ad42b787af0a50caaef0f5a07259518",
+      "note": "Package construction and consumer-owned invocation boundary: failure-surface; current implementation, not real-harness certification"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "docs/registry.md",
+      "digest": "sha256:626ba6ed26bd4d5fd9f8ae881422e3907324f3dda0ed5b3a05a00256e3d55edb",
+      "note": "Declarative definition validation and isolated injection: registry"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "docs/registry.md",
+      "start": 1,
+      "end": 95,
+      "digest": "sha256:626ba6ed26bd4d5fd9f8ae881422e3907324f3dda0ed5b3a05a00256e3d55edb",
+      "note": "Declarative definition validation and isolated injection: registry"
+    }
+  ]
+}

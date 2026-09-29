@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "tsconfig.json",
+      "start": 1,
+      "end": 10,
+      "digest": "sha256:f780e4e1e5dbc8842238772893afd52140746af192805b5d2f0c7fee74b057a0",
+      "note": "Package construction and consumer-owned invocation boundary: build; current implementation, not real-harness certification"
+    }
+  ]
+}

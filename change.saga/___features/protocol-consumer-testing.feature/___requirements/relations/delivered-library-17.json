@@ -1,0 +1,13 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation.schema.json",
+  "version": 5,
+  "id": "delivered-library-17",
+  "type": "explains",
+  "from": "urn:change-saga:cordyceps:slide:delivered-registry:item:missing-acp",
+  "to": "urn:change-saga:cordyceps:story:launch-protocol-mode:criterion:unsupported-combination",
+  "scope": "self",
+  "rationale": "Explains the shipped library mechanism for this criterion, with exact code evidence. Consumer process/client instrumentation and actual real-harness behavior remain distinct; synthetic verification is not an end-to-end acceptance verdict.",
+  "to_revision": "urn:change-saga:cordyceps:story:launch-protocol-mode:revision:r3",
+  "state": "active",
+  "created_at": "2026-09-29T22:58:35.737582Z"
+}

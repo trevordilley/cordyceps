@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "scripts/verify-package.mjs",
+      "start": 1,
+      "end": 103,
+      "digest": "sha256:6f093e82ee4a2e7d980c544aff45accd4a3b34b0ffd7b943785de792b0d9cb72",
+      "note": "Synthetic validation and native observation evidence: node"
+    },
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "scripts/verify-package.mjs",
+      "start": 153,
+      "end": 155,
+      "digest": "sha256:02f5c30dd9615ae90be05abb6e65c59d632b22042006da7a10cda88603793469",
+      "note": "Synthetic validation and native observation evidence: node"
+    }
+  ]
+}

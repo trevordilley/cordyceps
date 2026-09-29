@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "path": "src/provider/types.ts",
+      "digest": "sha256:9c2b57b569836b2b721290aca07b5627f69f8bb406f3aa349428965f0f2cabd3",
+      "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
+    }
+  ]
+}
