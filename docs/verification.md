@@ -6,6 +6,8 @@ The integrated implementation is an ESM library for Node >=22. Verification in t
 
 Run from the repository root after `bun install --frozen-lockfile`:
 
+Put a real Node >=22 installation first on `PATH` for these commands and npm's child processes. Some development shells expose a `node` shim that runs Bun; that is not Node verification. `node -p 'JSON.stringify(process.versions)'` must report Node without a `bun` field. The Node lifecycle script also accepts `CORDYCEPS_NODE_BINARY=/absolute/path/to/node`; the package check rejects non-Node runtimes explicitly.
+
 | Command | Recorded result |
 | --- | --- |
 | `bun run build` | Passed strict tsc checking, Node-targeted ESM bundling and declaration emission. |

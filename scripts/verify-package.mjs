@@ -5,6 +5,8 @@ import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 // Run after bun run build. All consumer execution below uses Node, never Bun.
+assert(!process.versions.bun && Number(process.versions.node.split('.')[0]) >= 22,
+  'Package verification requires real Node >=22; put it first on PATH, not a node-to-Bun shim.');
 const repo = process.cwd();
 const root = await mkdtemp(join(tmpdir(), 'cordyceps-package-'));
 const run = (command, args, cwd, allowFailure = false) => {
