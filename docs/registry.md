@@ -1,0 +1,87 @@
+# Harness registry and injection
+
+Cordyceps definitions describe provider injection data. The consumer chooses and launches its executable or ACP adapter, supplies prompts, owns its ACP client, and closes its processes. Registration and rendering do not probe binaries, read shell startup files, invoke commands, mutate `process.env`, or certify a harness.
+
+`createRegistry()` loads the bundled `claude-code` and `codex` definitions. `createRegistry({ builtins: false })` starts empty. `register(unknown)` validates and snapshots a definition; `await loadFile(path)` parses a local JSON file through the same validator. Duplicate IDs fail rather than replace an entry. `get(id)` returns an independent definition snapshot or throws `DEFINITION_NOT_FOUND`. `list()` returns independent snapshots in registration order. Changes to input objects, inspection results, or later registry registrations cannot modify an already captured definition.
+
+## Definition shape
+
+This custom example uses fictional environment names and adapter arguments. They are **not** Claude Code or Codex flags:
+
+```json
+{
+  "schemaVersion": 1,
+  "id": "my-adapter",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "MY_PROVIDER_CONFIG": "${config.provider.path}",
+        "MY_PROVIDER_KEY": "${mock.apiKey}"
+      },
+      "unsetEnv": ["MY_OLD_PROFILE"],
+      "configFiles": [{
+        "id": "provider",
+        "path": "provider/config.json",
+        "format": "json",
+        "values": { "baseUrl": "${mock.baseUrl}" }
+      }]
+    }
+  },
+  "modes": {
+    "interactive": { "args": [] },
+    "acp": { "args": ["--example-harness", "${input.harnessPath}"] }
+  }
+}
+```
+
+Only the displayed top-level fields are supported. `provider.override` and each mode can contain `env`, `unsetEnv`, `args`, and `configFiles`; all four recipe fields are optional. Empty recipes are valid. `provider.override` is required; use `{}` when empty. At least one named mode is required. IDs and mode/input names start with an ASCII letter or digit and contain only letters, digits, underscores, and hyphens. Environment names use `[A-Za-z_][A-Za-z0-9_]*`.
+
+Definitions must be acyclic plain JSON data: strings, finite numbers, booleans, null, arrays, and plain objects, with a maximum depth of 64. Getters, functions, symbol keys, sparse arrays, custom prototypes, non-enumerable fields, and unknown schema fields fail. Strings must be valid Unicode without NUL. No executable, version, platform, shell, or probe fields are accepted. Provider adapters must appear in the library's `codecIds` (`anthropic-messages` and `openai-responses`).
+
+Common and selected-mode arguments concatenate in that order. Environment assignments cannot repeat across recipes, even with equal values, or also appear in removals. Repeated removals are deduplicated. File IDs must be unique in each combined recipe. Paths cannot duplicate, differ only in case, or overlap as a file and directory. These are declaration checks: Cordyceps does not parse consumer arguments or determine which effective setting a harness will use.
+
+## Tokens and selection
+
+Templates support exactly `${mock.baseUrl}`, `${mock.apiKey}`, `${session.dir}`, `${config.<id>.path}`, and `${input.<name>}`. Substitution runs once on environment values, argv entries, and nested string **values** in config files. Keys and file paths are literal. Inputs are opaque strings; a path input is never resolved or inspected, and token-looking input text is not expanded recursively. Unknown or malformed tokens and references to absent config files fail at registration. Required input values are checked at selection time; empty strings count as supplied values.
+
+`validateSelection(definition, mode = 'interactive', inputs = {})` is synchronous and allocates no resources. Core calls it before allocating its listener. It validates a fresh definition snapshot, the requested mode and codec, conflicts, and required inputs. Modes have no fallback: requesting a missing `acp` recipe produces `RECIPE_NOT_FOUND`. Custom definitions may use `acp` or other names without Cordyceps making any claims about the selected executable's protocol support.
+
+Validation failures are `DefinitionError` instances with `code`, `definitionId`, and `field`. Messages identify the definition and JSON field. Codes include `INVALID_DEFINITION`, `INVALID_JSON`, `DUPLICATE_ID`, `DEFINITION_NOT_FOUND`, `CODEC_NOT_FOUND`, `RECIPE_NOT_FOUND`, `UNKNOWN_TOKEN`, `MISSING_INPUT`, `INVALID_INPUT`, and `INJECTION_CONFLICT`. Filesystem errors retain their original errors and codes.
+
+## Rendering and ownership
+
+`await renderInjection(definition, mode, inputs, { baseUrl, apiKey }, signal?)` captures definitions and inputs before its first asynchronous operation. It repeats selection validation, creates a private temporary directory, serializes config, and returns:
+
+- `environment(base)`: a new object containing the supplied base, declared removals, and rendered overrides. Neither the base nor global environment is changed; no implicit environment is read.
+- `args`: common then selected-mode argv values, without shell quoting or an executable name.
+- `configFiles`: `{ id, path, format }` entries with absolute generated paths.
+- `dispose()`: removes the owned temporary directory, including any state the consumer's harness placed inside it. Concurrent and repeated successful calls are idempotent. A failed cleanup can be retried.
+
+Paths are static, portable, session-relative names with `/` separators. Components allow ASCII letters, digits, `_`, `-`, and `.`, excluding `.`/`..`, trailing dots, and Windows device names. Absolute paths, drive names, backslashes, empty components, traversal, and tokenized paths fail before allocation. Files are created exclusively (`wx`) with mode `0600`; nested directories use `0700`. Existing consumer configuration files are never opened for writing. Filesystem permissions may vary on Windows.
+
+JSON accepts the JSON values above. TOML accepts the same values except null, which fails before allocation, including in nested arrays. Both formats require an object at the root. TOML uses quoted keys, basic strings, arrays, and inline tables; dates, raw syntax, comments, and arbitrary-precision integers are not supported. Unsafe JavaScript integers serialize as TOML floats rather than out-of-range integer literals. Structured serialization preserves quoting, escapes, dotted keys, empty objects, and nested arrays without treating values as config syntax.
+
+The optional signal cancels **preparation**. Already aborted signals allocate nothing. Cancellation or failure during creation removes acquired files/directories before rejecting. If rollback also fails, an `AggregateError` retains both causes. A successful renderer hands ownership to the caller, who must call `dispose()`; core handles its longer session signal lifetime and listener rollback separately. Close consumer processes before disposing files they may still need. Temporary-directory isolation and cleanup do not provide a sandbox for a malicious process modifying that directory.
+
+## Bundled recipes and documentation evidence
+
+Both bundled definitions have `interactive` and `nonInteractive` modes. Neither has an ACP mode: no specific ACP adapter recipe was verified for this bundle. The consumer can register a separate definition for its chosen adapter.
+
+### Claude Code (`claude-code`)
+
+The recipe sets `ANTHROPIC_BASE_URL` and `ANTHROPIC_API_KEY`, removes competing inherited provider/auth switches, and sets `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1`. Interactive mode adds no arguments; non-interactive mode adds `--print`. Settings and semantics were checked on 2026-09-29 against the official [environment variables reference](https://code.claude.com/docs/en/env-vars), [gateway documentation](https://code.claude.com/docs/en/llm-gateway), and [CLI reference](https://code.claude.com/docs/en/cli-reference).
+
+Interactive Claude Code can ask the user to approve an API key. Settings files can also override inherited environment values; this recipe does not edit them. The consumer remains responsible for its harness settings and for asserting that provider traffic reaches the mock. Disabling nonessential traffic is not a network-isolation guarantee.
+
+### Codex (`codex`)
+
+The recipe creates `config.toml` in the owned session directory and supplies that directory as `CODEX_HOME`. It selects a custom `cordyceps` provider with the mock URL plus `/v1`, `wire_api="responses"`, `supports_websockets=false`, and `env_key="CORDYCEPS_API_KEY"`. `CORDYCEPS_API_KEY` is a library-chosen variable name referenced by that documented `env_key` setting; it is not presented as a built-in Codex variable. Interactive mode adds no arguments; non-interactive mode adds the `exec` subcommand, which the consumer places before its prompt and invocation-specific arguments.
+
+Verified on 2026-09-29 against official [advanced configuration](https://learn.chatgpt.com/docs/config-file/config-advanced), [configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference), and [developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli). These are the current destinations of the developers.openai.com Codex documentation links. `CODEX_HOME` relocates Codex config **and state**; the recipe intentionally uses an isolated directory and does not copy the consumer's existing settings, credentials, or history. Other consumer flags/config layers can still affect effective settings. It does not select a model, permissions, approval policy, or ACP adapter.
+
+Bundling means a documented data recipe, not certification of installed executables or versions. Tests use JSON data, generated files, and the library's provider codec inventory; no harness is launched.
+
+## Verification
+
+`tests/registry.test.ts` covers strict validation, duplicates, snapshots, missing codecs/modes/inputs, finite tokens, conflicts, environment purity, single-pass opaque inputs, JSON/TOML rendering, bundled/local parity, concurrent isolation, partial-write rollback, abort rollback, and cleanup retries. TOML ordinary values round-trip through Bun's independent TOML parser; exact escape fixtures cover controls that Bun 1.3.13's parser mishandles. A separate verification with Python's standard `tomllib` confirmed the complete quoted/control-character/nested-value fixture round-trips. No TOML runtime dependency or package change is required.
