@@ -4,7 +4,7 @@
 
 ## Run the packed consumer checks
 
-Prerequisites: macOS with `/usr/bin/sandbox-exec`, an already installed Claude Code **2.1.283**, real Node >=22, npm, Bun 1.3.13 for building this repository, and the Chromium build for Playwright 1.56.1. No harness installation or authentication is performed. The example fails on another OS or Claude version rather than silently bypassing its verified isolation policy.
+Prerequisites: macOS with `/usr/bin/sandbox-exec`, an already installed Claude Code executable, real Node >=22, npm, Bun 1.3.13 for building this repository, and the Chromium build for Playwright 1.56.1. No harness installation or authentication is performed. The example fails on another OS rather than silently bypassing its network policy. It records the executable version as reproduction context without gating it.
 
 From the repository root (after `bun install --frozen-lockfile`):
 
@@ -26,12 +26,12 @@ Set `FRONTEND_EVIDENCE_DIR=/absolute/output/directory` to retain the Playwright 
 | Real file read | The test writes a random token into a disposable workspace file. The token is absent from the first provider request. Cordyceps returns a `Read` tool call with the file path; **Claude Code's built-in Read handler reads the file**. The next provider request must include the same tool-use ID, a non-error result and the token. Only then does the provider return final text derived from that actual tool result, which must appear in the DOM. The server/client never read the fixture. |
 | Cancellation and reuse | The mock holds a real Claude request. Clicking Cancel terminates and awaits the consumer-owned process; the mock observes disconnect, the UI shows Cancelled, and no response is fabricated. A subsequent browser prompt launches a fresh process and renders its reply. This is application reuse, not persistent Claude session reuse or ACP cancellation. |
 
-Every test asserts process disappearance, consumer listener closure and disposable config/workspace removal. The consumer fixture depends on Cordyceps' `ai` fixture, so consumer cleanup finishes before the library disposes its mock and checks route health. Playwright owns browser/context teardown. No retries or skipped tests mask absent binaries, missing browser builds, provider mismatches or assertion failures.
+Every test asserts process and owned process-group disappearance, consumer listener closure and disposable config/workspace removal. The consumer fixture depends on Cordyceps' `ai` fixture, so consumer cleanup finishes before the library disposes its mock and checks route health. Playwright owns browser/context teardown. No retries or skipped tests mask absent binaries, missing browser builds, provider mismatches or assertion failures.
 
 ## Ownership and isolation
 
 - `consumer-process.mjs`: consumer-owned launch, stdin/stdout, timeout, termination and temporary fixture/config lifetime. Environment values start from an allowlist rather than copying user auth. Claude's `--bare` mode skips keychain reads; `--restricted`, empty settings sources, empty strict MCP configuration, disabled slash commands and Read-only tools avoid user plugins, hooks and command tools. No user configuration or credentials are modified.
-- Dead proxy settings plus a loopback `NO_PROXY` bypass suppress ancillary connectivity probes in this installed version. Without those settings, this launch emitted `HEAD /api/hello`, which the supported provider codec correctly rejected. This consumer recipe does not add ancillary endpoint support.
+- Dead proxy settings plus a loopback `NO_PROXY` bypass suppress ancillary connectivity probes in this installed version. Without those settings, this launch emitted `HEAD /api/hello`, which the baseline codec rejected. The library now supports an explicit health route, as exercised by the ACP example; this frontend retains its observed proxy setup.
 - The macOS sandbox denies all network operations except outbound connections to the exact Cordyceps loopback port. A provider configuration mistake cannot turn this test into a paid upstream call. The sandbox is a network boundary; it is not a claim of complete filesystem confinement.
 - `consumer-server.mjs`: consumer-owned ephemeral loopback server, same-origin JSON endpoints, static assets and response forwarding. Client disconnect also terminates the active child. It allows one turn at a time.
 - `public/client.js`: consumer-owned form submission, cancel action and rendering of real server-returned text. It contains no response fixtures or tool implementation.

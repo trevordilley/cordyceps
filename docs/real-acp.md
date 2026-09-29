@@ -7,7 +7,7 @@ and filesystem handlers, records native JSON-RPC, and checks completion.
 
 ## Run
 
-Use real Node 22 or newer, npm, and Bun 1.3.13 (repository build tooling). From the
+Use macOS with `/usr/bin/sandbox-exec`, real Node 22 or newer, npm, and Bun 1.3.13 (repository build tooling). From the
 repository after `bun install --frozen-lockfile`:
 
 ```sh
@@ -58,7 +58,7 @@ The `claude-code-acp` registry definition provides `ANTHROPIC_BASE_URL`, a synth
 a launch-injection recipe, not an executable selector or ACP implementation.
 The existing `claude-code` and `codex` definitions do not acquire an ACP mode.
 
-The example additionally uses a minimal child environment and a disposable cwd,
+The example additionally uses a minimal child environment, disposable HOME/config and cwd, and an outer macOS sandbox allowing network access only to the actual mock port. It fails explicitly on other platforms. It
 passes `settingSources: []` through the adapter's `_meta.claudeCode.options`, and
 selects `claude-sonnet-4-6` with the documented `--bare` mode through SDK
 `extraArgs`. No user configuration or authentication is edited or
@@ -129,8 +129,7 @@ is a new user prompt or rely on one global HTTP request count.
 Cleanup releases the stream gate, closes the ACP connection, terminates the
 consumer-owned process group (with a bounded force-kill fallback), checks provider
 health including shutdown traffic, disposes Cordyceps, and removes the files.
-The process-group cleanup used here targets POSIX; Windows process-tree behavior
-has not been verified. This is one pinned integration example, not a harness or
+The process-group cleanup and network policy here target macOS; other operating systems have not been verified. This is one pinned integration example, not a harness or
 ACP conformance certification, and it does not test load/resume, every advertised
 capability, malformed ACP frames, or real hosted-model behavior.
 

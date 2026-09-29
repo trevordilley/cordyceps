@@ -43,18 +43,23 @@ export async function createConsumerProcess(ai) {
     const version = execFileSync('/usr/bin/sandbox-exec', [...sandbox, binary, '--version'], {
       env, cwd, encoding: 'utf8', timeout: 10_000,
     }).trim();
-    if (version !== '2.1.283 (Claude Code)') throw new Error(`Unverified Claude version: ${version}`);
+    if (!version) throw new Error('Claude version command returned no reproduction context');
     const args = [...ai.args, '--bare', '--restricted', '--no-session-persistence',
       '--setting-sources', '', '--strict-mcp-config', '--mcp-config', '{"mcpServers":{}}',
       '--disable-slash-commands', '--no-chrome', '--tools', 'Read', '--allowedTools', 'Read',
       '--permission-mode', 'dontAsk', '--model', 'claude-sonnet-4-6', '--output-format', 'json'];
 
+    const signalGroup = (run, signal) => {
+      if (!run.child.pid) return;
+      try { process.kill(-run.child.pid, signal); }
+      catch (error) { if (error.code !== 'ESRCH') throw error; }
+    };
     async function stop() {
       const run = active;
       if (!run) return;
       run.cancelled = true;
-      run.child.kill('SIGTERM');
-      const force = setTimeout(() => run.child.kill('SIGKILL'), 1000);
+      signalGroup(run, 'SIGTERM');
+      const force = setTimeout(() => signalGroup(run, 'SIGKILL'), 1000);
       try { await run.closed; } finally { clearTimeout(force); }
     }
     return {
@@ -65,7 +70,7 @@ export async function createConsumerProcess(ai) {
         if (active) throw new Error('A turn is already running');
         // Input observation is at the real consumer send boundary, not a test echo.
         ai.recordInput(prompt, { transport: 'consumer-stdin' });
-        const child = spawn('/usr/bin/sandbox-exec', [...sandbox, binary, ...args], { env, cwd, stdio: ['pipe', 'pipe', 'pipe'] });
+        const child = spawn('/usr/bin/sandbox-exec', [...sandbox, binary, ...args], { env, cwd, detached: true, stdio: ['pipe', 'pipe', 'pipe'] });
         const run = { child, cancelled: false, closed: null };
         active = run;
         let stdout = '', stderr = '', spawnError;
@@ -91,6 +96,7 @@ export async function createConsumerProcess(ai) {
           return { text: result.result };
         } finally {
           clearTimeout(timeout);
+          if (child.pid) signalGroup(run, 'SIGKILL');
           if (active === run) active = undefined;
         }
       },

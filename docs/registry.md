@@ -2,7 +2,7 @@
 
 Cordyceps definitions describe provider injection data. The consumer chooses and launches its executable or ACP adapter, supplies prompts, owns its ACP client, and closes its processes. Registration and rendering do not probe binaries, read shell startup files, invoke commands, mutate `process.env`, or certify a harness.
 
-`createRegistry()` loads the bundled `claude-code` and `codex` definitions. `createRegistry({ builtins: false })` starts empty. `register(unknown)` validates and snapshots a definition; `await loadFile(path)` parses a local JSON file through the same validator. Duplicate IDs fail rather than replace an entry. `get(id)` returns an independent definition snapshot or throws `DEFINITION_NOT_FOUND`. `list()` returns independent snapshots in registration order. Changes to input objects, inspection results, or later registry registrations cannot modify an already captured definition.
+`createRegistry()` loads the bundled `claude-code`, `codex` and `claude-code-acp` definitions. `createRegistry({ builtins: false })` starts empty. `register(unknown)` validates and snapshots a definition; `await loadFile(path)` parses a local JSON file through the same validator. Duplicate IDs fail rather than replace an entry. `get(id)` returns an independent definition snapshot or throws `DEFINITION_NOT_FOUND`. `list()` returns independent snapshots in registration order. Changes to input objects, inspection results, or later registry registrations cannot modify an already captured definition.
 
 ## Definition shape
 
@@ -68,7 +68,7 @@ The optional signal cancels **preparation**. Already aborted signals allocate no
 
 ## Bundled recipes and documentation evidence
 
-Both bundled definitions have `interactive` and `nonInteractive` modes. Neither has an ACP mode: no specific ACP adapter recipe was verified for this bundle. The consumer can register a separate definition for its chosen adapter.
+`claude-code` and `codex` have `interactive` and `nonInteractive` modes. The separate `claude-code-acp` definition has only `acp` mode, verified with the official Claude Agent ACP adapter. Missing modes still fail explicitly; selecting `claude-code` with `mode: 'acp'` does not silently choose an adapter.
 
 ### Claude Code (`claude-code`)
 
@@ -82,7 +82,11 @@ The recipe creates `config.toml` in the owned session directory and supplies tha
 
 Verified on 2026-09-29 against official [advanced configuration](https://learn.chatgpt.com/docs/config-file/config-advanced), [configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference), and [developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli). These are the current destinations of the developers.openai.com Codex documentation links. `CODEX_HOME` relocates Codex config **and state**; the recipe intentionally uses an isolated directory and does not copy the consumer's existing settings, credentials, or history. Other consumer flags/config layers can still affect effective settings. It does not select a model, permissions, approval policy, or ACP adapter.
 
-Bundling means a documented data recipe, not certification of installed executables or versions. Tests use JSON data, generated files, and the library's provider codec inventory; no harness is launched.
+### Claude Agent ACP (`claude-code-acp`)
+
+Select `prepare({ harness: 'claude-code-acp', mode: 'acp' })`, then launch your own `@agentclientprotocol/claude-agent-acp` process with the returned environment and arguments. The recipe routes Anthropic traffic to the mock, sets an isolated `CLAUDE_CONFIG_DIR`, disables nonessential traffic, and removes inherited authentication/provider/executable overrides. The consumer retains executable choice, ACP SDK setup, session options, permissions and process cleanup. The [real ACP example](real-acp.md) shows the exact adapter configuration and verified lifecycle.
+
+Bundling means a data recipe, not executable certification. Registry unit tests use JSON and generated files; the separate packed [CLI](real-cli.md) and [ACP](real-acp.md) examples launch real consumers and record actual outcomes.
 
 ## Verification
 

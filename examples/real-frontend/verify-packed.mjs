@@ -7,7 +7,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 assert(!process.versions.bun && Number(process.versions.node.split('.')[0]) >= 22, 'Use actual Node >=22, not a node-to-Bun shim');
-assert(process.env.CLAUDE_BINARY, 'Set CLAUDE_BINARY to the installed Claude 2.1.283 absolute path');
+assert(process.env.CLAUDE_BINARY, 'Set CLAUDE_BINARY to the installed Claude Code absolute path');
 const source = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(source, '../..');
 const root = await mkdtemp(join(tmpdir(), 'cordyceps-packed-frontend-'));

@@ -25,7 +25,9 @@
     "docs/provider-codecs.md",
     "docs/registry.md",
     "docs/verification.md",
-    "docs/real-acp.md"
+    "docs/real-acp.md",
+    "docs/real-cli.md",
+    "docs/real-frontend.md"
   ],
   "scripts": {
     "check": "tsc --noEmit",
@@ -33,7 +35,10 @@
     "test": "bun test tests",
     "test:package": "node scripts/verify-package.mjs",
     "test:node": "bun scripts/verify-core-node.ts",
-    "test:real-acp": "node examples/real-acp/verify.mjs"
+    "test:real-acp": "node examples/real-acp/verify.mjs",
+    "test:real-cli": "node examples/real-cli/run.mjs",
+    "test:real-frontend": "node examples/real-frontend/verify-packed.mjs",
+    "test:real": "npm run test:real-cli && npm run test:real-acp && npm run test:real-frontend"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

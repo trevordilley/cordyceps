@@ -10,6 +10,7 @@ import { client, methods, ndJsonStream, PROTOCOL_VERSION } from '@agentclientpro
 import { cordyceps } from 'cordyceps';
 
 assert.equal(process.versions.bun, undefined, 'Run the consumer with Node, not a Bun shim');
+assert.equal(process.platform, 'darwin', 'This example requires macOS sandbox-exec for network isolation');
 const deferred = () => { let resolve; const promise = new Promise(r => { resolve = r; }); return { promise, resolve }; };
 async function within(promise, label, timeout = 30_000) {
   let timer;
@@ -19,6 +20,8 @@ async function within(promise, label, timeout = 30_000) {
 const root = await mkdtemp(join(tmpdir(), 'cordyceps-acp-'));
 const cwd = join(root, 'workspace');
 await mkdir(cwd);
+const home = join(root, 'home');
+await mkdir(home);
 const fixture = join(root, 'disposable.txt'); // Outside cwd deliberately requires permission.
 const secret = 'disposable-file-content-' + crypto.randomUUID();
 await writeFile(fixture, secret + '\n');
@@ -48,9 +51,14 @@ try {
   ai = await cordyceps.prepare({ harness: 'claude-code-acp', mode: 'acp' });
   // Minimal explicit base: never inherit provider credentials, proxy variables,
   // CLI overrides, NODE_OPTIONS, or the user's project environment.
-  const env = ai.environment({ PATH: dirname(process.execPath), TMPDIR: tmpdir(), LANG: 'en_US.UTF-8' });
+  const env = ai.environment({ PATH: dirname(process.execPath), TMPDIR: root, LANG: 'en_US.UTF-8',
+    HOME: home, XDG_CONFIG_HOME: join(home, '.config') });
   const adapter = fileURLToPath(import.meta.resolve('@agentclientprotocol/claude-agent-acp/dist/index.js'));
-  child = spawn(process.execPath, [adapter, ...ai.args], { cwd, env, stdio: ['pipe', 'pipe', 'pipe'], detached: process.platform !== 'win32' });
+  // Consumer policy: the adapter and all descendants can reach only this mock.
+  const port = new URL(ai.baseUrl).port;
+  const sandbox = `(version 1)(allow default)(deny network*)(allow network-outbound (remote ip "localhost:${port}"))`;
+  child = spawn('/usr/bin/sandbox-exec', ['-p', sandbox, process.execPath, adapter, ...ai.args],
+    { cwd, env, stdio: ['pipe', 'pipe', 'pipe'], detached: true });
   child.stderr.setEncoding('utf8').on('data', chunk => { diagnostics = (diagnostics + chunk).slice(-32_000); });
   await once(child, 'spawn');
   const wire = ndJsonStream(Writable.toWeb(child.stdin), Readable.toWeb(child.stdout));

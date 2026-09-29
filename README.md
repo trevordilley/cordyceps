@@ -14,6 +14,11 @@ const ai = await cordyceps.prepare({
 });
 try {
   ai.route(() => true, route => route.fulfill({ text: 'Hello from the test' }));
+  // Current Claude consumers may also issue these auxiliary requests.
+  ai.route(r => r.raw.path.split('?')[0] === '/api/hello',
+    route => route.fulfill({ health: true }));
+  ai.route(r => r.raw.path.split('?')[0] === '/v1/messages/count_tokens',
+    route => route.fulfill({ inputTokens: 100 }));
   const prompt = 'Say hello';
   // Explicit consumer instrumentation; Cordyceps cannot observe your process by itself.
   ai.recordInput(prompt);
@@ -27,7 +32,7 @@ try {
 }
 ```
 
-The example requires a consumer-installed Claude Code binary and its ordinary permission setup. It is a consumer scenario, not an executed compatibility claim. Apply the settings before the application or child process starts. A cached environment, an existing daemon or a configuration override can bypass injection; assert that the mock actually receives the expected request.
+This short API sketch requires a consumer-installed Claude Code binary and its ordinary permission setup. For complete runnable consumers with isolated configuration, actual tool reads and cleanup, see [installed CLI tests](docs/real-cli.md) and [browser E2E tests](docs/real-frontend.md). The [real ACP example](docs/real-acp.md) also exercises native sessions, permissions and cancellation. All three build, pack and install the actual library before exercising real harnesses. Apply the settings before the application or child process starts. A cached environment, an existing daemon or a configuration override can bypass injection; assert that the mock actually receives the expected request.
 
 ## Provider controls
 
@@ -101,7 +106,7 @@ await registry.loadFile('./my-harness.json');
 const ai = await cordyceps.prepare({ registry, harness: 'my-harness', mode: 'acp' });
 ```
 
-Local and bundled definitions use the same validator and renderer. Definitions describe injection data; a new provider wire format requires codec code. See [the registry format and contribution path](docs/registry.md). Bundled recipes are documented settings, not executable-version certification. ACP recipes must describe the consumer's actual chosen adapter; missing ACP recipes never fall back to a text invocation.
+Local and bundled definitions use the same validator and renderer. Definitions describe injection data; a new provider wire format requires codec code. See [the registry format and contribution path](docs/registry.md). Bundled recipes are documented settings, not executable-version certification. The bundled `claude-code-acp` definition provides the verified official adapter recipe; use it with `mode: 'acp'`. The consumer still installs and launches that adapter. Missing ACP recipes never fall back to a text invocation.
 
 ## Development and verification
 
@@ -114,6 +119,6 @@ bun run build
 node scripts/verify-package.mjs
 ```
 
-The package check packs the artifact, installs it into clean Node consumers, verifies core use with no Playwright installed, checks published declarations, and runs the optional Playwright adapter with synthetic provider traffic. Tests exercise library contracts; they do not certify installed harness versions, ACP conformance, real tool execution or a frontend. The exploratory files in `experiments/` remain historical evidence.
+The package check packs the artifact, installs it into clean Node consumers, verifies core use with no Playwright installed, checks published declarations, and runs the optional Playwright adapter with synthetic provider traffic. The separate real-consumer examples exercise installed CLI output, actual file reads and a Chromium frontend against the same packed library. They are consumer code in `examples/`, not public process-running APIs. See [verification results and reproduction commands](docs/verification.md) for the exact observations and remaining limits. The exploratory files in `experiments/` remain historical evidence.
 
 Release naming, license terms and publication credentials remain release decisions. There is no install hook, required CLI, harness downloader, shell adapter or direct ACP mock peer.

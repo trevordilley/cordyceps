@@ -16,6 +16,10 @@ const test = base.extend({
       await expect(fetch(app.url)).rejects.toThrow();
       for (const launch of app.harness.launches) {
         expect(() => process.kill(launch.pid, 0)).toThrow();
+        await expect.poll(() => {
+          try { process.kill(-launch.pid, 0); return false; }
+          catch (error) { if (error.code === 'ESRCH') return true; throw error; }
+        }).toBe(true);
       }
       await testInfo.attach('consumer-evidence', {
         contentType: 'application/json',
