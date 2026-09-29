@@ -1,0 +1,11 @@
+{
+  "name": "cordyceps-real-acp-example",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node run.mjs" },
+  "dependencies": {
+    "@agentclientprotocol/claude-agent-acp": "0.84.0",
+    "@agentclientprotocol/sdk": "1.5.1"
+  },
+  "engines": { "node": ">=22" }
+}

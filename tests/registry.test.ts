@@ -225,9 +225,9 @@ describe('rendering and lifecycle', () => {
 });
 
 describe('bundled documented recipes', () => {
-  test('bundled and file-loaded definitions match; ACP is explicitly absent', async () => {
+  test('bundled and file-loaded definitions match; CLI recipes do not imply ACP', async () => {
     const bundled = createRegistry();
-    expect(bundled.list().map(value => value.id)).toEqual(['claude-code', 'codex']);
+    expect(bundled.list().map(value => value.id)).toEqual(['claude-code', 'codex', 'claude-code-acp']);
     const local = createRegistry({ builtins: false });
     for (const id of ['claude-code', 'codex']) {
       await local.loadFile(new URL(`../harnesses/${id}.json`, import.meta.url).pathname);
@@ -235,6 +235,10 @@ describe('bundled documented recipes', () => {
       validateSelection(bundled.get(id));
       error(() => validateSelection(bundled.get(id), 'acp'), 'RECIPE_NOT_FOUND');
     }
+    await local.loadFile(new URL('../harnesses/claude-code-acp.json', import.meta.url).pathname);
+    expect(local.get('claude-code-acp')).toEqual(bundled.get('claude-code-acp'));
+    validateSelection(bundled.get('claude-code-acp'), 'acp');
+    error(() => validateSelection(bundled.get('claude-code-acp')), 'RECIPE_NOT_FOUND');
     const claude = await render(bundled.get('claude-code'), 'nonInteractive');
     expect(claude.args).toEqual(['--print']);
     expect(claude.environment({ ANTHROPIC_AUTH_TOKEN: 'old', CLAUDE_CODE_USE_VERTEX: '1' })).toMatchObject({ ANTHROPIC_BASE_URL: endpoint.baseUrl, ANTHROPIC_API_KEY: endpoint.apiKey });

@@ -24,14 +24,16 @@
     "docs/acp-consumers.md",
     "docs/provider-codecs.md",
     "docs/registry.md",
-    "docs/verification.md"
+    "docs/verification.md",
+    "docs/real-acp.md"
   ],
   "scripts": {
     "check": "tsc --noEmit",
     "build": "bun scripts/build.ts",
     "test": "bun test tests",
     "test:package": "node scripts/verify-package.mjs",
-    "test:node": "bun scripts/verify-core-node.ts"
+    "test:node": "bun scripts/verify-core-node.ts",
+    "test:real-acp": "node examples/real-acp/verify.mjs"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

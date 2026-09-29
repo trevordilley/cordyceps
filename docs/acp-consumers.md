@@ -1,5 +1,8 @@
 # Testing a real ACP consumer
 
+For a runnable, pinned adapter integration against the packed npm artifact, see
+[the real ACP example](real-acp.md). The guidance below applies to your own client.
+
 Your actual client talks to the real harness or adapter. Cordyceps controls the separate provider HTTP boundary. It supplies an explicitly selected recipe's injection values and records only the observations your consumer submits. It does not implement ACP transport, negotiate capabilities, create sessions or manufacture protocol responses.
 
 ```mermaid

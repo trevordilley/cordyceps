@@ -29,7 +29,7 @@ export function createRegistry({ builtins = true }: { builtins?: boolean } = {})
     },
     list() { return [...definitions.values()].map(value => structuredClone(value)); },
   };
-  if (builtins) for (const name of ['claude-code', 'codex']) {
+  if (builtins) for (const name of ['claude-code', 'codex', 'claude-code-acp']) {
     const url = new URL(`../harnesses/${name}.json`, import.meta.url);
     registry.register(decodeJson(readFileSync(url, 'utf8'), url.pathname));
   }

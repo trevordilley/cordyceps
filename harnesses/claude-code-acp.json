@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "claude-code-acp",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "ANTHROPIC_BASE_URL": "${mock.baseUrl}",
+        "ANTHROPIC_API_KEY": "${mock.apiKey}",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+        "CLAUDE_CONFIG_DIR": "${session.dir}"
+      },
+      "unsetEnv": ["ANTHROPIC_AUTH_TOKEN", "CLAUDE_CODE_OAUTH_TOKEN", "CLAUDE_CODE_EXECUTABLE", "CLAUDE_CODE_USE_ANTHROPIC_AWS", "CLAUDE_CODE_USE_BEDROCK", "CLAUDE_CODE_USE_FOUNDRY", "CLAUDE_CODE_USE_MANTLE", "CLAUDE_CODE_USE_VERTEX"]
+    }
+  },
+  "modes": { "acp": { "args": [] } }
+}
