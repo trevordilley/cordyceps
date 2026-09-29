@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-event.schema.json",
+  "version": 3,
+  "id": "proposed",
+  "story": "urn:change-saga:cordyceps:story:playwright-e2e-workflow",
+  "parents": [],
+  "state": "proposed",
+  "created_at": "2026-09-29T04:40:39.174264Z"
+}

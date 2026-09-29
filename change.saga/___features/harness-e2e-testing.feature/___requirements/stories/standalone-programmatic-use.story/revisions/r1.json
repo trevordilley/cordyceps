@@ -1,0 +1,34 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:standalone-programmatic-use",
+  "parents": [],
+  "title": "Use Cordyceps programmatically outside Playwright",
+  "statement": "As a developer building tools around AI harnesses, I can wire a real AI harness to Cordyceps programmatically outside Playwright so that I can run specific experiments and tests or build my own mocking framework.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:standalone-programmatic-use"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "standalone-setup",
+      "statement": "A consumer program can configure a supported, already-installed real harness to use the mock provider without running Playwright or using its fixtures."
+    },
+    {
+      "id": "standalone-observation",
+      "statement": "The programmatic API exposes process input and requests received by the mock provider outside Playwright."
+    },
+    {
+      "id": "standalone-response-control",
+      "statement": "The consumer program can intercept provider requests and prescribe text or supported tool-call responses outside Playwright; the real binary retains its normal tool execution behavior."
+    },
+    {
+      "id": "custom-test-integration",
+      "statement": "A consumer can invoke the setup, observation, and response-control APIs from its own experiment, test, or mocking framework without adopting the Playwright test lifecycle."
+    }
+  ],
+  "created_at": "2026-09-29T16:03:30.911968Z"
+}

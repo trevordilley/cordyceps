@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/saga.schema.json",
+  "version": 5,
+  "id": "cordyceps",
+  "title": "Cordyceps",
+  "source": {
+    "repository": "file:///Users/20idemo/Desktop/_/cordyceps"
+  }
+}

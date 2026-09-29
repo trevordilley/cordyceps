@@ -1,0 +1,8 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/feature.schema.json",
+  "version": 5,
+  "id": "harness-e2e-testing",
+  "title": "Controlled E2E testing with real AI harnesses",
+  "description": "Exercise applications that consume real AI harness binaries by automatically configuring mock provider APIs and prescribing the harness behavior needed by each test.",
+  "created_at": "2026-09-29T04:20:59.166668Z"
+}

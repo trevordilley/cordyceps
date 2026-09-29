@@ -1,0 +1,26 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:test-frontend-through-binary",
+  "parents": [],
+  "title": "Verify a frontend through the real harness process",
+  "statement": "As a developer building a frontend around an AI harness, I can test writing input and rendering output through the real harness process so that I verify the frontend integration and the exercised binary behavior on the underlying OS.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:real-binary-testing-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "frontend-input-path",
+      "statement": "The frontend under test can write input to the real harness process configured for the mock provider."
+    },
+    {
+      "id": "frontend-output-path",
+      "statement": "After the test prescribes a provider response, it can assert on the frontend rendering of output produced by the real harness process."
+    }
+  ],
+  "created_at": "2026-09-29T04:27:55.735014Z"
+}

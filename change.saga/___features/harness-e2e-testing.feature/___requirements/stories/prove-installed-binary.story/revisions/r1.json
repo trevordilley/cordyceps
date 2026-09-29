@@ -1,0 +1,30 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:prove-installed-binary",
+  "parents": [],
+  "title": "Prove an installed harness works on the target OS",
+  "statement": "As a developer building tools around AI harnesses, I can exercise a binary I have already installed against a mock provider so that I can prove it works in the operating-system environment used by my application.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:real-binary-testing-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "consumer-installed",
+      "statement": "A test can use a real binary installed by the consumer before the test."
+    },
+    {
+      "id": "automatic-provider-wiring",
+      "statement": "Selecting a supported harness allows the library to configure its provider connection to the mock backend."
+    },
+    {
+      "id": "real-exchange",
+      "statement": "The installed binary can send a request to the mock provider and produce process output from the prescribed response on the target OS."
+    }
+  ],
+  "created_at": "2026-09-29T04:27:54.989938Z"
+}

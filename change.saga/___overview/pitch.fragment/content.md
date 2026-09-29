@@ -1,0 +1,1 @@
+Cordyceps helps developers test tools built around AI harnesses by exercising real installed binaries against controllable mock provider APIs. Playwright tests and standalone programs can inspect process input and provider requests, force responses, and exercise real binary behavior on the target operating system.

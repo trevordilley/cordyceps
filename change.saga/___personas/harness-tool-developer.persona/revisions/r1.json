@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/persona-revision.schema.json",
+  "version": 5,
+  "id": "r1",
+  "persona": "urn:change-saga:cordyceps:persona:harness-tool-developer",
+  "parents": [],
+  "name": "Developer building tools around AI harnesses",
+  "description": "Builds and maintains an application that installs, launches, or otherwise consumes AI harnesses. Needs repeatable E2E evidence that real harness binaries are integrated correctly and that the consuming application behaves as expected when harness behavior is controlled.",
+  "created_at": "2026-09-29T04:20:48.546004Z"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-event.schema.json",
+  "version": 3,
+  "id": "accepted-initial-scope",
+  "story": "urn:change-saga:cordyceps:story:test-frontend-through-binary",
+  "parents": [
+    "urn:change-saga:cordyceps:story:test-frontend-through-binary:event:proposed"
+  ],
+  "state": "accepted",
+  "reason": "The user reviewed the initial documentation and stories, confirmed that they are good, and requested committing this baseline before moving to the next step. Acceptance records product intent, not implementation completion.",
+  "created_at": "2026-09-29T16:08:09.787053Z"
+}

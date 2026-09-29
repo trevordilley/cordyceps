@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/citation.schema.json",
+  "version": 3,
+  "id": "standalone-programmatic-use",
+  "kind": "decision",
+  "title": "Use Cordyceps programmatically outside Playwright",
+  "reference": "Current Cordyceps product conversation, user request beginning \"Okay, I think the only other story I might add\": wire up a cordyceps-controlled AI programmatically outside Playwright for specific experiments, tests, or a consumer-owned mocking framework.",
+  "created_at": "2026-09-29T16:03:30.885704Z"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:playwright-e2e-workflow",
+  "parents": [],
+  "title": "Control a real AI harness from Playwright E2E tests",
+  "statement": "As a developer building tools around AI harnesses, I can wire Cordyceps into my Playwright tests with familiar interception and mocking controls so that I can exercise my frontend through the real binary within my existing E2E workflow.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:playwright-workflow"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "playwright-setup",
+      "statement": "A Playwright test can configure a supported real harness to use the Cordyceps mock provider as part of its test setup."
+    },
+    {
+      "id": "intercept-provider-request",
+      "statement": "Within the Playwright test, the consumer can intercept a request received by the mock backend and inspect its contents before choosing the response."
+    },
+    {
+      "id": "mock-provider-response",
+      "statement": "Within the Playwright test, the consumer can supply a text or supported tool-call response for an intercepted provider request."
+    },
+    {
+      "id": "frontend-assertions",
+      "statement": "The same Playwright test can drive the frontend and assert on its rendering of output produced by the real binary from the mocked response."
+    }
+  ],
+  "created_at": "2026-09-29T04:40:39.174264Z"
+}

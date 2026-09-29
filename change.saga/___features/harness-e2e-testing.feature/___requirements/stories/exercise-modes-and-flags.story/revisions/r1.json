@@ -1,0 +1,30 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:exercise-modes-and-flags",
+  "parents": [],
+  "title": "Exercise interactive and non-interactive invocations",
+  "statement": "As a developer building tools around AI harnesses, I can send input to the real binary in the invocation modes and with the flags my application uses so that my tests exercise its actual process integration.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:real-binary-testing-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "interactive-input",
+      "statement": "A consumer can exercise the real binary with input in its supported interactive mode against the mock provider."
+    },
+    {
+      "id": "non-interactive-input",
+      "statement": "A consumer can exercise the real binary with input in its supported non-interactive mode against the mock provider."
+    },
+    {
+      "id": "invocation-flags",
+      "statement": "A consumer can exercise the binary with consumer-selected flags supported by that binary and compatible with the mock-provider connection."
+    }
+  ],
+  "created_at": "2026-09-29T04:27:55.304714Z"
+}

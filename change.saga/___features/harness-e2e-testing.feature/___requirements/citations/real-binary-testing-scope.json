@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/citation.schema.json",
+  "version": 3,
+  "id": "real-binary-testing-scope",
+  "kind": "decision",
+  "title": "Consumer-installed binaries, observable input and requests, and controlled provider responses",
+  "reference": "Current Cordyceps product conversation, user clarification beginning \"That is definitely one example for sure\": consumer installs the binary; interactive/non-interactive modes and flags; API exposes input and mock-provider requests and forces responses; text and tool-call scenarios; a Claude Code frontend exercises the real binary on the underlying OS, including permissions and environment loading.",
+  "created_at": "2026-09-29T04:27:20.888572Z"
+}

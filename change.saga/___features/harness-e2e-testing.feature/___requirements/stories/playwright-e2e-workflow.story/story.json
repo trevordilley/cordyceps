@@ -1,0 +1,6 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story.schema.json",
+  "version": 3,
+  "id": "playwright-e2e-workflow",
+  "created_at": "2026-09-29T04:40:39.174264Z"
+}

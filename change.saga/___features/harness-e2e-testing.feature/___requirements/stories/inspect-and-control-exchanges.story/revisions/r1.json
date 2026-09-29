@@ -1,0 +1,34 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r1",
+  "story": "urn:change-saga:cordyceps:story:inspect-and-control-exchanges",
+  "parents": [],
+  "title": "Inspect inputs and provider requests and force responses",
+  "statement": "As a developer building tools around AI harnesses, I can inspect the input and provider traffic for an exercised binary and prescribe provider responses so that I can drive the behavior my application needs to handle.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:real-binary-testing-scope"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "inspect-input",
+      "statement": "The library API exposes the input sent to the binary during the test."
+    },
+    {
+      "id": "inspect-requests",
+      "statement": "The library API exposes the requests received by the mock provider from the binary."
+    },
+    {
+      "id": "force-text",
+      "statement": "The consumer can use the library API to force a text response from the mock provider for the binary to process."
+    },
+    {
+      "id": "force-tool-call",
+      "statement": "The consumer can use the library API to force a supported provider tool-call response for the binary to process."
+    }
+  ],
+  "created_at": "2026-09-29T04:27:55.50999Z"
+}

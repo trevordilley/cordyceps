@@ -1,0 +1,41 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/story-revision.schema.json",
+  "version": 3,
+  "id": "r2",
+  "story": "urn:change-saga:cordyceps:story:inspect-and-control-exchanges",
+  "parents": [
+    "urn:change-saga:cordyceps:story:inspect-and-control-exchanges:revision:r1"
+  ],
+  "title": "Inspect inputs and provider requests and force responses",
+  "statement": "As a developer building tools around AI harnesses, I can inspect the input and provider traffic for an exercised binary and prescribe provider responses so that I can drive the behavior my application needs to handle.",
+  "personas": [
+    "urn:change-saga:cordyceps:persona:harness-tool-developer"
+  ],
+  "citations": [
+    "urn:change-saga:cordyceps:citation:real-binary-testing-scope",
+    "urn:change-saga:cordyceps:citation:real-tool-execution"
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "inspect-input",
+      "statement": "The library API exposes the input sent to the binary during the test."
+    },
+    {
+      "id": "inspect-requests",
+      "statement": "The library API exposes the requests received by the mock provider from the binary."
+    },
+    {
+      "id": "force-text",
+      "statement": "The consumer can use the library API to force a text response from the mock provider for the binary to process."
+    },
+    {
+      "id": "force-tool-call",
+      "statement": "The consumer can prescribe a mock-provider response containing the tool-call semantics and arguments supported by the selected harness, such as a file-read call naming a fixture path."
+    },
+    {
+      "id": "real-tool-execution",
+      "statement": "When its normal permissions allow the requested operation, the real binary executes the prescribed tool call using its normal tool implementation; a prescribed file read reads the actual file on the target OS."
+    }
+  ],
+  "created_at": "2026-09-29T04:31:52.018911Z"
+}

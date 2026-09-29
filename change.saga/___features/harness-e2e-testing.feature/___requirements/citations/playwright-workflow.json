@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v3/citation.schema.json",
+  "version": 3,
+  "id": "playwright-workflow",
+  "kind": "decision",
+  "title": "Playwright E2E workflow with familiar wiring, interception, and mocking",
+  "reference": "Current Cordyceps product conversation, user message beginning \"Okay, now some other potential requirements\": expected use in Playwright tests, wired up like a browser, with interception and mocking. Fixture lifecycle, isolation, and waiting behavior are agent-proposed interpretations for review.",
+  "created_at": "2026-09-29T04:40:39.148261Z"
+}
