@@ -1,0 +1,8 @@
+{
+  "version": 4,
+  "id": "cordyceps-integration",
+  "title": "Implement the Cordyceps injection and mock-provider library",
+  "role": "review",
+  "rank": 0,
+  "objective": "Explain the integrated npm library, consumer-owned process and ACP boundary, isolated provider controls, and exact verification evidence."
+}

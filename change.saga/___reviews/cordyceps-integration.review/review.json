@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/review.schema.json",
+  "version": 5,
+  "id": "cordyceps-integration",
+  "title": "Implement the Cordyceps injection and mock-provider library",
+  "base": "b6d73b7",
+  "head": "implementation/cordyceps-manager",
+  "created_at": "2026-09-29T22:37:13.214586Z"
+}
