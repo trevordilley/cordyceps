@@ -15,7 +15,28 @@ This inventory is a set of observed real-consumer outcomes, not a version certif
 The table is finalized with the accompanying machine-readable evidence after each integration run. A documented configuration seam alone is not a passing workflow. Pending service protocols remain implementation work; they are not marked external blockers merely because an existing codec cannot decode them.
 
 <!-- agent-results:start -->
-Validation in progress; consult the machine-readable inventory for current outcomes.
+| DevSwarm family | Text + real read | Recipe / codec | Evidence and limits |
+| --- | --- | --- | --- |
+| Amazon Q (`q`) | [Passed](real-q.md) | amazon-q / amazon-q | `fs_read`; installed `q` invokes Kiro 2.3.0. |
+| Claude Code (`claude`) | [Passed](real-cli.md) | claude-code / anthropic-messages | `Read`; separate real PTY, ACP and browser evidence. |
+| Codex (`codex`) | [Passed](real-cli.md) | codex / openai-responses | `exec_command` executes `/bin/cat`. |
+| Antigravity (`antigravity`) | [Passed](real-gated-agents.md) | antigravity / google-genai | Actual `agy` uses `view_file`. |
+| Gemini CLI (`gemini`) | [Passed](real-google-agents.md) | gemini / google-genai | `read_file`; incremental CLI output and process cancellation. |
+| Rovo Dev (`acli`) | In progress | — / — | Direct installed plugin reached local inference; verification in progress. |
+| Aider (`aider`) | [Passed](real-editor-agents.md) | aider / openai-chat-completions | Real shell read after explicit stdin consent; result appears in conversation text. |
+| Goose (`goose`) | [Passed](real-provider-agents.md) | goose / anthropic-messages | Real `shell` read; separate title requests. |
+| Cursor (`cursor-agent`) | In progress | — / — | Service and authentication boundary under investigation. |
+| Amp (`amp`) | In progress | — / — | Custom provider/service configuration under investigation. |
+| GitHub Copilot CLI (`copilot`) | [Passed](real-provider-agents.md) | copilot / anthropic-messages | Real `view` read; incremental output and process cancellation. |
+| Mistral Vibe (`vibe`) | [Passed](real-google-agents.md) | mistral-vibe / openai-chat-completions | Real `read_file`; selected headless mode requests nonstreaming JSON. |
+| Qwen Code (`qwen`) | [Passed](real-google-agents.md) | qwen / openai-chat-completions | Real `read_file`; incremental output and process cancellation. |
+| Auggie (`auggie`) | [Passed](real-auggie.md) | auggie / augment | Real `view`; explicit model bootstrap, native NDJSON, incremental output and cancellation. |
+| OpenCode (`opencode`) | [Passed](real-provider-agents.md) | opencode / anthropic-messages | Real `read`; CLI consumes stream but buffers assistant output. |
+| Crush (`crush`) | [Passed](real-provider-agents.md) | crush / anthropic-messages | Real `view`; separate title requests. |
+| Cline (`cline`) | [Passed](real-editor-agents.md) | cline / openai-chat-completions | Native XML `read_file` / `attempt_completion` carried in model text. |
+| Plandex (`plandex`) | [Passed](real-plandex.md) | example-local plandex / openai-chat-completions | Self-hosted real server directs CLI context read; separate summaries. |
+| Factory Droid (`droid`) | [Passed](real-provider-agents.md) | droid / anthropic-messages | Real `Read`; CLI consumes stream but buffers assistant output. |
+| Qodo (`qodo`) | In progress | — / — | Service and agent execution boundary under investigation. |
 <!-- agent-results:end -->
 
 All runs use test credentials and isolated scratch configuration. Installed or project-local binaries, SDKs, containers, PTYs, permissions and cleanup are consumer tooling in `examples/`; the public library does not install, discover, launch or manage agents. Most verified recipes are bundled and can also be loaded privately with `registry.loadFile()` through the same validator. Plandex retains an example-local recipe because its custom-model setup also needs a consumer-owned self-hosted backend.

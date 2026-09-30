@@ -522,6 +522,127 @@
           }
         }
       ]
+    },
+    {
+      "group": "q",
+      "artifact": {
+        "name": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-oihcg6qCnHIeiuLdvbLFf0bHovSB7oJXk32AIsxM2PH5769+SFuI2p2TWLG1v2r0ptk1gv75zVr1T3WBjUWn0A==",
+        "shasum": "e87f05fca59f79135ac56e8341233aa2dc593fb9"
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-q-manager.json",
+      "cases": [
+        {
+          "agent": "q",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 4,
+          "cleanedUp": true
+        },
+        {
+          "agent": "q",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 6,
+          "cleanedUp": true
+        },
+        {
+          "agent": "q",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 4,
+          "cleanedUp": true,
+          "observedBeforeRelease": true,
+          "aborted": false
+        },
+        {
+          "agent": "q",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 7,
+          "cleanedUp": true,
+          "observedBeforeRelease": true,
+          "aborted": true,
+          "recovery": {
+            "code": 0,
+            "signal": null,
+            "timedOut": false
+          }
+        }
+      ]
+    },
+    {
+      "group": "auggie",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-Z4FYkPZx8osrh0p9wbvlrnVManeB2KU3CQFsVEj6tvNwgoSXmscZGwdkJ61QjAFfYZZs3qrNXta7J+jnuWAXHg=="
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-auggie-manager.json",
+      "cases": [
+        {
+          "agent": "auggie",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 12,
+          "cleanedUp": true,
+          "listenerClosed": true
+        },
+        {
+          "agent": "auggie",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 13,
+          "cleanedUp": true,
+          "listenerClosed": true
+        },
+        {
+          "agent": "auggie",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 12,
+          "cleanedUp": true,
+          "incrementalBeforeTerminal": true,
+          "listenerClosed": true
+        },
+        {
+          "agent": "auggie",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 12,
+          "cleanedUp": true,
+          "incrementalBeforeTerminal": true,
+          "cancelledByConsumer": true,
+          "listenerClosed": true
+        }
+      ]
+    },
+    {
+      "group": "plandex",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-Z4FYkPZx8osrh0p9wbvlrnVManeB2KU3CQFsVEj6tvNwgoSXmscZGwdkJ61QjAFfYZZs3qrNXta7J+jnuWAXHg=="
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-plandex-manager.json",
+      "totalProviderRequests": 6,
+      "cleanedUp": true,
+      "dockerResourcesRemoved": true,
+      "cases": [
+        {
+          "agent": "plandex",
+          "scenario": "text",
+          "passed": true,
+          "mainRequestCount": 1
+        },
+        {
+          "agent": "plandex",
+          "scenario": "read",
+          "passed": true,
+          "mainRequestCount": 2
+        }
+      ]
     }
   ]
 }
