@@ -1,12 +1,13 @@
 import { codecIds } from './provider/index.js';
 
 export type JsonValue = null | boolean | number | string | JsonValue[] | { [key: string]: JsonValue };
-export interface ConfigFileDefinition {
+export type ConfigFileDefinition = {
   id: string;
   path: string;
-  format: 'json' | 'toml';
-  values: { [key: string]: JsonValue };
-}
+} & (
+  | { format: 'json'; values: { [key: string]: JsonValue } | JsonValue[] }
+  | { format: 'toml'; values: { [key: string]: JsonValue } }
+);
 export interface InjectionRecipe {
   env?: Record<string, string>;
   unsetEnv?: string[];
@@ -129,7 +130,7 @@ function recipe(value: unknown, id: string, field: string) {
       if (!file.path || file.path.split('/').some(part => !/^[A-Za-z0-9_.-]+$/.test(part) || part === '.' || part === '..' || /[. ]$/.test(part) || /^(con|prn|aux|nul|com[1-9]|lpt[1-9])(\.|$)/i.test(part)))
         fail(id, `${path}.path`, 'expected a portable session-relative file path without traversal or tokens');
       if (file.format !== 'json' && file.format !== 'toml') fail(id, `${path}.format`, 'expected json or toml');
-      object(file.values, id, `${path}.values`);
+      if (!(file.format === 'json' && Array.isArray(file.values))) object(file.values, id, `${path}.values`);
       if (file.format === 'toml') {
         const check = (entry: unknown, location: string): void => {
           if (entry === null) fail(id, location, 'TOML has no null value');

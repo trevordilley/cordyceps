@@ -164,6 +164,28 @@ describe('rendering and lifecycle', () => {
     await Promise.all([output.dispose(), output.dispose()]);
     await expect(fs.stat(directory)).rejects.toMatchObject({ code: 'ENOENT' });
   });
+  test('JSON array-root native configuration retains substitutions and rejects invalid roots', async () => {
+    const connections = [{ name: 'controlled', baseURL: '${mock.baseUrl}/v1',
+      apiKey: '${mock.apiKey}', label: '${input.label}', nested: [null, '${config.connections.path}'] }];
+    const output = await render(definition({ configFiles: [
+      { id: 'connections', path: 'connections.json', format: 'json', values: connections },
+    ] }), 'interactive', { label: 'quote"\n${not-expanded}' });
+    const path = output.configFiles[0]!.path;
+    expect(JSON.parse(await fs.readFile(path, 'utf8'))).toEqual([{ name: 'controlled',
+      baseURL: endpoint.baseUrl + '/v1', apiKey: endpoint.apiKey,
+      label: 'quote"\n${not-expanded}', nested: [null, path] }]);
+    expect(connections[0]!.apiKey).toBe('${mock.apiKey}');
+    for (const [format, values] of [['toml', []], ['json', null], ['json', 'scalar'], ['json', 1]]) {
+      error(() => parseDefinition({ ...definition(), provider: { adapter: 'anthropic-messages', override: {
+        configFiles: [{ id: 'bad', path: 'bad.json', format, values }],
+      } } }), 'INVALID_DEFINITION', 'values');
+    }
+    error(() => parseDefinition(definition({ configFiles: [
+      { id: 'bad', path: 'bad.json', format: 'json', values: ['${unknown.token}'] },
+    ] })), 'UNKNOWN_TOKEN', 'values');
+    await output.dispose();
+    await expect(fs.stat(path)).rejects.toMatchObject({ code: 'ENOENT' });
+  });
   test('TOML control escapes have exact portable syntax (Bun 1.3.13 parser mishandles these escapes)', async () => {
     const output = await render(definition({ configFiles: [{ id: 'controls', path: 'control.toml', format: 'toml',
       values: { control: '\t\b\f\u0001\u001f\u007f', 'quoted.key': '"\\\n' } }] }));
