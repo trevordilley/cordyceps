@@ -68,6 +68,7 @@ export const openaiChatCompletions: ProviderCodec = Object.freeze({
     return { model: body.model, stream: body.stream === true, text: text.join('\n'), tools, toolResults, body };
   },
   encode(request, response, signal) {
+    if (response.amazonQ !== undefined) throw new TypeError('Amazon Q auxiliary response requires the Amazon Q codec');
     if (response.health !== undefined || response.inputTokens !== undefined)
       throw new TypeError('Chat Completions does not support Anthropic auxiliary responses');
     if (response.error !== undefined) {

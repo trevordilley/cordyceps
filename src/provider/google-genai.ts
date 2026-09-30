@@ -59,6 +59,7 @@ export const googleGenai: ProviderCodec = Object.freeze({
     return { model: decodeURIComponent(match[1]!), stream, text: text.join('\n'), tools, toolResults, body };
   },
   encode(request, response, signal) {
+    if (response.amazonQ !== undefined) throw new TypeError('Amazon Q auxiliary response requires the Amazon Q codec');
     if (response.error !== undefined) {
       const { status, message, type } = response.error;
       const defaults: Record<number, string> = { 400: 'INVALID_ARGUMENT', 401: 'UNAUTHENTICATED', 403: 'PERMISSION_DENIED', 404: 'NOT_FOUND', 429: 'RESOURCE_EXHAUSTED', 500: 'INTERNAL', 503: 'UNAVAILABLE' };
