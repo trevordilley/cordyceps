@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "pi",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "PI_CODING_AGENT_DIR": "${session.dir}"
+      },
+      "configFiles": [
+        {
+          "id": "models",
+          "path": "models.json",
+          "format": "json",
+          "values": {
+            "providers": {
+              "cordyceps": {
+                "baseUrl": "${mock.baseUrl}/v1",
+                "api": "openai-completions",
+                "apiKey": "${mock.apiKey}",
+                "models": [
+                  {
+                    "id": "cordyceps-model",
+                    "name": "Cordyceps",
+                    "reasoning": false,
+                    "input": [
+                      "text"
+                    ],
+                    "contextWindow": 128000,
+                    "maxTokens": 4096,
+                    "cost": {
+                      "input": 0,
+                      "output": 0,
+                      "cacheRead": 0,
+                      "cacheWrite": 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "--print"
+      ]
+    }
+  }
+}

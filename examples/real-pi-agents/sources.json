@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-09-30",
+  "npmPackages": [
+    {
+      "name": "@earendil-works/pi-coding-agent",
+      "version": "0.99.1",
+      "resolved": "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-0.99.1.tgz",
+      "integrity": "sha512-cWUrTOqA5M73cOYMgsh9PlhDrsBhavd+n5kVY6F7BGbGl1RjqCteVCoeVMVqhngoGACVDyw1tbLjajL8l9jrHg=="
+    },
+    {
+      "name": "@oh-my-pi/pi-coding-agent",
+      "version": "18.4.4",
+      "resolved": "https://registry.npmjs.org/@oh-my-pi/pi-coding-agent/-/pi-coding-agent-18.4.4.tgz",
+      "integrity": "sha512-Y5uEoGtd7YEPD7BQDrBSz3L1j9EY5rTpmhin5JLmnqbbpefm7Vpl/UjDdwkkEcV4e5Fnremdk9ZhUlIXNfjiqw=="
+    },
+    {
+      "name": "mastracode",
+      "version": "0.43.0",
+      "resolved": "https://registry.npmjs.org/mastracode/-/mastracode-0.43.0.tgz",
+      "integrity": "sha512-ET/5iX+nC+rJOaKzIvrlHDgjCEC/Unro1bPWYbKy9x7E4m8M0JmpZ4fkgyM1t/wQpqdli0po/yS8y1lRnLS2kA=="
+    },
+    {
+      "name": "@moonshot-ai/kimi-code",
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/@moonshot-ai/kimi-code/-/kimi-code-2.1.1.tgz",
+      "integrity": "sha512-xClqcnTQUKgKDbeOGPU78qcwxGzL8wA2rqWuOX3CLpyQ1/NhSX7jAh6hZo/JFwThSX8obkgef3uw/li5JaJNyw=="
+    },
+    {
+      "name": "bun",
+      "version": "1.4.2",
+      "resolved": "https://registry.npmjs.org/bun/-/bun-1.4.2.tgz",
+      "integrity": "sha512-TrSXo6HJfIEaczpb3kjX82I2pL47vK1QUNmHRCUdz9IzaOwa9lzOXSWwu2l18YHE3sNfGRapVLd4nNm+22vVVA=="
+    }
+  ],
+  "prime": {
+    "version": "0.9.8",
+    "installer": "https://app.primeintellect.ai/prime-agent/install.sh",
+    "archive": "https://pub-728493de92a943e2a9b2d17b4719f318.r2.dev/releases/v0.9.8/prime-agent-0.9.8-darwin-arm64.tar.gz",
+    "checksums": "https://pub-728493de92a943e2a9b2d17b4719f318.r2.dev/releases/v0.9.8/SHA256SUMS",
+    "sha256": "078c9abd519978ef27f6404367e37a2981267db47f1b95b60940ea7fe6ead8b9"
+  },
+  "zcode": {
+    "cliVersion": "0.16.9",
+    "sourceCommit": "29628c9acdb81b703bbd4080c207a0e7ce5e276e",
+    "manifest": "https://cdn-zcode.z.ai/zcode/electron/releases/3.14.3/manifest-darwin-arm64.json",
+    "archive": "https://cdn-zcode.z.ai/zcode/electron/releases/components/darwin-arm64/glm/v0.13.3%2B464dc03681ff.tar.gz",
+    "sha256": "464dc03681ff59fb43dbc9b36201b186b7f6ba1d1f18feaa89b8228ae771182a",
+    "providerConfig": "https://raw.githubusercontent.com/zai-org/ZCode/29628c9acdb81b703bbd4080c207a0e7ce5e276e/config/provider/zcode-builtin.json",
+    "providerConfigSha256": "0b3d735e0c2334353eecadfa8c0756a1a19fc4f7938fc62882048d6630c5f424"
+  },
+  "orchestrators": {
+    "superset": {
+      "commit": "3049a3114bd1ae48b944aae3e4cafdb0f521d1a5",
+      "url": "https://github.com/superset-sh/superset"
+    },
+    "orca": {
+      "commit": "98039676f363d6f0c06dbed25f3180463e5952af",
+      "url": "https://github.com/stablyai/orca"
+    }
+  }
+}

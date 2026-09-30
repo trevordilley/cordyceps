@@ -1,0 +1,613 @@
+{
+  "date": "2026-09-30T04:51:28.785Z",
+  "node": "v24.15.0",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-pi-package-QYfmFQ/consumer/node_modules/cordyceps/dist/index.js",
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-lUuOPlM7qyHqt+citHbcPjddQP+X5oZmvarZDRd5+0TRaCJmrxC4LCB3sXllK6u5soppuZOih67AUYF42OJnvA==",
+    "shasum": "0b4f87fbe323c94eaa5acf4d0ba27945b88ee752",
+    "binaryPackages": {
+      "pi": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.99.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@earendil-works/pi-coding-agent/package.json"
+      },
+      "omp": {
+        "name": "@oh-my-pi/pi-coding-agent",
+        "version": "18.4.4",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@oh-my-pi/pi-coding-agent/package.json"
+      },
+      "mastra-code": {
+        "name": "mastracode",
+        "version": "0.43.0",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/mastracode/package.json"
+      },
+      "kimi-code": {
+        "name": "@moonshot-ai/kimi-code",
+        "version": "2.1.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@moonshot-ai/kimi-code/package.json"
+      },
+      "prime-agent": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.9.8",
+        "path": "/private/tmp/cordyceps-pi-native-repro/prime/package.json"
+      }
+    }
+  },
+  "cases": [
+    {
+      "harness": "pi",
+      "scenario": "text",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.99.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@earendil-works/pi-coding-agent/package.json"
+      },
+      "version": "0.99.1",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "pi",
+      "scenario": "tool",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.99.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@earendil-works/pi-coding-agent/package.json"
+      },
+      "version": "0.99.1",
+      "requests": 2,
+      "tool": {
+        "id": "fixture_read",
+        "name": "read",
+        "input": {
+          "path": "/private/tmp/cordyceps-pi-pi-TLuidI/work/fixture.txt"
+        }
+      },
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "pi",
+      "scenario": "stream",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.99.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@earendil-works/pi-coding-agent/package.json"
+      },
+      "version": "0.99.1",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": true,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "pi",
+      "scenario": "cancel",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.99.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@earendil-works/pi-coding-agent/package.json"
+      },
+      "version": "0.99.1",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "omp",
+      "scenario": "text",
+      "passed": true,
+      "package": {
+        "name": "@oh-my-pi/pi-coding-agent",
+        "version": "18.4.4",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@oh-my-pi/pi-coding-agent/package.json"
+      },
+      "version": "omp/18.4.4",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "omp",
+      "scenario": "tool",
+      "passed": true,
+      "package": {
+        "name": "@oh-my-pi/pi-coding-agent",
+        "version": "18.4.4",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@oh-my-pi/pi-coding-agent/package.json"
+      },
+      "version": "omp/18.4.4",
+      "requests": 2,
+      "tool": {
+        "id": "fixture_read",
+        "name": "read",
+        "input": {
+          "path": "/private/tmp/cordyceps-pi-omp-XfdxD4/work/fixture.txt"
+        }
+      },
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "omp",
+      "scenario": "stream",
+      "passed": true,
+      "package": {
+        "name": "@oh-my-pi/pi-coding-agent",
+        "version": "18.4.4",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@oh-my-pi/pi-coding-agent/package.json"
+      },
+      "version": "omp/18.4.4",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": true,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "omp",
+      "scenario": "cancel",
+      "passed": true,
+      "package": {
+        "name": "@oh-my-pi/pi-coding-agent",
+        "version": "18.4.4",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@oh-my-pi/pi-coding-agent/package.json"
+      },
+      "version": "omp/18.4.4",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "mastra-code",
+      "scenario": "text",
+      "passed": true,
+      "package": {
+        "name": "mastracode",
+        "version": "0.43.0",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/mastracode/package.json"
+      },
+      "version": "0.43.0",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "mastra-code",
+      "scenario": "tool",
+      "passed": true,
+      "package": {
+        "name": "mastracode",
+        "version": "0.43.0",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/mastracode/package.json"
+      },
+      "version": "0.43.0",
+      "requests": 2,
+      "tool": {
+        "id": "fixture_read",
+        "name": "view",
+        "input": {
+          "path": "/private/tmp/cordyceps-pi-mastra-code-elP90P/work/fixture.txt"
+        }
+      },
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "mastra-code",
+      "scenario": "stream",
+      "passed": true,
+      "package": {
+        "name": "mastracode",
+        "version": "0.43.0",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/mastracode/package.json"
+      },
+      "version": "0.43.0",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": true,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "mastra-code",
+      "scenario": "cancel",
+      "passed": true,
+      "package": {
+        "name": "mastracode",
+        "version": "0.43.0",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/mastracode/package.json"
+      },
+      "version": "0.43.0",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "kimi-code",
+      "scenario": "text",
+      "passed": true,
+      "package": {
+        "name": "@moonshot-ai/kimi-code",
+        "version": "2.1.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@moonshot-ai/kimi-code/package.json"
+      },
+      "version": "2.1.1",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "kimi-code",
+      "scenario": "tool",
+      "passed": true,
+      "package": {
+        "name": "@moonshot-ai/kimi-code",
+        "version": "2.1.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@moonshot-ai/kimi-code/package.json"
+      },
+      "version": "2.1.1",
+      "requests": 2,
+      "tool": {
+        "id": "fixture_read",
+        "name": "Read",
+        "input": {
+          "path": "/private/tmp/cordyceps-pi-kimi-code-Zojw92/work/fixture.txt"
+        }
+      },
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "kimi-code",
+      "scenario": "stream",
+      "passed": true,
+      "package": {
+        "name": "@moonshot-ai/kimi-code",
+        "version": "2.1.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@moonshot-ai/kimi-code/package.json"
+      },
+      "version": "2.1.1",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": false,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "kimi-code",
+      "scenario": "cancel",
+      "passed": true,
+      "package": {
+        "name": "@moonshot-ai/kimi-code",
+        "version": "2.1.1",
+        "path": "/private/tmp/cordyceps-pi-tools/node_modules/@moonshot-ai/kimi-code/package.json"
+      },
+      "version": "2.1.1",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "prime-agent",
+      "scenario": "text",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.9.8",
+        "path": "/private/tmp/cordyceps-pi-native-repro/prime/package.json"
+      },
+      "version": "0.9.8",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "prime-agent",
+      "scenario": "tool",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.9.8",
+        "path": "/private/tmp/cordyceps-pi-native-repro/prime/package.json"
+      },
+      "version": "0.9.8",
+      "requests": 2,
+      "tool": {
+        "id": "fixture_read",
+        "name": "ipython",
+        "input": {
+          "code": "print(open(\"/private/tmp/cordyceps-pi-prime-agent-VgG0KN/work/fixture.txt\").read())"
+        }
+      },
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "prime-agent",
+      "scenario": "stream",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.9.8",
+        "path": "/private/tmp/cordyceps-pi-native-repro/prime/package.json"
+      },
+      "version": "0.9.8",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": true,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "prime-agent",
+      "scenario": "cancel",
+      "passed": true,
+      "package": {
+        "name": "@earendil-works/pi-coding-agent",
+        "version": "0.9.8",
+        "path": "/private/tmp/cordyceps-pi-native-repro/prime/package.json"
+      },
+      "version": "0.9.8",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": true,
+      "cleanedUp": true
+    },
+    {
+      "harness": "zcode",
+      "scenario": "text",
+      "passed": true,
+      "version": "0.16.9",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "zcode",
+      "scenario": "tool",
+      "passed": true,
+      "version": "0.16.9",
+      "requests": 2,
+      "tool": {
+        "id": "fixture_read",
+        "name": "Read",
+        "input": {
+          "file_path": "/private/tmp/cordyceps-pi-zcode-Z8ID1Z/work/fixture.txt"
+        }
+      },
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "zcode",
+      "scenario": "stream",
+      "passed": true,
+      "version": "0.16.9",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": false,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    },
+    {
+      "harness": "zcode",
+      "scenario": "cancel",
+      "passed": true,
+      "version": "0.16.9",
+      "requests": 1,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "daemonShutdownForCancellation": false,
+      "cleanedUp": true
+    }
+  ]
+}

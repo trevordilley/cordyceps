@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "mastra-code",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "MASTRA_APP_DATA_DIR": "${session.dir}"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "settings.json",
+          "format": "json",
+          "values": {
+            "customProviders": [
+              {
+                "name": "cordyceps",
+                "url": "${mock.baseUrl}/v1",
+                "apiKey": "${mock.apiKey}",
+                "models": [
+                  "cordyceps-model"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {}
+  }
+}

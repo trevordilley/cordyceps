@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "zcode",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "ZCODE_PERSONAL_PROVIDER_CONFIG_FILE": "${session.dir}/personal.json"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "personal.json",
+          "format": "json",
+          "values": {
+            "schemaVersion": 1,
+            "config": {
+              "providerConfigRules": {
+                "providerRules": [
+                  {
+                    "providerId": "cordyceps",
+                    "providerName": "Cordyceps",
+                    "config": {
+                      "group": "standard-personal",
+                      "access": {
+                        "type": "api-key",
+                        "apiKey": "${mock.apiKey}"
+                      },
+                      "api": {
+                        "type": "openai-chat-completions",
+                        "baseUrl": "${mock.baseUrl}/v1"
+                      },
+                      "personalModelIds": [
+                        "gpt-4o-mini"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "modelConfigRules": {
+                "providerModelRules": [],
+                "manualProviderModelRules": []
+              },
+              "defaultModelSelection": {
+                "providerId": "cordyceps",
+                "modelId": "gpt-4o-mini"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {}
+  }
+}

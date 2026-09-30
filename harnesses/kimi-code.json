@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "kimi-code",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "KIMI_CODE_HOME": "${session.dir}"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "config.toml",
+          "format": "toml",
+          "values": {
+            "default_model": "cordyceps",
+            "providers": {
+              "cordyceps": {
+                "type": "openai",
+                "base_url": "${mock.baseUrl}/v1",
+                "api_key": "${mock.apiKey}"
+              }
+            },
+            "models": {
+              "cordyceps": {
+                "provider": "cordyceps",
+                "model": "cordyceps-model",
+                "max_context_size": 128000,
+                "capabilities": [
+                  "tool_use"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {}
+  }
+}
