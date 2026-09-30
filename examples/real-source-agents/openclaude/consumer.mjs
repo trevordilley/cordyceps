@@ -51,7 +51,7 @@ for (const harness of selection.split(',')) for (const scenario of scenarios.spl
     await writeFile(fixture, token + '\n');
     ai = await prepare({ harness, registry, mode: 'nonInteractive' });
     const env = ai.environment({ HOME: home, PATH: `${dirname(process.execPath)}:/usr/bin:/bin:/usr/sbin:/sbin`,
-      TMPDIR: root, TERM: 'xterm-256color', SHELL: '/bin/sh', XDG_CONFIG_HOME: join(home, '.config'),
+      TMPDIR: root, CLAUDE_CODE_TMPDIR: root, TERM: 'xterm-256color', SHELL: '/bin/sh', XDG_CONFIG_HOME: join(home, '.config'),
       XDG_DATA_HOME: join(home, '.local/share'), XDG_STATE_HOME: join(home, '.local/state'), XDG_CACHE_HOME: join(home, '.cache'),
       NO_PROXY: '127.0.0.1,localhost', no_proxy: '127.0.0.1,localhost', HTTP_PROXY: 'http://127.0.0.1:1',
       HTTPS_PROXY: 'http://127.0.0.1:1', ALL_PROXY: 'http://127.0.0.1:1', DO_NOT_TRACK: '1',

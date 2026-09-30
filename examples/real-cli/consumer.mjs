@@ -73,7 +73,7 @@ try {
         // npm-installed CLI launchers may use /usr/bin/env node. Supply this
         // consumer's known Node runtime without inheriting the user's full PATH.
         const env = ai.environment({ PATH: `${dirname(process.execPath)}:/usr/bin:/bin:/usr/sbin:/sbin`, HOME: home,
-          TMPDIR: root, TERM: 'xterm-256color', XDG_CONFIG_HOME: join(home, '.config'), SHELL: '/bin/sh',
+          TMPDIR: root, CLAUDE_CODE_TMPDIR: root, TERM: 'xterm-256color', XDG_CONFIG_HOME: join(home, '.config'), SHELL: '/bin/sh',
           CLAUDE_CONFIG_DIR: join(home, '.claude'), DISABLE_AUTOUPDATER: '1',
           NO_PROXY: '127.0.0.1,localhost', no_proxy: '127.0.0.1,localhost',
           HTTP_PROXY: 'http://127.0.0.1:1', HTTPS_PROXY: 'http://127.0.0.1:1',

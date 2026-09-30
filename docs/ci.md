@@ -11,18 +11,23 @@ These jobs use `ubuntu-24.04` and standard arm64 `macos-15`, not paid larger run
 - Two Linux jobs run strict TypeScript, Bun tests, Node lifecycle tests, build,
   and clean installed-package checks on Node 22.22.3 and 24.15.0. They retain the
   resulting tarball.
-- Five macOS groups (up to four in parallel) build and install the actual package, then run the
+- Eleven macOS groups (up to four in parallel) build and install the actual package, then run the
   real consumer examples. `baseline` covers Claude Code and Codex text/read,
   the official Claude ACP adapter lifecycle, and the three Chromium frontend
   tests. `extra-cli` covers Kilo, Continue, Autohand and Command Code; `pi`
   covers Pi, OMP, Mastra Code, Kimi, Prime Agent and ZCode; `vendors` covers
   Grok Build, Muse, fx, Ante and MiniMax Code. `source-clis` covers MiMo,
-  DeepSeek headless/TUI, and OpenCode 2 headless/TUI.
+  DeepSeek headless/TUI, and OpenCode 2 headless/TUI. `codebuff-polygraph`
+  covers the pinned official Codebuff source and Polygraph→Claude; `providers`
+  covers Copilot, OpenCode, Crush, Goose and Droid; `google` covers Gemini,
+  Qwen and Mistral Vibe; `editors` covers Cline and Aider; `auggie` and
+  `openclaw` cover their named agents.
 
-That is an initial automated set of **20 native agent families**, plus ACP and
+That is an configured automated set of **34 native agent families**, plus ACP and
 browser scenarios. Other verified local integrations remain documented in
 `verification.md` and the source inventories; they are not silently counted
-as hosted CI coverage. New groups should use the same real packed consumers
+as hosted CI coverage. The remaining nine are Amazon Q, Amp, Antigravity,
+Rovo Dev, Plandex, Hermes, OpenClaude, CodeBuddy and Freebuff. New groups should use the same real packed consumers
 and supply ordinary reproducible installation steps.
 
 `scripts/ci-real-consumers.sh` is consumer-owned setup and execution code. It
@@ -35,7 +40,8 @@ isolation implementation rather than removing the sandbox.
 
 Npm agent versions and Prime/ZCode artifacts are pinned to observed reproduction
 versions. The vendor installer follows official current download manifests and
-records the installed versions. These are reproduction choices, not a version
+records the installed versions. The Pi group installs Bun 1.4.2 for its
+agent runtime and packing; other groups use Bun 1.3.13. These are reproduction choices, not a version
 certification matrix. Changes upstream can fail CI and require investigation.
 
 Jobs have explicit time limits, cancel superseded runs on the same ref, and keep
@@ -51,7 +57,14 @@ also enables the manual Run workflow button. [Actions run results](https://githu
 establish runner-specific behavior; local verification alone does not. Local `actionlint` and `bash -n` passed. The exact `baseline` setup also passed
 locally with freshly npm-installed Claude/Codex on Node 24.15.0: four CLI cases,
 eight ACP turns with cancellation/session reuse, and all three Chromium tests.
-Those observations do not establish successful hosted execution.
+The [first hosted run](https://github.com/trevordilley/cordyceps/actions/runs/36737813993)
+passed both Linux library jobs and the four non-baseline consumer groups
+(18 native families). Baseline failed before its first provider request because
+Claude defaults to `/tmp/claude-UID` even with `TMPDIR` set. The consumers now
+set the documented `CLAUDE_CODE_TMPDIR` to their owned scratch directory;
+filesystem isolation remains intact. That fix and newly added groups await
+hosted verification. Baseline now attempts CLI, ACP and browser independently
+and still fails the job if any scenario fails.
 
 The same group can be exercised locally on macOS with an owned scratch directory:
 

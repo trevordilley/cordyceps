@@ -30,7 +30,7 @@ export async function createConsumerProcess(ai) {
     await mkdir(config, { recursive: true });
     await mkdir(cwd);
     const env = ai.environment({
-      PATH: `${dirname(process.execPath)}:/usr/bin:/bin`, HOME: home, TMPDIR: root,
+      PATH: `${dirname(process.execPath)}:/usr/bin:/bin`, HOME: home, TMPDIR: root, CLAUDE_CODE_TMPDIR: root,
       XDG_CONFIG_HOME: join(home, '.config'), CLAUDE_CONFIG_DIR: config,
       LANG: 'en_US.UTF-8', CI: '1', DISABLE_AUTOUPDATER: '1',
       // Match the verified installed-CLI recipe: suppress ancillary connectivity

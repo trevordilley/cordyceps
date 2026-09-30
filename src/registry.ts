@@ -29,7 +29,7 @@ export function createRegistry({ builtins = true }: { builtins?: boolean } = {})
     },
     list() { return [...definitions.values()].map(value => structuredClone(value)); },
   };
-  if (builtins) for (const name of ['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'claude-code', 'claude-code-acp', 'cline', 'codebuddy', 'codex', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'dsh', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'mimo', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'opencode2', 'pi', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']) {
+  if (builtins) for (const name of ['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'claude-code', 'claude-code-acp', 'cline', 'codebuddy', 'codebuff', 'codex', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'dsh', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'mimo', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'opencode2', 'pi', 'polygraph', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']) {
     const url = new URL(`../harnesses/${name}.json`, import.meta.url);
     registry.register(decodeJson(readFileSync(url, 'utf8'), url.pathname));
   }

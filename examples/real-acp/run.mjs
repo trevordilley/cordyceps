@@ -51,7 +51,7 @@ try {
   ai = await cordyceps.prepare({ harness: 'claude-code-acp', mode: 'acp' });
   // Minimal explicit base: never inherit provider credentials, proxy variables,
   // CLI overrides, NODE_OPTIONS, or the user's project environment.
-  const env = ai.environment({ PATH: dirname(process.execPath), TMPDIR: root, LANG: 'en_US.UTF-8',
+  const env = ai.environment({ PATH: dirname(process.execPath), TMPDIR: root, CLAUDE_CODE_TMPDIR: root, LANG: 'en_US.UTF-8',
     HOME: home, XDG_CONFIG_HOME: join(home, '.config') });
   const adapter = fileURLToPath(import.meta.resolve('@agentclientprotocol/claude-agent-acp/dist/index.js'));
   // Consumer policy: the adapter and all descendants can reach only this mock.

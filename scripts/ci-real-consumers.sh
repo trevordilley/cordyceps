@@ -2,10 +2,28 @@
 # CI orchestration belongs to this consumer example, never the library API.
 set -euo pipefail
 : "${RUNNER_TEMP:?Set RUNNER_TEMP to an owned scratch directory}"
-consumer_group="${1:?Expected baseline, extra-cli, pi, vendors, or source-clis}"
+consumer_group="${1:?Expected a consumer group from .github/workflows/ci.yml}"
+case "$consumer_group" in
+  providers|google|editors|auggie|openclaw)
+    exec bash scripts/ci-additional-consumers.sh "$consumer_group" ;;
+esac
 consumer_root="$RUNNER_TEMP/cordyceps-ci-$consumer_group"
 evidence_root="$RUNNER_TEMP/cordyceps-ci-evidence"
 mkdir -p "$consumer_root" "$evidence_root"
+exec > >(tee "$evidence_root/$consumer_group-setup-and-run.log") 2>&1
+finish() {
+  consumer_exit_code=$?
+  trap - EXIT
+  set +e
+  for record in package.json package-lock.json install-evidence.json prime-artifact.json zcode-glm-artifact.json; do
+    if [[ -f "$consumer_root/$record" ]]; then
+      cp "$consumer_root/$record" "$evidence_root/$consumer_group-$record"
+    fi
+  done
+  printf '%s\n' "$consumer_exit_code" > "$evidence_root/$consumer_group-exit-code.txt"
+  exit "$consumer_exit_code"
+}
+trap finish EXIT
 node_dir="$(dirname "$(command -v node)")"
 case "$consumer_group" in
   baseline)
@@ -16,9 +34,11 @@ case "$consumer_group" in
     export ACP_EVIDENCE_DIR="$evidence_root/acp"
     export FRONTEND_EVIDENCE_DIR="$evidence_root/frontend"
     node node_modules/@playwright/test/cli.js install chromium
-    node examples/real-cli/run.mjs "$evidence_root/cli.json"
-    node examples/real-acp/verify.mjs
-    node examples/real-frontend/verify-packed.mjs
+    baseline_status=0
+    node examples/real-cli/run.mjs "$evidence_root/cli.json" || baseline_status=1
+    node examples/real-acp/verify.mjs || baseline_status=1
+    node examples/real-frontend/verify-packed.mjs || baseline_status=1
+    test "$baseline_status" = 0
     ;;
   extra-cli)
     npm install --prefix "$consumer_root" --no-audit --no-fund \
@@ -41,6 +61,16 @@ case "$consumer_group" in
     export PRIME_AGENT_KERNEL_PYTHON="$consumer_root/prime-venv/bin/python"
     export ZCODE_BINARY="$consumer_root/zcode-glm/zcode.cjs"
     node examples/real-pi-agents/run.mjs "$evidence_root/pi.json"
+    ;;
+  codebuff-polygraph)
+    npm install --prefix "$consumer_root" --no-audit --no-fund \
+      polygraph@0.1.5 @anthropic-ai/claude-code@2.1.283
+    node examples/real-extra-cli/download-diagnostics.mjs "$consumer_root" --workflows-only
+    node examples/real-extra-cli/install-source.mjs "$consumer_root"
+    export EXTRA_CLI_DEPS="$consumer_root"
+    export CLAUDE_BINARY="$consumer_root/node_modules/.bin/claude"
+    node examples/real-extra-cli/probe.mjs "$evidence_root/codebuff-polygraph.json" \
+      polygraph-text,polygraph-tool,codebuff-source-text,codebuff-source-tool workflow
     ;;
   source-clis)
     node examples/real-source-agents/opencode-mimo-dsh/install.mjs "$consumer_root"

@@ -187,6 +187,7 @@ for (const candidate of selection.split(",")) {
     let env = ai.environment({
         ...environment(home, root),
         CLAUDE_CONFIG_DIR: join(home, ".claude"),
+        CLAUDE_CODE_TMPDIR: root,
         DISABLE_AUTOUPDATER: "1",
         CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1",
         MCP_TIMEOUT: "5000",
