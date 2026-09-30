@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "mistral-vibe",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": { "VIBE_HOME": "${session.dir}", "CORDYCEPS_API_KEY": "${mock.apiKey}" },
+      "configFiles": [{ "id": "provider", "path": "config.toml", "format": "toml", "values": {
+        "active_model": "cordyceps",
+        "enable_telemetry": false,
+        "enable_update_checks": false,
+        "enable_auto_update": false,
+        "experiments": { "enable": false },
+        "providers": [{ "name": "cordyceps", "api_base": "${mock.baseUrl}/v1", "api_key_env_var": "CORDYCEPS_API_KEY", "backend": "generic", "api_style": "openai" }],
+        "models": [{ "name": "${input.model}", "alias": "cordyceps", "provider": "cordyceps" }]
+      } }]
+    }
+  },
+  "modes": { "interactive": {}, "nonInteractive": { "args": ["--prompt", "${input.prompt}"] } }
+}

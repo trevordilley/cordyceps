@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "qwen",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": { "OPENAI_API_KEY": "${mock.apiKey}", "OPENAI_BASE_URL": "${mock.baseUrl}/v1" },
+      "args": ["--auth-type", "openai"]
+    }
+  },
+  "modes": { "interactive": {}, "nonInteractive": { "args": ["--prompt", "${input.prompt}"] } }
+}

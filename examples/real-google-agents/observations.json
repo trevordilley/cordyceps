@@ -1,0 +1,399 @@
+{
+  "observedAt": "2026-09-30T03:30:06.060Z",
+  "node": "v22.22.3",
+  "platform": "darwin",
+  "artifact": {
+    "name": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-nkZKLUWuRK/F6oUSRgzffL5fxi36fCHpBTKFb8V2EbNmGdpmQs0EqQn3ovV0oSxwFmEWzAgLDDTbf461hIx0aw==",
+    "shasum": "0ec367fc19a354b438210a11507b48e178ba1c4f"
+  },
+  "fullEvidence": "examples/real-google-agents/evidence.json",
+  "agents": [
+    {
+      "harness": "gemini",
+      "version": "0.39.1",
+      "binary": "/opt/homebrew/bin/gemini",
+      "sources": [
+        "https://geminicli.com/docs/reference/configuration/",
+        "https://ai.google.dev/api/generate-content"
+      ],
+      "cases": [
+        {
+          "scenario": "text",
+          "passed": true,
+          "argv": [
+            "--prompt",
+            "cordyceps-gemini-text: Reply with the controlled test message.",
+            "--model",
+            "gemini-2.5-flash",
+            "--skip-trust",
+            "--approval-mode",
+            "yolo",
+            "--output-format",
+            "stream-json"
+          ],
+          "requests": 1,
+          "providerPaths": [
+            "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse"
+          ],
+          "toolResult": [],
+          "processExit": {
+            "code": 0,
+            "signal": null,
+            "cancelled": false,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "completed"
+          ],
+          "providerStreaming": true,
+          "incrementalOutputBeforeCompletion": true,
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "passed": true,
+          "argv": [
+            "--prompt",
+            "cordyceps-gemini-tool: Read fixture.txt and report completion.",
+            "--model",
+            "gemini-2.5-flash",
+            "--skip-trust",
+            "--approval-mode",
+            "yolo",
+            "--output-format",
+            "stream-json"
+          ],
+          "requests": 2,
+          "providerPaths": [
+            "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse",
+            "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse"
+          ],
+          "scriptedCall": {
+            "id": "fixturecall",
+            "name": "read_file",
+            "input": {
+              "file_path": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-gemini-nnmHBd/work/fixture.txt"
+            }
+          },
+          "toolResult": [
+            {
+              "id": "fixturecall",
+              "isError": false,
+              "text": "{\"output\":\"fixture-493cc0ee-cc2e-49e9-ada4-c4ff1245ac66\\n\"}"
+            }
+          ],
+          "processExit": {
+            "code": 0,
+            "signal": null,
+            "cancelled": false,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "completed",
+            "completed"
+          ],
+          "cleanedUp": true
+        },
+        {
+          "scenario": "cancel",
+          "passed": true,
+          "argv": [
+            "--prompt",
+            "cordyceps-gemini-cancel: Reply with the controlled test message.",
+            "--model",
+            "gemini-2.5-flash",
+            "--skip-trust",
+            "--approval-mode",
+            "yolo",
+            "--output-format",
+            "stream-json"
+          ],
+          "requests": 1,
+          "providerPaths": [
+            "/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse"
+          ],
+          "toolResult": [],
+          "processExit": {
+            "code": null,
+            "signal": "SIGKILL",
+            "cancelled": true,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "aborted"
+          ],
+          "cleanedUp": true
+        }
+      ],
+      "limitations": [],
+      "assertions": [
+        "Actual prompt captured from installed agent",
+        "Controlled text present in binary output",
+        "Fixture token absent from initial provider request, present in real tool result in the next request",
+        "Held request abort observed when consumer kills owned process group",
+        "Process, listener, generated configuration and fixture cleanup verified"
+      ]
+    },
+    {
+      "harness": "qwen",
+      "version": "0.15.4",
+      "binary": "/Users/20idemo/.bun/bin/qwen",
+      "sources": [
+        "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/auth/",
+        "https://github.com/QwenLM/qwen-code/blob/main/docs/users/configuration/model-providers.md"
+      ],
+      "cases": [
+        {
+          "scenario": "text",
+          "passed": true,
+          "argv": [
+            "--auth-type",
+            "openai",
+            "--prompt",
+            "cordyceps-qwen-text: Reply with the controlled test message.",
+            "--bare",
+            "--model",
+            "qwen3-coder-plus",
+            "--approval-mode",
+            "yolo",
+            "--output-format",
+            "stream-json",
+            "--include-partial-messages"
+          ],
+          "requests": 1,
+          "providerPaths": [
+            "/v1/chat/completions"
+          ],
+          "toolResult": [],
+          "processExit": {
+            "code": 0,
+            "signal": null,
+            "cancelled": false,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "completed"
+          ],
+          "providerStreaming": true,
+          "incrementalOutputBeforeCompletion": true,
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "passed": true,
+          "argv": [
+            "--auth-type",
+            "openai",
+            "--prompt",
+            "cordyceps-qwen-tool: Read fixture.txt and report completion.",
+            "--bare",
+            "--model",
+            "qwen3-coder-plus",
+            "--approval-mode",
+            "yolo",
+            "--output-format",
+            "stream-json",
+            "--include-partial-messages"
+          ],
+          "requests": 2,
+          "providerPaths": [
+            "/v1/chat/completions",
+            "/v1/chat/completions"
+          ],
+          "scriptedCall": {
+            "id": "fixturecall",
+            "name": "read_file",
+            "input": {
+              "file_path": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-qwen-qq7giZ/work/fixture.txt"
+            }
+          },
+          "toolResult": [
+            {
+              "id": "fixturecall",
+              "isError": false,
+              "text": "fixture-4fbda7e3-d585-4563-91e0-e77a69e9ecd8\n"
+            }
+          ],
+          "processExit": {
+            "code": 0,
+            "signal": null,
+            "cancelled": false,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "completed",
+            "completed"
+          ],
+          "cleanedUp": true
+        },
+        {
+          "scenario": "cancel",
+          "passed": true,
+          "argv": [
+            "--auth-type",
+            "openai",
+            "--prompt",
+            "cordyceps-qwen-cancel: Reply with the controlled test message.",
+            "--bare",
+            "--model",
+            "qwen3-coder-plus",
+            "--approval-mode",
+            "yolo",
+            "--output-format",
+            "stream-json",
+            "--include-partial-messages"
+          ],
+          "requests": 1,
+          "providerPaths": [
+            "/v1/chat/completions"
+          ],
+          "toolResult": [],
+          "processExit": {
+            "code": null,
+            "signal": "SIGKILL",
+            "cancelled": true,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "aborted"
+          ],
+          "cleanedUp": true
+        }
+      ],
+      "limitations": [],
+      "assertions": [
+        "Actual prompt captured from installed agent",
+        "Controlled text present in binary output",
+        "Fixture token absent from initial provider request, present in real tool result in the next request",
+        "Held request abort observed when consumer kills owned process group",
+        "Process, listener, generated configuration and fixture cleanup verified"
+      ]
+    },
+    {
+      "harness": "mistral-vibe",
+      "version": "vibe 2.22.0",
+      "binary": "/Users/20idemo/.local/bin/vibe",
+      "sources": [
+        "https://docs.mistral.ai/vibe/code/cli/configuration",
+        "https://github.com/mistralai/mistral-vibe/blob/main/vibe/core/programmatic.py"
+      ],
+      "cases": [
+        {
+          "scenario": "text",
+          "passed": true,
+          "argv": [
+            "--prompt",
+            "cordyceps-mistral-vibe-text: Reply with the controlled test message.",
+            "--trust",
+            "--auto-approve",
+            "--max-turns",
+            "3",
+            "--output",
+            "streaming"
+          ],
+          "requests": 1,
+          "providerPaths": [
+            "/v1/chat/completions"
+          ],
+          "toolResult": [],
+          "processExit": {
+            "code": 0,
+            "signal": null,
+            "cancelled": false,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "completed"
+          ],
+          "providerStreaming": false,
+          "incrementalOutputBeforeCompletion": false,
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "passed": true,
+          "argv": [
+            "--prompt",
+            "cordyceps-mistral-vibe-tool: Read fixture.txt and report completion.",
+            "--trust",
+            "--auto-approve",
+            "--max-turns",
+            "3",
+            "--output",
+            "streaming"
+          ],
+          "requests": 2,
+          "providerPaths": [
+            "/v1/chat/completions",
+            "/v1/chat/completions"
+          ],
+          "scriptedCall": {
+            "id": "fixturecall",
+            "name": "read_file",
+            "input": {
+              "file_path": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-mistral-vibe-PehbGq/work/fixture.txt"
+            }
+          },
+          "toolResult": [
+            {
+              "id": "fixturecall",
+              "isError": false,
+              "text": "file_path: /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-mistral-vibe-PehbGq/work/fixture.txt\ncontent:         1→fixture-212eb844-2ced-4856-bdb4-63a0b88f6712\nnum_lines: 1\nstart_line: 1\nrequested_offset: None\nrequested_limit: 2000\ntotal_lines: 1\nwas_truncated: False"
+            }
+          ],
+          "processExit": {
+            "code": 0,
+            "signal": null,
+            "cancelled": false,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "completed",
+            "completed"
+          ],
+          "cleanedUp": true
+        },
+        {
+          "scenario": "cancel",
+          "passed": true,
+          "argv": [
+            "--prompt",
+            "cordyceps-mistral-vibe-cancel: Reply with the controlled test message.",
+            "--trust",
+            "--auto-approve",
+            "--max-turns",
+            "3",
+            "--output",
+            "streaming"
+          ],
+          "requests": 1,
+          "providerPaths": [
+            "/v1/chat/completions"
+          ],
+          "toolResult": [],
+          "processExit": {
+            "code": null,
+            "signal": "SIGKILL",
+            "cancelled": true,
+            "timedOut": false
+          },
+          "providerOutcomes": [
+            "aborted"
+          ],
+          "cleanedUp": true
+        }
+      ],
+      "limitations": [
+        "Programmatic AgentLoop(enable_streaming=False); --output streaming emits complete JSON messages. No interactive/ACP token-stream claim."
+      ],
+      "assertions": [
+        "Actual prompt captured from installed agent",
+        "Controlled text present in binary output",
+        "Fixture token absent from initial provider request, present in real tool result in the next request",
+        "Held request abort observed when consumer kills owned process group",
+        "Process, listener, generated configuration and fixture cleanup verified"
+      ]
+    }
+  ]
+}

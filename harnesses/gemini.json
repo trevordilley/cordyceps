@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "gemini",
+  "provider": {
+    "adapter": "google-genai",
+    "override": {
+      "env": {
+        "GOOGLE_GEMINI_BASE_URL": "${mock.baseUrl}",
+        "GEMINI_API_KEY": "${mock.apiKey}",
+        "GEMINI_CLI_HOME": "${session.dir}",
+        "GEMINI_CLI_SYSTEM_SETTINGS_PATH": "${config.system.path}"
+      },
+      "unsetEnv": ["GOOGLE_API_KEY", "GOOGLE_GENAI_USE_VERTEXAI", "GOOGLE_APPLICATION_CREDENTIALS", "GOOGLE_CLOUD_PROJECT", "GOOGLE_CLOUD_LOCATION", "GOOGLE_VERTEX_BASE_URL"],
+      "configFiles": [
+        { "id": "settings", "path": ".gemini/settings.json", "format": "json", "values": { "security": { "auth": { "selectedType": "gemini-api-key" } }, "telemetry": { "enabled": false }, "general": { "disableAutoUpdate": true } } },
+        { "id": "system", "path": "system.json", "format": "json", "values": {} }
+      ]
+    }
+  },
+  "modes": { "interactive": {}, "nonInteractive": { "args": ["--prompt", "${input.prompt}"] } }
+}
