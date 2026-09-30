@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "verification-64708733e523cb4ab97a",
+  "claim": "real-cli-and-pty-delivered",
+  "status": "verified",
+  "method": "test",
+  "summary": "Manager observed exit 0: transport regression 1/1; installed text/tool cases 4/4 with request counts 1/2/1/2; actual Claude PTY case passed with two requests (one title, one main prompt), prescribed terminal marker and cleanup. The optional Codex TUI diagnostic is excluded and remains explicitly unverified, not an upstream blocker.",
+  "command": "hivecontrol exec oneshot 3m -- env PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH sh -c 'node --test examples/real-cli/pty.test.mjs \u0026\u0026 node examples/real-cli/run.mjs /tmp/cordyceps-cli-final.json \u0026\u0026 node examples/real-cli/run.mjs /tmp/claude-pty-manager.json --interactive-claude'",
+  "created_at": "2026-09-30T00:00:09.525312Z"
+}

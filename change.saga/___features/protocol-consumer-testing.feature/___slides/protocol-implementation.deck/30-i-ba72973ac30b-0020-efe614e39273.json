@@ -5,7 +5,7 @@
   "rank": 20,
   "kind": "node",
   "label": "Packed artifact checks",
-  "description": "Packed Node consumers verify declarations and provider contracts; real installed Claude Code and Codex also produce controlled text and actual fixture tool results using only public imports.",
+  "description": "Packed Node consumers verify declarations and provider contracts. Installed Claude Code and Codex produce controlled text and actual fixture tool results; Claude also consumes real PTY input and renders a scripted reply.",
   "selector": {
     "type": "element",
     "element_id": "node"

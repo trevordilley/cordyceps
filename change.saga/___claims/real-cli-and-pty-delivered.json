@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": "real-cli-and-pty-delivered",
+  "target": "urn:change-saga:cordyceps:fragment:technology-stack-distribution:landmark:distribution-delivered",
+  "kind": "test",
+  "statement": "At source 530527f, the packed public library drives four real Claude/Codex text/tool cases plus actual Claude interactive PTY input and output; all five cases pass with provider capture and cleanup.",
+  "evidence": [
+    {
+      "commit": "530527f4167d9a11f5e67b01e74e97c17f970bd5",
+      "path": "examples/real-cli/consumer.mjs",
+      "start": 58,
+      "end": 176,
+      "digest": "sha256:a1ac0717a35f708c1ace3907cab2b3382f1ba4a4106e64ec287e977fcf90b764"
+    },
+    {
+      "commit": "530527f4167d9a11f5e67b01e74e97c17f970bd5",
+      "path": "examples/real-cli/drive-pty.py",
+      "start": 31,
+      "end": 112,
+      "digest": "sha256:84e89069d20d8336927c5bdc9bb458fecd0f8fea556d2f0b497a19643b49f199"
+    }
+  ],
+  "created_at": "2026-09-30T00:00:09.466921Z"
+}

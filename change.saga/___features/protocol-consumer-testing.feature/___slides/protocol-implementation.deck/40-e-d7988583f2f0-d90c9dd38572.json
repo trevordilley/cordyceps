@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "commit": "530527f4167d9a11f5e67b01e74e97c17f970bd5",
       "path": "docs/verification.md",
       "start": 1,
-      "end": 47,
-      "digest": "sha256:8ff922c6e846b26c7c879522b0b0ad7f0235f57e4d190a2bf90f429b64062462",
+      "end": 49,
+      "digest": "sha256:b3cdc3685c50acd9a6355d3ba3b1484482593e1fe7ecc2203eb1252a068361bc",
       "note": "Synthetic validation and native observation evidence: limits; current implementation, not real-harness certification"
     }
   ]

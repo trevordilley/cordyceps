@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "530527f4167d9a11f5e67b01e74e97c17f970bd5",
+      "path": "examples/real-cli/drive-pty.py",
+      "start": 31,
+      "end": 112,
+      "digest": "sha256:84e89069d20d8336927c5bdc9bb458fecd0f8fea556d2f0b497a19643b49f199",
+      "note": "Consumer-owned PTY responds to terminal queries, sends actual prompt bytes, recognizes actual reply and closes the terminal before reaping on macOS."
+    }
+  ]
+}
