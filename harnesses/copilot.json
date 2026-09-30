@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "copilot",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "COPILOT_PROVIDER_TYPE": "anthropic",
+        "COPILOT_PROVIDER_BASE_URL": "${mock.baseUrl}",
+        "COPILOT_PROVIDER_API_KEY": "${mock.apiKey}"
+      },
+      "unsetEnv": [
+        "COPILOT_PROVIDER_BEARER_TOKEN",
+        "COPILOT_PROVIDER_API_KEY_COMMAND",
+        "COPILOT_PROVIDER_HEADERS",
+        "COPILOT_GITHUB_TOKEN",
+        "GH_TOKEN",
+        "GITHUB_TOKEN"
+      ],
+      "configFiles": []
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": []
+    }
+  }
+}

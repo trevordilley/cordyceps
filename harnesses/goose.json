@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "goose",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "GOOSE_PROVIDER": "anthropic",
+        "ANTHROPIC_HOST": "${mock.baseUrl}",
+        "ANTHROPIC_API_KEY": "${mock.apiKey}",
+        "GOOSE_PATH_ROOT": "${session.dir}",
+        "GOOSE_DISABLE_KEYRING": "1"
+      },
+      "unsetEnv": [
+        "ANTHROPIC_AUTH_TOKEN"
+      ],
+      "configFiles": []
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "run"
+      ]
+    }
+  }
+}

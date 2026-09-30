@@ -1,0 +1,687 @@
+{
+  "date": "2026-09-30T03:29:42.919Z",
+  "node": "v22.22.3",
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-ZZtYHYXwjiZ4LImnxBh3YQh+cx73hbr0pJ50gsNZ1poj+8yW6oz6iGRDy6CcynEA40NpKlKObprYFpfE+87pzw==",
+    "shasum": "7d2f8868e1b91e38a0ea9252bf594adc0a12b1da"
+  },
+  "isolation": "macOS sandbox-exec: outbound loopback only; writes restricted to disposable home/work and generated config directories; allowlisted child environment",
+  "devswarmSourceCommit": "d7c33873380e092018140ccf6e90529e1605fff0",
+  "agents": [
+    {
+      "id": "copilot",
+      "recipe": "harnesses/copilot.json",
+      "adapter": "anthropic-messages",
+      "binary": "/opt/homebrew/bin/copilot",
+      "version": "GitHub Copilot CLI 1.0.88.\nRun 'copilot update' to check for updates.",
+      "sources": [
+        "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models"
+      ],
+      "allScenariosPassed": true,
+      "cases": [
+        {
+          "scenario": "text",
+          "command": [
+            "/opt/homebrew/bin/copilot",
+            "--no-auto-update",
+            "--disable-builtin-mcps",
+            "--no-custom-instructions",
+            "--allow-all-tools",
+            "--no-ask-user",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--output-format",
+            "json",
+            "-p",
+            "cordyceps-provider-text: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "command": [
+            "/opt/homebrew/bin/copilot",
+            "--no-auto-update",
+            "--disable-builtin-mcps",
+            "--no-custom-instructions",
+            "--allow-all-tools",
+            "--no-ask-user",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--output-format",
+            "json",
+            "-p",
+            "cordyceps-provider-tool: Read fixture.txt, then report completion."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "scriptedCall": {
+            "id": "fixture_read",
+            "name": "view",
+            "input": {
+              "path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-copilot-GgOLY8/work/fixture.txt"
+            }
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "stream",
+          "command": [
+            "/opt/homebrew/bin/copilot",
+            "--no-auto-update",
+            "--disable-builtin-mcps",
+            "--no-custom-instructions",
+            "--allow-all-tools",
+            "--no-ask-user",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--output-format",
+            "json",
+            "-p",
+            "cordyceps-provider-stream: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "outputBeforeStreamCompletion": true
+        },
+        {
+          "scenario": "cancel",
+          "command": [
+            "/opt/homebrew/bin/copilot",
+            "--no-auto-update",
+            "--disable-builtin-mcps",
+            "--no-custom-instructions",
+            "--allow-all-tools",
+            "--no-ask-user",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--output-format",
+            "json",
+            "-p",
+            "cordyceps-provider-cancel: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "providerAbortObserved": true
+        }
+      ]
+    },
+    {
+      "id": "goose",
+      "recipe": "harnesses/goose.json",
+      "adapter": "anthropic-messages",
+      "binary": "/Users/20idemo/.local/bin/goose",
+      "version": "1.27.2",
+      "sources": [
+        "https://github.com/aaif-goose/goose/blob/main/documentation/docs/getting-started/providers.md",
+        "https://github.com/aaif-goose/goose/blob/main/CONTRIBUTING.md"
+      ],
+      "allScenariosPassed": true,
+      "cases": [
+        {
+          "scenario": "text",
+          "command": [
+            "/Users/20idemo/.local/bin/goose",
+            "run",
+            "--no-profile",
+            "--no-session",
+            "--with-builtin",
+            "developer",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--max-turns",
+            "3",
+            "--output-format",
+            "stream-json",
+            "-t",
+            "cordyceps-provider-text: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "command": [
+            "/Users/20idemo/.local/bin/goose",
+            "run",
+            "--no-profile",
+            "--no-session",
+            "--with-builtin",
+            "developer",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--max-turns",
+            "3",
+            "--output-format",
+            "stream-json",
+            "-t",
+            "cordyceps-provider-tool: Read fixture.txt, then report completion."
+          ],
+          "passed": true,
+          "capturedRequests": 3,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "scriptedCall": {
+            "id": "fixture_read",
+            "name": "shell",
+            "input": {
+              "command": "/bin/cat /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-goose-hGSRi1/work/fixture.txt",
+              "timeout_secs": 5
+            }
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "stream",
+          "command": [
+            "/Users/20idemo/.local/bin/goose",
+            "run",
+            "--no-profile",
+            "--no-session",
+            "--with-builtin",
+            "developer",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--max-turns",
+            "3",
+            "--output-format",
+            "stream-json",
+            "-t",
+            "cordyceps-provider-stream: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "outputBeforeStreamCompletion": true
+        },
+        {
+          "scenario": "cancel",
+          "command": [
+            "/Users/20idemo/.local/bin/goose",
+            "run",
+            "--no-profile",
+            "--no-session",
+            "--with-builtin",
+            "developer",
+            "--model",
+            "claude-sonnet-4-5-20250929",
+            "--max-turns",
+            "3",
+            "--output-format",
+            "stream-json",
+            "-t",
+            "cordyceps-provider-cancel: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "providerAbortObserved": true
+        }
+      ]
+    },
+    {
+      "id": "droid",
+      "recipe": "harnesses/droid.json",
+      "adapter": "anthropic-messages",
+      "binary": "/Users/20idemo/.local/bin/droid",
+      "version": "0.112.0",
+      "sources": [
+        "https://docs.factory.ai/model-independence/byok"
+      ],
+      "allScenariosPassed": true,
+      "cases": [
+        {
+          "scenario": "text",
+          "command": [
+            "/Users/20idemo/.local/bin/droid",
+            "exec",
+            "--settings",
+            "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-f4Fs4u/settings.json",
+            "-m",
+            "custom:Cordyceps-0",
+            "--output-format",
+            "stream-json",
+            "--auto",
+            "low",
+            "cordyceps-provider-text: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "command": [
+            "/Users/20idemo/.local/bin/droid",
+            "exec",
+            "--settings",
+            "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-TWBW2g/settings.json",
+            "-m",
+            "custom:Cordyceps-0",
+            "--output-format",
+            "stream-json",
+            "--auto",
+            "low",
+            "cordyceps-provider-tool: Read fixture.txt, then report completion."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "scriptedCall": {
+            "id": "fixture_read",
+            "name": "Read",
+            "input": {
+              "file_path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-droid-UemT2p/work/fixture.txt"
+            }
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "stream",
+          "command": [
+            "/Users/20idemo/.local/bin/droid",
+            "exec",
+            "--settings",
+            "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-6mx1Lp/settings.json",
+            "-m",
+            "custom:Cordyceps-0",
+            "--output-format",
+            "stream-json",
+            "--auto",
+            "low",
+            "cordyceps-provider-stream: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "outputBeforeStreamCompletion": false
+        },
+        {
+          "scenario": "cancel",
+          "command": [
+            "/Users/20idemo/.local/bin/droid",
+            "exec",
+            "--settings",
+            "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-Pb3LHm/settings.json",
+            "-m",
+            "custom:Cordyceps-0",
+            "--output-format",
+            "stream-json",
+            "--auto",
+            "low",
+            "cordyceps-provider-cancel: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "providerAbortObserved": true
+        }
+      ]
+    },
+    {
+      "id": "opencode",
+      "recipe": "harnesses/opencode.json",
+      "adapter": "anthropic-messages",
+      "binary": "/tmp/cordyceps-provider-tools/node_modules/.bin/opencode",
+      "version": "1.18.33",
+      "sources": [
+        "https://opencode.ai/docs/providers/",
+        "https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/cli/cmd/run.ts"
+      ],
+      "allScenariosPassed": true,
+      "cases": [
+        {
+          "scenario": "text",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/.bin/opencode",
+            "run",
+            "--pure",
+            "--model",
+            "anthropic/claude-sonnet-4-5-20250929",
+            "--title",
+            "Cordyceps",
+            "--format",
+            "json",
+            "cordyceps-provider-text: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/.bin/opencode",
+            "run",
+            "--pure",
+            "--model",
+            "anthropic/claude-sonnet-4-5-20250929",
+            "--title",
+            "Cordyceps",
+            "--format",
+            "json",
+            "cordyceps-provider-tool: Read fixture.txt, then report completion."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "scriptedCall": {
+            "id": "fixture_read",
+            "name": "read",
+            "input": {
+              "filePath": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-opencode-pln3Qh/work/fixture.txt"
+            }
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "stream",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/.bin/opencode",
+            "run",
+            "--pure",
+            "--model",
+            "anthropic/claude-sonnet-4-5-20250929",
+            "--title",
+            "Cordyceps",
+            "--format",
+            "json",
+            "cordyceps-provider-stream: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "outputBeforeStreamCompletion": false
+        },
+        {
+          "scenario": "cancel",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/.bin/opencode",
+            "run",
+            "--pure",
+            "--model",
+            "anthropic/claude-sonnet-4-5-20250929",
+            "--title",
+            "Cordyceps",
+            "--format",
+            "json",
+            "cordyceps-provider-cancel: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 1,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "providerAbortObserved": true
+        }
+      ]
+    },
+    {
+      "id": "crush",
+      "recipe": "harnesses/crush.json",
+      "adapter": "anthropic-messages",
+      "binary": "/tmp/cordyceps-provider-tools/node_modules/@charmland/crush/bin/crush",
+      "version": "crush version v0.97.1",
+      "sources": [
+        "https://github.com/charmbracelet/crush#custom-providers",
+        "https://github.com/charmbracelet/crush/blob/main/schema.json"
+      ],
+      "allScenariosPassed": true,
+      "cases": [
+        {
+          "scenario": "text",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/@charmland/crush/bin/crush",
+            "run",
+            "--quiet",
+            "--model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "--small-model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "cordyceps-provider-text: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "tool",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/@charmland/crush/bin/crush",
+            "run",
+            "--quiet",
+            "--model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "--small-model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "cordyceps-provider-tool: Read fixture.txt, then report completion."
+          ],
+          "passed": true,
+          "capturedRequests": 3,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "scriptedCall": {
+            "id": "fixture_read",
+            "name": "view",
+            "input": {
+              "file_path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-crush-Uz6hLj/work/fixture.txt"
+            }
+          },
+          "cleanedUp": true
+        },
+        {
+          "scenario": "stream",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/@charmland/crush/bin/crush",
+            "run",
+            "--quiet",
+            "--model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "--small-model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "cordyceps-provider-stream: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "outputBeforeStreamCompletion": true
+        },
+        {
+          "scenario": "cancel",
+          "command": [
+            "/tmp/cordyceps-provider-tools/node_modules/@charmland/crush/bin/crush",
+            "run",
+            "--quiet",
+            "--model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "--small-model",
+            "cordyceps/claude-sonnet-4-5-20250929",
+            "cordyceps-provider-cancel: Reply with the controlled test message."
+          ],
+          "passed": true,
+          "capturedRequests": 2,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          },
+          "cleanedUp": true,
+          "providerAbortObserved": true
+        }
+      ]
+    }
+  ]
+}

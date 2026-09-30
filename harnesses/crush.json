@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "crush",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "CRUSH_GLOBAL_CONFIG": "${session.dir}",
+        "CRUSH_DISABLE_PROVIDER_AUTO_UPDATE": "1",
+        "CRUSH_DISABLE_METRICS": "1"
+      },
+      "unsetEnv": [],
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "crush.json",
+          "format": "json",
+          "values": {
+            "providers": {
+              "cordyceps": {
+                "type": "anthropic",
+                "base_url": "${mock.baseUrl}",
+                "api_key": "${mock.apiKey}",
+                "models": [
+                  {
+                    "id": "claude-sonnet-4-5-20250929",
+                    "name": "Cordyceps",
+                    "context_window": 200000,
+                    "default_max_tokens": 4096
+                  }
+                ]
+              }
+            },
+            "models": {
+              "large": {
+                "provider": "cordyceps",
+                "model": "claude-sonnet-4-5-20250929"
+              },
+              "small": {
+                "provider": "cordyceps",
+                "model": "claude-sonnet-4-5-20250929"
+              }
+            },
+            "options": {
+              "disable_provider_auto_update": true,
+              "disable_metrics": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "run"
+      ]
+    }
+  }
+}

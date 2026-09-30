@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "droid",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "FACTORY_API_KEY": "${mock.apiKey}",
+        "FACTORY_DISABLE_KEYRING": "1",
+        "FACTORY_DROID_AUTO_UPDATE_ENABLED": "false"
+      },
+      "unsetEnv": [
+        "FACTORY_HOME_OVERRIDE",
+        "FACTORY_RUNTIME_SETTINGS_PATH"
+      ],
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "settings.json",
+          "format": "json",
+          "values": {
+            "customModels": [
+              {
+                "model": "claude-sonnet-4-5-20250929",
+                "displayName": "Cordyceps",
+                "baseUrl": "${mock.baseUrl}",
+                "apiKey": "${mock.apiKey}",
+                "provider": "anthropic",
+                "maxOutputTokens": 4096
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "exec",
+        "--settings",
+        "${config.provider.path}"
+      ]
+    }
+  }
+}

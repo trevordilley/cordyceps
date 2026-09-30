@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "opencode",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "OPENCODE_CONFIG": "${config.provider.path}"
+      },
+      "unsetEnv": [],
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "opencode.json",
+          "format": "json",
+          "values": {
+            "provider": {
+              "anthropic": {
+                "options": {
+                  "baseURL": "${mock.baseUrl}/v1",
+                  "apiKey": "${mock.apiKey}"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "run"
+      ]
+    }
+  }
+}
