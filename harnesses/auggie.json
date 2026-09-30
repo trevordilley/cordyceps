@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "auggie",
+  "provider": {
+    "adapter": "augment",
+    "override": {
+      "env": {
+        "AUGMENT_SESSION_AUTH": "{\"accessToken\":\"${mock.apiKey}\",\"tenantURL\":\"${mock.baseUrl}/\",\"scopes\":[\"email\"]}",
+        "AUGMENT_DISABLE_AUTO_UPDATE": "true"
+      },
+      "args": ["--provider-base-url", "${mock.baseUrl}", "--provider-api-key", "${mock.apiKey}", "--provider-model", "${input.model}"]
+    }
+  },
+  "modes": { "interactive": {"args": []}, "nonInteractive": {"args": ["--print"]} }
+}

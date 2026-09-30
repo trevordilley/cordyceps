@@ -1,0 +1,147 @@
+{
+  "executable": {
+    "path": "/Users/20idemo/.bun/install/global/node_modules/@augmentcode/auggie/augment.mjs",
+    "version": "0.35.0",
+    "sha256": "4d56d6f5bd07d48d41c87f15065906f6b395457465a97c31398cd110206621a9"
+  },
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-Q0P2FVJaE1bLIWMqLXRX7TKLRXpRUNgcdrsZdh3JI8M+RrFpUqqUGrnKJYpy59C+13X3v8TX4PKp5TWE0NP+/Q=="
+  },
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-auggie-package-BLd2Dv/consumer/node_modules/cordyceps/dist/index.js",
+  "node": "v22.22.3",
+  "observedAt": "2026-09-30T03:43:25.796316+00:00",
+  "fullEvidence": "/tmp/cordyceps-auggie-evidence.json",
+  "cases": [
+    {
+      "scenario": "text",
+      "passed": true,
+      "cleanedUp": true,
+      "listenerClosed": true,
+      "requests": 12,
+      "generationRequests": 1,
+      "promptCaptured": true,
+      "failures": [],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "Applying --max-turns override: 3 over agentMaxIterations=200\n\ud83e\udd16\nCORDYCEPS_AUGGIE_TEXT_OK\n\nRequest ID: 6db93e1c-d844-4801-a271-475a57ca905c\n",
+        "stderr": "Warning: Could not fetch tenant MCP server configurations: HTTP error: 404 Not Found\nWarning: Could not fetch user MCP server configurations: HTTP error: 404 Not Found\n"
+      },
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ]
+    },
+    {
+      "scenario": "tool",
+      "passed": true,
+      "cleanedUp": true,
+      "listenerClosed": true,
+      "requests": 13,
+      "generationRequests": 2,
+      "promptCaptured": true,
+      "failures": [],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "Applying --max-turns override: 3 over agentMaxIterations=200\n\n\u001b[90m\ud83d\udd27 Tool call: view\u001b[0m\n   path: \"fixture.txt\"\n   type: \"file\"\n\n\u001b[90m\ud83d\udccb Tool result: view\u001b[0m\nHere's the result of running `cat -n` on fixture.txt:\n     1\tfixture-d002722c-4a18-42c9-af39-574fe881a31e\n     2\t\nTotal lines in file: 2\n\n\ud83e\udd16\nCORDYCEPS_AUGGIE_TOOL_OK\n\nRequest ID: 6c3afdd7-63a7-46d6-ac27-7789a4f4db97\n",
+        "stderr": "Warning: Could not fetch tenant MCP server configurations: HTTP error: 404 Not Found\nWarning: Could not fetch user MCP server configurations: HTTP error: 404 Not Found\n"
+      },
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "actualToolResult": {
+        "id": "fixture-read",
+        "text": "Here's the result of running `cat -n` on fixture.txt:\n     1\tfixture-d002722c-4a18-42c9-af39-574fe881a31e\n     2\t\nTotal lines in file: 2\n",
+        "isError": false
+      },
+      "tokenAbsentFromInitialRequest": true
+    },
+    {
+      "scenario": "stream",
+      "passed": true,
+      "cleanedUp": true,
+      "listenerClosed": true,
+      "requests": 12,
+      "generationRequests": 1,
+      "promptCaptured": true,
+      "failures": [],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "Applying --max-turns override: 3 over agentMaxIterations=200\n\ud83e\udd16\nCORDYCEPS_AUGGIE_STREAM_OK_FIRST\nCORDYCEPS_AUGGIE_STREAM_OK_LAST\n\n\nRequest ID: 21be6608-f945-4dde-a473-783c7881cfb0\n",
+        "stderr": "Warning: Could not fetch tenant MCP server configurations: HTTP error: 404 Not Found\nWarning: Could not fetch user MCP server configurations: HTTP error: 404 Not Found\n"
+      },
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "incrementalBeforeTerminal": true
+    },
+    {
+      "scenario": "cancel",
+      "passed": true,
+      "cleanedUp": true,
+      "listenerClosed": true,
+      "requests": 12,
+      "generationRequests": 1,
+      "promptCaptured": true,
+      "failures": [],
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "Applying --max-turns override: 3 over agentMaxIterations=200\n\ud83e\udd16\nCORDYCEPS_AUGGIE_CANCEL_OK_FIRST\n",
+        "stderr": "Warning: Could not fetch tenant MCP server configurations: HTTP error: 404 Not Found\nWarning: Could not fetch user MCP server configurations: HTTP error: 404 Not Found\n"
+      },
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "aborted"
+      ],
+      "incrementalBeforeTerminal": true,
+      "cancelledByConsumer": true
+    }
+  ]
+}
