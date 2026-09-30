@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "amazon-q",
+  "provider": {
+    "adapter": "amazon-q",
+    "override": {
+      "env": {
+        "HOME": "${session.dir}",
+        "XDG_CONFIG_HOME": "${session.dir}/.config",
+        "XDG_DATA_HOME": "${session.dir}/.local/share",
+        "XDG_CACHE_HOME": "${session.dir}/.cache",
+        "KIRO_API_KEY": "${mock.apiKey}",
+        "KIRO_NO_AUTO_UPDATE": "1",
+        "KIRO_DISABLE_TELEMETRY": "1"
+      },
+      "configFiles": [{
+        "id": "provider",
+        "path": ".kiro/settings/cli.json",
+        "format": "json",
+        "values": {
+          "api.codewhisperer.service": { "endpoint": "${mock.baseUrl}", "region": "us-east-1" },
+          "api.q.service": { "endpoint": "${mock.baseUrl}", "region": "us-east-1" }
+        }
+      }]
+    }
+  },
+  "modes": {
+    "interactive": { "args": ["chat"] },
+    "nonInteractive": { "args": ["chat", "--no-interactive"] }
+  }
+}

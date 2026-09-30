@@ -1,0 +1,182 @@
+{
+  "artifact": {
+    "name": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-YxUmTYmPRPCXJd/MizflSigr6QbG6zp874ZjjMD28dRcnVUfs7X7Hvwga4MKoCeivzN+zYUBI3TtSAsvGlf6tA==",
+    "shasum": "67c4dc6d17bdc57a48fc52b06f77215fddb995a7"
+  },
+  "node": "v22.22.3",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-q-package-3D7kQX/consumer/node_modules/cordyceps/dist/index.js",
+  "fullEvidence": "/tmp/cordyceps-q-native.json",
+  "fullEvidenceSha256": "38ffeb6217c37c8575c910a58a30d08eb869dceb8e7f97cd0c6d0f95622d0cba",
+  "cases": [
+    {
+      "scenario": "text",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "kiro-cli 2.3.0\n\n",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n",
+        "timedOut": false
+      },
+      "requestCount": 4,
+      "generationRequestCount": 1,
+      "actualToolResults": [],
+      "scriptedCall": null,
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "\u001b[m> \u001b[0mCORDYCEPS_Q_TEXT_OK",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n\u001b[32mAll tools are now trusted (\u001b[0m\u001b[31m!\u001b[0m\u001b[32m). Kiro will execute tools without asking for confirmation.\u001b[0m\nAgents can sometimes do unexpected things so understand the risks.\n\nLearn more at \u001b[38;5;141mhttps://kiro.dev/docs/cli/chat/security/#using-tools-trust-all-safely\u001b[0m\n\n\n\n\u001b[m\u001b[0m\u001b[?25l\u001b[0m\u001b[0m\n\u001b[m\n \u25b8 Time: 0s\n\n\u001b[0m\u001b[1G\u001b[0m\u001b[0m\u001b[?25h",
+        "timedOut": false
+      },
+      "observedBeforeRelease": null,
+      "aborted": null,
+      "recovery": null,
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "scenario": "tool",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "kiro-cli 2.3.0\n\n",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n",
+        "timedOut": false
+      },
+      "requestCount": 6,
+      "generationRequestCount": 2,
+      "actualToolResults": [
+        {
+          "id": "call_fixture",
+          "text": "fixture-23c3bd82-d272-4664-aa29-a5649876eed4",
+          "isError": false,
+          "raw": {
+            "toolUseId": "call_fixture",
+            "content": [
+              {
+                "text": "fixture-23c3bd82-d272-4664-aa29-a5649876eed4"
+              }
+            ],
+            "status": "success"
+          }
+        }
+      ],
+      "scriptedCall": {
+        "id": "call_fixture",
+        "name": "fs_read",
+        "input": {
+          "operations": [
+            {
+              "mode": "Line",
+              "path": "/private/tmp/cordyceps-real-q-opB8uR/fixture.txt"
+            }
+          ]
+        }
+      },
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "Reading file: \u001b[m/private/tmp/cordyceps-real-q-opB8uR/fixture.txt\u001b[0m, all lines\u001b[m (using tool: read)\u001b[0m\n\u001b[m \u2713 \u001b[0mSuccessfully read \u001b[38;5;244m44 bytes\u001b[0m from /private/tmp/cordyceps-real-q-opB8uR/fixture.txt\n\u001b[m - Completed in 0.0s\u001b[0m\n\n\u001b[m> \u001b[0mCORDYCEPS_Q_TOOL_OK",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n\u001b[32mAll tools are now trusted (\u001b[0m\u001b[31m!\u001b[0m\u001b[32m). Kiro will execute tools without asking for confirmation.\u001b[0m\nAgents can sometimes do unexpected things so understand the risks.\n\nLearn more at \u001b[38;5;141mhttps://kiro.dev/docs/cli/chat/security/#using-tools-trust-all-safely\u001b[0m\n\n\n\n\u001b[m\u001b[0m\u001b[?25l\u001b[?25l\u001b[0m\u001b[0m\u001b[?25l\u001b[0m\u001b[0m\u001b[0m\n\u001b[m\n \u25b8 Time: 0s\n\n\u001b[0m\u001b[1G\u001b[0m\u001b[0m\u001b[?25h",
+        "timedOut": false
+      },
+      "observedBeforeRelease": null,
+      "aborted": null,
+      "recovery": null,
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "scenario": "stream",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "kiro-cli 2.3.0\n\n",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n",
+        "timedOut": false
+      },
+      "requestCount": 4,
+      "generationRequestCount": 1,
+      "actualToolResults": [],
+      "scriptedCall": null,
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "\u001b[m> \u001b[0mCORDYCEPS_Q_STREAM_FIRST\u001b[0m\u001b[0m\n\u001b[0m\u001b[0m\nCORDYCEPS_Q_STREAM_OK\u001b[0m\u001b[0m\n",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n\u001b[32mAll tools are now trusted (\u001b[0m\u001b[31m!\u001b[0m\u001b[32m). Kiro will execute tools without asking for confirmation.\u001b[0m\nAgents can sometimes do unexpected things so understand the risks.\n\nLearn more at \u001b[38;5;141mhttps://kiro.dev/docs/cli/chat/security/#using-tools-trust-all-safely\u001b[0m\n\n\n\n\u001b[m\u001b[0m\u001b[?25l\u001b[0m\u001b[0m\n\u001b[m\n \u25b8 Time: 0s\n\n\u001b[0m\u001b[1G\u001b[0m\u001b[0m\u001b[?25h",
+        "timedOut": false
+      },
+      "observedBeforeRelease": true,
+      "aborted": false,
+      "recovery": null,
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "scenario": "cancel",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "kiro-cli 2.3.0\n\n",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n",
+        "timedOut": false
+      },
+      "requestCount": 7,
+      "generationRequestCount": 2,
+      "actualToolResults": [],
+      "scriptedCall": null,
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "\u001b[m> \u001b[0mCORDYCEPS_Q_CANCEL_FIRST\u001b[0m\u001b[0m\n\u001b[0m\u001b[0m\n",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n\u001b[32mAll tools are now trusted (\u001b[0m\u001b[31m!\u001b[0m\u001b[32m). Kiro will execute tools without asking for confirmation.\u001b[0m\nAgents can sometimes do unexpected things so understand the risks.\n\nLearn more at \u001b[38;5;141mhttps://kiro.dev/docs/cli/chat/security/#using-tools-trust-all-safely\u001b[0m\n\n\n\n\u001b[m\u001b[0m\u001b[?25l",
+        "timedOut": false
+      },
+      "observedBeforeRelease": true,
+      "aborted": true,
+      "recovery": {
+        "code": 0,
+        "signal": null,
+        "stdout": "\u001b[m> \u001b[0mCORDYCEPS_Q_CANCEL_OK",
+        "stderr": "Warning! Q CLI is now Kiro CLI and should be invoked as kiro-cli rather than q\n\u001b[32mAll tools are now trusted (\u001b[0m\u001b[31m!\u001b[0m\u001b[32m). Kiro will execute tools without asking for confirmation.\u001b[0m\nAgents can sometimes do unexpected things so understand the risks.\n\nLearn more at \u001b[38;5;141mhttps://kiro.dev/docs/cli/chat/security/#using-tools-trust-all-safely\u001b[0m\n\n\n\n\u001b[m\u001b[0m\u001b[?25l\u001b[0m\u001b[0m\n\u001b[m\n \u25b8 Time: 0s\n\n\u001b[0m\u001b[1G\u001b[0m\u001b[0m\u001b[?25h",
+        "timedOut": false
+      },
+      "responseOutcomes": [
+        "completed",
+        "completed",
+        "aborted",
+        "completed",
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "failures": [],
+      "cleanedUp": true
+    }
+  ]
+}
