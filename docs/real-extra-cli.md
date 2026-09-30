@@ -1,6 +1,6 @@
 # Additional Superset/Orca CLIs
 
-Four native CLIs pass controlled text and real file reads through an externally installed, packed Cordyceps artifact. Codebuff and Polygraph remain diagnostic investigations and have no support recipes.
+Four native CLIs pass controlled text and real file reads through an externally installed, packed Cordyceps artifact. The separate [Codebuff source and Polygraph consumer](real-codebuff-polygraph.md) now exercises those two profiles as well; the published Codebuff 1.0.688 binary remains excluded.
 
 | CLI | Observed release | Native read | Streaming in tested mode | Cancellation |
 | --- | --- | --- | --- | --- |

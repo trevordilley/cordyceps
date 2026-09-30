@@ -24,11 +24,13 @@ export async function launch(binary, args, cwd, env, writable, onStart, timeout 
   const child = spawn(ptyMarker ? '/usr/bin/python3' : '/usr/bin/sandbox-exec',
     ptyMarker ? [join(process.cwd(), 'drive-pty.py'), ptyMarker, '/usr/bin/sandbox-exec', ...sandboxArgs] : sandboxArgs,
     { cwd, env, detached: true, stdio: ['ignore', 'pipe', 'pipe'] });
-  let stdout = '', stderr = '', timedOut = false, ptyGroup;
+  let stdout = '', stderr = '', timedOut = false, ptyGroup, closed = false;
   child.stdout.on('data', c => { stdout += c; }); child.stderr.on('data', c => { stderr += c; ptyGroup = Number(stderr.match(/CORDYCEPS_PTY_GROUP=(\d+)/)?.[1]) || ptyGroup; });
-  const kill = () => { for (const pid of [ptyGroup, child.pid].filter(Boolean)) { try { process.kill(-pid, 'SIGKILL'); } catch (e) { if (e.code !== 'ESRCH') throw e; } } };
+  // Darwin can return EPERM for an already-reaped hardened native process group.
+  // Ignore that race only after this exact child emitted close; live-child failures still surface.
+  const kill = () => { for (const pid of [ptyGroup, child.pid].filter(Boolean)) { try { process.kill(-pid, 'SIGKILL'); } catch (e) { if (e.code !== 'ESRCH' && !(closed && e.code === 'EPERM')) throw e; } } };
   onStart?.({ kill, output: () => stdout });
   const timer = setTimeout(() => { timedOut = true; kill(); }, timeout);
-  try { return { ...await new Promise((resolve, reject) => { child.once('error', reject); child.once('close', (code, signal) => resolve({code, signal})); }), stdout, stderr, timedOut }; }
+  try { return { ...await new Promise((resolve, reject) => { child.once('error', reject); child.once('close', (code, signal) => { closed = true; resolve({code, signal}); }); }), stdout, stderr, timedOut }; }
   finally { clearTimeout(timer); kill(); }
 }

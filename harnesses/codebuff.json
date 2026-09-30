@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "codebuff",
+  "provider": {
+    "adapter": "codebuff",
+    "override": {
+      "env": {
+        "CODEBUFF_APP_URL": "${mock.baseUrl}",
+        "NEXT_PUBLIC_CODEBUFF_APP_URL": "${mock.baseUrl}",
+        "CODEBUFF_API_KEY": "${mock.apiKey}"
+      }
+    }
+  },
+  "modes": { "interactive": {} }
+}
