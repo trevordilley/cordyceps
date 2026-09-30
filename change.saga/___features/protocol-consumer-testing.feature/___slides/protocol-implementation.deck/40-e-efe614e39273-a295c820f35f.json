@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-plandex/run.mjs",
+      "start": 1,
+      "end": 24,
+      "digest": "sha256:810c130e7c0a803f532f86c52be95001a0f5a6cd8bff534bb77aa6468faa7a37",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/cline.json",
+      "start": 1,
+      "end": 24,
+      "digest": "sha256:3674422122b9da51e633d2a23cbb9ae116db6a95ebafcc22c9c7162892c8f24c",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "verification-f1085522dc5b3ab99ae2",
+  "claim": "verified-agent-set-only-20260929",
+  "status": "verified",
+  "method": "command",
+  "summary": "Exact 40-value enum matched; supported set is exactly 18 verified native workflows. All 22 excluded enum entries and the cursor alias reject selection with DEFINITION_NOT_FOUND. Cursor/Qodo diagnostic boundaries were independently reproduced and remain passed:false.",
+  "command": "node examples/devswarm-agents/check-inventory.mjs /Users/20idemo/Desktop/_/devswarm; built createRegistry().get checks for all excluded enum values and cursor alias",
+  "created_at": "2026-09-30T04:10:46.654923Z"
+}

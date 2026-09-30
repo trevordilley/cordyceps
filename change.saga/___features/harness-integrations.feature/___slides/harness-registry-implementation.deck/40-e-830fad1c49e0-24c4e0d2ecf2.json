@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/auggie.json",
+      "start": 1,
+      "end": 15,
+      "digest": "sha256:2390ceae94f0f6198cf60dfb9d7f2bd73324a448cab67b02cd364eaf5fc53640",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

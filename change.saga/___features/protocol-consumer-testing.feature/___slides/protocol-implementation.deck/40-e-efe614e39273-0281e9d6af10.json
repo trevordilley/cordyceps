@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "docs/real-gated-agents.md",
+      "start": 1,
+      "end": 103,
+      "digest": "sha256:1291d47ba10cbbdf5410af98e863261abb8c01ffb31d5674f0bb5200a64b6fb5",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

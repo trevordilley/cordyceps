@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "docs/real-cursor.md",
+      "start": 1,
+      "end": 45,
+      "digest": "sha256:997850c1cdb11c3d8127342991c1f484795874458e6a193fefe0aebffda7d1b9",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

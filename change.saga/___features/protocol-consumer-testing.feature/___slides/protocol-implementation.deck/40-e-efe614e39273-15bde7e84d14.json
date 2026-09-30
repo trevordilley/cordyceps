@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-editor-agents/consumer.mjs",
+      "start": 1,
+      "end": 75,
+      "digest": "sha256:f886778771567847de3f957a4508b58414c14b7f0ba3cfcfc07fb98aa2b5eee9",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

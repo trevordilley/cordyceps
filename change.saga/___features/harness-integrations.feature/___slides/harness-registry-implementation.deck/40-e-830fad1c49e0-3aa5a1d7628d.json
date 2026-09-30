@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
       "path": "src/registry.ts",
-      "digest": "sha256:65c5f2f116292bd11e50b7a71c4adc8b058e1c3db7123022e7d75189d0533279",
+      "digest": "sha256:57586663f5736a95b39f15534db36dd9e26e041098df764c3d9825047dd69d48",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

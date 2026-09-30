@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-plandex/drive-pty.py",
+      "start": 1,
+      "end": 31,
+      "digest": "sha256:2e961466babcfdaf71f11dc84d99b6e2a2167058c4c19fc228b018c4eb2b8e25",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

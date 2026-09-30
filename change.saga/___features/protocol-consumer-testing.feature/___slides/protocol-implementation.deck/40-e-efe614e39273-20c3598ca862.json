@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-gated-agents/rovo-evidence.json",
+      "start": 1,
+      "end": 318,
+      "digest": "sha256:147ab39511c399e49bb977af03fe7d29044c0c9f2d166a9ebb1899925ae7ab48",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/crush.json",
+      "start": 1,
+      "end": 60,
+      "digest": "sha256:b9c7423ed736b74ab5f74cb864bdb40558052ab4a9b7d488fad8f908c35cd3ad",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

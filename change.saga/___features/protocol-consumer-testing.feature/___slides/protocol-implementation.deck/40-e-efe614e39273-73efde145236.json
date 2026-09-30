@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-auggie/evidence.json",
+      "start": 1,
+      "end": 147,
+      "digest": "sha256:4931db2b29855310234e574870e31c2d1c3f78dfd68b5a9e7663374643e764ca",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

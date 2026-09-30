@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/qwen.json",
+      "start": 1,
+      "end": 12,
+      "digest": "sha256:c8b043eba65f58a2074e3b79a736bc2bd3d0e4855139fce2ead135e8813462c6",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

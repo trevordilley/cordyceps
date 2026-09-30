@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "src/provider/index.ts",
+      "start": 1,
+      "end": 5,
+      "digest": "sha256:a9e60b5fb9fe9175156d564d0ba5f990234b84f014fbcd3217e1cfb300b1b4d0",
+      "note": "Added native codec imports extend the explicit dispatch registry; ownership is provider framing, not executable management."
+    }
+  ]
+}

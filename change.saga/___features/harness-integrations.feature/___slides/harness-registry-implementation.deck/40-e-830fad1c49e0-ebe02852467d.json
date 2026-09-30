@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-plandex/plandex.json",
+      "start": 1,
+      "end": 19,
+      "digest": "sha256:86095e3437a21ab069ce368d2e12d329e3e14e6c57e868a879b37ce17565b327",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "verification-0cc8be2ef0742a6da5dc",
+  "claim": "devswarm-native-real-usage-20260929",
+  "status": "verified",
+  "method": "command",
+  "summary": "Independently reran all18 retained native families:59 cases passed, actual captured prompts and file tokens, isolated launch and cleanup. ACP protocol1,8 turns, real permissions/read, incremental output and cancelled then reused session. Chromium3/3. Buffered CLI modes and excluded service diagnostics are explicitly separate.",
+  "command": "Real Node22 with the per-group commands in docs/verification.md and docs/devswarm-agents.md; npm run test:real for original CLI/ACP/browser.",
+  "created_at": "2026-09-30T04:09:26.041444Z"
+}

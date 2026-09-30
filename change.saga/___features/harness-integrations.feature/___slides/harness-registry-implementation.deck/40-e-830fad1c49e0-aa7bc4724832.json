@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/gemini.json",
+      "start": 1,
+      "end": 21,
+      "digest": "sha256:a2ab9192ded71b7793f97b1bf895fb2837be1932d3c106f9f27392ec14269054",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

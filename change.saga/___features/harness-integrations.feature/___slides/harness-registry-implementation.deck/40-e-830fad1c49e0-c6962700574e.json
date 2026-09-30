@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/mistral-vibe.json",
+      "start": 1,
+      "end": 20,
+      "digest": "sha256:bc39c7ee2e36e0163c20990eb135dbe631ed9ed75bf3c66e13b45c788c77cca7",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

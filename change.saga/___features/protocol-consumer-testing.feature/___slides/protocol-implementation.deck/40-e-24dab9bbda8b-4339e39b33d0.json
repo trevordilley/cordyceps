@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "tests/amazon-q.test.ts",
+      "start": 1,
+      "end": 112,
+      "digest": "sha256:6dfca8f4d21cd0a66330cac47af509eb41402ed2bc609e8af398bb6fbeff766f",
+      "note": "Synthetic regression coverage for the added provider or injection contract, separate from native agent proof."
+    }
+  ]
+}

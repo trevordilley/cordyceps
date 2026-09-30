@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
       "path": "src/provider/index.ts",
-      "start": 1,
-      "end": 13,
-      "digest": "sha256:a5e2a902a447b98a7d8f61f84717065b506f4f34a79d3136e45abe3189a31157",
+      "start": 6,
+      "end": 25,
+      "digest": "sha256:e2440fbf3ff2c9d3a59ba16aa617b0980c030e58b556b87709db99c2f9d8f7b8",
       "note": "Provider request control and lifetime: codecs; current implementation, not real-harness certification"
     }
   ]

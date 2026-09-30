@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": "expanded-package-regressions-20260929",
+  "target": "urn:change-saga:cordyceps:slide:delivered-observation-boundary:item:units",
+  "kind": "test",
+  "statement": "The expanded provider and recipe implementation passes strict TypeScript, 137 Bun tests with 947 assertions and two documented Bun-specific skips, all 21 Node lifecycle tests, the build and installed-package verification.",
+  "evidence": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/devswarm-agents/manager-verification.json",
+      "start": 835,
+      "end": 875,
+      "digest": "sha256:d8762028cb3996388d7e4676827f74d0491e417f9639a579acefec7b0b8396c9"
+    },
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "docs/verification.md",
+      "start": 9,
+      "end": 32,
+      "digest": "sha256:1be4de55ddd6a19f36df76ba9b8babb720c32bd317dc6b28ae6e53c30dd1caae"
+    }
+  ],
+  "created_at": "2026-09-30T04:10:16.185774Z"
+}

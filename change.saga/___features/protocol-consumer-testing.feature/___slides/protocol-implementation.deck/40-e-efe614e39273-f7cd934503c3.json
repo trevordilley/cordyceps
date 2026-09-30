@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-auggie/consumer.mjs",
+      "start": 1,
+      "end": 86,
+      "digest": "sha256:2b46cfb1bf5bd3a2afea6b6ca66b7575ebce76f3552b0310f6a1290bffbb3f0a",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

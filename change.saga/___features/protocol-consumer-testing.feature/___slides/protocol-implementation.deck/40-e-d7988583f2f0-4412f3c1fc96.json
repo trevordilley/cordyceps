@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-cursor/source-evidence.json",
+      "start": 1,
+      "end": 67,
+      "digest": "sha256:93e5c5252ac792a4a101077fd3fb26c40d761ecf8476446036b1b335c3d2ec4a",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

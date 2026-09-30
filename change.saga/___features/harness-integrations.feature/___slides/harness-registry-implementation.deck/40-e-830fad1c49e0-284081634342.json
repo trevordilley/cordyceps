@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/copilot.json",
+      "start": 1,
+      "end": 28,
+      "digest": "sha256:92b433064a398a21a5fae3f78db6b53d286d5c8864e64157fdeaa49b618694b2",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

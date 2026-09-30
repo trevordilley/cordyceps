@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/goose.json",
+      "start": 1,
+      "end": 27,
+      "digest": "sha256:5f2d21b9b266de42fc127313f1239195d6682f39d8ad536b960d9311d572801f",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

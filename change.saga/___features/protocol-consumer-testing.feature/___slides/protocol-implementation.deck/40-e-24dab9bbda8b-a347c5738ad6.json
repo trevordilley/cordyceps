@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "tests/google-genai.test.ts",
+      "start": 1,
+      "end": 45,
+      "digest": "sha256:a91131d49e5481f03021fbde7bf425da3eab1b2217ffc2535ba3be5239a88757",
+      "note": "Synthetic regression coverage for the added provider or injection contract, separate from native agent proof."
+    }
+  ]
+}

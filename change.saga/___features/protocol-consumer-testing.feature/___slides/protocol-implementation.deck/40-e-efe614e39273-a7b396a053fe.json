@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-q/evidence.json",
+      "start": 1,
+      "end": 182,
+      "digest": "sha256:466058303e348787cab580e3ee21ba64c03b26e98b5d7be7c48ccc6508c06f55",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

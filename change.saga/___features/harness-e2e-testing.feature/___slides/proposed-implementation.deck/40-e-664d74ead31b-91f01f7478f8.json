@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
       "path": "package.json",
-      "digest": "sha256:fb0bb05c500f34d364ffaf30eb81aa5bb17e55608f64ebbbe1d4430059779cf2",
+      "digest": "sha256:e890f027050ea07b9cb83fddcee057742101e3153a1b990fe79c4d5b8cec537e",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

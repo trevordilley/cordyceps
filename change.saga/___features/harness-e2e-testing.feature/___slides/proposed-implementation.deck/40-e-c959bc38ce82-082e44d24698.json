@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
       "path": "docs/implementation-contracts.md",
-      "digest": "sha256:409c8047eade4f54641c848cee0225b719011e9ece4b09ba4966f4c4dd810b24",
+      "digest": "sha256:89d79dc383087d015bea4bd8ab87a23d9aa5aece886e273d0ebbb61d959e2686",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/devswarm-agents/manager-verification.json",
+      "start": 1,
+      "end": 875,
+      "digest": "sha256:33c3ab2f98495562efcdbda246fa3d6d9b0c113fd5a8cf5b3ba413a742cec653",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

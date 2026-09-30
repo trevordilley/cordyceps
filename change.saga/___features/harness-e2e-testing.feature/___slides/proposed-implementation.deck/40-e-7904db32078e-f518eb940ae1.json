@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "src/provider/amazon-q.ts",
+      "start": 1,
+      "end": 108,
+      "digest": "sha256:4c251b0d7aa9eb679588287a52230b6d8b280cc41100838c2d5088cc3b83713c",
+      "note": "Native provider normalization and scripted wire encoding; the codec owns framing, never real tool execution."
+    }
+  ]
+}

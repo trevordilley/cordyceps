@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-gated-agents/diagnostic-evidence.json",
+      "start": 1,
+      "end": 1251,
+      "digest": "sha256:18bc0c36060cd25b569ff9a8cfd86400f92de5582fdf5a71af316e85a9242017",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

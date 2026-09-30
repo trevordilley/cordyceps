@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/amp.json",
+      "start": 1,
+      "end": 29,
+      "digest": "sha256:c2f84aed4b1e60611abb35d334a62b1222b08dab4a776d995c36102b953b4f50",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

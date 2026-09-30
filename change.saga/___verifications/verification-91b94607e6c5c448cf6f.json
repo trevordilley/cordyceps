@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "verification-91b94607e6c5c448cf6f",
+  "claim": "expanded-package-regressions-20260929",
+  "status": "verified",
+  "method": "command",
+  "summary": "Same completed regression evidence; corrected reproduction command exports the real Node PATH for every command, matching the actual tracked env/sh invocation. Strict checking/build passed; Bun 137 pass, 2 known skips, 947 assertions; Node 21 pass; package/optional-peer checks passed.",
+  "command": "export PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH; bun run check \u0026\u0026 bun test tests \u0026\u0026 bun run test:node \u0026\u0026 bun run build \u0026\u0026 node scripts/verify-package.mjs",
+  "created_at": "2026-09-30T04:10:46.702798Z"
+}

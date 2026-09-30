@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/devswarm-agents/supported.json",
+      "start": 1,
+      "end": 221,
+      "digest": "sha256:1322ca5578470bad0afed8b6979bff6eed7ea3c99ef861b4e02d95a00a375ed9",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

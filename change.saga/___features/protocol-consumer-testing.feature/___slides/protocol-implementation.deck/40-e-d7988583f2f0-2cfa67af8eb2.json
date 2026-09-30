@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-gated-agents/current-amp-evidence.json",
+      "start": 1,
+      "end": 221,
+      "digest": "sha256:edcd4dbce7ffd0ea024a74f933f8e6839f3a480fb2ba65e767b7d6b8b0aeff7b",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

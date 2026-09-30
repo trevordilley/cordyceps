@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
       "path": "src/provider/openai-responses.ts",
       "start": 1,
-      "end": 122,
-      "digest": "sha256:cba9e83ecc9be856869a20915cb62772196acb5d4763f4f7d91034e4aeac539b",
+      "end": 124,
+      "digest": "sha256:864b8203c1c95edbe62feb5f09d7bbdfcc3c1b79c48d33d5fe1b04adbbb417b9",
       "note": "Provider request control and lifetime: codecs; current implementation, not real-harness certification"
     }
   ]

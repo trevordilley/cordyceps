@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/devswarm-agents/check-inventory.mjs",
+      "start": 1,
+      "end": 23,
+      "digest": "sha256:56f94418571859e399afd727989c58a090a09c9addb9397ac2ca61138d0f912c",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

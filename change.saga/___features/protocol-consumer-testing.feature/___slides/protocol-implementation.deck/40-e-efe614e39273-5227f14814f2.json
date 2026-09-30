@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-provider-agents/evidence.json",
+      "start": 1,
+      "end": 32943,
+      "digest": "sha256:8d0065276468a72b6cae3f40c928675a33d05fe8c32bddc7ef56e54ae2fdad5f",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

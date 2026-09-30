@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "tests/chat-completions.test.ts",
+      "start": 1,
+      "end": 81,
+      "digest": "sha256:13e20918aaf47525d2d21871cb934b79c4498854375f8f1869d6e3dce1583e1c",
+      "note": "Synthetic regression coverage for the added provider or injection contract, separate from native agent proof."
+    }
+  ]
+}

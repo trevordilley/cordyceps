@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-google-agents/run.mjs",
+      "start": 1,
+      "end": 28,
+      "digest": "sha256:80ea94130e8416684283493d282d021995f91fdf9f26a4bbb03a4f8db2d401f9",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-gated-agents/probe.mjs",
+      "start": 1,
+      "end": 35,
+      "digest": "sha256:4854eef16fe0ae8a1aabcd03f92502b495117fcc45407c09d3956de5f1dc5aba",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

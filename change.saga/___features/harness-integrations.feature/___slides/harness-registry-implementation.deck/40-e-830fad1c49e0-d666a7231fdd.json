@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "harnesses/rovo-dev.json",
+      "start": 1,
+      "end": 21,
+      "digest": "sha256:4b68b1e1a0f2b42e59762e5eb64093257dc48a58ae115af4a84f06957880e367",
+      "note": "Declarative injection recipe used by the verified real consumer; no executable launch or version gate."
+    }
+  ]
+}

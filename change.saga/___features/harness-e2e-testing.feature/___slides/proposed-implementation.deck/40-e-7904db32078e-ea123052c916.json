@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "src/provider/atlassian-rovo.ts",
+      "start": 1,
+      "end": 37,
+      "digest": "sha256:45d4b1125ea2c43b4db0fd7ef7a8b10aa8d7733ff4073b47f56ca51317d3e3eb",
+      "note": "Native provider normalization and scripted wire encoding; the codec owns framing, never real tool execution."
+    }
+  ]
+}

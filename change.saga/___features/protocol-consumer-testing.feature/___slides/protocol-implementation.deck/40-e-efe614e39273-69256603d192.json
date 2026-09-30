@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-gated-agents/amp-evidence.json",
+      "start": 1,
+      "end": 2044,
+      "digest": "sha256:ee9bf1921547aa431eac7353554c206fa373125f5b975d6391c3e1426f3664ab",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

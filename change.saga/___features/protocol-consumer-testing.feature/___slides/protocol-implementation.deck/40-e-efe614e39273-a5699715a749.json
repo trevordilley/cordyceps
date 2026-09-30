@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "docs/real-editor-agents.md",
+      "start": 1,
+      "end": 33,
+      "digest": "sha256:498f9319ed41011a2c3d956e8f6ac61720be5200dd1d17ef1d27383b2b2fe9a2",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

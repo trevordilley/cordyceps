@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "docs/provider-codecs.md",
+      "start": 156,
+      "end": 228,
+      "digest": "sha256:448c17cda7d2176f18b985703df5c665c130a85f7251104502864fa9c7199c15",
+      "note": "Additional protocol sections explain new Chat, Gemini, Q, Augment and exact gateway wire behavior and explicit bootstrap boundaries."
+    }
+  ]
+}

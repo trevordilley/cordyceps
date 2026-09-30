@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "src/provider/amp-service.ts",
+      "start": 1,
+      "end": 36,
+      "digest": "sha256:2693ad43439ab03a0f48d0db155e473b8aa59d7d1f96364b950b30cabb40e9af",
+      "note": "Native provider normalization and scripted wire encoding; the codec owns framing, never real tool execution."
+    }
+  ]
+}

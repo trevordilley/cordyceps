@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "examples/real-provider-agents/run.mjs",
+      "start": 1,
+      "end": 29,
+      "digest": "sha256:4e849770f1a140b913d03ef51c5891ffbd2ddcbc06782411091b7e388a5cfd1e",
+      "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "docs/real-qodo.md",
+      "start": 1,
+      "end": 66,
+      "digest": "sha256:185613f9d0e02b1b731f4b96988aac5dbacb1236b9d5d98853eea60da84222e9",
+      "note": "Exact supported-set audit or bounded diagnostic/verification receipt. Excluded agent-service observations are not counted as working model injection."
+    }
+  ]
+}

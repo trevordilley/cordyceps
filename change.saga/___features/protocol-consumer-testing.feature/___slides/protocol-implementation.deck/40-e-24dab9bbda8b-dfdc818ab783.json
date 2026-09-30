@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "path": "tests/atlassian-rovo.test.ts",
+      "start": 1,
+      "end": 56,
+      "digest": "sha256:a2c2bc341da546ac37bac27f8206fb2a05f2587138b7ca107e98c18f263cbf75",
+      "note": "Synthetic regression coverage for the added provider or injection contract, separate from native agent proof."
+    }
+  ]
+}
