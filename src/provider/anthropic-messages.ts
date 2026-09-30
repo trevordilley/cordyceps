@@ -77,6 +77,7 @@ export const anthropicMessages: ProviderCodec = Object.freeze({
   },
   encode(request, response, signal) {
     if (response.amazonQ !== undefined) throw new TypeError('Amazon Q auxiliary response requires the Amazon Q codec');
+    if (response.augmentModels !== undefined) throw new TypeError('Augment model replies are only supported by the Augment codec');
     if (response.error !== undefined) {
       const { status, message, type } = response.error;
       const defaults: Record<number, string> = { 400: 'invalid_request_error', 401: 'authentication_error', 403: 'permission_error', 404: 'not_found_error', 413: 'request_too_large', 429: 'rate_limit_error', 529: 'overloaded_error' };

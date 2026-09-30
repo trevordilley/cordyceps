@@ -26,13 +26,14 @@ export type AmazonQAuxiliaryResponse =
   | { models: { modelId: string; modelName: string; description?: string }[]; telemetry?: never }
   | { telemetry: true; models?: never };
 export type ScriptedResponse =
-  | { text: string; toolCall?: never; stream?: never; error?: never; inputTokens?: never; health?: never; amazonQ?: never }
-  | { toolCall: ToolCall; text?: never; stream?: never; error?: never; inputTokens?: never; health?: never; amazonQ?: never }
-  | { stream: AsyncIterable<ProviderEvent>; text?: never; toolCall?: never; error?: never; inputTokens?: never; health?: never; amazonQ?: never }
-  | { error: { status: number; message: string; type?: string }; text?: never; toolCall?: never; stream?: never; inputTokens?: never; health?: never; amazonQ?: never }
-  | { inputTokens: number; health?: never; text?: never; toolCall?: never; stream?: never; error?: never; amazonQ?: never }
-  | { health: true; inputTokens?: never; text?: never; toolCall?: never; stream?: never; error?: never; amazonQ?: never }
-  | { amazonQ: AmazonQAuxiliaryResponse; health?: never; inputTokens?: never; text?: never; toolCall?: never; stream?: never; error?: never };
+  | { text: string; toolCall?: never; stream?: never; error?: never; inputTokens?: never; health?: never; amazonQ?: never; augmentModels?: never }
+  | { toolCall: ToolCall; text?: never; stream?: never; error?: never; inputTokens?: never; health?: never; amazonQ?: never; augmentModels?: never }
+  | { stream: AsyncIterable<ProviderEvent>; text?: never; toolCall?: never; error?: never; inputTokens?: never; health?: never; amazonQ?: never; augmentModels?: never }
+  | { error: { status: number; message: string; type?: string }; text?: never; toolCall?: never; stream?: never; inputTokens?: never; health?: never; amazonQ?: never; augmentModels?: never }
+  | { inputTokens: number; health?: never; text?: never; toolCall?: never; stream?: never; error?: never; amazonQ?: never; augmentModels?: never }
+  | { health: true; inputTokens?: never; text?: never; toolCall?: never; stream?: never; error?: never; amazonQ?: never; augmentModels?: never }
+  | { amazonQ: AmazonQAuxiliaryResponse; health?: never; inputTokens?: never; text?: never; toolCall?: never; stream?: never; error?: never; augmentModels?: never }
+  | { augmentModels: { defaultModel: string }; text?: never; toolCall?: never; stream?: never; error?: never; inputTokens?: never; health?: never; amazonQ?: never };
 export interface EncodedResponse {
   status: number;
   headers: Record<string, string>;
