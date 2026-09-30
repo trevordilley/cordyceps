@@ -34,6 +34,8 @@ try {
 
 This short API sketch requires a consumer-installed Claude Code binary and its ordinary permission setup. For complete runnable consumers with isolated configuration, actual tool reads and cleanup, see [installed CLI tests](docs/real-cli.md) and [browser E2E tests](docs/real-frontend.md). The [real ACP example](docs/real-acp.md) also exercises native sessions, permissions and cancellation. All three build, pack and install the actual library before exercising real harnesses. Apply the settings before the application or child process starts. A cached environment, an existing daemon or a configuration override can bypass injection; assert that the mock actually receives the expected request.
 
+The [DevSwarm agent inventory](docs/devswarm-agents.md) tracks all 20 native families and 20 WSL variants from its `AiAgent` enum, with real-consumer evidence and explicit gaps. Agents using an existing provider protocol need an injection recipe; a different wire protocol needs codec code plus a real consumer test. CLI verification does not imply ACP support.
+
 ## Provider controls
 
 `prepare({ harness, mode = 'interactive', registry?, inputs?, signal? })` returns an isolated session with `baseUrl`, `apiKey`, `environment(baseEnv)`, `args` and `configFiles`. It does not launch or inspect an executable. An absent recipe or codec is an explicit configuration error.
@@ -62,7 +64,7 @@ ai.route(request => request.text.includes('read fixture'), async route => {
 
 `fixturePath` is a consumer-created file, and `Read`/`file_path` must match the actual tool schema offered by your harness. The real harness or its consumer-owned client handlers execute the operation with normal permissions. Cordyceps never supplies a fabricated file result.
 
-Both provider codecs support text, a single-tool-call shorthand, scripted errors and asynchronous text/tool event streams:
+Generation codecs support text, a single-tool-call shorthand, scripted errors and asynchronous text/tool event streams:
 
 ```js
 ai.route(() => true, route => route.fulfill({

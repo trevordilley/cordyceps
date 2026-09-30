@@ -29,7 +29,7 @@ export function createRegistry({ builtins = true }: { builtins?: boolean } = {})
     },
     list() { return [...definitions.values()].map(value => structuredClone(value)); },
   };
-  if (builtins) for (const name of ['claude-code', 'codex', 'claude-code-acp', 'aider', 'cline', 'copilot', 'goose', 'droid', 'opencode', 'crush', 'gemini', 'qwen', 'mistral-vibe', 'antigravity']) {
+  if (builtins) for (const name of ['claude-code', 'codex', 'claude-code-acp', 'aider', 'cline', 'copilot', 'goose', 'droid', 'opencode', 'crush', 'gemini', 'qwen', 'mistral-vibe', 'antigravity', 'amazon-q', 'auggie']) {
     const url = new URL(`../harnesses/${name}.json`, import.meta.url);
     registry.register(decodeJson(readFileSync(url, 'utf8'), url.pathname));
   }

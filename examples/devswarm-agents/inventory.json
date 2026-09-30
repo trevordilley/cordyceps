@@ -13,8 +13,11 @@
       "family": "q",
       "label": "Amazon Q",
       "platform": "native",
-      "status": "pending",
-      "evidence": []
+      "status": "verified",
+      "evidence": [
+        "docs/real-q.md",
+        "examples/real-q/evidence.json"
+      ]
     },
     {
       "enum": "Q_WSL",
@@ -287,8 +290,11 @@
       "family": "auggie",
       "label": "Auggie",
       "platform": "native",
-      "status": "pending",
-      "evidence": []
+      "status": "verified",
+      "evidence": [
+        "docs/real-auggie.md",
+        "examples/real-auggie/evidence.json"
+      ]
     },
     {
       "enum": "AUGGIE_WSL",
@@ -372,8 +378,11 @@
       "family": "plandex",
       "label": "Plandex",
       "platform": "native",
-      "status": "pending",
-      "evidence": []
+      "status": "verified",
+      "evidence": [
+        "docs/real-plandex.md",
+        "examples/real-plandex/evidence.json"
+      ]
     },
     {
       "enum": "PLANDEX_WSL",

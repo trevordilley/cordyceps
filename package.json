@@ -32,7 +32,10 @@
     "docs/real-provider-agents.md",
     "docs/real-google-agents.md",
     "docs/devswarm-agents.md",
-    "docs/real-gated-agents.md"
+    "docs/real-gated-agents.md",
+    "docs/real-plandex.md",
+    "docs/real-auggie.md",
+    "docs/real-q.md"
   ],
   "scripts": {
     "check": "tsc --noEmit",
@@ -47,7 +50,10 @@
     "test:real-editors": "node examples/real-editor-agents/verify.mjs",
     "test:real-providers": "node examples/real-provider-agents/run.mjs",
     "test:real-google": "node examples/real-google-agents/run.mjs",
-    "test:real-antigravity": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-antigravity.json --antigravity"
+    "test:real-antigravity": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-antigravity.json --antigravity",
+    "test:real-q": "node examples/real-q/run.mjs",
+    "test:real-auggie": "node examples/real-auggie/verify.mjs",
+    "test:real-plandex": "node examples/real-plandex/run.mjs"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

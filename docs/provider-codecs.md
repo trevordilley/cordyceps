@@ -2,7 +2,7 @@
 
 `src/provider/index.ts` exports `codecIds` and `getCodec(id)`. The IDs are
 `anthropic-messages`, `openai-responses`, `openai-chat-completions`, and
-`google-genai`; unknown IDs throw. Their shared
+`google-genai`, `amazon-q`, and `augment`; unknown IDs throw. Their shared
 interfaces live in `src/provider/types.ts`.
 Both the ID list and codec singleton objects are frozen, so callers cannot
 replace codec methods globally and affect another session.
@@ -19,6 +19,8 @@ results, launch harnesses, infer ACP identities, or contact a live provider.
 | `anthropic-messages` | `/v1/messages` | Named client tools with `input_schema` | `tool_result` content blocks, keyed by `tool_use_id` |
 | `openai-responses` | `/v1/responses` | `function` tools with `parameters` | `function_call_output` input items, keyed by `call_id` |
 | `openai-chat-completions` | `/v1/chat/completions` | Nested `function` definitions | `role: tool` messages, keyed by `tool_call_id` |
+| `amazon-q` | `/` with an explicitly supported `X-Amz-Target` | Native `toolSpecification` | `toolResults`, keyed by `toolUseId` |
+| `augment` | `/chat-stream` | Native tool schemas | Type-1 tool-result nodes |
 | `google-genai` | `/v1beta/models/<model>:generateContent` or `:streamGenerateContent` (also `/v1`) | `functionDeclarations` | `functionResponse` parts |
 
 Query strings are accepted. Prefix paths, trailing slashes, other endpoints,
@@ -27,7 +29,7 @@ Gemini streaming requires `alt=sse`; Vertex project/location paths are not suppo
 Anthropic also accepts exactly `HEAD /api/hello` and
 `POST /v1/messages/count_tokens` (including query strings), observed from real
 Claude SDK consumers. These use ordinary capture, consumer routes and failure
-reporting; there is no automatic reply. Model listings and response
+reporting; there is no automatic reply. General model listings and response
 retrieval/deletion remain unsupported; this is not complete vendor API emulation.
 
 Anthropic and OpenAI decoding requires a JSON object with a nonempty string `model`, except for the bodyless hello probe. Gemini takes the model from the URL and retains the original JSON body. `stream`, when
@@ -61,7 +63,7 @@ Input is JSON-serialized and snapshotted when consumed; ordinary JSON
 serialization rules apply, and circular input fails. Names, IDs, and arguments
 come from the consumer; the codecs neither select a tool nor execute it.
 
-`request.stream` selects the wire format, independently of the script shape:
+For the Anthropic, OpenAI and Gemini codecs, `request.stream` selects the wire format, independently of the script shape:
 
 - False: consume the script to completion and emit one JSON response.
 - True: emit provider SSE frames as the script produces events. A text event
@@ -176,3 +178,25 @@ shell instructions and Cline XML tools use ordinary Chat Completions text,
 and their real results occur in subsequent conversation text. The library
 preserves these exchanges; it does not pretend they were native function calls
 or parse agent-specific instructions into `toolResults`.
+
+
+## Amazon Q and Augment native services
+
+`amazon-q` accepts exactly the three native `X-Amz-Target` operations documented
+in [the Q consumer](real-q.md). Generation emits binary AWS event-stream frames,
+including length fields and CRC32, rather than SSE. Assistant deltas and tool
+start/input/stop events terminate at HTTP EOF. Q buffers one content delta while
+looking for citations, so the consumer emits two before testing a held stream.
+Model discovery and telemetry are captured auxiliary requests that require
+explicit `{amazonQ: {models: [...]}}` or `{amazonQ: {telemetry: true}}` replies.
+There is no automatic startup response or generated tool result.
+
+`augment` emits newline-delimited JSON for `/chat-stream`, with native text and
+tool nodes and a terminal stop reason. The exact `/get-models` bootstrap accepts
+`{augmentModels: {defaultModel: 'fixture-model'}}`; the real client needs this
+metadata to include its initial prompt. The three other observed startup routes
+are captured and require explicit scripted errors in the verified example.
+Unknown service routes still fail. See [the Auggie consumer](real-auggie.md) for
+the installed-package protocol evidence and exact limits. Both codecs retain
+auxiliary captures separately from the generation exchanges. These narrow
+service subsets do not claim full vendor API emulation.

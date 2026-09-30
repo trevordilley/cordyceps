@@ -72,7 +72,7 @@ test('Augment startup and chat use shared capture/failure lifecycle without auto
 });
 test('other codecs reject Augment bootstrap replies rather than treating them as generation or health', async () => {
   const {getCodec}=await import('../src/provider/index.js');
-  for(const id of ['anthropic-messages','openai-responses','openai-chat-completions','google-genai']) {
+  for(const id of ['anthropic-messages','openai-responses','openai-chat-completions','google-genai','amazon-q']) {
     expect(()=>getCodec(id).encode(request(),{augmentModels:{defaultModel:'test'}},signal())).toThrow('Augment');
   }
 });

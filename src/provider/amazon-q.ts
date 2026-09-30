@@ -75,6 +75,7 @@ export const amazonQ: ProviderCodec = Object.freeze({
     return { model: current.modelId ?? '', stream: true, text: text.join('\n'), tools, toolResults, body };
   },
   encode(request: CapturedRequest, response: ScriptedResponse, signal: AbortSignal) {
+    if (response.augmentModels !== undefined) throw new TypeError('Augment model replies are not supported by the Amazon Q codec');
     const target = operation(request.raw);
     if (response.error !== undefined) {
       return encoded(json({ __type: response.error.type ?? 'InternalServerException', message: response.error.message }), signal, false, errorStatus(response.error));

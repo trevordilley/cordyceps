@@ -18,7 +18,7 @@ The table is finalized with the accompanying machine-readable evidence after eac
 Validation in progress; consult the machine-readable inventory for current outcomes.
 <!-- agent-results:end -->
 
-All runs use test credentials and isolated scratch configuration. Installed or project-local binaries, SDKs, containers, PTYs, permissions and cleanup are consumer tooling in `examples/`; the public library does not install, discover, launch or manage agents. The successful recipes are bundled and can also be loaded privately with `registry.loadFile()` through the same validator.
+All runs use test credentials and isolated scratch configuration. Installed or project-local binaries, SDKs, containers, PTYs, permissions and cleanup are consumer tooling in `examples/`; the public library does not install, discover, launch or manage agents. Most verified recipes are bundled and can also be loaded privately with `registry.loadFile()` through the same validator. Plandex retains an example-local recipe because its custom-model setup also needs a consumer-owned self-hosted backend.
 
 ## Reproduction groups
 
@@ -27,6 +27,10 @@ Use real Node >=22 first on PATH. The known DevSwarm shell's default `node` is a
 - [Claude and Codex](real-cli.md): `node examples/real-cli/run.mjs /tmp/cli.json`.
 - [Copilot, Goose, Droid, OpenCode and Crush](real-provider-agents.md): `node examples/real-provider-agents/run.mjs /tmp/providers.json`.
 - [Gemini, Qwen and Mistral Vibe](real-google-agents.md): `node examples/real-google-agents/run.mjs /tmp/google.json`.
+- [Amazon Q / installed Kiro wrapper](real-q.md): `node examples/real-q/run.mjs /tmp/q.json`.
+- [Auggie](real-auggie.md): `node examples/real-auggie/verify.mjs /tmp/auggie.json`.
+- [Plandex](real-plandex.md): bootstrap the real CLI/backend, then `node examples/real-plandex/run.mjs /tmp/plandex.json "$PLANDEX_TEST_SOURCE"`.
+- [Antigravity](real-gated-agents.md): `node examples/real-gated-agents/run.mjs /tmp/agy.json --antigravity`.
 - [Aider and Cline](real-editor-agents.md): `node examples/real-editor-agents/verify.mjs /tmp/editors.json`.
 
 Exact executable observations, configuration inputs, arguments, package integrity, captured requests, returned output and limitations are retained with each example. Executable versions do not gate future runs. Missing prerequisites or failed assertions fail verification rather than turning into skipped successes.
