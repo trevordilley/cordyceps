@@ -1,0 +1,404 @@
+{
+  "date": "2026-09-30T04:46:27.120Z",
+  "node": "v22.22.3",
+  "platform": "darwin",
+  "isolation": "macOS sandbox-exec: outbound loopback only; writes restricted to disposable home/work and generated config directories; allowlisted child environment",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-package-ITGmKt/consumer/node_modules/cordyceps/dist/index.js",
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-YoWfM0eaQJ5x5cm46a9iMHcmmh1WiwFyi9W/eveA7w0lGWX2kqWfgDPR2kaTJX6NqLKiDgqYLfRAyHI1RcPM+g==",
+    "shasum": "4b0bd14b51ff63da48d4456ee121e8193bc7e6bd"
+  },
+  "cases": [
+    {
+      "harness": "openclaude",
+      "scenario": "text",
+      "binary": "/tmp/cordyceps-source-extra/install/node_modules/.bin/openclaude",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "0.31.0 (OpenClaude)\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "args": [
+        "--print",
+        "--dangerously-skip-permissions",
+        "--model",
+        "claude-sonnet-4-5-20250929",
+        "--output-format",
+        "json",
+        "--max-turns",
+        "3",
+        "cordyceps-provider-text: Reply with the controlled test message."
+      ],
+      "prompt": "cordyceps-provider-text: Reply with the controlled test message.",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"result\",\"subtype\":\"success\",\"is_error\":false,\"duration_ms\":90,\"duration_api_ms\":30,\"num_turns\":1,\"result\":\"CORDYCEPS_openclaude_text_OK\",\"stop_reason\":\"end_turn\",\"session_id\":\"05d68550-021d-4476-b83a-fcc13face5a4\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"cache_deleted_input_tokens\":0,\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-5-20250929\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":128000,\"maxOutputTokens\":32000}},\"permission_denials\":[],\"fast_mode_state\":\"off\",\"uuid\":\"0190630a-3eb0-496e-8ed9-7f15356d9e06\"}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "e5ee24ac0b1aacc71a925ff2438f3804e8716dfab209a7117fe1a5160ebb1228",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nAvailable agent types for the Agent tool:\n- code-reviewer: Independent code reviewer for changes, diffs, and pull requests. Provides balanced critique across correctness, security, performance, maintainability, and design. Use after completing a coding task or when asked to review specific changes. The caller must provide the diff or changed hunks inline in the prompt because this agent cannot run shell commands. Invoke with subagent_type: \"code-reviewer\". (Tools: Read, Glob, Grep)\n- Explore: Fast agent specialized for exploring codebases. Use this when you need to quickly find files by patterns (eg. \"src/components/**/*.tsx\"), search code for keywords (eg. \"API endpoints\"), or answer questions about the codebase (eg. \"how do API endpoints work?\"). When calling this agent, specify the desired thoroughness level: \"quick\" for basic searches, \"medium\" for moderate exploration, or \"very thorough\" for comprehensive analysis across multiple locations and naming conventions. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n- general-purpose: General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you. (Tools: *)\n- Plan: Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n- statusline-setup: Use this agent to configure the user's OpenClaude status line setting. (Tools: Read, Edit)\n- verification: Use this agent to verify that implementation work is correct before reporting completion. Invoke after non-trivial tasks (3+ file edits, backend/API changes, infrastructure changes). Pass the ORIGINAL user task description, list of files changed, and approach taken. The agent runs builds, tests, linters, and checks to produce a PASS/FAIL/PARTIAL verdict with evidence. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n\nLaunch multiple agents concurrently whenever possible, to maximize performance; to do that, use a single message with multiple tool uses.\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nThe following skills are available for use with the Skill tool:\n\n- update-config: Use this skill to configure the Claude Code harness via settings.json. Automated behaviors (\"from now on when X\", \"each time X\", \"whenever X\", \"before/after X\") require hooks configured in settings.json - the harness executes these, not Claude, so m…\n- simplify: Review changed code for reuse, quality, and efficiency, then fix any issues found.\n- pdf: Generate PDF documents from structured content. Create reports, formatted documents, tables, and more. - Use when the user wants to create, generate, build, or produce a PDF document.\n- loop: Run a prompt on a fixed interval or dynamically reschedule it, including bare maintenance-mode loops. - When the user wants to poll for status, babysit a workflow, run recurring maintenance, or keep re-running a prompt within the current session.\n</system-reminder>\n"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nAs you answer the user's questions, you can use the following context:\n# currentDate\nToday's date is 2026-09-29.\n\n      IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.\n</system-reminder>\n\n"
+                },
+                {
+                  "type": "text",
+                  "text": "cordyceps-provider-text: Reply with the controlled test message.\n<system-reminder>snip_id=4rfsc0; system-generated; for snip tool use only; do not discuss in thinking or responses.</system-reminder>"
+                }
+              ]
+            }
+          ],
+          "toolResults": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "73844728-f894-4ba7-9a36-1187ea81cb0c",
+          "timestamp": 1790743588107,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_823b177eda2d4fba8ce7d3729c1971b3\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_openclaude_text_OK\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "failures": [],
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "healthy": true
+      },
+      "cleanedUp": true
+    },
+    {
+      "harness": "openclaude",
+      "scenario": "tool",
+      "binary": "/tmp/cordyceps-source-extra/install/node_modules/.bin/openclaude",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "0.31.0 (OpenClaude)\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "args": [
+        "--print",
+        "--dangerously-skip-permissions",
+        "--model",
+        "claude-sonnet-4-5-20250929",
+        "--output-format",
+        "json",
+        "--max-turns",
+        "3",
+        "cordyceps-provider-tool: Read fixture.txt, then report completion."
+      ],
+      "prompt": "cordyceps-provider-tool: Read fixture.txt, then report completion.",
+      "scriptedCall": {
+        "id": "fixture_read",
+        "name": "Read",
+        "input": {
+          "file_path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-openclaude-NQ5JMe/work/fixture.txt"
+        }
+      },
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"result\",\"subtype\":\"success\",\"is_error\":false,\"duration_ms\":185,\"duration_api_ms\":53,\"num_turns\":2,\"result\":\"CORDYCEPS_openclaude_tool_OK\",\"stop_reason\":\"end_turn\",\"session_id\":\"74dd805e-4a14-4020-a8bf-284bfb5a3430\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"cache_deleted_input_tokens\":0,\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\"modelUsage\":{\"claude-sonnet-4-5-20250929\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadInputTokens\":0,\"cacheCreationInputTokens\":0,\"webSearchRequests\":0,\"costUSD\":0,\"contextWindow\":128000,\"maxOutputTokens\":32000}},\"permission_denials\":[],\"fast_mode_state\":\"off\",\"uuid\":\"70f158a4-9896-41a7-b591-30ecfd98b568\"}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "139293688de002db81da287b0be6728ad6081cc7054337b69c7faded1106b4e7",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nAvailable agent types for the Agent tool:\n- code-reviewer: Independent code reviewer for changes, diffs, and pull requests. Provides balanced critique across correctness, security, performance, maintainability, and design. Use after completing a coding task or when asked to review specific changes. The caller must provide the diff or changed hunks inline in the prompt because this agent cannot run shell commands. Invoke with subagent_type: \"code-reviewer\". (Tools: Read, Glob, Grep)\n- Explore: Fast agent specialized for exploring codebases. Use this when you need to quickly find files by patterns (eg. \"src/components/**/*.tsx\"), search code for keywords (eg. \"API endpoints\"), or answer questions about the codebase (eg. \"how do API endpoints work?\"). When calling this agent, specify the desired thoroughness level: \"quick\" for basic searches, \"medium\" for moderate exploration, or \"very thorough\" for comprehensive analysis across multiple locations and naming conventions. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n- general-purpose: General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you. (Tools: *)\n- Plan: Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n- statusline-setup: Use this agent to configure the user's OpenClaude status line setting. (Tools: Read, Edit)\n- verification: Use this agent to verify that implementation work is correct before reporting completion. Invoke after non-trivial tasks (3+ file edits, backend/API changes, infrastructure changes). Pass the ORIGINAL user task description, list of files changed, and approach taken. The agent runs builds, tests, linters, and checks to produce a PASS/FAIL/PARTIAL verdict with evidence. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n\nLaunch multiple agents concurrently whenever possible, to maximize performance; to do that, use a single message with multiple tool uses.\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nThe following skills are available for use with the Skill tool:\n\n- update-config: Use this skill to configure the Claude Code harness via settings.json. Automated behaviors (\"from now on when X\", \"each time X\", \"whenever X\", \"before/after X\") require hooks configured in settings.json - the harness executes these, not Claude, so m…\n- simplify: Review changed code for reuse, quality, and efficiency, then fix any issues found.\n- pdf: Generate PDF documents from structured content. Create reports, formatted documents, tables, and more. - Use when the user wants to create, generate, build, or produce a PDF document.\n- loop: Run a prompt on a fixed interval or dynamically reschedule it, including bare maintenance-mode loops. - When the user wants to poll for status, babysit a workflow, run recurring maintenance, or keep re-running a prompt within the current session.\n</system-reminder>\n"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nAs you answer the user's questions, you can use the following context:\n# currentDate\nToday's date is 2026-09-29.\n\n      IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.\n</system-reminder>\n\n"
+                },
+                {
+                  "type": "text",
+                  "text": "cordyceps-provider-tool: Read fixture.txt, then report completion.\n<system-reminder>snip_id=7l0c5o; system-generated; for snip tool use only; do not discuss in thinking or responses.</system-reminder>"
+                }
+              ]
+            }
+          ],
+          "selectedTool": {
+            "name": "Read",
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "file_path": {
+                  "description": "The absolute path to the file to read",
+                  "type": "string"
+                },
+                "offset": {
+                  "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "limit": {
+                  "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "pages": {
+                  "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file_path"
+              ],
+              "additionalProperties": false
+            },
+            "raw": {
+              "name": "Read",
+              "description": "Reads a file from the local filesystem. You can access any file directly by using this tool.\nAssume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.\n\nUsage:\n- The file_path parameter must be an absolute path, not a relative path\n- By default, it reads up to 2000 lines starting from the beginning of the file\n- You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters\n- Results are returned using cat -n format, with line numbers starting at 1\n- This tool allows Claude Code to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as Claude Code is a multimodal LLM.\n- This tool can read PDF files (.pdf). For large PDFs (more than 10 pages), you MUST provide the pages parameter to read specific page ranges (e.g., pages: \"1-5\"). Reading a large PDF without the pages parameter will fail. Maximum 20 pages per request.\n- This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.\n- This tool can only read files, not directories. To read a directory, use an ls command via the Bash tool.\n- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.\n- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.",
+              "input_schema": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "properties": {
+                  "file_path": {
+                    "description": "The absolute path to the file to read",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "toolResults": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/messages?beta=true",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "19b1d6e1ff3d6206dbfbded4a7c2e29b32ccf25d68af0fc12d2c20b591a33739",
+          "promptMessages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nAvailable agent types for the Agent tool:\n- code-reviewer: Independent code reviewer for changes, diffs, and pull requests. Provides balanced critique across correctness, security, performance, maintainability, and design. Use after completing a coding task or when asked to review specific changes. The caller must provide the diff or changed hunks inline in the prompt because this agent cannot run shell commands. Invoke with subagent_type: \"code-reviewer\". (Tools: Read, Glob, Grep)\n- Explore: Fast agent specialized for exploring codebases. Use this when you need to quickly find files by patterns (eg. \"src/components/**/*.tsx\"), search code for keywords (eg. \"API endpoints\"), or answer questions about the codebase (eg. \"how do API endpoints work?\"). When calling this agent, specify the desired thoroughness level: \"quick\" for basic searches, \"medium\" for moderate exploration, or \"very thorough\" for comprehensive analysis across multiple locations and naming conventions. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n- general-purpose: General-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. When you are searching for a keyword or file and are not confident that you will find the right match in the first few tries use this agent to perform the search for you. (Tools: *)\n- Plan: Software architect agent for designing implementation plans. Use this when you need to plan the implementation strategy for a task. Returns step-by-step plans, identifies critical files, and considers architectural trade-offs. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n- statusline-setup: Use this agent to configure the user's OpenClaude status line setting. (Tools: Read, Edit)\n- verification: Use this agent to verify that implementation work is correct before reporting completion. Invoke after non-trivial tasks (3+ file edits, backend/API changes, infrastructure changes). Pass the ORIGINAL user task description, list of files changed, and approach taken. The agent runs builds, tests, linters, and checks to produce a PASS/FAIL/PARTIAL verdict with evidence. (Tools: All tools except Agent, ExitPlanMode, Edit, Write, NotebookEdit)\n\nLaunch multiple agents concurrently whenever possible, to maximize performance; to do that, use a single message with multiple tool uses.\n</system-reminder>"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nThe following skills are available for use with the Skill tool:\n\n- update-config: Use this skill to configure the Claude Code harness via settings.json. Automated behaviors (\"from now on when X\", \"each time X\", \"whenever X\", \"before/after X\") require hooks configured in settings.json - the harness executes these, not Claude, so m…\n- simplify: Review changed code for reuse, quality, and efficiency, then fix any issues found.\n- pdf: Generate PDF documents from structured content. Create reports, formatted documents, tables, and more. - Use when the user wants to create, generate, build, or produce a PDF document.\n- loop: Run a prompt on a fixed interval or dynamically reschedule it, including bare maintenance-mode loops. - When the user wants to poll for status, babysit a workflow, run recurring maintenance, or keep re-running a prompt within the current session.\n</system-reminder>\n"
+                },
+                {
+                  "type": "text",
+                  "text": "<system-reminder>\nAs you answer the user's questions, you can use the following context:\n# currentDate\nToday's date is 2026-09-29.\n\n      IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.\n</system-reminder>\n\n"
+                },
+                {
+                  "type": "text",
+                  "text": "cordyceps-provider-tool: Read fixture.txt, then report completion.\n<system-reminder>snip_id=7l0c5o; system-generated; for snip tool use only; do not discuss in thinking or responses.</system-reminder>"
+                }
+              ]
+            }
+          ],
+          "selectedTool": {
+            "name": "Read",
+            "inputSchema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "type": "object",
+              "properties": {
+                "file_path": {
+                  "description": "The absolute path to the file to read",
+                  "type": "string"
+                },
+                "offset": {
+                  "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "limit": {
+                  "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "pages": {
+                  "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file_path"
+              ],
+              "additionalProperties": false
+            },
+            "raw": {
+              "name": "Read",
+              "description": "Reads a file from the local filesystem. You can access any file directly by using this tool.\nAssume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.\n\nUsage:\n- The file_path parameter must be an absolute path, not a relative path\n- By default, it reads up to 2000 lines starting from the beginning of the file\n- You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters\n- Results are returned using cat -n format, with line numbers starting at 1\n- This tool allows Claude Code to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as Claude Code is a multimodal LLM.\n- This tool can read PDF files (.pdf). For large PDFs (more than 10 pages), you MUST provide the pages parameter to read specific page ranges (e.g., pages: \"1-5\"). Reading a large PDF without the pages parameter will fail. Maximum 20 pages per request.\n- This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.\n- This tool can only read files, not directories. To read a directory, use an ls command via the Bash tool.\n- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.\n- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.",
+              "input_schema": {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "properties": {
+                  "file_path": {
+                    "description": "The absolute path to the file to read",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "toolResults": [
+            {
+              "id": "fixture_read",
+              "text": "1→fixture-eebce810-cf90-407b-8e40-767cfdd5d951\n2→\n\n<system-reminder>\nWhenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.\n</system-reminder>\n",
+              "isError": false,
+              "raw": {
+                "tool_use_id": "fixture_read",
+                "type": "tool_result",
+                "content": "1→fixture-eebce810-cf90-407b-8e40-767cfdd5d951\n2→\n\n<system-reminder>\nWhenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.\n</system-reminder>\n"
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "fbf40ff7-05c6-411c-82f3-f521043c2dd7",
+          "timestamp": 1790743589247,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_5295d63cfe3a45cbad0b527ceb8561e2\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"tool_use\",\"id\":\"fixture_read\",\"name\":\"Read\",\"input\":{}}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"{\\\"file_path\\\":\\\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-provider-openclaude-NQ5JMe/work/fixture.txt\\\"}\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"tool_use\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "4af8d46a-fab9-4252-b2a3-aa44ee1fd9d2",
+          "timestamp": 1790743589307,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_845ed875ff7b4e32adaf6df999d74331\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_openclaude_tool_OK\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "failures": [],
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "healthy": true
+      },
+      "cleanedUp": true
+    }
+  ],
+  "projection": "Actual native output and selected wire fields; system prompts, other schemas and request headers omitted. Raw-body SHA-256 binds projections to full local evidence."
+}

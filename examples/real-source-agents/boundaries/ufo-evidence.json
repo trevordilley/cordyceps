@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-30T04:44:46.858Z",
+  "binary": "/tmp/cordyceps-source-extra/ufo",
+  "sha256": "8c3d8f9729e1ca884af917463d18d59b74ab68b2ffe912f93b6265ba2aad555c",
+  "isolation": "allowlisted environment; disposable HOME/UFO_HOME/work; sandbox loopback-only outbound and owned-directory writes",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "/surface/ufo/a0c4dcdf0dfb8d0a48a917dcc54580f8/skills",
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "url": "/surface/ufo/a0c4dcdf0dfb8d0a48a917dcc54580f8",
+      "body": "cordyceps-ufo: reply with the controlled message"
+    }
+  ],
+  "cases": [
+    {
+      "args": [
+        "--version"
+      ],
+      "stdout": "ufo 0.1.90\n",
+      "stderr": "",
+      "code": 0,
+      "signal": null
+    },
+    {
+      "args": [
+        "--help"
+      ],
+      "stdout": "Opens a conversation with your workspace assistant.\n\nUsage: ufo [--resume ID] [--remote] [--model MODEL] [--no-internet] [--environment FILE]\n           [--wait SECONDS] [--authorize ID CHOICE] [--json] [message...]\n       ufo login | logout\n       ufo cp SRC DST  (one side is CHANNEL:PATH; directories sync)\n       ufo fs {read|write|edit|grep|glob|changes} <json>\n       ufo llm [--model MODEL] [--max-tokens N] PROMPT\n       ufo run [--task PATH] [--detach] -- COMMAND [ARG...]\n       ufo tool TOOL [--describe]\n\nCommands:\n  login          Sign in again.\n  logout         Sign out.\n  cp             Copy files or sync a folder with a conversation's workspace.\n  fs             Run one file op inside a sandbox and print its JSON result.\n  llm            Ask a model one question through the sandbox's egress proxy.\n  run            Run a command with task state and sandbox egress.\n  tool           Describe or call an object or connector tool with JSON.\n\nOptions:\n  --resume ID    Open a conversation by its channel or id. With no message and no id,\n                 ufo opens on the list of your chats.\n  --remote       Run in the workspace's sandbox instead of the current directory. The turn\n                 then needs no running ufo.\n  --model MODEL  Run each turn on this model.\n  --no-internet  Run each turn without public internet access.\n  --environment FILE  Pin this environment document for each turn: a YAML or JSON\n                 overrides file uploaded once, or its sha256: digest.\n  --wait SECONDS Leave this long after the message is accepted, with the turn still running;\n                 needs --remote. ufo --resume prints the rest.\n  --authorize ID CHOICE  Answer a permission question by the id it printed: allow, deny,\n                 or always.\n  --json         Read and write JSON events on stdin and stdout.\n  -h, --help     Show this help.\n  -v, --version  Show the client version.\n\nA turn can run for hours. A conversation started in a directory runs its file and command\nsteps through this process: keep ufo running until it exits. stderr names the --resume that\ncontinues the conversation as soon as the message is accepted. A question the conversation\nasks prints with the command that answers it.\n",
+      "stderr": "",
+      "code": 0,
+      "signal": null
+    },
+    {
+      "args": [
+        "--json",
+        "cordyceps-ufo: reply with the controlled message"
+      ],
+      "stdout": "{\"type\":\"session_start\",\"v\":1,\"channel\":\"a0c4dcdf0dfb8d0a48a917dcc54580f8\",\"workspace_url\":\"http://127.0.0.1:53844\",\"client_version\":\"0.1.90\"}\n{\"type\":\"turn_start\"}\n{\"type\":\"error\",\"message\":\"No response from http://127.0.0.1:53844 (chat failed (401): {\\\"error\\\":\\\"Controlled diagnostic: no UFO account or remote agent emulation\\\"})\",\"fatal\":true}\n",
+      "stderr": "",
+      "code": 1,
+      "signal": null
+    },
+    {
+      "args": [
+        "llm",
+        "cordyceps-ufo: reply with the controlled message"
+      ],
+      "stdout": "",
+      "stderr": "ufo llm: https://api.anthropic.com/v1/messages failed: api.anthropic.com: failed to lookup address information: nodename nor servname provided, or not known\n",
+      "code": 1,
+      "signal": null
+    }
+  ],
+  "status": "excluded-no-local-model-control-established",
+  "cleanedUp": true
+}
