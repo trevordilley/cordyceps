@@ -153,4 +153,6 @@ after all ACP assertions completed while sandboxed descendants were exiting.
 The consumer now verifies its exact owned process group with `ps`, ignoring
 only zombie entries, after bounded TERM/KILL cleanup. `EPERM` alone never
 counts as successful cleanup, and any live remaining member fails the test.
-This consumer cleanup change awaits its hosted rerun.
+The correction passed [hosted run 36740569377](https://github.com/trevordilley/cordyceps/actions/runs/36740569377),
+including all eight prompts, 65 native messages, two permissions, cancellation
+and same-session reuse; the final summary reports `processGroupClosed: true`.

@@ -49,27 +49,38 @@ failure receipts/browser reports for seven days. External Actions are pinned to
 commit SHAs. Checkout does not persist credentials and the workflow token has
 only read access to repository contents. No job publishes npm or merges code.
 
-## Activation and verification status
+## Hosted verification
 
-The destination is [trevordilley/cordyceps](https://github.com/trevordilley/cordyceps).
-Pushing this implementation branch starts the workflow; a default-branch copy
-also enables the manual Run workflow button. [Actions run results](https://github.com/trevordilley/cordyceps/actions)
-establish runner-specific behavior; local verification alone does not. Local `actionlint` and `bash -n` passed. The exact `baseline` setup also passed
-locally with freshly npm-installed Claude/Codex on Node 24.15.0: four CLI cases,
-eight ACP turns with cancellation/session reuse, and all three Chromium tests.
-The [first hosted run](https://github.com/trevordilley/cordyceps/actions/runs/36737813993)
-passed both Linux library jobs and the four non-baseline consumer groups
-(18 native families). Baseline failed before its first provider request because
-Claude defaults to `/tmp/claude-UID` even with `TMPDIR` set. The consumers now
-set the documented `CLAUDE_CODE_TMPDIR` to their owned scratch directory;
-filesystem isolation remains intact. The [second hosted run](https://github.com/trevordilley/cordyceps/actions/runs/36738685084)
-confirmed that fix: CLI, ACP and all three browser tests passed. Nine native
-consumer groups passed, covering 31 families. Auggie text reached its controlled
-output but exposed an unrecognized background `/find-missing` request; the
-codec must capture that explicit auxiliary error. Codebuff/Polygraph setup
-correctly stopped because the official Polygraph bundle changed. The inspected
-new runtime is pinned for revalidation; neither failure is counted as a pass. Baseline now attempts CLI, ACP and browser independently
-and still fails the job if any scenario fails.
+The repository is [trevordilley/cordyceps](https://github.com/trevordilley/cordyceps).
+[Run 36740569377](https://github.com/trevordilley/cordyceps/actions/runs/36740569377)
+at code commit `8a8bbfe` completed successfully: **all 13 jobs passed**. The
+11 native consumer groups cover **34 families and 107 real cases**, plus the
+official ACP adapter lifecycle and all three Chromium tests. Both Linux jobs
+passed strict TypeScript, 149 Bun tests (two known Bun skips; 1,246 assertions),
+all 21 mandatory Node lifecycle tests, build and installed-package checks.
+
+The ACP consumer verified eight prompts across separate sessions, 65 native
+messages, two permission requests, real file reading, incremental output,
+cancellation, same-session reuse and owned process-group cleanup. Provider
+auxiliary traffic varies between runs; native ACP messages are not counted as
+provider chunks. Compact [hosted receipts](../examples/orchestrator-agents/hosted-verification.json)
+retain actual outcomes, artifact integrity, full-receipt hashes and job URLs,
+including the earlier failures.
+
+Fresh runners exposed four corrections: Claude requires `CLAUDE_CODE_TMPDIR`
+inside owned scratch state; Auggie's optional `/find-missing` probe needs an
+explicitly scripted auxiliary error; Codebuff source requires its official
+agent-generation step; and ACP teardown needs to verify that no live member
+remains in its owned process group after bounded TERM/KILL attempts. The
+Polygraph download also changed upstream; its new runtime `2609.29.0017` was
+inspected, pinned by hash and reverified. Isolation and genuine tool assertions
+remain enabled throughout.
+
+The nine additional locally verified families listed above are not included in
+these hosted totals. See [all observed consumer outcomes](verification.md) for
+that distinction and the per-profile limitations. A copy of the workflow on the
+default branch enables the manual Run workflow button; branch pushes and pull
+requests already execute it.
 
 The same group can be exercised locally on macOS with an owned scratch directory:
 

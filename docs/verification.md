@@ -12,7 +12,7 @@ Run from the repository root after `bun install --frozen-lockfile`. Put a real N
 | --- | --- |
 | `bun run check` | Strict TypeScript checking passed. |
 | `bun run build` | Node-targeted ESM and declaration emission passed. |
-| `bun test tests` | 148 passed, 2 known Bun skips, 0 failed; 1,221 assertions on both hosted Node jobs at `4001e69`. |
+| `bun test tests` | 149 passed, 2 known Bun skips, 0 failed; 1,246 assertions on both hosted Node jobs at `8a8bbfe`. |
 | `bun run test:node` | 21 Node lifecycle tests passed, 0 skipped. |
 | `node scripts/verify-package.mjs` | Clean installed artifact, optional peer, declarations, synthetic HTTP/tool and success/failure teardown checks passed. |
 | `node examples/real-cli/run.mjs /tmp/cordyceps-cli.json` | Four real installed CLI cases passed; captured requests were 1/2 for each harness's text/tool cases. |
@@ -71,8 +71,12 @@ Claude, not a separate model engine. No Superset/Orca desktop UI is claimed.
 The integration branch independently reran 73 cases across the eight groups
 in `examples/orchestrator-agents/manager-verification.json`. The four additional
 Codebuff/Polygraph cases have child-workspace evidence in
-`examples/real-extra-cli/boundary-evidence.json`; hosted reruns are tracked
-separately in [CI results](ci.md). Do not count launch aliases, TUI/headless
+`examples/real-extra-cli/boundary-evidence.json` and now pass clean hosted setup.
+[CI run 36740569377](https://github.com/trevordilley/cordyceps/actions/runs/36740569377)
+passed all 13 jobs: 34 families, 107 native cases, real ACP and three browser
+tests. The [CI results](ci.md) and
+`examples/orchestrator-agents/hosted-verification.json` keep exact hosted
+receipts and the nine remaining locally verified profiles separate. Do not count launch aliases, TUI/headless
 modes, metadata requests or diagnostic failures as extra agent families.
 
 Actual failures led to narrow fixes: Hermes model-metadata probes, Grok
@@ -82,7 +86,11 @@ configuration root; and Codebuff source needs its native gateway path plus
 explicit auxiliary metadata. OpenCode 2 needed its actual XDG configuration
 and a ready TUI before submitting input. Claude on a fresh hosted runner
 needed its documented `CLAUDE_CODE_TMPDIR` set to the consumer scratch root.
-Permission flags, process startup and cleanup remain consumer-owned.
+Clean hosted runs also exposed Codebuff’s required official agent-generation
+step and an ACP shutdown race: cleanup now verifies that no live process
+remains in the owned group after bounded termination attempts. Both corrections
+passed hosted run `36740569377`. Permission flags, process startup and cleanup
+remain consumer-owned.
 
 ## Evidence boundaries
 

@@ -86,8 +86,10 @@ Code 2.1.283**, with official Claude plugin 0.5.4 and a genuinely connected MCP
 transport. Claude performs the actual fixture read. Consumer fixtures supply
 local organization and empty-session metadata. Other Polygraph agent backends,
 hosted semantic search and remote repository management were not verified.
-These two profiles do not add cancellation, session-reuse or incremental-terminal
-output claims.
+The clean hosted [run 36740569377](https://github.com/trevordilley/cordyceps/actions/runs/36740569377)
+also passed both profiles, using Polygraph runtime `2609.29.0017` after its
+upstream update. These two profiles do not add cancellation, session-reuse or
+incremental-terminal output claims.
 
 The excluded source identities are:
 

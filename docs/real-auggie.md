@@ -50,8 +50,8 @@ The other tool, stream and cancellation cases passed. The codec now recognizes
 that exact auxiliary path so the existing consumer's explicit 404 script can
 reject remote indexing while retaining the request and its response in the
 shared capture/failure lifecycle. An unhandled probe still fails; the consumer
-does not filter it out. The correction awaits a fresh hosted rerun and is not
-itself a new passing runtime result.
+does not filter it out. The correction passed all four real cases in
+[hosted run 36739752968](https://github.com/trevordilley/cordyceps/actions/runs/36739752968).
 
 ## Source evidence
 
