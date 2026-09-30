@@ -1,0 +1,770 @@
+{
+  "scope": "Pinned named terminal-agent inventories. Launching an agent in an orchestrator does not establish Cordyceps model control. Custom arbitrary commands and orchestrator UI are not implied.",
+  "sources": [
+    {
+      "id": "superset",
+      "repository": "https://github.com/superset-sh/superset",
+      "commit": "3049a3114bd1ae48b944aae3e4cafdb0f521d1a5",
+      "path": "packages/shared/src/builtin-terminal-agents.ts",
+      "sha256": "a0c96c3360f458ca1405d406bfcde25065af4ea5da8e5d96d312785b71bc836b",
+      "entries": [
+        "claude",
+        "amp",
+        "codex",
+        "gemini",
+        "mastracode",
+        "opencode",
+        "omp",
+        "pi",
+        "copilot",
+        "vibe",
+        "kimi",
+        "grok",
+        "cursor-agent",
+        "droid",
+        "polygraph",
+        "kiro",
+        "agy",
+        "fx",
+        "hermes",
+        "muse",
+        "devin",
+        "ufo"
+      ]
+    },
+    {
+      "id": "orca",
+      "repository": "https://github.com/stablyai/orca",
+      "commit": "98039676f363d6f0c06dbed25f3180463e5952af",
+      "path": "src/shared/tui-agent.ts",
+      "sha256": "8bf5dbf10b5384eccd681804e17d4775a10e9cc0e9382904e89b9da6e1460ca1",
+      "entries": [
+        "claude",
+        "claude-agent-teams",
+        "codebuddy",
+        "openclaude",
+        "codex",
+        "autohand",
+        "opencode",
+        "opencode2",
+        "mimo-code",
+        "pi",
+        "omp",
+        "qoder",
+        "gemini",
+        "antigravity",
+        "aider",
+        "goose",
+        "amp",
+        "kilo",
+        "kiro",
+        "crush",
+        "aug",
+        "cline",
+        "codebuff",
+        "freebuff",
+        "command-code",
+        "continue",
+        "cursor",
+        "droid",
+        "kimi",
+        "mistral-vibe",
+        "qwen-code",
+        "rovo",
+        "hermes",
+        "openclaw",
+        "copilot",
+        "grok",
+        "devin",
+        "ante",
+        "trae",
+        "muse",
+        "zcode",
+        "prime-agent",
+        "dsh"
+      ]
+    },
+    {
+      "id": "orca-docs",
+      "url": "https://www.onorca.dev/docs/agents/supported",
+      "note": "Public table also names MiniMax, absent from pinned TuiAgent union; investigate identity separately.",
+      "entries": [
+        "minimax"
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "id": "claude-code",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "claude"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "claude"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "claude-code",
+      "evidence": [
+        "docs/real-cli.md",
+        "examples/real-cli/evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "amp",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "amp"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "amp"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "amp",
+      "evidence": [
+        "docs/real-gated-agents.md",
+        "examples/real-gated-agents/amp-evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "codex",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "codex"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "codex"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "codex",
+      "evidence": [
+        "docs/real-cli.md",
+        "examples/real-cli/evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "gemini",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "gemini"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "gemini"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "gemini",
+      "evidence": [
+        "docs/real-google-agents.md",
+        "examples/real-google-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "mastracode",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "mastracode"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "opencode",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "opencode"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "opencode"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "opencode",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "omp",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "omp"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "omp"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "pi",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "pi"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "pi"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "copilot",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "copilot"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "copilot"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "copilot",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "mistral-vibe",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "vibe"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "mistral-vibe"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "mistral-vibe",
+      "evidence": [
+        "docs/real-google-agents.md",
+        "examples/real-google-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "kimi",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "kimi"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "kimi"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "grok",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "grok"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "grok"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "cursor",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "cursor-agent"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "cursor"
+        }
+      ],
+      "status": "excluded",
+      "reason": "Remote agent service; local model injection not established.",
+      "evidence": [
+        "docs/real-cursor.md"
+      ]
+    },
+    {
+      "id": "droid",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "droid"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "droid"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "droid",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "polygraph",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "polygraph"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "amazon-q",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "kiro"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "kiro"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "amazon-q",
+      "evidence": [
+        "docs/real-q.md",
+        "examples/real-q/evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "antigravity",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "agy"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "antigravity"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "antigravity",
+      "evidence": [
+        "docs/real-gated-agents.md",
+        "examples/real-gated-agents/antigravity-evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "fx",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "fx"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "hermes",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "hermes"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "hermes"
+        }
+      ],
+      "status": "verified-new",
+      "recipe": "hermes",
+      "evidence": [
+        "docs/real-local-agents.md",
+        "examples/real-local-agents/evidence.json"
+      ]
+    },
+    {
+      "id": "muse",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "muse"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "muse"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "devin",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "devin"
+        },
+        {
+          "orchestrator": "orca",
+          "id": "devin"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "ufo",
+      "sources": [
+        {
+          "orchestrator": "superset",
+          "id": "ufo"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "claude-agent-teams",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "claude-agent-teams"
+        }
+      ],
+      "status": "excluded-mode",
+      "reason": "Orca native-pane team orchestration is a separate unverified launch mode; plain Claude Code proof is not team lifecycle proof.",
+      "evidence": [
+        "docs/orchestrator-agents.md"
+      ]
+    },
+    {
+      "id": "codebuddy",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "codebuddy"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "openclaude",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "openclaude"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "autohand",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "autohand"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "opencode2",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "opencode2"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "mimo-code",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "mimo-code"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "qoder",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "qoder"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "aider",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "aider"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "aider",
+      "evidence": [
+        "docs/real-editor-agents.md",
+        "examples/real-editor-agents/evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "goose",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "goose"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "goose",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "kilo",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "kilo"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "crush",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "crush"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "crush",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "auggie",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "aug"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "auggie",
+      "evidence": [
+        "docs/real-auggie.md",
+        "examples/real-auggie/evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "cline",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "cline"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "cline",
+      "evidence": [
+        "docs/real-editor-agents.md",
+        "examples/real-editor-agents/evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "codebuff",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "codebuff"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "freebuff",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "freebuff"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "command-code",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "command-code"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "continue",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "continue"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "qwen",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "qwen-code"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "qwen",
+      "evidence": [
+        "docs/real-google-agents.md",
+        "examples/real-google-agents/observations.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "rovo-dev",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "rovo"
+        }
+      ],
+      "status": "verified-existing",
+      "recipe": "rovo-dev",
+      "evidence": [
+        "docs/real-gated-agents.md",
+        "examples/real-gated-agents/rovo-evidence.json"
+      ],
+      "note": "Native harness evidence only; orchestrator application and its exact launch defaults were not exercised."
+    },
+    {
+      "id": "openclaw",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "openclaw"
+        }
+      ],
+      "status": "verified-new",
+      "recipe": "openclaw",
+      "evidence": [
+        "docs/real-local-agents.md",
+        "examples/real-local-agents/evidence.json"
+      ]
+    },
+    {
+      "id": "ante",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "ante"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "trae",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "trae"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "zcode",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "zcode"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "prime-agent",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "prime-agent"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "dsh",
+      "sources": [
+        {
+          "orchestrator": "orca",
+          "id": "dsh"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "minimax",
+      "sources": [
+        {
+          "orchestrator": "orca-docs",
+          "id": "minimax"
+        }
+      ],
+      "status": "pending"
+    }
+  ]
+}

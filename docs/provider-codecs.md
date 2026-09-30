@@ -226,3 +226,15 @@ or upstream request. Unknown methods fail visibly. The installed Amp agent owns
 its model loop and executes the real `Read` tool; the local mock supplies only
 provider replies and explicit bootstrap metadata. See [reproduction and the
 buffered CLI output limit](real-gated-agents.md).
+
+## Hermes local metadata probes
+
+`hermes` delegates `/v1/chat/completions` to Chat Completions and captures the
+real client's local model metadata probes: `GET /api/v1/models`, `/api/tags`,
+`/v1/props`, `/props`, `/version`, `/v1/models`, `/models`, a single model
+segment under `/v1/models/`, and `POST /api/show`. These are narrow observed
+paths, not an arbitrary HTTP proxy. Metadata replies require explicit JSON
+object text or a scripted HTTP error. The [real consumer](real-local-agents.md)
+answers the probes with 404s, scripts title generation separately, and verifies
+native file reading and incremental output. Unsupported requests still fail;
+the library never contacts or discovers an upstream model server.
