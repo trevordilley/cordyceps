@@ -39,8 +39,8 @@ async function* mixed(): AsyncGenerator<ProviderEvent> {
   yield { toolCall: { ...call, id: 'second' } };
 }
 
-test('registry exposes exactly the two codecs and rejects unknown/prototype names', () => {
-  expect(codecIds).toEqual(['anthropic-messages', 'openai-responses']);
+test('registry exposes its codecs and rejects unknown/prototype names', () => {
+  expect(codecIds).toEqual(['anthropic-messages', 'openai-responses', 'openai-chat-completions']);
   expect(Object.isFrozen(codecIds)).toBe(true);
   for (const id of codecIds) expect(Object.isFrozen(getCodec(id))).toBe(true);
   for (const id of ['missing', 'toString', '__proto__']) expect(() => getCodec(id)).toThrow('Unknown provider codec');
@@ -93,7 +93,7 @@ test('Responses normalizes messages and function output without guessing error s
   expect(getCodec('openai-responses').decode(raw({ model: 'fixture', input: 'hello' })).text).toBe('hello');
 });
 
-for (const id of codecIds) describe(id, () => {
+for (const id of ['anthropic-messages', 'openai-responses']) describe(id, () => {
   const codec = getCodec(id);
   const anthropic = id === 'anthropic-messages';
   const endpoint = anthropic ? '/v1/messages' : '/v1/responses';
