@@ -34,3 +34,28 @@ UFO_BINARY=/tmp/cordyceps-ufo node examples/real-source-agents/boundaries/ufo.mj
 ```
 
 [Diagnostic](../examples/real-source-agents/boundaries/ufo.mjs) and [actual evidence](../examples/real-source-agents/boundaries/ufo-evidence.json). This diagnostic does not count as a passing integration or a packed-consumer success.
+
+## Freebuff: verified native TUI and BYOK
+
+Orca links [Freebuff's official CLI page](https://freebuff.com/cli), which names npm package `freebuff`. Tested release **0.2.0**, its actual macOS arm64 compiled binary, not the sibling Codebuff identity. The package's bundled launcher selects `https://codebuff.com/api/releases/download/0.2.0/freebuff-darwin-arm64.tar.gz`. The archive matched the SHA-256 published inside the npm package: `831b2dfb3ef66aafb095677ec1378d5cb4df4c4dc4899b35beedd0c7b937060f`. Extracted binary SHA-256: `953a08ff72ca64c8a9d8b532624cdfc6f0a82d1874c434ebe94ffc30e77de041`.
+
+The [official source](https://github.com/CodebuffAI/codebuff/blob/a272f23fdef9f09fd6682a93279f3dcd288eaefd/sdk/src/byok.ts) defines `FREEBUFF_BYOK_CONFIG_DIR/connections.json`, a JSON array with connection UUID/revision, OpenAI-compatible URL/model, context/output limits and an environment credential reference. Native `FREEBUFF_CONFIG_DIR/settings.json` selects that connection. [CLI selection](https://github.com/CodebuffAI/codebuff/blob/a272f23fdef9f09fd6682a93279f3dcd288eaefd/cli/src/utils/byok.ts) permits a BYOK session without hosted account authentication. The local model loop uses Chat Completions. No login, account creation, billing or remote-agent response fabrication is involved.
+
+The native CLI is TUI-only. A consumer-owned Python PTY waits for the real `Enter a coding task` composer, submits actual input, handles terminal capability queries and captures terminal output. The verifier observes controlled text (one model request), then separately issues native `read_files` and requires the random fixture token in the next main request (two requests). Freebuff rewrites model tool-call IDs while storing native history; the verifier correlates the returned ID to the actual assistant `read_files` call and its exact fixture argument, then checks the corresponding tool result. It never assumes an invented result. The persistent TUI is deliberately closed after the marker appears; this establishes text/read workflows, not graceful session completion, cancellation semantics or incremental streaming.
+
+```sh
+mkdir -p /tmp/cordyceps-freebuff-bin
+curl -fLsS https://codebuff.com/api/releases/download/0.2.0/freebuff-darwin-arm64.tar.gz -o /tmp/cordyceps-freebuff.tar.gz
+shasum -a 256 /tmp/cordyceps-freebuff.tar.gz
+# Verify the archive equals 831b2dfb3ef66aafb095677ec1378d5cb4df4c4dc4899b35beedd0c7b937060f before extraction.
+tar -xzf /tmp/cordyceps-freebuff.tar.gz -C /tmp/cordyceps-freebuff-bin
+hivecontrol exec oneshot 3m -- env FREEBUFF_BINARY=/tmp/cordyceps-freebuff-bin/freebuff node examples/real-source-agents/freebuff/run.mjs /tmp/freebuff.json
+```
+
+[Consumer](../examples/real-source-agents/freebuff/consumer.mjs), [declarative recipe](../examples/real-source-agents/freebuff/harnesses/freebuff.json), [PTY driver](../examples/real-source-agents/freebuff/drive-pty.py) and [packed evidence](../examples/real-source-agents/freebuff/evidence.json). The recipe generates both native files, including the array-root connection file. That exposed a real library gap: JSON config definitions previously required object roots. The parent supplied tested array-root JSON support; TOML remains object-only and scalar JSON roots remain rejected. Freebuff's configuration is now ordinary declarative injection; the consumer owns only the process, PTY, fixtures, isolation and assertions.
+
+## CodeBuddy and Qoder
+
+[Detailed reproduction and exact boundaries](real-source-codebuddy-qoder.md) cover `@tencent-ai/codebuddy-code` **2.160.0** and `@qoder-ai/qodercli` **1.1.64**. Both CodeBuddy aliases, `codebuddy` and `cbc`, independently pass packed text and native `Read` checks (one/two provider requests). The observed protocol is Chat Completions at `/v1/chat/completions`, even though the selected model name is Claude. Both aliases count as one roster identity.
+
+Qoder is excluded for this account-free workflow. Its actual `qodercli` print mode emits `authentication_failed` before local model traffic, both without credentials and with native local custom-model settings. A test personal access token goes through the real `exchangePersonalToken` / `loginWithPAT` path toward `openapi.qoder.sh`; the loopback diagnostic proxy rejects that connection. The probes do not create authentication, model entitlements or remote decisions. No Qoder recipe is supplied, and no Qodo result is reused.
