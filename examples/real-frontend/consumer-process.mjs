@@ -2,7 +2,7 @@
 import { spawn, execFileSync } from 'node:child_process';
 import { mkdir, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join, isAbsolute } from 'node:path';
+import { join, dirname, isAbsolute } from 'node:path';
 
 // Fail closed on unsupported platforms: this example's verified network boundary
 // is macOS Seatbelt. Only the mock's loopback port is reachable by the harness.
@@ -30,7 +30,7 @@ export async function createConsumerProcess(ai) {
     await mkdir(config, { recursive: true });
     await mkdir(cwd);
     const env = ai.environment({
-      PATH: '/usr/bin:/bin', HOME: home, TMPDIR: root,
+      PATH: `${dirname(process.execPath)}:/usr/bin:/bin`, HOME: home, TMPDIR: root,
       XDG_CONFIG_HOME: join(home, '.config'), CLAUDE_CONFIG_DIR: config,
       LANG: 'en_US.UTF-8', CI: '1', DISABLE_AUTOUPDATER: '1',
       // Match the verified installed-CLI recipe: suppress ancillary connectivity

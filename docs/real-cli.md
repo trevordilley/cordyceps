@@ -127,3 +127,5 @@ transcript, arguments, and empty request list. The current repro exits nonzero
 after its 20-second bound and verifies cleanup. No paid provider fallback or
 user configuration change was used. The default four-case command excludes
 these PTY probes and does not require Python.
+
+The verifier accepts `CLAUDE_BINARY` and `CODEX_BINARY` as explicit consumer-owned executable paths; otherwise it uses the current PATH. Its isolated child PATH includes the actual Node runtime running the consumer, so an npm-installed CLI with an `/usr/bin/env node` launcher works without inheriting the full user environment. Native executable paths are recorded with each case.

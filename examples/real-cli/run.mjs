@@ -29,7 +29,7 @@ try {
   await copyFile(join(repo, 'examples/real-cli/drive-pty.py'), join(consumer, 'drive-pty.py'));
   const binaries = {};
   if (process.argv[3]?.startsWith('--interactive')) binaries.python = run('/usr/bin/which', ['python3']).trim();
-  for (const name of ['claude', 'codex']) binaries[name] = run('/usr/bin/which', [name]).trim();
+  for (const name of ['claude', 'codex']) binaries[name] = process.env[`${name.toUpperCase()}_BINARY`] ?? run('/usr/bin/which', [name]).trim();
   const installed = JSON.parse(await readFile(join(consumer, 'node_modules/cordyceps/package.json'), 'utf8'));
   assert.equal(installed.name, 'cordyceps');
   console.log(run(process.execPath, ['consumer.mjs', evidence, JSON.stringify(binaries), JSON.stringify({

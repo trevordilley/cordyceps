@@ -70,7 +70,9 @@ try {
         const secret = `fixture-${randomUUID()}`;
         await writeFile(fixturePath, secret + '\n');
         ai = await cordyceps.prepare({ harness, mode: scenario === 'interactive' ? 'interactive' : 'nonInteractive' });
-        const env = ai.environment({ PATH: '/usr/bin:/bin:/usr/sbin:/sbin', HOME: home,
+        // npm-installed CLI launchers may use /usr/bin/env node. Supply this
+        // consumer's known Node runtime without inheriting the user's full PATH.
+        const env = ai.environment({ PATH: `${dirname(process.execPath)}:/usr/bin:/bin:/usr/sbin:/sbin`, HOME: home,
           TMPDIR: root, TERM: 'xterm-256color', XDG_CONFIG_HOME: join(home, '.config'), SHELL: '/bin/sh',
           CLAUDE_CONFIG_DIR: join(home, '.claude'), DISABLE_AUTOUPDATER: '1',
           NO_PROXY: '127.0.0.1,localhost', no_proxy: '127.0.0.1,localhost',
@@ -86,6 +88,7 @@ try {
           await writeFile(join(env.CLAUDE_CONFIG_DIR, '.claude.json'), JSON.stringify(config));
         }
         const binary = binaries[harness === 'codex' ? 'codex' : 'claude'];
+        record.binary = binary;
         record.version = await launch(binary, ['--version'], work, env);
         assert.equal(record.version.code, 0, record.version.stderr);
         assert.ok(record.version.stdout.trim(), 'version probe returned no version');
