@@ -208,8 +208,11 @@
       "family": "amp",
       "label": "Amp",
       "platform": "native",
-      "status": "pending",
-      "evidence": []
+      "status": "verified",
+      "evidence": [
+        "docs/real-gated-agents.md",
+        "examples/real-gated-agents/amp-evidence.json"
+      ]
     },
     {
       "enum": "AMP_WSL",

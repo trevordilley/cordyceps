@@ -2,7 +2,7 @@
 
 `src/provider/index.ts` exports `codecIds` and `getCodec(id)`. The IDs are
 `anthropic-messages`, `openai-responses`, `openai-chat-completions`, and
-`google-genai`, `amazon-q`, `augment`, and `atlassian-rovo`; unknown IDs throw. Their shared
+`google-genai`, `amazon-q`, `augment`, `atlassian-rovo`, and `amp-service`; unknown IDs throw. Their shared
 interfaces live in `src/provider/types.ts`.
 Both the ID list and codec singleton objects are frozen, so callers cannot
 replace codec methods globally and affect another session.
@@ -213,3 +213,16 @@ that object, rejecting arrays, null, ordinary model text and other response
 kinds. It does not make a moderation, billing or authentication decision.
 The [Rovo consumer](real-gated-agents.md) selects the installed `acli` plugin
 directly with scratch SLAUTH settings; it never uses a real account or service.
+
+
+## Amp service gateway
+
+`amp-service` delegates `/api/provider/anthropic/v1/messages` to the Anthropic
+codec while retaining the original raw request. Four exact `/api/internal?NAME`
+POST operations are captured: `getUserInfo`, `getThread`, `getUserFreeTierStatus`
+and `uploadThread`. As with Rovo, consumers explicitly script each service JSON
+object as text; there is no implicit account state, thread store, authentication
+or upstream request. Unknown methods fail visibly. The installed Amp agent owns
+its model loop and executes the real `Read` tool; the local mock supplies only
+provider replies and explicit bootstrap metadata. See [reproduction and the
+buffered CLI output limit](real-gated-agents.md).

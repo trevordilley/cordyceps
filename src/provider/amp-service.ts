@@ -22,6 +22,7 @@ export const ampService: ProviderCodec = Object.freeze({
     return { model: '', stream: false, text: object(body) && typeof body.prompt === 'string' ? body.prompt : '', tools: [], toolResults: [], body };
   },
   encode(request, response, signal) {
+    if (response.amazonQ !== undefined || response.augmentModels !== undefined) throw new TypeError('Amazon Q and Augment bootstrap replies are not supported by Amp');
     if (isChat(request.raw) || response.error !== undefined)
       return anthropicMessages.encode(request, response, signal);
     if (!auxiliary(request.raw.method, request.raw.path)) throw new TypeError('Unsupported Amp endpoint');

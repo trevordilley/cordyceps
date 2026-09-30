@@ -747,6 +747,70 @@
           }
         }
       ]
+    },
+    {
+      "group": "amp",
+      "artifact": {
+        "name": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-X0Zs/WkZH76qdyIR0rwo8YklXKoN5TZq9v+y8SjM3KJpd3VegTsHUttaGdj8D5l0vcppLwM+HW0rwty98Zm0yw==",
+        "shasum": "94c7daa4fa63249837d0fb6c61c82cdf09eb8fcd"
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-amp-manager.json",
+      "cases": [
+        {
+          "agent": "amp",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 9,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": null,
+            "incrementalBeforeTail": null,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "amp",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 10,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": true,
+            "incrementalBeforeTail": null,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "amp",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 9,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": null,
+            "incrementalBeforeTail": false,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "amp",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 7,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": null,
+            "incrementalBeforeTail": null,
+            "providerAborted": true
+          }
+        }
+      ]
     }
   ]
 }

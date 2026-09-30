@@ -38,3 +38,12 @@ test('Amp never invents account/thread state; service JSON is explicitly supplie
   const error = ampService.encode(request, { error: { status: 401, message: 'test auth failure' } }, signal);
   expect(error.status).toBe(401);expect(await consume(error.body)).toContain('test auth failure');
 });
+
+
+test('Amp rejects unrelated provider bootstrap branches even alongside JSON text', () => {
+  const request = capture(raw('/api/internal?getUserInfo'));
+  for (const branch of [{ amazonQ: { models: [] } }, { augmentModels: { defaultModel: 'fixture' } }]) {
+    const response = { text: '{}', ...branch } as Parameters<typeof ampService.encode>[1];
+    expect(() => ampService.encode(request, response, new AbortController().signal)).toThrow('not supported by Amp');
+  }
+});

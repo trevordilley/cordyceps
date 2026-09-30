@@ -54,7 +54,8 @@
     "test:real-q": "node examples/real-q/run.mjs",
     "test:real-auggie": "node examples/real-auggie/verify.mjs",
     "test:real-plandex": "node examples/real-plandex/run.mjs",
-    "test:real-rovo": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-rovo.json --rovo"
+    "test:real-rovo": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-rovo.json --rovo",
+    "test:real-amp": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-amp.json --amp"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

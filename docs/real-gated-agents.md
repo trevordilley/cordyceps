@@ -83,7 +83,7 @@ Qodo's installed `dist/auth/index.js` defines `QODO_API_BASE_URL`, and `dist/uti
 
 ## Rovo native gateway validation
 
-[Committed evidence](../examples/real-gated-agents/rovo-evidence.json) captures every command, native stdout/stderr, request body and scripted response. Run `--rovo` to reproduce. The consumer explicitly invokes the **same installed** `atlassian_cli_rovodev` plugin behind `acli rovodev`; this is not evidence that the wrapper accepts test credentials. The observed plugin path is configurable with `CORDYCEPS_ROVO_BINARY`.
+[Committed evidence](../examples/real-gated-agents/rovo-evidence.json) retains selected native output, request hashes, tool results and assertions plus the full evidence hash. Run `--rovo` to reproduce all commands, raw requests and scripted responses in a caller-selected evidence file. The consumer explicitly invokes the **same installed** `atlassian_cli_rovodev` plugin behind `acli rovodev`; this is not evidence that the wrapper accepts test credentials. The observed plugin path is configurable with `CORDYCEPS_ROVO_BINARY`.
 
 Read-only inspection of the installed PyInstaller archive (`nemo.utils.ai_gateway`, `rovodev.common.environment`, policy and usage modules) revealed `AUTH_METHOD=slauth`, `AI_GATEWAY_SLAUTH_TOKEN`, `MESH_DEPENDENCY_AI_GATEWAY_BASE_URL`, and `ROVO_DEV_PROXY_BASE_URL`. A test token plus loopback URLs reaches local service routes. `USER_EMAIL` and `USER_API_TOKEN` must be absent because their presence selects the different API-token/site-selection flow. The recipe isolates HOME and removes competing auth inputs; no actual Atlassian credentials or token generator is used.
 

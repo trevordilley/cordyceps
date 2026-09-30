@@ -26,7 +26,7 @@ The table is finalized with the accompanying machine-readable evidence after eac
 | Aider (`aider`) | [Passed](real-editor-agents.md) | aider / openai-chat-completions | Real shell read after explicit stdin consent; result appears in conversation text. |
 | Goose (`goose`) | [Passed](real-provider-agents.md) | goose / anthropic-messages | Real `shell` read; separate title requests. |
 | Cursor (`cursor-agent`) | In progress | — / — | Service and authentication boundary under investigation. |
-| Amp (`amp`) | In progress | — / — | Custom provider/service configuration under investigation. |
+| Amp (`amp`) | [Passed](real-gated-agents.md) | amp / amp-service | Real `Read`; explicit service bootstrap; selected CLI buffers stdout. |
 | GitHub Copilot CLI (`copilot`) | [Passed](real-provider-agents.md) | copilot / anthropic-messages | Real `view` read; incremental output and process cancellation. |
 | Mistral Vibe (`vibe`) | [Passed](real-google-agents.md) | mistral-vibe / openai-chat-completions | Real `read_file`; selected headless mode requests nonstreaming JSON. |
 | Qwen Code (`qwen`) | [Passed](real-google-agents.md) | qwen / openai-chat-completions | Real `read_file`; incremental output and process cancellation. |
@@ -51,6 +51,7 @@ Use real Node >=22 first on PATH. The known DevSwarm shell's default `node` is a
 - [Amazon Q / installed Kiro wrapper](real-q.md): `node examples/real-q/run.mjs /tmp/q.json`.
 - [Auggie](real-auggie.md): `node examples/real-auggie/verify.mjs /tmp/auggie.json`.
 - [Plandex](real-plandex.md): bootstrap the real CLI/backend, then `node examples/real-plandex/run.mjs /tmp/plandex.json "$PLANDEX_TEST_SOURCE"`.
+- [Amp](real-gated-agents.md): `node examples/real-gated-agents/run.mjs /tmp/amp.json --amp`.
 - [Rovo Dev](real-gated-agents.md): `node examples/real-gated-agents/run.mjs /tmp/rovo.json --rovo`.
 - [Antigravity](real-gated-agents.md): `node examples/real-gated-agents/run.mjs /tmp/agy.json --antigravity`.
 - [Aider and Cline](real-editor-agents.md): `node examples/real-editor-agents/verify.mjs /tmp/editors.json`.
