@@ -1,0 +1,99 @@
+{
+  "sourceRosterCommit": "98039676f363d6f0c06dbed25f3180463e5952af",
+  "scratchLockSha256": "21cc27419de312ed71dcf7067d35931db936eb856686e93b953898e29a504e8f",
+  "packages": [
+    {
+      "name": "@opencode-ai/cli",
+      "version": "0.0.0-beta-19271",
+      "resolved": "https://registry.npmjs.org/@opencode-ai/cli/-/cli-0.0.0-beta-19271.tgz",
+      "integrity": "sha512-n1QkNyeDOTroOn0UOftJKFTdg7sLruqSS7wKGT5YB6qCqZiZE7udFs8fL8JcFAFs4ZYQoneQlnSJho7ABQKWAg==",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anomalyco/opencode.git"
+      },
+      "bin": {
+        "opencode2": "./bin/opencode2.exe"
+      }
+    },
+    {
+      "name": "@opencode-ai/cli-darwin-arm64",
+      "version": "0.0.0-beta-19271",
+      "resolved": "https://registry.npmjs.org/@opencode-ai/cli-darwin-arm64/-/cli-darwin-arm64-0.0.0-beta-19271.tgz",
+      "integrity": "sha512-CHfMY/7pPq4Andvrif34tC/N9mFppSujjscVISVOSMc/twAvkIGGfDUZgU65qHDsifSnt6+IJr3NZ2AbPzWOfA==",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anomalyco/opencode.git"
+      },
+      "bin": null
+    },
+    {
+      "name": "@mimo-ai/cli",
+      "version": "0.1.15",
+      "resolved": "https://registry.npmjs.org/@mimo-ai/cli/-/cli-0.1.15.tgz",
+      "integrity": "sha512-CQvkpMTKOrDDnM1tVrHAFrIbvUIHZVUwyzyPvOy1B311aVz/bdZ8zHP31xQqcFDIzub4APptjRESful9RploEw==",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/XiaomiMiMo/MiMo-Code.git"
+      },
+      "bin": {
+        "mimo": "./bin/mimo"
+      }
+    },
+    {
+      "name": "@mimo-ai/mimocode-darwin-arm64",
+      "version": "0.1.15",
+      "resolved": "https://registry.npmjs.org/@mimo-ai/mimocode-darwin-arm64/-/mimocode-darwin-arm64-0.1.15.tgz",
+      "integrity": "sha512-euWpZVU9r6pzLEQBspzfwYJG5u20/N6yFG2EG6Ovd/i2rySETJ0ohmiqyKPaYzeKe2oK6BlJPsfkw3TDDYhbTQ==",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/XiaomiMiMo/MiMo-Code.git"
+      },
+      "bin": null
+    },
+    {
+      "name": "@deepseek-ai/dsh",
+      "version": "0.2.0-rc.2",
+      "resolved": "https://registry.npmjs.org/@deepseek-ai/dsh/-/dsh-0.2.0-rc.2.tgz",
+      "integrity": "sha512-EAJ3gPNcVt/uv8X19PMm9NkVhWgT7xXNMk0UKCVm+IQ5rpSQOcsMUa0HWlnYYVybKMsccjcRB21vVVsaXQ6IdA==",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+        "directory": "apps/cli"
+      },
+      "bin": {
+        "dsh": "lib/bin.js"
+      }
+    },
+    {
+      "name": "@deepseek-ai/dsh-llm-deepseek",
+      "version": "0.2.0-rc.2",
+      "resolved": "https://registry.npmjs.org/@deepseek-ai/dsh-llm-deepseek/-/dsh-llm-deepseek-0.2.0-rc.2.tgz",
+      "integrity": "sha512-Vk0oz0qAXYLC/tKoGfhRioank4FNX0Xdx8oDYduKL1HDf2tO72X+Nrq7hZaJp9nwvXCcg5TnPRIvE8ETZ98C5g==",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+        "directory": "packages/llm/llm-deepseek"
+      },
+      "bin": null
+    },
+    {
+      "name": "@deepseek-harness-tui/dsh-tui",
+      "version": "0.12.0",
+      "resolved": "https://registry.npmjs.org/@deepseek-harness-tui/dsh-tui/-/dsh-tui-0.12.0.tgz",
+      "integrity": "sha512-T6SSLacZL1w8+I0YHUgCI//rfGrWjs12qhesRIXeG849+OSkr6bwzwl6GfMdpWSjWxQLwBpzZWEkYKa5mw2/OQ==",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/ccch1mneyyy/dsh-TUI.git"
+      },
+      "bin": {
+        "dsh-tui": "./bin/dsh-tui.js",
+        "dst": "./bin/dsh-tui.js"
+      }
+    }
+  ],
+  "consumerTerminalRenderer": {
+    "name": "@xterm/headless",
+    "version": "6.0.0",
+    "role": "Consumer-owned terminal rendering; not Cordyceps runtime dependency"
+  }
+}

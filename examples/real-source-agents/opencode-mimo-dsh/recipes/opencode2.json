@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "opencode2",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "XDG_CONFIG_HOME": "${session.dir}/config",
+        "ANTHROPIC_API_KEY": "${mock.apiKey}",
+        "ANTHROPIC_BASE_URL": "${mock.baseUrl}/v1",
+        "OPENCODE_DISABLE_AUTOUPDATE": "true",
+        "OPENCODE_DISABLE_MODELS_FETCH": "true"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "config/opencode/opencode.json",
+          "format": "json",
+          "values": {
+            "model": "anthropic/claude-sonnet-4-5",
+            "providers": {
+              "anthropic": {
+                "settings": {
+                  "baseURL": "${mock.baseUrl}/v1",
+                  "apiKey": "${mock.apiKey}"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "run",
+        "--standalone"
+      ]
+    },
+    "interactive": {
+      "args": [
+        "--standalone"
+      ]
+    }
+  }
+}
