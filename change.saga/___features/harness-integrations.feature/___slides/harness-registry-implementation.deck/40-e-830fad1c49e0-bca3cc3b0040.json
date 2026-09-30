@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/minimax.json",
+      "start": 1,
+      "end": 41,
+      "digest": "sha256:a80a0886e56fb890fd2c5f3c661d6b212b3542ed51fa15185e2677de31f4cd24",
+      "note": "Data-only injection recipe for observed minimax profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/omp.json",
+      "start": 1,
+      "end": 57,
+      "digest": "sha256:d902aa805de458ac4f2b320d604058aae55af51c32e9500d2a7a36554e3a49e8",
+      "note": "Data-only injection recipe for observed omp profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

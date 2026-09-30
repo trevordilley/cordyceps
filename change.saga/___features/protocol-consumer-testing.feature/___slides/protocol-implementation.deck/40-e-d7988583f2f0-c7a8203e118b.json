@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
       "path": "docs/verification.md",
-      "digest": "sha256:8feb46a6cd915f54a8dd69f16462de1123f861a7e62f67147d6adc7fcbc67b01",
+      "digest": "sha256:7e978833c43a273cfd51757b78940e6f0ea1c86dfd037cec33bf67b077145528",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

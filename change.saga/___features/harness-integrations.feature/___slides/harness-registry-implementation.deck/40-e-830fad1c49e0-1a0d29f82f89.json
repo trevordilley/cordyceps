@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/mimo.json",
+      "start": 1,
+      "end": 54,
+      "digest": "sha256:0cd72858a4271448d4e712d4b21671ea12fc2d92a497d1b59296ab96177cf0c2",
+      "note": "Data-only injection recipe for observed mimo profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

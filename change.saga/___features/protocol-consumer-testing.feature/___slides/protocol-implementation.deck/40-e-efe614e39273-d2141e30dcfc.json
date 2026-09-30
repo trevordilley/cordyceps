@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-extra-cli/run.mjs",
+      "start": 1,
+      "end": 31,
+      "digest": "sha256:edb96a8766ed3012ce1236fcace8cd0bf02e70c81f20e0b1791c498e092bbe0d",
+      "note": "Consumer builds and installs a packed artifact in an isolated project, passes executable/context inputs, and cleans owned scratch state."
+    }
+  ]
+}

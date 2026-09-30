@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "docs/orchestrator-agents.md",
+      "start": 1,
+      "end": 114,
+      "digest": "sha256:cd0897e1379169f4c876c655054f59fa51f00af0a391eab341469f4d80560512",
+      "note": "Exact source-roster accounting, 43 local profiles, Codebuff source-only qualification, Polygraph-to-Claude scope, and diagnostic exclusions."
+    }
+  ]
+}

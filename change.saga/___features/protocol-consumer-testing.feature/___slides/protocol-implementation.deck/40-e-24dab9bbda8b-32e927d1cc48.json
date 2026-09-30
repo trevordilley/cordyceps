@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "tests/codecs.test.ts",
-      "digest": "sha256:78bb774faf31dc950f8a78ca50597c06c1755082df5f2709819149023729c6a4",
+      "digest": "sha256:942fa83e31ee905804aee2777ace25d48cd5a16312f95edbf552eb03784195de",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

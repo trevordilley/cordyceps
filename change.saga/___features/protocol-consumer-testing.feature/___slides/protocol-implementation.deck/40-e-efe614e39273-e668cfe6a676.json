@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-source-agents/codebuddy-qoder/consumer.mjs",
+      "start": 1,
+      "end": 89,
+      "digest": "sha256:e400d74e47a604d84783e8992c3a7ee6d4aeee0cf6eb9b50582defa53760c867",
+      "note": "Real consumer controls provider replies and asserts captured prompts, native output, actual fixture results in subsequent requests, and owned cleanup."
+    }
+  ]
+}

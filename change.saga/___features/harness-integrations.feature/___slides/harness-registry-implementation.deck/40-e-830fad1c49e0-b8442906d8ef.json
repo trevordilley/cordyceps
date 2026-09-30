@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/openclaude.json",
+      "start": 1,
+      "end": 32,
+      "digest": "sha256:85731f2480b622ac5820ef83a3561c5aac77f5c12a9406e66a6bfacf62f4a066",
+      "note": "Data-only injection recipe for observed openclaude profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

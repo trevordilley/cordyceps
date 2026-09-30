@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "src/provider/augment.ts",
       "start": 1,
       "end": 67,
-      "digest": "sha256:78780a1930be7e740c3442720ddaa2556a3c5b3c37e2a113d40db741e780c034",
+      "digest": "sha256:bbeee66a43fa65496cac137b4d6a086000ad8b5630114b41bcb24b9f80f0b099",
       "note": "Native provider normalization and scripted wire encoding; the codec owns framing, never real tool execution."
     }
   ]

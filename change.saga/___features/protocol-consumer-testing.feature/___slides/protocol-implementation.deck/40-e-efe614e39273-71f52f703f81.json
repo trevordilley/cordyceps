@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-pi-agents/run.mjs",
+      "start": 1,
+      "end": 38,
+      "digest": "sha256:2e6e1674c03c3f8fabdb58adc577344813fe05e09a21ee5903d001e5968d1619",
+      "note": "Consumer builds and installs a packed artifact in an isolated project, passes executable/context inputs, and cleans owned scratch state."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": ".github/workflows/ci.yml",
+      "start": 50,
+      "end": 85,
+      "digest": "sha256:67308addc80e9bcc789de29000254970defdd4398d6fb0dc3ad2645e141cfed1",
+      "note": "Hosted consumer groups invoke consumer-owned real integration setup and retain failure receipts as well as successes."
+    }
+  ]
+}

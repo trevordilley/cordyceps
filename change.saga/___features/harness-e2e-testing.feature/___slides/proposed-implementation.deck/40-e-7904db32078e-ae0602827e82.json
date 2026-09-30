@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "src/provider/hermes.ts",
+      "start": 1,
+      "end": 34,
+      "digest": "sha256:518e17eebd424d44cfe22c661be3d9ff9aed33c6ec7b64a34a6152ebf75a6348",
+      "note": "Observed hermes auxiliary routes remain captured and require explicit consumer replies; model exchange delegates to the native provider codec."
+    }
+  ]
+}

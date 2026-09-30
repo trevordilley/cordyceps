@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-vendor-agents/run.mjs",
+      "start": 1,
+      "end": 19,
+      "digest": "sha256:6f9dfe3b48306f73cb9c5f52e6e71dacf876e95462a910d3e03682bbf467dc00",
+      "note": "Consumer builds and installs a packed artifact in an isolated project, passes executable/context inputs, and cleans owned scratch state."
+    }
+  ]
+}

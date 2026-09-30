@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "id": "expanded-real-consumers-20260930",
+  "target": "urn:change-saga:cordyceps:fragment:harness-manifest-registry",
+  "kind": "test",
+  "statement": "Recorded packed-library consumers verify controlled text and real file reads for 43 native families/profiles: 18 from DevSwarm and 25 additions from Superset/Orca. Codebuff is source-only and Polygraph is its Claude profile. GitHub run 36740569377 at 8a8bbfe passes 34 families/107 native cases, real ACP and three browser tests; nine families retain local evidence only.",
+  "evidence": [
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "docs/orchestrator-agents.md",
+      "digest": "sha256:cd0897e1379169f4c876c655054f59fa51f00af0a391eab341469f4d80560512"
+    },
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "examples/orchestrator-agents/inventory.json",
+      "digest": "sha256:c2ee12ae8de1251204c93d7c4480a3a08d410770cb900e651f1d3d6d780ba4a2"
+    },
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "examples/orchestrator-agents/manager-verification.json",
+      "digest": "sha256:682d1c503bc6e3f49917921b45e37c9986109bec0dd064b286a46d0b268a7001"
+    },
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "examples/orchestrator-agents/hosted-verification.json",
+      "digest": "sha256:ba721ee5da131cec0182d50d7cc1a332d756e8e825e5ff32ef449e70174bd9e6"
+    },
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "examples/devswarm-agents/manager-verification.json",
+      "digest": "sha256:33c3ab2f98495562efcdbda246fa3d6d9b0c113fd5a8cf5b3ba413a742cec653"
+    }
+  ],
+  "created_at": "2026-09-30T16:10:37.445363Z"
+}

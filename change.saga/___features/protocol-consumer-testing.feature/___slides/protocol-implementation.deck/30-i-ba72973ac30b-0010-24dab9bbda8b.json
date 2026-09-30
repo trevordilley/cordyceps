@@ -5,7 +5,7 @@
   "rank": 10,
   "kind": "node",
   "label": "Focused synthetic tests",
-  "description": "Tests exercise injection validation/rendering, provider framing, held requests/streams, observations, isolation and cleanup. They do not substitute synthetic results for real tool execution evidence.",
+  "description": "Tests cover JSON array roots, Responses namespaces, provider framing, held requests/streams, isolation and cleanup. Synthetic results do not substitute for actual harness file-read evidence.",
   "selector": {
     "type": "element",
     "element_id": "units"

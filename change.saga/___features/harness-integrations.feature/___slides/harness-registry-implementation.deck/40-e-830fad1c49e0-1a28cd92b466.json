@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/command-code.json",
+      "start": 1,
+      "end": 43,
+      "digest": "sha256:5bf95de6a3875ac1b31d14447b497d0c3547f7c043bdb9f497108f5905732178",
+      "note": "Data-only injection recipe for observed command-code profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

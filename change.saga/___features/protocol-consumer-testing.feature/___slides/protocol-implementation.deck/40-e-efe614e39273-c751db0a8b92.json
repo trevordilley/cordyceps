@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
       "path": "docs/real-auggie.md",
       "start": 1,
-      "end": 46,
-      "digest": "sha256:3249e618af0aea5ab1dcb27207224df12a141413f1c5250e552ca5a591b15bdc",
+      "end": 60,
+      "digest": "sha256:f95da9873f68c662ae3edb77a905dd1393cc20ccd1315384e6e580c0fcb11030",
       "note": "Consumer-owned packed-artifact workflow and its reproduction evidence: real executable output and tool results, explicit setup and cleanup, with stated limits."
     }
   ]

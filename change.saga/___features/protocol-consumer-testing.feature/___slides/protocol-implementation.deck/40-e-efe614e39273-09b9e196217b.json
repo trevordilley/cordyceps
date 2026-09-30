@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "scripts/ci-additional-consumers.sh",
+      "start": 1,
+      "end": 119,
+      "digest": "sha256:d241332ac8591f5fda7251f73f77ead63d99a1ad14c9733c2bc1c0d357ec2708",
+      "note": "Consumer-owned ordinary dependency setup and grouped packed-artifact workflows, with scratch paths, explicit executable inputs and retained installation/failure provenance."
+    }
+  ]
+}

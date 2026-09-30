@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-source-agents/codebuddy-qoder/run.mjs",
+      "start": 1,
+      "end": 49,
+      "digest": "sha256:28fdb423c0c785564f20f75c56d914ef5b8098babe356d8c0ce1fbbb34c73def",
+      "note": "Consumer builds and installs a packed artifact in an isolated project, passes executable/context inputs, and cleans owned scratch state."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/freebuff.json",
+      "start": 1,
+      "end": 56,
+      "digest": "sha256:6e5565bf86d24c3ce59cdc90cf80685eccee0d78b69348ebf53e263aa9c9318f",
+      "note": "Data-only injection recipe for observed freebuff profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/autohand.json",
+      "start": 1,
+      "end": 44,
+      "digest": "sha256:1c3e89f279cb405c630526300f73c6f52d2bf29d03a96e1ddc3ad23a672bf84e",
+      "note": "Data-only injection recipe for observed autohand profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

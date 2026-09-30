@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "src/manifest.ts",
       "start": 1,
-      "end": 146,
-      "digest": "sha256:86ab4aca296bc09ec7eaced6870015b5b3dcfb0078533fb12338b1ea584a4187",
+      "end": 147,
+      "digest": "sha256:3aa5e312be908e92d5507376a901fa95404ec6284c4575af837937243d91e47d",
       "note": "Declarative definition validation and isolated injection: validate; current implementation, not real-harness certification"
     },
     {

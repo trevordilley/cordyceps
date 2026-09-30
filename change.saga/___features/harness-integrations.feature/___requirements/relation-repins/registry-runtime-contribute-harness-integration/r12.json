@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r12",
+  "relation": "urn:change-saga:cordyceps:relation:registry-runtime-contribute-harness-integration",
+  "to_revision": "urn:change-saga:cordyceps:story:contribute-harness-integration:revision:r2",
+  "from_content_digest": "sha256:7b7adbb23c276903df0a3ceecb641c4a31107fcdd331ee6071af600aa2fad02c",
+  "rationale": "Read the current r2 contribution requirement. The delivered section retains the shared local/bundled definition contract and contribution examples; real consumer verification is developer evidence, not a required binary certification matrix or a release/acceptance verdict. Pin correction uses the complete fragment semantic digest returned by relation status, rather than the Markdown-only content checksum.",
+  "created_at": "2026-09-30T16:07:37.907207Z"
+}

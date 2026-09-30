@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/kimi-code.json",
+      "start": 1,
+      "end": 42,
+      "digest": "sha256:198f68c72df140beea6416d1a832296539fb188fe68cd4bda7f290860d837652",
+      "note": "Data-only injection recipe for observed kimi-code profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/continue-cli.json",
+      "start": 1,
+      "end": 41,
+      "digest": "sha256:ca17d0c0c4933e9386ddec9ce40d41415a04bbacb0ea1719f0d1ce11cfdd1c0e",
+      "note": "Data-only injection recipe for observed continue-cli profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

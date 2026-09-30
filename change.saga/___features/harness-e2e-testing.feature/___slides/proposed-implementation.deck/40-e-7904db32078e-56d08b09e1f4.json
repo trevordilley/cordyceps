@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "docs/provider-codecs.md",
+      "start": 231,
+      "end": 273,
+      "digest": "sha256:5fc2ff0e41789ddbdca23c79e8b09b96b3b1b14bdca0fa54d218645b762f8e1d",
+      "note": "Document exact added auxiliary routes, Responses namespaces, and Codebuff source-only boundary."
+    }
+  ]
+}

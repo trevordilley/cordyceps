@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-source-agents/codebuddy-qoder/consumer.mjs",
+      "start": 91,
+      "end": 154,
+      "digest": "sha256:772677e08368353fe5ecd0c23a5d881f7f5b6b0c5e27754681bf13700717d2c9",
+      "note": "Qoder diagnostic assertions retain the observed authentication boundary and zero local model requests without promoting failure to supported recipe."
+    }
+  ]
+}

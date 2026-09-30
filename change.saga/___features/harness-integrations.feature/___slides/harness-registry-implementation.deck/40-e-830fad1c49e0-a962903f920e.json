@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/pi.json",
+      "start": 1,
+      "end": 53,
+      "digest": "sha256:d78a42fbf66389dec59b92d16ed4f6b2a999a9197719a5b5daf9736c6fe7c75f",
+      "note": "Data-only injection recipe for observed pi profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

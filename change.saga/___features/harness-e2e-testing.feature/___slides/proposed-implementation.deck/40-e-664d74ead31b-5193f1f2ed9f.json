@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": ".github/workflows/ci.yml",
+      "start": 1,
+      "end": 48,
+      "digest": "sha256:0e828230e4b210c5464ffdcc7eb0b7c7b12294edd963023dd962f5d9c8b81750",
+      "note": "Hosted Linux Node22/24 jobs check, build, and retain the package; workflow setup gives read-only token and bounded concurrency."
+    }
+  ]
+}

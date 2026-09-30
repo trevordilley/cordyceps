@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/muse.json",
+      "start": 1,
+      "end": 26,
+      "digest": "sha256:92f6ad1a74f36e3d9e1260bc5f6fb93a5761d3ef3e6484fd94ee1416c45aac69",
+      "note": "Data-only injection recipe for observed muse profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "rank": 50,
   "kind": "node",
   "label": "Real consumer evidence and limits",
-  "description": "Only verified native workflows are supported. Remote-agent integrations and untested WSL variants remain excluded audit evidence. Stream consumption, incremental output, process cancellation and ACP reuse are distinct observations.",
+  "description": "43 native families have local proof. Hosted run 36740569377 at 8a8bbfe passed all 34 configured families, ACP and browser tests. Nine local families lack CI setup. Published Codebuff 1.0.688 and untested profiles remain excluded.",
   "selector": {
     "type": "element",
     "element_id": "limits"

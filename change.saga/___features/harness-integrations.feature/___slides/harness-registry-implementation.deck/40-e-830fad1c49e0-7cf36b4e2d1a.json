@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/openclaw.json",
+      "start": 1,
+      "end": 24,
+      "digest": "sha256:5308bf806bdaff8115299a2b8fbbde21a5b1addf835f382f0c57143a253133d4",
+      "note": "Data-only injection recipe for observed openclaw profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

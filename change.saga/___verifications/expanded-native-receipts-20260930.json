@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "id": "expanded-native-receipts-20260930",
+  "claim": "expanded-real-consumers-20260930",
+  "status": "verified",
+  "method": "inspection",
+  "summary": "Inspected source-roster mappings and exact committed local/hosted receipts. The completed hosted run has all 13 jobs successful, 107 real native cases across 34 families, real ACP lifecycle and three browser tests. Both Node jobs pass 149 Bun tests (two known Bun-specific skips), 21 mandatory Node lifecycle tests, type checking, build and installed-package checks. All 81 retained hosted receipt hashes were checked. This verifies the stated observed profiles, not new hosted results for the nine local-only families, other releases/platforms, orchestrator UIs or a user review verdict.",
+  "command": "gh run view 36740569377 --repo trevordilley/cordyceps --json status,conclusion,jobs",
+  "created_at": "2026-09-30T16:10:37.493913Z"
+}

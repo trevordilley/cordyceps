@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/polygraph.json",
+      "start": 1,
+      "end": 41,
+      "digest": "sha256:ed8e0daa2dc1d584af5ef5f4419ce059288bc112a37fc6b6ebaabb1a8fa5bd53",
+      "note": "Data-only injection recipe for observed polygraph profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

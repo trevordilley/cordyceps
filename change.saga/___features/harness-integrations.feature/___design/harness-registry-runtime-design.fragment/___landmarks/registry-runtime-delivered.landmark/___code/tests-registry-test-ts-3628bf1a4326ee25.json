@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "tests/registry.test.ts",
-      "start": 227,
-      "end": 253,
-      "digest": "sha256:e3170e18ce141f812cd5bb8f8d1acc3ab9ea16c28dc2942eb09cd0aeee555703",
+      "start": 249,
+      "end": 275,
+      "digest": "sha256:9d4e35a28c05e2d1a0aeab44cdb52f717759f34f5d8ab243cb6cb97f4aaa92f9",
       "note": "Bundled/local parity and explicit mode checks include the separate ACP recipe."
     }
   ]

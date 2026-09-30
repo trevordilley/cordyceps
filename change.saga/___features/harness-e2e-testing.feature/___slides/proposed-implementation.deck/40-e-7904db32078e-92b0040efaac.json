@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "src/provider/index.ts",
-      "digest": "sha256:f8131bf56c25f7ac54d3d5b42c2109ca8faca525976eb80108689f6a55ad14ea",
+      "digest": "sha256:9098e35991f3775931a0d02d0933bcfca8a999a85e230c3e4ee1651d5fd952d0",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

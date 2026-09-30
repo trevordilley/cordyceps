@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "docs/ci.md",
+      "start": 1,
+      "end": 50,
+      "digest": "sha256:55f0b601a5bd57c5ff210d1924a2be74ca164dcbdd23588d689d8154691f5754",
+      "note": "Document reproducible hosted group configuration and isolated consumer ownership, independently of recorded results."
+    },
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "docs/ci.md",
+      "start": 74,
+      "end": 82,
+      "digest": "sha256:caffac25d0e903018b0d781db0633f9270caf8ed5e40e8e66c967a40a9accd13",
+      "note": "Document reproducible hosted group configuration and isolated consumer ownership, independently of recorded results."
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "rank": 30,
   "kind": "node",
   "label": "Provider codecs",
-  "description": "Codecs preserve schemas/results and encode JSON, SSE, NDJSON and AWS frames. Exact bootstrap routes require explicit metadata. Real agents execute tools; no agent decisions or file results are fabricated.",
+  "description": "Responses preserves tool namespaces; other codecs reject them. Hermes, Grok, Muse and Codebuff auxiliary routes require explicit replies. Codecs encode provider frames; actual agents execute tools.",
   "selector": {
     "type": "element",
     "element_id": "codecs"

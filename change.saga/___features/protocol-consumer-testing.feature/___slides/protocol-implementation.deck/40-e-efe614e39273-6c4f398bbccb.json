@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-extra-cli/workflow.mjs",
+      "start": 19,
+      "end": 128,
+      "digest": "sha256:480f7b8e45badae57e774f175c55393f4fcdb5ee7ad809cd50933a835fa5c4e0",
+      "note": "Source Codebuff and Polygraph-to-Claude consumer scripts explicit auxiliary fixtures, correlate actual native read results, observe MCP/native output, and clean state."
+    },
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-extra-cli/workflow.mjs",
+      "start": 339,
+      "end": 438,
+      "digest": "sha256:ac28c4d1cb81fab12dcf00d159e19fe55e9117465c827436694ecfb7f9331e1d",
+      "note": "Source Codebuff and Polygraph-to-Claude consumer scripts explicit auxiliary fixtures, correlate actual native read results, observe MCP/native output, and clean state."
+    }
+  ]
+}

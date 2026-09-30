@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-source-agents/freebuff/consumer.mjs",
+      "start": 1,
+      "end": 132,
+      "digest": "sha256:5952d8f1d9708b553b1bd8f9f8c5234a4dcbf5903da5887ccee9f890ff99a3ce",
+      "note": "Real consumer controls provider replies and asserts captured prompts, native output, actual fixture results in subsequent requests, and owned cleanup."
+    }
+  ]
+}

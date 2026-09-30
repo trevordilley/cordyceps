@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r10",
+  "relation": "urn:change-saga:cordyceps:relation:manifest-design-describe-harness-launch",
+  "to_revision": "urn:change-saga:cordyceps:story:describe-harness-launch:revision:r2",
+  "from_content_digest": "sha256:251b59bfe5950fe58c3683d713a79f72b064d258324ff6079ae6b6b9bc360500",
+  "rationale": "Read the current r2 provider/ACP injection requirement. The delivered section describes environment, arguments and structured configuration, explicit missing-mode/codec errors, and consumer-owned executable selection and launch; native CLI evidence does not imply ACP support.",
+  "created_at": "2026-09-30T16:06:29.485944Z"
+}

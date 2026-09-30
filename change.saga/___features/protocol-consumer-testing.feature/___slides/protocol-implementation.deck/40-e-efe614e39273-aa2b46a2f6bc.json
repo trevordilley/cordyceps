@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-source-agents/opencode-mimo-dsh/run.mjs",
+      "start": 1,
+      "end": 34,
+      "digest": "sha256:079e68c2bb1446c46e4766188d94d66c6d737e82a23adbb9ab3e514a7d59753c",
+      "note": "Consumer builds and installs a packed artifact in an isolated project, passes executable/context inputs, and cleans owned scratch state."
+    }
+  ]
+}

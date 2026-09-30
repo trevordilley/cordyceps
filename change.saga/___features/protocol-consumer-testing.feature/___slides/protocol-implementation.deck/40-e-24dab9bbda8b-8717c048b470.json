@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "tests/vendor-codecs.test.ts",
+      "start": 1,
+      "end": 74,
+      "digest": "sha256:6cfc5b00293d30138b9b8f66126d93ae4957815b1ede538a1eee471d5fb12cf1",
+      "note": "Regression assertions for observed auxiliary routes, native tool results and explicit error handling; vendor tests also check namespaced Responses and non-Responses rejection."
+    }
+  ]
+}

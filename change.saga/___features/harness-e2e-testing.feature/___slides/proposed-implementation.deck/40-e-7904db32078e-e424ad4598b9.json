@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "src/provider/codebuff.ts",
+      "start": 1,
+      "end": 82,
+      "digest": "sha256:3275487e40303782689e3753074613ce51885c6a4e798296f8b08f0b3bd6f470",
+      "note": "Observed codebuff auxiliary routes remain captured and require explicit consumer replies; model exchange delegates to the native provider codec."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "tests/codebuff.test.ts",
+      "start": 1,
+      "end": 105,
+      "digest": "sha256:645665fcf2c097ad91f6830216963ae9937cb4570ae6cb0bba3550aeaa23d004",
+      "note": "Regression assertions for observed auxiliary routes, native tool results and explicit error handling; vendor tests also check namespaced Responses and non-Responses rejection."
+    }
+  ]
+}

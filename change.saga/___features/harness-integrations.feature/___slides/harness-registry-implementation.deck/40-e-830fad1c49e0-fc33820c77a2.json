@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/grok-build.json",
+      "start": 1,
+      "end": 40,
+      "digest": "sha256:5429465d54c15a643eec59166253e8ebbc0d3aa6dbb0ec11d2eb440cc244dd9e",
+      "note": "Data-only injection recipe for observed grok-build profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

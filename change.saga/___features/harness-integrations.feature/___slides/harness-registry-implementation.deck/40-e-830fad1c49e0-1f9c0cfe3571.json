@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/dsh.json",
+      "start": 1,
+      "end": 23,
+      "digest": "sha256:521d271079c6cd9910e628909dace6668865b5938868c7cc63364eecaecd2961",
+      "note": "Data-only injection recipe for observed dsh profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

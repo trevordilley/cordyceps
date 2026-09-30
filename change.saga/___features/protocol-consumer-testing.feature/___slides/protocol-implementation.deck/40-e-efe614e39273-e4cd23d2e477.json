@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-local-agents/consumer.mjs",
+      "start": 1,
+      "end": 134,
+      "digest": "sha256:6b2bc535f03dc9745f15d372a225b9240c1c1338e789b2e09dfe8dceb594da90",
+      "note": "Real consumer controls provider replies and asserts captured prompts, native output, actual fixture results in subsequent requests, and owned cleanup."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-extra-cli/probe.mjs",
+      "start": 1,
+      "end": 81,
+      "digest": "sha256:9f193c3b8a73ac787045428c3a373886071be568c2b5818a5660d4e50c572e34",
+      "note": "Build/pack/install entry point for the actual Codebuff-source and Polygraph workflows."
+    }
+  ]
+}

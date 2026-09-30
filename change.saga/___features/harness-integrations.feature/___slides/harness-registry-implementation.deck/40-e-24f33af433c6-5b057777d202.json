@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "src/manifest.ts",
-      "digest": "sha256:f3f2dee061c3939718866c17b5168aaf1eed8190b52fa15bbd929e0328edfe3d",
+      "digest": "sha256:ebedc3c19560ed9024bebd49f3ce27cb9d4e89787ed11cf2d195507eb670c196",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

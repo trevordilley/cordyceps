@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/codebuddy.json",
+      "start": 1,
+      "end": 17,
+      "digest": "sha256:bcfc790a8f67c69a03764dda45202f33b584bae1e9fb9c281120bb717c814085",
+      "note": "Data-only injection recipe for observed codebuddy profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

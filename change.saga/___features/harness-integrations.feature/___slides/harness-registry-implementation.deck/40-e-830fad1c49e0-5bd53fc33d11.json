@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/zcode.json",
+      "start": 1,
+      "end": 57,
+      "digest": "sha256:018867e14eaeedc21ee6f9120467ad72ef92817a2e15ce63122c43a67a0f582c",
+      "note": "Data-only injection recipe for observed zcode profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

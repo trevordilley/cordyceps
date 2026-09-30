@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "tests/hermes.test.ts",
+      "start": 1,
+      "end": 47,
+      "digest": "sha256:7bc6c6d92b2a5eed89bfd629a1bdd448abf1b790baf7e65ab7face549a9f66eb",
+      "note": "Regression assertions for observed auxiliary routes, native tool results and explicit error handling; vendor tests also check namespaced Responses and non-Responses rejection."
+    }
+  ]
+}

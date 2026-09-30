@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-source-agents/openclaude/run.mjs",
+      "start": 1,
+      "end": 29,
+      "digest": "sha256:57c5edefd5b195b4aaf0082198dbe27e629b17d2903974e5a7750f0942ded438",
+      "note": "Consumer builds and installs a packed artifact in an isolated project, passes executable/context inputs, and cleans owned scratch state."
+    }
+  ]
+}

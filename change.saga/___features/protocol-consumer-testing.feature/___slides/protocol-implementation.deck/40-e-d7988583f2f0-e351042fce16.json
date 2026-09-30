@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "docs/ci.md",
+      "start": 52,
+      "end": 83,
+      "digest": "sha256:42667ebadb8445293539177a1e096a55dfd7463beaa9a5cfa6981c65c4fd65a7",
+      "note": "Completed hosted evidence separates 34 families and 107 passed cases from the 43-family local set, records ACP/browser verification and genuine fixes, and retains exact historical receipts."
+    }
+  ]
+}

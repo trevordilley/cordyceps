@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "docs/provider-codecs.md",
-      "start": 156,
-      "end": 228,
-      "digest": "sha256:448c17cda7d2176f18b985703df5c665c130a85f7251104502864fa9c7199c15",
+      "start": 157,
+      "end": 229,
+      "digest": "sha256:3532782c9f39115b7260f99889d869ea87741f553bf6680498b9308d9d5e497d",
       "note": "Additional protocol sections explain new Chat, Gemini, Q, Augment and exact gateway wire behavior and explicit bootstrap boundaries."
     }
   ]

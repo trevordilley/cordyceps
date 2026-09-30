@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "package.json",
       "start": 1,
-      "end": 74,
-      "digest": "sha256:e890f027050ea07b9cb83fddcee057742101e3153a1b990fe79c4d5b8cec537e",
+      "end": 90,
+      "digest": "sha256:95d0359948c636ec094aab68385546819f8b299198743de8d0ff1ddc5e35056d",
       "note": "Package construction and consumer-owned invocation boundary: build; current implementation, not real-harness certification"
     }
   ]

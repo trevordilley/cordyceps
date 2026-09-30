@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "examples/real-acp/run.mjs",
       "start": 45,
       "end": 92,
-      "digest": "sha256:e03e53f700132291555d8997098f9d487a7fba14cfcb4c377f25f6e35f99fc33",
+      "digest": "sha256:a993324176b5982ae2502a732ae81526963aeb2841dbd4e4e7d91d33a279e958",
       "note": "Standard ACP SDK transport taps preserve native messages; actual initialization and consumer permission handlers remain outside the library."
     }
   ]

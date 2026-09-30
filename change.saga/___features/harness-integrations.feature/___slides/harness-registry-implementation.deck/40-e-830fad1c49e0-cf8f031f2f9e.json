@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/prime-agent.json",
+      "start": 1,
+      "end": 53,
+      "digest": "sha256:fa173c5f168a29ac8a2aafe2713f36dc070e9d2b164be7202f8c22810cf6d410",
+      "note": "Data-only injection recipe for observed prime-agent profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

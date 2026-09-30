@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/ante.json",
+      "start": 1,
+      "end": 51,
+      "digest": "sha256:1b9d8f9b6e2b89aa58e78fe5c8883f8ad023b9c4d9d5b09df4b8d00091dbdb17",
+      "note": "Data-only injection recipe for observed ante profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

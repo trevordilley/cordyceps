@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/mastra-code.json",
+      "start": 1,
+      "end": 34,
+      "digest": "sha256:b4507759301cf09acf4a15a36a009219c7a9ee53512c4bf55265d56c102bdcfc",
+      "note": "Data-only injection recipe for observed mastra-code profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

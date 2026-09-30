@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "c23630d4069360b9866feca8ad3c49b109d9df22",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "src/manifest.ts",
       "start": 1,
-      "end": 25,
-      "digest": "sha256:71afc3151af20fb40651066ce3c052fe8f6e6194f2be82aeb003b2c8cf40986f",
+      "end": 26,
+      "digest": "sha256:1a8c92e97f9f0f36da9cea8cb4675698e994af8983bad2e850924070f24aa691",
       "note": "Substantiates the current delivery section; original proposal content is retained as historical context."
     },
     {

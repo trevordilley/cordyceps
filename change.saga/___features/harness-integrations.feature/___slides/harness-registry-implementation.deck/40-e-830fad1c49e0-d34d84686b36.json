@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/codebuff.json",
+      "start": 1,
+      "end": 15,
+      "digest": "sha256:9ee8a086461ad3be8488906ad1997e3f468918d86f7d81df866a92ec3acc70fc",
+      "note": "Data-only injection recipe for observed codebuff profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

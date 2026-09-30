@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r7",
+  "relation": "urn:change-saga:cordyceps:relation:stack-playwright-setup",
+  "to_revision": "urn:change-saga:cordyceps:story:playwright-e2e-workflow:revision:r1",
+  "from_content_digest": "sha256:4b90e0e368a6e4d9355b791381a4b141a9a37edabc4cddac6ed7c1f618b50cb7",
+  "rationale": "Read the current playwright-setup criterion. The optional cordyceps/playwright export wraps the same backend for consumer test setup with real harness injection. The successful three-browser-test hosted result provides observed evidence without transferring process ownership to the library.",
+  "created_at": "2026-09-30T16:06:30.629588Z"
+}

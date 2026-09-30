@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/orchestrator-agents/check-inventory.mjs",
+      "start": 1,
+      "end": 29,
+      "digest": "sha256:ffbfbb5c5f33cd02c8b4fba0c7074d07c92fe57a7f2e1fd9b7517c1d129b60a8",
+      "note": "Audit source roster identities and require evidence for every retained recipe or explicit exclusion."
+    }
+  ]
+}

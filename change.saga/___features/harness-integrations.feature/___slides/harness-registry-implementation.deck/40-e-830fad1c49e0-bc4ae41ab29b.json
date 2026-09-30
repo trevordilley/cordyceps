@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/fx.json",
+      "start": 1,
+      "end": 50,
+      "digest": "sha256:cf5085ed230013fab964a1fff4b6fbd6f49689f962b45fe3fec4f8269784af6c",
+      "note": "Data-only injection recipe for observed fx profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

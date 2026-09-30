@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "examples/real-source-agents/freebuff/run.mjs",
+      "start": 1,
+      "end": 30,
+      "digest": "sha256:b02d6d6cf06a67393ff32414c94c7462eff76b2de9c47c7605566d934aec02ba",
+      "note": "Consumer builds and installs a packed artifact in an isolated project, passes executable/context inputs, and cleans owned scratch state."
+    }
+  ]
+}

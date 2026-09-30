@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "75d912b272f8ac09b6fc84b8b8475160a55813a2",
+      "path": "examples/orchestrator-agents/hosted-verification.json",
+      "digest": "sha256:ba721ee5da131cec0182d50d7cc1a332d756e8e825e5ff32ef449e70174bd9e6",
+      "note": "Actual hosted receipts for runs 36738685084, 36739752968 and successful 36740569377 retain source commits, 34 final native families, 107 real cases, ACP/browser outcomes, artifact hashes and earlier failures; no inference that the nine local-only families ran in CI."
+    }
+  ]
+}

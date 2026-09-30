@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "tests/augment.test.ts",
       "start": 1,
-      "end": 78,
-      "digest": "sha256:c3ef8567d7edd6e3218fea4a902807fcb77d2d941cc3735d3062c572221f98c9",
+      "end": 106,
+      "digest": "sha256:a12e3e953d5d172e50d5b674a4e9d7414a5e2e9a2efb4dfce4d49d21a61f5947",
       "note": "Synthetic regression coverage for the added provider or injection contract, separate from native agent proof."
     }
   ]

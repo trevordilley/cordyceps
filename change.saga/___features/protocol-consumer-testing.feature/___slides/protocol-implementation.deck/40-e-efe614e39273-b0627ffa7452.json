@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "scripts/verify-package.mjs",
       "start": 1,
-      "end": 105,
-      "digest": "sha256:daabb9f899bf7c4c47489e1e3ba7bd569f2d6d09d46283d7bcc51fa33b9d557a",
+      "end": 108,
+      "digest": "sha256:cd6cb2b6696ad412b4f4d3738d5d68d7b056b3b865559137203c3d3d13993500",
       "note": "Synthetic validation and native observation evidence: node; current implementation, not real-harness certification"
     },
     {

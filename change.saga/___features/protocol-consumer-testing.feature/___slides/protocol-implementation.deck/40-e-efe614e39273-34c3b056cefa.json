@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "43dbab85c07ab26f2db0f01358b3a4396c0b58fa",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "scripts/verify-package.mjs",
-      "digest": "sha256:0e99bb442e9125cca0848082b12bcc0da015b492c00157eba548f0c802b8be00",
+      "digest": "sha256:17313491bc5fc3af2da363f05c289035cd30067c027abe1f5ae25acce7ca4044",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

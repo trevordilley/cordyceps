@@ -2,9 +2,9 @@
   "version": 2,
   "references": [
     {
-      "commit": "9f91b0fbc04578734e84c85cf8b8d753b74ee8ad",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "src/provider/openai-responses.ts",
-      "digest": "sha256:864b8203c1c95edbe62feb5f09d7bbdfcc3c1b79c48d33d5fe1b04adbbb417b9",
+      "digest": "sha256:e4c093bdaf74879baf73cb4e9bb1439fc32467bf28c264a031eb0951e7af26bc",
       "note": "Addition of this module or artifact under the documented responsibility. Exact line evidence identifies the more detailed semantic owners."
     }
   ]

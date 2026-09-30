@@ -2,11 +2,11 @@
   "version": 2,
   "references": [
     {
-      "commit": "530527f4167d9a11f5e67b01e74e97c17f970bd5",
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
       "path": "examples/real-cli/consumer.mjs",
       "start": 58,
-      "end": 176,
-      "digest": "sha256:a1ac0717a35f708c1ace3907cab2b3382f1ba4a4106e64ec287e977fcf90b764",
+      "end": 179,
+      "digest": "sha256:7810e59ba0c14bb1167d31a4cb257da96046fd0b08c2fec1fe361c7f255e7f39",
       "note": "Real installed Claude and Codex text/tool scenarios assert captured requests, actual fixture results, output and cleanup."
     }
   ]

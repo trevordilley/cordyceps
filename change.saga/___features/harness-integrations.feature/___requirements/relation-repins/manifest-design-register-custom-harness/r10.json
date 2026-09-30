@@ -1,0 +1,10 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r10",
+  "relation": "urn:change-saga:cordyceps:relation:manifest-design-register-custom-harness",
+  "to_revision": "urn:change-saga:cordyceps:story:register-custom-harness:revision:r2",
+  "from_content_digest": "sha256:251b59bfe5950fe58c3683d713a79f72b064d258324ff6079ae6b6b9bc360500",
+  "rationale": "Read the current r2 local registration requirement. The delivered section retains custom definition registration through the shared validator and provider capture/response controls after consumer-owned setup, with no executable probing or launch inside the library.",
+  "created_at": "2026-09-30T16:06:29.612267Z"
+}

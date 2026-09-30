@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "harnesses/opencode2.json",
+      "start": 1,
+      "end": 47,
+      "digest": "sha256:8d79be0f83277728bad947c86247b2a3a459b4aea53e2017b156f2234d282f38",
+      "note": "Data-only injection recipe for observed opencode2 profile; executable installation, process lifecycle and integration verification remain consumer-owned."
+    }
+  ]
+}

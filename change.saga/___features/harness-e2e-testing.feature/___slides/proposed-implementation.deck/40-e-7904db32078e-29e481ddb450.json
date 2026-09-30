@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "references": [
+    {
+      "commit": "6b1b798e29d093bcb950f54cee4051aa2679c811",
+      "path": "src/provider/grok-build.ts",
+      "start": 1,
+      "end": 22,
+      "digest": "sha256:22cd81a63d3cbbd133f70a273c528c808ea6a0a35f70d29dfe017fad32314458",
+      "note": "Observed grok-build auxiliary routes remain captured and require explicit consumer replies; model exchange delegates to the native provider codec."
+    }
+  ]
+}
