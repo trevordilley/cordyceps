@@ -82,24 +82,34 @@ function event(value: unknown): ProviderEvent {
     && typeof call.name === 'string' && call.name && object(call.input)) {
     // Snapshot arguments as JSON once, so later consumer mutation cannot change a done event.
     const input: unknown = JSON.parse(JSON.stringify(call.input));
-    if (object(input)) return { toolCall: { id: call.id, name: call.name, input } };
+    if (call.namespace !== undefined && (typeof call.namespace !== 'string' || call.namespace.length === 0))
+      throw new TypeError('Tool namespace must be a nonempty string');
+    if (object(input)) return { toolCall: { id: call.id, name: call.name, ...(call.namespace === undefined ? {} : { namespace: call.namespace }), input } };
   }
   throw new TypeError('Provider event requires text or a toolCall with id, name, and JSON object input');
 }
 
-export async function* events(response: ScriptedResponse, signal: AbortSignal): AsyncGenerator<ProviderEvent> {
+export async function* events(response: ScriptedResponse, signal: AbortSignal, allowNamespace = false): AsyncGenerator<ProviderEvent> {
   signal.throwIfAborted();
   if (response.stream !== undefined) {
-    for await (const value of guarded(response.stream, signal)) yield event(value);
+    for await (const value of guarded(response.stream, signal)) {
+      const parsed = event(value);
+      if (!allowNamespace && 'toolCall' in parsed && parsed.toolCall.namespace !== undefined)
+        throw new TypeError('Tool namespaces require the OpenAI Responses codec');
+      yield parsed;
+    }
   } else {
-    yield event(response);
+    const parsed = event(response);
+    if (!allowNamespace && 'toolCall' in parsed && parsed.toolCall.namespace !== undefined)
+      throw new TypeError('Tool namespaces require the OpenAI Responses codec');
+    yield parsed;
   }
 }
 
 /** Adjacent text deltas represent one text block, even in a nonstream response. */
-export async function collect(response: ScriptedResponse, signal: AbortSignal): Promise<ProviderEvent[]> {
+export async function collect(response: ScriptedResponse, signal: AbortSignal, allowNamespace = false): Promise<ProviderEvent[]> {
   const result: ProviderEvent[] = [];
-  for await (const value of events(response, signal)) {
+  for await (const value of events(response, signal, allowNamespace)) {
     const last = result.at(-1);
     if ('text' in value && last && 'text' in last) last.text += value.text;
     else result.push(value);

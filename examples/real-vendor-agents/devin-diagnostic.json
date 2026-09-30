@@ -1,0 +1,365 @@
+{
+  "passed": false,
+  "binary": "/tmp/cordyceps-vendor-investigation/devin/bin/devin",
+  "date": "2026-09-30T04:47:35.816Z",
+  "attempts": [
+    {
+      "env": {},
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/devin/bin/devin",
+        "args": [
+          "--respect-workspace-trust",
+          "false",
+          "--permission-mode",
+          "dangerous",
+          "-p",
+          "cordyceps-devin-text: Reply with controlled text."
+        ],
+        "code": 1,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "\u001b[1mWelcome to Devin CLI!\u001b[0m\n\u001b[?2004l",
+        "stderr": "Error: Login canceled\n"
+      },
+      "requests": [],
+      "passed": false
+    },
+    {
+      "env": {
+        "WINDSURF_API_KEY": "cordyceps-test",
+        "WINDSURF_API_SERVER_URL": "http://127.0.0.1:54768",
+        "DEVIN_API_URL": "http://127.0.0.1:54768"
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/devin/bin/devin",
+        "args": [
+          "--respect-workspace-trust",
+          "false",
+          "--permission-mode",
+          "dangerous",
+          "-p",
+          "cordyceps-devin-text: Reply with controlled text."
+        ],
+        "code": 1,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "\u001b[1mWelcome to Devin CLI!\u001b[0m\n\n",
+        "stderr": "\n ✓ Logged in.\n ⚠︎ Restart your shell or run: \u001b[1msource /private/tmp/cordyceps-vendor-kNNigu/home/.bashrc\u001b[0m. Then run \u001b[1mdevin\u001b[0m to get started.\nError: failed to start ACP agent session\n"
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTAuMC4wLWRldhoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTAuMC4wLWRldmIGY2hpc2Vs+gH+AjFkNmUxMzM5ODQyYjg2ZWNkNjZlZGFjNDg5MDYwMGRiYjE4ZjMwZmU1YjlhMTJjYjE1ZmM0MTRmNmJlZjMzOGE2NTAwNWY5NDQ4OGM3Mjk3NDcxZmY0MzFiZTQzYTQ1Y2U3M2FlNGZkMDExMWYwN2JmOTdiZmM2MTk4ZjFhOTQ2YzA2YzUyZjMxYWVkYzRlODJjNGI2MjQ4ZGI3YWM1YWI1NzFhY2U0YzlhYjFiMjI3ZmY0YmY1OGMzNTUzNGFhY2I0M2Y0M2Y1OWJiOWI4YWQzMjU4OGFjZjYxZjUxMWE3Y2M5YjEwZTczYmFhMjZlOTA2ZjJjMzUwY2JhNmY3NjUwNTg4NGYxYjJhZmZiZWY5ZjQyMGYyNDYyNWRkYjFiOTkzMTYzODhiM2Q3NmUwZWYxNDUxYjRhOThiODIyMDMwYzgwYjQxODQ3ZmM3NDVkNTEyOTBjMThlMjIwZTE4ZGI4MDg2NzM2ZjM3ZjA2ODE0YjBjOWYwMWI2ZjQ4Zjc=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t0.0.0-dev\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t0.0.0-devb\u0006chisel�\u0001�\u00021d6e1339842b86ecd66edac4890600dbb18f30fe5b9a12cb15fc414f6bef338a65005f94488c7297471ff431be43a45ce73ae4fd0111f07bf97bfc6198f1a946c06c52f31aedc4e82c4b6248db7ac5ab571ace4c9ab1b227ff4bf58c35534aacb43f43f59bb9b8ad32588acf61f511a7cc9b10e73baa26e906f2c350cba6f76505884f1b2affbef9f420f24625ddb1b99316388b3d76e0ef1451b4a98b822030c80b41847fc745d51290c18e220e18db8086736f37f06814b0c9f01b6f48f7",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.product_analytics_pb.ProductAnalyticsService/BatchRecordAnalyticsEvents",
+          "bodyBase64": "CtcCChZDT0RJTkdfQUdFTlRTX0RFVEVDVEVEGiRmY2E3Nzk1MS0wMmI5LTQ0YzItYmJmOS1lOTk2ZWRjYTdhNWIiBmNoaXNlbCoDbWFjOgkzMDAwLjExLjNKEAoHb3NfYXJjaBIFYXJtNjRKFQoNdGVybWluYWxfdHlwZRIEZHVtYkoUCgpvc192ZXJzaW9uEgYxNS43LjRKCgoFY291bnQSATNKEQoHb3NfbmFtZRIGRGFyd2luSh4KBmFnZW50cxIUY29waWxvdCxnZW1pbmksZ29vc2VigAFlOTYyYjExYTkzMmVhYzA4ZmM5OGY3NmRkMzEzMjIxMDhjNDViODUwMWIyYWFhZWE3ZTUzZDgwMjIxMzZiYTM1NmU2MjI1ZDkyYWI3ZTQwMGE1ZTNhNTcyYTRmOTExZjQxOWRkNTA1NjBmOGFmYzhiNmMxNWVjNGM4M2I5OWMwNQqxAgoNU0VUVVBfU1RBUlRFRBokZmNhNzc5NTEtMDJiOS00NGMyLWJiZjktZTk5NmVkY2E3YTViIgZjaGlzZWwqA21hYzoJMzAwMC4xMS4zSg0KBXNoZWxsEgRiYXNoShEKB29zX25hbWUSBkRhcndpbkoQCgdvc19hcmNoEgVhcm02NEoVCg10ZXJtaW5hbF90eXBlEgRkdW1iShQKCm9zX3ZlcnNpb24SBjE1LjcuNGKAAWU5NjJiMTFhOTMyZWFjMDhmYzk4Zjc2ZGQzMTMyMjEwOGM0NWI4NTAxYjJhYWFlYTdlNTNkODAyMjEzNmJhMzU2ZTYyMjVkOTJhYjdlNDAwYTVlM2E1NzJhNGY5MTFmNDE5ZGQ1MDU2MGY4YWZjOGI2YzE1ZWM0YzgzYjk5YzA1Eg5jb3JkeWNlcHMtdGVzdA==",
+          "bodyText": "\n�\u0002\n\u0016CODING_AGENTS_DETECTED\u001a$fca77951-02b9-44c2-bbf9-e996edca7a5b\"\u0006chisel*\u0003mac:\t3000.11.3J\u0010\n\u0007os_arch\u0012\u0005arm64J\u0015\n\rterminal_type\u0012\u0004dumbJ\u0014\n\nos_version\u0012\u000615.7.4J\n\n\u0005count\u0012\u00013J\u0011\n\u0007os_name\u0012\u0006DarwinJ\u001e\n\u0006agents\u0012\u0014copilot,gemini,gooseb�\u0001e962b11a932eac08fc98f76dd31322108c45b8501b2aaaea7e53d8022136ba356e6225d92ab7e400a5e3a572a4f911f419dd50560f8afc8b6c15ec4c83b99c05\n�\u0002\n\rSETUP_STARTED\u001a$fca77951-02b9-44c2-bbf9-e996edca7a5b\"\u0006chisel*\u0003mac:\t3000.11.3J\r\n\u0005shell\u0012\u0004bashJ\u0011\n\u0007os_name\u0012\u0006DarwinJ\u0010\n\u0007os_arch\u0012\u0005arm64J\u0015\n\rterminal_type\u0012\u0004dumbJ\u0014\n\nos_version\u0012\u000615.7.4b�\u0001e962b11a932eac08fc98f76dd31322108c45b8501b2aaaea7e53d8022136ba356e6225d92ab7e400a5e3a572a4f911f419dd50560f8afc8b6c15ec4c83b99c05\u0012\u000ecordyceps-test",
+          "headers": {
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "670"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs+gH+Ajk1ZTM5ZGFmMWVhMmM2YmFmNDIzYjZlODMwY2I4MjY3ZDVmNjk0YjU5ODZmZTIzNTY5NjEyNzM3MTVhNjJhZWUyN2I0NzA0NjIyODEzOWRjNzcwNzI0NDhkYTI2NDA2OGRmNTc2ZmUzYjA0OTIyM2U5YjcwMzU5YWU4YmMwMDBmMGQ3MzhhZDI2NmU2MjUyMTVlMDA3MzNiY2Q3ZjcwNTE3Zjg4ZjE3NDFjNTE5YTM0Y2Q3NDM4MjY5NGQ0ZWRhMTc3NTMwOThiMjY4NzlkMDY5OGMzNWNiZDgzMjRlMWM4ZDVmNjJkYjBiNDg3NDBlYWMxMjFlNmI0MjY0YWRiNGYyNTY5NWYwYzBmOWE3ZjViY2JkNmNhOGVmMDk0YTRkYjZkZTQzYTNkNjZlY2Y4YzM1NjFkZDI4MjBjODdhNjU3ZGQ0YTNmZWQ1NTExNzNjMmMxYzg1YTU5YmI1MDBjZTU2MmYyNWMxZGJlNGM1MjViZWI0M2IzOGQ1M2RkNDA=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001�\u000295e39daf1ea2c6baf423b6e830cb8267d5f694b5986fe2356961273715a62aee27b47046228139dc77072448da264068df576fe3b049223e9b70359ae8bc000f0d738ad266e625215e00733bcd7f70517f88f1741c519a34cd74382694d4eda17753098b26879d0698c35cbd8324e1c8d5f62db0b48740eac121e6b4264adb4f25695f0c0f9a7f5bcbd6ca8ef094a4db6de43a3d66ecf8c3561dd2820c87a657dd4a3fed551173c2c1c85a59bb500ce562f25c1dbe4c525beb43b38d53dd40",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs+gH+AmFiZjcwYjUyODU2ZWNlODcwNzk3YWYyZmE2NTk2ZTViZDBjMTI1OWIyMzdhY2ExZDAwY2I5ODM2ZDU3MmIyYjEwNmQzMTc1MmM3ZjMzYWEwZmFhZmVlNWYyN2YzY2FkNWE4NjNlMjgyZWY5OTZmNzhkNDEyMzg5ZWRkNzIwYmQ1NDk0MjYwODhkYzJkNmRiOTYyZDI0YzcyOTAxNDc4ODIzNDcwZGRlMTNhMTc2ZTRkYmRiYTYxYmU3ZGI1ZmY0OTRjZGUxZjM5MDRiNDhkNTQ4MzViMGI0ZjdhNTI3YjliNGUxZGFkOWJmYmNhNzM1MGU2OTIzZmMyZmM0NGJhMmEyZGQxMGE5MWJjODZkMjQ4NmJlNzM5NmU3OWY0MzZhYWNhMGRiMWJiMWRkM2EwMDc0OWFhNmRlODk1M2NhZjJiMDgzN2FmYjg0OGMyYWU1NjAxNzgyZjk2YTRiNTBjMWRhOTBkNzM3OTg4NDMzZGIxMjViYTg4MzkwYzJhNTA=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001�\u0002abf70b52856ece870797af2fa6596e5bd0c1259b237aca1d00cb9836d572b2b106d31752c7f33aa0faafee5f27f3cad5a863e282ef996f78d412389edd720bd549426088dc2d6db962d24c72901478823470dde13a176e4dbdba61be7db5ff494cde1f3904b48d54835b0b4f7a527b9b4e1dad9bfbca7350e6923fc2fc44ba2a2dd10a91bc86d2486be7396e79f436aaca0db1bb1dd3a00749aa6de8953caf2b0837afb848c2ae5601782f96a4b50c1da90d737988433db125ba88390c2a50",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/v3/self",
+          "bodyBase64": "",
+          "bodyText": "",
+          "headers": {
+            "authorization": "Bearer cordyceps-test",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs+gH+AjM5ZWVjZGU4ZWVhZTMwMjk0NTYzYmNlNzc1NWM3N2RjOWI5MGY2ZmMzYjk0ZmZjZjRlYTg5YTFiMjc2MmY4NjgwYWI3OGVmMDhjZTFmZjYxZjdhNjM0ZWU3ZTVlZDk5NzM1NDE3ODljYjNmNjRmMzljYmU5N2MxZDZmMjA5ZmVkYTI0OWQ5ZDY1OWY0OGQ5YjgxM2U3MmY2ODk0ZDA0YjFmZTU2ZTIzZjY5OWEzNzI3ZmQyOThiN2Y4NTM1M2ViOWU0M2EwODExYzUxNmY0ZDIwNGRlNDg1ZWQ3NTgyMWI0NTQzYjMyZjEwMzk4ODFhNTNmYjNhOTFkZmQ0MDg0MTU0NTAxMTcwZmM1NTJkMTNlZDA4YTY5M2I3ODEyMzE1ODM1NTY1MGQ4MzNmMGQzZGY3ZjU1MWE1MTFkOGM5YmQ0ODAyMzlhNTk3Yjk3N2I1NTExZjVmNGI3NjY1NmNkZDhkYTIxNTZmNzIwNTI1Y2I1NmJkYmU1NzAwNmU5OGQ=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001�\u000239eecde8eeae30294563bce7755c77dc9b90f6fc3b94ffcf4ea89a1b2762f8680ab78ef08ce1ff61f7a634ee7e5ed9973541789cb3f64f39cbe97c1d6f209feda249d9d659f48d9b813e72f6894d04b1fe56e23f699a3727fd298b7f85353eb9e43a0811c516f4d204de485ed75821b4543b32f1039881a53fb3a91dfd4084154501170fc552d13ed08a693b78123158355650d833f0d3df7f551a511d8c9bd480239a597b977b5511f5f4b76656cdd8da2156f720525cb56bdbe57006e98d",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetCliTeamSettings",
+          "bodyBase64": "CswDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs8gEFAwQGBwj6Af4CY2ZiYjllOGU0NTUxZjM3ZDI5ZDY1YTZjMGY5Mzc3ZjIyOWRjMWJmZGI4MTk3YTVjYzYyOTNkZDU2MmQzYjE2ZDk4ZDI4NTViMzcwMGFkMzc2ZTJkZDNiOWZlY2IxNjlhYzQwNmE2N2RjMGRhMmQwMDlkOGI0ZmEwMjlhZDJjMTNjOTQ2Y2Y2OTQwMjQyZTg5MDE1Yjg3OWQwMjRlMzM5YWJhOWExOTExNmZjNmRhMTc5YWZlMzAxNzc2MTk0MzllMTQ5YTQ0NGM3MzRmNWM0OTVmNDEyNGJlNzIzYzA2N2UyZTkzZGMyMWJmYTU4YTRjZGJhNGQxZWM2ODY5ZTA4YjYzNTIwOWRiZDgxMzA0MzNhYmJiNGYyMzM1MGYzZGNhYjE4ZjkxODFhMDVmZTljYzkxZDNiOWRmNzUzZGVkOTVjZWVkZjEyYjAxOTFkNTE2NzNiNjgxM2EwYzUwYWZlMWVjNGQ2N2QzMDI1MzhhNGQ0ZDNlMTJjYzAzODE2YQ==",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0005\u0003\u0004\u0006\u0007\b�\u0001�\u0002cfbb9e8e4551f37d29d65a6c0f9377f229dc1bfdb8197a5cc6293dd562d3b16d98d2855b3700ad376e2dd3b9fecb169ac406a67dc0da2d009d8b4fa029ad2c13c946cf6940242e89015b879d024e339aba9a19116fc6da179afe30177619439e149a444c734f5c495f4124be723c067e2e93dc21bfa58a4cdba4d1ec6869e08b635209dbd8130433abbb4f23350f3dcab18f9181a05fe9cc91d3b9df753ded95ceedf12b0191d51673b6813a0c50afe1ec4d67d302538a4d4d3e12cc03816a",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "463"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.api_server_pb.ApiServerService/GetCliModelConfigs",
+          "bodyBase64": "CswDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs8gEFAwQGBwj6Af4CNDA0NDBlM2Q5MDc2OWIxMzFkNDRlNjU2MDY4ZjlkOGJlMDRhNjA0ODJhNzAyNTUwNWM2YjVhMDAzOWMzZjJiODE3YmQxMjY1ZDU0YzVhOTRkYmJiMmY5MzI4YzkyNzE1M2Y3NzA0YzhjYjYzMWJiMTI2MGNkNGI0ZDFlOGQ0YTgyNDYyZDYxY2QzNDRkYzQ5YTVhMmJkMDZjYWY5NGY2YTNjOTVkODNhNjIwNDUwODBlNzM0OTM1MGQ5NjAyMjk2YjBkMDNlZGE1YTE0MTNjMWIwNjMwMmU3NGFmOWU0M2JlYmMwZmM4OWIzNWEwMDNhZGE2NDJlYWEwOTU3NzZmNTU3Nzg1MTRiOTcxYTdmMDlkNzMyNGUyYTk1MmJhZjVlYzkzYzAwYmVlNTE3NjhhNmE2MWE0NGRlYTA4Yzk4ZDY0NDAzMWQyNzY4OWI5MzM2YTgwMGIwZjc1OWFlZWQzOTdjMTkwNTgyMjI0ZmYwMDMzYjI0ODEwZmU1Y2FjYg==",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0005\u0003\u0004\u0006\u0007\b�\u0001�\u000240440e3d90769b131d44e656068f9d8be04a60482a7025505c6b5a0039c3f2b817bd1265d54c5a94dbbb2f9328c927153f7704c8cb631bb1260cd4b4d1e8d4a82462d61cd344dc49a5a2bd06caf94f6a3c95d83a62045080e7349350d9602296b0d03eda5a1413c1b06302e74af9e43bebc0fc89b35a003ada642eaa095776f55778514b971a7f09d7324e2a952baf5ec93c00bee51768a6a61a44dea08c98d644031d27689b9336a800b0f759aeed397c190582224ff0033b24810fe5cacb",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "463"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs+gH+AjQ4ZGYyOWMwYzA0ZjdlZGRmYjllZGEyYzRkODNiMzM5OWY0ZDA3MDk1YTRjN2E3NDY2ZGUxYWVhMDVhNjhiMmNkZDg2MmQ5OGNiMjg4MzRjM2ZiZTg5MzAxZGM2YmU0ZmVjNjEyYjFhYWJmNTE2NmUyZjc3NWZkMzdlOGVlYjFhYzE2ZGJjMGVlMGQ5ODMyMzVmZTQyZDBjYzIwOWM3ODExYmNmYmIzYzBiOTU0MWFjNmE3MTMwZmRlM2Q0ZmQ1Yjg5ZjMxNGFjNDNlNDMxNzAwMGVjYzczNWE3ODYyNTcyOTU3OTMzY2U1NjMzYjcyMmRkNDBhMjgxNWMyODFhMGI0YTJiYTNlZDBiMmRiNDUwYzMwZWRjN2I3OTFkMjJjMDRkMGMzYmJjODk1NjcxMDU2YTY5NTY4NDFhMWUwOTVmNjhmNWJmNmY2N2M4YWI3MjQ4N2Y1ZjY5YTMwYTMwNGFjODUxYWJkY2Q1NTM2MTY1MGZiZDA3YjQ5YzVkMDg=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001�\u000248df29c0c04f7eddfb9eda2c4d83b3399f4d07095a4c7a7466de1aea05a68b2cdd862d98cb28834c3fbe89301dc6be4fec612b1aabf5166e2f775fd37e8eeb1ac16dbc0ee0d983235fe42d0cc209c7811bcfbb3c0b9541ac6a7130fde3d4fd5b89f314ac43e4317000ecc735a7862572957933ce5633b722dd40a2815c281a0b4a2ba3ed0b2db450c30edc7b791d22c04d0c3bbc895671056a6956841a1e095f68f5bf6f67c8ab72487f5f69a30a304ac851abdcd55361650fbd07b49c5d08",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTAuMC4wLWRldhoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTAuMC4wLWRldmIGY2hpc2Vs+gH+AjMyMzdkYTJmNzEzMzMwMWUxZjk3NmFmODM2YTFkYTFhOTE3MDMxODQ0ZmNmZDdkYWRjODE1N2ZmNTliZDQzYWY3YmM0MjkxODE5NTc0NjNhNWFlNDc4MDMxOTQyNjFkMDM3NWJlOTIxZDNhOTk1MDViNjU5MzZmMzQ5MjBhNjQ4NGVjM2JjN2Q0NDM4MDExZTBiNDRmNTFkYmRhZGFhM2UxMWYyNzViZWI5YWU3YzM1ZmZmOTk5Zjc1ZjE5NDI0ZGM1YTM1NzExZWIzNzUzOTNlYjkzZmY2NjIxZmQ2YTM5MjU2N2JiNDE5ZTYzMmJjMjZmMmE1Y2Y1NGY0NDdiOThiYjRhZjk4ODY5NzMxNjk4OTg4NGYzMmQxMThjYjBiMWE5NjE3MDYxODM5MWI4NmQzNThmMjkxNjkwZmFmZTFkZTE2ZTY4OWEwNjdhNGVlYzA0OGQ1YTZiYmQ3ZTBkMTAyYjRjNTQ2YmFmOWRlYzUyNjg1Nzc5N2JlZDI1NzI=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t0.0.0-dev\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t0.0.0-devb\u0006chisel�\u0001�\u00023237da2f7133301e1f976af836a1da1a917031844fcfd7dadc8157ff59bd43af7bc429181957463a5ae47803194261d0375be921d3a99505b65936f34920a6484ec3bc7d4438011e0b44f51dbdadaa3e11f275beb9ae7c35fff999f75f19424dc5a35711eb375393eb93ff6621fd6a392567bb419e632bc26f2a5cf54f447b98bb4af988697316989884f32d118cb0b1a96170618391b86d358f291690fafe1de16e689a067a4eec048d5a6bbd7e0d102b4c546baf9dec526857797bed2572",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.product_analytics_pb.ProductAnalyticsService/BatchRecordAnalyticsEvents",
+          "bodyBase64": "CtcCChZDT0RJTkdfQUdFTlRTX0RFVEVDVEVEGiRmY2E3Nzk1MS0wMmI5LTQ0YzItYmJmOS1lOTk2ZWRjYTdhNWIiBmNoaXNlbCoDbWFjOgkzMDAwLjExLjNKEQoHb3NfbmFtZRIGRGFyd2luShAKB29zX2FyY2gSBWFybTY0SgoKBWNvdW50EgEzSh4KBmFnZW50cxIUY29waWxvdCxnZW1pbmksZ29vc2VKFQoNdGVybWluYWxfdHlwZRIEZHVtYkoUCgpvc192ZXJzaW9uEgYxNS43LjRigAFlOTYyYjExYTkzMmVhYzA4ZmM5OGY3NmRkMzEzMjIxMDhjNDViODUwMWIyYWFhZWE3ZTUzZDgwMjIxMzZiYTM1NmU2MjI1ZDkyYWI3ZTQwMGE1ZTNhNTcyYTRmOTExZjQxOWRkNTA1NjBmOGFmYzhiNmMxNWVjNGM4M2I5OWMwNRIOY29yZHljZXBzLXRlc3Q=",
+          "bodyText": "\n�\u0002\n\u0016CODING_AGENTS_DETECTED\u001a$fca77951-02b9-44c2-bbf9-e996edca7a5b\"\u0006chisel*\u0003mac:\t3000.11.3J\u0011\n\u0007os_name\u0012\u0006DarwinJ\u0010\n\u0007os_arch\u0012\u0005arm64J\n\n\u0005count\u0012\u00013J\u001e\n\u0006agents\u0012\u0014copilot,gemini,gooseJ\u0015\n\rterminal_type\u0012\u0004dumbJ\u0014\n\nos_version\u0012\u000615.7.4b�\u0001e962b11a932eac08fc98f76dd31322108c45b8501b2aaaea7e53d8022136ba356e6225d92ab7e400a5e3a572a4f911f419dd50560f8afc8b6c15ec4c83b99c05\u0012\u000ecordyceps-test",
+          "headers": {
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "362"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetCliTeamSettings",
+          "bodyBase64": "CswDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs8gEFAwQGBwj6Af4CZjhlYzA3OTBmMjQ4YmZhOTE2NmE0OTcyYWU4MGU5NDdhYzExNDU4NTQ1ZGNkZmE4NjlmNjZhNzNlNDkzZTNmNmMzM2Q4MmY3NGE3YjMyOWFkM2M1MTBjMTQxOWEwZmNiYTBiMTM1MjU2ZDg1NGU0OTJjMjM3ZjkxYWUyNjdhMmZkYWVjYzIxYTE1NjVjYzYxZWFjZjY1MjRiYzUwNGZmOWViNTM4OTVmNjMxYzdlNWU5ZTMyYTY1YjNlMGRjMWFjZTI1Nzc2ZmYxNTcyNDdhMWIxNmJhZDA1ZmVhNmE5Y2Q0NGE0ZWYzMTg4MWYyNDQxOTAxMmY5ZmFjNWE0MGQ0Y2QyNzliOWZlZGYzYWU3YmI1N2VmZTRlNWM3Mjc0MGQxZDI1MWQwNjM5YTc3M2FlNTZlY2EwMDMyNzhlNzhkY2JiY2MwOGI5ZjYwM2M4OTc3Zjk3OGI2MDhiMTc3MmZhYTQ4NzljMDFjYTJhYmFiYWE1YTdmMTEwMzM2YzU4Yg==",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0005\u0003\u0004\u0006\u0007\b�\u0001�\u0002f8ec0790f248bfa9166a4972ae80e947ac11458545dcdfa869f66a73e493e3f6c33d82f74a7b329ad3c510c1419a0fcba0b135256d854e492c237f91ae267a2fdaecc21a1565cc61eacf6524bc504ff9eb53895f631c7e5e9e32a65b3e0dc1ace25776ff157247a1b16bad05fea6a9cd44a4ef31881f24419012f9fac5a40d4cd279b9fedf3ae7bb57efe4e5c72740d1d251d0639a773ae56eca003278e78dcbbcc08b9f603c8977f978b608b1772faa4879c01ca2ababaa5a7f110336c58b",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "463"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs+gH+AjcwMDg1ZmJiZDExOWY4N2ZjNDA4ZWViMTUwNDdiNmY5ZGI0NTc3OGRlMmFmMjk4ZmQ0YjRkOWQ3MDc0MTk2MzRkNzg2NjQ1YWYwODgwYzRhYTdjMTQ1ODBjMDRiZmM0NTcwNGMwYjA4OWU1YjczMjg1MTE2MGE3ZTk1ZTZmZTU1ZGNiOWMyYjY4ZjQxY2ExODM0YjRlOTY0OWRlYzA0NjRkOTdhMzRkNTU4NGM0MTE4NGRlMDNhMjlhOGFmMDJmNjg2YTA3ZTcwMmQ0ZTQ1OTU3ZTFiN2Q2ZDVmZjhiZmQwMTJmZDUyMjkwOWRkMWQ0NTg5Y2M1MTQ4N2FkOWRlYzc4MGZkNmQwNjhjMDNmODRkNzAzNmVmMDBkMWE2OTYyMjczYTlmMzFjYzZiMTFiMTgyN2ZhNTUwNmUyYzE5NWY0NWZhNDk0NTQ1MzA2ZDU1ODYxZTNhNzI4ZWNmNzI2N2UyYjZiMTk5NDlkNDA5ODU0OWQwNWEzMjE4NDYyMmE=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001�\u000270085fbbd119f87fc408eeb15047b6f9db45778de2af298fd4b4d9d707419634d786645af0880c4aa7c14580c04bfc45704c0b089e5b732851160a7e95e6fe55dcb9c2b68f41ca1834b4e9649dec0464d97a34d5584c41184de03a29a8af02f686a07e702d4e45957e1b7d6d5ff8bfd012fd522909dd1d4589cc51487ad9dec780fd6d068c03f84d7036ef00d1a6962273a9f31cc6b11b1827fa5506e2c195f45fa494545306d55861e3a728ecf7267e2b6b19949d4098549d05a32184622a",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs+gH+AjY0MWM5NjM0NjA2OGY3NzY4MDM0ZTY0MTcwNWFhNzkyZDE3ZDhjOTNkMDVhYzkxYzU5NmEwZTA3MjRiMzNmMWZhYzE5NmUxNjAxZGE2MGVhZTZhNGU5YjIzNzVjYjE0ZGJmMWU4ZGFlMTAzN2MzZDAyYjBmNmFhMjJmYmE3NGRkODdmOTQwZDFmZDIxNjMyZjY4ZmY0MmQ3ZTg0NTA4NzRjYzNjZmJlODU2MmFjMDAxMDZmZjhjNzQ0YWE0ZWEyNDExYTRjNGExNjVhMTI4OGU0OWUzY2RhYzI3MWRiNTk3MmMxOTU2MmFiZjY2ZWYxZTRmNGNiODI2MTc1YzcwMzUyNDBjMDcwMTE1MDAyNjBjNzEzYWE4NjIxYWY2YWQ2ODBlMmU3N2ZjMTg5YjI2ODZjNGI3ZDIwNzE1YzdhZjdlOWY4NzA3NDI5Nzc0MmZiNzg0MjRmOWQ4MTU1NzY4NTZhMWYyODkwODkzN2IyY2YxZjZkNjU1OWM4ZjM1M2M=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001�\u0002641c96346068f7768034e641705aa792d17d8c93d05ac91c596a0e0724b33f1fac196e1601da60eae6a4e9b2375cb14dbf1e8dae1037c3d02b0f6aa22fba74dd87f940d1fd21632f68ff42d7e8450874cc3cfbe8562ac00106ff8c744aa4ea2411a4c4a165a1288e49e3cdac271db5972c19562abf66ef1e4f4cb826175c7035240c07011500260c713aa8621af6ad680e2e77fc189b2686c4b7d20715c7af7e9f87074297742fb78424f9d815576856a1f28908937b2cf1f6d6559c8f353c",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.api_server_pb.ApiServerService/GetCliModelConfigs",
+          "bodyBase64": "CswDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs8gEFAwQGBwj6Af4CMWJjODc3MDMxNDYyMDllM2UwODc0YWZjMmI2ZDk4NDZkMDVmNjgxNWM4ZThhNmJjYzRmM2NiM2FiMTNiZmI4YTg1NTY0MGM2NzZmMWMyMzNkMWRmNWY0Yjg1OTZkNGM0NWFmZDAzZjFkM2RhZmRjODEzY2RiNjFmNjUxMzJjMjk2MmU4MGE0OTAzMGEyM2QzYTY3NzU0ZmI3ZjRiMGQ2ZjYwNWJhYzE2M2MxYmIyM2I0ZmViYzNkNTFlZGVkMjU1ZjQ4MjUzYjE1YTExZmE3ZDg1ZDAzMGI4MjgxODQ3ZDk4ZjVlNmQ0NGZmOTNiMTFhNWZmOGQ2ZTcxOGIwMjdjOGMwNzhiMjdmY2U5MjJiZjkwYzE4Y2U0NDA0ZTU5ZmYyZWIwNTdkNjYwNDcwNDcwYjFlZjA0Yzc0NjY4M2ZmZWFlNTRmZmRmMjhjZmMxMWJlNjc3ODNjNmMxZjJlMDA2ODVmNjRmY2U5YmI4ZmQ2NTAxNjc3ZGM3Y2E0MTFhZg==",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0005\u0003\u0004\u0006\u0007\b�\u0001�\u00021bc87703146209e3e0874afc2b6d9846d05f6815c8e8a6bcc4f3cb3ab13bfb8a855640c676f1c233d1df5f4b8596d4c45afd03f1d3dafdc813cdb61f65132c2962e80a49030a23d3a67754fb7f4b0d6f605bac163c1bb23b4febc3d51eded255f48253b15a11fa7d85d030b8281847d98f5e6d44ff93b11a5ff8d6e718b027c8c078b27fce922bf90c18ce4404e59ff2eb057d660470470b1ef04c746683ffeae54ffdf28cfc11be67783c6c1f2e00685f64fce9bb8fd6501677dc7ca411af",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "463"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CsQDCgZjaGlzZWwSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs+gH+AmI1NTBlODEzNmM0NTMzOTBhNzE0Mzc0M2QxNTQ3OGQxM2ZkNWI1Yjg5OGY5NzRkYWU0MzVlNzk1ZjE0ZmRmNThjZTU2OGNlN2FhMDQ0NmFjMmFhMTZhNjc4NjA2MDA5ZDY3OThmNDRhZjg2OTlkODQ1YWNhMjU4NWI3ZmU0NmJhNWEzN2NiZTcxMWJjNWIxYzUzY2U5YzMwYmI5MjhmZjUzMGM2MzMwM2RjZmJlMzc2OWQyZmRjNGMzMmVkMWZkNWM3NDViOGIzZDlmYjc5MzBkNzUwMzQ1NThkZTA4ODQ1N2IyOTgxZWY0Mjc2YTE2MGQ2MGQ5MGExOWJiM2IxOTUyYjI3NDkxMjJjMmRiNmMwMzgyYmFiNjM0ZmE4ZWQzM2Q4YWM4NWNmMTEyNTM4ZDlmNWUyNGU5Y2ZjMDEyYThjMTQ5Y2ZiNmJiNDczMzQzMTUxYWE5MjMyMGIyYTQ0NTQ1ZjU3NjM0MDAzZGZjMzk1OTg0NGZkYmZlODM4MTE=",
+          "bodyText": "\n�\u0003\n\u0006chisel\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001�\u0002b550e8136c453390a7143743d15478d13fd5b5b898f974dae435e795f14fdf58ce568ce7aa0446ac2aa16a678606009d6798f44af8699d845aca2585b7fe46ba5a37cbe711bc5b1c53ce9c30bb928ff530c63303dcfbe3769d2fdc4c32ed1fd5c745b8b3d9fb7930d75034558de088457b2981ef4276a160d60d90a19bb3b1952b2749122c2db6c0382bab634fa8ed33d8ac85cf112538d9f5e24e9cfc012a8c149cfb6bb473343151aa92320b2a44545f57634003dfc3959844fdbfe83811",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "455"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CtADCglkZXZpbi1jbGkSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs4gEGY2hpc2Vs+gH+AjA5ZjM0NjIyMGFlNTgwZWE5NGY1OTdhODI2ZDhhZGEzYWI4NTdmNTMyMjM1MTIzNTkyZDVlZmEwMGExODQ0NGRlYzFhYzBhNGZjYjg2NjhhZmE0MWYzNGQ3M2VlNThkNjhjODdkNzAwNzAwYmE0YmVlYzE4YTJmMmE0M2ViN2U1NjAzOTM4NmFmZDU2NmQyNjg3ZmZhMGNkZDE0ZTc5YTM0NmU5ZTAyNzYyNTZkMGMwY2ZiYjA1NWFhYTAyYTI0M2MzNjUxY2FhYjAyNjQwZGEyNGNjY2Y1N2VmNWJkYWFlMzUwYjgyMWRmZGFiOTgyMGM5MjVhZDBkNzlmYjUxMjQ2ODliNjEyY2VjNDgxMzkxZDFjODIxZjNhMzBlNTcxYjc0NTc2ODUzMmQyOGYxMjgxOTg5NmQzOTY0ZWZkYTk1ZTcxZjA5OTE5MzdhMjFjMDI3MWM2NjllMmM0ZGRiZmI4OGY2YjlkMDA4NWUyZTMyMGQwMGJkYjQ5ZDI5ZDc=",
+          "bodyText": "\n�\u0003\n\tdevin-cli\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0006chisel�\u0001�\u000209f346220ae580ea94f597a826d8ada3ab857f532235123592d5efa00a18444dec1ac0a4fcb8668afa41f34d73ee58d68c87d700700ba4beec18a2f2a43eb7e56039386afd566d2687ffa0cdd14e79a346e9e0276256d0c0cfbb055aaa02a243c3651caab02640da24cccf57ef5bdaae350b821dfdab9820c925ad0d79fb5124689b612cec481391d1c821f3a30e571b745768532d28f12819896d3964efda95e71f0991937a21c0271c669e2c4ddbfb88f6b9d0085e2e320d00bdb49d29d7",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "467"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetUserStatus",
+          "bodyBase64": "CtADCglkZXZpbi1jbGkSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs4gEGY2hpc2Vs+gH+AmVhZDk2NzgxZGYzMmJjMDAxYjgyYzEwMWVmYjQ4ZTY2M2JkNjcyNjAwZmM3NjUxYjg5ZjMxYjY5Nzk1OTliMDI4ZDhmOWY5OTRlODIwYzU5N2VmYzFmMmZkMDY2NjNlOGNkNmQ0ZjQ0ZjA0MTEzMDU4ZjJjNzVmNmEzODQwMTI0MWFjZmUxYWIzN2ExZTYwODllNTk1OWQyMGQzMDAyZDBiMzYyMTgzYWM2YTc4ZmQ0YWQ2ZDkyNTBhMTQ5YzI5MTE0NzE5MWVlZmI2ZWIzNjM0YTc0MWUyMjkzZDI4N2U5MmFmMDE3OWYwZWM5NmUyZWUwYjBiOTk1NWY2ODU1MmM4NmEyMzgyOGQ2YzBjYmRjYWQ0ZmZkYmZiNDc0NDlhZmVjOWE1NGY3ODhhNGIxODc1NDMwZTZhOTg5Y2JiNDc0MDllOGIzNDZhZDkwZGUwYjBjMGNhNzgzYWU4NGRjNGFjMTAxZTIzM2EzZjMwN2RhYWJiZTlkYTg1MmE4YjM=",
+          "bodyText": "\n�\u0003\n\tdevin-cli\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0006chisel�\u0001�\u0002ead96781df32bc001b82c101efb48e663bd672600fc7651b89f31b6979599b028d8f9f994e820c597efc1f2fd06663e8cd6d4f44f04113058f2c75f6a38401241acfe1ab37a1e6089e5959d20d3002d0b362183ac6a78fd4ad6d9250a149c291147191eefb6eb3634a741e2293d287e92af0179f0ec96e2ee0b0b9955f68552c86a23828d6c0cbdcad4ffdbfb47449afec9a54f788a4b1875430e6a989cbb47409e8b346ad90de0b0c0ca783ae84dc4ac101e233a3f307daabbe9da852a8b3",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "467"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.api_server_pb.ApiServerService/GetCliModelConfigs",
+          "bodyBase64": "CtgDCglkZXZpbi1jbGkSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs4gEGY2hpc2Vs8gEFAwQGBwj6Af4CMjMzNjc1NTJjMTM5YmUyNTk3ZGIzMDI1MDM1MmExOTExNDJkNDhhNGEwODZiNGFjZWVmOGM2NmIwYWM3YzZjOTlmYWE2YThhODc0OWYzYTdkY2UyYjY1NjZiN2YzOTkwMjk4ZDk0OGE2ZTYxNjVkNWI3MjRiYWJmM2JiMzY2MjEyNTYxNjUwOTkzMzUxNWZiY2NkYTE0Y2NjNTFkZTYwNTZlMjIyNmUyZTBhYTM3NTUwNDRlYzQ5Y2U1MGJlOTA4NWY4ZmY3OTFhNTYwMjI2MjhlODdkMTliNmQwOGEzZjgxNGEwYjYzMDljYmZmN2Y2ODZiYTY1NWZkNzMwZDkwZmFkMTBlY2EzNWEyN2ZlYWNmNGU2YWViZTA5MDE3YTI0YTA5YzEzZTI3ODRlMjYwMjQ0N2Y5MzE3YjkzZDc3M2M1NjI4NmVmZDE5ZDUyNGU1MTM4MTM3MzI3YTEzNjliZmI3YjA4MWNjZmQyMTYyMDcyMjdkNzY0ZDcyOGExNA==",
+          "bodyText": "\n�\u0003\n\tdevin-cli\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0006chisel�\u0001\u0005\u0003\u0004\u0006\u0007\b�\u0001�\u000223367552c139be2597db30250352a191142d48a4a086b4aceef8c66b0ac7c6c99faa6a8a8749f3a7dce2b6566b7f3990298d948a6e6165d5b724babf3bb3662125616509933515fbccda14ccc51de6056e2226e2e0aa3755044ec49ce50be9085f8ff791a56022628e87d19b6d08a3f814a0b6309cbff7f686ba655fd730d90fad10eca35a27feacf4e6aebe09017a24a09c13e2784e2602447f9317b93d773c56286efd19d524e5138137327a1369bfb7b081ccfd216207227d764d728a14",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "475"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.seat_management_pb.SeatManagementService/GetCliTeamSettings",
+          "bodyBase64": "CtgDCglkZXZpbi1jbGkSCTMwMDAuMTEuMxoOY29yZHljZXBzLXRlc3QiAmVuKgZkYXJ3aW46CTMwMDAuMTEuM2IGY2hpc2Vs4gEGY2hpc2Vs8gEFAwQGBwj6Af4CMDk3YjI3ZjAxZDE5NTNhOWEzZDkxMGU0N2EwZTdlYzAyNWNhYzY1NjY0ZDUzMzNkYzc5NjVhMGQ0Nzc0MTJhYTZmNmM0ZjE0MzA2NmE4ODhlMmM3NDExNThjOWYzN2Q2OGUxNGIyYWYwZTI3OGVlZDNmYWM5MTlkYTFmNWU4YzViOGNmMDVkM2M4MzczNTU0Y2JjNTZiOGY0YmMwYTQ0M2QxOTZmOGM2ODI0MTA3NDYzOTdjMGMzYjE5NDI3N2MwNTRjNzA2YTRiZjlhZTMwY2FjOGFkNDYzZmRkYTdlNjM5M2Y3YTM1ZDIzMzk1NjNmZDdlYzk5MTU2Y2I0Yjk2MmZiMzA1NmI2ZjFkMTBjYmFhYjBmOTExM2Q5YTY3OThhYzYxMDExYzRjOTNlYTU0ZWMzODY5NTFkODZmYmJlNmUxMjNkMjhlYThlZTUxNzg4Njg2ZDljNzUzMGNmNWE1NWQwYmFiMzFmNjNmN2M4NTdiZjBkM2U2MDNiYTdjNw==",
+          "bodyText": "\n�\u0003\n\tdevin-cli\u0012\t3000.11.3\u001a\u000ecordyceps-test\"\u0002en*\u0006darwin:\t3000.11.3b\u0006chisel�\u0001\u0006chisel�\u0001\u0005\u0003\u0004\u0006\u0007\b�\u0001�\u0002097b27f01d1953a9a3d910e47a0e7ec025cac65664d5333dc7965a0d477412aa6f6c4f143066a888e2c741158c9f37d68e14b2af0e278eed3fac919da1f5e8c5b8cf05d3c8373554cbc56b8f4bc0a443d196f8c682410746397c0c3b194277c054c706a4bf9ae30cac8ad463fdda7e6393f7a35d2339563fd7ec99156cb4b962fb3056b6f1d10cbaab0f9113d9a6798ac61011c4c93ea54ec386951d86fbbe6e123d28ea8ee51788686d9c7530cf5a55d0bab31f63f7c857bf0d3e603ba7c7",
+          "headers": {
+            "authorization": "Basic cordyceps-test-cordyceps-test",
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "475"
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/exa.product_analytics_pb.ProductAnalyticsService/BatchRecordAnalyticsEvents",
+          "bodyBase64": "CqQCCg9TRVRVUF9DT01QTEVURUQaJGZjYTc3OTUxLTAyYjktNDRjMi1iYmY5LWU5OTZlZGNhN2E1YiIGY2hpc2VsKgNtYWM6CTMwMDAuMTEuM0oRCgdvc19uYW1lEgZEYXJ3aW5KFAoKb3NfdmVyc2lvbhIGMTUuNy40ShAKB29zX2FyY2gSBWFybTY0ShUKDXRlcm1pbmFsX3R5cGUSBGR1bWJigAFlOTYyYjExYTkzMmVhYzA4ZmM5OGY3NmRkMzEzMjIxMDhjNDViODUwMWIyYWFhZWE3ZTUzZDgwMjIxMzZiYTM1NmU2MjI1ZDkyYWI3ZTQwMGE1ZTNhNTcyYTRmOTExZjQxOWRkNTA1NjBmOGFmYzhiNmMxNWVjNGM4M2I5OWMwNQrSAgoPU0VTU0lPTl9DUkVBVEVEGiRmY2E3Nzk1MS0wMmI5LTQ0YzItYmJmOS1lOTk2ZWRjYTdhNWIiBmNoaXNlbCoDbWFjOgkzMDAwLjExLjNKEQoHb3NfbmFtZRIGRGFyd2luShAKCGhlYWRsZXNzEgR0cnVlShoKCm1vZGVsX25hbWUSDHN3ZS0xLTYtZmFzdEoUCgpvc192ZXJzaW9uEgYxNS43LjRKFQoNdGVybWluYWxfdHlwZRIEZHVtYkoQCgdvc19hcmNoEgVhcm02NGKAAWU5NjJiMTFhOTMyZWFjMDhmYzk4Zjc2ZGQzMTMyMjEwOGM0NWI4NTAxYjJhYWFlYTdlNTNkODAyMjEzNmJhMzU2ZTYyMjVkOTJhYjdlNDAwYTVlM2E1NzJhNGY5MTFmNDE5ZGQ1MDU2MGY4YWZjOGI2YzE1ZWM0YzgzYjk5YzA1Eg5jb3JkeWNlcHMtdGVzdA==",
+          "bodyText": "\n�\u0002\n\u000fSETUP_COMPLETED\u001a$fca77951-02b9-44c2-bbf9-e996edca7a5b\"\u0006chisel*\u0003mac:\t3000.11.3J\u0011\n\u0007os_name\u0012\u0006DarwinJ\u0014\n\nos_version\u0012\u000615.7.4J\u0010\n\u0007os_arch\u0012\u0005arm64J\u0015\n\rterminal_type\u0012\u0004dumbb�\u0001e962b11a932eac08fc98f76dd31322108c45b8501b2aaaea7e53d8022136ba356e6225d92ab7e400a5e3a572a4f911f419dd50560f8afc8b6c15ec4c83b99c05\n�\u0002\n\u000fSESSION_CREATED\u001a$fca77951-02b9-44c2-bbf9-e996edca7a5b\"\u0006chisel*\u0003mac:\t3000.11.3J\u0011\n\u0007os_name\u0012\u0006DarwinJ\u0010\n\bheadless\u0012\u0004trueJ\u001a\n\nmodel_name\u0012\fswe-1-6-fastJ\u0014\n\nos_version\u0012\u000615.7.4J\u0015\n\rterminal_type\u0012\u0004dumbJ\u0010\n\u0007os_arch\u0012\u0005arm64b�\u0001e962b11a932eac08fc98f76dd31322108c45b8501b2aaaea7e53d8022136ba356e6225d92ab7e400a5e3a572a4f911f419dd50560f8afc8b6c15ec4c83b99c05\u0012\u000ecordyceps-test",
+          "headers": {
+            "content-type": "application/proto",
+            "connect-protocol-version": "1",
+            "accept": "*/*",
+            "host": "127.0.0.1:54768",
+            "content-length": "652"
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "version": {
+    "binary": "/tmp/cordyceps-vendor-investigation/devin/bin/devin",
+    "args": [
+      "--version"
+    ],
+    "code": 0,
+    "signal": null,
+    "timedOut": false,
+    "stdout": "devin 3000.11.3 (9c803229faa4)\n",
+    "stderr": ""
+  },
+  "help": {
+    "binary": "/tmp/cordyceps-vendor-investigation/devin/bin/devin",
+    "args": [
+      "--help"
+    ],
+    "code": 0,
+    "signal": null,
+    "timedOut": false,
+    "stdout": "A fast and minimal agent that lives both in your terminal and in the cloud.\n\nUsage: devin [OPTIONS] [PATH]... [-- <PROMPT>...] [COMMAND]\n\nCommands:\n  auth       Authentication related commands\n  mcp        Connect and log in to Model Context Protocol servers\n  models     List the models available to your account\n  doctor     Diagnose the local Devin configuration\n  rules      Manage agent rules (always-on context blobs)\n  skills     Manage agent skills (slash commands and agent-triggered context blobs)\n  plugins    Manage plugins (install, list, info, update, remove)\n  cloud      Manage Devin Cloud resources (environment setup, sandbox sessions, builds)\n  desktop    Open Devin Desktop\n  list       List sessions in the current directory [aliases: ls]\n  rm         Delete a session by id or name\n  ssh        SSH into a cloud Devin session's box\n  forward    Forward ports from a cloud Devin session's box to localhost\n  update     Check for updates and optionally install them\n  version    Print the current version\n  migrate    Migrate configuration from other tools\n  sandbox    [Research Preview] Process sandboxing for the exec tool\n  setup      Interactive setup wizard\n  uninstall  Uninstall and remove data\n  acp        Run as an ACP (Agent Client Protocol) server over stdio\n  help       Print this message or the help of the given subcommand(s)\n\nArguments:\n  [PATH]...\n          Open Devin Desktop on the given path(s)\n\n  [PROMPT]...\n          Your prompt (use -- before the prompt)\n          \n          Starts an interactive session. Use -p/--print for non-interactive mode.\n\nOptions:\n      --prompt-file <FILE>\n          Load the initial prompt from a file\n\n      --config <PATH>\n          Configuration file path\n          \n          Override the default user config file (~/.config/devin/config.json).\n\n      --permission-mode <PERMISSION_MODE>\n          Permission mode\n          \n          Modes: \"auto\" auto-approves read-only tools, \"accept-edits\" also auto-approves workspace edits, \"smart\" additionally auto-runs actions a fast model judges safe, \"dangerous\" auto-approves all tools.\n          \n          [env: DEVIN_PERMISSION_MODE=]\n          [default: auto]\n\n      --sandbox\n          [Research Preview] Sandbox exec-tool processes (macOS seatbelt / Linux bwrap+seccomp)\n          \n          When passed, commands can write only within the workspace and granted `Write(...)` scopes, and can read everything except paths hidden by `Deny(Read(...))` rules.\n          \n          [env: DEVIN_SANDBOX=]\n\n      --cloud\n          Drive Devin cloud sessions instead of the local agent\n          \n          The REPL talks to `devin acp --cloud`, which relays ACP to the Devin cloud ACP WebSocket. Requires a Devin account (sign in with `auth login`).\n\n      --model <MODEL>\n          Model to use (e.g. \"claude-sonnet-4\", \"claude-opus-4.6\", \"opus\", \"codex\")\n          \n          With -c/--continue or -r/--resume, switches the resumed conversation to this model; without it the session's saved model is kept.\n          \n          [env: DEVIN_MODEL=]\n\n  -p, --print [<PROMPT>]\n          Print response and exit\n          \n          Runs in non-interactive mode: processes the prompt and exits. Optionally accepts an inline prompt: -p \"fix the bug\"\n\n      --export [<PATH>]\n          Export conversation to a file\n          \n          Exports after each turn. Uses a default path if no path is provided.\n\n  -c, --continue\n          Continue the most recent conversation\n\n  -r, --resume [<SESSION_ID>]\n          Resume a conversation\n          \n          Provide a session ID to resume a specific session, or omit to select interactively.\n\n      --respect-workspace-trust [<RESPECT_WORKSPACE_TRUST>]\n          Respect workspace trust settings\n          \n          Defaults to true in every mode. Non-interactive (print) mode cannot show the trust prompt and fails in an untrusted directory; pass --respect-workspace-trust false to skip the check.\n          \n          [possible values: true, false]\n\n  -h, --help\n          Print help (see a summary with '-h')\n\n  -V, --version\n          Print version\n",
+    "stderr": ""
+  },
+  "cleanedUp": true
+}

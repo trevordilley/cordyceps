@@ -1,0 +1,3339 @@
+{
+  "date": "2026-09-30T04:51:12.469Z",
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-vev4JJhcmlXCMNlbtQC1ou4yHBE2IClePS+WOK4q49/ilJ03lyG3nFx+VTfS8KlJ0V50Xslsa/0F17lt2ge2wA==",
+    "shasum": "dfaee764348537d3bd07b5e748c85442146958e6"
+  },
+  "packageEntry": "file:///private/tmp/cordyceps-vendor-package-j3ouwB/consumer/node_modules/cordyceps/dist/index.js",
+  "node": "v22.22.3",
+  "cases": [
+    {
+      "harness": "fx",
+      "scenario": "text",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/fx/fx",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "0.0.11\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/fx/fx",
+        "args": [
+          "ask",
+          "--auto",
+          "cordyceps-fx-text: Return the controlled reply and finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_fx_text_OK",
+        "stderr": ""
+      },
+      "prompt": "cordyceps-fx-text: Return the controlled reply and finish.",
+      "marker": "CORDYCEPS_fx_text_OK",
+      "fixtureToken": "fixture-eaac9860-c081-4e13-89a1-65c62e340717",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": null,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "04993cd2-df9d-4661-b8f6-913fcfc694de",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "7e492b7a7b3e45ae2d0c32628af1de5ce70885155a3a2a2ee4740d2d56bc34c5",
+          "bodyBytes": 30196,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "description": "File path relative to the workspace root, or an external path using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy."
+                  },
+                  "start_line": {
+                    "type": "integer",
+                    "description": "Optional 1-based first line to return. Defaults to 1."
+                  },
+                  "line_count": {
+                    "type": "integer",
+                    "description": "Optional positive number of lines to return. Defaults to the normal read cap and is bounded."
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read one file with bounded line-numbered output and optional start_line/line_count range. UTF-8 text returns as numbered lines; image files (PNG, JPEG, GIF, WebP up to 3.9MB) attach to the result so you can see them. Paths may be workspace-relative or external using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy. When to use: inspect an exact known path before editing or explaining code, or view an image file. When NOT to use: list directories, search many files, read non-image binary data, or bypass dedicated search tools.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "File path relative to the workspace root, or an external path using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy."
+                      },
+                      "start_line": {
+                        "type": "integer",
+                        "description": "Optional 1-based first line to return. Defaults to 1."
+                      },
+                      "line_count": {
+                        "type": "integer",
+                        "description": "Optional positive number of lines to return. Defaults to the normal read cap and is bounded."
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "04993cd2-df9d-4661-b8f6-913fcfc694de",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "5054e4c2efae05e400bb567181fb92f9e243f31648d2c5f96e38aaa178c29c5f"
+        }
+      ]
+    },
+    {
+      "harness": "fx",
+      "scenario": "tool",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/fx/fx",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "0.0.11\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/fx/fx",
+        "args": [
+          "ask",
+          "--auto",
+          "cordyceps-fx-tool: Read fixture.txt with your file reading tool, then finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_fx_tool_OK",
+        "stderr": "Reading /private/tmp/cordyceps-vendor-YmDexf/work/fixture.txt\n"
+      },
+      "prompt": "cordyceps-fx-tool: Read fixture.txt with your file reading tool, then finish.",
+      "marker": "CORDYCEPS_fx_tool_OK",
+      "fixtureToken": "fixture-c41c2add-5275-4551-990e-67153b1fd1d6",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": true,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "c45d5d7a-4cf3-47e0-814a-60ee5a0d3353",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "9cf733e798af6fb06b2aa78491fcfbbc677c95dac44004ee6aa7f5301753c7a6",
+          "bodyBytes": 30215,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "description": "File path relative to the workspace root, or an external path using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy."
+                  },
+                  "start_line": {
+                    "type": "integer",
+                    "description": "Optional 1-based first line to return. Defaults to 1."
+                  },
+                  "line_count": {
+                    "type": "integer",
+                    "description": "Optional positive number of lines to return. Defaults to the normal read cap and is bounded."
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read one file with bounded line-numbered output and optional start_line/line_count range. UTF-8 text returns as numbered lines; image files (PNG, JPEG, GIF, WebP up to 3.9MB) attach to the result so you can see them. Paths may be workspace-relative or external using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy. When to use: inspect an exact known path before editing or explaining code, or view an image file. When NOT to use: list directories, search many files, read non-image binary data, or bypass dedicated search tools.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "File path relative to the workspace root, or an external path using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy."
+                      },
+                      "start_line": {
+                        "type": "integer",
+                        "description": "Optional 1-based first line to return. Defaults to 1."
+                      },
+                      "line_count": {
+                        "type": "integer",
+                        "description": "Optional positive number of lines to return. Defaults to the normal read cap and is bounded."
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "3130b5ed-183a-4831-9709-4939e47d51ca",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "d4c0cfaf090f0286c65e50c9086e5562b8713e68bcea68ab1325dae9fcef8941",
+          "bodyBytes": 30576,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [
+            {
+              "id": "read_fixture",
+              "text": "<path>fixture.txt</path>\n<content>\n1\tfixture-c41c2add-5275-4551-990e-67153b1fd1d6\n</content>",
+              "isError": false,
+              "raw": {
+                "role": "tool",
+                "content": "<path>fixture.txt</path>\n<content>\n1\tfixture-c41c2add-5275-4551-990e-67153b1fd1d6\n</content>",
+                "tool_call_id": "read_fixture"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "description": "File path relative to the workspace root, or an external path using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy."
+                  },
+                  "start_line": {
+                    "type": "integer",
+                    "description": "Optional 1-based first line to return. Defaults to 1."
+                  },
+                  "line_count": {
+                    "type": "integer",
+                    "description": "Optional positive number of lines to return. Defaults to the normal read cap and is bounded."
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read one file with bounded line-numbered output and optional start_line/line_count range. UTF-8 text returns as numbered lines; image files (PNG, JPEG, GIF, WebP up to 3.9MB) attach to the result so you can see them. Paths may be workspace-relative or external using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy. When to use: inspect an exact known path before editing or explaining code, or view an image file. When NOT to use: list directories, search many files, read non-image binary data, or bypass dedicated search tools.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "type": "string",
+                        "description": "File path relative to the workspace root, or an external path using an absolute path, ~/..., or a relative workspace escape such as ../...; external access is subject to permission policy."
+                      },
+                      "start_line": {
+                        "type": "integer",
+                        "description": "Optional 1-based first line to return. Defaults to 1."
+                      },
+                      "line_count": {
+                        "type": "integer",
+                        "description": "Optional positive number of lines to return. Defaults to the normal read cap and is bounded."
+                      }
+                    },
+                    "required": [
+                      "path"
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "c45d5d7a-4cf3-47e0-814a-60ee5a0d3353",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "e87af3dd4c2bd612d928f2174a7c213b25107bfbff218e0002572044886805bb"
+        },
+        {
+          "requestId": "3130b5ed-183a-4831-9709-4939e47d51ca",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "4c0661144086b3a27819e4ef303494dd96708e057efe72b096752d8625ad42be"
+        }
+      ]
+    },
+    {
+      "harness": "ante",
+      "scenario": "text",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/ante/ante",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "ante 0.2.6\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/ante/ante",
+        "args": [
+          "--provider",
+          "cordyceps",
+          "--model",
+          "fixture-model",
+          "--no-skills",
+          "--disable-auto-memory",
+          "--no-session-save",
+          "--prompt",
+          "cordyceps-ante-text: Return the controlled reply and finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "\n\u001b[m\u001b[1m❖\u001b[0m CORDYCEPS_ante_text_OK\n",
+        "stderr": ""
+      },
+      "prompt": "cordyceps-ante-text: Return the controlled reply and finish.",
+      "marker": "CORDYCEPS_ante_text_OK",
+      "fixtureToken": "fixture-5e012787-00d2-4ac7-8f99-1c2495adb3cf",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": null,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "2ce60119-b0d7-4cc5-8cbb-399bcf799636",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "6c1399ff7dd76f13fa7ca4489685093a5e026b74da59b510bc16691a75312bff",
+          "bodyBytes": 33865,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "Read",
+              "inputSchema": {
+                "properties": {
+                  "file_path": {
+                    "description": "The absolute path to the file to read",
+                    "type": "string"
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "format": "uint",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                    "format": "uint",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "PDFs only: which pages to read, e.g. \"1-5,8\" (1-based). Required for\nPDFs with more than 10 pages; at most 20 pages per call.",
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ],
+                "title": "ReadFileArgs",
+                "type": "object"
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "Read",
+                  "description": "\nReads a file from the local filesystem. You can access any file directly by using this tool.\nAssume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.\n\nUsage:\n- The file_path parameter must be an absolute path, not a relative path\n- By default, it reads up to 2000 lines starting from the beginning of the file\n- You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters\n- Results are returned using cat -n format, with line numbers starting at 1\n- Reads image files (PNG, JPG, etc.) visually; large images may be resized or converted. Visual analysis can be imprecise — when exact pixel values or dimensions matter, cross-verify with programmatic tools.\n- This tool can read PDF files (.pdf) page by page: pages are rendered as images for visual analysis, or extracted as embedded text when the model has no vision support. Use the pages parameter (e.g. \"1-5,8\") to select pages; PDFs with more than 10 pages require it, and at most 20 pages are returned per call. Reading rendered pages can be imprecise for exact strings — when verbatim quotes or exact numbers matter, cross-verify with programmatic tools (e.g. pdftotext or Python) via the Bash tool.\n- This tool can only read files, not directories. To read a directory, use an ls command via the Bash tool.\n- You can call multiple tools in a single response. It is always better to speculatively read multiple potentially useful files in parallel.\n- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.\n- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.\n",
+                  "parameters": {
+                    "properties": {
+                      "file_path": {
+                        "description": "The absolute path to the file to read",
+                        "type": "string"
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "format": "uint",
+                        "minimum": 0,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                        "format": "uint",
+                        "minimum": 0,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "PDFs only: which pages to read, e.g. \"1-5,8\" (1-based). Required for\nPDFs with more than 10 pages; at most 20 pages per call.",
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file_path"
+                    ],
+                    "title": "ReadFileArgs",
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "2ce60119-b0d7-4cc5-8cbb-399bcf799636",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "88e3a9bee17d00e253fad2539b5a23450d34ab2b984fabb5229ca1c8c1c14d30"
+        }
+      ]
+    },
+    {
+      "harness": "ante",
+      "scenario": "tool",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/ante/ante",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "ante 0.2.6\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/ante/ante",
+        "args": [
+          "--provider",
+          "cordyceps",
+          "--model",
+          "fixture-model",
+          "--no-skills",
+          "--disable-auto-memory",
+          "--no-session-save",
+          "--prompt",
+          "cordyceps-ante-tool: Read fixture.txt with your file reading tool, then finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "\n\u001b[m\u001b[1m❖\u001b[0m CORDYCEPS_ante_tool_OK\n",
+        "stderr": ""
+      },
+      "prompt": "cordyceps-ante-tool: Read fixture.txt with your file reading tool, then finish.",
+      "marker": "CORDYCEPS_ante_tool_OK",
+      "fixtureToken": "fixture-4d701812-551e-4d1a-b706-da6bc2bedebc",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": true,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "05f1b8a6-6dd0-4fd9-8b52-8bff09f3a9fe",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "2b91bcc380428582ef04569f96a1fc1dd6efba07280e0443e794ebebbbf83b52",
+          "bodyBytes": 33884,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "Read",
+              "inputSchema": {
+                "properties": {
+                  "file_path": {
+                    "description": "The absolute path to the file to read",
+                    "type": "string"
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "format": "uint",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                    "format": "uint",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "PDFs only: which pages to read, e.g. \"1-5,8\" (1-based). Required for\nPDFs with more than 10 pages; at most 20 pages per call.",
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ],
+                "title": "ReadFileArgs",
+                "type": "object"
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "Read",
+                  "description": "\nReads a file from the local filesystem. You can access any file directly by using this tool.\nAssume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.\n\nUsage:\n- The file_path parameter must be an absolute path, not a relative path\n- By default, it reads up to 2000 lines starting from the beginning of the file\n- You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters\n- Results are returned using cat -n format, with line numbers starting at 1\n- Reads image files (PNG, JPG, etc.) visually; large images may be resized or converted. Visual analysis can be imprecise — when exact pixel values or dimensions matter, cross-verify with programmatic tools.\n- This tool can read PDF files (.pdf) page by page: pages are rendered as images for visual analysis, or extracted as embedded text when the model has no vision support. Use the pages parameter (e.g. \"1-5,8\") to select pages; PDFs with more than 10 pages require it, and at most 20 pages are returned per call. Reading rendered pages can be imprecise for exact strings — when verbatim quotes or exact numbers matter, cross-verify with programmatic tools (e.g. pdftotext or Python) via the Bash tool.\n- This tool can only read files, not directories. To read a directory, use an ls command via the Bash tool.\n- You can call multiple tools in a single response. It is always better to speculatively read multiple potentially useful files in parallel.\n- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.\n- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.\n",
+                  "parameters": {
+                    "properties": {
+                      "file_path": {
+                        "description": "The absolute path to the file to read",
+                        "type": "string"
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "format": "uint",
+                        "minimum": 0,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                        "format": "uint",
+                        "minimum": 0,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "PDFs only: which pages to read, e.g. \"1-5,8\" (1-based). Required for\nPDFs with more than 10 pages; at most 20 pages per call.",
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file_path"
+                    ],
+                    "title": "ReadFileArgs",
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "5c7a3e8b-0dba-4d5c-9368-5816176e9f1f",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "0c4cc875f3100e2514e0e7ba384372e9e199ad31ce136c197f5b38eece7aedc3",
+          "bodyBytes": 34189,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [
+            {
+              "id": "read_fixture",
+              "text": "     1→fixture-4d701812-551e-4d1a-b706-da6bc2bedebc\n",
+              "isError": false,
+              "raw": {
+                "role": "tool",
+                "content": "     1→fixture-4d701812-551e-4d1a-b706-da6bc2bedebc\n",
+                "tool_call_id": "read_fixture"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "name": "Read",
+              "inputSchema": {
+                "properties": {
+                  "file_path": {
+                    "description": "The absolute path to the file to read",
+                    "type": "string"
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "format": "uint",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                    "format": "uint",
+                    "minimum": 0,
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "PDFs only: which pages to read, e.g. \"1-5,8\" (1-based). Required for\nPDFs with more than 10 pages; at most 20 pages per call.",
+                    "nullable": true,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ],
+                "title": "ReadFileArgs",
+                "type": "object"
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "Read",
+                  "description": "\nReads a file from the local filesystem. You can access any file directly by using this tool.\nAssume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.\n\nUsage:\n- The file_path parameter must be an absolute path, not a relative path\n- By default, it reads up to 2000 lines starting from the beginning of the file\n- You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters\n- Results are returned using cat -n format, with line numbers starting at 1\n- Reads image files (PNG, JPG, etc.) visually; large images may be resized or converted. Visual analysis can be imprecise — when exact pixel values or dimensions matter, cross-verify with programmatic tools.\n- This tool can read PDF files (.pdf) page by page: pages are rendered as images for visual analysis, or extracted as embedded text when the model has no vision support. Use the pages parameter (e.g. \"1-5,8\") to select pages; PDFs with more than 10 pages require it, and at most 20 pages are returned per call. Reading rendered pages can be imprecise for exact strings — when verbatim quotes or exact numbers matter, cross-verify with programmatic tools (e.g. pdftotext or Python) via the Bash tool.\n- This tool can only read files, not directories. To read a directory, use an ls command via the Bash tool.\n- You can call multiple tools in a single response. It is always better to speculatively read multiple potentially useful files in parallel.\n- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.\n- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.\n",
+                  "parameters": {
+                    "properties": {
+                      "file_path": {
+                        "description": "The absolute path to the file to read",
+                        "type": "string"
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "format": "uint",
+                        "minimum": 0,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once",
+                        "format": "uint",
+                        "minimum": 0,
+                        "nullable": true,
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "PDFs only: which pages to read, e.g. \"1-5,8\" (1-based). Required for\nPDFs with more than 10 pages; at most 20 pages per call.",
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "file_path"
+                    ],
+                    "title": "ReadFileArgs",
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "05f1b8a6-6dd0-4fd9-8b52-8bff09f3a9fe",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "16adde9e4d53221de87f3811016a57f6093c72c1f37ca60ae41bff0f95b11a01"
+        },
+        {
+          "requestId": "5c7a3e8b-0dba-4d5c-9368-5816176e9f1f",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "6c7c671eb191541065d4c00b7f62918c4de39013960aa8fb38139f92a5030e51"
+        }
+      ]
+    },
+    {
+      "harness": "grok-build",
+      "scenario": "text",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/grok/grok",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "grok 1.0.44 (5b807183dd79)\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/grok/grok",
+        "args": [
+          "--model",
+          "cordyceps",
+          "--always-approve",
+          "--no-subagents",
+          "--disable-web-search",
+          "-p",
+          "cordyceps-grok-build-text: Return the controlled reply and finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_grok-build_text_OK\n",
+        "stderr": ""
+      },
+      "prompt": "cordyceps-grok-build-text: Return the controlled reply and finish.",
+      "marker": "CORDYCEPS_grok-build_text_OK",
+      "fixtureToken": "fixture-8ea5ae33-7d43-4b19-86b0-a6fd0740ab0f",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": null,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "1b0c1e58-d105-48a8-98cc-9e83cf986b39",
+          "method": "GET",
+          "path": "/",
+          "model": "",
+          "stream": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bodyBytes": 0,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": []
+        },
+        {
+          "id": "6666950a-ef57-4ecb-a8ce-2356e6b6a189",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "eabe47caf7332ce289e40f46a2bdc39ab2fbec162fb57c470c32fb2cb5ac4a63",
+          "bodyBytes": 55238,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "required": [
+                  "target_file"
+                ],
+                "type": "object",
+                "properties": {
+                  "target_file": {
+                    "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "format": {
+                    "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read a file.\n\nUsage:\n- The target_file parameter can be a relative path in the workspace or an absolute path\n- By default, it reads up to 1000 lines starting from the beginning of the file (SKILL.md and AGENTS.md/CLAUDE.md files are always returned whole; offset and limit are ignored for them)\n- Line numbers (1-based) appear as anchors in the format LINE_NUMBER→LINE_CONTENT on the first returned line and on every 10th line of the file; the lines in between show content only. Count from the nearest anchor when referring to a specific line\n- This tool can read PDF files (.pdf), PowerPoint files (.pptx), Jupyter notebooks (.ipynb files), and image files (e.g. PNG, JPG, etc).\n- When reading an image file the contents are presented visually as this tool uses multimodal LLMs.",
+                  "parameters": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "required": [
+                      "target_file"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "target_file": {
+                        "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                        "type": "string"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                        "type": "integer",
+                        "default": 1
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "format": {
+                        "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "a7074d65-6175-45c8-9fb2-2c6513c287bf",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "6534cd5513b5f902e51df0e51a03dd74b182ed92f3abbd91d6323699c09d25cd",
+          "bodyBytes": 56826,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "required": [
+                  "target_file"
+                ],
+                "type": "object",
+                "properties": {
+                  "target_file": {
+                    "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "format": {
+                    "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read a file.\n\nUsage:\n- The target_file parameter can be a relative path in the workspace or an absolute path\n- By default, it reads up to 1000 lines starting from the beginning of the file (SKILL.md and AGENTS.md/CLAUDE.md files are always returned whole; offset and limit are ignored for them)\n- Line numbers (1-based) appear as anchors in the format LINE_NUMBER→LINE_CONTENT on the first returned line and on every 10th line of the file; the lines in between show content only. Count from the nearest anchor when referring to a specific line\n- This tool can read PDF files (.pdf), PowerPoint files (.pptx), Jupyter notebooks (.ipynb files), and image files (e.g. PNG, JPG, etc).\n- When reading an image file the contents are presented visually as this tool uses multimodal LLMs.",
+                  "parameters": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "required": [
+                      "target_file"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "target_file": {
+                        "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                        "type": "string"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                        "type": "integer",
+                        "default": 1
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "format": {
+                        "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "1b0c1e58-d105-48a8-98cc-9e83cf986b39",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93"
+        },
+        {
+          "requestId": "6666950a-ef57-4ecb-a8ce-2356e6b6a189",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "1a48b31880bed28f64fb7eaea533c45d0a71c4542271602cdec875989d1be3e4"
+        },
+        {
+          "requestId": "a7074d65-6175-45c8-9fb2-2c6513c287bf",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "e2771e305570fa94600a9d067789af17ccd4b88e501a2326b05123a664a2bd95"
+        }
+      ]
+    },
+    {
+      "harness": "grok-build",
+      "scenario": "tool",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/grok/grok",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "grok 1.0.44 (5b807183dd79)\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/grok/grok",
+        "args": [
+          "--model",
+          "cordyceps",
+          "--always-approve",
+          "--no-subagents",
+          "--disable-web-search",
+          "-p",
+          "cordyceps-grok-build-tool: Read fixture.txt with your file reading tool, then finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_grok-build_tool_OK\n",
+        "stderr": ""
+      },
+      "prompt": "cordyceps-grok-build-tool: Read fixture.txt with your file reading tool, then finish.",
+      "marker": "CORDYCEPS_grok-build_tool_OK",
+      "fixtureToken": "fixture-7e9f4ec0-ab51-48c6-a6f4-bf112a577d27",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": true,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "51ce2094-7a4e-4f4b-b745-86d2903b0d3d",
+          "method": "GET",
+          "path": "/",
+          "model": "",
+          "stream": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bodyBytes": 0,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": []
+        },
+        {
+          "id": "44311bfd-c9d8-4885-a1bc-2c98c6ebda6a",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "59c2d29cde764603648221f8c049b6f9a84c43b15038e47455f0fd9027f54b8b",
+          "bodyBytes": 55257,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "required": [
+                  "target_file"
+                ],
+                "type": "object",
+                "properties": {
+                  "target_file": {
+                    "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "format": {
+                    "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read a file.\n\nUsage:\n- The target_file parameter can be a relative path in the workspace or an absolute path\n- By default, it reads up to 1000 lines starting from the beginning of the file (SKILL.md and AGENTS.md/CLAUDE.md files are always returned whole; offset and limit are ignored for them)\n- Line numbers (1-based) appear as anchors in the format LINE_NUMBER→LINE_CONTENT on the first returned line and on every 10th line of the file; the lines in between show content only. Count from the nearest anchor when referring to a specific line\n- This tool can read PDF files (.pdf), PowerPoint files (.pptx), Jupyter notebooks (.ipynb files), and image files (e.g. PNG, JPG, etc).\n- When reading an image file the contents are presented visually as this tool uses multimodal LLMs.",
+                  "parameters": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "required": [
+                      "target_file"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "target_file": {
+                        "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                        "type": "string"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                        "type": "integer",
+                        "default": 1
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "format": {
+                        "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "bd8ae1dc-4d56-484a-a87f-a54a0beb2b0e",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "8b3f1482342fff56518dc7067f5cc164b595e7a59905a5b3af3adb1e0f3ffe55",
+          "bodyBytes": 55604,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [
+            {
+              "id": "read_fixture",
+              "text": "1→fixture-7e9f4ec0-ab51-48c6-a6f4-bf112a577d27\n",
+              "isError": false,
+              "raw": {
+                "role": "tool",
+                "content": "1→fixture-7e9f4ec0-ab51-48c6-a6f4-bf112a577d27\n",
+                "tool_call_id": "read_fixture"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "required": [
+                  "target_file"
+                ],
+                "type": "object",
+                "properties": {
+                  "target_file": {
+                    "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "format": {
+                    "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read a file.\n\nUsage:\n- The target_file parameter can be a relative path in the workspace or an absolute path\n- By default, it reads up to 1000 lines starting from the beginning of the file (SKILL.md and AGENTS.md/CLAUDE.md files are always returned whole; offset and limit are ignored for them)\n- Line numbers (1-based) appear as anchors in the format LINE_NUMBER→LINE_CONTENT on the first returned line and on every 10th line of the file; the lines in between show content only. Count from the nearest anchor when referring to a specific line\n- This tool can read PDF files (.pdf), PowerPoint files (.pptx), Jupyter notebooks (.ipynb files), and image files (e.g. PNG, JPG, etc).\n- When reading an image file the contents are presented visually as this tool uses multimodal LLMs.",
+                  "parameters": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "required": [
+                      "target_file"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "target_file": {
+                        "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                        "type": "string"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                        "type": "integer",
+                        "default": 1
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "format": {
+                        "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "7bd79449-96f1-4f39-a15a-26baa73e4dfa",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "7805e7dc15986d7ddc63ffdb9ed37c0cf01f2160eb957cf2a7fecb1f07ef609a",
+          "bodyBytes": 57211,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [
+            {
+              "id": "read_fixture",
+              "text": "1→fixture-7e9f4ec0-ab51-48c6-a6f4-bf112a577d27\n",
+              "isError": false,
+              "raw": {
+                "role": "tool",
+                "content": "1→fixture-7e9f4ec0-ab51-48c6-a6f4-bf112a577d27\n",
+                "tool_call_id": "read_fixture"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "name": "read_file",
+              "inputSchema": {
+                "$schema": "http://json-schema.org/draft-07/schema#",
+                "required": [
+                  "target_file"
+                ],
+                "type": "object",
+                "properties": {
+                  "target_file": {
+                    "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                    "type": "integer",
+                    "default": 1
+                  },
+                  "limit": {
+                    "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                    "type": "integer"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "format": {
+                    "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "function": {
+                  "name": "read_file",
+                  "description": "Read a file.\n\nUsage:\n- The target_file parameter can be a relative path in the workspace or an absolute path\n- By default, it reads up to 1000 lines starting from the beginning of the file (SKILL.md and AGENTS.md/CLAUDE.md files are always returned whole; offset and limit are ignored for them)\n- Line numbers (1-based) appear as anchors in the format LINE_NUMBER→LINE_CONTENT on the first returned line and on every 10th line of the file; the lines in between show content only. Count from the nearest anchor when referring to a specific line\n- This tool can read PDF files (.pdf), PowerPoint files (.pptx), Jupyter notebooks (.ipynb files), and image files (e.g. PNG, JPG, etc).\n- When reading an image file the contents are presented visually as this tool uses multimodal LLMs.",
+                  "parameters": {
+                    "$schema": "http://json-schema.org/draft-07/schema#",
+                    "required": [
+                      "target_file"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "target_file": {
+                        "description": "The path of the file to read. You can use either a relative path in the workspace or an absolute path. If an absolute path is provided, it will be preserved as is.",
+                        "type": "string"
+                      },
+                      "offset": {
+                        "description": "The line number to start reading from. Only provide if the file is too large to read at once.",
+                        "type": "integer",
+                        "default": 1
+                      },
+                      "limit": {
+                        "description": "The number of lines to read. Only provide if the file is too large to read at once.",
+                        "type": "integer"
+                      },
+                      "pages": {
+                        "description": "Page range for PDF files (e.g. '1-5', '3', '10-'). Required for PDFs with more than 10 pages. Max 20 pages per call. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "format": {
+                        "description": "Output format for PDF files. 'image' (default) renders pages as images. 'text' extracts text content. Ignored for non-PDF files.",
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "51ce2094-7a4e-4f4b-b745-86d2903b0d3d",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93"
+        },
+        {
+          "requestId": "44311bfd-c9d8-4885-a1bc-2c98c6ebda6a",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "44e5e4a506c4f49fb74e061d999c948ccfc1aef3637b1a7122944b01cd3220e9"
+        },
+        {
+          "requestId": "bd8ae1dc-4d56-484a-a87f-a54a0beb2b0e",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "b97ea38376b32da76f709fcd4425ac913be1394ed25fe3a5a0d8f4a640162035"
+        },
+        {
+          "requestId": "7bd79449-96f1-4f39-a15a-26baa73e4dfa",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "61643ff3137c42b8067474c6f23c1f189cde3654b1e1f4e015f0fbb9a5b71379"
+        }
+      ]
+    },
+    {
+      "harness": "muse",
+      "scenario": "text",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/muse",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "Muse Code 1.4.1 (1.4.1-R4503.1)\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/muse",
+        "args": [
+          "exec",
+          "--provider",
+          "meta",
+          "--base-url",
+          "http://127.0.0.1:55711/v1",
+          "--yolo",
+          "--no-session-log",
+          "--model",
+          "muse-spark-1.3",
+          "cordyceps-muse-text: Return the controlled reply and finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_muse_text_OK\n",
+        "stderr": "muse: local session messaging disabled: session logging is required\nmuse: workspace root: /private/tmp/cordyceps-vendor-pRtLrv/work (cwd default)\nmuse: workspace trust: trusted source=run-flag\n"
+      },
+      "prompt": "cordyceps-muse-text: Return the controlled reply and finish.",
+      "marker": "CORDYCEPS_muse_text_OK",
+      "fixtureToken": "fixture-dc7e9ab0-c1df-44d7-b7a3-26fcd491b7f4",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": null,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "1693cec7-9f80-4a14-a7a2-7ba4fffc2290",
+          "method": "GET",
+          "path": "/muse-code/models",
+          "model": "",
+          "stream": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bodyBytes": 0,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": []
+        },
+        {
+          "id": "43fe1862-cac0-435c-ab52-0faa4791d28d",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "b884f163e20146e47f335514cb6dba393feb7b7256349894e408e0d3188c34dc",
+          "bodyBytes": 112103,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read_file",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "description": "Path of ONE regular file to read. Never a directory — a directory path fails with 'not a regular file'; list directories with the muse.bash tool instead. Relative paths resolve from the Active Workspace Root. Shell `cd`/`workdir` affects only that shell call and does not change this root. Absolute paths may be used only when the current filesystem policy allows them."
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "1-based line number where the text read window starts. Ignored for image and video files. Defaults to 1."
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2000,
+                    "description": "Maximum number of text lines to return. Ignored for image and video files. Defaults to 500."
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "type": "function",
+                "name": "read_file",
+                "description": "Read a line-numbered UTF-8 text file window, or attach a supported image or MP4/MOV video file as model-visible output.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "description": "Path of ONE regular file to read. Never a directory — a directory path fails with 'not a regular file'; list directories with the muse.bash tool instead. Relative paths resolve from the Active Workspace Root. Shell `cd`/`workdir` affects only that shell call and does not change this root. Absolute paths may be used only when the current filesystem policy allows them."
+                    },
+                    "offset": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "description": "1-based line number where the text read window starts. Ignored for image and video files. Defaults to 1."
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 2000,
+                      "description": "Maximum number of text lines to return. Ignored for image and video files. Defaults to 500."
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                },
+                "strict": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "d4c5afc0-21e5-4998-9591-8bdf77235cfa",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "40da69dff05b75ab3aeecfe65635db10fa7b489a363c46666cb29498895838f5",
+          "bodyBytes": 61960,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "submit_reminder_decision",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "decision",
+                  "advisory_text",
+                  "confidence",
+                  "priority",
+                  "reason",
+                  "skill_id",
+                  "visible_for_steps"
+                ],
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "remind",
+                      "none"
+                    ]
+                  },
+                  "advisory_text": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "Short text to deliver to the main agent when reminding."
+                  },
+                  "confidence": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "enum": [
+                      "low",
+                      "medium",
+                      "high"
+                    ],
+                    "description": "Confidence in the decision."
+                  },
+                  "priority": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "enum": [
+                      "low",
+                      "normal",
+                      "high"
+                    ],
+                    "description": "Requested reminder priority."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "description": "Brief reason for reminding or staying silent."
+                  },
+                  "skill_id": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "The listed skill id to remind when needs_reminder is true."
+                  },
+                  "visible_for_steps": {
+                    "type": [
+                      "null",
+                      "integer"
+                    ],
+                    "minimum": 1,
+                    "maximum": 8,
+                    "description": "Requested ephemeral visibility length in main model steps."
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "name": "submit_reminder_decision",
+                "description": "Submit this reminder child's explicit decision.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "decision",
+                    "advisory_text",
+                    "confidence",
+                    "priority",
+                    "reason",
+                    "skill_id",
+                    "visible_for_steps"
+                  ],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "remind",
+                        "none"
+                      ]
+                    },
+                    "advisory_text": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "Short text to deliver to the main agent when reminding."
+                    },
+                    "confidence": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                      ],
+                      "description": "Confidence in the decision."
+                    },
+                    "priority": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "enum": [
+                        "low",
+                        "normal",
+                        "high"
+                      ],
+                      "description": "Requested reminder priority."
+                    },
+                    "reason": {
+                      "type": "string",
+                      "description": "Brief reason for reminding or staying silent."
+                    },
+                    "skill_id": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "The listed skill id to remind when needs_reminder is true."
+                    },
+                    "visible_for_steps": {
+                      "type": [
+                        "null",
+                        "integer"
+                      ],
+                      "minimum": 1,
+                      "maximum": 8,
+                      "description": "Requested ephemeral visibility length in main model steps."
+                    }
+                  }
+                },
+                "strict": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "eafef6db-a541-422e-8e25-da2dbc6b65bf",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "d9145b6e8c7805cc5589f7b7a3a426fcaed81efc7140b7aae2ea42100d83d8bd",
+          "bodyBytes": 14544,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "submit_reminder_decision",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "decision",
+                  "next_step",
+                  "reason"
+                ],
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "remind",
+                      "none"
+                    ]
+                  },
+                  "next_step": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "When decision is remind, write a direct developer instruction. Name the concrete remaining explicit deliverable and the next meaningful way to advance or determine it from observed state: substantive tool action, real wait/monitor, necessary user handoff, or concrete blocker. Preserve already-completed work and do not impose one action shape. An explicit external predicate still PENDING with no unanswered user handoff remains unfinished; name the missing terminal evidence and the real monitoring or wait path, or a concrete blocker. Never write in the main agent's first person, mention reminder/system/observer, invent work/authority, claim completion, or demand generic activity. Never direct falsifying, intercepting, disabling, bypassing, or routing around a user-named test, check, or acceptance evidence source to make it look satisfied; when it cannot pass honestly within the user's constraints, name the honest blocker or report instead. Keep private reason in reason."
+                  },
+                  "reason": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "Brief reason for the decision."
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "name": "submit_reminder_decision",
+                "description": "Submit this reminder child's explicit decision.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "decision",
+                    "next_step",
+                    "reason"
+                  ],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "remind",
+                        "none"
+                      ]
+                    },
+                    "next_step": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "When decision is remind, write a direct developer instruction. Name the concrete remaining explicit deliverable and the next meaningful way to advance or determine it from observed state: substantive tool action, real wait/monitor, necessary user handoff, or concrete blocker. Preserve already-completed work and do not impose one action shape. An explicit external predicate still PENDING with no unanswered user handoff remains unfinished; name the missing terminal evidence and the real monitoring or wait path, or a concrete blocker. Never write in the main agent's first person, mention reminder/system/observer, invent work/authority, claim completion, or demand generic activity. Never direct falsifying, intercepting, disabling, bypassing, or routing around a user-named test, check, or acceptance evidence source to make it look satisfied; when it cannot pass honestly within the user's constraints, name the honest blocker or report instead. Keep private reason in reason."
+                    },
+                    "reason": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "Brief reason for the decision."
+                    }
+                  }
+                },
+                "strict": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "02694fa3-ac63-4e9e-a844-83a1b7ab6c40",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "f812c67f23c13466bbb390ec6dda9c106fed854c9a9b9ac499d24f5a0efdcaa5",
+          "bodyBytes": 14001,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "submit_reminder_decision",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "decision",
+                  "next_step",
+                  "reason"
+                ],
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "remind",
+                      "none"
+                    ]
+                  },
+                  "next_step": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "When decision is remind, the nudge to deliver, written as the MAIN AGENT'S OWN NEXT STEP in its own voice (begin with \"I'll \"), naming exactly what was left unverified and how it will be checked for real — for a rendered UI, that you'll look at the ACTUAL render (capture a screenshot with a HEADLESS/background browser — never a visible focus-stealing window — and read it back as an image), not just the DOM or console. Keep it to 1-2 sentences. It MUST be a PURE FORWARD next step: never confess the work is unfinished or unrun (\"I haven't…\", \"not yet\"), never react to feedback (\"you're right\", \"good catch\"), never mention a reminder/observer/system/note/instruction/directive, and never address the agent as \"you\". If you cannot phrase it safely, omit this field and a safe default is used. Put the nudge HERE, never as prose outside the tool call."
+                  },
+                  "reason": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "Brief reason for the decision."
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "name": "submit_reminder_decision",
+                "description": "Submit this reminder child's explicit decision.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "decision",
+                    "next_step",
+                    "reason"
+                  ],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "remind",
+                        "none"
+                      ]
+                    },
+                    "next_step": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "When decision is remind, the nudge to deliver, written as the MAIN AGENT'S OWN NEXT STEP in its own voice (begin with \"I'll \"), naming exactly what was left unverified and how it will be checked for real — for a rendered UI, that you'll look at the ACTUAL render (capture a screenshot with a HEADLESS/background browser — never a visible focus-stealing window — and read it back as an image), not just the DOM or console. Keep it to 1-2 sentences. It MUST be a PURE FORWARD next step: never confess the work is unfinished or unrun (\"I haven't…\", \"not yet\"), never react to feedback (\"you're right\", \"good catch\"), never mention a reminder/observer/system/note/instruction/directive, and never address the agent as \"you\". If you cannot phrase it safely, omit this field and a safe default is used. Put the nudge HERE, never as prose outside the tool call."
+                    },
+                    "reason": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "Brief reason for the decision."
+                    }
+                  }
+                },
+                "strict": true
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "1693cec7-9f80-4a14-a7a2-7ba4fffc2290",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "4381297e80698dae9fa0652e7aa082668ccd73d2bd9d1211a60c65531509314f"
+        },
+        {
+          "requestId": "43fe1862-cac0-435c-ab52-0faa4791d28d",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "dc79235fd7c5fe6473e54c5491c3aff7a030eea1881cdb79044c956f80b7c8f7"
+        },
+        {
+          "requestId": "d4c5afc0-21e5-4998-9591-8bdf77235cfa",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "f3453eff1b50bb6aabf38fe9d4fa9c414361a00e51166ee503249422c26e3668"
+        },
+        {
+          "requestId": "eafef6db-a541-422e-8e25-da2dbc6b65bf",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "2476efeeda77b78c630fee279a87c47bf6ab62688da2871feffbb7b8c493d111"
+        },
+        {
+          "requestId": "02694fa3-ac63-4e9e-a844-83a1b7ab6c40",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "77b7444afa264300a406bed8793d41ae42907fe7851ac3000ca2820f8ef42ecd"
+        }
+      ]
+    },
+    {
+      "harness": "muse",
+      "scenario": "tool",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/muse",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "Muse Code 1.4.1 (1.4.1-R4503.1)\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/muse",
+        "args": [
+          "exec",
+          "--provider",
+          "meta",
+          "--base-url",
+          "http://127.0.0.1:55719/v1",
+          "--yolo",
+          "--no-session-log",
+          "--model",
+          "muse-spark-1.3",
+          "cordyceps-muse-tool: Read fixture.txt with your file reading tool, then finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_muse_tool_OK\n",
+        "stderr": "muse: local session messaging disabled: session logging is required\nmuse: workspace root: /private/tmp/cordyceps-vendor-xQXrz8/work (cwd default)\nmuse: workspace trust: trusted source=run-flag\n"
+      },
+      "prompt": "cordyceps-muse-tool: Read fixture.txt with your file reading tool, then finish.",
+      "marker": "CORDYCEPS_muse_tool_OK",
+      "fixtureToken": "fixture-431dd26d-92fe-42b4-b691-53b23683cfd4",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": true,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "16cd27f6-0676-4902-b56a-6d7ef46c08a5",
+          "method": "GET",
+          "path": "/muse-code/models",
+          "model": "",
+          "stream": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bodyBytes": 0,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": []
+        },
+        {
+          "id": "966d9e1a-c877-48dd-8dfb-d9b357b679c8",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "c7fbebfce5b7a3c061d3529e005443d4dd07a7dbc7caa56b5684747bf0cdb3e2",
+          "bodyBytes": 112122,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read_file",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "description": "Path of ONE regular file to read. Never a directory — a directory path fails with 'not a regular file'; list directories with the muse.bash tool instead. Relative paths resolve from the Active Workspace Root. Shell `cd`/`workdir` affects only that shell call and does not change this root. Absolute paths may be used only when the current filesystem policy allows them."
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "1-based line number where the text read window starts. Ignored for image and video files. Defaults to 1."
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2000,
+                    "description": "Maximum number of text lines to return. Ignored for image and video files. Defaults to 500."
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "type": "function",
+                "name": "read_file",
+                "description": "Read a line-numbered UTF-8 text file window, or attach a supported image or MP4/MOV video file as model-visible output.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "description": "Path of ONE regular file to read. Never a directory — a directory path fails with 'not a regular file'; list directories with the muse.bash tool instead. Relative paths resolve from the Active Workspace Root. Shell `cd`/`workdir` affects only that shell call and does not change this root. Absolute paths may be used only when the current filesystem policy allows them."
+                    },
+                    "offset": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "description": "1-based line number where the text read window starts. Ignored for image and video files. Defaults to 1."
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 2000,
+                      "description": "Maximum number of text lines to return. Ignored for image and video files. Defaults to 500."
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                },
+                "strict": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "8352e1a5-3d96-4597-b338-215dea367ea4",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "74fb0d8425b66fe6e2cf0cdb5374d037102cb8a3cf2643bdcd935ed802532c7f",
+          "bodyBytes": 61979,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "submit_reminder_decision",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "decision",
+                  "advisory_text",
+                  "confidence",
+                  "priority",
+                  "reason",
+                  "skill_id",
+                  "visible_for_steps"
+                ],
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "remind",
+                      "none"
+                    ]
+                  },
+                  "advisory_text": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "Short text to deliver to the main agent when reminding."
+                  },
+                  "confidence": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "enum": [
+                      "low",
+                      "medium",
+                      "high"
+                    ],
+                    "description": "Confidence in the decision."
+                  },
+                  "priority": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "enum": [
+                      "low",
+                      "normal",
+                      "high"
+                    ],
+                    "description": "Requested reminder priority."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "description": "Brief reason for reminding or staying silent."
+                  },
+                  "skill_id": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "The listed skill id to remind when needs_reminder is true."
+                  },
+                  "visible_for_steps": {
+                    "type": [
+                      "null",
+                      "integer"
+                    ],
+                    "minimum": 1,
+                    "maximum": 8,
+                    "description": "Requested ephemeral visibility length in main model steps."
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "name": "submit_reminder_decision",
+                "description": "Submit this reminder child's explicit decision.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "decision",
+                    "advisory_text",
+                    "confidence",
+                    "priority",
+                    "reason",
+                    "skill_id",
+                    "visible_for_steps"
+                  ],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "remind",
+                        "none"
+                      ]
+                    },
+                    "advisory_text": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "Short text to deliver to the main agent when reminding."
+                    },
+                    "confidence": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                      ],
+                      "description": "Confidence in the decision."
+                    },
+                    "priority": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "enum": [
+                        "low",
+                        "normal",
+                        "high"
+                      ],
+                      "description": "Requested reminder priority."
+                    },
+                    "reason": {
+                      "type": "string",
+                      "description": "Brief reason for reminding or staying silent."
+                    },
+                    "skill_id": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "The listed skill id to remind when needs_reminder is true."
+                    },
+                    "visible_for_steps": {
+                      "type": [
+                        "null",
+                        "integer"
+                      ],
+                      "minimum": 1,
+                      "maximum": 8,
+                      "description": "Requested ephemeral visibility length in main model steps."
+                    }
+                  }
+                },
+                "strict": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "d02f5071-c6d5-4bef-a9bb-bd9078bcc038",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "c57f0733b726e3451839b11c96004d9eac1cad8ba6bf7f829e82abca9cedb823",
+          "bodyBytes": 112510,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [
+            {
+              "id": "read_fixture",
+              "text": "Read text file `/private/tmp/cordyceps-vendor-xQXrz8/work/fixture.txt`.\n1|fixture-431dd26d-92fe-42b4-b691-53b23683cfd4",
+              "isError": false,
+              "raw": {
+                "type": "function_call_output",
+                "call_id": "read_fixture",
+                "output": "Read text file `/private/tmp/cordyceps-vendor-xQXrz8/work/fixture.txt`.\n1|fixture-431dd26d-92fe-42b4-b691-53b23683cfd4"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "name": "read_file",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "path": {
+                    "type": "string",
+                    "description": "Path of ONE regular file to read. Never a directory — a directory path fails with 'not a regular file'; list directories with the muse.bash tool instead. Relative paths resolve from the Active Workspace Root. Shell `cd`/`workdir` affects only that shell call and does not change this root. Absolute paths may be used only when the current filesystem policy allows them."
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "1-based line number where the text read window starts. Ignored for image and video files. Defaults to 1."
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2000,
+                    "description": "Maximum number of text lines to return. Ignored for image and video files. Defaults to 500."
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "type": "function",
+                "name": "read_file",
+                "description": "Read a line-numbered UTF-8 text file window, or attach a supported image or MP4/MOV video file as model-visible output.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "description": "Path of ONE regular file to read. Never a directory — a directory path fails with 'not a regular file'; list directories with the muse.bash tool instead. Relative paths resolve from the Active Workspace Root. Shell `cd`/`workdir` affects only that shell call and does not change this root. Absolute paths may be used only when the current filesystem policy allows them."
+                    },
+                    "offset": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "description": "1-based line number where the text read window starts. Ignored for image and video files. Defaults to 1."
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 2000,
+                      "description": "Maximum number of text lines to return. Ignored for image and video files. Defaults to 500."
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                },
+                "strict": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "42927a7d-a593-4e25-b7f6-51f35dc5fb6f",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "1200b43cafb2368d139a35ba5442bb313c8beb432fcfe8932b8ad69e282e4eee",
+          "bodyBytes": 62387,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "submit_reminder_decision",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "decision",
+                  "advisory_text",
+                  "confidence",
+                  "priority",
+                  "reason",
+                  "skill_id",
+                  "visible_for_steps"
+                ],
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "remind",
+                      "none"
+                    ]
+                  },
+                  "advisory_text": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "Short text to deliver to the main agent when reminding."
+                  },
+                  "confidence": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "enum": [
+                      "low",
+                      "medium",
+                      "high"
+                    ],
+                    "description": "Confidence in the decision."
+                  },
+                  "priority": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "enum": [
+                      "low",
+                      "normal",
+                      "high"
+                    ],
+                    "description": "Requested reminder priority."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "description": "Brief reason for reminding or staying silent."
+                  },
+                  "skill_id": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "The listed skill id to remind when needs_reminder is true."
+                  },
+                  "visible_for_steps": {
+                    "type": [
+                      "null",
+                      "integer"
+                    ],
+                    "minimum": 1,
+                    "maximum": 8,
+                    "description": "Requested ephemeral visibility length in main model steps."
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "name": "submit_reminder_decision",
+                "description": "Submit this reminder child's explicit decision.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "decision",
+                    "advisory_text",
+                    "confidence",
+                    "priority",
+                    "reason",
+                    "skill_id",
+                    "visible_for_steps"
+                  ],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "remind",
+                        "none"
+                      ]
+                    },
+                    "advisory_text": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "Short text to deliver to the main agent when reminding."
+                    },
+                    "confidence": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "enum": [
+                        "low",
+                        "medium",
+                        "high"
+                      ],
+                      "description": "Confidence in the decision."
+                    },
+                    "priority": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "enum": [
+                        "low",
+                        "normal",
+                        "high"
+                      ],
+                      "description": "Requested reminder priority."
+                    },
+                    "reason": {
+                      "type": "string",
+                      "description": "Brief reason for reminding or staying silent."
+                    },
+                    "skill_id": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "The listed skill id to remind when needs_reminder is true."
+                    },
+                    "visible_for_steps": {
+                      "type": [
+                        "null",
+                        "integer"
+                      ],
+                      "minimum": 1,
+                      "maximum": 8,
+                      "description": "Requested ephemeral visibility length in main model steps."
+                    }
+                  }
+                },
+                "strict": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "40cbca69-6c94-4dc8-ac6f-2d9bbb879326",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "50397a9ab9c06e2a66ddc5de7cdec3f0b1ca8a408527447e91379a3981951e97",
+          "bodyBytes": 14968,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "submit_reminder_decision",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "decision",
+                  "next_step",
+                  "reason"
+                ],
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "remind",
+                      "none"
+                    ]
+                  },
+                  "next_step": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "When decision is remind, write a direct developer instruction. Name the concrete remaining explicit deliverable and the next meaningful way to advance or determine it from observed state: substantive tool action, real wait/monitor, necessary user handoff, or concrete blocker. Preserve already-completed work and do not impose one action shape. An explicit external predicate still PENDING with no unanswered user handoff remains unfinished; name the missing terminal evidence and the real monitoring or wait path, or a concrete blocker. Never write in the main agent's first person, mention reminder/system/observer, invent work/authority, claim completion, or demand generic activity. Never direct falsifying, intercepting, disabling, bypassing, or routing around a user-named test, check, or acceptance evidence source to make it look satisfied; when it cannot pass honestly within the user's constraints, name the honest blocker or report instead. Keep private reason in reason."
+                  },
+                  "reason": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "Brief reason for the decision."
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "name": "submit_reminder_decision",
+                "description": "Submit this reminder child's explicit decision.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "decision",
+                    "next_step",
+                    "reason"
+                  ],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "remind",
+                        "none"
+                      ]
+                    },
+                    "next_step": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "When decision is remind, write a direct developer instruction. Name the concrete remaining explicit deliverable and the next meaningful way to advance or determine it from observed state: substantive tool action, real wait/monitor, necessary user handoff, or concrete blocker. Preserve already-completed work and do not impose one action shape. An explicit external predicate still PENDING with no unanswered user handoff remains unfinished; name the missing terminal evidence and the real monitoring or wait path, or a concrete blocker. Never write in the main agent's first person, mention reminder/system/observer, invent work/authority, claim completion, or demand generic activity. Never direct falsifying, intercepting, disabling, bypassing, or routing around a user-named test, check, or acceptance evidence source to make it look satisfied; when it cannot pass honestly within the user's constraints, name the honest blocker or report instead. Keep private reason in reason."
+                    },
+                    "reason": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "Brief reason for the decision."
+                    }
+                  }
+                },
+                "strict": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "f6450413-f59f-4566-ba8d-1564edb83a44",
+          "method": "POST",
+          "path": "/v1/responses",
+          "model": "muse-spark-1.3",
+          "stream": true,
+          "bodySha256": "e5acc230e51bc5c95afd1e3f92686acd1518a1fddc7d5b6f25e056255df881ef",
+          "bodyBytes": 14428,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "submit_reminder_decision",
+              "namespace": "muse",
+              "inputSchema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "decision",
+                  "next_step",
+                  "reason"
+                ],
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "remind",
+                      "none"
+                    ]
+                  },
+                  "next_step": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "When decision is remind, the nudge to deliver, written as the MAIN AGENT'S OWN NEXT STEP in its own voice (begin with \"I'll \"), naming exactly what was left unverified and how it will be checked for real — for a rendered UI, that you'll look at the ACTUAL render (capture a screenshot with a HEADLESS/background browser — never a visible focus-stealing window — and read it back as an image), not just the DOM or console. Keep it to 1-2 sentences. It MUST be a PURE FORWARD next step: never confess the work is unfinished or unrun (\"I haven't…\", \"not yet\"), never react to feedback (\"you're right\", \"good catch\"), never mention a reminder/observer/system/note/instruction/directive, and never address the agent as \"you\". If you cannot phrase it safely, omit this field and a safe default is used. Put the nudge HERE, never as prose outside the tool call."
+                  },
+                  "reason": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "Brief reason for the decision."
+                  }
+                }
+              },
+              "raw": {
+                "type": "function",
+                "name": "submit_reminder_decision",
+                "description": "Submit this reminder child's explicit decision.",
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "decision",
+                    "next_step",
+                    "reason"
+                  ],
+                  "properties": {
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "remind",
+                        "none"
+                      ]
+                    },
+                    "next_step": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "When decision is remind, the nudge to deliver, written as the MAIN AGENT'S OWN NEXT STEP in its own voice (begin with \"I'll \"), naming exactly what was left unverified and how it will be checked for real — for a rendered UI, that you'll look at the ACTUAL render (capture a screenshot with a HEADLESS/background browser — never a visible focus-stealing window — and read it back as an image), not just the DOM or console. Keep it to 1-2 sentences. It MUST be a PURE FORWARD next step: never confess the work is unfinished or unrun (\"I haven't…\", \"not yet\"), never react to feedback (\"you're right\", \"good catch\"), never mention a reminder/observer/system/note/instruction/directive, and never address the agent as \"you\". If you cannot phrase it safely, omit this field and a safe default is used. Put the nudge HERE, never as prose outside the tool call."
+                    },
+                    "reason": {
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "description": "Brief reason for the decision."
+                    }
+                  }
+                },
+                "strict": true
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "16cd27f6-0676-4902-b56a-6d7ef46c08a5",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "4381297e80698dae9fa0652e7aa082668ccd73d2bd9d1211a60c65531509314f"
+        },
+        {
+          "requestId": "966d9e1a-c877-48dd-8dfb-d9b357b679c8",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "4a8e49f76b774f7100e482ff848d52b8c3961ec8ca50b2a230d88177d3b405e8"
+        },
+        {
+          "requestId": "8352e1a5-3d96-4597-b338-215dea367ea4",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "d3e8a3e138da6d051278c80972d86256ff61b8c9fe40cbc848f5d1074d03a10a"
+        },
+        {
+          "requestId": "d02f5071-c6d5-4bef-a9bb-bd9078bcc038",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "43a6828994b13f7d096d562af2d93cd4616a389ba43a487aca61711c25885cc7"
+        },
+        {
+          "requestId": "42927a7d-a593-4e25-b7f6-51f35dc5fb6f",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "07fdc0793d02452ca69a7cbe4f508d6ffd1e07156cf11fad31fea54acbbf460e"
+        },
+        {
+          "requestId": "40cbca69-6c94-4dc8-ac6f-2d9bbb879326",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "5168198a9d19a4db87842f17af84e8a6b59e5dc2901bfedc90809df4186b6b00"
+        },
+        {
+          "requestId": "f6450413-f59f-4566-ba8d-1564edb83a44",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "73bb53aafd2f0aa8527bbdbb191b2d73880c241230f132a2753f6d0052579430"
+        }
+      ]
+    },
+    {
+      "harness": "minimax",
+      "scenario": "text",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/minimax/node_modules/.bin/mcode",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "0.5.9\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/minimax/node_modules/.bin/mcode",
+        "args": [
+          "exec",
+          "--model",
+          "custom_provider:cordyceps/fixture-model",
+          "--permission",
+          "full",
+          "cordyceps-minimax-text: Return the controlled reply and finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_minimax_text_OK\n",
+        "stderr": ""
+      },
+      "prompt": "cordyceps-minimax-text: Return the controlled reply and finish.",
+      "marker": "CORDYCEPS_minimax_text_OK",
+      "fixtureToken": "fixture-87705701-20e0-4924-b392-1e51ab5867ae",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": null,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "1a110c05-2f73-44b3-a27e-520120997677",
+          "method": "POST",
+          "path": "/v1/messages/count_tokens",
+          "model": "fixture-model",
+          "stream": false,
+          "bodySha256": "a1b821c23911953f25e815fd6bed820ac2ef1bcc66aca5bb5af3508101267a0d",
+          "bodyBytes": 14347,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": []
+        },
+        {
+          "id": "2115d366-7107-48de-a5c8-4c66a106c9df",
+          "method": "POST",
+          "path": "/v1/messages/count_tokens",
+          "model": "fixture-model",
+          "stream": false,
+          "bodySha256": "905eee92b2f64b4ad36eaa798aaffac62832fed10d5cab7cf4ce3b5ea83fd25f",
+          "bodyBytes": 48477,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "description": "Workspace-relative or absolute local file path.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "Starting line for text files (1-indexed).",
+                    "type": "number"
+                  },
+                  "limit": {
+                    "description": "Maximum number of text lines to read.",
+                    "type": "number"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "name": "read",
+                "description": "Reads a file from the local filesystem.\n\n- `path` can be workspace-relative or absolute; the desktop permission gate reviews it.\n- Text reads return up to 2000 lines, subject to byte limits. Use `offset` and `limit` to read only the part you need.\n- Text results include line numbers starting at 1.\n- Follow a truncated result's continuation instructions only if you need the omitted text. When `next_offset` is provided, use that exact value with the same `path`.\n- Reads images (jpg, png, gif, webp) and presents them visually.\n- Reads PDFs via `pages` (required for PDFs over 10 pages; max 20 pages/request), and Jupyter notebooks (.ipynb) as cells with outputs.\n- Reads videos (mp4, avi, mov, mkv) when the active model supports video.\n- Directories, missing files, unsupported binary files, and empty files return an error or system reminder.\n- Reuse current file content already in context. Re-read when it may be stale or to resolve uncertain content or failed matches; do not re-read solely to confirm a successful edit/write.",
+                "input_schema": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "description": "Workspace-relative or absolute local file path.",
+                      "type": "string"
+                    },
+                    "offset": {
+                      "description": "Starting line for text files (1-indexed).",
+                      "type": "number"
+                    },
+                    "limit": {
+                      "description": "Maximum number of text lines to read.",
+                      "type": "number"
+                    },
+                    "pages": {
+                      "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "32930383-5b5a-47d8-98f1-8e76c1663662",
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "e004c265546bfc75604a13439f70b59d4f9400aa30940d5ffefc1b1d6d0d9634",
+          "bodyBytes": 49975,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "description": "Workspace-relative or absolute local file path.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "Starting line for text files (1-indexed).",
+                    "type": "number"
+                  },
+                  "limit": {
+                    "description": "Maximum number of text lines to read.",
+                    "type": "number"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "name": "read",
+                "description": "Reads a file from the local filesystem.\n\n- `path` can be workspace-relative or absolute; the desktop permission gate reviews it.\n- Text reads return up to 2000 lines, subject to byte limits. Use `offset` and `limit` to read only the part you need.\n- Text results include line numbers starting at 1.\n- Follow a truncated result's continuation instructions only if you need the omitted text. When `next_offset` is provided, use that exact value with the same `path`.\n- Reads images (jpg, png, gif, webp) and presents them visually.\n- Reads PDFs via `pages` (required for PDFs over 10 pages; max 20 pages/request), and Jupyter notebooks (.ipynb) as cells with outputs.\n- Reads videos (mp4, avi, mov, mkv) when the active model supports video.\n- Directories, missing files, unsupported binary files, and empty files return an error or system reminder.\n- Reuse current file content already in context. Re-read when it may be stale or to resolve uncertain content or failed matches; do not re-read solely to confirm a successful edit/write.",
+                "eager_input_streaming": true,
+                "input_schema": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "description": "Workspace-relative or absolute local file path.",
+                      "type": "string"
+                    },
+                    "offset": {
+                      "description": "Starting line for text files (1-indexed).",
+                      "type": "number"
+                    },
+                    "limit": {
+                      "description": "Maximum number of text lines to read.",
+                      "type": "number"
+                    },
+                    "pages": {
+                      "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "1a110c05-2f73-44b3-a27e-520120997677",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "ef9d109afd6330bddb2873868481589fb48ce6d30ed9127020d113c6fe8eddeb"
+        },
+        {
+          "requestId": "2115d366-7107-48de-a5c8-4c66a106c9df",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "ef9d109afd6330bddb2873868481589fb48ce6d30ed9127020d113c6fe8eddeb"
+        },
+        {
+          "requestId": "32930383-5b5a-47d8-98f1-8e76c1663662",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "dbd3a0e52ff3f094758938a0ebceba7904632c931dada9ec0e1d52ee18a44e2b"
+        }
+      ]
+    },
+    {
+      "harness": "minimax",
+      "scenario": "tool",
+      "passed": true,
+      "cleanedUp": true,
+      "version": {
+        "binary": "/tmp/cordyceps-vendor-investigation/minimax/node_modules/.bin/mcode",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "0.5.9\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/tmp/cordyceps-vendor-investigation/minimax/node_modules/.bin/mcode",
+        "args": [
+          "exec",
+          "--model",
+          "custom_provider:cordyceps/fixture-model",
+          "--permission",
+          "full",
+          "cordyceps-minimax-tool: Read fixture.txt with your file reading tool, then finish."
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "CORDYCEPS_minimax_tool_OK\n",
+        "stderr": ""
+      },
+      "prompt": "cordyceps-minimax-tool: Read fixture.txt with your file reading tool, then finish.",
+      "marker": "CORDYCEPS_minimax_tool_OK",
+      "fixtureToken": "fixture-a0108e4e-ad77-439b-8f01-0ac13c454609",
+      "assertions": {
+        "promptCaptured": true,
+        "controlledNativeOutput": true,
+        "fixtureAbsentInitially": true,
+        "realToolRoundTrip": true,
+        "providerHealthy": true,
+        "processExited": true
+      },
+      "failures": [],
+      "requests": [
+        {
+          "id": "4a5cd638-7489-4ed6-af02-57f417231031",
+          "method": "POST",
+          "path": "/v1/messages/count_tokens",
+          "model": "fixture-model",
+          "stream": false,
+          "bodySha256": "fa40cad4af9eb72c328b01314efdb1b92d5ffb687613b5f397628830fa6c0cd0",
+          "bodyBytes": 14347,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": []
+        },
+        {
+          "id": "1eb2519b-c427-4ff2-b062-a3aa1af94d21",
+          "method": "POST",
+          "path": "/v1/messages/count_tokens",
+          "model": "fixture-model",
+          "stream": false,
+          "bodySha256": "ac4fea666edb11903cf5904f4de9ade65fa78489ea5cf60ba2ff6cd4b834f218",
+          "bodyBytes": 48477,
+          "promptPresent": false,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "description": "Workspace-relative or absolute local file path.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "Starting line for text files (1-indexed).",
+                    "type": "number"
+                  },
+                  "limit": {
+                    "description": "Maximum number of text lines to read.",
+                    "type": "number"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "name": "read",
+                "description": "Reads a file from the local filesystem.\n\n- `path` can be workspace-relative or absolute; the desktop permission gate reviews it.\n- Text reads return up to 2000 lines, subject to byte limits. Use `offset` and `limit` to read only the part you need.\n- Text results include line numbers starting at 1.\n- Follow a truncated result's continuation instructions only if you need the omitted text. When `next_offset` is provided, use that exact value with the same `path`.\n- Reads images (jpg, png, gif, webp) and presents them visually.\n- Reads PDFs via `pages` (required for PDFs over 10 pages; max 20 pages/request), and Jupyter notebooks (.ipynb) as cells with outputs.\n- Reads videos (mp4, avi, mov, mkv) when the active model supports video.\n- Directories, missing files, unsupported binary files, and empty files return an error or system reminder.\n- Reuse current file content already in context. Re-read when it may be stale or to resolve uncertain content or failed matches; do not re-read solely to confirm a successful edit/write.",
+                "input_schema": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "description": "Workspace-relative or absolute local file path.",
+                      "type": "string"
+                    },
+                    "offset": {
+                      "description": "Starting line for text files (1-indexed).",
+                      "type": "number"
+                    },
+                    "limit": {
+                      "description": "Maximum number of text lines to read.",
+                      "type": "number"
+                    },
+                    "pages": {
+                      "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "b38a0770-b1a0-4587-9ac4-645e6d5cc9ca",
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "8931c9b5a3bfe3c313e4801f1ccb1f3b593565e2ff00e57134f92b925169c18e",
+          "bodyBytes": 49994,
+          "promptPresent": true,
+          "fixtureTokenPresent": false,
+          "toolResults": [],
+          "tools": [
+            {
+              "name": "read",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "description": "Workspace-relative or absolute local file path.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "Starting line for text files (1-indexed).",
+                    "type": "number"
+                  },
+                  "limit": {
+                    "description": "Maximum number of text lines to read.",
+                    "type": "number"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "name": "read",
+                "description": "Reads a file from the local filesystem.\n\n- `path` can be workspace-relative or absolute; the desktop permission gate reviews it.\n- Text reads return up to 2000 lines, subject to byte limits. Use `offset` and `limit` to read only the part you need.\n- Text results include line numbers starting at 1.\n- Follow a truncated result's continuation instructions only if you need the omitted text. When `next_offset` is provided, use that exact value with the same `path`.\n- Reads images (jpg, png, gif, webp) and presents them visually.\n- Reads PDFs via `pages` (required for PDFs over 10 pages; max 20 pages/request), and Jupyter notebooks (.ipynb) as cells with outputs.\n- Reads videos (mp4, avi, mov, mkv) when the active model supports video.\n- Directories, missing files, unsupported binary files, and empty files return an error or system reminder.\n- Reuse current file content already in context. Re-read when it may be stale or to resolve uncertain content or failed matches; do not re-read solely to confirm a successful edit/write.",
+                "eager_input_streaming": true,
+                "input_schema": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "description": "Workspace-relative or absolute local file path.",
+                      "type": "string"
+                    },
+                    "offset": {
+                      "description": "Starting line for text files (1-indexed).",
+                      "type": "number"
+                    },
+                    "limit": {
+                      "description": "Maximum number of text lines to read.",
+                      "type": "number"
+                    },
+                    "pages": {
+                      "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "a2a028db-61e8-43fe-a45b-620be80a751a",
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "fixture-model",
+          "stream": true,
+          "bodySha256": "bd17ab59f45c4ca493fe4b6a304dd2bff597bc19d698abf4624188384d8835aa",
+          "bodyBytes": 50319,
+          "promptPresent": true,
+          "fixtureTokenPresent": true,
+          "toolResults": [
+            {
+              "id": "read_fixture",
+              "text": "     1→fixture-a0108e4e-ad77-439b-8f01-0ac13c454609\n",
+              "isError": false,
+              "raw": {
+                "type": "tool_result",
+                "tool_use_id": "read_fixture",
+                "content": "     1→fixture-a0108e4e-ad77-439b-8f01-0ac13c454609\n",
+                "is_error": false,
+                "cache_control": {
+                  "type": "ephemeral"
+                }
+              }
+            }
+          ],
+          "tools": [
+            {
+              "name": "read",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "path": {
+                    "description": "Workspace-relative or absolute local file path.",
+                    "type": "string"
+                  },
+                  "offset": {
+                    "description": "Starting line for text files (1-indexed).",
+                    "type": "number"
+                  },
+                  "limit": {
+                    "description": "Maximum number of text lines to read.",
+                    "type": "number"
+                  },
+                  "pages": {
+                    "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "path"
+                ]
+              },
+              "raw": {
+                "name": "read",
+                "description": "Reads a file from the local filesystem.\n\n- `path` can be workspace-relative or absolute; the desktop permission gate reviews it.\n- Text reads return up to 2000 lines, subject to byte limits. Use `offset` and `limit` to read only the part you need.\n- Text results include line numbers starting at 1.\n- Follow a truncated result's continuation instructions only if you need the omitted text. When `next_offset` is provided, use that exact value with the same `path`.\n- Reads images (jpg, png, gif, webp) and presents them visually.\n- Reads PDFs via `pages` (required for PDFs over 10 pages; max 20 pages/request), and Jupyter notebooks (.ipynb) as cells with outputs.\n- Reads videos (mp4, avi, mov, mkv) when the active model supports video.\n- Directories, missing files, unsupported binary files, and empty files return an error or system reminder.\n- Reuse current file content already in context. Re-read when it may be stale or to resolve uncertain content or failed matches; do not re-read solely to confirm a successful edit/write.",
+                "eager_input_streaming": true,
+                "input_schema": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "description": "Workspace-relative or absolute local file path.",
+                      "type": "string"
+                    },
+                    "offset": {
+                      "description": "Starting line for text files (1-indexed).",
+                      "type": "number"
+                    },
+                    "limit": {
+                      "description": "Maximum number of text lines to read.",
+                      "type": "number"
+                    },
+                    "pages": {
+                      "description": "Page range for PDF files (e.g., \"1-5\", \"3\", \"10-20\"). Only applicable to PDF files. Maximum 20 pages per request. Text offsets and limits are ignored for PDFs.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "path"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "4a5cd638-7489-4ed6-af02-57f417231031",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "ef9d109afd6330bddb2873868481589fb48ce6d30ed9127020d113c6fe8eddeb"
+        },
+        {
+          "requestId": "1eb2519b-c427-4ff2-b062-a3aa1af94d21",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "wireSha256": "ef9d109afd6330bddb2873868481589fb48ce6d30ed9127020d113c6fe8eddeb"
+        },
+        {
+          "requestId": "b38a0770-b1a0-4587-9ac4-645e6d5cc9ca",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "777d76cf37ad6d302cc3369469d049d0c42aa76fa8f3b7d27d6e86f27b4abd74"
+        },
+        {
+          "requestId": "a2a028db-61e8-43fe-a45b-620be80a751a",
+          "status": 200,
+          "outcome": "completed",
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "wireSha256": "85d32d85a4385312ac8f78d1180d68ef0d52beff81b023e69f4b640ca0f2ef85"
+        }
+      ]
+    }
+  ],
+  "fullEvidence": {
+    "path": "/tmp/cordyceps-vendor-final.json",
+    "sha256": "3f791120a1d6f822fc9ad905a28d364e244628a439440e11936c98300fa9e7da",
+    "bytes": 7237868
+  }
+}

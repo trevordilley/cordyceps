@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "minimax",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "HOME": "${session.dir}"
+      },
+      "configFiles": [
+        {
+          "id": "settings",
+          "path": ".minimax/config.yaml",
+          "format": "json",
+          "values": {
+            "custom_provider": {
+              "cordyceps": {
+                "options": {
+                  "apiKey": "${mock.apiKey}",
+                  "baseURL": "${mock.baseUrl}"
+                },
+                "models": {
+                  "fixture-model": {}
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "exec",
+        "--model",
+        "custom_provider:cordyceps/fixture-model",
+        "--permission",
+        "full"
+      ]
+    }
+  }
+}

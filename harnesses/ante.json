@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "ante",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "ANTE_HOME": "${session.dir}",
+        "CORDYCEPS_API_KEY": "${mock.apiKey}"
+      },
+      "configFiles": [
+        {
+          "id": "settings",
+          "path": "catalog.json",
+          "format": "json",
+          "values": {
+            "providers": {
+              "cordyceps": {
+                "base_url": "${mock.baseUrl}/v1",
+                "wire_style": "OpenAiCompatible",
+                "auth": {
+                  "bearer": {
+                    "env_key": "CORDYCEPS_API_KEY"
+                  }
+                },
+                "preferred_models": [
+                  {
+                    "id": "fixture-model",
+                    "max_tokens": 2048,
+                    "context_limit": 32768
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "--provider",
+        "cordyceps",
+        "--model",
+        "fixture-model",
+        "--no-skills",
+        "--disable-auto-memory",
+        "--no-session-save",
+        "--prompt"
+      ]
+    }
+  }
+}

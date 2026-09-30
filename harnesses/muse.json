@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "muse",
+  "provider": {
+    "adapter": "muse-code",
+    "override": {
+      "env": {
+        "META_API_KEY": "${mock.apiKey}"
+      },
+      "configFiles": []
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "exec",
+        "--provider",
+        "meta",
+        "--base-url",
+        "${mock.baseUrl}/v1",
+        "--yolo",
+        "--no-session-log",
+        "--model",
+        "muse-spark-1.3"
+      ]
+    }
+  }
+}

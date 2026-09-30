@@ -1,0 +1,75 @@
+{
+  "sources": {
+    "superset": "3049a3114bd1ae48b944aae3e4cafdb0f521d1a5",
+    "orca": "98039676f363d6f0c06dbed25f3180463e5952af",
+    "ante": "13856919dd020c22bffb05766381b7de85a37a96"
+  },
+  "distributions": [
+    {
+      "name": "ante",
+      "url": "https://download.ante.run/releases/v0.2.6/ante-v0.2.6-darwin-arm64.tar.gz",
+      "sha256": "677a40261c131035ba242ea55bbde83913503e5473150344926e35799ca16606",
+      "checksumVerified": true,
+      "binarySha256": "f4f48c86287f2ddc79279bd81af47fbb82daa574588310cae58fa21733f726b9"
+    },
+    {
+      "name": "devin",
+      "url": "https://static.devin.ai/cli/3000.11.3/devin-3000.11.3-aarch64-apple-darwin.tar.gz",
+      "sha256": "c08cc3f3507d103246b8c601a584fcc719fd77f6cc10f26cc90e9f4186640df2",
+      "checksumVerified": true,
+      "binarySha256": "7ef3859e68d4eabc0115e51898fcd4eab1edde753c27a472349ef551180b38ff"
+    },
+    {
+      "name": "fx",
+      "url": "https://releases.fx.sh/v0.0.11/fx-macos-aarch64.tar.gz",
+      "sha256": "b8fe13452673a26ff474dcdbe79925bdeb5a8582fcb0db89d06502f2e250945a",
+      "checksumVerified": false,
+      "binarySha256": "fc08b0f4c6c769133f3ecfe91b967b5de6e101beb4c4b33c4ebb807c7af58f9c"
+    },
+    {
+      "name": "grok",
+      "url": "https://x.ai/cli/grok-1.0.44-macos-aarch64.gz",
+      "binarySha256": "b637a934c22ee480cc133a783712f5abd845ae87f7b0aa646c220af3d67f7c28",
+      "checksumVerified": false
+    },
+    {
+      "name": "muse",
+      "url": "https://lookaside.facebook.com/lookaside/muse/download/?channel=muse&version=1.4.1-R4503.1&file=muse-aarch64-macos",
+      "binarySha256": "1b9ada5f943cd44d5aacd2380be17203798a953e993589f8654352cf524a00c7",
+      "checksumVerified": true
+    },
+    {
+      "name": "minimax",
+      "package": "@minimax-ai/code",
+      "version": "0.5.9",
+      "resolved": "https://registry.npmjs.org/@minimax-ai/code/-/code-0.5.9.tgz",
+      "integrity": "sha512-SH3P/ZEFXLdtncHGQcW++1C6FkU067Mzvy7wiPvB9aZ9rzdeF7k3J0oJ7OUh/+h65FN1eHtCBmT0eq7Q7rPWdQ==",
+      "bin": {
+        "mcode": "./cli.js",
+        "mcode-tools": "./mcode-tools.js"
+      }
+    },
+    {
+      "name": "trae",
+      "url": "https://trae.cn/trae-cli/install.sh",
+      "status": 403,
+      "body": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\"><html><head><title>403 Forbidden</title></head><body><h1>403 Forbidden</h1><p>You don't have permission to access the URL on this server.</p><p>denied by region block</p><hr/>Powered by Tengine <br/>CDN Request Id: a3b53cad17907425931825494e</body></html>",
+      "headers": "HTTP/2 403 \nserver: Tengine\ndate: Wed, 30 Sep 2026 04:29:53 GMT\ncontent-type: text/html; charset=utf-8\nx-tengine-error: denied by region block\ncache_control: no-cache, no-store\npragma: no-cache\nx-tt-trace-tag: id=03;cdn-cache=miss;type=dyn\nvia: ens-cache25.us34[,403010]\ntiming-allow-origin: *\neagleid: a3b53cad17907425931825494e\n\n",
+      "v2Url": "https://trae.cn/trae-cli/install_v2.sh",
+      "v2Status": 403,
+      "v2Body": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html>\n<head><title>403 Forbidden</title></head>\n<body>\n<center><h1>403 Forbidden</h1></center>\n<hr/>Powered by volc-dcdn<hr><center>tengine</center>\n</body>\n</html>\n",
+      "v2Headers": "HTTP/2 403 \nserver: volc-dcdn\ndate: Wed, 30 Sep 2026 04:38:03 GMT\ncontent-type: text/html\ncontent-length: 225\nvia: n098-096-213-026.oversea-US-MIO2.Creative\nx-request-ip: 2605:59ca:352a:b510:d52d:2e0f:abfe:c3ae\nx-tt-trace-tag: id=5\nx-dsa-trace-id: 1790743083650c04d17defd93ca52fb7325403ec5e\nx-dsa-origin-status: -\nserver-timing: cdn-cache;desc=HIT, origin;dur=0, edge;dur=0\n\n",
+      "passed": false
+    }
+  ],
+  "observedAt": "2026-09-30T04:30:00Z",
+  "installSources": {
+    "grok": "https://x.ai/cli/install.sh",
+    "muse": "https://dev.meta.ai/install.sh",
+    "devin": "https://cli.devin.ai/install.sh",
+    "fx": "https://fx.sh/setup.sh",
+    "ante": "https://ante.run/install.sh",
+    "minimax": "https://github.com/MiniMax-AI/minimax-code",
+    "trae": "https://docs.trae.cn/cli_get-started-with-trae-code-cli-2"
+  }
+}

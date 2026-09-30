@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "grok-build",
+  "provider": {
+    "adapter": "grok-build",
+    "override": {
+      "env": {
+        "GROK_HOME": "${session.dir}",
+        "XAI_API_KEY": "${mock.apiKey}",
+        "GROK_TELEMETRY_ENABLED": "0",
+        "GROK_TELEMETRY_TRACE_UPLOAD": "0"
+      },
+      "configFiles": [
+        {
+          "id": "settings",
+          "path": "config.toml",
+          "format": "toml",
+          "values": {
+            "model": {
+              "cordyceps": {
+                "model": "fixture-model",
+                "base_url": "${mock.baseUrl}/v1",
+                "env_key": "XAI_API_KEY",
+                "api_backend": "chat_completions",
+                "context_window": 32768
+              }
+            },
+            "cli": {
+              "use_leader": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "--model",
+        "cordyceps",
+        "--always-approve",
+        "--no-subagents",
+        "--disable-web-search",
+        "-p"
+      ]
+    }
+  }
+}

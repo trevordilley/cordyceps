@@ -3,7 +3,7 @@ import { array, collect, encoded, errorStatus, events, json, matchesPath, object
 
 interface TextPart { type: 'output_text'; text: string; annotations: unknown[]; logprobs: unknown[] }
 interface MessageItem { id: string; type: 'message'; role: 'assistant'; status: 'in_progress' | 'completed'; content: TextPart[] }
-interface FunctionItem { id: string; type: 'function_call'; call_id: string; name: string; arguments: string; status: 'completed' }
+interface FunctionItem { id: string; type: 'function_call'; call_id: string; name: string; namespace?: string; arguments: string; status: 'completed' }
 type OutputItem = MessageItem | FunctionItem;
 
 function part(text: string): TextPart {
@@ -13,7 +13,7 @@ function part(text: string): TextPart {
 function item(event: ProviderEvent): OutputItem {
   return 'text' in event
     ? { id: wireId('msg'), type: 'message', role: 'assistant', status: 'completed', content: [part(event.text)] }
-    : { id: wireId('fc'), type: 'function_call', call_id: event.toolCall.id, name: event.toolCall.name, arguments: JSON.stringify(event.toolCall.input), status: 'completed' };
+    : { id: wireId('fc'), type: 'function_call', call_id: event.toolCall.id, name: event.toolCall.name, ...(event.toolCall.namespace === undefined ? {} : { namespace: event.toolCall.namespace }), arguments: JSON.stringify(event.toolCall.input), status: 'completed' };
 }
 
 function envelope(request: CapturedRequest, id: string, created: number, output: OutputItem[], status: 'in_progress' | 'completed') {
@@ -36,7 +36,7 @@ async function* body(request: CapturedRequest, response: ScriptedResponse, signa
   const id = wireId('resp');
   const created = Math.floor(Date.now() / 1000);
   if (!request.stream) {
-    yield JSON.stringify(envelope(request, id, created, (await collect(response, signal)).map(item), 'completed'));
+    yield JSON.stringify(envelope(request, id, created, (await collect(response, signal, true)).map(item), 'completed'));
     return;
   }
   let sequence = 0;
@@ -59,7 +59,7 @@ async function* body(request: CapturedRequest, response: ScriptedResponse, signa
   }
   yield frame('response.created', { response: envelope(request, id, created, [], 'in_progress') });
   yield frame('response.in_progress', { response: envelope(request, id, created, [], 'in_progress') });
-  for await (const value of events(response, signal)) {
+  for await (const value of events(response, signal, true)) {
     if ('text' in value) {
       if (!active) {
         active = { id: wireId('msg'), type: 'message', role: 'assistant', status: 'in_progress', content: [] };
@@ -102,8 +102,15 @@ export const openaiResponses: ProviderCodec = Object.freeze({
       }
     }
     for (const tool of array(body.tools, 'tools')) {
-      if (object(tool) && tool.type === 'function' && typeof tool.name === 'string') {
+      if (!object(tool)) continue;
+      if (tool.type === 'function' && typeof tool.name === 'string') {
         tools.push({ name: tool.name, inputSchema: tool.parameters ?? null, raw: tool });
+      } else if (tool.type === 'namespace' && typeof tool.name === 'string') {
+        // Keep the namespace separate: two namespaces may offer the same name.
+        for (const nested of array(tool.tools, 'namespace.tools')) {
+          if (object(nested) && nested.type === 'function' && typeof nested.name === 'string')
+            tools.push({ name: nested.name, namespace: tool.name, inputSchema: nested.parameters ?? null, raw: nested });
+        }
       }
     }
     return { model: body.model, stream: body.stream === true, text: text.join('\n'), tools, toolResults, body };

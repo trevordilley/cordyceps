@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "fx",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "HOME": "${session.dir}",
+        "CORDYCEPS_API_KEY": "${mock.apiKey}"
+      },
+      "configFiles": [
+        {
+          "id": "settings",
+          "path": ".fx/settings.json",
+          "format": "json",
+          "values": {
+            "provider": "cordyceps",
+            "providers": {
+              "cordyceps": {
+                "protocol": "openai-chat-completions",
+                "base_url": "${mock.baseUrl}/v1",
+                "auth": {
+                  "type": "bearer",
+                  "env": "CORDYCEPS_API_KEY"
+                },
+                "model_metadata": {
+                  "fixture-model": {
+                    "context_window": 32768,
+                    "max_output_tokens": 2048,
+                    "supports_tool_use": true
+                  }
+                }
+              }
+            },
+            "models": {
+              "cordyceps": "fixture-model"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "ask",
+        "--auto"
+      ]
+    }
+  }
+}

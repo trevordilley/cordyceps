@@ -5,7 +5,7 @@ export interface RawHttpRequest {
   headers: Record<string, string | string[] | undefined>;
   body: string;
 }
-export interface ToolDefinition { name: string; inputSchema: unknown; raw: unknown }
+export interface ToolDefinition { name: string; namespace?: string; inputSchema: unknown; raw: unknown }
 export interface ToolResult { id: string; text: string; isError: boolean; raw: unknown }
 export interface DecodedRequest {
   model: string;
@@ -20,7 +20,7 @@ export interface CapturedRequest extends DecodedRequest {
   timestamp: number;
   raw: RawHttpRequest;
 }
-export interface ToolCall { id: string; name: string; input: unknown }
+export interface ToolCall { id: string; name: string; namespace?: string; input: unknown }
 export type ProviderEvent = { text: string } | { toolCall: ToolCall };
 export type AmazonQAuxiliaryResponse =
   | { models: { modelId: string; modelName: string; description?: string }[]; telemetry?: never }
