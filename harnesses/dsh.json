@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "dsh",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "DEEPSEEK_BASE_URL": "${mock.baseUrl}",
+        "DEEPSEEK_API_KEY": "${mock.apiKey}",
+        "DSH_HOME": "${session.dir}/dsh-home"
+      }
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "--profile",
+        "headless"
+      ]
+    },
+    "interactive": {}
+  }
+}

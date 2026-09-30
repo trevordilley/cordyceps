@@ -11,14 +11,15 @@ These jobs use `ubuntu-24.04` and standard arm64 `macos-15`, not paid larger run
 - Two Linux jobs run strict TypeScript, Bun tests, Node lifecycle tests, build,
   and clean installed-package checks on Node 22.22.3 and 24.15.0. They retain the
   resulting tarball.
-- Four parallel macOS jobs build and install the actual package, then run the
+- Five macOS groups (up to four in parallel) build and install the actual package, then run the
   real consumer examples. `baseline` covers Claude Code and Codex text/read,
   the official Claude ACP adapter lifecycle, and the three Chromium frontend
   tests. `extra-cli` covers Kilo, Continue, Autohand and Command Code; `pi`
   covers Pi, OMP, Mastra Code, Kimi, Prime Agent and ZCode; `vendors` covers
-  Grok Build, Muse, fx, Ante and MiniMax Code.
+  Grok Build, Muse, fx, Ante and MiniMax Code. `source-clis` covers MiMo,
+  DeepSeek headless/TUI, and OpenCode 2 headless/TUI.
 
-That is an initial automated set of **17 native agent families**, plus ACP and
+That is an initial automated set of **20 native agent families**, plus ACP and
 browser scenarios. Other verified local integrations remain documented in
 `verification.md` and the source inventories; they are not silently counted
 as hosted CI coverage. New groups should use the same real packed consumers
@@ -44,11 +45,10 @@ only read access to repository contents. No job publishes npm or merges code.
 
 ## Activation and verification status
 
-This checkout currently has no GitHub remote, so the workflows have been prepared
-locally but have not run on GitHub-hosted machines. Configure the intended public
-repository and push the branch to start the push workflow; a default-branch copy
-also enables the manual Run workflow button. The first hosted run must establish
-runner-specific results. Local `actionlint` and `bash -n` passed. The exact `baseline` setup also passed
+The destination is [trevordilley/cordyceps](https://github.com/trevordilley/cordyceps).
+Pushing this implementation branch starts the workflow; a default-branch copy
+also enables the manual Run workflow button. [Actions run results](https://github.com/trevordilley/cordyceps/actions)
+establish runner-specific behavior; local verification alone does not. Local `actionlint` and `bash -n` passed. The exact `baseline` setup also passed
 locally with freshly npm-installed Claude/Codex on Node 24.15.0: four CLI cases,
 eight ACP turns with cancellation/session reuse, and all three Chromium tests.
 Those observations do not establish successful hosted execution.

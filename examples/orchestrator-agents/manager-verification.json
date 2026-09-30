@@ -844,6 +844,431 @@
         }
       ],
       "diagnosticCount": 3
+    },
+    {
+      "group": "hermes-openclaw",
+      "command": "HERMES_BINARY=/tmp/cordyceps-hermes-314/bin/hermes OPENCLAW_BINARY=/tmp/cordyceps-orchestrator-tools/node_modules/.bin/openclaw node examples/real-local-agents/run.mjs /tmp/cordyceps-local-manager.json hermes,openclaw",
+      "sourceEvidence": "/tmp/cordyceps-local-manager.json",
+      "sourceSHA256": "70045903ec6f48e85965e5de03fc94e9b9bc344868e2a392e5db7ca9a0935aa1",
+      "date": "2026-09-30T15:14:39.924Z",
+      "node": "v22.22.3",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-tamP6Y7CJc6SlsrRXt4Rq2T6hWw0kuyKKEeFKOkTCgKi+AVtGWkd6nbBXe71Bzsj3+tew8p9nevzgBgF/ZD8Hg==",
+        "shasum": "07e308d5550c75bfc469627f14d17eff8727c8a4"
+      },
+      "cases": [
+        {
+          "agent": "hermes",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 15,
+          "cleanedUp": true,
+          "incrementalOutputBeforeCompletion": true
+        },
+        {
+          "agent": "hermes",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 16,
+          "cleanedUp": true,
+          "incrementalOutputBeforeCompletion": null
+        },
+        {
+          "agent": "hermes",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 14,
+          "cleanedUp": true,
+          "incrementalOutputBeforeCompletion": null
+        },
+        {
+          "agent": "openclaw",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "incrementalOutputBeforeCompletion": false
+        },
+        {
+          "agent": "openclaw",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "incrementalOutputBeforeCompletion": null
+        },
+        {
+          "agent": "openclaw",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "incrementalOutputBeforeCompletion": null
+        }
+      ]
+    },
+    {
+      "group": "vendors",
+      "command": "node examples/real-vendor-agents/run.mjs /tmp/cordyceps-vendors-manager.json fx,ante,grok-build,muse,minimax",
+      "sourceEvidence": "/tmp/cordyceps-vendors-manager.json",
+      "sourceSHA256": "7f15f1fafb070c01d44856494ed50d732074c2fb036ba1e924cdc936429bd094",
+      "date": "2026-09-30T15:19:10.996Z",
+      "node": "v22.22.3",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-gUwNwePu+urbQAQbp8Ma8+HavsDvjeFbfApGCVwgWrQDgaBNnyMaYP01cA9jIglfc1W12oxQX8g6N6Q9uqBhwA==",
+        "shasum": "f71e948bba07f0d4d21eb7ea731452a5c929ad0b"
+      },
+      "cases": [
+        {
+          "agent": "fx",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": null,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "fx",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": true,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "ante",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": null,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "ante",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": true,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "grok-build",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": null,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "grok-build",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 4,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": true,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "muse",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 5,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": null,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "muse",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 7,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": true,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "minimax",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": null,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        },
+        {
+          "agent": "minimax",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 4,
+          "cleanedUp": true,
+          "assertions": {
+            "promptCaptured": true,
+            "controlledNativeOutput": true,
+            "fixtureAbsentInitially": true,
+            "realToolRoundTrip": true,
+            "providerHealthy": true,
+            "processExited": true
+          }
+        }
+      ]
+    },
+    {
+      "group": "freebuff",
+      "command": "FREEBUFF_BINARY=/tmp/cordyceps-source-extra/freebuff-bin/freebuff node examples/real-source-agents/freebuff/run.mjs /tmp/cordyceps-freebuff-manager.json",
+      "sourceEvidence": "/tmp/cordyceps-freebuff-manager.json",
+      "sourceSHA256": "7ff6fcad7391e66f2d70f67f017306291b187623a7966ee80e91940b9a15b055",
+      "date": "2026-09-30T15:20:07.813Z",
+      "node": "v22.22.3",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-EoOCkYUsja8uZ7joCsRvpjNb9wbX5Gu7RZhP1e9HQ3WlVPJsyWUXBr7nbTd2DPUSSxuUxJ1z9eZQKkyx8MjUtw==",
+        "shasum": "ff08d37dd7e0c07380fab7c2b765ae744de2b719"
+      },
+      "cases": [
+        {
+          "agent": "freebuff",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "freebuff",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "healthy": true
+          }
+        }
+      ]
+    },
+    {
+      "group": "source-clis",
+      "command": "node examples/real-source-agents/opencode-mimo-dsh/run.mjs /tmp/cordyceps-omd-manager.json /tmp/cordyceps-omd-deps",
+      "sourceEvidence": "/tmp/cordyceps-omd-manager.json",
+      "sourceSHA256": "d6b486089acc26db043e7bbea7482c9274a7256aaa7dc9662364202a37be18d6",
+      "node": "v22.22.3",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-QKc9Xu1U4olbrqoFa9w5QNQy5ynSLvZKzKsOQsfjolAC9B7tq1uELO1JEFQq+OeMvXtecuYToiDpLmG3nSB+fw==",
+        "shasum": "e13f8361653413fd338fc931700db9d72b838fff"
+      },
+      "cases": [
+        {
+          "agent": "mimo",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "mimo",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "dsh",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "dsh",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "dsh-tui",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "dsh-tui",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode2",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode2",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode2-run",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode2-run",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentBeforeRead": true,
+            "fixtureTokenInNextRequest": true,
+            "healthy": true
+          }
+        }
+      ]
     }
   ]
 }

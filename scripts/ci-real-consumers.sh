@@ -2,7 +2,7 @@
 # CI orchestration belongs to this consumer example, never the library API.
 set -euo pipefail
 : "${RUNNER_TEMP:?Set RUNNER_TEMP to an owned scratch directory}"
-consumer_group="${1:?Expected baseline, extra-cli, pi, or vendors}"
+consumer_group="${1:?Expected baseline, extra-cli, pi, vendors, or source-clis}"
 consumer_root="$RUNNER_TEMP/cordyceps-ci-$consumer_group"
 evidence_root="$RUNNER_TEMP/cordyceps-ci-evidence"
 mkdir -p "$consumer_root" "$evidence_root"
@@ -41,6 +41,10 @@ case "$consumer_group" in
     export PRIME_AGENT_KERNEL_PYTHON="$consumer_root/prime-venv/bin/python"
     export ZCODE_BINARY="$consumer_root/zcode-glm/zcode.cjs"
     node examples/real-pi-agents/run.mjs "$evidence_root/pi.json"
+    ;;
+  source-clis)
+    node examples/real-source-agents/opencode-mimo-dsh/install.mjs "$consumer_root"
+    node examples/real-source-agents/opencode-mimo-dsh/run.mjs "$evidence_root/source-clis.json" "$consumer_root"
     ;;
   vendors)
     python3 examples/real-vendor-agents/install.py "$consumer_root" --agents fx,ante,grok,muse,minimax

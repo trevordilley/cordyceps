@@ -1,6 +1,6 @@
 # OpenCode 2 beta, MiMo Code, and DeepSeek Harness source identities
 
-This consumer uses the source roster at commit `98039676f363d6f0c06dbed25f3180463e5952af` (read-only checkout `/tmp/cordyceps-orca-source`). Its authority is `src/shared/tui-agent-config.ts`, `src/shared/tui-agent.ts`, `src/shared/agent-node-package-entrypoints.ts`, and `src/renderer/src/lib/agent-catalog.tsx`. The verified consumer implementation is confined to `examples/real-source-agents/opencode-mimo-dsh/`; no built-in registry change is implied.
+This consumer uses the source roster at commit `98039676f363d6f0c06dbed25f3180463e5952af` (read-only checkout `/tmp/cordyceps-orca-source`). Its authority is `src/shared/tui-agent-config.ts`, `src/shared/tui-agent.ts`, `src/shared/agent-node-package-entrypoints.ts`, and `src/renderer/src/lib/agent-catalog.tsx`. The verified consumer implementation is confined to `examples/real-source-agents/opencode-mimo-dsh/`; the same three verified recipes are also bundled by the default registry.
 
 ## Distribution provenance
 

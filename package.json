@@ -42,7 +42,9 @@
     "docs/real-extra-cli.md",
     "docs/real-source-agents.md",
     "docs/real-source-codebuddy-qoder.md",
-    "docs/real-vendor-agents.md"
+    "docs/real-vendor-agents.md",
+    "docs/real-source-opencode-mimo-dsh.md",
+    "docs/ci.md"
   ],
   "scripts": {
     "check": "tsc --noEmit",
@@ -67,7 +69,8 @@
     "test:real-pi": "node examples/real-pi-agents/run.mjs",
     "test:real-extra": "node examples/real-extra-cli/run.mjs",
     "test:real-vendors": "node examples/real-vendor-agents/run.mjs",
-    "test:real-freebuff": "node examples/real-source-agents/freebuff/run.mjs"
+    "test:real-freebuff": "node examples/real-source-agents/freebuff/run.mjs",
+    "test:real-source-clis": "node examples/real-source-agents/opencode-mimo-dsh/run.mjs"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

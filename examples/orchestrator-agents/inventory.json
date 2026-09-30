@@ -577,7 +577,13 @@
           "id": "opencode2"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "opencode2",
+      "evidence": [
+        "docs/real-source-opencode-mimo-dsh.md",
+        "examples/real-source-agents/opencode-mimo-dsh/evidence-opencode2.json"
+      ],
+      "note": "Authentic native packed-artifact text and actual file-read workflows passed. DSH and OpenCode2 include source-roster terminal frontends; no additional lifecycle claim."
     },
     {
       "id": "mimo-code",
@@ -587,7 +593,13 @@
           "id": "mimo-code"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "mimo",
+      "evidence": [
+        "docs/real-source-opencode-mimo-dsh.md",
+        "examples/real-source-agents/opencode-mimo-dsh/evidence-mimo-dsh.json"
+      ],
+      "note": "Authentic native packed-artifact text and actual file-read workflows passed. DSH and OpenCode2 include source-roster terminal frontends; no additional lifecycle claim."
     },
     {
       "id": "qoder",
@@ -876,7 +888,13 @@
           "id": "dsh"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "dsh",
+      "evidence": [
+        "docs/real-source-opencode-mimo-dsh.md",
+        "examples/real-source-agents/opencode-mimo-dsh/evidence-mimo-dsh.json"
+      ],
+      "note": "Authentic native packed-artifact text and actual file-read workflows passed. DSH and OpenCode2 include source-roster terminal frontends; no additional lifecycle claim."
     },
     {
       "id": "minimax",

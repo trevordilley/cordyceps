@@ -2,7 +2,7 @@
 
 Cordyceps is an npm library for testing applications around installed AI harnesses. It runs a local mock model provider and prepares environment values, arguments and optional configuration files. Your application chooses and launches its real binary or ACP adapter, handles its output, and closes its processes.
 
-This initial implementation ships ESM JavaScript and TypeScript declarations for Node 22 or later. Bun is used to develop, build and test the library; consumers do not need Bun. No npm publication has been performed. [GitHub Actions](docs/ci.md) runs the library checks on Linux and real consumer groups on macOS; hosted activation requires configuring the repository remote.
+This initial implementation ships ESM JavaScript and TypeScript declarations for Node 22 or later. Bun is used to develop, build and test the library; consumers do not need Bun. No npm publication has been performed. [GitHub Actions](docs/ci.md) runs the library checks on Linux and real consumer groups on macOS; run logs and artifacts are available in the repository’s Actions tab.
 
 ```js
 import { cordyceps } from 'cordyceps';

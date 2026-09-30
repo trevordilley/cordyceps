@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "mimo",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "MIMOCODE_CONFIG": "${config.provider.path}",
+        "MIMOCODE_HOME": "${session.dir}/mimo-home",
+        "MIMOCODE_DISABLE_AUTOUPDATE": "true",
+        "MIMOCODE_DISABLE_MODELS_FETCH": "true",
+        "MIMOCODE_DISABLE_BUILTIN_SKILLS": "true",
+        "MIMOCODE_DISABLE_CLAUDE_CODE": "true",
+        "MIMOCODE_DISABLE_CHECKPOINT": "true"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "provider.json",
+          "format": "json",
+          "values": {
+            "model": "cordyceps/fixture-model",
+            "provider": {
+              "cordyceps": {
+                "name": "Cordyceps",
+                "npm": "@ai-sdk/openai-compatible",
+                "models": {
+                  "fixture-model": {
+                    "name": "Fixture model",
+                    "limit": {
+                      "context": 200000,
+                      "output": 4096
+                    }
+                  }
+                },
+                "options": {
+                  "baseURL": "${mock.baseUrl}/v1",
+                  "apiKey": "${mock.apiKey}"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "run"
+      ]
+    }
+  }
+}

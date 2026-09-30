@@ -249,7 +249,7 @@ describe('rendering and lifecycle', () => {
 describe('bundled documented recipes', () => {
   test('bundled and file-loaded definitions match; CLI recipes do not imply ACP', async () => {
     const bundled = createRegistry();
-    expect(bundled.list().map(value => value.id)).toEqual(['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'claude-code', 'claude-code-acp', 'cline', 'codebuddy', 'codex', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'pi', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']);
+    expect(bundled.list().map(value => value.id)).toEqual(['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'claude-code', 'claude-code-acp', 'cline', 'codebuddy', 'codex', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'dsh', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'mimo', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'opencode2', 'pi', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']);
     const local = createRegistry({ builtins: false });
     for (const id of ['claude-code', 'codex']) {
       await local.loadFile(new URL(`../harnesses/${id}.json`, import.meta.url).pathname);
@@ -261,7 +261,7 @@ describe('bundled documented recipes', () => {
     expect(local.get('claude-code-acp')).toEqual(bundled.get('claude-code-acp'));
     validateSelection(bundled.get('claude-code-acp'), 'acp');
     error(() => validateSelection(bundled.get('claude-code-acp')), 'RECIPE_NOT_FOUND');
-    for (const id of ['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'cline', 'codebuddy', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'pi', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']) {
+    for (const id of ['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'cline', 'codebuddy', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'dsh', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'mimo', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'opencode2', 'pi', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']) {
       await local.loadFile(new URL(`../harnesses/${id}.json`, import.meta.url).pathname);
       expect(local.get(id)).toEqual(bundled.get(id));
       for (const mode of Object.keys(bundled.get(id).modes)) {
