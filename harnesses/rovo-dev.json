@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "rovo-dev",
+  "provider": {
+    "adapter": "atlassian-rovo",
+    "override": {
+      "env": {
+        "HOME": "${session.dir}",
+        "AUTH_METHOD": "slauth",
+        "AI_GATEWAY_SLAUTH_TOKEN": "${mock.apiKey}",
+        "MESH_DEPENDENCY_AI_GATEWAY_BASE_URL": "${mock.baseUrl}",
+        "ROVO_DEV_PROXY_BASE_URL": "${mock.baseUrl}"
+      },
+      "unsetEnv": ["USER_EMAIL", "USER_API_TOKEN", "USER_OAUTH_TOKEN", "BILLING_CLOUD_ID", "PIPELINES_JWT_TOKEN", "BITBUCKET_STEP_OIDC_TOKEN", "ASAP_PRIVATE_KEY", "ASAP_KEY_ID"]
+    }
+  },
+  "modes": {
+    "interactive": { "args": ["run"] },
+    "nonInteractive": { "args": ["run"] }
+  }
+}
