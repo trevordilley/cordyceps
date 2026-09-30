@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "antigravity",
+  "provider": {
+    "adapter": "google-genai",
+    "override": {
+      "env": {
+        "HOME": "${session.dir}",
+        "GEMINI_API_KEY": "${mock.apiKey}",
+        "GOOGLE_GEMINI_BASE_URL": "${mock.baseUrl}"
+      },
+      "unsetEnv": ["GOOGLE_API_KEY", "GOOGLE_APPLICATION_CREDENTIALS", "ANTIGRAVITY_LS_ADDRESS", "ANTIGRAVITY_CSRF_TOKEN"],
+      "configFiles": [{
+        "id": "settings",
+        "path": ".gemini/antigravity-cli/settings.json",
+        "format": "json",
+        "values": { "modelProvider": "gemini" }
+      }]
+    }
+  },
+  "modes": {
+    "interactive": { "args": [] },
+    "nonInteractive": { "args": ["--print"] }
+  }
+}

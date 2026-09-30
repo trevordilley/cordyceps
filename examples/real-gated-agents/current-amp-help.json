@@ -1,0 +1,40 @@
+[
+  {
+    "binary": "/tmp/cordyceps-amp-current/amp",
+    "args": [
+      "--version"
+    ],
+    "code": 0,
+    "signal": null,
+    "timedOut": false,
+    "stdout": "0.0.1790726504-g9299b2 (released 2026-09-30T00:01:44.000Z, 3h ago)\n",
+    "stderr": ""
+  },
+  {
+    "binary": "/tmp/cordyceps-amp-current/amp",
+    "args": [
+      "config",
+      "model-providers",
+      "--help"
+    ],
+    "code": 0,
+    "signal": null,
+    "timedOut": false,
+    "stdout": "Usage: amp config model-providers [options] [command]\n\nManage model provider keys and subscriptions (bring your own key or subscription). Connections are tried in priority order (lowest number first); the first active connection whose model mapping includes a model serves it.\n\nCommands:\n\n  list                      List model provider keys and subscriptions in priority order\n  activate                  Activate a model provider key (only subscriptions replace the active connection of the same\n                            type)\n  deactivate                Deactivate a model provider key\n  set-priority              Change where a connection sits in the model routing precedence order\n  show                      Show complete non-secret model provider connection data as JSON\n  delete                    Delete a model provider key or subscription\n  test                      Test a model provider key or subscription\n  check-access              Check which model provider serves a model by running a small inference\n  add-router                Add an AI model router and select the models routed through it\n  edit-router               Edit an AI model router\n  setup-guide               Explain how to obtain the credential an AI model router needs\n  edit-key                  Edit a model provider API key name or model mapping\n  add-chatgpt-subscription  Link your ChatGPT subscription to Amp as a model provider by signing in to OpenAI in your\n                            browser\n\nOptions:\n\n  --json\n      print the complete non-secret connection data as JSON\n  --workspace\n      list keys of your current workspace instead of your user\n\n\nDocs: https://ampcode.com/docs/customize/model-routing\n\n",
+    "stderr": ""
+  },
+  {
+    "binary": "/tmp/cordyceps-amp-current/amp",
+    "args": [
+      "config",
+      "model-providers",
+      "add-router",
+      "--help"
+    ],
+    "code": 0,
+    "signal": null,
+    "timedOut": false,
+    "stdout": "Usage: amp config model-providers add-router [options] <router>\n\nAdd an AI model router and select the models routed through it\n\nArguments:\n\n  <router>\n      Provider to add: ollama-cloud, openrouter, vercel, cloudflare, google-cloud-agent-platform, google-ai-studio,\n      amazon-bedrock, opencode-go, or custom-url\n\nOptions:\n\n  --name <name>\n      custom connection name\n  --model-mapping <mapping>\n      newline- or comma-separated provider/model patterns served by this connection, such as */* or openai/gpt-5.6-*;\n      prefix a pattern with - to exclude it, and add \"-> provider-model-id\" after an exact model ID to override the\n      model ID sent to the provider (the default when not given is all supported models)\n  --api-key-file <path>\n      read the API key from a file, or '-' for stdin\n  --active\n      activate the model router after creating it\n  --no-active\n      create the model router without activating it\n  --personal\n      add the model router to your personal account\n  --workspace\n      add the model router to your current workspace\n  --api-format <format>\n      custom-url API format: chat-completions, responses, anthropic-messages, google-genai\n  --base-url <url>\n      custom-url base URL, using HTTPS\n  --cloudflare-account-id <id>\n      Cloudflare account ID\n  --cloudflare-gateway-id <id>\n      Cloudflare AI Gateway ID\n  --workload-identity-provider <resource-name>\n      google-cloud-agent-platform workload identity pool provider that trusts Amp, as\n      projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL/providers/PROVIDER\n  --google-cloud-project <id>\n      google-cloud-agent-platform Google Cloud project ID to bill (default: the pool's project)\n  --google-cloud-location <location>\n      google-cloud-agent-platform location, a region ID or global\n  --iam-role-arn <arn>\n      amazon-bedrock IAM role that trusts Amp, as arn:aws:iam::ACCOUNT_ID:role/NAME\n  --aws-region <region>\n      amazon-bedrock AWS region of the Bedrock endpoint\n  --headers <json>\n      custom request headers as JSON [name, value] pairs\n  --query-params <json>\n      custom-url query parameters as a JSON object\n  --router-options <json>\n      typed request options for the selected dedicated gateway\n\n\nExamples:\n  printf %s \"$OPENROUTER_API_KEY\" | amp config model-providers add-router openrouter --workspace --api-key-file - --model-mapping anthropic/claude-sonnet-4.6 --router-options '{\"provider\":{\"zdr\":true}}'\n  amp config model-providers add-router google-cloud-agent-platform --workspace --workload-identity-provider projects/123456789012/locations/global/workloadIdentityPools/amp-inference/providers/amp-inference --model-mapping anthropic/claude-opus-4-6\n\ngoogle-cloud-agent-platform (Google Cloud Agent Platform, formerly Vertex) authenticates with Workload Identity Federation instead of a key: pass --workload-identity-provider, not --api-key-file. Run `amp config model-providers setup-guide google-cloud-agent-platform --workspace` for the issuer and subject to register and the gcloud commands. It serves no models until you pass --model-mapping with the models that should use it.\n\n  amp config model-providers add-router amazon-bedrock --workspace --iam-role-arn arn:aws:iam::123456789012:role/AmpBedrock --aws-region us-east-1 --model-mapping anthropic/claude-opus-4-6\n\namazon-bedrock authenticates by assuming an IAM role with OIDC federation instead of a key: pass --iam-role-arn, not --api-key-file. Run `amp config model-providers setup-guide amazon-bedrock --workspace` for the issuer and subject to register and the aws commands. It serves no models until you pass --model-mapping with the models that should use it.\n\nModel mapping syntax and custom-url request paths: https://ampcode.com/docs/customize/model-routing#model-mappings\n\n",
+    "stderr": ""
+  }
+]

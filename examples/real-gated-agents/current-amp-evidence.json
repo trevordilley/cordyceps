@@ -1,0 +1,221 @@
+{
+  "node": "v22.22.3",
+  "date": "2026-09-30T03:25:52.077Z",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-gated-package-HqVKPz/consumer/node_modules/cordyceps/dist/index.js",
+  "artifact": {
+    "name": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-jf84bgcTCjtI+AC46TxJ/ggg7LqzGLm0QLpWnycDzpK1I1LXPzjy8CDm2t/AyZhtcmiqBluH5woLbUtC6T4SgQ==",
+    "shasum": "c26f48763a186c931469811fa8df0c224427408a"
+  },
+  "cases": [
+    {
+      "agent": "amp",
+      "passed": false,
+      "attempts": [
+        {
+          "binary": "/tmp/cordyceps-amp-current/amp",
+          "args": [
+            "--settings-file",
+            "/private/tmp/cg-U9P2AL/home/amp.json",
+            "--no-ide",
+            "--no-jetbrains",
+            "--execute",
+            "cordyceps-gated-amp: Reply with the controlled test message."
+          ],
+          "code": 1,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "",
+          "stderr": "Error: API request for getUserInfo failed: 404\n"
+        },
+        {
+          "binary": "/tmp/cordyceps-amp-current/amp",
+          "args": [
+            "config",
+            "model-providers",
+            "add-router",
+            "custom-url",
+            "--personal",
+            "--name",
+            "cordyceps-local-test",
+            "--api-key-file",
+            "/private/tmp/cg-U9P2AL/home/test-key",
+            "--base-url",
+            "http://127.0.0.1:65195",
+            "--api-format",
+            "responses",
+            "--model-mapping",
+            "*/*"
+          ],
+          "code": 1,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "",
+          "stderr": "Error: Unexpected error inside Amp CLI.\n"
+        },
+        {
+          "binary": "/tmp/cordyceps-amp-current/amp",
+          "args": [
+            "config",
+            "model-providers",
+            "add-router",
+            "custom-url",
+            "--personal",
+            "--name",
+            "cordyceps-local-test",
+            "--api-key-file",
+            "/private/tmp/cg-U9P2AL/home/test-key",
+            "--base-url",
+            "http://127.0.0.1:65195",
+            "--api-format",
+            "anthropic-messages",
+            "--model-mapping",
+            "*/*"
+          ],
+          "code": 1,
+          "signal": null,
+          "timedOut": false,
+          "stdout": "",
+          "stderr": "Error: Unexpected error inside Amp CLI.\n"
+        }
+      ],
+      "version": {
+        "binary": "/tmp/cordyceps-amp-current/amp",
+        "args": [
+          "--version"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "0.0.1790726504-g9299b2 (released 2026-09-30T00:01:44.000Z, 3h ago)\n",
+        "stderr": ""
+      },
+      "help": {
+        "binary": "/tmp/cordyceps-amp-current/amp",
+        "args": [
+          "--help"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "Amp CLI\n\nUsage: amp [options] [command]\n\nCommands:\n\n  version                       Print the version number and exit\n  logout                        Remove a saved Amp account\n  account                       Manage saved Amp accounts\n    list                        List saved accounts\n    switch                      Choose the account for future CLI commands\n  login                         Log in to Amp\n  orb                           Commands for Amp-managed orbs\n    provider                    Run self-hosted orbs from inside your network by pulling lifecycle jobs from Amp over\n                                HTTPS\n    bootstrap                   Connect this orb to its thread actor\n    system-metrics              Print historical orb system metrics for a thread URL or ID\n    portal                      Register a portal for an existing process and print its URL; use \"amp orb service start\"\n                                for long-lived servers\n      access                    Set portal access\n    service                     [alias: services] Manage long-lived services (dev servers, watchers) as supervised\n                                processes that survive Amp CLI updates and restart on failure\n      ensure                    Ensure every service declared in .amp/services.yaml is running and exposed at its portal\n                                URLs\n      start                     Start an undeclared ad-hoc supervised service, e.g.: amp orb service start preview\n                                --command 'pnpm dev' --portal\n      restart                   Restart a declared service from .amp/services.yaml or reload an existing ad-hoc service\n      stop                      Stop a service\n      status                    Show supervisor status for a service\n      logs                      Show recent logs for a service\n      list                      List orb services\n    simulator                   Work with the iOS Simulator on a Mac orb\n      serve                     Serve one booted iOS Simulator as an interactive web page\n    desktop                     Work with the orb Desktop shown in the Desktop tab of the thread\n      ensure                    Start the Desktop and its Google Chrome if needed and print the Chrome DevTools endpoint\n                                for agent-browser --cdp\n    restart-processes           Refresh environment variables and restart all processes in an orb thread\n    id-token                    Mint a short-lived OIDC token with a caller-chosen audience and print it to stdout\n    redact-output               Copy stdin to stdout with secrets redacted: known token formats, the thread's secret\n                                values, and the values of the environment variables named in AMP_SECRET_ENV_NAMES\n                                (comma-separated)\n  portal                        Commands for accessing Amp portal URLs\n    login-url                   Mint a single-use login URL (valid ~60s) that signs a non-browser client into an Amp\n                                portal URL; fetching it once sets the portal session cookie and redirects to the portal\n                                page\n  net                           Amp Net: send an orb’s outbound traffic through an exit node on your own machine (for\n                                example a residential connection)\n    exit-node                   Run this machine as an exit node for your orbs: it appears in your runner list and any\n                                orb thread you own can route through it with `amp net route`\n    route                       In an orb: send this orb’s traffic through one of your exit nodes (by ID or hostname).\n                                With no argument, list available exit nodes.\n    status                      In an orb: show whether Amp Net is configured and which exit node is connected\n    ping                        In an orb: measure the round trip from this orb to the connected exit node\n    run                         In an orb: run one command with its network traffic sent through the exit node, without\n                                changing orb-wide configuration\n  runner                        Inspect and change the amp --no-tui runners on this machine\n    list                        List the running runners on this machine and the directories they serve\n    dirs                        Change the directories a running runner serves, without restarting it\n      add                       Start serving one or more directories; they are served again after the runner restarts\n      remove                    Stop serving one or more directories added with `amp runner dirs add`\n      list                      List the directories a running runner serves\n    desktop                     Inspect or allow desktop sharing for --no-tui --desktop runners\n      status                    Show desktop sharing readiness (macOS permissions, Linux programs)\n      allow                     Request Screen Recording or Accessibility permission\n  clone                         Clone an Amp-hosted Project, Personal Plugins or Skills repository, or Workspace Plugins\n                                or Skills repository\n  git-setup                     Configure the Amp Git credential helper\n  files                         Download files from Amp\n    get                         Download a private Amp attachment\n  top                           Show live active threads\n  last                          [alias: l] Continue the last thread\n  report-bug                    [alias: report, diagnostics] Report a bug with diagnostics from the amp --no-tui runner\n                                in this directory\n  threads                       [alias: t, thread] Manage threads\n    new                         [alias: n] Create a new thread\n    continue                    [alias: c] Continue an existing thread\n    list                        [alias: l, ls] List all threads\n    usage                       Show usage information for a thread\n    context                     [alias: analyze-context] Analyze the current context for a thread\n    visibility                  [alias: v] Show or set default visibility for this repository\n    search                      [alias: find] Search threads\n    color                       Set a thread color\n    label                       Add labels to a thread\n    share                       [alias: s] Share a thread\n      multiplayer               Turn multiplayer on or off\n        on                      Turn multiplayer on for the default duration (1 week)\n        off                     Turn multiplayer off\n        ttl                     Turn multiplayer on for a specific duration\n    import                      Import conversations from other coding agents as read-only Amp threads\n      detect                    Show which coding agents have conversations on this machine\n      codex                     Import Codex conversations from this machine\n      claude                    [alias: claude-code] Import Claude Code sessions from this machine\n    rename                      [alias: r] Rename a thread\n    archive                     Archive a thread\n    delete                      Delete a thread\n    markdown                    [alias: md] Render thread as markdown\n    export                      Export a thread as JSON\n    raw                         [alias: raw-thread] Export raw actor thread data as JSON\n  tools                         [alias: tool] Tool management commands\n    list                        [alias: ls] List all active tools (including MCP tools)\n    show                        Show details about an active tool\n  plugins                       [alias: plugin] Manage project, system, personal, and workspace plugins\n    add                         Install a plugin from a URL\n    remove                      [alias: rm] Remove an installed plugin\n    update                      Update installed plugins or one imported shared plugin\n    list                        [alias: ls] Load and list plugins in this command, not in a running Amp session\n    import                      Import a shared personal plugin into a plugin repository checkout\n    repositories                [alias: repos] List available Personal Plugins and Workspace Plugins repositories\n    show-agent-options          Show models and built-in tool names available to plugin agents\n    exec                        Execute a plugin with a given event\n    show-docs                   Output the plugin API documentation understood by this version of Amp\n  skill                         [alias: skills] Manage skills from shared references, Git repositories, or local paths\n    add                         Install skills from a source\n    list                        [alias: ls] List all available skills\n    remove                      [alias: rm] Remove an installed skill\n    info                        Show information about a skill\n    repositories                [alias: repos] List available Personal Skills and Workspace Skills repositories\n  permissions                   [alias: permission] Manage permissions\n    list                        [alias: ls] List permissions\n    test                        Test permissions\n    edit                        Edit permissions\n    add                         Add permission rule\n  mcp                           Manage MCP servers\n    add                         Add an MCP server configuration\n    list                        List available MCP servers\n    remove                      Remove an MCP server configuration\n    remote                      Manage MCP servers saved to ampcode.com\n      list                      List stored remote MCP servers\n      add                       Add a stored remote MCP server\n      update                    Update a stored remote MCP server\n      remove                    Remove a stored remote MCP server\n      check                     Check a stored remote MCP server\n      tools                     List tools for a stored remote MCP server\n      login                     Log in to a stored remote MCP server\n      logout                    Log out of a stored remote MCP server\n    oauth                       Manage OAuth credentials for MCP servers in local CLI settings\n      login                     Register OAuth client credentials for an MCP server\n      logout                    Remove OAuth credentials for an MCP server\n      status                    Show OAuth status for an MCP server\n    doctor                      Check MCP server status\n    approve                     Approve a workspace MCP server\n  config                        Manage Amp configuration\n    edit                        Open the Amp settings file in $EDITOR\n    keymap                      List command keymap entries\n    model-providers             Manage model provider keys and subscriptions\n      list                      List model provider keys and subscriptions in priority order\n      activate                  Activate a model provider key (only subscriptions replace the active connection of the\n                                same type)\n      deactivate                Deactivate a model provider key\n      set-priority              Change where a connection sits in the model routing precedence order\n      show                      Show complete non-secret model provider connection data as JSON\n      delete                    Delete a model provider key or subscription\n      test                      Test a model provider key or subscription\n      check-access              Check which model provider serves a model by running a small inference\n      add-router                Add an AI model router and select the models routed through it\n      edit-router               Edit an AI model router\n      setup-guide               Explain how to obtain the credential an AI model router needs\n      edit-key                  Edit a model provider API key name or model mapping\n      add-chatgpt-subscription  Link your ChatGPT subscription to Amp as a model provider by signing in to OpenAI in\n                                your browser\n    vocabulary                  Manage personal dictation vocabulary\n      show                      Show personal dictation vocabulary (default)\n      add                       Add terms without replacing existing vocabulary\n      set                       Replace personal dictation vocabulary; omit terms to clear it\n    external-agents             Manage external agents (Claude Code, Codex, OpenCode, ...)\n      list                      List external agents with their mode keys and status (default)\n      show                      Show one agent’s options\n      update                    Change an agent’s post-install script or Claude Code options\n      activate                  Show an agent in the new-thread picker\n      deactivate                Hide an agent from the new-thread picker without deleting its settings\n      reset                     Drop every option of an agent so it follows Amp’s defaults again\n  domains                       Manage custom domains for sites\n    list                        List custom domains, statuses, and required DNS records\n    add                         Add a custom domain\n    check                       Request an immediate DNS and provisioning status check\n    remove                      [alias: rm] Remove a custom domain\n  projects                      Manage Amp projects\n    create                      Create an Amp-hosted project or map an existing Git repository\n    update                      Update project settings by ID, [@]namespace/name, or repository\n    list                        List projects accessible to you\n    status                      Show the project matched by this directory's git remotes\n    get                         Get a project by ID, [@]namespace/name, or repository\n    snapshots                   Manage a project’s shared orb snapshots\n      list                      List shared orb snapshots by project and orb size\n      delete                    [alias: rm] Delete all shared orb snapshots, or one orb size with --resource\n    gallery-media               Manage a project’s Amp Store gallery media\n      get                       Print a project’s Amp Store gallery media as JSON\n      set                       Set a project’s Amp Store gallery media from a JSON array of\n                                {\"type\":\"image\"|\"video\",\"url\":\"<Amp artifact URL>\",\"width\":N,\"height\":N} items\n    delete                      [alias: rm] Delete a project by ID, [@]namespace/name, or repository\n  apps                          Manage workspace apps\n    deploy                      Deploy a directory to a workspace app\n    create                      Create a workspace app\n    edit                        Edit a workspace app\n    list                        List apps in a workspace\n    deployments                 List deployment history for an app\n    delete                      Delete a workspace app\n  oauth-clients                 Manage workspace External API OAuth clients\n    list                        List OAuth clients and client IDs\n    create                      Create a Sign in with Amp OAuth client\n    edit                        Edit a Sign in with Amp OAuth client\n  secrets                       Manage environment variables and secrets for orbs and Apps\n    list                        List secret and environment variable names\n    history                     Show the change history of secrets and environment variables, including deletions\n                                (values are never shown)\n    get                         Get an environment variable value (secret values are never returned)\n    set                         Add or update a secret or environment variable\n    delete                      [alias: rm] Delete a secret or environment variable\n  svc                           Call connected services and MCP servers through Amp\n    gmail                       Call the connected Gmail account\n      search_messages           Search Gmail messages\n      read_message              Read one Gmail message\n      list_labels               List Gmail labels\n      modify_labels             Modify Gmail message labels\n  usage                         Show your current Amp usage and credit balance\n  update                        [alias: up] Update Amp CLI\n  completions                   Print a shell completion script\n\nOptions:\n\n  --visibility <visibility>\n      Set thread visibility (private, unlisted, workspace, group)\n  -V, --version\n      Print the version number and exit\n  -v\n      Alias for --version\n  --notifications\n      Enable notification alerts (audio locally, terminal bell over SSH or with AMP_FORCE_BEL; enabled by default when\n      not in execute mode)\n  --no-notifications\n      Disable notification alerts (audio locally, terminal bell over SSH or with AMP_FORCE_BEL; enabled by default when\n      not in execute mode)\n  --color\n      Enable color output (enabled by default if stdout and stderr are sent to a TTY)\n  --no-color\n      Disable color output (enabled by default if stdout and stderr are sent to a TTY)\n  --settings-file <value>\n      Custom settings file path (overrides the default location /private/tmp/cg-U9P2AL/home/.config/amp/settings.json)\n  --log-level <value>\n      Set log level (parent, children, category, sinks, parentSinks, filters, lowestLevel, contextLocalStorage)\n  --log-file <value>\n      Set log file location (overrides the default location /private/tmp/cg-U9P2AL/home/.cache/amp/logs/cli.log)\n  --ide\n      Enable IDE connection (default). When enabled, Amp automatically includes your open IDE's file and text selection\n      with every message.\n  --no-ide\n      Disable IDE connection\n  --mcp-config <value>\n      JSON configuration or file path for MCP servers to merge with existing settings\n  -m, --mode <value>\n      Set the agent mode (low, medium, high, ultra, or a plugin mode by key or label, case-insensitive) — controls the\n      model, system prompt, and tool selection\n  --features <value>\n      Enable a thread feature (known: fast, Faster serving for supported models, billed at a premium; plaid, Ultrafast\n      serving for GPT-6 Astra, billed at a steep premium; implies Fast on other models; pro, GPT-5.6 Pro mode (OpenAI\n      API only, not supported by ChatGPT subscriptions))\n  --fast\n      Run new threads in Fast mode (faster serving for supported models, billed at a premium); alias for --features fast\n  --executor <value>\n      Run a new thread locally, in an orb, or on a runner (local, orb, runner:<id>)\n  --runner-dir <value>\n      With --execute --executor runner:<id>, select one absolute directory served by the runner. Defaults to its\n      starting directory; ignored when continuing a thread.\n  --no-tui\n      Run Amp without a TUI: serve remote thread creation requests for the current directory. Use --runner-id <id> to\n      set a stable runner ID.\n  --share\n      Share this --no-tui runner with your workspace while it is running.\n  --desktop\n      Share a desktop with threads served by this --no-tui runner: this Mac’s display, or a private virtual desktop on\n      Linux.\n  --amp-env\n      Inject the Secrets & Env Vars configured on ampcode.com (workspace, project, and personal) into the shell\n      commands, MCP servers, and plugins of threads this --no-tui runner serves. They override variables of the runner\n      process.\n  --remote-control-terminal\n      Enable terminal access from ampcode.com for threads accessed across clients\n  --no-remote-control-terminal\n      Disable terminal access from ampcode.com for threads accessed across clients\n  -x, --execute [message]\n      Use execute mode, optionally with user message. In execute mode, agent will execute provided prompt (either as\n      argument, or via stdin). By default, only the last assistant message is printed. Enabled automatically when\n      redirecting stdout.\n  -ox, --orb-execute\n      When used with -x/--execute, execute in an async orb on the Amp server. The -ox shorthand enables both options.\n      With `threads continue`, sends the message to the existing thread so it runs on that thread’s own remote executor.\n  --attach <path>\n      With remote execute mode (such as -ox), upload a local file and add its URL to the message. Repeat the flag for\n      multiple files.\n  --project [project]\n      With the orb executor, run the new thread on this Amp project (namespace/name, owner/repo, or repository URL)\n      instead of inferring it from the current directory’s Git remotes.\n  --orb-size <size>\n      With the orb executor, use this size instead of the project default.\n  --title <title>\n      With --execute, set the title of the new thread before starting the agent.\n  --stream-json\n      When used with --execute, output in Claude Code-compatible stream JSON format instead of plain text.\n  --stream-json-thinking\n      Include thinking blocks in stream JSON output (non-Claude Code extension). Implies --stream-json.\n  --stream-json-input\n      Read JSON Lines user messages from stdin. Requires both --execute and --stream-json.\n  --plugin-ready-timeout [seconds]\n      When used with --execute, how long to wait for plugins to become ready before running the turn, so plugin\n      lifecycle hooks (agent.start/agent.end) are not skipped. Off unless this flag is set; the bare flag uses 10. Max\n      300. Use 0 to disable.\n  --no-archive-after-execute\n      When used with --execute on a new thread or with the review command, leave the thread unarchived after the command\n      finishes.\n  -l, --label <label>\n      Add a label to the thread created or continued by this command. Repeat the flag for multiple labels.\n\nEnvironment variables:\n\n  AMP_API_KEY                  Access token for Amp (see https://ampcode.com/settings/security#access-token)\n  AMP_URL                      URL for the Amp service (default is https://ampcode.com/)\n  AMP_LOG_LEVEL                Set log level (can also use --log-level)\n  AMP_LOG_FILE                 Set log file location (can also use --log-file)\n  AMP_REMOTE_CONTROL_TERMINAL  Enable (1) or disable (0) terminal access from ampcode.com when no CLI flag is supplied\n  AMP_SETTINGS_FILE            Set settings file path (can also use --settings-file, default:\n                               /private/tmp/cg-U9P2AL/home/.config/amp/settings.json)\n\nExamples:\n\nStart an interactive session:\n\n  $ amp\n\nStart an interactive session with a user message:\n\n  $ echo \"commit all my unstaged changes\" | amp\n\nUse execute mode (--execute or -x) to send a command to an agent, have it execute it, print only the agent's last message, and then exit:\n\n  $ amp -x \"what file in this folder is in markdown format?\"\n  All Markdown files in this folder:\n  - README.md (root)\n  - AGENT.md (root)\n  - Documentation (7 files in doc/)\n  - Various README.md files in subdirectories\n  Total: **13 Markdown files** found across the project.\n\nStream JSON output and extract assistant text blocks with jq:\n\n  $ amp -x \"what file in this folder is in markdown format?\" --stream-json | jq -r 'select(.type==\"assistant\") | .message.content[] | select(.type==\"text\") | .text'\n\nStream JSON output with thinking blocks and extract them with jq:\n\n  $ amp -x \"what file in this folder is in markdown format?\" --stream-json-thinking | jq -r 'select(.type==\"assistant\") | .message.content[] | select(.type==\"thinking\") | .thinking'\n\nPipe data to the agent and send along a prompt in execute mode:\n\n  $ cat ~/.zshrc | amp -x \"what does the 'beautiful' function do?\"\n  The `beautiful` function creates an infinite loop that prints the letter \"o\" in cycling colors every 0.2 seconds.\n\nExecute a prompt from a file and store final assistant message output in a file (redirecting stdout is equivalent to providing -x/--execute):\n\n  $ amp < prompt.txt > output.txt\n\nAdd an MCP server with a local command:\n\n  $ amp mcp add context7 -- npx -y @upstash/context7-mcp\n\nAdd an MCP server with environment variables:\n\n  $ amp mcp add postgres --env PGUSER=orb -- npx -y @modelcontextprotocol/server-postgres postgresql://localhost/orbing\n\nAdd a remote MCP server:\n\n  $ amp mcp add hugging-face https://huggingface.co/mcp\n\nConfiguration:\n\nAmp can be configured using a JSON settings file located at /private/tmp/cg-U9P2AL/home/.config/amp/settings.json. All settings use the \"amp.\" prefix.\n\nSettings reference:\n\n  amp.dangerouslyAllowAll\n      Disable all command confirmation prompts (agent will execute all commands without asking)\n  amp.defaultVisibility\n      Define default thread visibility per repository origin using mappings like \"github.com/org/repo\": \"workspace\".\n      Values: private, workspace, group.\n  amp.experimental.modes\n      Enable experimental agent modes by name\n  amp.fuzzy.alwaysIncludePaths\n      Glob patterns for paths that should always be included in fuzzy file search, even if gitignored\n  amp.git.commit.ampThread.enabled\n      Enable adding Amp-Thread trailer in git commits\n  amp.git.commit.coauthor.enabled\n      Enable adding Amp as co-author in git commits\n  amp.guardedFiles.allowlist\n      Array of file glob patterns that are allowed to be accessed without confirmation. Takes precedence over the\n      built-in denylist.\n  amp.keymap\n      Command shortcuts keyed by command ID. Values can be a shortcut string, an array of shortcuts, or null. User\n      keymap entries override workspace entries. Run \"amp config keymap\" to list all command IDs, descriptions, and\n      effective keys, with null for unbound commands.\n  amp.mcpServers\n      Model Context Protocol servers to connect to for additional tools\n  amp.network.timeout\n      How many seconds to wait for network requests to the Amp server before timing out\n  amp.notifications.enabled\n      Enable notification alerts when the agent completes tasks. Over SSH, or when AMP_FORCE_BEL is set, this sends a\n      terminal bell.\n  amp.notifications.system.enabled\n      Enable system notifications when terminal is not focused\n  amp.permissions\n      Permission rules for tool calls. See amp permissions --help\n  amp.proxy\n      Proxy URL used for both HTTP and HTTPS requests to the Amp server\n  amp.remoteThreadCreation.enabled\n      Let ampcode.com create new threads that open in the interactive Amp TUI on this machine, in the directory where it\n      was started\n  amp.runner.autoUpdate.enabled\n      Let `amp --no-tui` runners install CLI updates and restart into them once no thread is running there (at most once\n      every 12 hours). \"amp.updates.mode\": \"disabled\" also turns this off.\n  amp.runner.env.enabled\n      Inject the Secrets & Env Vars configured on ampcode.com (workspace, project, and personal) into the shell\n      commands, MCP servers, and plugins of threads an `amp --no-tui` runner serves. Same as starting the runner with\n      --amp-env.\n  amp.showCosts\n      Set to false to hide costs while working on a thread\n  amp.skills.disableClaudeCodeSkills\n      Disable skills from .claude/skills/, ~/.claude/skills/, and ~/.claude/plugins/cache/. Local Amp skill directories,\n      custom paths, built-in skills, Personal Skills, and Workspace Skills are not affected.\n  amp.skills.disableGlobalAgentsSkills\n      Disable skills from ~/.config/agents/skills/ and ~/.agents/skills/. ~/.config/amp/skills/, workspace\n      .agents/skills/, Claude Code directories, custom paths, built-in skills, Personal Skills, and Workspace Skills are\n      not affected.\n  amp.skills.path\n      Path to additional directories containing skills. Supports colon-separated paths (semicolon on Windows). Use ~ for\n      home directory. Relative paths resolve against the workspace root.\n  amp.terminal.animation\n      Set to false to disable terminal animations (or use the equivalent NO_ANIMATION=1 env var)\n  amp.terminal.copyOnSelect\n      Automatically copy selection to clipboard.\n  amp.terminal.detailsExpandedByDefault\n      Expand thinking and tool call details by default in the CLI transcript.\n  amp.thread.autoArchiveOnQuit\n      Automatically archive open CLI threads when quitting Amp\n  amp.tools.disable\n      Array of tool names to disable. Use 'builtin:toolname' to disable only the builtin tool with that name (allowing\n      an MCP server to provide a tool by that name).\n  amp.tools.enable\n      Array of tool name patterns to enable. Supports glob patterns (e.g., 'mcp__metabase__*'). If not set, all tools\n      are enabled. If set, only matching tools are enabled.\n  amp.updates.mode\n      Control update checking behavior: \"warn\" shows update notifications, \"disabled\" turns off checking, \"auto\"\n      automatically runs update.\n\nExample configuration:\n\n{\n  \"amp.dangerouslyAllowAll\": false,\n  \"amp.defaultVisibility\": {\n    \"github.com/ampcode/amp\": \"workspace\"\n  },\n  \"amp.experimental.modes\": [],\n  \"amp.fuzzy.alwaysIncludePaths\": [],\n  \"amp.git.commit.ampThread.enabled\": true,\n  \"amp.git.commit.coauthor.enabled\": true,\n  \"amp.guardedFiles.allowlist\": [],\n  \"amp.keymap\": {},\n  \"amp.mcpServers\": {\n    \"filesystem\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"@modelcontextprotocol/server-filesystem\",\n        \"/path/to/allowed/dir\"\n      ]\n    }\n  },\n  \"amp.network.timeout\": 30,\n  \"amp.notifications.enabled\": true,\n  \"amp.notifications.system.enabled\": true,\n  \"amp.permissions\": [\n    {\n      \"tool\": \"Bash\",\n      \"action\": \"ask\",\n      \"matches\": {\n        \"cmd\": [\n          \"git push*\",\n          \"git commit*\",\n          \"git branch -D*\",\n          \"git checkout HEAD*\"\n        ]\n      }\n    }\n  ],\n  \"amp.remoteThreadCreation.enabled\": false,\n  \"amp.runner.autoUpdate.enabled\": true,\n  \"amp.runner.env.enabled\": false,\n  \"amp.showCosts\": true,\n  \"amp.skills.disableClaudeCodeSkills\": false,\n  \"amp.skills.disableGlobalAgentsSkills\": false,\n  \"amp.terminal.animation\": true,\n  \"amp.terminal.copyOnSelect\": true,\n  \"amp.terminal.detailsExpandedByDefault\": false,\n  \"amp.thread.autoArchiveOnQuit\": false,\n  \"amp.tools.disable\": [\n    \"browser_navigate\",\n    \"builtin:edit_file\"\n  ],\n  \"amp.updates.mode\": \"auto\"\n}\n\n\n",
+        "stderr": ""
+      },
+      "customProvidersHelp": {
+        "binary": "/tmp/cordyceps-amp-current/amp",
+        "args": [
+          "config",
+          "model-providers",
+          "--help"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "Usage: amp config model-providers [options] [command]\n\nManage model provider keys and subscriptions (bring your own key or subscription). Connections are tried in priority order (lowest number first); the first active connection whose model mapping includes a model serves it.\n\nCommands:\n\n  list                      List model provider keys and subscriptions in priority order\n  activate                  Activate a model provider key (only subscriptions replace the active connection of the same\n                            type)\n  deactivate                Deactivate a model provider key\n  set-priority              Change where a connection sits in the model routing precedence order\n  show                      Show complete non-secret model provider connection data as JSON\n  delete                    Delete a model provider key or subscription\n  test                      Test a model provider key or subscription\n  check-access              Check which model provider serves a model by running a small inference\n  add-router                Add an AI model router and select the models routed through it\n  edit-router               Edit an AI model router\n  setup-guide               Explain how to obtain the credential an AI model router needs\n  edit-key                  Edit a model provider API key name or model mapping\n  add-chatgpt-subscription  Link your ChatGPT subscription to Amp as a model provider by signing in to OpenAI in your\n                            browser\n\nOptions:\n\n  --json\n      print the complete non-secret connection data as JSON\n  --workspace\n      list keys of your current workspace instead of your user\n\n\nDocs: https://ampcode.com/docs/customize/model-routing\n\n",
+        "stderr": ""
+      },
+      "injection": {
+        "ANTHROPIC_BASE_URL": "http://127.0.0.1:65195",
+        "ANTHROPIC_API_KEY": "cordyceps-test-no-provider-credential",
+        "OPENAI_BASE_URL": "http://127.0.0.1:65195/v1",
+        "OPENAI_API_KEY": "cordyceps-test-no-provider-credential",
+        "AMP_URL": "http://127.0.0.1:65195",
+        "AMP_API_KEY": "cordyceps-test-no-provider-credential"
+      },
+      "prompt": "cordyceps-gated-amp: Reply with the controlled test message.",
+      "rawRequests": [
+        {
+          "method": "POST",
+          "path": "/api/internal?getUserInfo",
+          "headers": {
+            "authorization": "Bearer cordyceps-test-no-provider-credential",
+            "content-type": "application/json",
+            "x-amp-client-application": "CLI",
+            "x-amp-client-type": "cli",
+            "x-amp-client-version": "0.0.1790726504-g9299b2",
+            "x-amp-device-fingerprint": "v1:fp_c946737c8acaa180308f2e3daf4bc8bdcc945a56611f8c4fe0a526946deccbb8",
+            "x-amp-installation-id": "e32a4941-2776-4519-a471-469781e039f5",
+            "connection": "keep-alive",
+            "user-agent": "Bun/1.4.1",
+            "accept": "*/*",
+            "host": "127.0.0.1:65195",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "content-length": "36"
+          },
+          "body": "{\"method\":\"getUserInfo\",\"params\":{}}",
+          "bodyBase64": "eyJtZXRob2QiOiJnZXRVc2VySW5mbyIsInBhcmFtcyI6e319"
+        },
+        {
+          "method": "POST",
+          "path": "/api/internal?loadPlugins",
+          "headers": {
+            "authorization": "Bearer cordyceps-test-no-provider-credential",
+            "content-type": "application/json",
+            "x-amp-client-application": "CLI",
+            "x-amp-client-type": "cli",
+            "x-amp-client-version": "0.0.1790726504-g9299b2",
+            "x-amp-device-fingerprint": "v1:fp_c946737c8acaa180308f2e3daf4bc8bdcc945a56611f8c4fe0a526946deccbb8",
+            "x-amp-installation-id": "e32a4941-2776-4519-a471-469781e039f5",
+            "connection": "keep-alive",
+            "user-agent": "Bun/1.4.1",
+            "accept": "*/*",
+            "host": "127.0.0.1:65195",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "content-length": "111"
+          },
+          "body": "{\"method\":\"loadPlugins\",\"params\":{\"supportedPluginFormats\":[\"directory-v1\",\"directory-v2\"],\"knownVersions\":{}}}",
+          "bodyBase64": "eyJtZXRob2QiOiJsb2FkUGx1Z2lucyIsInBhcmFtcyI6eyJzdXBwb3J0ZWRQbHVnaW5Gb3JtYXRzIjpbImRpcmVjdG9yeS12MSIsImRpcmVjdG9yeS12MiJdLCJrbm93blZlcnNpb25zIjp7fX19"
+        },
+        {
+          "method": "POST",
+          "path": "/api/internal?checkModelProviderAccess",
+          "headers": {
+            "authorization": "Bearer cordyceps-test-no-provider-credential",
+            "content-type": "application/json",
+            "x-amp-client-application": "CLI",
+            "x-amp-client-type": "cli",
+            "x-amp-device-fingerprint": "v1:fp_c946737c8acaa180308f2e3daf4bc8bdcc945a56611f8c4fe0a526946deccbb8",
+            "x-amp-installation-id": "e32a4941-2776-4519-a471-469781e039f5",
+            "connection": "keep-alive",
+            "user-agent": "Bun/1.4.1",
+            "accept": "*/*",
+            "host": "127.0.0.1:65195",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "content-length": "101"
+          },
+          "body": "{\"method\":\"checkModelProviderAccess\",\"params\":{\"operation\":\"add\",\"type\":\"model_provider_custom_url\"}}",
+          "bodyBase64": "eyJtZXRob2QiOiJjaGVja01vZGVsUHJvdmlkZXJBY2Nlc3MiLCJwYXJhbXMiOnsib3BlcmF0aW9uIjoiYWRkIiwidHlwZSI6Im1vZGVsX3Byb3ZpZGVyX2N1c3RvbV91cmwifX0="
+        },
+        {
+          "method": "POST",
+          "path": "/api/internal?checkModelProviderAccess",
+          "headers": {
+            "authorization": "Bearer cordyceps-test-no-provider-credential",
+            "content-type": "application/json",
+            "x-amp-client-application": "CLI",
+            "x-amp-client-type": "cli",
+            "x-amp-device-fingerprint": "v1:fp_c946737c8acaa180308f2e3daf4bc8bdcc945a56611f8c4fe0a526946deccbb8",
+            "x-amp-installation-id": "e32a4941-2776-4519-a471-469781e039f5",
+            "connection": "keep-alive",
+            "user-agent": "Bun/1.4.1",
+            "accept": "*/*",
+            "host": "127.0.0.1:65195",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "content-length": "101"
+          },
+          "body": "{\"method\":\"checkModelProviderAccess\",\"params\":{\"operation\":\"add\",\"type\":\"model_provider_custom_url\"}}",
+          "bodyBase64": "eyJtZXRob2QiOiJjaGVja01vZGVsUHJvdmlkZXJBY2Nlc3MiLCJwYXJhbXMiOnsib3BlcmF0aW9uIjoiYWRkIiwidHlwZSI6Im1vZGVsX3Byb3ZpZGVyX2N1c3RvbV91cmwifX0="
+        }
+      ],
+      "requests": [],
+      "responses": [],
+      "failures": [
+        "Error: Unsupported provider request: POST /api/internal?getUserInfo",
+        "Error: Unsupported provider request: POST /api/internal?loadPlugins",
+        "Error: Unsupported provider request: POST /api/internal?checkModelProviderAccess",
+        "Error: Unsupported provider request: POST /api/internal?checkModelProviderAccess"
+      ],
+      "cleanedUp": true
+    }
+  ]
+}
