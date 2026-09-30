@@ -14,7 +14,7 @@ try{
  const [artifact]=JSON.parse(run('npm',['pack','--json','--ignore-scripts','--pack-destination',root],repo));
  const consumer=join(root,'consumer');await mkdir(consumer);await writeFile(join(consumer,'package.json'),JSON.stringify({private:true,type:'module'}));
  run('npm',['install','--offline','--ignore-scripts','--no-audit','--no-fund','--omit=peer',join(root,artifact.filename)],consumer);
- for(const file of ['consumer.mjs','probe.mjs','antigravity.mjs','rovo.mjs'])await copyFile(join(repo,'examples/real-gated-agents',file),join(consumer,file));
- for(const id of ['antigravity','rovo-dev'])await copyFile(join(repo,'harnesses',id+'.json'),join(consumer,id+'.json'));
- console.log(run(process.execPath,[process.argv[3]==='--antigravity'?'antigravity.mjs':process.argv[3]==='--rovo'?'rovo.mjs':'consumer.mjs',resolve(process.argv[2]||'/tmp/cordyceps-gated-evidence.json'),JSON.stringify({name:artifact.filename,integrity:artifact.integrity,shasum:artifact.shasum}),...(process.argv.slice(3))],consumer));
+ for(const file of ['consumer.mjs','probe.mjs','antigravity.mjs','rovo.mjs','amp.mjs'])await copyFile(join(repo,'examples/real-gated-agents',file),join(consumer,file));
+ for(const id of ['antigravity','rovo-dev','amp'])await copyFile(join(repo,'harnesses',id+'.json'),join(consumer,id+'.json'));
+ console.log(run(process.execPath,[process.argv[3]==='--antigravity'?'antigravity.mjs':process.argv[3]==='--rovo'?'rovo.mjs':process.argv[3]==='--amp'?'amp.mjs':'consumer.mjs',resolve(process.argv[2]||'/tmp/cordyceps-gated-evidence.json'),JSON.stringify({name:artifact.filename,integrity:artifact.integrity,shasum:artifact.shasum}),...(process.argv.slice(3))],consumer));
 }finally{await rm(root,{recursive:true,force:true})}

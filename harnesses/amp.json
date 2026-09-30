@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "amp",
+  "provider": {
+    "adapter": "amp-service",
+    "override": {
+      "env": {
+        "HOME": "${session.dir}",
+        "AMP_URL": "${mock.baseUrl}",
+        "AMP_API_KEY": "${mock.apiKey}"
+      },
+      "unsetEnv": [
+        "AMP_THREAD_ID",
+        "AMP_SETTINGS_FILE",
+        "AMP_PROXY",
+        "ANTHROPIC_API_KEY",
+        "OPENAI_API_KEY"
+      ]
+    }
+  },
+  "modes": {
+    "interactive": {},
+    "nonInteractive": {
+      "args": [
+        "--execute"
+      ]
+    }
+  }
+}
