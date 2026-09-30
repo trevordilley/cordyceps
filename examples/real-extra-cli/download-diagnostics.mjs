@@ -9,6 +9,9 @@ const workflowsOnly = process.argv[3] === "--workflows-only";
 if (!workflowsOnly) assert.equal(process.arch, "arm64", "The released-binary diagnostic is pinned to arm64; --workflows-only downloads the portable Polygraph payloads");
 const root = resolve(process.argv[2] ?? "/tmp/cordyceps-extra-deps");
 await mkdir(root, { recursive: true });
+// The official runtime endpoint is mutable. Update this version and its hash
+// together only after inspecting the actual archive, then rerun native workflows.
+const polygraphVersion = "2609.29.0017";
 const artifacts = [
   [
     "codebuff",
@@ -18,7 +21,7 @@ const artifacts = [
   [
     "polygraph",
     "https://cloud.nx.app/nx-cloud/static/polygraph-bundle",
-    "f8f2409d79a04d9f0cd852e4fbabf89927b6e5836af7a31eabc4bf55f328cea6",
+    "500aefb051bd7c868d67d38b7367b6c3002ef6b1e202d831c05c17422baab041",
   ],
   [
     "polygraph-claude-plugin",
@@ -31,6 +34,14 @@ for (const [name, url, hash, directory] of artifacts) {
   if (workflowsOnly && name === "codebuff") continue;
   const response = await fetch(url);
   assert.ok(response.ok, `${url}: ${response.status}`);
+  if (name === "polygraph") {
+    assert.equal(response.headers.get("content-type")?.split(";")[0], "application/gzip");
+    assert.match(
+      response.headers.get("content-disposition") ?? "",
+      new RegExp(`(?:^|;)\\s*filename="?${polygraphVersion.replaceAll(".", "\\.")}\\.tar\\.gz"?(?:;|$)`),
+      "Polygraph runtime version changed; inspect its archive and reverify before updating the pin",
+    );
+  }
   const bytes = Buffer.from(await response.arrayBuffer());
   assert.equal(
     createHash("sha256").update(bytes).digest("hex"),
@@ -45,5 +56,15 @@ for (const [name, url, hash, directory] of artifacts) {
     stdio: "inherit",
   });
   assert.equal(result.status, 0);
+  if (name === "polygraph") {
+    // Consumers use this verified version for the native runtime cache directory.
+    // This is setup provenance, not a receipt that the new runtime passed E2E.
+    await writeFile(join(root, "polygraph-runtime.json"), JSON.stringify({
+      version: polygraphVersion,
+      archiveSHA256: hash,
+      url,
+      resolvedUrl: response.url,
+    }, null, 2) + "\n");
+  }
   console.log(`${name}: verified ${hash}, extracted to ${target}`);
 }

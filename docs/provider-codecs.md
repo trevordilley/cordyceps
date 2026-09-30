@@ -2,7 +2,7 @@
 
 `src/provider/index.ts` exports `codecIds` and `getCodec(id)`. The IDs are
 `anthropic-messages`, `openai-responses`, `openai-chat-completions`, and
-`google-genai`, `amazon-q`, `augment`, `atlassian-rovo`, `amp-service`, `hermes`, `muse-code`, and `grok-build`; unknown IDs throw. Their shared
+`google-genai`, `amazon-q`, `augment`, `atlassian-rovo`, `amp-service`, `hermes`, `muse-code`, `grok-build`, and `codebuff`; unknown IDs throw. Their shared
 interfaces live in `src/provider/types.ts`.
 Both the ID list and codec singleton objects are frozen, so callers cannot
 replace codec methods globally and affect another session.
@@ -195,7 +195,7 @@ There is no automatic startup response or generated tool result.
 `augment` emits newline-delimited JSON for `/chat-stream`, with native text and
 tool nodes and a terminal stop reason. The exact `/get-models` bootstrap accepts
 `{augmentModels: {defaultModel: 'fixture-model'}}`; the real client needs this
-metadata to include its initial prompt. The three other observed startup routes
+metadata to include its initial prompt. The four other observed auxiliary routes (including the background `/find-missing` blob probe)
 are captured and require explicit scripted errors in the verified example.
 Unknown service routes still fail. See [the Auggie consumer](real-auggie.md) for
 the installed-package protocol evidence and exact limits. Both codecs retain
@@ -258,3 +258,16 @@ namespace: 'muse', input: { path: fixturePath } } }` retains the namespace in
 streaming and nonstreaming function-call output items. Other generation codecs
 reject namespaced calls instead of silently dropping the namespace. The field
 does not cause the library to execute a tool or choose a namespace itself.
+
+
+## Codebuff source gateway
+
+`codebuff` delegates exactly `POST /api/v1/chat/completions` to Chat
+Completions. It also captures the finite account, health, usage, policy,
+validation and logging routes observed by the [pinned real source consumer](real-codebuff-polygraph.md).
+Each auxiliary reply requires an explicit JSON object or HTTP error; the codec
+never supplies account state automatically. Opaque telemetry stays in the raw
+capture. The real source agent owns tool execution and rewrites tool-call IDs,
+so the consumer checks the actual returned ID against the native assistant
+call. The published Codebuff 1.0.688 binary ignores the tested endpoint
+overrides and remains excluded.

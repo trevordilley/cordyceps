@@ -1,7 +1,7 @@
 import type { ProviderCodec, ScriptedResponse, ToolResult } from './types.js';
 import { array, encoded, errorStatus, events, guarded, json, matchesPath, object } from './common.js';
 
-const auxiliary = new Set(['/get-models', '/settings/get-mcp-tenant-configs', '/settings/get-mcp-user-configs', '/agents/list-remote-tools']);
+const auxiliary = new Set(['/get-models', '/settings/get-mcp-tenant-configs', '/settings/get-mcp-user-configs', '/agents/list-remote-tools', '/find-missing']);
 
 // Auggie's service protocol is NDJSON, not the third-party provider wire named in its override.
 async function* body(response: ScriptedResponse, signal: AbortSignal): AsyncGenerator<string> {

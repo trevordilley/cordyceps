@@ -264,7 +264,10 @@ for (const candidate of selection.split(",")) {
       const host = new URL(url).host.replace(/[^a-zA-Z0-9.-]+/g, "_");
       const cache = join(home, ".polygraph/bundles", host);
       await mkdir(cache, { recursive: true });
-      await cp(join(deps, "polygraph-runtime"), join(cache, "2609.28.0005"), {
+      const runtimeArtifact = JSON.parse(await readFile(join(deps, "polygraph-runtime.json"), "utf8"));
+      assert.match(runtimeArtifact.version, /^\d{4}\.\d{2}\.\d{4}$/);
+      record.runtimeArtifact = runtimeArtifact;
+      await cp(join(deps, "polygraph-runtime"), join(cache, runtimeArtifact.version), {
         recursive: true,
       });
       await writeFile(

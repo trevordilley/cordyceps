@@ -23,6 +23,7 @@ The codec handles exactly these POST paths (optional query allowed):
 - `/chat-stream`: JSON requests with current/history text nodes, `input_schema_json` tool definitions, and `tool_result_node` results. The effective model is `third_party_override.provider_model_name`, falling back to `model`. Opaque nodes remain in the raw/body capture. Responses are newline-delimited JSON, with text/type-0 nodes, type-5 tool nodes containing JSON argument strings, and one native `END_TURN` or `TOOL_USE_REQUESTED` stop reason. Text nodes retain content for native conversation history.
 - `/get-models`: explicitly fulfill `{ augmentModels: { defaultModel: "cordyceps-test" } }` to return a native default-model value and empty model/language arrays. This narrow bootstrap is not a full model registry or feature-flag API. Scripted HTTP errors are also supported.
 - `/settings/get-mcp-tenant-configs`, `/settings/get-mcp-user-configs`, `/agents/list-remote-tools`: decoded and captured, with explicit scripted HTTP errors only. The consumer chooses 404 responses to disable optional remote services. These calls and their retries are not hidden or automatically fulfilled.
+- `/find-missing`: the native `DiskFileManager` may probe fixture blob hashes in `mem_object_names`, with an optional `model`. The JSON object is captured unchanged as an auxiliary request, with no generation text, tools or results. Only an explicit scripted HTTP error is accepted; the consumer returns 404. No missing-blob list, successful indexing response, upload or remote index is synthesized. Neighboring `/batch-upload` and `/checkpoint-blobs` APIs remain unsupported.
 
 All other paths fail visibly. Unhandled supported requests still fail; all responses use the shared HTTP listener's captures, failure ledger, backpressure and abort signal. Generation does not accept bootstrap responses. Other provider codecs reject `augmentModels`.
 
@@ -39,8 +40,21 @@ Observed with installed `@augmentcode/auggie` 0.35.0 and Node 22.22.3 on macOS. 
 
 Each run asserts a healthy failure ledger, the exact count of generation requests (one, two, one, one), scratch cleanup, and a closed listener. Optional bootstrap retries are recorded separately. Full evidence is written to the caller's output path; `examples/real-auggie/evidence.json` is a compact checked-in summary. Unsupported service APIs, model registry entries, indexing, hosted tools, multimodal output, reasoning, and other releases are not claimed.
 
+## Hosted reproduction finding
+
+A hosted macOS run of the same Auggie 0.35.0 produced the expected native text,
+but failed the healthy-ledger assertion because background `DiskFileManager`
+issued `POST /find-missing` before that reply completed. Its debug receipt showed
+the real fixture hash being enqueued, a one-blob probe and an HTTP 404 failure.
+The other tool, stream and cancellation cases passed. The codec now recognizes
+that exact auxiliary path so the existing consumer's explicit 404 script can
+reject remote indexing while retaining the request and its response in the
+shared capture/failure lifecycle. An unhandled probe still fails; the consumer
+does not filter it out. The correction awaits a fresh hosted rerun and is not
+itself a new passing runtime result.
+
 ## Source evidence
 
-Inspected 2026-09-29: the installed `@augmentcode/auggie/augment.mjs` 0.35.0 contains `callApiStream`'s newline parser, `toChatResult`/`zpt`'s text/nodes/stop-reason mapping, `toGetModelsResult`'s bootstrap parser, the type-5 tool-node construction, and `pushToolCallResult`'s type-1 result construction. The installed package is the source of the proprietary wire subset; this is not presented as a stable published service API.
+Inspected 2026-09-29: the installed `@augmentcode/auggie/augment.mjs` 0.35.0 contains `callApiStream`'s newline parser, `toChatResult`/`zpt`'s text/nodes/stop-reason mapping, `toGetModelsResult`'s bootstrap parser, the type-5 tool-node construction, and `pushToolCallResult`'s type-1 result construction. Inspection on 2026-09-30 of the same installed release confirmed that `findMissing` constructs a POST body containing sorted `mem_object_names` and an optional `model`; `DiskFileManager` calls it while probing local blob hashes. This supports capturing the probe, not implementing its successful indexing response. The installed package is the source of the proprietary wire subset; this is not presented as a stable published service API.
 
 Official [Auggie README](https://github.com/augmentcode/auggie) documents `--print` and developer installation. Augment's [CI integration guide](https://www.augmentcode.com/guides/cicd-ai-agents-pipeline-integration) documents `AUGMENT_SESSION_AUTH` and disabling auto-update. Those general CLI references do not specify the native service schema above.

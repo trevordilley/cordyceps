@@ -62,8 +62,13 @@ passed both Linux library jobs and the four non-baseline consumer groups
 (18 native families). Baseline failed before its first provider request because
 Claude defaults to `/tmp/claude-UID` even with `TMPDIR` set. The consumers now
 set the documented `CLAUDE_CODE_TMPDIR` to their owned scratch directory;
-filesystem isolation remains intact. That fix and newly added groups await
-hosted verification. Baseline now attempts CLI, ACP and browser independently
+filesystem isolation remains intact. The [second hosted run](https://github.com/trevordilley/cordyceps/actions/runs/36738685084)
+confirmed that fix: CLI, ACP and all three browser tests passed. Nine native
+consumer groups passed, covering 31 families. Auggie text reached its controlled
+output but exposed an unrecognized background `/find-missing` request; the
+codec must capture that explicit auxiliary error. Codebuff/Polygraph setup
+correctly stopped because the official Polygraph bundle changed. The inspected
+new runtime is pinned for revalidation; neither failure is counted as a pass. Baseline now attempts CLI, ACP and browser independently
 and still fails the job if any scenario fails.
 
 The same group can be exercised locally on macOS with an owned scratch directory:

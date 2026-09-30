@@ -15,7 +15,7 @@ finish() {
   consumer_exit_code=$?
   trap - EXIT
   set +e
-  for record in package.json package-lock.json install-evidence.json prime-artifact.json zcode-glm-artifact.json; do
+  for record in package.json package-lock.json install-evidence.json prime-artifact.json zcode-glm-artifact.json polygraph-runtime.json; do
     if [[ -f "$consumer_root/$record" ]]; then
       cp "$consumer_root/$record" "$evidence_root/$consumer_group-$record"
     fi

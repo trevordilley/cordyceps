@@ -89,7 +89,7 @@
     {
       "id": "orca-docs",
       "url": "https://www.onorca.dev/docs/agents/supported",
-      "note": "Public table also names MiniMax, absent from pinned TuiAgent union; investigate identity separately.",
+      "note": "Public table also names MiniMax, absent from the pinned TuiAgent union. Authentic MiniMax Code mcode was verified separately; no Orca executable mapping is inferred.",
       "entries": [
         "minimax"
       ]
@@ -378,7 +378,13 @@
           "id": "polygraph"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "polygraph",
+      "evidence": [
+        "docs/real-codebuff-polygraph.md",
+        "examples/real-extra-cli/boundary-evidence.json"
+      ],
+      "note": "Verified Polygraph npm shell 0.1.5/runtime 2609.28.0005 launching Claude Code 2.1.283 with official Claude plugin 0.5.4 and a real connected MCP transport. Native Claude text and Read fixture round trip passed with local organization/empty-session fixtures. Other Polygraph backends, hosted semantic search, remote repository management and cancellation/session reuse remain unverified."
     },
     {
       "id": "amazon-q",
@@ -492,7 +498,8 @@
         "docs/real-vendor-agents.md",
         "examples/real-vendor-agents/devin-diagnostic.json"
       ],
-      "note": "No locally injectable model workflow established after actual protobuf bootstrap diagnostic."
+      "note": "No locally injectable model workflow established after actual protobuf bootstrap diagnostic.",
+      "reason": "Tested Devin 3000.11.3 reaches native protobuf bootstrap with test-only local credentials, then fails to start an ACP agent session on explicit diagnostic 404s. No locally injectable model/text/read workflow established; future authorized deployments are not ruled out."
     },
     {
       "id": "ufo",
@@ -583,7 +590,7 @@
         "docs/real-source-opencode-mimo-dsh.md",
         "examples/real-source-agents/opencode-mimo-dsh/evidence-opencode2.json"
       ],
-      "note": "Authentic native packed-artifact text and actual file-read workflows passed. DSH and OpenCode2 include source-roster terminal frontends; no additional lifecycle claim."
+      "note": "Historical official 0.0.0-beta-19271 passed headless and native standalone-TUI text/read(path) through installed Cordyceps. TUI input waits for the configured Anthropic model before typing. Current differently packaged OpenCode v2 is not substituted; no additional lifecycle claim."
     },
     {
       "id": "mimo-code",
@@ -599,7 +606,7 @@
         "docs/real-source-opencode-mimo-dsh.md",
         "examples/real-source-agents/opencode-mimo-dsh/evidence-mimo-dsh.json"
       ],
-      "note": "Authentic native packed-artifact text and actual file-read workflows passed. DSH and OpenCode2 include source-roster terminal frontends; no additional lifecycle claim."
+      "note": "MiMo Code 0.1.15 native headless packed-artifact text and actual read(file_path) workflows passed. No TUI, cancellation, ACP or follow-up-session claim."
     },
     {
       "id": "qoder",
@@ -720,7 +727,25 @@
           "id": "codebuff"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "codebuff",
+      "evidence": [
+        "docs/real-codebuff-polygraph.md",
+        "examples/real-extra-cli/boundary-evidence.json"
+      ],
+      "note": "Verified only the unmodified official source CLI at fb2a17d442feb9a3482c0ed32863a4cd5fe37009 (native version 1.0.0), with explicit local account/usage fixtures and genuine Chat Completions text/read_files decisions. Published native Codebuff 1.0.688 remains excluded: it targets www.codebuff.com despite the tested endpoint overrides and reaches no local model request. Distinct from Freebuff; no cancellation/session-reuse claim.",
+      "verifiedProfile": {
+        "distribution": "official-source",
+        "commit": "fb2a17d442feb9a3482c0ed32863a4cd5fe37009",
+        "reportedVersion": "1.0.0"
+      },
+      "excludedProfiles": [
+        {
+          "distribution": "published-darwin-arm64",
+          "version": "1.0.688",
+          "reason": "Actual released binary targets hosted www.codebuff.com despite tested local app/provider overrides; rejecting loopback proxy records the attempt and no model request reaches Cordyceps."
+        }
+      ]
     },
     {
       "id": "freebuff",
@@ -846,7 +871,8 @@
         "docs/real-vendor-agents.md",
         "examples/real-vendor-agents/distribution-evidence.json"
       ],
-      "note": "Both official TRAE CN CLI download entry points returned HTTP403; no authentic executable or substitute was tested."
+      "note": "Both official TRAE CN CLI download entry points returned HTTP403; no authentic executable or substitute was tested.",
+      "reason": "Both official TRAE CN CLI installer entry points returned HTTP 403 from the test host. No authentic executable was available or substituted; local model/tool behavior remains unverified."
     },
     {
       "id": "zcode",
@@ -894,7 +920,7 @@
         "docs/real-source-opencode-mimo-dsh.md",
         "examples/real-source-agents/opencode-mimo-dsh/evidence-mimo-dsh.json"
       ],
-      "note": "Authentic native packed-artifact text and actual file-read workflows passed. DSH and OpenCode2 include source-roster terminal frontends; no additional lifecycle claim."
+      "note": "DeepSeek Harness 0.2.0-rc.2 headless and the source-roster dsh-tui 0.12.0 frontend both passed packed-artifact text and actual read(file_path). Consumer owns the local profile, PTY and cleanup; no graceful TUI completion or additional lifecycle claim."
     },
     {
       "id": "minimax",
@@ -912,5 +938,15 @@
       ],
       "note": "Packed-artifact native text and actual file-read workflows verified; no additional lifecycle or orchestrator UI claim."
     }
-  ]
+  ],
+  "outcomeSummary": {
+    "auditEntries": 48,
+    "verified-existing": 17,
+    "verified-new": 25,
+    "excluded": 5,
+    "excluded-mode": 1,
+    "verifiedNativeOverall": 43,
+    "priorVerifiedNativeOverall": 18,
+    "note": "42 verified identities/profiles occur in this audit (17 existing plus 25 new). Previously verified Plandex is outside these source rosters, giving 43 overall. Source-only Codebuff and Polygraph launching Claude retain their explicit profile qualifications; aliases/modes are not extra agents."
+  }
 }

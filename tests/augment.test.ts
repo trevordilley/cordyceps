@@ -41,6 +41,31 @@ test('Augment auxiliary requests are captured but only explicitly scripted error
   expect(()=>codec.encode(request(),{health:true},signal())).toThrow();
   expect(()=>codec.encode(request(),{error:{status:200,message:'bad'}},signal())).toThrow();
 });
+test('Augment captures only the exact native find-missing probe and requires an explicit failure response', async () => {
+  const path = '/find-missing?request=probe';
+  const probe = { mem_object_names: ['d4c8becf5f2aae3138ca72b809b28e1dc965fdc55000b4aae7e5ed5499fa5d76'] };
+  expect(codec.matches('POST', path)).toBe(true);
+  for (const method of ['GET', 'PUT', 'PATCH', 'DELETE', 'HEAD']) expect(codec.matches(method, '/find-missing')).toBe(false);
+  for (const other of ['/find-missing/', '/v1/find-missing', '/find-missing-more', '/batch-upload', '/checkpoint-blobs']) {
+    expect(codec.matches('POST', other)).toBe(false);
+  }
+  // The native DiskFileManager can omit model. Preserve its hash probe as an
+  // auxiliary request, never normalize it into a prompt or tool result.
+  const wire = raw(probe, path);
+  const decoded = codec.decode(wire);
+  expect(decoded).toEqual({ model: '', stream: false, text: '', tools: [], toolResults: [], body: probe });
+  expect(codec.decode(raw({ ...probe, model: 'index-model' }, path)).body).toEqual({ ...probe, model: 'index-model' });
+  for (const invalid of [null, [], 'hash']) expect(() => codec.decode(raw(invalid, path))).toThrow('JSON object');
+  const captured: CapturedRequest = { ...decoded, raw: wire, id: 'probe', timestamp: 1 };
+  const rejected = codec.encode(captured, { error: { status: 404, message: 'remote indexing unavailable' } }, signal());
+  expect(rejected.status).toBe(404);
+  expect(JSON.parse(await read(rejected))).toEqual({ error: 'remote indexing unavailable' });
+  expect(() => codec.encode(captured, { text: 'indexed' }, signal())).toThrow('explicit');
+  expect(() => codec.encode(captured, { health: true }, signal())).toThrow('explicit');
+  expect(() => codec.encode(captured, { toolCall: { id: 'index', name: 'view', input: {} } }, signal())).toThrow('explicit');
+  expect(() => codec.encode(captured, { augmentModels: { defaultModel: 'test' } }, signal())).toThrow('/get-models');
+  expect(() => codec.encode(captured, { error: { status: 200, message: 'success disguised as error' } }, signal())).toThrow();
+});
 test('Augment abort and source errors never emit a successful terminal frame', async () => {
   const controller=new AbortController();
   const iterator=codec.encode(request(),{stream:(async function*(){yield {text:'partial'};yield {text:'never'};})()},controller.signal).body[Symbol.asyncIterator]();
@@ -66,8 +91,11 @@ test('Augment startup and chat use shared capture/failure lifecycle without auto
     const response=await fetch(ai.baseUrl+'/get-models',{method:'POST',body:'{}'});
     expect(await response.json()).toEqual({default_model:'test',models:[],languages:[]});
     expect(ai.requests[0]?.raw.path).toBe('/get-models');ai.assertHealthy();
-    const unhandled=await fetch(ai.baseUrl+'/settings/get-mcp-user-configs',{method:'POST',body:'{}'});
-    await unhandled.text();expect(ai.requests).toHaveLength(2);expect(()=>ai.assertHealthy()).toThrow();
+    const unhandled=await fetch(ai.baseUrl+'/find-missing',{method:'POST',body:JSON.stringify({mem_object_names:['fixture-hash']})});
+    await unhandled.text();expect(ai.requests).toHaveLength(2);
+    expect(ai.requests[1]?.raw.path).toBe('/find-missing');
+    expect(ai.requests[1]?.body).toEqual({mem_object_names:['fixture-hash']});
+    expect(()=>ai.assertHealthy()).toThrow();
   } finally {await ai.dispose();}
 });
 test('other codecs reject Augment bootstrap replies rather than treating them as generation or health', async () => {

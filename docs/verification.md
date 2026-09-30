@@ -1,6 +1,6 @@
 # Verification and remaining evidence gaps
 
-The library has been built, packed, installed into disposable Node consumer projects, and exercised with 18 native agent families from DevSwarm’s `AiAgent` enum, an official ACP adapter, and a Chromium frontend. Text and real file-read workflows passed for those 18 families; Cursor, Qodo and all unverified WSL variants are excluded from the supported workflow set. [The complete inventory](devswarm-agents.md) retains their diagnostic and platform limits. These tests use public package imports and the actual local Cordyceps provider. Process launch, client handlers, isolation and cleanup live in `examples/` as consumer code.
+The library has been built, packed, installed into disposable Node consumer projects, and exercised with **43 native agent families**, an official ACP adapter, and a Chromium frontend. This comprises 18 families from DevSwarm’s `AiAgent` enum and 25 additional integrations from the [Superset/Orca inventory](orchestrator-agents.md). Text and real file-read workflows passed for those families; Cursor, Qodo and all unverified WSL variants are excluded from the supported workflow set. [The complete inventory](devswarm-agents.md) retains their diagnostic and platform limits. These tests use public package imports and the actual local Cordyceps provider. Process launch, client handlers, isolation and cleanup live in `examples/` as consumer code.
 
 Reproduction context: macOS 15.7.4, Node 22.22.3, Bun 1.3.13, TypeScript 5.9.3, Playwright 1.56.1, installed Claude Code 2.1.283 and Codex 0.155.1. ACP uses `@agentclientprotocol/claude-agent-acp` 0.84.0, ACP SDK 1.5.1 and Claude Agent SDK 0.3.284. Executable versions are recorded observations, not support gates or a certification matrix. No npm publication, selected license or user review verdict is recorded.
 
@@ -12,7 +12,7 @@ Run from the repository root after `bun install --frozen-lockfile`. Put a real N
 | --- | --- |
 | `bun run check` | Strict TypeScript checking passed. |
 | `bun run build` | Node-targeted ESM and declaration emission passed. |
-| `bun test tests` | 137 passed, 2 known Bun skips, 0 failed; 947 assertions. |
+| `bun test tests` | 148 passed, 2 known Bun skips, 0 failed; 1,221 assertions on both hosted Node jobs at `4001e69`. |
 | `bun run test:node` | 21 Node lifecycle tests passed, 0 skipped. |
 | `node scripts/verify-package.mjs` | Clean installed artifact, optional peer, declarations, synthetic HTTP/tool and success/failure teardown checks passed. |
 | `node examples/real-cli/run.mjs /tmp/cordyceps-cli.json` | Four real installed CLI cases passed; captured requests were 1/2 for each harness's text/tool cases. |
@@ -46,7 +46,7 @@ The earlier synthetic/package checks remain useful regression coverage. A synthe
 
 ## Expanded agent results and fixes
 
-The [exact DevSwarm enum inventory](devswarm-agents.md) is the scope authority. OpenHands is not in that enum. Each successful consumer requires a captured prompt, actual native output, and a fresh fixture token absent from the initial request but returned by the real agent in a later provider request. Independent integration-branch reruns are summarized in `examples/devswarm-agents/manager-verification.json`; per-agent documents retain executable versions and complete reproduction commands. In this phase, 59 assertion-based native cases passed across 18 families. That count excludes ACP, browser tests, historical diagnostics and transport-only checks.
+The [exact DevSwarm enum inventory](devswarm-agents.md) records the first scope; the subsequent [Superset/Orca audit](orchestrator-agents.md) expands it. OpenHands is not in that enum. Each successful consumer requires a captured prompt, actual native output, and a fresh fixture token absent from the initial request but returned by the real agent in a later provider request. Independent integration-branch reruns are summarized in `examples/devswarm-agents/manager-verification.json`; per-agent documents retain executable versions and complete reproduction commands. In this phase, 59 assertion-based native cases passed across 18 families. That count excludes ACP, browser tests, historical diagnostics and transport-only checks.
 
 - Chat Completions and Gemini codecs enabled additional agents through ordinary JSON recipes. Aider needed actual shell consent on stdin; Cline needed native XML tool/completion text. Their real results stay in conversation text, not invented function-call records.
 - Q required native service endpoint configuration and CRC-framed AWS event-stream responses. Auggie required native NDJSON and a successful explicit `/get-models` reply; returning 404 had silently discarded its initial prompt. The fixed example asserts the actual prompt is captured.
@@ -56,6 +56,33 @@ The [exact DevSwarm enum inventory](devswarm-agents.md) is the scope authority. 
 Streaming limits remain explicit: Droid, OpenCode, Rovo and Amp consume streaming provider replies but buffer assistant stdout in the selected CLI modes. Vibe’s headless mode requests nonstreaming JSON. Aider, Cline and Plandex establish text/read workflows only; no additional stream/cancel claim is inferred. Process cancellation is distinct from native ACP cancellation and same-session reuse. See the separate ACP and browser evidence for those lifecycles.
 
 Qodo’s [actual WebSocket diagnostic](real-qodo.md) crosses bootstrap and captures native queries/tool declarations, but does not reach a locally injectable model client. That diagnostic is not a successful text/read test. The [Cursor ACP diagnostic](real-cursor.md) likewise submits actual run requests and provider credentials to its remote agent service without local model traffic. Both agents are excluded under the user’s removal instruction. Remote decisions are not fabricated to turn missing model control into a pass.
+
+## Superset and Orca expansion
+
+All 48 source audit entries have an explicit outcome: 17 previously verified
+identities, 25 additional verified integrations, five excluded native
+identities and one excluded launch mode. Plandex belongs to the earlier
+DevSwarm set but neither new source roster, giving 43 verified native families
+overall. Codebuff's evidence is the unmodified official source commit
+`fb2a17d`; the published 1.0.688 binary still ignores endpoint overrides and
+is excluded. Polygraph is the actual launcher/plugin/MCP integration launching
+Claude, not a separate model engine. No Superset/Orca desktop UI is claimed.
+
+The integration branch independently reran 73 cases across the eight groups
+in `examples/orchestrator-agents/manager-verification.json`. The four additional
+Codebuff/Polygraph cases have child-workspace evidence in
+`examples/real-extra-cli/boundary-evidence.json`; hosted reruns are tracked
+separately in [CI results](ci.md). Do not count launch aliases, TUI/headless
+modes, metadata requests or diagnostic failures as extra agent families.
+
+Actual failures led to narrow fixes: Hermes model-metadata probes, Grok
+prewarm and Muse model catalog routes require explicit consumer replies; Muse
+requires preserving Responses tool namespaces; Freebuff needs a JSON-array
+configuration root; and Codebuff source needs its native gateway path plus
+explicit auxiliary metadata. OpenCode 2 needed its actual XDG configuration
+and a ready TUI before submitting input. Claude on a fresh hosted runner
+needed its documented `CLAUDE_CODE_TMPDIR` set to the consumer scratch root.
+Permission flags, process startup and cleanup remain consumer-owned.
 
 ## Evidence boundaries
 
@@ -70,4 +97,4 @@ Qodo’s [actual WebSocket diagnostic](real-qodo.md) crosses bootstrap and captu
 
 Bun 1.3.13's `node:http` implementation did not report remote disconnects to held handlers in two independently reproduced direct-TCP cases, with and without SSE already open. Exactly those two tests remain skipped only for that Bun version. Both are mandatory and pass under Node; the skips are not cancellation evidence. Real ACP and browser cancellation were separately exercised under Node.
 
-The provider subset includes Anthropic Messages, OpenAI Responses, Chat Completions, Gemini Developer API, native Amazon Q and Augment, and precise Rovo/Amp service gateways. Their observed auxiliary routes require explicit consumer scripts, including Q model discovery and Auggie model bootstrap. This is not full vendor API emulation: general model listings, stored-response state, hosted/custom tools, multimodal/reasoning output and direct ACP fault injection remain outside the subset. The listener binds loopback and has no upstream fallback. The library still does not discover/install/launch binaries, manage shell startup, implement an ACP client or certify harness versions. Consumers close their processes before disposing the mock.
+The provider subset includes Anthropic Messages, OpenAI Responses, Chat Completions, Gemini Developer API, native Amazon Q and Augment, and precise Rovo/Amp/Hermes/Grok/Muse/Codebuff service routes. Their observed auxiliary routes require explicit consumer scripts, including Q model discovery and Auggie model bootstrap. This is not full vendor API emulation: general model listings, stored-response state, hosted/custom tools, multimodal/reasoning output and direct ACP fault injection remain outside the subset. The listener binds loopback and has no upstream fallback. The library still does not discover/install/launch binaries, manage shell startup, implement an ACP client or certify harness versions. Consumers close their processes before disposing the mock.
