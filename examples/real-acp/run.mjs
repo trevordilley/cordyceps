@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { once } from 'node:events';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -210,33 +210,49 @@ try {
   try {
     if (child?.pid) {
       const exited = once(child, 'exit');
-      const kill = signal => { try { if (process.platform === 'win32') child.kill(signal); else process.kill(-child.pid, signal); } catch (error) { if (error.code !== 'ESRCH') throw error; } };
+      const kill = signal => {
+        try { if (process.platform === 'win32') child.kill(signal); else process.kill(-child.pid, signal); }
+        catch (error) {
+          // Darwin may report EPERM while sandboxed descendants are exiting.
+          // This is not proof of cleanup: stopped() must verify the owned group.
+          if (error.code !== 'ESRCH' && error.code !== 'EPERM') throw error;
+        }
+      };
       kill('SIGTERM');
       const stopped = async () => {
-        if (child.exitCode === null && child.signalCode === null) await exited;
+        if (child.exitCode === null && child.signalCode === null) await within(exited, 'adapter parent exit', 3000);
         if (process.platform !== 'win32') {
-          for (let attempts = 0; attempts < 120; attempts++) {
-            try { process.kill(-child.pid, 0); }
-            catch (error) { if (error.code === 'ESRCH') return; throw error; }
+          const deadline = Date.now() + 3000;
+          while (Date.now() < deadline) {
+            const ps = spawnSync('/bin/ps', ['-axo', 'pid=,pgid=,stat='], { encoding: 'utf8', timeout: 1000 });
+            assert.equal(ps.status, 0, `Cannot verify adapter process cleanup: ${ps.error ?? ps.stderr}`);
+            const alive = ps.stdout.trim().split('\n').some(line => {
+              const [, group, status] = line.trim().split(/\s+/);
+              return Number(group) === child.pid && !status?.startsWith('Z');
+            });
+            if (!alive) return;
             await new Promise(resolve => setTimeout(resolve, 25));
           }
           throw new Error('Adapter process group still alive');
         }
       };
-      try { await within(stopped(), 'adapter process group exit', 3000); }
-      catch { kill('SIGKILL'); await within(stopped(), 'forced process group exit', 3000); }
+      try { await stopped(); }
+      catch { kill('SIGKILL'); await stopped(); }
     }
-    if (ai) {
-      if (process.env.ACP_EVIDENCE_DIR) {
+    if (summary) summary.processGroupClosed = true;
+    ai?.assertHealthy(); // Includes requests made during adapter shutdown.
+  } finally {
+    try {
+      // Keep diagnostic captures even when process teardown itself fails.
+      if (ai && process.env.ACP_EVIDENCE_DIR) {
         await mkdir(process.env.ACP_EVIDENCE_DIR, { recursive: true });
         await writeFile(join(process.env.ACP_EVIDENCE_DIR, 'native.json'), JSON.stringify(ai.protocolMessages, null, 2));
         await writeFile(join(process.env.ACP_EVIDENCE_DIR, 'provider.json'), JSON.stringify({ requests: ai.requests, responses: ai.responses }, null, 2));
       }
-      ai.assertHealthy(); // Includes requests made during adapter shutdown.
+    } finally {
+      try { await ai?.dispose(); }
+      finally { await rm(root, { recursive: true, force: true }); }
     }
-  } finally {
-    try { await ai?.dispose(); }
-    finally { await rm(root, { recursive: true, force: true }); }
   }
 }
 console.log(JSON.stringify(summary, null, 2));

@@ -31,6 +31,10 @@ assert.equal(
 run("git", ["checkout", "--detach", commit], source);
 const bun = process.env.BUN_BINARY ?? run("/usr/bin/which", ["bun"]).trim();
 run(bun, ["install", "--frozen-lockfile"], source);
+// Match the pinned CLI's official `dev` prerequisite. This ignored generated
+// module is absent from a fresh clone and is imported during native startup.
+run(bun, ["run", "prebuild:agents"], join(source, "cli"));
+await access(join(source, "cli/src/agents/bundled-agents.generated.ts"));
 const quote = (value) => `'${value.replaceAll("'", "'\\''")}'`;
 await writeFile(
   join(root, "codebuff-source-cli"),
