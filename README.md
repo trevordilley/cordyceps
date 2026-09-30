@@ -34,7 +34,7 @@ try {
 
 This short API sketch requires a consumer-installed Claude Code binary and its ordinary permission setup. For complete runnable consumers with isolated configuration, actual tool reads and cleanup, see [installed CLI tests](docs/real-cli.md) and [browser E2E tests](docs/real-frontend.md). The [real ACP example](docs/real-acp.md) also exercises native sessions, permissions and cancellation. All three build, pack and install the actual library before exercising real harnesses. Apply the settings before the application or child process starts. A cached environment, an existing daemon or a configuration override can bypass injection; assert that the mock actually receives the expected request.
 
-The [DevSwarm agent inventory](docs/devswarm-agents.md) tracks all 20 native families and 20 WSL variants from its `AiAgent` enum, with real-consumer evidence and explicit gaps. Agents using an existing provider protocol need an injection recipe; a different wire protocol needs codec code plus a real consumer test. CLI verification does not imply ACP support.
+The [verified DevSwarm workflow list](docs/devswarm-agents.md) contains 18 native agent families with real text and file-read evidence. Cursor, Qodo and unverified WSL variants are excluded. A separate inventory retains the complete source enum as an audit trail. Agents using an existing provider protocol need an injection recipe; a different wire protocol needs codec code plus a real consumer test. CLI verification does not imply ACP support.
 
 ## Provider controls
 

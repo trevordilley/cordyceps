@@ -812,5 +812,16 @@
         }
       ]
     }
+  ],
+  "diagnostics": [
+    {
+      "agent": "qodo",
+      "sourceEvidence": "/tmp/cordyceps-qodo-manager.json",
+      "passed": false,
+      "boundaryDiagnosticsPassed": true,
+      "modelProviderRequests": 0,
+      "nativeQueries": 2,
+      "classification": "excluded-remote-agent-boundary"
+    }
   ]
 }

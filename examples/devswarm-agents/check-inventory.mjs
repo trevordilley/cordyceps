@@ -13,3 +13,11 @@ assert.deepEqual(current,recorded,'DevSwarm agent scope changed; refresh the inv
 assert.equal(new Set(recorded).size,recorded.length);
 console.log(`Scope matches: ${recorded.length} enum values, ${new Set(inventory.agents.map(a=>a.family)).size} families`);
 console.log(JSON.stringify(Object.fromEntries(Object.entries(Object.groupBy(inventory.agents,a=>a.status)).map(([status,agents])=>[status,agents.length])),null,2));
+
+const supported=JSON.parse(await readFile(new URL('./supported.json',import.meta.url),'utf8'));
+assert.deepEqual(supported.agents.map(a=>a.value).sort(),inventory.agents.filter(a=>a.status==='verified'&&a.platform==='native').map(a=>a.value).sort(),'Supported workflows must contain only verified native families');
+for(const agent of supported.agents) {
+  const recipe=JSON.parse(await readFile(new URL('../../'+agent.recipePath,import.meta.url),'utf8'));
+  assert.equal(recipe.id,agent.recipe,'Supported workflow points to the wrong recipe');
+}
+console.log(`Supported workflows: ${supported.agents.length}; all other enum entries are excluded`);

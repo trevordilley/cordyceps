@@ -5,7 +5,7 @@
     "enumPath": "libs/shared/types/src/ai-agent.ts",
     "launchMappingPath": "libs/desktop/utils/src/agent.ts"
   },
-  "scope": "Real consumer verification observations, not executable version certification. Windows/WSL requires a Windows host.",
+  "scope": "Historical DevSwarm scope audit. Only verified native workflows are included in supported.json; failed integrations and unverified platforms are excluded by user direction.",
   "agents": [
     {
       "enum": "Q",
@@ -25,7 +25,7 @@
       "family": "q",
       "label": "Amazon Q",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -47,7 +47,7 @@
       "family": "claude",
       "label": "Claude Code",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -69,7 +69,7 @@
       "family": "codex",
       "label": "Codex",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -91,7 +91,7 @@
       "family": "antigravity",
       "label": "Antigravity",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -113,7 +113,7 @@
       "family": "gemini",
       "label": "Gemini CLI",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -135,7 +135,7 @@
       "family": "acli",
       "label": "Rovo Dev",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -157,7 +157,7 @@
       "family": "aider",
       "label": "Aider",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -179,7 +179,7 @@
       "family": "goose",
       "label": "Goose",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -189,8 +189,13 @@
       "family": "cursor-agent",
       "label": "Cursor",
       "platform": "native",
-      "status": "pending",
-      "evidence": []
+      "status": "excluded",
+      "evidence": [
+        "docs/real-cursor.md",
+        "examples/real-cursor/evidence.json",
+        "examples/real-cursor/source-evidence.json"
+      ],
+      "limitation": "Excluded: native ACP client sends AgentRunRequest and provider base URL to the remote agent service; no locally injectable model client. Requires authentic backend/model routing access. No text/read pass claimed."
     },
     {
       "enum": "CURSOR_WSL",
@@ -198,7 +203,7 @@
       "family": "cursor-agent",
       "label": "Cursor",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -220,7 +225,7 @@
       "family": "amp",
       "label": "Amp",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -242,7 +247,7 @@
       "family": "copilot",
       "label": "GitHub Copilot CLI",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -264,7 +269,7 @@
       "family": "vibe",
       "label": "Mistral Vibe",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -286,7 +291,7 @@
       "family": "qwen",
       "label": "Qwen Code",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -308,7 +313,7 @@
       "family": "auggie",
       "label": "Auggie",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -330,7 +335,7 @@
       "family": "opencode",
       "label": "OpenCode",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -352,7 +357,7 @@
       "family": "crush",
       "label": "Crush",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -374,7 +379,7 @@
       "family": "cline",
       "label": "Cline",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -396,7 +401,7 @@
       "family": "plandex",
       "label": "Plandex",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -418,7 +423,7 @@
       "family": "droid",
       "label": "Factory Droid",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     },
@@ -428,8 +433,12 @@
       "family": "qodo",
       "label": "Qodo",
       "platform": "native",
-      "status": "pending",
-      "evidence": []
+      "status": "excluded",
+      "evidence": [
+        "docs/real-qodo.md",
+        "examples/real-qodo/evidence.json"
+      ],
+      "limitation": "Remote agent service owns model orchestration; no verified local model injection. Excluded from Cordyceps supported workflows at user direction. Actual CLI reaches remote-agent UserQuery with native tools; no local provider client. Requires a real Qodo backend with configurable locally reachable model transport or vendor local injection hook. No text/read pass claimed."
     },
     {
       "enum": "QODO_WSL",
@@ -437,7 +446,7 @@
       "family": "qodo",
       "label": "Qodo",
       "platform": "windows-wsl",
-      "status": "platform-unavailable",
+      "status": "excluded-platform",
       "evidence": [],
       "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
     }
