@@ -123,8 +123,11 @@
       "family": "acli",
       "label": "Rovo Dev",
       "platform": "native",
-      "status": "pending",
-      "evidence": []
+      "status": "verified",
+      "evidence": [
+        "docs/real-gated-agents.md",
+        "examples/real-gated-agents/rovo-evidence.json"
+      ]
     },
     {
       "enum": "ROVO_WSL",

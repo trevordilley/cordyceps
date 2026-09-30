@@ -23,6 +23,7 @@ export const atlassianRovo: ProviderCodec = Object.freeze({
     return { model: '', stream: false, text: object(body) && typeof body.prompt === 'string' ? body.prompt : '', tools: [], toolResults: [], body };
   },
   encode(request, response, signal) {
+    if (response.amazonQ !== undefined || response.augmentModels !== undefined) throw new TypeError('Amazon Q and Augment bootstrap replies are not supported by Rovo');
     if (isChat(request.raw) || response.error !== undefined)
       return openaiChatCompletions.encode(request, response, signal);
     if (!auxiliary(request.raw.method, request.raw.path)) throw new TypeError('Unsupported Rovo endpoint');

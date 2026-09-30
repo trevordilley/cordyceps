@@ -2,7 +2,7 @@
 
 `src/provider/index.ts` exports `codecIds` and `getCodec(id)`. The IDs are
 `anthropic-messages`, `openai-responses`, `openai-chat-completions`, and
-`google-genai`, `amazon-q`, and `augment`; unknown IDs throw. Their shared
+`google-genai`, `amazon-q`, `augment`, and `atlassian-rovo`; unknown IDs throw. Their shared
 interfaces live in `src/provider/types.ts`.
 Both the ID list and codec singleton objects are frozen, so callers cannot
 replace codec methods globally and affect another session.
@@ -200,3 +200,16 @@ Unknown service routes still fail. See [the Auggie consumer](real-auggie.md) for
 the installed-package protocol evidence and exact limits. Both codecs retain
 auxiliary captures separately from the generation exchanges. These narrow
 service subsets do not claim full vendor API emulation.
+
+
+## Rovo gateway
+
+`atlassian-rovo` matches the observed `/v1/openai/v1/chat/completions` path and
+delegates generation encoding/normalization to Chat Completions while retaining
+the original raw path. Its only auxiliary routes are `GET /v3/credits/check`
+and `POST /prompt-moderation/`. The consumer explicitly supplies each metadata
+object as JSON in `{text: JSON.stringify(metadata)}`; the codec parses and emits
+that object, rejecting arrays, null, ordinary model text and other response
+kinds. It does not make a moderation, billing or authentication decision.
+The [Rovo consumer](real-gated-agents.md) selects the installed `acli` plugin
+directly with scratch SLAUTH settings; it never uses a real account or service.

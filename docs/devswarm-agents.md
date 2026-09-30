@@ -22,7 +22,7 @@ The table is finalized with the accompanying machine-readable evidence after eac
 | Codex (`codex`) | [Passed](real-cli.md) | codex / openai-responses | `exec_command` executes `/bin/cat`. |
 | Antigravity (`antigravity`) | [Passed](real-gated-agents.md) | antigravity / google-genai | Actual `agy` uses `view_file`. |
 | Gemini CLI (`gemini`) | [Passed](real-google-agents.md) | gemini / google-genai | `read_file`; incremental CLI output and process cancellation. |
-| Rovo Dev (`acli`) | In progress | — / — | Direct installed plugin reached local inference; verification in progress. |
+| Rovo Dev (`acli`) | [Passed](real-gated-agents.md) | rovo-dev / atlassian-rovo | Direct installed `acli` plugin executes `open_files`; selected CLI buffers stdout. |
 | Aider (`aider`) | [Passed](real-editor-agents.md) | aider / openai-chat-completions | Real shell read after explicit stdin consent; result appears in conversation text. |
 | Goose (`goose`) | [Passed](real-provider-agents.md) | goose / anthropic-messages | Real `shell` read; separate title requests. |
 | Cursor (`cursor-agent`) | In progress | — / — | Service and authentication boundary under investigation. |
@@ -51,6 +51,7 @@ Use real Node >=22 first on PATH. The known DevSwarm shell's default `node` is a
 - [Amazon Q / installed Kiro wrapper](real-q.md): `node examples/real-q/run.mjs /tmp/q.json`.
 - [Auggie](real-auggie.md): `node examples/real-auggie/verify.mjs /tmp/auggie.json`.
 - [Plandex](real-plandex.md): bootstrap the real CLI/backend, then `node examples/real-plandex/run.mjs /tmp/plandex.json "$PLANDEX_TEST_SOURCE"`.
+- [Rovo Dev](real-gated-agents.md): `node examples/real-gated-agents/run.mjs /tmp/rovo.json --rovo`.
 - [Antigravity](real-gated-agents.md): `node examples/real-gated-agents/run.mjs /tmp/agy.json --antigravity`.
 - [Aider and Cline](real-editor-agents.md): `node examples/real-editor-agents/verify.mjs /tmp/editors.json`.
 

@@ -643,6 +643,110 @@
           "mainRequestCount": 2
         }
       ]
+    },
+    {
+      "group": "cli",
+      "artifact": {
+        "name": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-Z4FYkPZx8osrh0p9wbvlrnVManeB2KU3CQFsVEj6tvNwgoSXmscZGwdkJ61QjAFfYZZs3qrNXta7J+jnuWAXHg==",
+        "shasum": "2e7aa9efdadd20c78fe54fed0cea642eddbf6341"
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-real-cli-evidence.json",
+      "cases": [
+        {
+          "agent": "claude-code",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true
+        },
+        {
+          "agent": "claude-code",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true
+        },
+        {
+          "agent": "codex",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true
+        },
+        {
+          "agent": "codex",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true
+        }
+      ]
+    },
+    {
+      "group": "rovo",
+      "artifact": {
+        "name": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-DcYsg3o0+y2Im6myJZw6y31pY8jJPO7tHJ1dOKs3SuydUA40NFpd1jK6qiyCJUQysgWV1EBy//2bXjdKmuSsUg==",
+        "shasum": "83cc9a7c5f5eff6f3bd45cfbe363b7b75917fdd0"
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-rovo-manager.json",
+      "cases": [
+        {
+          "agent": "rovo-dev",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": null,
+            "incrementalBeforeTail": null,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "rovo-dev",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 4,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": true,
+            "incrementalBeforeTail": null,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "rovo-dev",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": null,
+            "incrementalBeforeTail": false,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "rovo-dev",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedModelPrompt": true,
+            "actualFixtureResult": null,
+            "incrementalBeforeTail": null,
+            "providerAborted": true
+          }
+        }
+      ]
     }
   ]
 }
