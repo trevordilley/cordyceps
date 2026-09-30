@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "continue-cli",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "args": [
+        "--config",
+        "${config.provider.path}"
+      ],
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "continue.yaml",
+          "format": "json",
+          "values": {
+            "name": "Cordyceps",
+            "version": "1.0.0",
+            "schema": "v1",
+            "models": [
+              {
+                "name": "Cordyceps",
+                "provider": "anthropic",
+                "model": "claude-sonnet-4-5-20250929",
+                "apiBase": "${mock.baseUrl}/v1",
+                "apiKey": "${mock.apiKey}"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "-p"
+      ]
+    }
+  }
+}

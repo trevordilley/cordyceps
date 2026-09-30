@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "command-code",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "HOME": "${session.dir}",
+        "CORDYCEPS_API_KEY": "${mock.apiKey}",
+        "CMD_LOCAL_ONLY": "1",
+        "COMMAND_CODE_API_KEY": "${mock.apiKey}"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": ".commandcode/providers.json",
+          "format": "json",
+          "values": {
+            "provider": {
+              "cordyceps": {
+                "baseURL": "${mock.baseUrl}/v1",
+                "apiKey": "$CORDYCEPS_API_KEY",
+                "models": {
+                  "fixture-model": {
+                    "contextWindow": 128000,
+                    "maxOutput": 4096
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "-p"
+      ]
+    }
+  }
+}

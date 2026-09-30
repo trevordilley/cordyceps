@@ -1,0 +1,1699 @@
+{
+  "limitations": {
+    "autohand": "Anthropic client requests nonstream JSON; stream scenario intentionally omitted"
+  },
+  "date": "2026-09-30T04:40:09.481Z",
+  "node": "v22.22.3",
+  "platform": "darwin",
+  "isolation": "macOS sandbox-exec: outbound loopback only; writes restricted to disposable home/work and generated config directories; allowlisted child environment",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-package-GKnL1v/consumer/node_modules/cordyceps/dist/index.js",
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-Wgj1oUX1z06rGroC5EfiLks3s6iRFC7MMQPuWkL0HIE93q4rnQ7zpM5db6fLE8yPLbuzYSbgy9fFPKuF0dfxUQ==",
+    "shasum": "988f235449be03310d52c9267be3e9d5d87a4211"
+  },
+  "cases": [
+    {
+      "harness": "kilocode",
+      "scenario": "text",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/kilo",
+      "version": "7.8.1",
+      "args": [
+        "run",
+        "--pure",
+        "--model",
+        "anthropic/claude-sonnet-4-5-20250929",
+        "--title",
+        "Cordyceps",
+        "--format",
+        "json",
+        "cordyceps-extra-text: Reply with the controlled test message."
+      ],
+      "prompt": "cordyceps-extra-text: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "7009109b417d88ba1abdf0494a9b42753be7807b2c8695f44b97575a234d9533",
+          "rawBodyBytes": 61058,
+          "capturedPrompt": "cordyceps-extra-text: Reply with the controlled test message.",
+          "toolNames": [
+            "agent_manager_models",
+            "background_process",
+            "bash",
+            "board_post",
+            "board_read",
+            "cancel_wakeup",
+            "cron_create",
+            "cron_delete",
+            "cron_list",
+            "edit",
+            "glob",
+            "goal",
+            "grep",
+            "kilo_local_recall",
+            "link_pr",
+            "read",
+            "schedule_wakeup",
+            "skill",
+            "task",
+            "todowrite",
+            "webfetch",
+            "write"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "8b889444-b838-46be-88cb-f5c0d3a0c488",
+          "timestamp": 1790743213990,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_f3f2b0752e2740dd93c41109d5400864\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_kilocode_text_OK\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"step_start\",\"timestamp\":1790743214029,\"sessionID\":\"ses_f0f631075ffe1ioI2surJgsKll\",\"part\":{\"id\":\"prt_0f09cf7c7001w44Vw5vM1Q4hH6\",\"sessionID\":\"ses_f0f631075ffe1ioI2surJgsKll\",\"messageID\":\"msg_0f09cf728001mjChKlMQffq3cj\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1790743214029,\"sessionID\":\"ses_f0f631075ffe1ioI2surJgsKll\",\"part\":{\"id\":\"prt_0f09cf7c8001Ke5SqQ5rjPI5yx\",\"sessionID\":\"ses_f0f631075ffe1ioI2surJgsKll\",\"messageID\":\"msg_0f09cf728001mjChKlMQffq3cj\",\"type\":\"text\",\"text\":\"CORDYCEPS_kilocode_text_OK\",\"time\":{\"start\":1790743214024,\"end\":1790743214026}}}\n{\"type\":\"step_finish\",\"timestamp\":1790743214044,\"sessionID\":\"ses_f0f631075ffe1ioI2surJgsKll\",\"part\":{\"id\":\"prt_0f09cf7d8001Q7tKAvcJ630ttS\",\"sessionID\":\"ses_f0f631075ffe1ioI2surJgsKll\",\"messageID\":\"msg_0f09cf728001mjChKlMQffq3cj\",\"type\":\"step-finish\",\"reason\":\"stop\",\"time\":{\"start\":1790743214010,\"end\":1790743214039,\"elapsed\":30},\"cost\":0,\"tokens\":{\"total\":0,\"input\":0,\"output\":0,\"reasoning\":0,\"cache\":{\"read\":0,\"write\":0}}}}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "kilocode",
+      "scenario": "tool",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/kilo",
+      "version": "7.8.1",
+      "args": [
+        "run",
+        "--pure",
+        "--model",
+        "anthropic/claude-sonnet-4-5-20250929",
+        "--title",
+        "Cordyceps",
+        "--format",
+        "json",
+        "cordyceps-extra-tool: Read fixture.txt, then report completion."
+      ],
+      "prompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "scriptedCall": {
+        "id": "fixture_read",
+        "name": "read",
+        "input": {
+          "filePath": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt"
+        }
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "509eb073c495762e65e704369fbf4e474f06a59756c775d54fc1454804fa6558",
+          "rawBodyBytes": 61060,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "agent_manager_models",
+            "background_process",
+            "bash",
+            "board_post",
+            "board_read",
+            "cancel_wakeup",
+            "cron_create",
+            "cron_delete",
+            "cron_list",
+            "edit",
+            "glob",
+            "goal",
+            "grep",
+            "kilo_local_recall",
+            "link_pr",
+            "read",
+            "schedule_wakeup",
+            "skill",
+            "task",
+            "todowrite",
+            "webfetch",
+            "write"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "d0927b56b023c3192c5b2591b495f24b144ecc36922c31ca255cae67564d595b",
+          "rawBodyBytes": 61648,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "agent_manager_models",
+            "background_process",
+            "bash",
+            "board_post",
+            "board_read",
+            "cancel_wakeup",
+            "cron_create",
+            "cron_delete",
+            "cron_list",
+            "edit",
+            "glob",
+            "goal",
+            "grep",
+            "kilo_local_recall",
+            "link_pr",
+            "read",
+            "schedule_wakeup",
+            "skill",
+            "task",
+            "todowrite",
+            "webfetch",
+            "write"
+          ],
+          "toolResults": [
+            {
+              "id": "fixture_read",
+              "text": "<path>/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt</path>\n<type>file</type>\n<content>\n1: fixture-c06cf05d-6709-449c-b526-a151eeb9e31a\n\n(End of file - total 1 lines)\n</content>",
+              "isError": false,
+              "raw": {
+                "type": "tool_result",
+                "tool_use_id": "fixture_read",
+                "content": "<path>/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt</path>\n<type>file</type>\n<content>\n1: fixture-c06cf05d-6709-449c-b526-a151eeb9e31a\n\n(End of file - total 1 lines)\n</content>",
+                "cache_control": {
+                  "type": "ephemeral"
+                }
+              }
+            }
+          ],
+          "fixtureTokens": [
+            "fixture-c06cf05d-6709-449c-b526-a151eeb9e31a"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "fbc68de6-d792-4087-abc3-71a1d07ca6ec",
+          "timestamp": 1790743220700,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_6b4a1a9d15494924baf17ce12524ba71\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"tool_use\",\"id\":\"fixture_read\",\"name\":\"read\",\"input\":{}}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"{\\\"filePath\\\":\\\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt\\\"}\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"tool_use\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "5aaa8343-03cb-48f7-8c70-f597adc0bef0",
+          "timestamp": 1790743220818,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_362d3488c0104d0e8df08cb9af2fa12d\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_kilocode_tool_OK\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"step_start\",\"timestamp\":1790743220746,\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"part\":{\"id\":\"prt_0f09d1203001Qu5JGk97GXMT6V\",\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"messageID\":\"msg_0f09d118b001Sxu2PAEBkPSOzT\",\"type\":\"step-start\"}}\n{\"type\":\"tool_use\",\"timestamp\":1790743220773,\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"part\":{\"id\":\"prt_0f09d1205001VopDfYzgW7IpDl\",\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"messageID\":\"msg_0f09d118b001Sxu2PAEBkPSOzT\",\"type\":\"tool\",\"callID\":\"fixture_read\",\"tool\":\"read\",\"state\":{\"status\":\"completed\",\"input\":{\"filePath\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt\"},\"output\":\"<path>/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt</path>\\n<type>file</type>\\n<content>\\n1: fixture-c06cf05d-6709-449c-b526-a151eeb9e31a\\n\\n(End of file - total 1 lines)\\n</content>\",\"title\":\"private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt\",\"metadata\":{\"preview\":\"fixture-c06cf05d-6709-449c-b526-a151eeb9e31a\",\"truncated\":false,\"loaded\":[],\"display\":{\"type\":\"file\",\"path\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-kilocode-4dabtK/work/fixture.txt\",\"text\":\"fixture-c06cf05d-6709-449c-b526-a151eeb9e31a\",\"lineStart\":1,\"lineEnd\":1,\"totalLines\":1,\"truncated\":false},\"approval\":{\"source\":\"agent\",\"agent\":\"code\",\"rule\":{\"permission\":\"read\",\"pattern\":\"*\",\"action\":\"allow\"}}},\"time\":{\"start\":1790743220744,\"end\":1790743220769}}}}\n{\"type\":\"step_finish\",\"timestamp\":1790743220790,\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"part\":{\"id\":\"prt_0f09d122e001srOsyFlxcGWJ4J\",\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"messageID\":\"msg_0f09d118b001Sxu2PAEBkPSOzT\",\"type\":\"step-finish\",\"reason\":\"tool-calls\",\"time\":{\"start\":1790743220720,\"end\":1790743220781,\"elapsed\":61},\"cost\":0,\"tokens\":{\"total\":0,\"input\":0,\"output\":0,\"reasoning\":0,\"cache\":{\"read\":0,\"write\":0}}}}\n{\"type\":\"step_start\",\"timestamp\":1790743220832,\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"part\":{\"id\":\"prt_0f09d125c001w01j2zjQJ18eeN\",\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"messageID\":\"msg_0f09d1234001bsTWEMgAw4juaJ\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1790743220833,\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"part\":{\"id\":\"prt_0f09d125e001sgkL6aUj87nGpS\",\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"messageID\":\"msg_0f09d1234001bsTWEMgAw4juaJ\",\"type\":\"text\",\"text\":\"CORDYCEPS_kilocode_tool_OK\",\"time\":{\"start\":1790743220830,\"end\":1790743220831}}}\n{\"type\":\"step_finish\",\"timestamp\":1790743220844,\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"part\":{\"id\":\"prt_0f09d1263001xGi8x3DPbVkDJo\",\"sessionID\":\"ses_f0f62f768ffe7FMzUZjs60sRhg\",\"messageID\":\"msg_0f09d1234001bsTWEMgAw4juaJ\",\"type\":\"step-finish\",\"reason\":\"stop\",\"time\":{\"start\":1790743220825,\"end\":1790743220835,\"elapsed\":10},\"cost\":0,\"tokens\":{\"total\":0,\"input\":0,\"output\":0,\"reasoning\":0,\"cache\":{\"read\":0,\"write\":0}}}}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "kilocode",
+      "scenario": "stream",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/kilo",
+      "version": "7.8.1",
+      "args": [
+        "run",
+        "--pure",
+        "--model",
+        "anthropic/claude-sonnet-4-5-20250929",
+        "--title",
+        "Cordyceps",
+        "--format",
+        "json",
+        "cordyceps-extra-stream: Reply with the controlled test message."
+      ],
+      "prompt": "cordyceps-extra-stream: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": false,
+        "healthy": true
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "eda979980c8689b40617abf07d1a0c3aa1ef92407a022c08d6a0fd2c6665f6e3",
+          "rawBodyBytes": 61060,
+          "capturedPrompt": "cordyceps-extra-stream: Reply with the controlled test message.",
+          "toolNames": [
+            "agent_manager_models",
+            "background_process",
+            "bash",
+            "board_post",
+            "board_read",
+            "cancel_wakeup",
+            "cron_create",
+            "cron_delete",
+            "cron_list",
+            "edit",
+            "glob",
+            "goal",
+            "grep",
+            "kilo_local_recall",
+            "link_pr",
+            "read",
+            "schedule_wakeup",
+            "skill",
+            "task",
+            "todowrite",
+            "webfetch",
+            "write"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "d57a4e9e-f1b4-43f9-b27f-212c8bde2b8b",
+          "timestamp": 1790743226895,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_87048672c92a4c5581ce0fee8dd2c6a6\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_kilocode_stream_OK_PREFIX \"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_kilocode_stream_OK_TAIL\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"step_start\",\"timestamp\":1790743226940,\"sessionID\":\"ses_f0f62ddf7ffeMB4DC8oOJpdKqG\",\"part\":{\"id\":\"prt_0f09d2a38001uQaoD4fOF023SN\",\"sessionID\":\"ses_f0f62ddf7ffeMB4DC8oOJpdKqG\",\"messageID\":\"msg_0f09d29970012mda90VAAPNRQb\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1790743227903,\"sessionID\":\"ses_f0f62ddf7ffeMB4DC8oOJpdKqG\",\"part\":{\"id\":\"prt_0f09d2a39001ovb6PFrfhwUlhR\",\"sessionID\":\"ses_f0f62ddf7ffeMB4DC8oOJpdKqG\",\"messageID\":\"msg_0f09d29970012mda90VAAPNRQb\",\"type\":\"text\",\"text\":\"CORDYCEPS_kilocode_stream_OK_PREFIX CORDYCEPS_kilocode_stream_OK_TAIL\",\"time\":{\"start\":1790743226937,\"end\":1790743227900}}}\n{\"type\":\"step_finish\",\"timestamp\":1790743227918,\"sessionID\":\"ses_f0f62ddf7ffeMB4DC8oOJpdKqG\",\"part\":{\"id\":\"prt_0f09d2e02001vBJtvv7SDbq4Rx\",\"sessionID\":\"ses_f0f62ddf7ffeMB4DC8oOJpdKqG\",\"messageID\":\"msg_0f09d29970012mda90VAAPNRQb\",\"type\":\"step-finish\",\"reason\":\"stop\",\"time\":{\"start\":1790743226918,\"end\":1790743227905,\"elapsed\":987},\"cost\":0,\"tokens\":{\"total\":0,\"input\":0,\"output\":0,\"reasoning\":0,\"cache\":{\"read\":0,\"write\":0}}}}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "kilocode",
+      "scenario": "cancel",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/kilo",
+      "version": "7.8.1",
+      "args": [
+        "run",
+        "--pure",
+        "--model",
+        "anthropic/claude-sonnet-4-5-20250929",
+        "--title",
+        "Cordyceps",
+        "--format",
+        "json",
+        "cordyceps-extra-cancel: Reply with the controlled test message."
+      ],
+      "prompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "providerAbortObserved": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "2f995c7dcb5480b79d2b006b1dccbcb279803972e50328924766f3d34b3825cd",
+          "rawBodyBytes": 61060,
+          "capturedPrompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+          "toolNames": [
+            "agent_manager_models",
+            "background_process",
+            "bash",
+            "board_post",
+            "board_read",
+            "cancel_wakeup",
+            "cron_create",
+            "cron_delete",
+            "cron_list",
+            "edit",
+            "glob",
+            "goal",
+            "grep",
+            "kilo_local_recall",
+            "link_pr",
+            "read",
+            "schedule_wakeup",
+            "skill",
+            "task",
+            "todowrite",
+            "webfetch",
+            "write"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "1f273e04-b632-41df-b222-bd2a3e3f14b8",
+          "timestamp": 1790743234502,
+          "status": null,
+          "headers": {},
+          "chunks": [],
+          "outcome": "aborted"
+        }
+      ],
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "continue-cli",
+      "scenario": "text",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cn",
+      "version": "1.5.47",
+      "args": [
+        "--config",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-Cf53hU/continue.yaml",
+        "-p",
+        "--auto",
+        "cordyceps-extra-text: Reply with the controlled test message."
+      ],
+      "prompt": "cordyceps-extra-text: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "088fb6aa90df3671acb5e2720fa0540f0fb18937efea6fac79798760f60523a3",
+          "rawBodyBytes": 9356,
+          "capturedPrompt": "cordyceps-extra-text: Reply with the controlled test message.",
+          "toolNames": [
+            "Read",
+            "Write",
+            "List",
+            "Bash",
+            "Fetch",
+            "Checklist",
+            "CheckBackgroundJob",
+            "AskQuestion",
+            "MultiEdit",
+            "Exit",
+            "Skills"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "85398dd2-597c-49e7-98b2-43ee47901a05",
+          "timestamp": 1790743236254,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_86f43b19261e415daad59e56ff4c3c73\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_continue-cli_text_OK\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "CORDYCEPS_continue-cli_text_OK\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "continue-cli",
+      "scenario": "tool",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cn",
+      "version": "1.5.47",
+      "args": [
+        "--config",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-D9obBq/continue.yaml",
+        "-p",
+        "--auto",
+        "cordyceps-extra-tool: Read fixture.txt, then report completion."
+      ],
+      "prompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "scriptedCall": {
+        "id": "fixture_read",
+        "name": "Read",
+        "input": {
+          "filepath": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-continue-cli-zCs0ya/work/fixture.txt"
+        }
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "4eafa275cbfbeacfc8ee88cd3e8b3a27ef3445fe405540e45c8e2237a8cc5690",
+          "rawBodyBytes": 9358,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "Read",
+            "Write",
+            "List",
+            "Bash",
+            "Fetch",
+            "Checklist",
+            "CheckBackgroundJob",
+            "AskQuestion",
+            "MultiEdit",
+            "Exit",
+            "Skills"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "bcdfbe848693a4228b4ef39750171299ad3ceb06aa59f4c12db374f8ad22e537",
+          "rawBodyBytes": 9840,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "Read",
+            "Write",
+            "List",
+            "Bash",
+            "Fetch",
+            "Checklist",
+            "CheckBackgroundJob",
+            "AskQuestion",
+            "MultiEdit",
+            "Exit",
+            "Skills"
+          ],
+          "toolResults": [
+            {
+              "id": "fixture_read",
+              "text": "Content of /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-continue-cli-zCs0ya/work/fixture.txt:\nfixture-f7b3ebbb-6c13-4b6a-9be1-1ba5c7957b0a\n",
+              "isError": false,
+              "raw": {
+                "type": "tool_result",
+                "tool_use_id": "fixture_read",
+                "content": "Content of /private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-continue-cli-zCs0ya/work/fixture.txt:\nfixture-f7b3ebbb-6c13-4b6a-9be1-1ba5c7957b0a\n"
+              }
+            }
+          ],
+          "fixtureTokens": [
+            "fixture-f7b3ebbb-6c13-4b6a-9be1-1ba5c7957b0a"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "2ef24057-5b36-4185-8586-61de5d12e0b9",
+          "timestamp": 1790743237617,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_dc18247afaaa40949b1c54f5ed232417\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"tool_use\",\"id\":\"fixture_read\",\"name\":\"Read\",\"input\":{}}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"input_json_delta\",\"partial_json\":\"{\\\"filepath\\\":\\\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-continue-cli-zCs0ya/work/fixture.txt\\\"}\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"tool_use\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "1a364ef2-afe8-4ca8-9c1a-d9e4ee81c544",
+          "timestamp": 1790743237644,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_c28f4e8564e5473a80a348a673683e1a\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_continue-cli_tool_OK\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "CORDYCEPS_continue-cli_tool_OK\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "continue-cli",
+      "scenario": "stream",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cn",
+      "version": "1.5.47",
+      "args": [
+        "--config",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-qpcRb2/continue.yaml",
+        "-p",
+        "--auto",
+        "cordyceps-extra-stream: Reply with the controlled test message."
+      ],
+      "prompt": "cordyceps-extra-stream: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": false,
+        "healthy": true
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "8454b9997b50d32787dca7572b147c20d4fa07d91a14721649580203e0e4401d",
+          "rawBodyBytes": 9358,
+          "capturedPrompt": "cordyceps-extra-stream: Reply with the controlled test message.",
+          "toolNames": [
+            "Read",
+            "Write",
+            "List",
+            "Bash",
+            "Fetch",
+            "Checklist",
+            "CheckBackgroundJob",
+            "AskQuestion",
+            "MultiEdit",
+            "Exit",
+            "Skills"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "30ea6c0e-e59c-4c6e-82ea-caf6d500fee0",
+          "timestamp": 1790743239001,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "event: message_start\ndata: {\"type\":\"message_start\",\"message\":{\"id\":\"msg_b2d6ffa153504bb1be1fd9058aaf7ad2\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[],\"stop_reason\":null,\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}}\n\n",
+            "event: content_block_start\ndata: {\"type\":\"content_block_start\",\"index\":0,\"content_block\":{\"type\":\"text\",\"text\":\"\"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_continue-cli_stream_OK_PREFIX \"}}\n\n",
+            "event: content_block_delta\ndata: {\"type\":\"content_block_delta\",\"index\":0,\"delta\":{\"type\":\"text_delta\",\"text\":\"CORDYCEPS_continue-cli_stream_OK_TAIL\"}}\n\n",
+            "event: content_block_stop\ndata: {\"type\":\"content_block_stop\",\"index\":0}\n\n",
+            "event: message_delta\ndata: {\"type\":\"message_delta\",\"delta\":{\"stop_reason\":\"end_turn\",\"stop_sequence\":null},\"usage\":{\"output_tokens\":0}}\n\n",
+            "event: message_stop\ndata: {\"type\":\"message_stop\"}\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "CORDYCEPS_continue-cli_stream_OK_PREFIX CORDYCEPS_continue-cli_stream_OK_TAIL\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "continue-cli",
+      "scenario": "cancel",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cn",
+      "version": "1.5.47",
+      "args": [
+        "--config",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-eG30ZJ/continue.yaml",
+        "-p",
+        "--auto",
+        "cordyceps-extra-cancel: Reply with the controlled test message."
+      ],
+      "prompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "providerAbortObserved": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": true,
+          "rawBodySha256": "35e866607574c269a462b1cfc6074c3fc40a66290df95a1aea52cb6e0b4a64b7",
+          "rawBodyBytes": 9358,
+          "capturedPrompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+          "toolNames": [
+            "Read",
+            "Write",
+            "List",
+            "Bash",
+            "Fetch",
+            "Checklist",
+            "CheckBackgroundJob",
+            "AskQuestion",
+            "MultiEdit",
+            "Exit",
+            "Skills"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "d097c790-448b-4f59-ba42-e4e1c5130349",
+          "timestamp": 1790743241375,
+          "status": null,
+          "headers": {},
+          "chunks": [],
+          "outcome": "aborted"
+        }
+      ],
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "autohand",
+      "scenario": "text",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/autohand",
+      "version": "0.9.8 (55f07f81)",
+      "args": [
+        "--prompt",
+        "cordyceps-extra-text: Reply with the controlled test message.",
+        "--bare",
+        "--offline",
+        "--ephemeral",
+        "--yolo",
+        "--max-requests",
+        "4",
+        "--output-format",
+        "stream-json"
+      ],
+      "prompt": "cordyceps-extra-text: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": false,
+          "rawBodySha256": "2bda306cf6eff35512263997407f2ec8ab57eaf9b93f4d8aba3d6bc9a608c458",
+          "rawBodyBytes": 41265,
+          "capturedPrompt": "cordyceps-extra-text: Reply with the controlled test message.",
+          "toolNames": [
+            "tools_registry",
+            "tool_search",
+            "read_file",
+            "find_grep",
+            "fff_find",
+            "delete_path",
+            "run_command",
+            "shell",
+            "list_tree",
+            "git_diff",
+            "git_checkout",
+            "git_status",
+            "git_list_untracked",
+            "git_diff_range",
+            "git_apply_patch",
+            "git_worktree_status_all",
+            "git_worktree_cleanup",
+            "git_stash",
+            "git_stash_list",
+            "git_stash_pop",
+            "git_stash_apply",
+            "git_stash_drop",
+            "git_branch",
+            "git_switch",
+            "git_commit",
+            "git_add",
+            "auto_commit",
+            "git_log",
+            "git_fetch",
+            "git_pull",
+            "custom_command",
+            "todo_write",
+            "delegate_task",
+            "create_team",
+            "add_teammate",
+            "task_list",
+            "exit_worktree",
+            "team_status",
+            "send_team_message",
+            "web_repo",
+            "project_tracker",
+            "find_agent_skills",
+            "find_sub_agents",
+            "install_sub_agent",
+            "request_directory_access",
+            "orchestrate_specialists"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "3bd2b8fe-e4e5-4991-a7c2-25a643197c33",
+          "timestamp": 1790743243189,
+          "status": 200,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"id\":\"msg_1cddcfb1043241ec92cff0ace39cb190\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_autohand_text_OK\"}],\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"result\",\"content\":\"CORDYCEPS_autohand_text_OK\"}\n",
+        "stderr": "\n› cordyceps-extra-text: Reply with the controlled test message.\nCompleted in 0m 00s · 0 tokens used\n",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "autohand",
+      "scenario": "tool",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/autohand",
+      "version": "0.9.8 (55f07f81)",
+      "args": [
+        "--prompt",
+        "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+        "--bare",
+        "--offline",
+        "--ephemeral",
+        "--yolo",
+        "--max-requests",
+        "4",
+        "--output-format",
+        "stream-json"
+      ],
+      "prompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "scriptedCall": {
+        "id": "fixture_read",
+        "name": "read_file",
+        "input": {
+          "path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-autohand-YXbWkk/work/fixture.txt"
+        }
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": false,
+          "rawBodySha256": "0c3c394ce762d083dc60e79c836f3e68c06fbbc7f651333f364add77828d4ce1",
+          "rawBodyBytes": 47869,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "tools_registry",
+            "tool_search",
+            "read_file",
+            "find_grep",
+            "fff_find",
+            "delete_path",
+            "list_tree",
+            "git_diff",
+            "git_checkout",
+            "git_status",
+            "git_list_untracked",
+            "git_diff_range",
+            "git_apply_patch",
+            "git_worktree_status_all",
+            "git_worktree_cleanup",
+            "git_stash",
+            "git_stash_list",
+            "git_stash_pop",
+            "git_stash_apply",
+            "git_stash_drop",
+            "git_branch",
+            "git_switch",
+            "git_commit",
+            "git_add",
+            "git_log",
+            "git_fetch",
+            "git_pull",
+            "todo_write",
+            "smart_context_cropper",
+            "save_memory",
+            "recall_memory",
+            "inspect_memory",
+            "delete_memory",
+            "create_meta_tool",
+            "delegate_task",
+            "delegate_parallel",
+            "create_team",
+            "compose_team",
+            "add_teammate",
+            "create_task",
+            "task_get",
+            "task_list",
+            "task_update",
+            "task_stop",
+            "task_output",
+            "enter_worktree",
+            "exit_worktree",
+            "team_status",
+            "send_team_message",
+            "capture_test_evidence",
+            "web_repo",
+            "project_tracker",
+            "find_agent_skills",
+            "find_sub_agents",
+            "install_sub_agent",
+            "cron_create",
+            "cron_delete",
+            "list_schedules",
+            "cancel_schedule",
+            "request_directory_access",
+            "orchestrate_specialists"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": false,
+          "rawBodySha256": "b95843869f337f2090ffd5da4e6d816e965af3aeca2ff7f2bfac7f91b3f0c8b0",
+          "rawBodyBytes": 49712,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "tools_registry",
+            "tool_search",
+            "read_file",
+            "append_file",
+            "find_grep",
+            "fff_find",
+            "create_directory",
+            "delete_path",
+            "rename_path",
+            "copy_path",
+            "list_tree",
+            "file_stats",
+            "checksum",
+            "git_diff",
+            "git_checkout",
+            "git_status",
+            "git_list_untracked",
+            "git_diff_range",
+            "git_apply_patch",
+            "git_worktree_status_all",
+            "git_worktree_cleanup",
+            "git_stash",
+            "git_stash_list",
+            "git_stash_pop",
+            "git_stash_apply",
+            "git_stash_drop",
+            "git_branch",
+            "git_switch",
+            "git_commit",
+            "git_add",
+            "git_log",
+            "git_fetch",
+            "git_pull",
+            "todo_write",
+            "smart_context_cropper",
+            "save_memory",
+            "recall_memory",
+            "inspect_memory",
+            "delete_memory",
+            "create_meta_tool",
+            "delegate_task",
+            "delegate_parallel",
+            "create_team",
+            "compose_team",
+            "add_teammate",
+            "create_task",
+            "task_get",
+            "task_list",
+            "task_update",
+            "task_stop",
+            "task_output",
+            "enter_worktree",
+            "exit_worktree",
+            "team_status",
+            "send_team_message",
+            "capture_test_evidence",
+            "web_repo",
+            "project_tracker",
+            "find_agent_skills",
+            "find_sub_agents",
+            "install_sub_agent",
+            "cron_create",
+            "cron_delete",
+            "list_schedules",
+            "cancel_schedule",
+            "request_directory_access",
+            "orchestrate_specialists"
+          ],
+          "toolResults": [
+            {
+              "id": "fixture_read",
+              "text": "     1\tfixture-fa413cc6-eef4-4eee-9536-c4252ec3f7bc",
+              "isError": false,
+              "raw": {
+                "type": "tool_result",
+                "tool_use_id": "fixture_read",
+                "content": "     1\tfixture-fa413cc6-eef4-4eee-9536-c4252ec3f7bc"
+              }
+            }
+          ],
+          "fixtureTokens": [
+            "fixture-fa413cc6-eef4-4eee-9536-c4252ec3f7bc"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "02e4aa49-e06f-4fd8-a848-3600fe50afa7",
+          "timestamp": 1790743244418,
+          "status": 200,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"id\":\"msg_343a3c03b53a4f31a43a2524f2f89837\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[{\"type\":\"tool_use\",\"id\":\"fixture_read\",\"name\":\"read_file\",\"input\":{\"path\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-autohand-YXbWkk/work/fixture.txt\"}}],\"stop_reason\":\"tool_use\",\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "195a95ad-6eaa-4e6c-9ea4-7e3b94bc6d09",
+          "timestamp": 1790743244575,
+          "status": 200,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"id\":\"msg_4c06bf90b18f4004a4cde4c6d8224b1d\",\"type\":\"message\",\"role\":\"assistant\",\"model\":\"claude-sonnet-4-5-20250929\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_autohand_tool_OK\"}],\"stop_reason\":\"end_turn\",\"stop_sequence\":null,\"usage\":{\"input_tokens\":0,\"output_tokens\":0}}"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"tool_start\",\"toolId\":\"fixture_read\",\"toolName\":\"read_file\",\"toolArgs\":{\"path\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-autohand-YXbWkk/work/fixture.txt\",\"type\":\"read_file\"}}\n{\"type\":\"tool_end\",\"toolId\":\"fixture_read\",\"toolName\":\"read_file\",\"toolSuccess\":true,\"toolOutput\":\"     1\\tfixture-fa413cc6-eef4-4eee-9536-c4252ec3f7bc\"}\n{\"type\":\"result\",\"content\":\"CORDYCEPS_autohand_tool_OK\"}\n",
+        "stderr": "\n› cordyceps-extra-tool: Read fixture.txt, then report completion.\n\n* Explored\n  Read fixture.txt\n\n📄 fixture.txt\n   1 lines returned (0.04 KB total)\n\n✔ read_file\nwork/fixture.txt\n  1 lines - 51 B\n\n→ Step 2: preparing response\nCompleted in 0m 00s · 0 tokens used\n",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "autohand",
+      "scenario": "cancel",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/autohand",
+      "version": "0.9.8 (55f07f81)",
+      "args": [
+        "--prompt",
+        "cordyceps-extra-cancel: Reply with the controlled test message.",
+        "--bare",
+        "--offline",
+        "--ephemeral",
+        "--yolo",
+        "--max-requests",
+        "4",
+        "--output-format",
+        "stream-json"
+      ],
+      "prompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "providerAbortObserved": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/messages",
+          "model": "claude-sonnet-4-5-20250929",
+          "stream": false,
+          "rawBodySha256": "d73779c7e25a0db082821efd8f913ac888ae1c419aae7d29e3ae283154c305c5",
+          "rawBodyBytes": 42151,
+          "capturedPrompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+          "toolNames": [
+            "tools_registry",
+            "tool_search",
+            "read_file",
+            "find_grep",
+            "fff_find",
+            "delete_path",
+            "run_command",
+            "shell",
+            "list_tree",
+            "git_diff",
+            "git_checkout",
+            "git_status",
+            "git_list_untracked",
+            "git_diff_range",
+            "git_apply_patch",
+            "git_worktree_status_all",
+            "git_worktree_cleanup",
+            "git_stash",
+            "git_stash_list",
+            "git_stash_pop",
+            "git_stash_apply",
+            "git_stash_drop",
+            "git_branch",
+            "git_switch",
+            "git_commit",
+            "git_add",
+            "auto_commit",
+            "git_log",
+            "git_fetch",
+            "git_pull",
+            "custom_command",
+            "todo_write",
+            "delegate_task",
+            "create_team",
+            "add_teammate",
+            "task_list",
+            "task_stop",
+            "exit_worktree",
+            "team_status",
+            "send_team_message",
+            "web_repo",
+            "project_tracker",
+            "find_agent_skills",
+            "find_sub_agents",
+            "install_sub_agent",
+            "cron_delete",
+            "cancel_schedule",
+            "request_directory_access",
+            "orchestrate_specialists"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "5861e0b6-06d0-48bc-b11a-0452e7aef4c4",
+          "timestamp": 1790743246099,
+          "status": null,
+          "headers": {},
+          "chunks": [],
+          "outcome": "aborted"
+        }
+      ],
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "",
+        "stderr": "\n› cordyceps-extra-cancel: Reply with the controlled test message.\n",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "command-code",
+      "scenario": "text",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cmd",
+      "version": "1.72.4",
+      "args": [
+        "-p",
+        "cordyceps-extra-text: Reply with the controlled test message.",
+        "--local-only",
+        "--model",
+        "cordyceps/fixture-model",
+        "--trust",
+        "--yolo",
+        "--skip-onboarding",
+        "--no-auto-update",
+        "--no-skills",
+        "--no-session",
+        "--max-turns",
+        "4",
+        "--output-format",
+        "json"
+      ],
+      "prompt": "cordyceps-extra-text: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "rawBodySha256": "32497e79e42d9d0ba58e10634f7d4d1e1192d725bf792248fe1fc84049c3c6cd",
+          "rawBodyBytes": 59263,
+          "capturedPrompt": "cordyceps-extra-text: Reply with the controlled test message.",
+          "toolNames": [
+            "read_file",
+            "write_file",
+            "edit_file",
+            "read_directory",
+            "glob",
+            "grep",
+            "shell_command",
+            "agent",
+            "agent_output",
+            "search_tools"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "5cd8e53f-042d-4bfc-af3a-d3b03b7e2a29",
+          "timestamp": 1790743247945,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_cc667b50d7e44bdba08ce96a72ba8178\",\"created\":1790743247,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_cc667b50d7e44bdba08ce96a72ba8178\",\"created\":1790743247,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_command-code_text_OK\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_cc667b50d7e44bdba08ce96a72ba8178\",\"created\":1790743247,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_cc667b50d7e44bdba08ce96a72ba8178\",\"created\":1790743247,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"event\",\"event\":{\"type\":\"run_start\",\"sessionId\":\"03530f05-43ae-4d25-8ab3-8647b389fb55\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_start\",\"turnNumber\":1}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_start\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_start\",\"model\":\"cordyceps/fixture-model\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"text_delta\",\"delta\":\"CORDYCEPS_command-code_text_OK\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_update\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_text_OK\"}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_end\",\"model\":\"cordyceps/fixture-model\",\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"stopReason\":\"stop\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_end\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_text_OK\"}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_end\",\"turnNumber\":1,\"hadToolCalls\":false,\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0}}}\n{\"type\":\"event\",\"event\":{\"type\":\"run_end\",\"result\":{\"finalText\":\"CORDYCEPS_command-code_text_OK\",\"stopReason\":\"end_turn\",\"turnCount\":1,\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"systemPromptTokens\":null,\"nextState\":{\"sessionId\":\"03530f05-43ae-4d25-8ab3-8647b389fb55\",\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"cordyceps-extra-text: Reply with the controlled test message.\"}],\"meta\":{\"source\":\"user\",\"createdAt\":1790743247859,\"messageId\":\"b9f567ef-ec99-493d-9c78-7d6cc7d8d4ee\"}},{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_text_OK\"}],\"meta\":{\"source\":\"model\",\"createdAt\":1790743247955,\"messageId\":\"0555e306-6e82-441e-88ce-df21f4e634c1\"}}],\"interrupted\":false,\"modState\":{\"workspace\":{\"cwd\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-MVbDQY/work\",\"platform\":\"darwin\",\"branch\":null,\"gitStatus\":null,\"recentCommits\":[],\"additionalDirectories\":[]}}}}}}\n{\"type\":\"result\",\"subtype\":\"success\",\"sessionId\":\"03530f05-43ae-4d25-8ab3-8647b389fb55\",\"stopReason\":\"end_turn\",\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"durationMs\":140,\"finalText\":\"CORDYCEPS_command-code_text_OK\"}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "command-code",
+      "scenario": "tool",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cmd",
+      "version": "1.72.4",
+      "args": [
+        "-p",
+        "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+        "--local-only",
+        "--model",
+        "cordyceps/fixture-model",
+        "--trust",
+        "--yolo",
+        "--skip-onboarding",
+        "--no-auto-update",
+        "--no-skills",
+        "--no-session",
+        "--max-turns",
+        "4",
+        "--output-format",
+        "json"
+      ],
+      "prompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": true,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "scriptedCall": {
+        "id": "fixture_read",
+        "name": "read_file",
+        "input": {
+          "file_path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-CJxArX/work/fixture.txt"
+        }
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "rawBodySha256": "c337a4a011d5c478830952ea86aee3b9be36ad6f0bfe1e2c5caec718830f50d7",
+          "rawBodyBytes": 59265,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "read_file",
+            "write_file",
+            "edit_file",
+            "read_directory",
+            "glob",
+            "grep",
+            "shell_command",
+            "agent",
+            "agent_output",
+            "search_tools"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "rawBodySha256": "64115009f7b4698d1469f71669667978982561ecf5f4e048579e8a17f932ba7d",
+          "rawBodyBytes": 59661,
+          "capturedPrompt": "cordyceps-extra-tool: Read fixture.txt, then report completion.",
+          "toolNames": [
+            "read_file",
+            "write_file",
+            "edit_file",
+            "read_directory",
+            "glob",
+            "grep",
+            "shell_command",
+            "agent",
+            "agent_output",
+            "search_tools"
+          ],
+          "toolResults": [
+            {
+              "id": "fixture_read",
+              "text": "Read 1/1 file, 1 line\n1: fixture-6df835ef-8a56-40f8-af85-00b7009c7691",
+              "isError": false,
+              "raw": {
+                "role": "tool",
+                "tool_call_id": "fixture_read",
+                "content": "Read 1/1 file, 1 line\n1: fixture-6df835ef-8a56-40f8-af85-00b7009c7691"
+              }
+            }
+          ],
+          "fixtureTokens": [
+            "fixture-6df835ef-8a56-40f8-af85-00b7009c7691"
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "b69a961d-b31f-4b18-abbc-3e9eddba0611",
+          "timestamp": 1790743249223,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_930f88902cfc41fb8002eae27bde67b0\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_930f88902cfc41fb8002eae27bde67b0\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"fixture_read\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"\"}}]},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_930f88902cfc41fb8002eae27bde67b0\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\\\"file_path\\\":\\\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-CJxArX/work/fixture.txt\\\"}\"}}]},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_930f88902cfc41fb8002eae27bde67b0\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"tool_calls\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_930f88902cfc41fb8002eae27bde67b0\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "afccf4ab-bd45-4891-bc14-13bdb7a0f70e",
+          "timestamp": 1790743249244,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_6ea7167e8a8f4380b1dcd4465c704f50\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_6ea7167e8a8f4380b1dcd4465c704f50\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_command-code_tool_OK\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_6ea7167e8a8f4380b1dcd4465c704f50\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_6ea7167e8a8f4380b1dcd4465c704f50\",\"created\":1790743249,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"event\",\"event\":{\"type\":\"run_start\",\"sessionId\":\"8cb65c90-0fa6-4bbd-977d-f70086c5bd4c\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_start\",\"turnNumber\":1}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_start\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_start\",\"model\":\"cordyceps/fixture-model\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_update\",\"content\":[{\"type\":\"tool_use\",\"id\":\"fixture_read\",\"name\":\"read_file\",\"input\":{\"file_path\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-CJxArX/work/fixture.txt\"}}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_end\",\"model\":\"cordyceps/fixture-model\",\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"stopReason\":\"tool_calls\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_end\",\"content\":[{\"type\":\"tool_use\",\"id\":\"fixture_read\",\"name\":\"read_file\",\"input\":{\"file_path\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-CJxArX/work/fixture.txt\"}}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"tool_queued\",\"toolCallId\":\"fixture_read\",\"toolName\":\"read_file\",\"input\":{\"file_path\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-CJxArX/work/fixture.txt\"}}}\n{\"type\":\"event\",\"event\":{\"type\":\"tool_running\",\"toolCallId\":\"fixture_read\",\"toolName\":\"read_file\",\"description\":null}}\n{\"type\":\"event\",\"event\":{\"type\":\"tool_completed\",\"toolCallId\":\"fixture_read\",\"toolName\":\"read_file\",\"result\":[{\"type\":\"text\",\"text\":\"Read 1/1 file, 1 line\\n1: fixture-6df835ef-8a56-40f8-af85-00b7009c7691\"}],\"deferred\":false}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_end\",\"turnNumber\":1,\"hadToolCalls\":true,\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0}}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_start\",\"turnNumber\":2}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_start\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_start\",\"model\":\"cordyceps/fixture-model\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"text_delta\",\"delta\":\"CORDYCEPS_command-code_tool_OK\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_update\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_tool_OK\"}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_end\",\"model\":\"cordyceps/fixture-model\",\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"stopReason\":\"stop\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_end\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_tool_OK\"}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_end\",\"turnNumber\":2,\"hadToolCalls\":false,\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0}}}\n{\"type\":\"event\",\"event\":{\"type\":\"run_end\",\"result\":{\"finalText\":\"CORDYCEPS_command-code_tool_OK\",\"stopReason\":\"end_turn\",\"turnCount\":2,\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"systemPromptTokens\":null,\"nextState\":{\"sessionId\":\"8cb65c90-0fa6-4bbd-977d-f70086c5bd4c\",\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"cordyceps-extra-tool: Read fixture.txt, then report completion.\"}],\"meta\":{\"source\":\"user\",\"createdAt\":1790743249152,\"messageId\":\"93eb84c3-5fcc-49c6-9e02-634a5aa0aecc\"}},{\"role\":\"assistant\",\"content\":[{\"type\":\"tool_use\",\"id\":\"fixture_read\",\"name\":\"read_file\",\"input\":{\"file_path\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-CJxArX/work/fixture.txt\"}}],\"meta\":{\"source\":\"model\",\"createdAt\":1790743249233,\"messageId\":\"5e9e9a3a-40b2-43bf-8a4f-5de9a7291a23\"}},{\"role\":\"user\",\"content\":[{\"type\":\"tool_result\",\"tool_use_id\":\"fixture_read\",\"content\":[{\"type\":\"text\",\"text\":\"Read 1/1 file, 1 line\\n1: fixture-6df835ef-8a56-40f8-af85-00b7009c7691\"}]}],\"meta\":{\"source\":\"tool\",\"messageId\":\"fe4863d7-086d-44fe-868c-021d067562c3\"}},{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_tool_OK\"}],\"meta\":{\"source\":\"model\",\"createdAt\":1790743249248,\"messageId\":\"5a8e107a-2749-4841-9b2f-8859bc07150a\"}}],\"interrupted\":false,\"modState\":{\"workspace\":{\"cwd\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-CJxArX/work\",\"platform\":\"darwin\",\"branch\":null,\"gitStatus\":null,\"recentCommits\":[],\"additionalDirectories\":[]}}}}}}\n{\"type\":\"result\",\"subtype\":\"success\",\"sessionId\":\"8cb65c90-0fa6-4bbd-977d-f70086c5bd4c\",\"stopReason\":\"end_turn\",\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"durationMs\":129,\"finalText\":\"CORDYCEPS_command-code_tool_OK\"}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "command-code",
+      "scenario": "stream",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cmd",
+      "version": "1.72.4",
+      "args": [
+        "-p",
+        "cordyceps-extra-stream: Reply with the controlled test message.",
+        "--local-only",
+        "--model",
+        "cordyceps/fixture-model",
+        "--trust",
+        "--yolo",
+        "--skip-onboarding",
+        "--no-auto-update",
+        "--no-skills",
+        "--no-session",
+        "--max-turns",
+        "4",
+        "--output-format",
+        "json"
+      ],
+      "prompt": "cordyceps-extra-stream: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": true,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": true,
+        "incrementalNativeOutput": true,
+        "healthy": true
+      },
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "rawBodySha256": "2b8d84a1ddae92c8838c0e815c8f33c953272e983f819f451cf3158e84795b91",
+          "rawBodyBytes": 59265,
+          "capturedPrompt": "cordyceps-extra-stream: Reply with the controlled test message.",
+          "toolNames": [
+            "read_file",
+            "write_file",
+            "edit_file",
+            "read_directory",
+            "glob",
+            "grep",
+            "shell_command",
+            "agent",
+            "agent_output",
+            "search_tools"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "74848932-5294-4b8d-8769-ee8d8f643c50",
+          "timestamp": 1790743250440,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_eb6dad8ed46a48dd81ee7d522a4275ab\",\"created\":1790743250,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_eb6dad8ed46a48dd81ee7d522a4275ab\",\"created\":1790743250,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_command-code_stream_OK_PREFIX \"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_eb6dad8ed46a48dd81ee7d522a4275ab\",\"created\":1790743250,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_command-code_stream_OK_TAIL\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_eb6dad8ed46a48dd81ee7d522a4275ab\",\"created\":1790743250,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_eb6dad8ed46a48dd81ee7d522a4275ab\",\"created\":1790743250,\"model\":\"fixture-model\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\":\"event\",\"event\":{\"type\":\"run_start\",\"sessionId\":\"f1a068dd-b208-4f7d-b5bc-f951d6ec249e\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_start\",\"turnNumber\":1}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_start\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_start\",\"model\":\"cordyceps/fixture-model\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"text_delta\",\"delta\":\"CORDYCEPS_command-code_stream_OK_PREFIX \"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_update\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_stream_OK_PREFIX \"}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"text_delta\",\"delta\":\"CORDYCEPS_command-code_stream_OK_TAIL\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_update\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_stream_OK_PREFIX CORDYCEPS_command-code_stream_OK_TAIL\"}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_end\",\"model\":\"cordyceps/fixture-model\",\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"stopReason\":\"stop\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_end\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_stream_OK_PREFIX CORDYCEPS_command-code_stream_OK_TAIL\"}]}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_end\",\"turnNumber\":1,\"hadToolCalls\":false,\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0}}}\n{\"type\":\"event\",\"event\":{\"type\":\"run_end\",\"result\":{\"finalText\":\"CORDYCEPS_command-code_stream_OK_PREFIX CORDYCEPS_command-code_stream_OK_TAIL\",\"stopReason\":\"end_turn\",\"turnCount\":1,\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"systemPromptTokens\":null,\"nextState\":{\"sessionId\":\"f1a068dd-b208-4f7d-b5bc-f951d6ec249e\",\"messages\":[{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"cordyceps-extra-stream: Reply with the controlled test message.\"}],\"meta\":{\"source\":\"user\",\"createdAt\":1790743250370,\"messageId\":\"c3f31a05-bbb2-42be-ae32-b069ada07046\"}},{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"CORDYCEPS_command-code_stream_OK_PREFIX CORDYCEPS_command-code_stream_OK_TAIL\"}],\"meta\":{\"source\":\"model\",\"createdAt\":1790743251446,\"messageId\":\"cb0c1b28-5b3d-4e0c-855b-0cbc2025db11\"}}],\"interrupted\":false,\"modState\":{\"workspace\":{\"cwd\":\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-extra-command-code-HQW3JC/work\",\"platform\":\"darwin\",\"branch\":null,\"gitStatus\":null,\"recentCommits\":[],\"additionalDirectories\":[]}}}}}}\n{\"type\":\"result\",\"subtype\":\"success\",\"sessionId\":\"f1a068dd-b208-4f7d-b5bc-f951d6ec249e\",\"stopReason\":\"end_turn\",\"usage\":{\"inputTokens\":0,\"outputTokens\":0,\"cacheReadTokens\":0,\"cacheWriteTokens\":0},\"durationMs\":1115,\"finalText\":\"CORDYCEPS_command-code_stream_OK_PREFIX CORDYCEPS_command-code_stream_OK_TAIL\"}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "command-code",
+      "scenario": "cancel",
+      "binary": "/tmp/cordyceps-extra-deps/node_modules/.bin/cmd",
+      "version": "1.72.4",
+      "args": [
+        "-p",
+        "cordyceps-extra-cancel: Reply with the controlled test message.",
+        "--local-only",
+        "--model",
+        "cordyceps/fixture-model",
+        "--trust",
+        "--yolo",
+        "--skip-onboarding",
+        "--no-auto-update",
+        "--no-skills",
+        "--no-session",
+        "--max-turns",
+        "4",
+        "--output-format",
+        "json"
+      ],
+      "prompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+      "passed": true,
+      "assertions": {
+        "capturedPrompt": true,
+        "controlledBinaryOutput": false,
+        "tokenAbsentBeforeTool": true,
+        "actualToolResultInNextRequest": null,
+        "streamedReplyConsumed": null,
+        "incrementalNativeOutput": null,
+        "healthy": true
+      },
+      "providerAbortObserved": true,
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "fixture-model",
+          "stream": true,
+          "rawBodySha256": "0c6c6ae95b58e46c4605ace27dfcc4da97db7912f8308b201895a735103db01d",
+          "rawBodyBytes": 59265,
+          "capturedPrompt": "cordyceps-extra-cancel: Reply with the controlled test message.",
+          "toolNames": [
+            "read_file",
+            "write_file",
+            "edit_file",
+            "read_directory",
+            "glob",
+            "grep",
+            "shell_command",
+            "agent",
+            "agent_output",
+            "search_tools"
+          ],
+          "toolResults": [],
+          "fixtureTokens": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "ebe877b3-f105-4176-905f-4cce3339ca5d",
+          "timestamp": 1790743252765,
+          "status": null,
+          "headers": {},
+          "chunks": [],
+          "outcome": "aborted"
+        }
+      ],
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "{\"type\":\"event\",\"event\":{\"type\":\"run_start\",\"sessionId\":\"25bdfebe-5d2c-432c-bdcc-f7af0fff8901\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"turn_start\",\"turnNumber\":1}}\n{\"type\":\"event\",\"event\":{\"type\":\"message_start\"}}\n{\"type\":\"event\",\"event\":{\"type\":\"model_request_start\",\"model\":\"cordyceps/fixture-model\"}}\n",
+        "stderr": "",
+        "timedOut": false
+      },
+      "failures": [],
+      "cleanedUp": true
+    }
+  ]
+}

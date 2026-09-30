@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "kilocode",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "KILO_CONFIG": "${config.provider.path}"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "kilo.json",
+          "format": "json",
+          "values": {
+            "provider": {
+              "anthropic": {
+                "options": {
+                  "baseURL": "${mock.baseUrl}/v1",
+                  "apiKey": "${mock.apiKey}"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "run"
+      ]
+    }
+  }
+}

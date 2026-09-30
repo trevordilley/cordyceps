@@ -1,0 +1,35 @@
+{
+  "observedAt": "2026-09-30T04:43:24.699Z",
+  "packages": {
+    "@kilocode/cli": {
+      "version": "7.8.1",
+      "resolved": "https://registry.npmjs.org/@kilocode/cli/-/cli-7.8.1.tgz",
+      "integrity": "sha512-3dNWXhFhMxLkTXt8lMJ8fH1ZK8Ws7D6jEipMCmxejkaMNp9hd7FPnjCGUjK6zknnSJZokkA4+guFxoJQ+njYYw=="
+    },
+    "@continuedev/cli": {
+      "version": "1.5.47",
+      "resolved": "https://registry.npmjs.org/@continuedev/cli/-/cli-1.5.47.tgz",
+      "integrity": "sha512-gtpewV3RoIOD9dyTtKIBi1SY0VOHRu3Ehe7C/mmnswm+j34MPyrcQhQaWj/m+jdfGO4fNIKdrgGIlLso1ULDFw=="
+    },
+    "autohand-cli": {
+      "version": "0.9.8",
+      "resolved": "https://registry.npmjs.org/autohand-cli/-/autohand-cli-0.9.8.tgz",
+      "integrity": "sha512-cCtxlU3KKi8XxtVD1Yi7sYXmmbzsbaXKOKZnGdHGsOktiAGYgqhBaCclyofulbYqL1EW9f9a/HKCXazV23n1FA=="
+    },
+    "command-code": {
+      "version": "1.72.4",
+      "resolved": "https://registry.npmjs.org/command-code/-/command-code-1.72.4.tgz",
+      "integrity": "sha512-UFW3CmOQxJeaalEgUE81EdsMwgzt1t5GssM+pszm+t59BYXKpKPImhzxvPClp+VxEEHENuBhrXbgZKG8t2+psg=="
+    },
+    "codebuff": {
+      "version": "1.0.688",
+      "resolved": "https://registry.npmjs.org/codebuff/-/codebuff-1.0.688.tgz",
+      "integrity": "sha512-lPbNFl8D8Opd3pTEnen8VKZFiWeTiZJ2mxcHUsQsFJmULfDJ4laK52TjPe749qFjrXQwsNzR5TW1s7x0UXBq4A=="
+    },
+    "polygraph": {
+      "version": "0.1.5",
+      "resolved": "https://registry.npmjs.org/polygraph/-/polygraph-0.1.5.tgz",
+      "integrity": "sha512-TKXmuVWcfBahDsLi+Pj/x74jWyePrsx8CBPq+dleM1guWIQL02GLFhiXXYQgf3XTTHeGpoWnWTqMg39765W/hw=="
+    }
+  }
+}

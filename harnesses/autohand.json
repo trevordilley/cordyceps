@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "autohand",
+  "provider": {
+    "adapter": "anthropic-messages",
+    "override": {
+      "env": {
+        "AUTOHAND_CONFIG": "${config.provider.path}",
+        "AUTOHAND_API_KEY": "${mock.apiKey}"
+      },
+      "configFiles": [
+        {
+          "id": "provider",
+          "path": "autohand.json",
+          "format": "json",
+          "values": {
+            "provider": "anthropic",
+            "anthropic": {
+              "baseUrl": "${mock.baseUrl}",
+              "apiKey": "${mock.apiKey}",
+              "model": "claude-sonnet-4-5-20250929"
+            },
+            "telemetry": {
+              "enabled": false
+            },
+            "autoReport": {
+              "enabled": false
+            },
+            "ui": {
+              "checkForUpdates": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modes": {
+    "nonInteractive": {
+      "args": [
+        "--prompt"
+      ]
+    }
+  }
+}
