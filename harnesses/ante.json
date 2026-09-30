@@ -44,9 +44,6 @@
         "cordyceps",
         "--model",
         "fixture-model",
-        "--no-skills",
-        "--disable-auto-memory",
-        "--no-session-save",
         "--prompt"
       ]
     }

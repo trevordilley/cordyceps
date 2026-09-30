@@ -34,9 +34,7 @@
       "args": [
         "exec",
         "--model",
-        "custom_provider:cordyceps/fixture-model",
-        "--permission",
-        "full"
+        "custom_provider:cordyceps/fixture-model"
       ]
     }
   }

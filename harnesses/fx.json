@@ -43,8 +43,7 @@
   "modes": {
     "nonInteractive": {
       "args": [
-        "ask",
-        "--auto"
+        "ask"
       ]
     }
   }

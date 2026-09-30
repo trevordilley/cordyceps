@@ -6,9 +6,7 @@
     "override": {
       "env": {
         "GROK_HOME": "${session.dir}",
-        "XAI_API_KEY": "${mock.apiKey}",
-        "GROK_TELEMETRY_ENABLED": "0",
-        "GROK_TELEMETRY_TRACE_UPLOAD": "0"
+        "XAI_API_KEY": "${mock.apiKey}"
       },
       "configFiles": [
         {
@@ -24,9 +22,6 @@
                 "api_backend": "chat_completions",
                 "context_window": 32768
               }
-            },
-            "cli": {
-              "use_leader": false
             }
           }
         }
@@ -38,9 +33,6 @@
       "args": [
         "--model",
         "cordyceps",
-        "--always-approve",
-        "--no-subagents",
-        "--disable-web-search",
         "-p"
       ]
     }

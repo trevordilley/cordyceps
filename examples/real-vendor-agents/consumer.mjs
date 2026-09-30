@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {writeFile,access} from 'node:fs/promises';
+import {writeFile,appendFile,access} from 'node:fs/promises';
 import {dirname,join} from 'node:path';
 import {randomUUID} from 'node:crypto';
 import {prepare,createRegistry} from 'cordyceps';
@@ -7,6 +7,21 @@ import {isolated} from './isolation.mjs';
 const [output,selection,artifactJSON]=process.argv.slice(2);
 const binRoot=process.env.CORDYCEPS_VENDOR_BIN_DIR||'/tmp/cordyceps-vendor-investigation';
 const binaries={'grok-build':binRoot+'/grok/grok',fx:binRoot+'/fx/fx',ante:binRoot+'/ante/ante',muse:binRoot+'/muse',minimax:binRoot+'/minimax/node_modules/.bin/mcode'};
+// These are choices of this isolated fixture consumer, never recipe defaults.
+// Preserve the native prompt-option/value adjacency and the verified argv order.
+function consumerArgs(harness, args, prompt) {
+ const flags={ante:['--no-skills','--disable-auto-memory','--no-session-save'],fx:['--auto'],
+  'grok-build':['--always-approve','--no-subagents','--disable-web-search'],
+  minimax:['--permission','full'],muse:['--yolo','--no-session-log']}[harness];
+ let at=args.length;
+ if(harness==='ante'||harness==='grok-build') {
+  assert.equal(args.at(-1),harness==='ante'?'--prompt':'-p');
+  at=args.length-1;
+ } else if(harness==='muse') {
+  at=args.indexOf('--model');assert.ok(at>=0);
+ }
+ return [...args.slice(0,at),...flags,...args.slice(at),prompt];
+}
 const evidence={date:new Date().toISOString(),artifact:JSON.parse(artifactJSON),packageEntry:import.meta.resolve('cordyceps'),node:process.version,cases:[]};
 for(const harness of selection.split(','))for(const scenario of ['text','tool']) {
  const record={harness,scenario,passed:false};evidence.cases.push(record);
@@ -19,6 +34,12 @@ for(const harness of selection.split(','))for(const scenario of ['text','tool'])
    record.prompt=prompt;record.marker=marker;
    const registry=createRegistry({builtins:false});await registry.loadFile(join(process.cwd(),harness+'.json'));
    ai=await prepare({harness,mode:'nonInteractive',registry});
+   if(harness==='grok-build') {
+    // Keep this fixture to one agent. The generated file belongs to this session;
+    // changing the agent's orchestration policy is a consumer-owned test choice.
+    const settings=ai.configFiles.find(f=>f.path.endsWith('/config.toml'));
+    assert.ok(settings);await appendFile(settings.path,'\n[cli]\nuse_leader = false\n');
+   }
    let issued=false,returned=false;
    ai.route(()=>true,async route=>{
     assert.ok(ai.requests.length<=30,'unexpected provider retry');
@@ -49,11 +70,12 @@ for(const harness of selection.split(','))for(const scenario of ['text','tool'])
     return route.fulfill({text:marker});
    });
    const extra=ai.environment(env);const writable=[...new Set(ai.configFiles.map(f=>dirname(f.path)))];
+   if(harness==='grok-build')Object.assign(extra,{GROK_TELEMETRY_ENABLED:'0',GROK_TELEMETRY_TRACE_UPLOAD:'0'});
    if(extra.HOME!==env.HOME)writable.push(extra.HOME);
    if(extra.ANTE_HOME)writable.push(extra.ANTE_HOME);
    if(extra.GROK_HOME)writable.push(extra.GROK_HOME);
    record.version=await launch(binaries[harness],['--version'],extra,writable);
-   ai.recordInput(prompt);record.process=await launch(binaries[harness],[...ai.args,prompt],extra,writable,45000);
+   ai.recordInput(prompt);record.process=await launch(binaries[harness],consumerArgs(harness,ai.args,prompt),extra,writable,45000);
    record.requests=ai.requests;record.responses=ai.responses;record.failures=ai.failures.map(f=>String(f.error));
    ai.assertHealthy();assert.equal(record.process.timedOut,false);assert.equal(record.process.code,0,record.process.stderr);
    assert.ok(record.process.stdout.includes(marker),record.process.stdout);
