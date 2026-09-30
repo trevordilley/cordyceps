@@ -1,0 +1,527 @@
+{
+  "runs": [
+    {
+      "group": "editors",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-tSTNO3WGf+LC9VZiWvOSGBmpfOczxTiPM5eVGCF5G+cRkkIQlmI4wzsXs65tAJBf1T9RuXHRgGVWhOe7RcfPkw=="
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-editors-cleanup.json",
+      "cases": [
+        {
+          "agent": "aider",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "aider",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "cline",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "cline",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {}
+        }
+      ]
+    },
+    {
+      "group": "providers",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-R1YY8gGLpxhTygQe3jtcJUBeRCmrdnWUkeXkhxcS8u269iIGx1RUzC1NkZPVQIf+WvAmT9X4GsguFKgB7L8S9g==",
+        "shasum": "21b3577971924bd37be2b9534220bdf448176380"
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-provider-manager.json",
+      "cases": [
+        {
+          "agent": "copilot",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "copilot",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "copilot",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "copilot",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "goose",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "goose",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "goose",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "goose",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "droid",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "droid",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "droid",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "droid",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "opencode",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "crush",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "crush",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "crush",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "crush",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        }
+      ]
+    },
+    {
+      "group": "google",
+      "artifact": {
+        "name": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-R1YY8gGLpxhTygQe3jtcJUBeRCmrdnWUkeXkhxcS8u269iIGx1RUzC1NkZPVQIf+WvAmT9X4GsguFKgB7L8S9g==",
+        "shasum": "21b3577971924bd37be2b9534220bdf448176380"
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-google-manager.json",
+      "cases": [
+        {
+          "agent": "gemini",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "gemini",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "gemini",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "qwen",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "qwen",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "qwen",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "mistral-vibe",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "mistral-vibe",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {}
+        },
+        {
+          "agent": "mistral-vibe",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {}
+        }
+      ]
+    },
+    {
+      "group": "antigravity",
+      "artifact": {
+        "name": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-tSTNO3WGf+LC9VZiWvOSGBmpfOczxTiPM5eVGCF5G+cRkkIQlmI4wzsXs65tAJBf1T9RuXHRgGVWhOe7RcfPkw==",
+        "shasum": "f1c6f262abfc3f281afd439b8492789cfc907844"
+      },
+      "node": "v22.22.3",
+      "sourceEvidence": "/tmp/cordyceps-agy-manager-final.json",
+      "cases": [
+        {
+          "agent": "antigravity",
+          "scenario": "text",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "actualFixtureResult": null,
+            "incremental": null,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "antigravity",
+          "scenario": "tool",
+          "passed": true,
+          "requestCount": 3,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "actualFixtureResult": true,
+            "incremental": null,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "antigravity",
+          "scenario": "stream",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "actualFixtureResult": null,
+            "incremental": true,
+            "providerAborted": null
+          }
+        },
+        {
+          "agent": "antigravity",
+          "scenario": "cancel",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "actualFixtureResult": null,
+            "incremental": null,
+            "providerAborted": true
+          }
+        }
+      ]
+    }
+  ]
+}

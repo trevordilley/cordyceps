@@ -1,0 +1,430 @@
+{
+  "source": {
+    "repository": "DevSwarm",
+    "commit": "d7c33873380e092018140ccf6e90529e1605fff0",
+    "enumPath": "libs/shared/types/src/ai-agent.ts",
+    "launchMappingPath": "libs/desktop/utils/src/agent.ts"
+  },
+  "scope": "Real consumer verification observations, not executable version certification. Windows/WSL requires a Windows host.",
+  "agents": [
+    {
+      "enum": "Q",
+      "value": "q",
+      "family": "q",
+      "label": "Amazon Q",
+      "platform": "native",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "enum": "Q_WSL",
+      "value": "q-wsl",
+      "family": "q",
+      "label": "Amazon Q",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "CLAUDE",
+      "value": "claude",
+      "family": "claude",
+      "label": "Claude Code",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-cli.md",
+        "examples/real-cli/evidence.json"
+      ]
+    },
+    {
+      "enum": "CLAUDE_WSL",
+      "value": "claude-wsl",
+      "family": "claude",
+      "label": "Claude Code",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "CODEX",
+      "value": "codex",
+      "family": "codex",
+      "label": "Codex",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-cli.md",
+        "examples/real-cli/evidence.json"
+      ]
+    },
+    {
+      "enum": "CODEX_WSL",
+      "value": "codex-wsl",
+      "family": "codex",
+      "label": "Codex",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "ANTIGRAVITY",
+      "value": "antigravity",
+      "family": "antigravity",
+      "label": "Antigravity",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-gated-agents.md",
+        "examples/real-gated-agents/antigravity-evidence.json"
+      ]
+    },
+    {
+      "enum": "ANTIGRAVITY_WSL",
+      "value": "antigravity-wsl",
+      "family": "antigravity",
+      "label": "Antigravity",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "GEMINI",
+      "value": "gemini",
+      "family": "gemini",
+      "label": "Gemini CLI",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-google-agents.md",
+        "examples/real-google-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "GEMINI_WSL",
+      "value": "gemini-wsl",
+      "family": "gemini",
+      "label": "Gemini CLI",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "ROVO",
+      "value": "acli",
+      "family": "acli",
+      "label": "Rovo Dev",
+      "platform": "native",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "enum": "ROVO_WSL",
+      "value": "acli-wsl",
+      "family": "acli",
+      "label": "Rovo Dev",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "AIDER",
+      "value": "aider",
+      "family": "aider",
+      "label": "Aider",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-editor-agents.md",
+        "examples/real-editor-agents/evidence.json"
+      ]
+    },
+    {
+      "enum": "AIDER_WSL",
+      "value": "aider-wsl",
+      "family": "aider",
+      "label": "Aider",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "GOOSE",
+      "value": "goose",
+      "family": "goose",
+      "label": "Goose",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "GOOSE_WSL",
+      "value": "goose-wsl",
+      "family": "goose",
+      "label": "Goose",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "CURSOR",
+      "value": "cursor-agent",
+      "family": "cursor-agent",
+      "label": "Cursor",
+      "platform": "native",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "enum": "CURSOR_WSL",
+      "value": "cursor-agent-wsl",
+      "family": "cursor-agent",
+      "label": "Cursor",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "AMP",
+      "value": "amp",
+      "family": "amp",
+      "label": "Amp",
+      "platform": "native",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "enum": "AMP_WSL",
+      "value": "amp-wsl",
+      "family": "amp",
+      "label": "Amp",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "COPILOT",
+      "value": "copilot",
+      "family": "copilot",
+      "label": "GitHub Copilot CLI",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "COPILOT_WSL",
+      "value": "copilot-wsl",
+      "family": "copilot",
+      "label": "GitHub Copilot CLI",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "MISTRAL_VIBE",
+      "value": "vibe",
+      "family": "vibe",
+      "label": "Mistral Vibe",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-google-agents.md",
+        "examples/real-google-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "MISTRAL_VIBE_WSL",
+      "value": "vibe-wsl",
+      "family": "vibe",
+      "label": "Mistral Vibe",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "QWEN",
+      "value": "qwen",
+      "family": "qwen",
+      "label": "Qwen Code",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-google-agents.md",
+        "examples/real-google-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "QWEN_WSL",
+      "value": "qwen-wsl",
+      "family": "qwen",
+      "label": "Qwen Code",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "AUGGIE",
+      "value": "auggie",
+      "family": "auggie",
+      "label": "Auggie",
+      "platform": "native",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "enum": "AUGGIE_WSL",
+      "value": "auggie-wsl",
+      "family": "auggie",
+      "label": "Auggie",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "OPENCODE",
+      "value": "opencode",
+      "family": "opencode",
+      "label": "OpenCode",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "OPENCODE_WSL",
+      "value": "opencode-wsl",
+      "family": "opencode",
+      "label": "OpenCode",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "CRUSH",
+      "value": "crush",
+      "family": "crush",
+      "label": "Crush",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "CRUSH_WSL",
+      "value": "crush-wsl",
+      "family": "crush",
+      "label": "Crush",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "CLINE",
+      "value": "cline",
+      "family": "cline",
+      "label": "Cline",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-editor-agents.md",
+        "examples/real-editor-agents/evidence.json"
+      ]
+    },
+    {
+      "enum": "CLINE_WSL",
+      "value": "cline-wsl",
+      "family": "cline",
+      "label": "Cline",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "PLANDEX",
+      "value": "plandex",
+      "family": "plandex",
+      "label": "Plandex",
+      "platform": "native",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "enum": "PLANDEX_WSL",
+      "value": "plandex-wsl",
+      "family": "plandex",
+      "label": "Plandex",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "DROID",
+      "value": "droid",
+      "family": "droid",
+      "label": "Factory Droid",
+      "platform": "native",
+      "status": "verified",
+      "evidence": [
+        "docs/real-provider-agents.md",
+        "examples/real-provider-agents/observations.json"
+      ]
+    },
+    {
+      "enum": "DROID_WSL",
+      "value": "droid-wsl",
+      "family": "droid",
+      "label": "Factory Droid",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    },
+    {
+      "enum": "QODO",
+      "value": "qodo",
+      "family": "qodo",
+      "label": "Qodo",
+      "platform": "native",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "enum": "QODO_WSL",
+      "value": "qodo-wsl",
+      "family": "qodo",
+      "label": "Qodo",
+      "platform": "windows-wsl",
+      "status": "platform-unavailable",
+      "evidence": [],
+      "limitation": "No Windows/WSL host was used; native macOS evidence does not establish WSL execution."
+    }
+  ]
+}

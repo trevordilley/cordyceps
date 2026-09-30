@@ -27,7 +27,12 @@
     "docs/verification.md",
     "docs/real-acp.md",
     "docs/real-cli.md",
-    "docs/real-frontend.md"
+    "docs/real-frontend.md",
+    "docs/real-editor-agents.md",
+    "docs/real-provider-agents.md",
+    "docs/real-google-agents.md",
+    "docs/devswarm-agents.md",
+    "docs/real-gated-agents.md"
   ],
   "scripts": {
     "check": "tsc --noEmit",
@@ -38,7 +43,11 @@
     "test:real-acp": "node examples/real-acp/verify.mjs",
     "test:real-cli": "node examples/real-cli/run.mjs",
     "test:real-frontend": "node examples/real-frontend/verify-packed.mjs",
-    "test:real": "npm run test:real-cli && npm run test:real-acp && npm run test:real-frontend"
+    "test:real": "npm run test:real-cli && npm run test:real-acp && npm run test:real-frontend",
+    "test:real-editors": "node examples/real-editor-agents/verify.mjs",
+    "test:real-providers": "node examples/real-provider-agents/run.mjs",
+    "test:real-google": "node examples/real-google-agents/run.mjs",
+    "test:real-antigravity": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-antigravity.json --antigravity"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

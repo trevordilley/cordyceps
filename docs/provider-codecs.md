@@ -1,7 +1,8 @@
 # Provider codecs
 
 `src/provider/index.ts` exports `codecIds` and `getCodec(id)`. The IDs are
-`anthropic-messages` and `openai-responses`; unknown IDs throw. Their shared
+`anthropic-messages`, `openai-responses`, `openai-chat-completions`, and
+`google-genai`; unknown IDs throw. Their shared
 interfaces live in `src/provider/types.ts`.
 Both the ID list and codec singleton objects are frozen, so callers cannot
 replace codec methods globally and affect another session.
@@ -17,17 +18,19 @@ results, launch harnesses, infer ACP identities, or contact a live provider.
 | --- | --- | --- | --- |
 | `anthropic-messages` | `/v1/messages` | Named client tools with `input_schema` | `tool_result` content blocks, keyed by `tool_use_id` |
 | `openai-responses` | `/v1/responses` | `function` tools with `parameters` | `function_call_output` input items, keyed by `call_id` |
+| `openai-chat-completions` | `/v1/chat/completions` | Nested `function` definitions | `role: tool` messages, keyed by `tool_call_id` |
+| `google-genai` | `/v1beta/models/<model>:generateContent` or `:streamGenerateContent` (also `/v1`) | `functionDeclarations` | `functionResponse` parts |
 
 Query strings are accepted. Prefix paths, trailing slashes, other endpoints,
-and other HTTP methods do not match. The injection base URL must therefore
-produce these `/v1/...` paths.
+and other HTTP methods do not match. The injection base URL must produce one of the codec’s explicit paths.
+Gemini streaming requires `alt=sse`; Vertex project/location paths are not supported.
 Anthropic also accepts exactly `HEAD /api/hello` and
 `POST /v1/messages/count_tokens` (including query strings), observed from real
 Claude SDK consumers. These use ordinary capture, consumer routes and failure
 reporting; there is no automatic reply. Model listings and response
 retrieval/deletion remain unsupported; this is not complete vendor API emulation.
 
-Except for the bodyless hello probe, decoding requires a JSON object with a nonempty string `model`. `stream`, when
+Anthropic and OpenAI decoding requires a JSON object with a nonempty string `model`, except for the bodyless hello probe. Gemini takes the model from the URL and retains the original JSON body. `stream`, when
 present, must be boolean; absent means false. Tool and message/input arrays
 must be arrays when supplied (Responses also accepts a string `input`). This
 is envelope validation, not a complete provider schema validator.
@@ -148,3 +151,28 @@ certify any harness, SDK version, model, real tool execution, socket behavior,
 or ACP integration. Hosted tools, custom tools, multimodal output, reasoning
 output, stored responses, and provider-side schema enforcement are outside
 this initial encoding subset. Unsupported request fields remain inspectable.
+
+
+## Chat Completions and Gemini
+
+Chat Completions produces ordinary `chat.completion` JSON or data-only SSE
+`chat.completion.chunk` objects. Tool deltas retain stable IDs and increasing
+per-call indices. Successful streaming ends with the appropriate `stop` or
+`tool_calls` finish reason, optional requested usage chunk, and `[DONE]`.
+Usage numbers remain explicit zero placeholders. Legacy `functions` /
+`function_call`, multiple choices, audio and reasoning output are not implemented.
+See the official [function-calling wire examples](https://developers.openai.com/api/docs/guides/function-calling).
+
+Gemini produces native candidate `content.parts` containing text or
+`functionCall`, followed by `finishReason: STOP`. Streaming uses data-only SSE,
+without the OpenAI `[DONE]` sentinel. Incoming function responses retain their
+reported ID; clients omitting IDs are represented by their function name, so
+consumers must inspect raw parts when same-name calls need disambiguation.
+Thought/image data stays raw. This codec covers Developer API generation,
+not Vertex routing, token counting, model discovery or thought signatures.
+
+Some agents implement their tool protocol within model text. Verified Aider
+shell instructions and Cline XML tools use ordinary Chat Completions text,
+and their real results occur in subsequent conversation text. The library
+preserves these exchanges; it does not pretend they were native function calls
+or parse agent-specific instructions into `toolResults`.

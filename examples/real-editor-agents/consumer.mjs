@@ -1,7 +1,7 @@
 // Consumer code: process ownership, test configuration and lifecycle are not library APIs.
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { mkdtemp, mkdir, writeFile, readFile, readdir, rm, realpath } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, readdir, rm, realpath, access } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -68,7 +68,7 @@ for(const harness of (selection==='all'?['aider','cline']:[selection])) {
    record.responses=ai.responses;
    record.passed=true;
   } catch(e){record.error=String(e.stack??e); if(ai){record.requests=ai.requests;record.failures=ai.failures.map(f=>String(f.error));}}
-  finally{if(ai)await ai.dispose();await rm(root,{recursive:true,force:true});record.cleanedUp=true;await writeFile(output,JSON.stringify(evidence,null,2));}
+  finally{if(ai){await ai.dispose();await assert.rejects(fetch(ai.baseUrl));for(const file of ai.configFiles)await assert.rejects(access(file.path));}await rm(root,{recursive:true,force:true});await assert.rejects(access(root));record.cleanedUp=true;await writeFile(output,JSON.stringify(evidence,null,2));}
   console.log(harness,scenario,record.passed?'PASS':record.error);
  }
 }
