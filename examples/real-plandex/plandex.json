@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "plandex",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {"CORDYCEPS_PLANDEX_KEY": "${mock.apiKey}"},
+      "configFiles": [{
+        "id": "models", "path": "custom-models.json", "format": "json",
+        "values": {
+          "providers": [{"name":"cordyceps", "baseUrl":"${mock.baseUrl}/v1", "apiKeyEnvVar":"CORDYCEPS_PLANDEX_KEY"}],
+          "models": [{"modelId":"cordyceps/mock", "publisher":"cordyceps", "description":"Local scripted provider", "defaultMaxConvoTokens":32000, "maxTokens":128000, "maxOutputTokens":4096, "reservedOutputTokens":4096, "preferredOutputFormat":"xml", "providers":[{"provider":"custom", "customProvider":"cordyceps", "modelName":"cordyceps-mock"}]}],
+          "modelPacks": [{"name":"cordyceps", "description":"All roles use the local mock", "planner":"cordyceps/mock", "architect":"cordyceps/mock", "coder":"cordyceps/mock", "summarizer":"cordyceps/mock", "builder":"cordyceps/mock", "wholeFileBuilder":"cordyceps/mock", "names":"cordyceps/mock", "commitMessages":"cordyceps/mock", "autoContinue":"cordyceps/mock"}]
+        }
+      }]
+    }
+  },
+  "modes": {"nonInteractive":{"args":[]}}
+}
