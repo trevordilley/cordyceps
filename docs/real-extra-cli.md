@@ -1,6 +1,6 @@
 # Additional Superset/Orca CLIs
 
-Four native CLIs pass controlled text and real file reads through an externally installed, packed Cordyceps artifact. Codebuff and Polygraph remain diagnostic investigations and have no support recipes. This work starts at manager commit `34dac66`; shared registry, package scripts/files, inventory, README and Saga are deliberately untouched.
+Four native CLIs pass controlled text and real file reads through an externally installed, packed Cordyceps artifact. Codebuff and Polygraph remain diagnostic investigations and have no support recipes.
 
 | CLI | Observed release | Native read | Streaming in tested mode | Cancellation |
 | --- | --- | --- | --- | --- |
@@ -23,7 +23,7 @@ node examples/real-extra-cli/summarize.mjs /tmp/extra-verified.json examples/rea
 
 `EXTRA_CLI_DEPS` changes the dependency directory. Binary overrides are `KILOCODE_BINARY`, `CONTINUE_CLI_BINARY`, `AUTOHAND_BINARY` and `COMMAND_CODE_BINARY`. Optional runner arguments after the output path select comma-separated harnesses and scenarios, for example `continue-cli text,tool`.
 
-The runner builds and packs the library, installs that tarball offline into a fresh directory outside the repository, copies the consumer and selected JSON recipes there, and imports only public `cordyceps` exports. It loads recipes with `createRegistry({builtins:false})` and `registry.loadFile(...)`; builtin integration is intentionally left to the parent manager.
+The runner builds and packs the library, installs that tarball offline into a fresh directory outside the repository, copies the consumer and selected JSON recipes there, and imports only public `cordyceps` exports. It loads recipes with `createRegistry({builtins:false})` and `registry.loadFile(...)`; the same definitions are also bundled by the default registry.
 
 Each case generates its own HOME, work directory, unpredictable fixture token and provider session. The first native prompt request must exclude the token. Cordyceps returns the read call actually offered by that CLI; the native harness executes it. The immediately following prompt request must contain that call's real successful result and token. Only then does the provider return the completion marker, which must appear in actual CLI stdout. No consumer handler reads the fixture on behalf of the agent.
 
@@ -39,7 +39,3 @@ macOS `sandbox-exec` restricts outbound connections to loopback and writes to di
 The four recipes required no codec/core changes. Setup corrected genuine consumer/config boundary mistakes: native tool parameter spellings, Autohand's origin-vs-`/v1` base URL, Continue's config shape, and Command Code's separate print-mode key presence gate. No upstream CLI was patched.
 
 `examples/real-extra-cli/versions.json` records npm tarball URLs and integrity values. `evidence.json` retains native versions/argv/output, assertions, response observations, offered tool names, actual fixture tool results and request body sizes/SHA-256. The runner output retains full native provider requests (including system prompts) for local inspection; the committed evidence is intentionally summarized.
-
-## Parent integration
-
-After independent verification, add the four JSON recipes to the shared builtin registry and its recipe parity expectations. Add `docs/real-extra-cli.md` to package files and documentation links, optionally add a real-extra npm script, and update the Superset/Orca support inventory with the four passing families and explicit streaming limits. Recipe files already fall under the existing `harnesses` package inclusion. Do not count diagnostics as verified workflows. No publication, review verdict or main-branch merge is part of this work.

@@ -11,13 +11,11 @@ import { openaiResponses } from './openai-responses.js';
 import { openaiChatCompletions } from './openai-chat-completions.js';
 import type { ProviderCodec } from './types.js';
 
-
 export const codecIds: readonly string[] = Object.freeze(['anthropic-messages', 'openai-responses', 'openai-chat-completions', 'google-genai', 'amazon-q', 'augment', 'atlassian-rovo', 'amp-service', 'hermes', 'muse-code', 'grok-build']);
 
 export function getCodec(id: string): ProviderCodec {
   switch (id) {
     case 'hermes': return hermes;
-
     case 'muse-code': return museCode;
     case 'grok-build': return grokBuild;
     case 'amp-service': return ampService;

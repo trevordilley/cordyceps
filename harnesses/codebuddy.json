@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "codebuddy",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "CODEBUDDY_BASE_URL": "${mock.baseUrl}/v1",
+        "CODEBUDDY_API_KEY": "${mock.apiKey}",
+        "CODEBUDDY_MODEL": "claude-sonnet-4-5-20250929",
+        "CODEBUDDY_BIG_SLOW_MODEL": "claude-sonnet-4-5-20250929",
+        "CODEBUDDY_SMALL_FAST_MODEL": "claude-sonnet-4-5-20250929"
+      }
+    }
+  },
+  "modes": { "nonInteractive": { "args": ["--print"] } }
+}

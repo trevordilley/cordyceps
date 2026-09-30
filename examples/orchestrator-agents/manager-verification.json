@@ -1,0 +1,849 @@
+{
+  "note": "Independent integration-branch packed-artifact reruns. Commands use real Node and documented local dependencies; see each group reproduction document. Full receipt hashes identify local detailed observations.",
+  "runs": [
+    {
+      "group": "extra-cli",
+      "command": "node examples/real-extra-cli/run.mjs /tmp/cordyceps-extra-manager.json",
+      "sourceEvidence": "/tmp/cordyceps-extra-manager.json",
+      "sourceSHA256": "66965a01e63e71a541b9a0b82bbadeb0088abf38977fa8a8b555feee8b7b5cea",
+      "node": "v22.22.3",
+      "date": "2026-09-30T04:54:20.590Z",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-k1xoukJKh9aD0Z47kydmO/wiVsZ2p31DLC7pFh8z7ezlUVzeAxrQgouDvpXgkDByvYkmBvZwVwfATCNz9s6Lpg==",
+        "shasum": "3bf4e4bab6d04b9eea73ba037530f9ecdf6ae52b"
+      },
+      "cases": [
+        {
+          "agent": "kilocode",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "kilocode",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "kilocode",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "kilocode",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "continue-cli",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "continue-cli",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "continue-cli",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "continue-cli",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "autohand",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "autohand",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "autohand",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "command-code",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "command-code",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "command-code",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "command-code",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        }
+      ],
+      "diagnosticCount": 0
+    },
+    {
+      "group": "pi",
+      "command": "CORDYCEPS_BUN_DIR=/tmp/cordyceps-pi-tools/node_modules/.bin PRIME_AGENT_BINARY=/tmp/cordyceps-pi-native-repro/prime/prime-agent PRIME_AGENT_KERNEL_PYTHON=/tmp/cordyceps-pi-tools/prime-venv/bin/python ZCODE_BINARY=/tmp/cordyceps-pi-native-repro/zcode-glm/zcode.cjs node examples/real-pi-agents/run.mjs /tmp/cordyceps-pi-manager.json",
+      "sourceEvidence": "/tmp/cordyceps-pi-manager.json",
+      "sourceSHA256": "75ed5bbea8c4705bdd607d1a95741255dd2124e3fe04b03784a8a537529dc925",
+      "node": "v24.15.0",
+      "date": "2026-09-30T15:03:19.189Z",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-KPm/yNJLrq5m8fCfP/SH73tTSiAQuP0cjNgmPha2TNQ95TyJKzTbbvi7maYm6nEC//wTaKFJOwE7PkjwnTepQg==",
+        "shasum": "d3f0798d8dd481a89849383f4667c8b6d4f7fb97",
+        "binaryPackages": {
+          "pi": {
+            "name": "@earendil-works/pi-coding-agent",
+            "version": "0.99.1",
+            "path": "/private/tmp/cordyceps-pi-tools/node_modules/@earendil-works/pi-coding-agent/package.json"
+          },
+          "omp": {
+            "name": "@oh-my-pi/pi-coding-agent",
+            "version": "18.4.4",
+            "path": "/private/tmp/cordyceps-pi-tools/node_modules/@oh-my-pi/pi-coding-agent/package.json"
+          },
+          "mastra-code": {
+            "name": "mastracode",
+            "version": "0.43.0",
+            "path": "/private/tmp/cordyceps-pi-tools/node_modules/mastracode/package.json"
+          },
+          "kimi-code": {
+            "name": "@moonshot-ai/kimi-code",
+            "version": "2.1.1",
+            "path": "/private/tmp/cordyceps-pi-tools/node_modules/@moonshot-ai/kimi-code/package.json"
+          },
+          "prime-agent": {
+            "name": "@earendil-works/pi-coding-agent",
+            "version": "0.9.8",
+            "path": "/private/tmp/cordyceps-pi-native-repro/prime/package.json"
+          }
+        }
+      },
+      "cases": [
+        {
+          "agent": "pi",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "pi",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "pi",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "pi",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "omp",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "omp",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "omp",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "omp",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "mastra-code",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "mastra-code",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "mastra-code",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "mastra-code",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "kimi-code",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "kimi-code",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "kimi-code",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "kimi-code",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "prime-agent",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "prime-agent",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "prime-agent",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "prime-agent",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "zcode",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "zcode",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "zcode",
+          "scenario": "stream",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": true,
+            "incrementalNativeOutput": false,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "zcode",
+          "scenario": "cancel",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": false,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "streamedReplyConsumed": null,
+            "incrementalNativeOutput": null,
+            "healthy": true
+          }
+        }
+      ],
+      "diagnosticCount": 0
+    },
+    {
+      "group": "openclaude",
+      "command": "OPENCLAUDE_BINARY=/tmp/cordyceps-source-extra/install/node_modules/.bin/openclaude node examples/real-source-agents/openclaude/run.mjs /tmp/cordyceps-openclaude-manager.json",
+      "sourceEvidence": "/tmp/cordyceps-openclaude-manager.json",
+      "sourceSHA256": "1e7d5cecf37df2f242e9be69a2a691623dcf848c76f235f05fffade9a002851d",
+      "node": "v22.22.3",
+      "date": "2026-09-30T04:49:29.779Z",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-BzrSqUeJsAaWME/Bdx/s5erYQUk9esXs3QgYY09lZ7aYXvcrYFI4+jYUeYTZWVoMVvEW6HV1JSjOfSc7kgsmPw==",
+        "shasum": "64e1c58c7ad5731ccb6a49906a4847058bcbfd9c"
+      },
+      "cases": [
+        {
+          "agent": "openclaude",
+          "scenario": "text",
+          "alias": null,
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "openclaude",
+          "scenario": "tool",
+          "alias": null,
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledBinaryOutput": true,
+            "tokenAbsentBeforeTool": true,
+            "actualToolResultInNextRequest": true,
+            "healthy": true
+          }
+        }
+      ],
+      "diagnosticCount": 0
+    },
+    {
+      "group": "codebuddy",
+      "command": "node examples/real-source-agents/codebuddy-qoder/run.mjs /tmp/cordyceps-codebuddy-manager.json /tmp/cordyceps-codebuddy-qoder-deps",
+      "sourceEvidence": "/tmp/cordyceps-codebuddy-manager.json",
+      "sourceSHA256": "c572912854f6322e8a1e8f018543bf8811a6c446a78f12a82b5c9d8c7a0749dc",
+      "node": "v22.22.3",
+      "date": "2026-09-30T15:07:40.459Z",
+      "artifact": {
+        "filename": "cordyceps-0.1.0.tgz",
+        "integrity": "sha512-Y9mvk9oAZkJ2zyw++7yYEp0gRXitK3Oj+PAWJUeeBulYhZb+ufUbdBcRYX9uYeMvH4M0lpqpbRV2t0dJa2Kp1Q==",
+        "shasum": "4dad00eb57fbad9cdf0b10c98b6dbb5e5cefb93d"
+      },
+      "cases": [
+        {
+          "agent": "codebuddy",
+          "scenario": "text",
+          "alias": "codebuddy",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentInitially": true,
+            "actualToolResultInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "codebuddy",
+          "scenario": "tool",
+          "alias": "codebuddy",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentInitially": true,
+            "actualToolResultInNextRequest": true,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "codebuddy",
+          "scenario": "text",
+          "alias": "cbc",
+          "passed": true,
+          "requestCount": 1,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentInitially": true,
+            "actualToolResultInNextRequest": null,
+            "healthy": true
+          }
+        },
+        {
+          "agent": "codebuddy",
+          "scenario": "tool",
+          "alias": "cbc",
+          "passed": true,
+          "requestCount": 2,
+          "cleanedUp": true,
+          "assertions": {
+            "capturedPrompt": true,
+            "controlledNativeOutput": true,
+            "tokenAbsentInitially": true,
+            "actualToolResultInNextRequest": true,
+            "healthy": true
+          }
+        }
+      ],
+      "diagnosticCount": 3
+    }
+  ]
+}

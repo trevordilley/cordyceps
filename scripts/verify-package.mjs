@@ -45,6 +45,9 @@ import { cordyceps } from 'cordyceps';
 const require = createRequire(import.meta.url);
 assert.throws(() => require.resolve('@playwright/test'));
 assert.equal(globalThis.Bun, undefined);
+assert.deepEqual(cordyceps.createRegistry().list().map(definition => definition.id).sort(),
+  ${JSON.stringify(paths.filter(path => /^harnesses\/[^/]+\.json$/.test(path)).map(path => path.slice('harnesses/'.length, -'.json'.length)).sort())},
+  'Every shipped recipe must be selectable through the installed public registry');
 const registry = cordyceps.createRegistry({ builtins: false });
 await registry.loadFile('./definition.json');
 const ai = await cordyceps.prepare({ registry, harness: 'package-fixture', mode: 'acp' });

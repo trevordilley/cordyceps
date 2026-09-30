@@ -82,7 +82,9 @@
         "zcode",
         "prime-agent",
         "dsh"
-      ]
+      ],
+      "launchPath": "src/shared/tui-agent-config.ts",
+      "launchSha256": "9b50f3d8c079945f8c4df2ceaf125fa3ddeb8b3bc092acb7d9e4b4556d728f8a"
     },
     {
       "id": "orca-docs",
@@ -182,7 +184,13 @@
           "id": "mastracode"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "mastra-code",
+      "evidence": [
+        "docs/real-pi-agents.md",
+        "examples/real-pi-agents/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "opencode",
@@ -216,7 +224,13 @@
           "id": "omp"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "omp",
+      "evidence": [
+        "docs/real-pi-agents.md",
+        "examples/real-pi-agents/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "pi",
@@ -230,7 +244,13 @@
           "id": "pi"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "pi",
+      "evidence": [
+        "docs/real-pi-agents.md",
+        "examples/real-pi-agents/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "copilot",
@@ -284,7 +304,13 @@
           "id": "kimi"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "kimi-code",
+      "evidence": [
+        "docs/real-pi-agents.md",
+        "examples/real-pi-agents/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "grok",
@@ -298,7 +324,13 @@
           "id": "grok"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "grok-build",
+      "evidence": [
+        "docs/real-vendor-agents.md",
+        "examples/real-vendor-agents/verified-evidence.json"
+      ],
+      "note": "Packed-artifact native text and actual file-read workflows verified; no additional lifecycle or orchestrator UI claim."
     },
     {
       "id": "cursor",
@@ -396,7 +428,13 @@
           "id": "fx"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "fx",
+      "evidence": [
+        "docs/real-vendor-agents.md",
+        "examples/real-vendor-agents/verified-evidence.json"
+      ],
+      "note": "Packed-artifact native text and actual file-read workflows verified; no additional lifecycle or orchestrator UI claim."
     },
     {
       "id": "hermes",
@@ -429,7 +467,13 @@
           "id": "muse"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "muse",
+      "evidence": [
+        "docs/real-vendor-agents.md",
+        "examples/real-vendor-agents/verified-evidence.json"
+      ],
+      "note": "Packed-artifact native text and actual file-read workflows verified; no additional lifecycle or orchestrator UI claim."
     },
     {
       "id": "devin",
@@ -443,7 +487,12 @@
           "id": "devin"
         }
       ],
-      "status": "pending"
+      "status": "excluded",
+      "evidence": [
+        "docs/real-vendor-agents.md",
+        "examples/real-vendor-agents/devin-diagnostic.json"
+      ],
+      "note": "No locally injectable model workflow established after actual protobuf bootstrap diagnostic."
     },
     {
       "id": "ufo",
@@ -453,7 +502,12 @@
           "id": "ufo"
         }
       ],
-      "status": "pending"
+      "status": "excluded",
+      "reason": "Actual binary routes conversations to its remote workspace agent service; separate llm command ignores the tested provider base URL override.",
+      "evidence": [
+        "docs/real-source-agents.md",
+        "examples/real-source-agents/boundaries/ufo-evidence.json"
+      ]
     },
     {
       "id": "claude-agent-teams",
@@ -477,7 +531,12 @@
           "id": "codebuddy"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "codebuddy",
+      "evidence": [
+        "docs/real-source-codebuddy-qoder.md",
+        "examples/real-source-agents/codebuddy-qoder/evidence.json"
+      ]
     },
     {
       "id": "openclaude",
@@ -487,7 +546,12 @@
           "id": "openclaude"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "openclaude",
+      "evidence": [
+        "docs/real-source-agents.md",
+        "examples/real-source-agents/openclaude/evidence.json"
+      ]
     },
     {
       "id": "autohand",
@@ -497,7 +561,13 @@
           "id": "autohand"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "autohand",
+      "evidence": [
+        "docs/real-extra-cli.md",
+        "examples/real-extra-cli/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "opencode2",
@@ -527,7 +597,12 @@
           "id": "qoder"
         }
       ],
-      "status": "pending"
+      "status": "excluded",
+      "reason": "The tested CLI requires account-authenticated BYOK selection; isolated local custom models and test PAT probes do not reach the model endpoint.",
+      "evidence": [
+        "docs/real-source-codebuddy-qoder.md",
+        "examples/real-source-agents/codebuddy-qoder/evidence.json"
+      ]
     },
     {
       "id": "aider",
@@ -569,7 +644,13 @@
           "id": "kilo"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "kilocode",
+      "evidence": [
+        "docs/real-extra-cli.md",
+        "examples/real-extra-cli/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "crush",
@@ -637,7 +718,13 @@
           "id": "freebuff"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "freebuff",
+      "evidence": [
+        "docs/real-source-agents.md",
+        "examples/real-source-agents/freebuff/evidence.json"
+      ],
+      "note": "Authentic Freebuff native TUI reads the random fixture through its native read_files tool; distinct from Codebuff."
     },
     {
       "id": "command-code",
@@ -647,7 +734,13 @@
           "id": "command-code"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "command-code",
+      "evidence": [
+        "docs/real-extra-cli.md",
+        "examples/real-extra-cli/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "continue",
@@ -657,7 +750,13 @@
           "id": "continue"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "continue-cli",
+      "evidence": [
+        "docs/real-extra-cli.md",
+        "examples/real-extra-cli/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "qwen",
@@ -714,7 +813,13 @@
           "id": "ante"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "ante",
+      "evidence": [
+        "docs/real-vendor-agents.md",
+        "examples/real-vendor-agents/verified-evidence.json"
+      ],
+      "note": "Packed-artifact native text and actual file-read workflows verified; no additional lifecycle or orchestrator UI claim."
     },
     {
       "id": "trae",
@@ -724,7 +829,12 @@
           "id": "trae"
         }
       ],
-      "status": "pending"
+      "status": "excluded",
+      "evidence": [
+        "docs/real-vendor-agents.md",
+        "examples/real-vendor-agents/distribution-evidence.json"
+      ],
+      "note": "Both official TRAE CN CLI download entry points returned HTTP403; no authentic executable or substitute was tested."
     },
     {
       "id": "zcode",
@@ -734,7 +844,13 @@
           "id": "zcode"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "zcode",
+      "evidence": [
+        "docs/real-pi-agents.md",
+        "examples/real-pi-agents/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "prime-agent",
@@ -744,7 +860,13 @@
           "id": "prime-agent"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "prime-agent",
+      "evidence": [
+        "docs/real-pi-agents.md",
+        "examples/real-pi-agents/evidence.json"
+      ],
+      "note": "Packed-artifact text and actual fixture-read workflows passed; selected streaming and process cancellation cases also verified. Native harness only, not orchestrator UI."
     },
     {
       "id": "dsh",
@@ -764,7 +886,13 @@
           "id": "minimax"
         }
       ],
-      "status": "pending"
+      "status": "verified-new",
+      "recipe": "minimax",
+      "evidence": [
+        "docs/real-vendor-agents.md",
+        "examples/real-vendor-agents/verified-evidence.json"
+      ],
+      "note": "Packed-artifact native text and actual file-read workflows verified; no additional lifecycle or orchestrator UI claim."
     }
   ]
 }

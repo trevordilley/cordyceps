@@ -2,7 +2,7 @@
 
 `src/provider/index.ts` exports `codecIds` and `getCodec(id)`. The IDs are
 `anthropic-messages`, `openai-responses`, `openai-chat-completions`, and
-`google-genai`, `amazon-q`, `augment`, `atlassian-rovo`, and `amp-service`; unknown IDs throw. Their shared
+`google-genai`, `amazon-q`, `augment`, `atlassian-rovo`, `amp-service`, `hermes`, `muse-code`, and `grok-build`; unknown IDs throw. Their shared
 interfaces live in `src/provider/types.ts`.
 Both the ID list and codec singleton objects are frozen, so callers cannot
 replace codec methods globally and affect another session.
@@ -17,10 +17,11 @@ results, launch harnesses, infer ACP identities, or contact a live provider.
 | Codec | Matched POST path | Offered tools | Incoming results |
 | --- | --- | --- | --- |
 | `anthropic-messages` | `/v1/messages` | Named client tools with `input_schema` | `tool_result` content blocks, keyed by `tool_use_id` |
-| `openai-responses` | `/v1/responses` | `function` tools with `parameters` | `function_call_output` input items, keyed by `call_id` |
+| `openai-responses` | `/v1/responses` | `function` tools with `parameters`, including namespaced groups | `function_call_output` input items, keyed by `call_id` |
 | `openai-chat-completions` | `/v1/chat/completions` | Nested `function` definitions | `role: tool` messages, keyed by `tool_call_id` |
 | `amazon-q` | `/` with an explicitly supported `X-Amz-Target` | Native `toolSpecification` | `toolResults`, keyed by `toolUseId` |
 | `augment` | `/chat-stream` | Native tool schemas | Type-1 tool-result nodes |
+| `hermes` | `/v1/chat/completions`; explicit metadata probes below | Chat Completions functions | Chat Completions tool results |
 | `google-genai` | `/v1beta/models/<model>:generateContent` or `:streamGenerateContent` (also `/v1`) | `functionDeclarations` | `functionResponse` parts |
 
 Query strings are accepted. Prefix paths, trailing slashes, other endpoints,
@@ -238,3 +239,22 @@ object text or a scripted HTTP error. The [real consumer](real-local-agents.md)
 answers the probes with 404s, scripts title generation separately, and verifies
 native file reading and incremental output. Unsupported requests still fail;
 the library never contacts or discovers an upstream model server.
+
+
+## Grok Build and Muse Code
+
+`grok-build` delegates model traffic to Chat Completions and recognizes only
+`GET /` as an additional origin prewarm. The consumer must explicitly script
+`{ health: true }` or an error. `muse-code` delegates generation to Responses and
+recognizes `GET /muse-code/models`; the consumer supplies its exact model catalog
+as JSON-object text or an error. Neither codec supplies automatic startup data.
+See the [real vendor consumers](real-vendor-agents.md) for actual requests and
+native file-read results.
+
+Responses preserves an optional `namespace` on normalized tool definitions and
+scripted tool calls. Functions with identical names in different namespaces
+remain distinct. For example, `{ toolCall: { id: 'read', name: 'read_file',
+namespace: 'muse', input: { path: fixturePath } } }` retains the namespace in
+streaming and nonstreaming function-call output items. Other generation codecs
+reject namespaced calls instead of silently dropping the namespace. The field
+does not cause the library to execute a tool or choose a namespace itself.

@@ -35,7 +35,14 @@
     "docs/real-gated-agents.md",
     "docs/real-plandex.md",
     "docs/real-auggie.md",
-    "docs/real-q.md"
+    "docs/real-q.md",
+    "docs/orchestrator-agents.md",
+    "docs/real-local-agents.md",
+    "docs/real-pi-agents.md",
+    "docs/real-extra-cli.md",
+    "docs/real-source-agents.md",
+    "docs/real-source-codebuddy-qoder.md",
+    "docs/real-vendor-agents.md"
   ],
   "scripts": {
     "check": "tsc --noEmit",
@@ -55,7 +62,12 @@
     "test:real-auggie": "node examples/real-auggie/verify.mjs",
     "test:real-plandex": "node examples/real-plandex/run.mjs",
     "test:real-rovo": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-rovo.json --rovo",
-    "test:real-amp": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-amp.json --amp"
+    "test:real-amp": "node examples/real-gated-agents/run.mjs /tmp/cordyceps-amp.json --amp",
+    "test:real-local": "node examples/real-local-agents/run.mjs",
+    "test:real-pi": "node examples/real-pi-agents/run.mjs",
+    "test:real-extra": "node examples/real-extra-cli/run.mjs",
+    "test:real-vendors": "node examples/real-vendor-agents/run.mjs",
+    "test:real-freebuff": "node examples/real-source-agents/freebuff/run.mjs"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.50.0 <2"

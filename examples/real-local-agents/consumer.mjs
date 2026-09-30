@@ -93,7 +93,7 @@ for (const harness of names) {
         else throw new Error(`No supported read tool: ${names.join(', ')}`);
         issued = true; record.scriptedCall = call; return route.fulfill({ toolCall: call });
       });
-      const args = harness === 'openclaw' ? [...ai.args, '--state-dir', stateDir, '--cwd', work] : [...ai.args];
+      const args = harness === 'openclaw' ? [...ai.args, '--state-dir', stateDir, '--cwd', work] : [...ai.args, '--yolo', '--toolsets', 'file', '--format', 'stream-json'];
       record.args = args; record.prompt = prompt; ai.recordInput(prompt);
       record.process = await launch(binaries[harness], args, work, env, writable, scenario === 'cancel' ? held : undefined, onOutput, lockFiles);
       if (scenario === 'cancel') {

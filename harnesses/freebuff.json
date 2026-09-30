@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "freebuff",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": {
+        "CORDYCEPS_FREEBUFF_TEST_KEY": "${mock.apiKey}",
+        "FREEBUFF_CONFIG_DIR": "${session.dir}/freebuff",
+        "FREEBUFF_BYOK_CONFIG_DIR": "${session.dir}/byok"
+      },
+      "configFiles": [
+        {
+          "id": "settings",
+          "path": "freebuff/settings.json",
+          "format": "json",
+          "values": {
+            "mode": "LITE",
+            "adsEnabled": false,
+            "byokConnection": {
+              "id": "01234567-89ab-4cde-8123-456789abcdef",
+              "revision": 1,
+              "provider": "openai-compatible",
+              "model": "cordyceps-model"
+            }
+          }
+        },
+        {
+          "id": "connections",
+          "path": "byok/connections.json",
+          "format": "json",
+          "values": [
+            {
+              "id": "01234567-89ab-4cde-8123-456789abcdef",
+              "revision": 1,
+              "name": "Cordyceps",
+              "provider": "openai-compatible",
+              "model": "cordyceps-model",
+              "baseUrl": "${mock.baseUrl}/v1",
+              "contextWindow": 128000,
+              "maxOutputTokens": 4096,
+              "credentialRef": "env:CORDYCEPS_FREEBUFF_TEST_KEY",
+              "createdAt": "2026-09-29T00:00:00.000Z",
+              "updatedAt": "2026-09-29T00:00:00.000Z"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "modes": {
+    "interactive": {
+      "args": []
+    }
+  }
+}

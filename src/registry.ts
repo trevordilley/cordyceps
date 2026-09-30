@@ -29,7 +29,7 @@ export function createRegistry({ builtins = true }: { builtins?: boolean } = {})
     },
     list() { return [...definitions.values()].map(value => structuredClone(value)); },
   };
-  if (builtins) for (const name of ['claude-code', 'codex', 'claude-code-acp', 'aider', 'cline', 'copilot', 'goose', 'droid', 'opencode', 'crush', 'gemini', 'qwen', 'mistral-vibe', 'antigravity', 'amazon-q', 'auggie', 'rovo-dev', 'amp']) {
+  if (builtins) for (const name of ['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'claude-code', 'claude-code-acp', 'cline', 'codebuddy', 'codex', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'pi', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']) {
     const url = new URL(`../harnesses/${name}.json`, import.meta.url);
     registry.register(decodeJson(readFileSync(url, 'utf8'), url.pathname));
   }
