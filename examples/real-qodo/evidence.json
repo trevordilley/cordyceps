@@ -1,0 +1,295 @@
+{
+  "node": "v22.22.3",
+  "date": "2026-09-30T03:58:25.543Z",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-qodo-package-hCRsTt/consumer/node_modules/cordyceps/dist/index.js",
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-PQUmwyUqk52qpD3TX3Yb8CvtXudjMxWWO4kN18MQmzlq3DwwRDle6FBBWf+z4RB30NYrn+h0XA3UecMrfSE7Ow==",
+    "shasum": "8ab22e42e2803bb74457ddf36ec9e653d25b0d76"
+  },
+  "qodo": {
+    "binary": "/Users/20idemo/.bun/bin/qodo",
+    "packageRoot": "/Users/20idemo/.bun/install/global/node_modules/@qodo/command",
+    "version": "0.36.0",
+    "source": [
+      {
+        "path": "package.json",
+        "bytes": 4520,
+        "sha256": "3e8c7f3eea0fde636c99afa6cd9bbd2f8ad2fe91c6fb5cdb3c3b8c04d4308a59"
+      },
+      {
+        "path": "bin/qodo.js",
+        "bytes": 1216,
+        "sha256": "0853ec4dd1315e8cdd38707c0e65a091e6a1c820f2cd591291cabf7473daf633"
+      },
+      {
+        "path": "dist/cli.js",
+        "bytes": 34947271,
+        "sha256": "30a4e644d2433ece1d31a0c4a652fe4af2cf7e52592e2875912fdb8d45367d04"
+      },
+      {
+        "path": "dist/api/agent.js",
+        "bytes": 44366,
+        "sha256": "ef13df7acea0d13240939a57224c19f07d04d9e9d72f86ec8ef757bcd397e38c"
+      },
+      {
+        "path": "dist/api/websocketClient.js",
+        "bytes": 30318,
+        "sha256": "eeaf99450ac569d9a5c9052edd6af82c34b64a8b50b6dfdfd9580c437db312fe"
+      },
+      {
+        "path": "dist/utils/serverData.js",
+        "bytes": 6832,
+        "sha256": "d07cb74a1523ab329643776a28e22847a9d792c5f0ede9a159fbaa6963980847"
+      },
+      {
+        "path": "dist/sdk/inprocess/QodoClient.js",
+        "bytes": 33020,
+        "sha256": "3d3a27dac30fd8c40d00973102f3ed64935b34ca15febf6aff18e8b941b34599"
+      },
+      {
+        "path": "dist/sdk/inprocess/QodoClient.d.ts",
+        "bytes": 2215,
+        "sha256": "8d677c3c8f4da77bc61eb13ef274c2ebedfdf80b2b75556cb1718f978fd96a53"
+      },
+      {
+        "path": "dist/sdk/core/messageMappings.js",
+        "bytes": 3796,
+        "sha256": "952621783ecabf472bcc428a393a18a9f1c58fa76cc2fd187bc29211f0f9d29f"
+      }
+    ]
+  },
+  "passed": false,
+  "classification": "remote-agent-service-model-boundary-unavailable",
+  "cases": [
+    {
+      "builtin": false,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/v2/info/get-things",
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/v1/analytics/track",
+          "body": "{\"user_data\":{\"extension_version\":\"0.36.0\",\"os_platform\":\"darwin\",\"os_version\":\"v22.22.3\",\"editor_type\":\"cli\"},\"event\":\"Action\",\"schema_version\":\"1.0.1\",\"properties\":{\"product\":\"qodo_command\",\"operation\":\"start_task\",\"request_id\":\"9807040d-6aa1-40fc-8d03-746cbc707af4\",\"time\":1790740709,\"chat_message\":{\"chat_id\":\"8e573693-fc54-48c2-a025-cec8aaf2432a\",\"execution_mode\":\"cmdline\",\"interface\":\"ci\"},\"qodo_gen\":{\"cli_version\":\"0.36.0\",\"os_platform\":\"darwin\",\"os_version\":\"24.6.0\",\"source\":\"cli\"},\"service\":{\"base_url\":\"http://127.0.0.1:56630\"},\"custom_model\":\"cordyceps-diagnostic-model\"}}"
+        }
+      ],
+      "websocket": [
+        {
+          "event": "connected",
+          "path": "/v2/agentic/ws/connect?session_id=8e573693-fc54-48c2-a025-cec8aaf2432a&request_id=9807040d-6aa1-40fc-8d03-746cbc707af4"
+        },
+        {
+          "event": "message",
+          "raw": "UserQuery {\"agent_type\":\"cli\",\"session_id\":\"8e573693-fc54-48c2-a025-cec8aaf2432a\",\"user_data\":{\"extension_version\":\"0.36.0\",\"os_platform\":\"darwin\",\"os_version\":\"v22.22.3\",\"editor_type\":\"cli\"},\"tools\":{},\"permissions\":\"rwx\",\"projects_root_path\":[\"/private/tmp/cg-K5NSiT/work\"],\"cwd\":\"/private/tmp/cg-K5NSiT/work\",\"user_request\":\"cordyceps-qodo-boundary: Read /private/tmp/cg-K5NSiT/work/fixture.txt and report its content.\",\"ci_mode\":true,\"execution_strategy\":\"act\",\"custom_model\":\"cordyceps-diagnostic-model\"}\n"
+        },
+        {
+          "event": "closed",
+          "code": 1006,
+          "reason": ""
+        }
+      ],
+      "sent": [
+        {
+          "transport": "http",
+          "path": "/v2/info/get-things",
+          "body": {
+            "session-id": "8e573693-fc54-48c2-a025-cec8aaf2432a",
+            "default_model": "cordyceps-diagnostic-model",
+            "models": [
+              {
+                "model_name": "cordyceps-diagnostic-model"
+              }
+            ],
+            "mcp-tools": {}
+          }
+        },
+        {
+          "transport": "websocket",
+          "body": {
+            "session_id": "8e573693-fc54-48c2-a025-cec8aaf2432a",
+            "data": {
+              "tool": "Ready",
+              "tool_args": {}
+            }
+          }
+        }
+      ],
+      "modelRequests": [],
+      "passed": false,
+      "prompt": "cordyceps-qodo-boundary: Read /private/tmp/cg-K5NSiT/work/fixture.txt and report its content.",
+      "fixtureToken": "3232e734-f980-404b-817d-a8f31d9bda61",
+      "injection": {
+        "QODO_BASE_URL": "http://127.0.0.1:56630",
+        "QODO_API_BASE_URL": "http://127.0.0.1:56630",
+        "QODO_API_KEY": "cordyceps-test-no-provider-credential",
+        "OPENAI_BASE_URL": "http://127.0.0.1:56629/v1",
+        "OPENAI_API_KEY": "cordyceps-test-no-provider-credential",
+        "ANTHROPIC_BASE_URL": "http://127.0.0.1:56629",
+        "ANTHROPIC_API_KEY": "cordyceps-test-no-provider-credential"
+      },
+      "version": {
+        "binary": "/Users/20idemo/.bun/bin/qodo",
+        "args": [
+          "--version"
+        ],
+        "code": 1,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "Qodo Command version information:\n  Client: 0.36.0 (@qodo/command)\n",
+        "stderr": "Qodo API key not found. Please log in first using 'qodo login' or set the QODO_API_KEY environment variable\n"
+      },
+      "help": {
+        "binary": "/Users/20idemo/.bun/bin/qodo",
+        "args": [
+          "--help"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "\n  Usage\n    $ qodo [options] <prompt>\n    $ qodo run <command> [extra instructions]\n\n  Commands\n    run <command>          Execute a specific agent command with optional extra instructions\n    login                  Log in to Qodo\n    models                 Get available models\n    chat                   Start an interactive chat session\n    key list               List all API keys\n    key create <name>      Create a new API key with the given name\n    key revoke <name>      Revoke an API key by name\n    list-agents            List available agents from configuration (interactive in CLI mode)\n    list-mcp               List available local and remote tools\n    self-review            Analyze git changes and group them into logical change groups (opens web interface)\n    update                 Manage auto-updates (--check, --install, --configure)\n    config                 Open interactive settings (theme, diff display)\n    -h, --help             Show help and exit\n    chain \"A > B > C\"     Run multiple agents sequentially (quote the chain!)\n    chain \"A | B | C\"     Pipe structured output from A to B to C as arguments\n    -v, --version          Show version and exit\n    -l, --log=path         Redirect console output to a file | stdout | stderr\n    -y, --yes              Confirm all prompts automatically (useful for CI)\n    -q, --silent           Suppress all console output except the final result (logs go to /dev/null)\n    -d, --debug            Enable debug mode with verbose logging and no data truncation\n    --dir=path         Specify project root directories (can be used multiple times)\n    --ci                   Run commands in CI mode\n    --mcp                  Run commands as tools from agent config in MCP server-like mode\n    --ui                   Open Qodo with web interface\n    --webhook              Run commands as tools from agent config in webhook mode\n    --slack                Run as Slack bot (HTTP webhook mode by default)\n    -p, --port=number      Specify custom port for server modes (webhook, slack, mcp, ui)\n    --plan                 Use planning execution strategy (agent plans before acting)\n    --act                  Use direct execution strategy (agent acts immediately)\n    -m, --model=model_name Specify a custom model to use\n    --agent-file=path      Specify a custom path to agent configuration file\n    --mcp-file=path        Specify a custom path to mcp.json\n    -r, --resume=session_id Resume a task with the given session ID\n    --set key=value        Set custom key-value pairs (can be used multiple times)\n    --no-builtin           Disable built-in MCP servers (ripgrep, filesystem, git)\n    -t, --tools=list       Specify authorized tools (comma-separated, e.g., shell,git,filesystem)\n                           Note: Some tools have dependencies (e.g., qodo_merge requires git)\n    --tool <name>          Specify authorized tool (can be used multiple times, e.g., --tool shell --tool git --tool filesystem)\n    --permissions=level    Set permissions level (r=read, rw=read+write, rwx=full, -=none)\n    --with=session_id       Preload context with a previous session summarization (used before task/hotstart)\n    --sandbox=mode         Run shell commands in sandbox (macOS only) [off|permissive|restrictive|path/to/profile.sb] (default: off)\n\n  Theme\n    theme                  Show current theme and usage\n    theme --set light      Set theme to light mode\n    theme --set dark       Set theme to dark mode\n\n  Examples\n    $ qodo chain \"improve > review > open-pr\"\n    $ qodo chain \"plan | implement | test\"          # Pipe structured output into args\n    $ qodo chain \"improve > review > open-pr\"\n    $ qodo \"Review my latest changes and suggest improvements\"\n    $ qodo run review\n    $ qodo run review \"focus on security issues\"\n    $ qodo review --set coverage_score_threshold=0.8\n    $ qodo self-review\n    $ qodo \"Analyze code\" --dir /path/to/project1 --dir /path/to/project2 --permissions=r\n    $ qodo chat\n    $ qodo key list\n    $ qodo key create my-ci-key\n    $ qodo key revoke my-old-key\n    $ qodo list-agents\n    $ qodo list-mcp\n    $ qodo --ui\n    $ qodo --tools=shell,filesystem \"analyze this codebase\"\n    $ qodo --sandbox=./custom-profile.sb \"run a shell command with custom sandbox\"\n\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/Users/20idemo/.bun/bin/qodo",
+        "args": [
+          "--ci",
+          "--yes",
+          "--model",
+          "cordyceps-diagnostic-model",
+          "--no-builtin",
+          "cordyceps-qodo-boundary: Read /private/tmp/cg-K5NSiT/work/fixture.txt and report its content."
+        ],
+        "code": null,
+        "signal": "SIGKILL",
+        "timedOut": false,
+        "stdout": "Initializing Qodo Agent...\nReading agent protocol...\nInitializing MCP Servers...\nBuilt-in MCP servers disabled via --no-builtin flag\n\u001b[2J\u001b[H\n\n\n\n Welcome to Qodo Command (Beta)                                               \n Session ID: 8e573693-fc54-48c2-a025-cec8aaf2432a                             \n Using custom endpoint: http://127.0.0.1:56630                                \n Base URL: http://127.0.0.1:56630                                             \n Model: cordyceps-diagnostic-model                                            \n\n> cordyceps-qodo-boundary: Read /private/tmp/cg-K5NSiT/work/fixture.txt and report its content.\n",
+        "stderr": "No agent configuration file (agent.toml, agent.yaml, or agent.yml) found in the current directory or any parent directory.\nAGENTS.md file not found in the current folder, consider running 'qodo init'.\nAuto-approve mode is enabled. All tools will be automatically approved.\n"
+      },
+      "providerFailures": [],
+      "boundaryDiagnosticPassed": true,
+      "processCancellation": "native WebSocket disconnected after process-group kill",
+      "incrementalOutputOutcome": "not exercised: no model boundary available; no agent decisions scripted",
+      "toolOutcome": "not exercised: no model boundary available; no agent decisions scripted",
+      "textOutcome": "not exercised: no model boundary available; no agent decisions scripted",
+      "cleanedUp": true
+    },
+    {
+      "builtin": true,
+      "http": [
+        {
+          "method": "GET",
+          "path": "/v2/info/get-things",
+          "body": ""
+        },
+        {
+          "method": "POST",
+          "path": "/v1/analytics/track",
+          "body": "{\"user_data\":{\"extension_version\":\"0.36.0\",\"os_platform\":\"darwin\",\"os_version\":\"v22.22.3\",\"editor_type\":\"cli\"},\"event\":\"Action\",\"schema_version\":\"1.0.1\",\"properties\":{\"product\":\"qodo_command\",\"operation\":\"start_task\",\"request_id\":\"f7252686-208b-4bbc-b571-ca244e5001a2\",\"time\":1790740713,\"chat_message\":{\"chat_id\":\"92b3d4de-6b0a-4f3f-afa9-a1449dd95bde\",\"execution_mode\":\"cmdline\",\"interface\":\"ci\"},\"qodo_gen\":{\"cli_version\":\"0.36.0\",\"os_platform\":\"darwin\",\"os_version\":\"24.6.0\",\"source\":\"cli\"},\"service\":{\"base_url\":\"http://127.0.0.1:56645\"},\"custom_model\":\"cordyceps-diagnostic-model\"}}"
+        }
+      ],
+      "websocket": [
+        {
+          "event": "connected",
+          "path": "/v2/agentic/ws/connect?session_id=92b3d4de-6b0a-4f3f-afa9-a1449dd95bde&request_id=f7252686-208b-4bbc-b571-ca244e5001a2"
+        },
+        {
+          "event": "message",
+          "raw": "UserQuery {\"agent_type\":\"cli\",\"session_id\":\"92b3d4de-6b0a-4f3f-afa9-a1449dd95bde\",\"user_data\":{\"extension_version\":\"0.36.0\",\"os_platform\":\"darwin\",\"os_version\":\"v22.22.3\",\"editor_type\":\"cli\"},\"tools\":{\"filesystem\":[{\"name\":\"read_files\",\"description\":\"Read the contents of one or more files, optionally selecting line ranges per file (range, head, tail). Returns the content of each file along with its path. If reading multiple files, failed reads for individual files won't stop the operation - you'll get results for the files that could be read successfully.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"paths\":{\"type\":\"array\",\"items\":{\"oneOf\":[{\"type\":\"string\"},{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"},\"startLine\":{\"type\":\"number\",\"description\":\"1-based inclusive start line for range selection\"},\"endLine\":{\"type\":\"number\",\"description\":\"1-based inclusive end line for range selection\"},\"head\":{\"type\":\"number\",\"description\":\"Number of lines from the beginning of the file\"},\"tail\":{\"type\":\"number\",\"description\":\"Number of lines from the end of the file\"}},\"required\":[\"path\"],\"additionalProperties\":false}]},\"description\":\"Array of file specs to read. Each item can be either a string path or an object with { path, startLine?, endLine?, head?, tail? } to select specific lines. Examples: ['src/index.ts', { path: 'README.md', head: 50 }, { path: 'logs/app.log', tail: 100 }, { path: 'src/app.ts', startLine: 120, endLine: 200 }]. Each item can have different ranges.\"}},\"required\":[\"paths\"]},\"autoApproved\":false},{\"name\":\"write_file\",\"description\":\"Create a new file or completely overwrite an existing file with new content. Use with caution as it will overwrite existing files without warning. Handles text content with proper encoding.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\",\"description\":\"Path where to create/write the file. Examples: 'src/components/Button.tsx', 'docs/README.md', 'config/settings.json', 'scripts/build.sh'\"},\"content\":{\"type\":\"string\",\"description\":\"Content to write to the file. Examples: TypeScript component code, markdown documentation, JSON configuration, shell script commands\"}},\"required\":[\"path\",\"content\"]},\"autoApproved\":false},{\"name\":\"edit_file\",\"description\":\"Make precise line-based edits to a text file by replacing exact text matches. Each edit operation finds and replaces specific text sequences. Returns a git-style diff showing the changes made. Use this for targeted modifications rather than rewriting entire files.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\",\"description\":\"Path to the file to edit. Examples: 'src/index.ts', 'package.json', 'README.md', 'config/app.json'\"},\"edits\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"oldText\":{\"type\":\"string\",\"description\":\"Exact text to search for and replace - must match exactly including whitespace and line breaks. Examples: 'console.log(\\\"Hello World\\\");', 'const version = \\\"1.0.0\\\";', '# Old Title'\"},\"newText\":{\"type\":\"string\",\"description\":\"Text to replace the oldText with. Examples: 'console.log(\\\"Hello Universe!\\\");', 'const version = \\\"1.1.0\\\";', '# New Improved Title'\"}},\"required\":[\"oldText\",\"newText\"]},\"description\":\"Array of edit operations to perform. Each operation replaces oldText with newText. Multiple edits are applied in sequence. Examples: [{'oldText': 'const port = 3000;', 'newText': 'const port = process.env.PORT || 3000;'}] for single edit, [{'oldText': 'import React from \\\\'react\\\\';', 'newText': 'import React, { useState } from \\\\'react\\\\';'}, {'oldText': 'function App() {', 'newText': 'function App() {\\\\n  const [count, setCount] = useState(0);'}] for multiple edits\"}},\"required\":[\"path\",\"edits\"]},\"autoApproved\":false},{\"name\":\"create_directory\",\"description\":\"Create a new directory or ensure a directory exists. Can create multiple nested directories in one operation. If the directory already exists, this operation will succeed silently. Perfect for setting up directory structures for projects or ensuring required paths exist.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\",\"description\":\"Path of the directory to create. Can be nested paths that will be created recursively. Examples: 'src/components', 'docs/api', 'tests/unit/helpers', 'build/assets/images'\"}},\"required\":[\"path\"]},\"autoApproved\":false},{\"name\":\"list_files_in_directories\",\"description\":\"List files and immediate subdirectories in one or more directories (non-recursive). Returns the direct children of each specified path, with each directory's contents clearly labeled and files/directories distinguished with [FILE] and [DIR] prefixes. If listing multiple directories, failed reads for individual directories won't stop the operation - you'll get results for the directories that could be read successfully. Typically, you should call directory_tree with a shallow depth before using this tool to get an overview of the directory layout.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"paths\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"description\":\"Array of directory paths to list. Examples: ['.', 'src'] for current and src directories, ['src/components', 'src/utils'] for multiple source folders, ['docs'] for single directory, ['config', 'scripts', 'tests'] for project organization folders\"}},\"required\":[\"paths\"]},\"autoApproved\":true},{\"name\":\"directory_tree\",\"description\":\"Get a recursive tree view of the folder structure only (directories, not files) as a JSON structure. Traversal is intentionally shallow and capped for performance on large repositories. Each directory entry includes 'name', 'type' (always 'directory'), and 'children' array containing subdirectories. The root object also includes a 'meta' field with truncation details (e.g. maxDepth, maxDirectories, excluded, truncated). Use this to understand the high-level directory hierarchy without file clutter.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\",\"description\":\"Path of the directory to traverse recursively for folder structure. Examples: '.' for current directory structure, 'src' for source folder hierarchy, 'docs' for documentation folders, 'tests' for test directory structure\"},\"maxDepth\":{\"type\":\"number\",\"description\":\"Maximum directory depth to traverse (1 = only this directory). Defaults to 3 if not provided.\"},\"maxDirectories\":{\"type\":\"number\",\"description\":\"Global cap on the total number of directories to include in the tree. Defaults to 2000 if not provided.\"},\"exclude\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"description\":\"Directory names or simple glob-like patterns to skip (e.g. 'node_modules', '.git'). Defaults to a built-in list of common build/output directories if not provided.\"}},\"required\":[\"path\"]},\"autoApproved\":true},{\"name\":\"move_file\",\"description\":\"Move or rename files and directories. Can move files between directories and rename them in a single operation. If the destination exists, the operation will fail. Works across different directories and can be used for simple renaming within the same directory. Use this to reorganize project structure or rename files.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"source\":{\"type\":\"string\",\"description\":\"Source path of the file or directory to move/rename. Examples: 'src/oldComponent.tsx', 'docs/old-readme.md', 'temp/data.json', 'src/utils' (directory)\"},\"destination\":{\"type\":\"string\",\"description\":\"Destination path where the file/directory should be moved or renamed to. Examples: 'src/components/NewComponent.tsx', 'docs/README.md', 'data/processed/data.json', 'src/shared/utils'\"}},\"required\":[\"source\",\"destination\"]},\"autoApproved\":false},{\"name\":\"get_file_info\",\"description\":\"Retrieve detailed metadata about a file or directory. Returns comprehensive information including size, creation time, last modified time, permissions, and type. This tool is perfect for understanding file characteristics without reading the actual content. Use this to check file properties, sizes, or modification dates.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\",\"description\":\"Path to the file or directory to get information about. Examples: 'package.json', 'src/index.ts', 'docs' (directory), 'build/output.js', 'README.md'\"}},\"required\":[\"path\"]},\"autoApproved\":true},{\"name\":\"list_allowed_directories\",\"description\":\"Get the list of directories that the filesystem server is allowed to access. Use this tool to understand which directories are available for file operations before attempting to access files or directories. This helps you understand the scope of filesystem access and avoid permission errors.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{},\"required\":[]},\"autoApproved\":true},{\"name\":\"delete_files\",\"description\":\"Delete files and/or directories simultaneously. Use with caution as this operation cannot be undone. For directories, this will recursively delete all contents. Failed deletions for individual files won't stop the entire operation - you'll get a report of what was successfully deleted and what failed.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"paths\":{\"type\":\"array\",\"items\":{\"type\":\"string\"},\"description\":\"Array of file and directory paths to delete. Examples: ['temp/cache.json'] for single file, ['build', 'dist', 'node_modules/.cache'] for multiple directories, ['src/deprecated.ts', 'docs/old-guide.md'] for multiple files, ['logs/debug.log', 'logs/error.log'] for log files. Array examples: ['temp/cache.json'], ['build', 'dist'], ['src/deprecated.ts', 'docs/old-guide.md', 'temp/old-data.json']\"}},\"required\":[\"paths\"]},\"autoApproved\":false}]},\"permissions\":\"rwx\",\"projects_root_path\":[\"/private/tmp/cg-W4BPIl/work\"],\"cwd\":\"/private/tmp/cg-W4BPIl/work\",\"user_request\":\"cordyceps-qodo-boundary: Read /private/tmp/cg-W4BPIl/work/fixture.txt and report its content.\",\"ci_mode\":true,\"execution_strategy\":\"act\",\"custom_model\":\"cordyceps-diagnostic-model\"}\n"
+        },
+        {
+          "event": "closed",
+          "code": 1006,
+          "reason": ""
+        }
+      ],
+      "sent": [
+        {
+          "transport": "http",
+          "path": "/v2/info/get-things",
+          "body": {
+            "session-id": "92b3d4de-6b0a-4f3f-afa9-a1449dd95bde",
+            "default_model": "cordyceps-diagnostic-model",
+            "models": [
+              {
+                "model_name": "cordyceps-diagnostic-model"
+              }
+            ],
+            "mcp-tools": {}
+          }
+        },
+        {
+          "transport": "websocket",
+          "body": {
+            "session_id": "92b3d4de-6b0a-4f3f-afa9-a1449dd95bde",
+            "data": {
+              "tool": "Ready",
+              "tool_args": {}
+            }
+          }
+        }
+      ],
+      "modelRequests": [],
+      "passed": false,
+      "prompt": "cordyceps-qodo-boundary: Read /private/tmp/cg-W4BPIl/work/fixture.txt and report its content.",
+      "fixtureToken": "fe93378d-f05c-4ab7-a90a-56f1ef24118c",
+      "injection": {
+        "QODO_BASE_URL": "http://127.0.0.1:56645",
+        "QODO_API_BASE_URL": "http://127.0.0.1:56645",
+        "QODO_API_KEY": "cordyceps-test-no-provider-credential",
+        "OPENAI_BASE_URL": "http://127.0.0.1:56644/v1",
+        "OPENAI_API_KEY": "cordyceps-test-no-provider-credential",
+        "ANTHROPIC_BASE_URL": "http://127.0.0.1:56644",
+        "ANTHROPIC_API_KEY": "cordyceps-test-no-provider-credential"
+      },
+      "version": {
+        "binary": "/Users/20idemo/.bun/bin/qodo",
+        "args": [
+          "--version"
+        ],
+        "code": 1,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "Qodo Command version information:\n  Client: 0.36.0 (@qodo/command)\n",
+        "stderr": "Qodo API key not found. Please log in first using 'qodo login' or set the QODO_API_KEY environment variable\n"
+      },
+      "help": {
+        "binary": "/Users/20idemo/.bun/bin/qodo",
+        "args": [
+          "--help"
+        ],
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "stdout": "\n  Usage\n    $ qodo [options] <prompt>\n    $ qodo run <command> [extra instructions]\n\n  Commands\n    run <command>          Execute a specific agent command with optional extra instructions\n    login                  Log in to Qodo\n    models                 Get available models\n    chat                   Start an interactive chat session\n    key list               List all API keys\n    key create <name>      Create a new API key with the given name\n    key revoke <name>      Revoke an API key by name\n    list-agents            List available agents from configuration (interactive in CLI mode)\n    list-mcp               List available local and remote tools\n    self-review            Analyze git changes and group them into logical change groups (opens web interface)\n    update                 Manage auto-updates (--check, --install, --configure)\n    config                 Open interactive settings (theme, diff display)\n    -h, --help             Show help and exit\n    chain \"A > B > C\"     Run multiple agents sequentially (quote the chain!)\n    chain \"A | B | C\"     Pipe structured output from A to B to C as arguments\n    -v, --version          Show version and exit\n    -l, --log=path         Redirect console output to a file | stdout | stderr\n    -y, --yes              Confirm all prompts automatically (useful for CI)\n    -q, --silent           Suppress all console output except the final result (logs go to /dev/null)\n    -d, --debug            Enable debug mode with verbose logging and no data truncation\n    --dir=path         Specify project root directories (can be used multiple times)\n    --ci                   Run commands in CI mode\n    --mcp                  Run commands as tools from agent config in MCP server-like mode\n    --ui                   Open Qodo with web interface\n    --webhook              Run commands as tools from agent config in webhook mode\n    --slack                Run as Slack bot (HTTP webhook mode by default)\n    -p, --port=number      Specify custom port for server modes (webhook, slack, mcp, ui)\n    --plan                 Use planning execution strategy (agent plans before acting)\n    --act                  Use direct execution strategy (agent acts immediately)\n    -m, --model=model_name Specify a custom model to use\n    --agent-file=path      Specify a custom path to agent configuration file\n    --mcp-file=path        Specify a custom path to mcp.json\n    -r, --resume=session_id Resume a task with the given session ID\n    --set key=value        Set custom key-value pairs (can be used multiple times)\n    --no-builtin           Disable built-in MCP servers (ripgrep, filesystem, git)\n    -t, --tools=list       Specify authorized tools (comma-separated, e.g., shell,git,filesystem)\n                           Note: Some tools have dependencies (e.g., qodo_merge requires git)\n    --tool <name>          Specify authorized tool (can be used multiple times, e.g., --tool shell --tool git --tool filesystem)\n    --permissions=level    Set permissions level (r=read, rw=read+write, rwx=full, -=none)\n    --with=session_id       Preload context with a previous session summarization (used before task/hotstart)\n    --sandbox=mode         Run shell commands in sandbox (macOS only) [off|permissive|restrictive|path/to/profile.sb] (default: off)\n\n  Theme\n    theme                  Show current theme and usage\n    theme --set light      Set theme to light mode\n    theme --set dark       Set theme to dark mode\n\n  Examples\n    $ qodo chain \"improve > review > open-pr\"\n    $ qodo chain \"plan | implement | test\"          # Pipe structured output into args\n    $ qodo chain \"improve > review > open-pr\"\n    $ qodo \"Review my latest changes and suggest improvements\"\n    $ qodo run review\n    $ qodo run review \"focus on security issues\"\n    $ qodo review --set coverage_score_threshold=0.8\n    $ qodo self-review\n    $ qodo \"Analyze code\" --dir /path/to/project1 --dir /path/to/project2 --permissions=r\n    $ qodo chat\n    $ qodo key list\n    $ qodo key create my-ci-key\n    $ qodo key revoke my-old-key\n    $ qodo list-agents\n    $ qodo list-mcp\n    $ qodo --ui\n    $ qodo --tools=shell,filesystem \"analyze this codebase\"\n    $ qodo --sandbox=./custom-profile.sb \"run a shell command with custom sandbox\"\n\n",
+        "stderr": ""
+      },
+      "process": {
+        "binary": "/Users/20idemo/.bun/bin/qodo",
+        "args": [
+          "--ci",
+          "--yes",
+          "--model",
+          "cordyceps-diagnostic-model",
+          "--tools",
+          "filesystem",
+          "cordyceps-qodo-boundary: Read /private/tmp/cg-W4BPIl/work/fixture.txt and report its content."
+        ],
+        "code": null,
+        "signal": "SIGKILL",
+        "timedOut": false,
+        "stdout": "Initializing Qodo Agent...\nReading agent protocol...\nInitializing MCP Servers...\nSuccessfully initialized 1 MCP Servers: [filesystem]\n\u001b[2J\u001b[H\n\n\n\n Welcome to Qodo Command (Beta)                                               \n Session ID: 92b3d4de-6b0a-4f3f-afa9-a1449dd95bde                             \n Using custom endpoint: http://127.0.0.1:56645                                \n Base URL: http://127.0.0.1:56645                                             \n Model: cordyceps-diagnostic-model                                            \n\n> cordyceps-qodo-boundary: Read /private/tmp/cg-W4BPIl/work/fixture.txt and report its content.\n",
+        "stderr": "No agent configuration file (agent.toml, agent.yaml, or agent.yml) found in the current directory or any parent directory.\nAGENTS.md file not found in the current folder, consider running 'qodo init'.\nAuto-approve mode is enabled. All tools will be automatically approved.\n"
+      },
+      "providerFailures": [],
+      "boundaryDiagnosticPassed": true,
+      "processCancellation": "native WebSocket disconnected after process-group kill",
+      "incrementalOutputOutcome": "not exercised: no model boundary available; no agent decisions scripted",
+      "toolOutcome": "not exercised: no model boundary available; no agent decisions scripted",
+      "textOutcome": "not exercised: no model boundary available; no agent decisions scripted",
+      "cleanedUp": true
+    }
+  ]
+}
