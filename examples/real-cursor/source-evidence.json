@@ -1,0 +1,67 @@
+{
+  "installedVersion": "2026.04.28-e984b46",
+  "kind": "Read-only packaged-source structural evidence, no patched executable",
+  "files": {
+    "index.js": {
+      "sha256": "96d3bab2a7fc0d6d2d3a4ce5014b1970ebdfbcf351282876bb0d136d28c980ff",
+      "bytes": 8466451
+    },
+    "7414.index.js": {
+      "sha256": "594d87db0499a01173b53fb37035cfb479bef75b6747e94c62bd69e5f7735c49",
+      "bytes": 95037
+    },
+    "8694.index.js": {
+      "sha256": "8083725a02193f0319230c593c9be979f324072789e05679115ea97c0136d366",
+      "bytes": 23021
+    }
+  },
+  "markers": {
+    "credentialStorageSelection": {
+      "file": "index.js",
+      "byteOffset": 4165239,
+      "needle": "function c(e){return\"darwin\"===(0,r.platform)()?new l(e):new o(e)}"
+    },
+    "remoteRunService": {
+      "file": "index.js",
+      "byteOffset": 8033185,
+      "needle": "typeName:\"agent.v1.AgentService\",methods:{run:{name:\"Run\",I:d.KS,O:d.Oy,kind:o.I.BiDiStreaming}"
+    },
+    "initialRemoteRun": {
+      "file": "index.js",
+      "byteOffset": 4099896,
+      "needle": "message:{case:\"runRequest\",value:new f.AgentRunRequest({conversationState:t,action:n,modelDetails:s"
+    },
+    "providerBaseUrl": {
+      "file": "index.js",
+      "byteOffset": 5311332,
+      "needle": "static typeName=\"agent.v1.ApiKeyCredentials\";"
+    },
+    "clientExecReturn": {
+      "file": "index.js",
+      "byteOffset": 4104644,
+      "needle": "case:\"execClientMessage\",value:e"
+    },
+    "serverExecMessage": {
+      "file": "index.js",
+      "byteOffset": 5352777,
+      "needle": "name:\"exec_server_message\",kind:\"message\""
+    },
+    "checkpoint": {
+      "file": "index.js",
+      "byteOffset": 5352926,
+      "needle": "name:\"conversation_checkpoint_update\",kind:\"message\""
+    },
+    "interactionUpdate": {
+      "file": "index.js",
+      "byteOffset": 5271783,
+      "needle": "name:\"interaction_update\",kind:\"message\""
+    }
+  },
+  "moduleBoundary": {
+    "agentClientModule": "../agent-client/dist/index.js",
+    "agentCoreModule": "../agent-core/dist/index.js",
+    "localExecModule": "../local-exec/dist/index.js",
+    "acpServicesModule": "./src/acp/shared-services.ts",
+    "interpretation": "The client sends complete AgentRunRequest to AgentService.Run, splits remote interaction/exec/checkpoint/kv messages, and returns local execution results on the same stream. It does not receive model tool_calls and construct the next model request locally."
+  }
+}

@@ -1,0 +1,524 @@
+{
+  "date": "2026-09-30T04:03:01.802Z",
+  "node": "v22.22.3",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-cursor-package-sFAC8U/consumer/node_modules/cordyceps/dist/index.js",
+  "artifact": {
+    "name": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-PQUmwyUqk52qpD3TX3Yb8CvtXudjMxWWO4kN18MQmzlq3DwwRDle6FBBWf+z4RB30NYrn+h0XA3UecMrfSE7Ow==",
+    "shasum": "8ab22e42e2803bb74457ddf36ec9e653d25b0d76"
+  },
+  "passed": false,
+  "boundaryEstablished": true,
+  "textOutcome": "not-validated",
+  "toolOutcome": "not-validated",
+  "streamOutcome": "not-validated",
+  "modelCancellationOutcome": "not-validated",
+  "purpose": "Identify the native remote-agent boundary without implementing an agent service",
+  "requests": [
+    {
+      "path": "/auth/exchange_user_api_key",
+      "headers": {
+        "host": "127.0.0.1:57583",
+        "connection": "keep-alive",
+        "content-type": "application/json",
+        "authorization": "Bearer cordyceps-test",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "undici",
+        "accept-encoding": "gzip, deflate",
+        "content-length": "2"
+      },
+      "bodyBase64": "e30=",
+      "response": {
+        "accessToken": "eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "refreshToken": "cordyceps-test-refresh"
+      }
+    },
+    {
+      "path": "/aiserver.v1.DashboardService/GetUserPrivacyMode",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    },
+    {
+      "path": "/auth/exchange_user_api_key",
+      "headers": {
+        "host": "127.0.0.1:57583",
+        "connection": "keep-alive",
+        "content-type": "application/json",
+        "authorization": "Bearer cordyceps-test",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "undici",
+        "accept-encoding": "gzip, deflate",
+        "content-length": "2"
+      },
+      "bodyBase64": "e30=",
+      "response": {
+        "accessToken": "eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "refreshToken": "cordyceps-test-refresh"
+      }
+    },
+    {
+      "path": "/aiserver.v1.ServerConfigService/GetServerConfig",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "2c25fb96-3bc1-43b9-bdfb-50566e7aa66c",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.DashboardService/GetManagedSkills",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "extension-unknown",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "cacc6f87-0bfb-4f66-9fd0-75716ebd585f",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.DashboardService/GetUserPrivacyMode",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.AiService/GetDefaultModelForCli",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "99b6225d-32cc-436a-8120-e7111df2b091",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": "Cn4KFGNvcmR5Y2Vwcy10ZXN0LW1vZGVsGhRjb3JkeWNlcHMtdGVzdC1tb2RlbCIUQ29yZHljZXBzIHRlc3QgbW9kZWwqBHRlc3RCNAoRdGVzdC1wcm92aWRlci1rZXkSH2h0dHA6Ly8xMjcuMC4wLjE6NTc1ODMvcHJvdmlkZXI="
+    },
+    {
+      "path": "/aiserver.v1.DashboardService/GetUserPrivacyMode",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.AiService/GetUsableModels",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "0d7ea7a1-07c4-4c77-be4e-81834f5dd6b2",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": "Cn4KFGNvcmR5Y2Vwcy10ZXN0LW1vZGVsGhRjb3JkeWNlcHMtdGVzdC1tb2RlbCIUQ29yZHljZXBzIHRlc3QgbW9kZWwqBHRlc3RCNAoRdGVzdC1wcm92aWRlci1rZXkSH2h0dHA6Ly8xMjcuMC4wLjE6NTc1ODMvcHJvdmlkZXI="
+    },
+    {
+      "path": "/aiserver.v1.DashboardService/GetTeamAdminSettingsOrEmptyIfNotInTeam",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "extension-unknown",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "46ba5efc-bd3d-4047-80b7-65149e2eacbf",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.AiService/AvailableModels",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "connect-protocol-version": "1",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "8a5064b5-c263-44cf-ae75-d3846b226244",
+        "host": "127.0.0.1:57583",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBase64": "KAE4AUAB",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.AiService/AvailableModels",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "connect-protocol-version": "1",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "dbeed826-90b7-4045-88bf-c88242aa77a6",
+        "host": "127.0.0.1:57583",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBase64": "KAE4AUAB",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.AiService/NameAgent",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "connect-protocol-version": "1",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "d2c30f1f-592d-42b6-8ecc-34d49479588b",
+        "host": "127.0.0.1:57583",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBase64": "Cm9Db3JkeWNlcHMgQ3Vyc29yIGJvdW5kYXJ5IHByb2JlOiByZWFkIC9wcml2YXRlL3RtcC9jYy1SS0dVZW8vd29yay9maXh0dXJlLnR4dCwgdGhlbiByZXBseSBDVVJTT1JfQ09OVFJPTExFRF9PSy4=",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.DashboardService/GetUserPrivacyMode",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    },
+    {
+      "path": "/aiserver.v1.BidiService/BidiAppend",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "backend-traceparent": "00-00000000000000000000000000000000-0000000000000000-00",
+        "connect-protocol-version": "1",
+        "content-type": "application/proto",
+        "traceparent": "00-00000000000000000000000000000000-0000000000000000-00",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-cursor-streaming": "true",
+        "x-ghost-mode": "true",
+        "x-original-request-id": "edad1204-bebb-4527-955a-8f3e0801f29c",
+        "x-request-id": "edad1204-bebb-4527-955a-8f3e0801f29c",
+        "host": "127.0.0.1:57583",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBase64": "CqIFMGFjZTAyMGEwMDEyYTEwMTBhOWUwMTBhOWIwMTBhNmY0MzZmNzI2NDc5NjM2NTcwNzMyMDQzNzU3MjczNmY3MjIwNjI2Zjc1NmU2NDYxNzI3OTIwNzA3MjZmNjI2NTNhMjA3MjY1NjE2NDIwMmY3MDcyNjk3NjYxNzQ2NTJmNzQ2ZDcwMmY2MzYzMmQ1MjRiNDc1NTY1NmYyZjc3NmY3MjZiMmY2NjY5Nzg3NDc1NzI2NTJlNzQ3ODc0MmMyMDc0Njg2NTZlMjA3MjY1NzA2Yzc5MjA0MzU1NTI1MzRmNTI1ZjQzNGY0ZTU0NTI0ZjRjNGM0NTQ0NWY0ZjRiMmUxMjI0NjU2MjMxNjYzOTYxMzYzMDJkNjI2MjM4MzEyZDM0MzY2MTY0MmQzODY0MzEzNDJkMzgzMDM5MzAzODMzNjQzMzY0MzUzMTM1MWEwMDIwMDExYTdlMGExNDYzNmY3MjY0Nzk2MzY1NzA3MzJkNzQ2NTczNzQyZDZkNmY2NDY1NmMxYTE0NjM2ZjcyNjQ3OTYzNjU3MDczMmQ3NDY1NzM3NDJkNmQ2ZjY0NjU2YzIyMTQ0MzZmNzI2NDc5NjM2NTcwNzMyMDc0NjU3Mzc0MjA2ZDZmNjQ2NTZjMmEwNDc0NjU3Mzc0NDIzNDBhMTE3NDY1NzM3NDJkNzA3MjZmNzY2OTY0NjU3MjJkNmI2NTc5MTIxZjY4NzQ3NDcwM2EyZjJmMzEzMjM3MmUzMDJlMzAyZTMxM2EzNTM3MzUzODMzMmY3MDcyNmY3NjY5NjQ2NTcyMjIwMDJhMjQ2MTYzNjIzNDM5MzkzMDYzMmQzMjM0MzkzNjJkMzQzNjMxMzAyZDYyMzYzNDM3MmQzNzM5MzQzODY2MzM2NjMyMzMzMTM2MzISJgokZWRhZDEyMDQtYmViYi00NTI3LTk1NWEtOGYzZTA4MDFmMjlj",
+      "decoded": {
+        "message": "AgentClientMessage.run_request",
+        "prompt": "Cordyceps Cursor boundary probe: read /private/tmp/cc-RKGUeo/work/fixture.txt, then reply CURSOR_CONTROLLED_OK.",
+        "model": "cordyceps-test-model",
+        "providerBaseUrl": "http://127.0.0.1:57583/provider",
+        "providerKey": "test-provider-key",
+        "conversationId": "acb4990c-2496-4610-b647-7948f3f23162"
+      },
+      "responseBase64": "",
+      "packedProvider": {
+        "status": 404,
+        "body": "{\"error\":{\"type\":\"cordyceps_error\",\"message\":\"Unsupported provider request: POST /aiserver.v1.BidiService/BidiAppend\"}}"
+      }
+    },
+    {
+      "path": "/agent.v1.AgentService/RunSSE",
+      "headers": {
+        "authorization": "Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiJjb3JkeWNlcHMtdGVzdCIsImV4cCI6MTc5MDc0NDU4MX0.test",
+        "backend-traceparent": "00-00000000000000000000000000000000-0000000000000000-00",
+        "connect-accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-type": "application/connect+proto",
+        "traceparent": "00-00000000000000000000000000000000-0000000000000000-00",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "cli-2026.04.28-e984b46",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-cursor-streaming": "true",
+        "x-ghost-mode": "true",
+        "x-original-request-id": "edad1204-bebb-4527-955a-8f3e0801f29c",
+        "x-request-id": "edad1204-bebb-4527-955a-8f3e0801f29c",
+        "host": "127.0.0.1:57583",
+        "connection": "close",
+        "transfer-encoding": "chunked"
+      },
+      "bodyBase64": "AAAAACYKJGVkYWQxMjA0LWJlYmItNDUyNy05NTVhLThmM2UwODAxZjI5Yw=="
+    },
+    {
+      "path": "/aiserver.v1.DashboardService/GetMe",
+      "headers": {
+        "accept-encoding": "gzip,br",
+        "connect-protocol-version": "1",
+        "content-length": "0",
+        "content-type": "application/proto",
+        "user-agent": "connect-es/1.6.1",
+        "x-cursor-client-type": "acp",
+        "x-cursor-client-version": "extension-unknown",
+        "x-cursor-host-app-name": "cordyceps-boundary-diagnostic",
+        "x-cursor-host-app-version": "1",
+        "x-ghost-mode": "true",
+        "x-request-id": "8b947433-f9e3-4218-a2a8-4220d8c3f56c",
+        "host": "127.0.0.1:57583",
+        "connection": "close"
+      },
+      "bodyBase64": "",
+      "responseBase64": ""
+    }
+  ],
+  "rpc": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "protocolVersion": 1,
+        "agentCapabilities": {
+          "loadSession": true,
+          "mcpCapabilities": {
+            "http": true,
+            "sse": true
+          },
+          "promptCapabilities": {
+            "audio": false,
+            "embeddedContext": false,
+            "image": true
+          },
+          "sessionCapabilities": {
+            "list": {}
+          }
+        },
+        "authMethods": [
+          {
+            "id": "cursor_login",
+            "name": "Cursor Login",
+            "description": "Authenticate using existing Cursor login credentials. Run 'agent login' first if not logged in."
+          }
+        ]
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "error": {
+        "code": -32603,
+        "message": "Internal error",
+        "data": {
+          "message": "Failed to initialize session services"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": {
+        "sessionId": "acb4990c-2496-4610-b647-7948f3f23162",
+        "modes": {
+          "currentModeId": "agent",
+          "availableModes": [
+            {
+              "id": "agent",
+              "name": "Agent",
+              "description": "Full agent capabilities with tool access"
+            },
+            {
+              "id": "plan",
+              "name": "Plan",
+              "description": "Read-only mode for planning and designing before implementation"
+            },
+            {
+              "id": "ask",
+              "name": "Ask",
+              "description": "Q&A mode - no edits or command execution"
+            }
+          ]
+        },
+        "models": {
+          "currentModelId": "",
+          "availableModels": []
+        },
+        "configOptions": [
+          {
+            "id": "mode",
+            "name": "Mode",
+            "description": "Controls how the agent executes tasks",
+            "category": "mode",
+            "type": "select",
+            "currentValue": "agent",
+            "options": [
+              {
+                "value": "agent",
+                "name": "Agent",
+                "description": "Full agent capabilities with tool access"
+              },
+              {
+                "value": "plan",
+                "name": "Plan",
+                "description": "Read-only mode for planning and designing before implementation"
+              },
+              {
+                "value": "ask",
+                "name": "Ask",
+                "description": "Q&A mode - no edits or command execution"
+              }
+            ]
+          },
+          {
+            "id": "model",
+            "name": "Model",
+            "description": "Controls which model variant is used for responses",
+            "category": "model",
+            "type": "select",
+            "currentValue": "",
+            "options": []
+          }
+        ]
+      }
+    }
+  ],
+  "version": {
+    "binary": "/Users/20idemo/.local/bin/cursor-agent",
+    "args": [
+      "--version"
+    ],
+    "code": 0,
+    "signal": null,
+    "timedOut": false,
+    "stdout": "2026.04.28-e984b46\n",
+    "stderr": ""
+  },
+  "printAttempt": {
+    "binary": "/Users/20idemo/.local/bin/cursor-agent",
+    "args": [
+      "--endpoint",
+      "http://127.0.0.1:57583",
+      "--agent-endpoint",
+      "http://127.0.0.1:57583",
+      "--api-key",
+      "cordyceps-test",
+      "--trust",
+      "--sandbox",
+      "disabled",
+      "--print",
+      "Cordyceps Cursor boundary probe: read /private/tmp/cc-RKGUeo/work/fixture.txt, then reply CURSOR_CONTROLLED_OK."
+    ],
+    "code": 1,
+    "signal": null,
+    "timedOut": false,
+    "stdout": "",
+    "stderr": "Error: Security command failed: Security process exited with code: 154\n"
+  },
+  "args": [
+    "--endpoint",
+    "http://127.0.0.1:57583",
+    "--agent-endpoint",
+    "http://127.0.0.1:57583",
+    "--api-key",
+    "cordyceps-test",
+    "acp"
+  ],
+  "stderr": "",
+  "agentServiceDisconnected": true,
+  "exit": {
+    "code": null,
+    "signal": "SIGKILL"
+  },
+  "finding": "Actual client submits AgentRunRequest and provider base URL to a remote agent service. No direct provider request, model output, or real file read was observed.",
+  "processCancellation": "Real ACP process group killed after native run request; held agent-service socket disconnected. This is not model cancellation.",
+  "providerFailures": [
+    "Error: Unsupported provider request: POST /aiserver.v1.BidiService/BidiAppend"
+  ],
+  "cleanedUp": true
+}
