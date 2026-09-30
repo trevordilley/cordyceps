@@ -1,3 +1,4 @@
+import { hermes } from './hermes.js';
 import { ampService } from './amp-service.js';
 import { atlassianRovo } from './atlassian-rovo.js';
 import { amazonQ } from './amazon-q.js';
@@ -8,10 +9,11 @@ import { openaiResponses } from './openai-responses.js';
 import { openaiChatCompletions } from './openai-chat-completions.js';
 import type { ProviderCodec } from './types.js';
 
-export const codecIds: readonly string[] = Object.freeze(['anthropic-messages', 'openai-responses', 'openai-chat-completions', 'google-genai', 'amazon-q', 'augment', 'atlassian-rovo', 'amp-service']);
+export const codecIds: readonly string[] = Object.freeze(['anthropic-messages', 'openai-responses', 'openai-chat-completions', 'google-genai', 'amazon-q', 'augment', 'atlassian-rovo', 'amp-service', 'hermes']);
 
 export function getCodec(id: string): ProviderCodec {
   switch (id) {
+    case 'hermes': return hermes;
     case 'amp-service': return ampService;
     case 'atlassian-rovo': return atlassianRovo;
     case 'amazon-q': return amazonQ;

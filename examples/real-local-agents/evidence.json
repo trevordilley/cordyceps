@@ -1,0 +1,1613 @@
+{
+  "observedAt": "2026-09-30T04:41:08.662Z",
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-y0SCkjm3DabvCMnUmM2ivrlAgHr692h2LuN9eXO/vK/CeH4p/SChk7QjdxtyKNLYiESG3B4nLJBSJe9o21Ei2g==",
+    "shasum": "56ca117daf9439c1786afce01091ce3f01d11281"
+  },
+  "node": "v22.22.3",
+  "platform": "darwin",
+  "packageEntry": "file:///private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-local-package-Q49TTT/consumer/node_modules/cordyceps/dist/index.js",
+  "cases": [
+    {
+      "harness": "hermes",
+      "scenario": "text",
+      "binary": "/tmp/cordyceps-hermes-314/bin/hermes",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "Hermes Agent vgit.ddd0cc6 (2026.9.24) \u00b7 upstream ddd0cc69\nInstall directory: /private/tmp/cordyceps-hermes-source\nInstall method: git\nPython: 3.14.3\nOpenAI SDK: 2.24.0\n",
+        "stderr": "",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "args": [
+        "chat",
+        "--query",
+        "cordyceps-hermes-text: Reply with the controlled test message.",
+        "--oneshot",
+        "--yolo",
+        "--toolsets",
+        "file",
+        "--format",
+        "stream-json"
+      ],
+      "prompt": "cordyceps-hermes-text: Reply with the controlled test message.",
+      "metadataProbes": 13,
+      "incrementalOutputBeforeCompletion": true,
+      "titleRequests": 1,
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\": \"system\", \"subtype\": \"init\", \"model\": \"cordyceps-test\", \"session_id\": \"20260929_214112_be22f7\", \"timestamp\": 1790743273047}\n{\"type\": \"text\", \"text\": \"CORDYCEPS_he\", \"timestamp\": 1790743275835}\n{\"type\": \"text\", \"text\": \"rmes_text_OK\", \"timestamp\": 1790743275836}\n{\"type\": \"result\", \"session_id\": \"20260929_214112_be22f7\", \"exit_code\": 0, \"text\": \"CORDYCEPS_hermes_text_OK\", \"tokens\": {\"input\": 0, \"output\": 0, \"total\": 0, \"cache_read\": 0, \"cache_write\": 0}, \"duration_ms\": 2821, \"timestamp\": 1790743275868}\n",
+        "stderr": "\nsession_id: 20260929_214112_be22f7\n",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "providerStreaming": true,
+      "requests": [
+        {
+          "id": "31de1adb-4d2f-48c3-b368-d3b3d7b2af09",
+          "method": "GET",
+          "path": "/api/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "ace03c2a-5fad-4765-9bff-3a0ed16c0846",
+          "method": "GET",
+          "path": "/api/tags",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "9f301452-2a25-4753-8ca1-38c25d99e699",
+          "method": "GET",
+          "path": "/v1/props",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "7b3678b8-3c26-4303-8183-828bfa281bda",
+          "method": "GET",
+          "path": "/props",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "40f94d74-2df7-43a8-9381-872b5f913d1a",
+          "method": "GET",
+          "path": "/version",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "280ab2ec-fd56-4fe8-817f-08fd51e69de3",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "ef792540-1855-43f7-9c03-05b113b4704c",
+          "method": "GET",
+          "path": "/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "93324b9d-a58d-45eb-9e78-a2324805b1c8",
+          "method": "GET",
+          "path": "/v1/models/cordyceps-test",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "c896d6a2-8588-4389-9200-b0920d6a7159",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "d20886fb-a2a7-4f33-b092-caac640633ab",
+          "method": "POST",
+          "path": "/api/show",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "9ac0e41e8b0df066de3bec4a85e11e96382e5e93b12fa05a5a81a16873a720af",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "9207bd0f-f34a-4fe5-9e10-e7998994b91d",
+          "method": "GET",
+          "path": "/v1/models/cordyceps-test",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "6e555ab7-1a36-4d6e-b351-402845756bbf",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "248d40c2-a4f6-4b47-bc40-8cf070abed15",
+          "method": "POST",
+          "path": "/api/show",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "9ac0e41e8b0df066de3bec4a85e11e96382e5e93b12fa05a5a81a16873a720af",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "1f97cd25-999e-4783-8a10-72cc8361f511",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "46d9fc6d0eea2ada9bdf289932f492b6fe7121591529027c079e67a9d4c2a10d",
+          "tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "toolResults": []
+        },
+        {
+          "id": "eed8f08a-7b5d-430c-b6e4-e2740d215aba",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": false,
+          "containsPrompt": true,
+          "bodySha256": "b4c3b530f57e4fe3217a5c2d7bf201e371d9f75483a7cfd3b3b93001061177a7",
+          "tools": [],
+          "toolResults": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "31de1adb-4d2f-48c3-b368-d3b3d7b2af09",
+          "timestamp": 1790743274649,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "ace03c2a-5fad-4765-9bff-3a0ed16c0846",
+          "timestamp": 1790743274651,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "9f301452-2a25-4753-8ca1-38c25d99e699",
+          "timestamp": 1790743274651,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "7b3678b8-3c26-4303-8183-828bfa281bda",
+          "timestamp": 1790743274652,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "40f94d74-2df7-43a8-9381-872b5f913d1a",
+          "timestamp": 1790743274653,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "280ab2ec-fd56-4fe8-817f-08fd51e69de3",
+          "timestamp": 1790743274657,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "ef792540-1855-43f7-9c03-05b113b4704c",
+          "timestamp": 1790743274662,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "93324b9d-a58d-45eb-9e78-a2324805b1c8",
+          "timestamp": 1790743274668,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "c896d6a2-8588-4389-9200-b0920d6a7159",
+          "timestamp": 1790743274669,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "d20886fb-a2a7-4f33-b092-caac640633ab",
+          "timestamp": 1790743274675,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "9207bd0f-f34a-4fe5-9e10-e7998994b91d",
+          "timestamp": 1790743274706,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "6e555ab7-1a36-4d6e-b351-402845756bbf",
+          "timestamp": 1790743274707,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "248d40c2-a4f6-4b47-bc40-8cf070abed15",
+          "timestamp": 1790743274713,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "1f97cd25-999e-4783-8a10-72cc8361f511",
+          "timestamp": 1790743275829,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_f869f25b62e54539801cc70ddedac924\",\"created\":1790743275,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_f869f25b62e54539801cc70ddedac924\",\"created\":1790743275,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_he\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_f869f25b62e54539801cc70ddedac924\",\"created\":1790743275,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"rmes_text_OK\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_f869f25b62e54539801cc70ddedac924\",\"created\":1790743275,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_f869f25b62e54539801cc70ddedac924\",\"created\":1790743275,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "eed8f08a-7b5d-430c-b6e4-e2740d215aba",
+          "timestamp": 1790743275893,
+          "status": 200,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"id\":\"chatcmpl_9039f47b5f9641969d295f42c621938c\",\"created\":1790743275,\"model\":\"cordyceps-test\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"title\\\":\\\"Controlled consumer verification\\\"}\",\"refusal\":null},\"finish_reason\":\"stop\",\"logprobs\":null}],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "hermes",
+      "scenario": "tool",
+      "binary": "/tmp/cordyceps-hermes-314/bin/hermes",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "Hermes Agent vgit.ddd0cc6 (2026.9.24) \u00b7 upstream ddd0cc69\nInstall directory: /private/tmp/cordyceps-hermes-source\nInstall method: git\nPython: 3.14.3\nOpenAI SDK: 2.24.0\n",
+        "stderr": "",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "args": [
+        "chat",
+        "--query",
+        "cordyceps-hermes-tool: Read fixture.txt and report completion.",
+        "--oneshot",
+        "--yolo",
+        "--toolsets",
+        "file",
+        "--format",
+        "stream-json"
+      ],
+      "prompt": "cordyceps-hermes-tool: Read fixture.txt and report completion.",
+      "metadataProbes": 13,
+      "scriptedCall": {
+        "id": "fixturecall",
+        "name": "read_file",
+        "input": {
+          "path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-hermes-GkcjTo/work/fixture.txt"
+        }
+      },
+      "titleRequests": 1,
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\"type\": \"system\", \"subtype\": \"init\", \"model\": \"cordyceps-test\", \"session_id\": \"20260929_214120_76d281\", \"timestamp\": 1790743280684}\n{\"type\": \"tool_use\", \"name\": \"read_file\", \"input\": {\"path\": \"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-hermes-GkcjTo/work/fixture.txt\"}, \"timestamp\": 1790743283371}\n{\"type\": \"tool_result\", \"name\": \"read_file\", \"output\": \"{\\\"content\\\": \\\"1|fixture-0bff6950-0293-47e1-b5f1-cc9acaa90114\\\", \\\"total_lines\\\": 1, \\\"file_size\\\": 45, \\\"truncated\\\": false, \\\"is_binary\\\": false, \\\"is_image\\\": false, \\\"not_found\\\": false}\", \"duration_ms\": 60, \"is_error\": false, \"timestamp\": 1790743283428}\n{\"type\": \"text\", \"text\": \"\\n\\nCORDYCEPS_hermes_tool_OK\", \"timestamp\": 1790743283437}\n{\"type\": \"result\", \"session_id\": \"20260929_214120_76d281\", \"exit_code\": 0, \"text\": \"CORDYCEPS_hermes_tool_OK\", \"tokens\": {\"input\": 0, \"output\": 0, \"total\": 0, \"cache_read\": 0, \"cache_write\": 0}, \"duration_ms\": 2819, \"timestamp\": 1790743283504}\n",
+        "stderr": "/private/tmp/cordyceps-hermes-source/pm/shell.py:13: SyntaxWarning: \"\\W\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\W\"? A raw string is also an option.\n  minus C:\\Windows\\System32\\bash.exe (the WSL launcher stub, first on PATH\n\nsession_id: 20260929_214120_76d281\n",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "requests": [
+        {
+          "id": "56132ede-8845-417e-a4ff-2c353123724c",
+          "method": "GET",
+          "path": "/api/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "65064854-e9bf-4ccb-b31f-d19be56569da",
+          "method": "GET",
+          "path": "/api/tags",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "03539216-9363-4e31-a279-a82b0c5604ad",
+          "method": "GET",
+          "path": "/v1/props",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "6eacf897-83d5-444d-a4f7-de061be85aa8",
+          "method": "GET",
+          "path": "/props",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "f54a6fc5-e5eb-4857-914e-fe40ff2f36c1",
+          "method": "GET",
+          "path": "/version",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "a3afa327-03b2-4cef-a65e-0d9efa7c0895",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "5cc7a8c2-d44a-4ade-ae5d-2b0fec3fd681",
+          "method": "GET",
+          "path": "/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "7dbcd9c0-f9f2-4a4f-9840-5bf32621b50f",
+          "method": "GET",
+          "path": "/v1/models/cordyceps-test",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "754b2104-1fe6-44a7-8671-b01e1ee942f3",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "1d1f145d-9a54-4040-8f57-00d0d7f1e033",
+          "method": "POST",
+          "path": "/api/show",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "9ac0e41e8b0df066de3bec4a85e11e96382e5e93b12fa05a5a81a16873a720af",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "e50d4446-1514-4081-a184-d4b7371e6c48",
+          "method": "GET",
+          "path": "/v1/models/cordyceps-test",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "b44088e4-a7c2-4815-a56d-68d49085a309",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "5eb71b5f-72c8-4163-a22d-204216938853",
+          "method": "POST",
+          "path": "/api/show",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "9ac0e41e8b0df066de3bec4a85e11e96382e5e93b12fa05a5a81a16873a720af",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "30dfe006-a4a9-4768-b9a8-51c21eb9ada6",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "ddb6b97b9f4150133d5a02c3ff1a10d8198933e268efe3f9899b4d4378451205",
+          "tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "toolResults": []
+        },
+        {
+          "id": "d7a1e5fa-c502-495a-9fb5-d0e4c40253b2",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "dc54c24137578f13066c3fbe9e30ef0ff2b80265c8c4144ed703b0f01d97345f",
+          "tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "toolResults": [
+            {
+              "id": "fixturecall",
+              "text": "{\"content\": \"1|fixture-0bff6950-0293-47e1-b5f1-cc9acaa90114\", \"total_lines\": 1, \"file_size\": 45, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}",
+              "isError": false,
+              "raw": {
+                "role": "tool",
+                "content": "{\"content\": \"1|fixture-0bff6950-0293-47e1-b5f1-cc9acaa90114\", \"total_lines\": 1, \"file_size\": 45, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}",
+                "tool_call_id": "fixturecall"
+              }
+            }
+          ]
+        },
+        {
+          "id": "2ee4b0b9-ef50-46ff-88b2-fbdfa4508394",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": false,
+          "containsPrompt": true,
+          "bodySha256": "b7086796a8d3b4cbe194af223867fa188e66764ba2f3af98ab0280d57f2c31fc",
+          "tools": [],
+          "toolResults": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "56132ede-8845-417e-a4ff-2c353123724c",
+          "timestamp": 1790743282265,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "65064854-e9bf-4ccb-b31f-d19be56569da",
+          "timestamp": 1790743282266,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "03539216-9363-4e31-a279-a82b0c5604ad",
+          "timestamp": 1790743282266,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "6eacf897-83d5-444d-a4f7-de061be85aa8",
+          "timestamp": 1790743282267,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "f54a6fc5-e5eb-4857-914e-fe40ff2f36c1",
+          "timestamp": 1790743282267,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "a3afa327-03b2-4cef-a65e-0d9efa7c0895",
+          "timestamp": 1790743282272,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "5cc7a8c2-d44a-4ade-ae5d-2b0fec3fd681",
+          "timestamp": 1790743282276,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "7dbcd9c0-f9f2-4a4f-9840-5bf32621b50f",
+          "timestamp": 1790743282280,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "754b2104-1fe6-44a7-8671-b01e1ee942f3",
+          "timestamp": 1790743282281,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "1d1f145d-9a54-4040-8f57-00d0d7f1e033",
+          "timestamp": 1790743282285,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "e50d4446-1514-4081-a184-d4b7371e6c48",
+          "timestamp": 1790743282314,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "b44088e4-a7c2-4815-a56d-68d49085a309",
+          "timestamp": 1790743282315,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "5eb71b5f-72c8-4163-a22d-204216938853",
+          "timestamp": 1790743282321,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "30dfe006-a4a9-4768-b9a8-51c21eb9ada6",
+          "timestamp": 1790743283333,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_5d110ea0d6064dfb9ee638e43c574c3f\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_5d110ea0d6064dfb9ee638e43c574c3f\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"fixturecall\",\"type\":\"function\",\"function\":{\"name\":\"read_file\",\"arguments\":\"\"}}]},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_5d110ea0d6064dfb9ee638e43c574c3f\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\\\"path\\\":\\\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-hermes-GkcjTo/work/fixture.txt\\\"}\"}}]},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_5d110ea0d6064dfb9ee638e43c574c3f\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"tool_calls\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_5d110ea0d6064dfb9ee638e43c574c3f\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "d7a1e5fa-c502-495a-9fb5-d0e4c40253b2",
+          "timestamp": 1790743283434,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_966ed2adf83a484591e86a32a22cc067\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_966ed2adf83a484591e86a32a22cc067\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_hermes_tool_OK\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_966ed2adf83a484591e86a32a22cc067\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_966ed2adf83a484591e86a32a22cc067\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "2ee4b0b9-ef50-46ff-88b2-fbdfa4508394",
+          "timestamp": 1790743283504,
+          "status": 200,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"id\":\"chatcmpl_d6498faf40424d40a746ea273ed8d564\",\"created\":1790743283,\"model\":\"cordyceps-test\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\\"title\\\":\\\"Controlled consumer verification\\\"}\",\"refusal\":null},\"finish_reason\":\"stop\",\"logprobs\":null}],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "hermes",
+      "scenario": "cancel",
+      "binary": "/tmp/cordyceps-hermes-314/bin/hermes",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "Hermes Agent vgit.ddd0cc6 (2026.9.24) \u00b7 upstream ddd0cc69\nInstall directory: /private/tmp/cordyceps-hermes-source\nInstall method: git\nPython: 3.14.3\nOpenAI SDK: 2.24.0\n",
+        "stderr": "",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "args": [
+        "chat",
+        "--query",
+        "cordyceps-hermes-cancel: Reply with the controlled test message.",
+        "--oneshot",
+        "--yolo",
+        "--toolsets",
+        "file",
+        "--format",
+        "stream-json"
+      ],
+      "prompt": "cordyceps-hermes-cancel: Reply with the controlled test message.",
+      "metadataProbes": 13,
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "{\"type\": \"system\", \"subtype\": \"init\", \"model\": \"cordyceps-test\", \"session_id\": \"20260929_214128_614e2b\", \"timestamp\": 1790743288700}\n",
+        "stderr": "",
+        "timedOut": false,
+        "cancelled": true
+      },
+      "requests": [
+        {
+          "id": "887b2da3-e5fb-49de-9f73-ed2827b4b875",
+          "method": "GET",
+          "path": "/api/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "5f293905-0216-409a-935b-c45914f21996",
+          "method": "GET",
+          "path": "/api/tags",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "c9d69cf6-68f5-4482-839d-9fb555e509d9",
+          "method": "GET",
+          "path": "/v1/props",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "84d8f900-2424-4343-b20f-fd92e2f42be4",
+          "method": "GET",
+          "path": "/props",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "147950db-0ece-4761-abf9-ac1acefe1f9a",
+          "method": "GET",
+          "path": "/version",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "da6d0cd1-3a9f-471a-a77a-8fd670927d80",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "6e1dd725-35ba-46bc-9c75-1c83c147cd49",
+          "method": "GET",
+          "path": "/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "7b24d517-a2ea-48ed-8def-513fd137778e",
+          "method": "GET",
+          "path": "/v1/models/cordyceps-test",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "02fb9da6-4773-479f-8592-360f57a0547d",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "fcd19447-e534-4208-bc11-389abdb86392",
+          "method": "POST",
+          "path": "/api/show",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "9ac0e41e8b0df066de3bec4a85e11e96382e5e93b12fa05a5a81a16873a720af",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "45ee1647-93b1-4b08-a3eb-cf13f1864029",
+          "method": "GET",
+          "path": "/v1/models/cordyceps-test",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "22d6a4d3-907e-4127-99e2-b2d537f99b68",
+          "method": "GET",
+          "path": "/v1/models",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "b1d562c0-da90-45fd-b0db-82062e7891a4",
+          "method": "POST",
+          "path": "/api/show",
+          "model": "",
+          "stream": false,
+          "containsPrompt": false,
+          "bodySha256": "9ac0e41e8b0df066de3bec4a85e11e96382e5e93b12fa05a5a81a16873a720af",
+          "tools": [],
+          "toolResults": []
+        },
+        {
+          "id": "18df5834-3c9a-4949-9850-c1fa6cd50afb",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "8076784df76e41ebb745cc327ca5614214ffa5484741e5c0a2ed6cac34531985",
+          "tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "toolResults": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "887b2da3-e5fb-49de-9f73-ed2827b4b875",
+          "timestamp": 1790743290248,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "5f293905-0216-409a-935b-c45914f21996",
+          "timestamp": 1790743290249,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "c9d69cf6-68f5-4482-839d-9fb555e509d9",
+          "timestamp": 1790743290249,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "84d8f900-2424-4343-b20f-fd92e2f42be4",
+          "timestamp": 1790743290250,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "147950db-0ece-4761-abf9-ac1acefe1f9a",
+          "timestamp": 1790743290250,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "da6d0cd1-3a9f-471a-a77a-8fd670927d80",
+          "timestamp": 1790743290255,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "6e1dd725-35ba-46bc-9c75-1c83c147cd49",
+          "timestamp": 1790743290260,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "7b24d517-a2ea-48ed-8def-513fd137778e",
+          "timestamp": 1790743290265,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "02fb9da6-4773-479f-8592-360f57a0547d",
+          "timestamp": 1790743290266,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "fcd19447-e534-4208-bc11-389abdb86392",
+          "timestamp": 1790743290271,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "45ee1647-93b1-4b08-a3eb-cf13f1864029",
+          "timestamp": 1790743290301,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "22d6a4d3-907e-4127-99e2-b2d537f99b68",
+          "timestamp": 1790743290302,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "b1d562c0-da90-45fd-b0db-82062e7891a4",
+          "timestamp": 1790743290309,
+          "status": 404,
+          "headers": {
+            "content-type": "application/json; charset=utf-8"
+          },
+          "chunks": [
+            "{\"error\":{\"message\":\"This controlled endpoint supplies no local model metadata\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":null}}"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "18df5834-3c9a-4949-9850-c1fa6cd50afb",
+          "timestamp": 1790743291340,
+          "status": null,
+          "headers": {},
+          "chunks": [],
+          "outcome": "aborted"
+        }
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "openclaw",
+      "scenario": "text",
+      "binary": "/tmp/cordyceps-orchestrator-tools/node_modules/.bin/openclaw",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "OpenClaw 2026.9.2 (3928bad)\n",
+        "stderr": "",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "args": [
+        "agent",
+        "exec",
+        "--config",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-6ZJCUg/openclaw.json",
+        "--json",
+        "cordyceps-openclaw-text: Reply with the controlled test message.",
+        "--state-dir",
+        "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-14MPis/home/.openclaw",
+        "--cwd",
+        "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-14MPis/work"
+      ],
+      "prompt": "cordyceps-openclaw-text: Reply with the controlled test message.",
+      "incrementalOutputBeforeCompletion": false,
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\n  \"ok\": true,\n  \"status\": \"ok\",\n  \"final\": \"CORDYCEPS_openclaw_text_OK\",\n  \"payloads\": [\n    {\n      \"text\": \"CORDYCEPS_openclaw_text_OK\",\n      \"mediaUrl\": null\n    }\n  ],\n  \"codeModeEngaged\": false,\n  \"assistantTurns\": 1,\n  \"model\": \"cordyceps-test\",\n  \"provider\": \"cordyceps\",\n  \"sessionId\": \"313bd450-c840-4a4d-875e-c3446ea68b8d\"\n}\n",
+        "stderr": "\u001b[33m[provider-transport-fetch]\u001b[39m \u001b[36m[model-fetch] start provider=cordyceps api=openai-completions model=cordyceps-test method=POST url=http://127.0.0.1:51750/v1/chat/completions timeoutMs=undefined proxy=none policy=custom\u001b[39m\n\u001b[33m[provider-transport-fetch]\u001b[39m \u001b[36m[model-fetch] response provider=cordyceps api=openai-completions model=cordyceps-test status=200 elapsedMs=19 dispatcher=new contentType=text/event-stream; charset=utf-8\u001b[39m\n\u001b[33m[agents/agent-command]\u001b[39m \u001b[36m[agent] run 313bd450-c840-4a4d-875e-c3446ea68b8d ended with stopReason=stop\u001b[39m\n",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "providerStreaming": true,
+      "requests": [
+        {
+          "id": "5feab237-4f06-494d-a6f5-62a6fa8cec27",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "ddb2167fe8bc4498f4f0fa17e907bd90ca7fcbf74c1b342aa38ec9d5fd58553f",
+          "tools": [
+            "agents_wait",
+            "apply_patch",
+            "ask_user",
+            "automations",
+            "conversations_list",
+            "conversations_send",
+            "conversations_turn",
+            "create_goal",
+            "dashboard",
+            "edit",
+            "exec",
+            "get_goal",
+            "portal",
+            "process",
+            "progress_card",
+            "read",
+            "secrets",
+            "session_status",
+            "sessions",
+            "sessions_history",
+            "sessions_list",
+            "sessions_search",
+            "sessions_send",
+            "sessions_spawn",
+            "sessions_yield",
+            "skill_workshop",
+            "subagents",
+            "terminal",
+            "update_goal",
+            "web_fetch",
+            "web_search",
+            "write"
+          ],
+          "toolResults": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "5feab237-4f06-494d-a6f5-62a6fa8cec27",
+          "timestamp": 1790743294596,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_fd00de683d444791b110125552add53a\",\"created\":1790743294,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_fd00de683d444791b110125552add53a\",\"created\":1790743294,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_op\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_fd00de683d444791b110125552add53a\",\"created\":1790743294,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"enclaw_text_OK\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_fd00de683d444791b110125552add53a\",\"created\":1790743294,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_fd00de683d444791b110125552add53a\",\"created\":1790743294,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "openclaw",
+      "scenario": "tool",
+      "binary": "/tmp/cordyceps-orchestrator-tools/node_modules/.bin/openclaw",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "OpenClaw 2026.9.2 (3928bad)\n",
+        "stderr": "",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "args": [
+        "agent",
+        "exec",
+        "--config",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-ybU4OB/openclaw.json",
+        "--json",
+        "cordyceps-openclaw-tool: Read fixture.txt and report completion.",
+        "--state-dir",
+        "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-hHUQjF/home/.openclaw",
+        "--cwd",
+        "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-hHUQjF/work"
+      ],
+      "prompt": "cordyceps-openclaw-tool: Read fixture.txt and report completion.",
+      "scriptedCall": {
+        "id": "fixturecall",
+        "name": "read",
+        "input": {
+          "path": "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-hHUQjF/work/fixture.txt"
+        }
+      },
+      "process": {
+        "code": 0,
+        "signal": null,
+        "stdout": "{\n  \"ok\": true,\n  \"status\": \"ok\",\n  \"final\": \"CORDYCEPS_openclaw_tool_OK\",\n  \"payloads\": [\n    {\n      \"text\": \"CORDYCEPS_openclaw_tool_OK\",\n      \"mediaUrl\": null\n    }\n  ],\n  \"codeModeEngaged\": false,\n  \"assistantTurns\": 2,\n  \"toolSummary\": {\n    \"calls\": 1,\n    \"tools\": [\n      \"read\"\n    ],\n    \"failures\": 0\n  },\n  \"model\": \"cordyceps-test\",\n  \"provider\": \"cordyceps\",\n  \"sessionId\": \"58920787-3756-4d1b-aff5-33890dab96d8\"\n}\n",
+        "stderr": "\u001b[33m[provider-transport-fetch]\u001b[39m \u001b[36m[model-fetch] start provider=cordyceps api=openai-completions model=cordyceps-test method=POST url=http://127.0.0.1:51774/v1/chat/completions timeoutMs=undefined proxy=none policy=custom\u001b[39m\n\u001b[33m[provider-transport-fetch]\u001b[39m \u001b[36m[model-fetch] response provider=cordyceps api=openai-completions model=cordyceps-test status=200 elapsedMs=23 dispatcher=new contentType=text/event-stream; charset=utf-8\u001b[39m\n\u001b[33m[provider-transport-fetch]\u001b[39m \u001b[36m[model-fetch] start provider=cordyceps api=openai-completions model=cordyceps-test method=POST url=http://127.0.0.1:51774/v1/chat/completions timeoutMs=undefined proxy=none policy=custom\u001b[39m\n\u001b[33m[provider-transport-fetch]\u001b[39m \u001b[36m[model-fetch] response provider=cordyceps api=openai-completions model=cordyceps-test status=200 elapsedMs=14 dispatcher=reused contentType=text/event-stream; charset=utf-8\u001b[39m\n\u001b[33m[agents/agent-command]\u001b[39m \u001b[36m[agent] run 58920787-3756-4d1b-aff5-33890dab96d8 ended with stopReason=stop\u001b[39m\n",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "requests": [
+        {
+          "id": "a4d1b7fa-1ea3-4579-a7d4-c10cc5fd9078",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "b0b94a3af5815cf16f5a56486a30d1896f5728cfc6fb99ab4151799b3d6e5dd9",
+          "tools": [
+            "agents_wait",
+            "apply_patch",
+            "ask_user",
+            "automations",
+            "conversations_list",
+            "conversations_send",
+            "conversations_turn",
+            "create_goal",
+            "dashboard",
+            "edit",
+            "exec",
+            "get_goal",
+            "portal",
+            "process",
+            "progress_card",
+            "read",
+            "secrets",
+            "session_status",
+            "sessions",
+            "sessions_history",
+            "sessions_list",
+            "sessions_search",
+            "sessions_send",
+            "sessions_spawn",
+            "sessions_yield",
+            "skill_workshop",
+            "subagents",
+            "terminal",
+            "update_goal",
+            "web_fetch",
+            "web_search",
+            "write"
+          ],
+          "toolResults": []
+        },
+        {
+          "id": "ac33ef88-02bd-4460-8bb0-b3e00cb77dd3",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "c63eef8e39c3e77ae6a1ca95d69523b69539c6d7fc6242915321bd287636c48b",
+          "tools": [
+            "agents_wait",
+            "apply_patch",
+            "ask_user",
+            "automations",
+            "conversations_list",
+            "conversations_send",
+            "conversations_turn",
+            "create_goal",
+            "dashboard",
+            "edit",
+            "exec",
+            "get_goal",
+            "portal",
+            "process",
+            "progress_card",
+            "read",
+            "secrets",
+            "session_status",
+            "sessions",
+            "sessions_history",
+            "sessions_list",
+            "sessions_search",
+            "sessions_send",
+            "sessions_spawn",
+            "sessions_yield",
+            "skill_workshop",
+            "subagents",
+            "terminal",
+            "update_goal",
+            "web_fetch",
+            "web_search",
+            "write"
+          ],
+          "toolResults": [
+            {
+              "id": "fixturecall",
+              "text": "fixture-6f458f7f-660a-4043-b8e7-bc85923a0ab0\n",
+              "isError": false,
+              "raw": {
+                "role": "tool",
+                "content": "fixture-6f458f7f-660a-4043-b8e7-bc85923a0ab0\n",
+                "tool_call_id": "fixturecall"
+              }
+            }
+          ]
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "a4d1b7fa-1ea3-4579-a7d4-c10cc5fd9078",
+          "timestamp": 1790743300941,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_886848d752284a28b74978e4a027f3f5\",\"created\":1790743300,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_886848d752284a28b74978e4a027f3f5\",\"created\":1790743300,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"id\":\"fixturecall\",\"type\":\"function\",\"function\":{\"name\":\"read\",\"arguments\":\"\"}}]},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_886848d752284a28b74978e4a027f3f5\",\"created\":1790743300,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\\\"path\\\":\\\"/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-hHUQjF/work/fixture.txt\\\"}\"}}]},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_886848d752284a28b74978e4a027f3f5\",\"created\":1790743300,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"tool_calls\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_886848d752284a28b74978e4a027f3f5\",\"created\":1790743300,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        },
+        {
+          "requestId": "ac33ef88-02bd-4460-8bb0-b3e00cb77dd3",
+          "timestamp": 1790743301068,
+          "status": 200,
+          "headers": {
+            "content-type": "text/event-stream; charset=utf-8",
+            "cache-control": "no-cache"
+          },
+          "chunks": [
+            "data: {\"id\":\"chatcmpl_8fbd257d02864a8998c42f43ca132f63\",\"created\":1790743301,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_8fbd257d02864a8998c42f43ca132f63\",\"created\":1790743301,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"CORDYCEPS_openclaw_tool_OK\"},\"finish_reason\":null,\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_8fbd257d02864a8998c42f43ca132f63\",\"created\":1790743301,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\",\"logprobs\":null}]}\n\n",
+            "data: {\"id\":\"chatcmpl_8fbd257d02864a8998c42f43ca132f63\",\"created\":1790743301,\"model\":\"cordyceps-test\",\"object\":\"chat.completion.chunk\",\"choices\":[],\"usage\":{\"prompt_tokens\":0,\"completion_tokens\":0,\"total_tokens\":0}}\n\n",
+            "data: [DONE]\n\n"
+          ],
+          "outcome": "completed"
+        }
+      ],
+      "failures": [],
+      "cleanedUp": true
+    },
+    {
+      "harness": "openclaw",
+      "scenario": "cancel",
+      "binary": "/tmp/cordyceps-orchestrator-tools/node_modules/.bin/openclaw",
+      "passed": true,
+      "version": {
+        "code": 0,
+        "signal": null,
+        "stdout": "OpenClaw 2026.9.2 (3928bad)\n",
+        "stderr": "",
+        "timedOut": false,
+        "cancelled": false
+      },
+      "args": [
+        "agent",
+        "exec",
+        "--config",
+        "/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-GX2RqR/openclaw.json",
+        "--json",
+        "cordyceps-openclaw-cancel: Reply with the controlled test message.",
+        "--state-dir",
+        "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-qaBHQH/home/.openclaw",
+        "--cwd",
+        "/private/var/folders/hn/hhd5k8yn619cj1tlxsztpk0h0000gp/T/cordyceps-openclaw-qaBHQH/work"
+      ],
+      "prompt": "cordyceps-openclaw-cancel: Reply with the controlled test message.",
+      "process": {
+        "code": null,
+        "signal": "SIGKILL",
+        "stdout": "",
+        "stderr": "\u001b[33m[provider-transport-fetch]\u001b[39m \u001b[36m[model-fetch] start provider=cordyceps api=openai-completions model=cordyceps-test method=POST url=http://127.0.0.1:51784/v1/chat/completions timeoutMs=undefined proxy=none policy=custom\u001b[39m\n",
+        "timedOut": false,
+        "cancelled": true
+      },
+      "requests": [
+        {
+          "id": "715421a7-0a10-4695-8c00-787aa183efdf",
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "model": "cordyceps-test",
+          "stream": true,
+          "containsPrompt": true,
+          "bodySha256": "1ebd9fa093f180a3d03f46bdd3e41d27c019a94e897bc608b2578f5f2fea01c7",
+          "tools": [
+            "agents_wait",
+            "apply_patch",
+            "ask_user",
+            "automations",
+            "conversations_list",
+            "conversations_send",
+            "conversations_turn",
+            "create_goal",
+            "dashboard",
+            "edit",
+            "exec",
+            "get_goal",
+            "portal",
+            "process",
+            "progress_card",
+            "read",
+            "secrets",
+            "session_status",
+            "sessions",
+            "sessions_history",
+            "sessions_list",
+            "sessions_search",
+            "sessions_send",
+            "sessions_spawn",
+            "sessions_yield",
+            "skill_workshop",
+            "subagents",
+            "terminal",
+            "update_goal",
+            "web_fetch",
+            "web_search",
+            "write"
+          ],
+          "toolResults": []
+        }
+      ],
+      "responses": [
+        {
+          "requestId": "715421a7-0a10-4695-8c00-787aa183efdf",
+          "timestamp": 1790743305941,
+          "status": null,
+          "headers": {},
+          "chunks": [],
+          "outcome": "aborted"
+        }
+      ],
+      "failures": [],
+      "cleanedUp": true
+    }
+  ],
+  "fullReceiptSha256": "347bdc09cdeee6e10ba953703243424e40aec25541a870e540b729d99a7f017a",
+  "fullReceiptPath": "/tmp/cordyceps-local-final.json",
+  "hermesSource": {
+    "repository": "https://github.com/NousResearch/hermes-agent",
+    "commit": "ddd0cc6944908d2655db2095786ac089a7c3ba0c",
+    "install": "official editable install, Python 3.14.3"
+  }
+}

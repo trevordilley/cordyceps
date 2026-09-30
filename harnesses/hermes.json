@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "hermes",
+  "provider": {
+    "adapter": "hermes",
+    "override": {
+      "env": { "HERMES_HOME": "${session.dir}", "OPENAI_BASE_URL": "${mock.baseUrl}/v1", "OPENAI_API_KEY": "${mock.apiKey}" },
+      "configFiles": [{
+        "id": "provider", "path": "config.yaml", "format": "json",
+        "values": {
+          "model": { "default": "cordyceps-test", "provider": "custom", "base_url": "${mock.baseUrl}/v1", "api_key": "${mock.apiKey}" },
+          "agent": { "max_turns": 4 },
+          "display": { "streaming": true }
+        }
+      }]
+    }
+  },
+  "modes": { "nonInteractive": { "args": ["chat", "--query", "${input.prompt}", "--oneshot", "--yolo", "--toolsets", "file", "--format", "stream-json"] } }
+}

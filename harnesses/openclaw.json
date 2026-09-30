@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "openclaw",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": { "OPENCLAW_CONFIG_PATH": "${config.provider.path}" },
+      "configFiles": [{
+        "id": "provider", "path": "openclaw.json", "format": "json",
+        "values": {
+          "models": { "mode": "replace", "providers": { "cordyceps": {
+            "baseUrl": "${mock.baseUrl}/v1", "apiKey": "${mock.apiKey}",
+            "api": "openai-completions", "agentRuntime": { "id": "openclaw" },
+            "models": [{ "id": "cordyceps-test", "name": "Cordyceps controlled model", "contextWindow": 128000, "maxTokens": 4096 }]
+          }}},
+          "agents": { "defaults": { "model": { "primary": "cordyceps/cordyceps-test" }, "skipBootstrap": true } },
+          "plugins": { "enabled": false },
+          "tools": { "profile": "coding" }
+        }
+      }]
+    }
+  },
+  "modes": { "nonInteractive": { "args": ["agent", "exec", "--config", "${config.provider.path}", "--json", "${input.prompt}"] } }
+}
