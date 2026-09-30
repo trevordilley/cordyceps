@@ -1,0 +1,9 @@
+{
+  "$schema": "https://changesaga.dev/schema/v5/relation-repin.schema.json",
+  "version": 5,
+  "id": "r6",
+  "relation": "urn:change-saga:cordyceps:relation:stack-playwright-setup",
+  "from_content_digest": "sha256:9e5fcf047681b139dc936f4f32a60f65b7a2d56970d967ab04d6c09fc070faaa",
+  "rationale": "Re-read the delivered section: expanded packed consumer evidence preserves the same injection-only registry, standalone and optional fixture obligations; executable and real client/service ownership remains with the consumer.",
+  "created_at": "2026-09-30T04:01:52.476235Z"
+}

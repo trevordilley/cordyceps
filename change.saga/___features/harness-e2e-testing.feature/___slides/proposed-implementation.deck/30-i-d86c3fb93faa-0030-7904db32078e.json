@@ -5,7 +5,7 @@
   "rank": 30,
   "kind": "node",
   "label": "Provider codecs",
-  "description": "Codecs preserve actual tool schemas/results and encode text, tools, errors and SSE. Anthropic health and token-count requests use explicit scripted replies through ordinary capture/routes. Real tools execute in the consumer integration.",
+  "description": "Codecs preserve schemas/results and encode JSON, SSE, NDJSON and AWS frames. Exact bootstrap routes require explicit metadata. Real agents execute tools; no agent decisions or file results are fabricated.",
   "selector": {
     "type": "element",
     "element_id": "codecs"

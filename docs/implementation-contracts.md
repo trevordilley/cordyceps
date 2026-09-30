@@ -1,5 +1,7 @@
 # Integration contracts
 
+Historical first-phase coordination contract. Current codecs, recipes and verified consumer workflows are documented in [provider-codecs.md](provider-codecs.md), [registry.md](registry.md) and [devswarm-agents.md](devswarm-agents.md).
+
 Working implementation decisions: ESM npm package, Node >=22 runtime, Bun 1.3.13 development/build/tests and strict TypeScript declarations. No CLI or publication in this change. Node compatibility will be checked with the installed Node 22 runtime; this is not harness certification.
 
 Ownership: core child owns src/session.ts and src/observations.ts plus tests/core*. Codecs child owns src/provider/* except types.ts and tests/codecs*. Registry child owns src/registry.ts, src/injection.ts, src/manifest.ts, harnesses/*, tests/registry* and docs/registry.md. Manager owns package/build, root exports, Playwright, README, consumer examples, package verification, integration and Saga. Request shared contract changes from manager.

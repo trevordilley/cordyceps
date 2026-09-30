@@ -5,7 +5,7 @@
   "rank": 50,
   "kind": "node",
   "label": "Real consumer evidence and limits",
-  "description": "Packed CLI, ACP and browser examples verify real behavior, including native cancellation and reuse. Versions are observations, not gates. Optional lifecycle features and other platforms remain explicit limits in docs/verification.md.",
+  "description": "Only verified native workflows are supported. Remote-agent integrations and untested WSL variants remain excluded audit evidence. Stream consumption, incremental output, process cancellation and ACP reuse are distinct observations.",
   "selector": {
     "type": "element",
     "element_id": "limits"

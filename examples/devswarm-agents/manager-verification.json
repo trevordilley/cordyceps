@@ -822,6 +822,54 @@
       "modelProviderRequests": 0,
       "nativeQueries": 2,
       "classification": "excluded-remote-agent-boundary"
+    },
+    {
+      "agent": "cursor",
+      "sourceEvidence": "/tmp/cordyceps-cursor-manager.json",
+      "passed": false,
+      "boundaryEstablished": true,
+      "cleanedUp": true,
+      "classification": "excluded-remote-agent-boundary"
     }
-  ]
+  ],
+  "verification": {
+    "node": "22.22.3",
+    "bun": "1.3.13",
+    "nativeCasesPassed": 59,
+    "nativeFamiliesVerified": 18,
+    "supportedInventoryCheck": "40 source enum values accounted for;18 supported native workflows;2 excluded native;20 excluded-platform",
+    "bunTests": {
+      "passed": 137,
+      "skipped": 2,
+      "failed": 0,
+      "assertions": 947
+    },
+    "nodeLifecycleTests": {
+      "passed": 21,
+      "skipped": 0,
+      "failed": 0
+    },
+    "package": "passed",
+    "acp": {
+      "protocolVersion": 1,
+      "prompts": 8,
+      "providerRequests": 30,
+      "nativeMessages": 65,
+      "permissions": 2,
+      "realRead": true,
+      "incremental": true,
+      "cancellation": "cancelled",
+      "sameSessionReuse": true
+    },
+    "frontend": {
+      "passed": 3,
+      "text": true,
+      "actualRead": true,
+      "cancelThenNextTurn": true
+    },
+    "sourceLogs": [
+      "/tmp/cordyceps-expanded-final-regression.log",
+      "/tmp/cordyceps-expanded-baseline.log"
+    ]
+  }
 }

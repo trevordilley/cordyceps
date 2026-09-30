@@ -5,7 +5,7 @@
   "rank": 20,
   "kind": "node",
   "label": "Packed artifact checks",
-  "description": "Packed Node consumers verify declarations and provider contracts. Installed Claude Code and Codex produce controlled text and actual fixture tool results; Claude also consumes real PTY input and renders a scripted reply.",
+  "description": "Packed public imports verify declarations and real agent text/file-read workflows. DevSwarm inventory links captured requests and output. Launch, auxiliary routes, PTYs and self-hosted backends stay in consumer examples.",
   "selector": {
     "type": "element",
     "element_id": "node"
