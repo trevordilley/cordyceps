@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "aider",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "env": { "OPENAI_API_BASE": "${mock.baseUrl}/v1", "OPENAI_API_KEY": "${mock.apiKey}" }
+    }
+  },
+  "modes": { "interactive": {}, "nonInteractive": {} }
+}

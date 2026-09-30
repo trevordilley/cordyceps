@@ -1,0 +1,100 @@
+{
+  "artifact": {
+    "filename": "cordyceps-0.1.0.tgz",
+    "integrity": "sha512-oL0RL7Md0IYjlgftcMD9yLlBkPyukqN+nUzPIrjyIipr98f+QVmjd3JhhkeJAAvQs3Myqu9EdgemuyIssA6cwA=="
+  },
+  "node": "v22.22.3",
+  "platform": "darwin",
+  "cases": [
+    {
+      "harness": "aider",
+      "scenario": "text",
+      "passed": true,
+      "version": "aider 0.86.2",
+      "providerRequests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "stream": true,
+          "nativeToolCount": 0,
+          "fixtureTokens": []
+        }
+      ],
+      "binaryExitCode": 0,
+      "controlledOutputObserved": true,
+      "cleanedUp": true
+    },
+    {
+      "harness": "aider",
+      "scenario": "tool",
+      "passed": true,
+      "version": "aider 0.86.2",
+      "providerRequests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "stream": true,
+          "nativeToolCount": 0,
+          "fixtureTokens": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "stream": true,
+          "nativeToolCount": 0,
+          "fixtureTokens": [
+            "file-1afc1950-34b1-4fbf-8e5f-dcf9b4dc0d16"
+          ]
+        }
+      ],
+      "binaryExitCode": 0,
+      "controlledOutputObserved": true,
+      "cleanedUp": true
+    },
+    {
+      "harness": "cline",
+      "scenario": "text",
+      "passed": true,
+      "version": "2.17.0",
+      "providerRequests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "stream": true,
+          "nativeToolCount": 0,
+          "fixtureTokens": []
+        }
+      ],
+      "binaryExitCode": 0,
+      "controlledOutputObserved": true,
+      "cleanedUp": true
+    },
+    {
+      "harness": "cline",
+      "scenario": "tool",
+      "passed": true,
+      "version": "2.17.0",
+      "providerRequests": [
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "stream": true,
+          "nativeToolCount": 0,
+          "fixtureTokens": []
+        },
+        {
+          "method": "POST",
+          "path": "/v1/chat/completions",
+          "stream": true,
+          "nativeToolCount": 0,
+          "fixtureTokens": [
+            "file-caf542f1-2d36-4c19-b676-ab911c581e86"
+          ]
+        }
+      ],
+      "binaryExitCode": 0,
+      "controlledOutputObserved": true,
+      "cleanedUp": true
+    }
+  ]
+}

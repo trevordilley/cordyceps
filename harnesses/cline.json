@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "cline",
+  "provider": {
+    "adapter": "openai-chat-completions",
+    "override": {
+      "args": ["--config", "${session.dir}/cline"],
+      "configFiles": [
+        {
+          "id": "state", "path": "cline/data/globalState.json", "format": "json",
+          "values": {
+            "actModeApiProvider": "openai", "planModeApiProvider": "openai",
+            "actModeOpenAiModelId": "${input.model}", "planModeOpenAiModelId": "${input.model}",
+            "openAiBaseUrl": "${mock.baseUrl}/v1", "welcomeViewCompleted": true,
+            "remoteRulesToggles": {}, "remoteWorkflowToggles": {}, "remoteSkillsToggles": {}
+          }
+        },
+        { "id": "key", "path": "cline/data/secrets.json", "format": "json", "values": { "openAiApiKey": "${mock.apiKey}" } },
+        { "id": "mcp", "path": "cline/data/settings/cline_mcp_settings.json", "format": "json", "values": { "mcpServers": {} } }
+      ]
+    }
+  },
+  "modes": { "interactive": {}, "nonInteractive": {} }
+}
