@@ -42,6 +42,26 @@ try {
   await mkdir(standalone);
   await writeFile(join(standalone, 'package.json'), JSON.stringify({ private: true, type: 'module' }));
   run('npm', ['install', '--ignore-scripts', '--omit=optional', '--no-audit', '--no-fund', tarball], standalone);
+  // Loading must use this installation's files, even when the build checkout exists.
+  await writeFile(join(standalone, 'relocation.mjs'), `
+import assert from 'node:assert/strict';
+import { rename } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import { cordyceps } from 'cordyceps';
+const require = createRequire(import.meta.url);
+const cjs = require('cordyceps').cordyceps;
+const recipes = new URL('./node_modules/cordyceps/harnesses/', import.meta.url);
+const hidden = new URL('./node_modules/cordyceps/hidden-harnesses/', import.meta.url);
+assert.equal(cordyceps.createRegistry().get('claude-code').id, 'claude-code');
+assert.equal(cjs.createRegistry().get('claude-code').id, 'claude-code');
+await rename(recipes, hidden);
+try {
+  for (const api of [cordyceps, cjs]) assert.throws(() => api.createRegistry(), { code: 'ENOENT' },
+    'Built-ins must come from the installed package, never the build checkout');
+} finally { await rename(hidden, recipes); }
+console.log('ESM and CommonJS load built-ins from the installed package.');
+`);
+  console.log(run(process.execPath, ['relocation.mjs'], standalone).trim());
   await writeFile(join(standalone, 'definition.json'), JSON.stringify(definition));
   await writeFile(join(standalone, 'smoke.mjs'), `
 import assert from 'node:assert/strict';

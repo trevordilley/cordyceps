@@ -6,10 +6,12 @@ Reproduction context: macOS 15.7.4, Node 22.22.3, Bun 1.3.13, TypeScript 5.9.3, 
 
 ## Consumer API checks
 
-The alpha.2 changes passed strict TypeScript, 168 Bun tests (two known Bun-only
+The consumer API changes passed strict TypeScript, 168 Bun tests (two known Bun-only
 skips), and all 33 Node lifecycle/consumer API tests. Packed consumers cover ESM
 and CommonJS imports, declarations, ordinary Playwright `.spec.ts` projects,
 required-step failures, fast failure guards, redacted attachments and cleanup.
+The alpha.3 package check also verifies that both module formats load harness
+files from the installed package, catching the build-path leak found in alpha.2.
 
 The [app → worker → Codex example](testing-apps.md) passed controlled text and an
 actual file read through inherited configuration. The separate home-only Claude
@@ -26,9 +28,9 @@ Run from the repository root after `bun install --frozen-lockfile`. Put a real N
 | Command | Observed result |
 | --- | --- |
 | `bun run check` | Strict TypeScript checking passed. |
-| `bun run build` | Node-targeted ESM and declaration emission passed. |
-| `bun test tests` | 149 passed, 2 known Bun skips, 0 failed; 1,246 assertions on both hosted Node jobs at `8a8bbfe`. |
-| `bun run test:node` | 21 Node lifecycle tests passed, 0 skipped. |
+| `bun run build` | Node-targeted ESM/CommonJS and matching declarations passed. |
+| `bun test tests` | 168 passed, 2 known Bun skips, 0 failed; 1,246 assertions. |
+| `bun run test:node` | 33 Node lifecycle/consumer API tests passed, 0 skipped. |
 | `node scripts/verify-package.mjs` | Clean installed artifact, optional peer, declarations, synthetic HTTP/tool and success/failure teardown checks passed. |
 | `node examples/real-cli/run.mjs /tmp/cordyceps-cli.json` | Four real installed CLI cases passed; captured requests were 1/2 for each harness's text/tool cases. |
 | `node examples/real-cli/run.mjs /tmp/cordyceps-pty.json --interactive-claude` | Real Claude TUI input and controlled terminal reply passed; title traffic is handled separately. Python 3 is consumer tooling for this case. |

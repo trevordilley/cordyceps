@@ -15,7 +15,7 @@ and which tools it calls, then checks what your app does with the result.
 Early alpha. Requires Node.js 22 or later.
 
 ```sh
-npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.2/cordyceps.tgz
+npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.3/cordyceps.tgz
 ```
 
 [Releases and curl downloads →](docs/releases.md)

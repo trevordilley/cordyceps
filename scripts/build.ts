@@ -18,6 +18,10 @@ const commonjs = await Bun.build({
   entrypoints: ['src/index.ts', 'src/playwright.ts'],
   outdir: 'dist', target: 'node', format: 'cjs', splitting: false,
   packages: 'bundle', external: ['@playwright/test'], sourcemap: 'none', naming: '[name].cjs',
+  // The banner is emitted verbatim, so __filename belongs to the installed bundle.
+  // Reading __filename in bundled source makes Bun inline the build-machine path.
+  define: { 'import.meta.url': '__cordycepsModuleUrl' },
+  banner: 'const __cordycepsModuleUrl = require("node:url").pathToFileURL(__filename).href;',
 });
 if (!commonjs.success) {
   for (const log of commonjs.logs) console.error(log);
