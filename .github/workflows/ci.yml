@@ -5,6 +5,7 @@ on:
     branches: [main, 'implementation/**']
   pull_request:
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -38,13 +39,13 @@ jobs:
       - run: bun test tests
       - run: bun run test:node
       - run: bun run build
-      - run: node scripts/verify-package.mjs
-      - name: Retain built package
-        run: mkdir -p artifacts && npm pack --ignore-scripts --pack-destination artifacts
+      - name: Verify and retain the installed package
+        run: node scripts/verify-package.mjs --pack-destination artifacts
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: package-node-${{ matrix.node }}
           path: artifacts/*.tgz
+          if-no-files-found: error
           retention-days: 7
 
   consumers:

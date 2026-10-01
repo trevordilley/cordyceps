@@ -2,7 +2,7 @@
 
 `.github/workflows/ci.yml` moves verification onto standard GitHub-hosted runners.
 It runs on pull requests, pushes to `main` and `implementation/**`, and manual
-`workflow_dispatch`. No provider credentials or repository secrets are required.
+`workflow_dispatch`, and can be called by the release workflow. No provider credentials or repository secrets are required.
 Standard hosted runners are [free for public repositories](https://docs.github.com/en/actions/reference/runners/github-hosted-runners).
 These jobs use `ubuntu-24.04` and standard arm64 `macos-15`, not paid larger runners.
 
@@ -10,7 +10,7 @@ These jobs use `ubuntu-24.04` and standard arm64 `macos-15`, not paid larger run
 
 - Two Linux jobs run strict TypeScript, Bun tests, Node lifecycle tests, build,
   and clean installed-package checks on Node 22.22.3 and 24.15.0. They retain the
-  resulting tarball.
+  exact tarball installed by the package verifier, without repacking it.
 - Eleven macOS groups (up to four in parallel) build and install the actual package, then run the
   real consumer examples. `baseline` covers Claude Code and Codex text/read,
   the official Claude ACP adapter lifecycle, and the three Chromium frontend
@@ -48,6 +48,16 @@ Jobs have explicit time limits, cancel superseded runs on the same ref, and keep
 failure receipts/browser reports for seven days. External Actions are pinned to
 commit SHAs. Checkout does not persist credentials and the workflow token has
 only read access to repository contents. No job publishes npm or merges code.
+
+## Releases and prereleases
+
+`.github/workflows/release.yml` runs on `v*` tag pushes. It validates that the tag
+matches `package.json`, calls all CI jobs above, and publishes the verified npm
+tarball and SHA-256 checksum as GitHub release assets. `v0.0.1-alpha` creates a
+prerelease; a version without a suffix creates a stable release. Prereleases
+do not become the latest stable release. Only the final publishing job has
+repository write access. See [release and installation instructions](releases.md)
+for direct npm URLs, curl downloads and how to cut or retry a release.
 
 ## Hosted verification
 

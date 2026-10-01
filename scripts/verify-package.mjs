@@ -1,13 +1,15 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, writeFile, rm, mkdir } from 'node:fs/promises';
+import { mkdtemp, readFile, writeFile, rm, mkdir, copyFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { parseArgs } from 'node:util';
 
 // Run after bun run build. All consumer execution below uses Node, never Bun.
 assert(!process.versions.bun && Number(process.versions.node.split('.')[0]) >= 22,
   'Package verification requires real Node >=22; put it first on PATH, not a node-to-Bun shim.');
 const repo = process.cwd();
+const { values } = parseArgs({ options: { 'pack-destination': { type: 'string' } } });
 const root = await mkdtemp(join(tmpdir(), 'cordyceps-package-'));
 const run = (command, args, cwd, allowFailure = false) => {
   try { return execFileSync(command, args, { cwd, encoding: 'utf8', timeout: 90_000, env: { ...process.env, CI: '1', PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1' } }); }
@@ -155,6 +157,13 @@ test('route failure is visible', async ({ ai }) => {
   await assert.rejects(readFile(failedCleanup.path));
   console.log('Packed Playwright: fixture HTTP, type declarations, teardown after success and handler failure.');
   console.log('Artifact contents checked; standalone and optional-peer consumer checks passed.');
+  // Retain exactly the bytes installed above, only after every check succeeds.
+  if (values['pack-destination']) {
+    const destination = resolve(values['pack-destination']);
+    await mkdir(destination, { recursive: true });
+    await copyFile(tarball, join(destination, packed.filename));
+    console.log(`Verified package retained: ${join(destination, packed.filename)}`);
+  }
 } finally {
   await rm(root, { recursive: true, force: true });
 }

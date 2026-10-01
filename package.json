@@ -1,6 +1,6 @@
 {
   "name": "cordyceps",
-  "version": "0.1.0",
+  "version": "0.0.1-alpha",
   "description": "Mock model providers and declarative injection for consumer-owned AI harness tests",
   "type": "module",
   "engines": {
@@ -45,7 +45,8 @@
     "docs/real-source-codebuddy-qoder.md",
     "docs/real-vendor-agents.md",
     "docs/real-source-opencode-mimo-dsh.md",
-    "docs/ci.md"
+    "docs/ci.md",
+    "docs/releases.md"
   ],
   "scripts": {
     "check": "tsc --noEmit",
