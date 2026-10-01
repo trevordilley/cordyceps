@@ -52,9 +52,27 @@ try {
 }
 ```
 
-In your app's tests, pass `ai.environment(...)`, `ai.args`, and any generated
-configuration files to your existing agent launcher. You keep control of agent
-startup, permissions, and shutdown.
+## When the agent is inside your app
+
+Pass the environment to the **app at startup**. Its workers and agent processes
+can inherit the provider settings, even when the test never launches the agent:
+
+```js
+import { _electron as electron } from 'playwright';
+
+// In a Playwright test, with an ai fixture prepared for your app's agent:
+const app = await electron.launch({
+  args: ['dist/main.js'],
+  env: ai.environment(process.env),
+});
+```
+
+`prepare()` provides environment, agent arguments, and generated config files.
+Your app decides how to consume them, just as it does configuration from other
+libraries. Arguments don't inherit; apps with custom launch rules must forward
+the relevant settings themselves.
+
+[Desktop, web-worker, and runnable nested-process examples →](docs/testing-apps.md)
 
 ## What you can test
 
@@ -128,6 +146,7 @@ These are tested profiles, not guarantees for every version or operating system.
 
 ## Examples and docs
 
+- [Testing through your app](docs/testing-apps.md) — desktop, backend, and nested workers
 - [Real CLI tests](docs/real-cli.md) — Claude Code and Codex
 - [Browser tests](docs/real-frontend.md) — Playwright driving an app backed by Claude
 - [ACP sessions](docs/real-acp.md) — permissions, tools, and cancellation

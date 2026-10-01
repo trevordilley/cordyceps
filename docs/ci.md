@@ -13,7 +13,7 @@ These jobs use `ubuntu-24.04` and standard arm64 `macos-15`, not paid larger run
   exact tarball installed by the package verifier, without repacking it.
 - Eleven macOS groups (up to four in parallel) build and install the actual package, then run the
   real consumer examples. `baseline` covers Claude Code and Codex text/read,
-  the official Claude ACP adapter lifecycle, and the three Chromium frontend
+  the app → worker → Codex environment example, the official Claude ACP adapter lifecycle, and the three Chromium frontend
   tests. `extra-cli` covers Kilo, Continue, Autohand and Command Code; `pi`
   covers Pi, OMP, Mastra Code, Kimi, Prime Agent and ZCode; `vendors` covers
   Grok Build, Muse, fx, Ante and MiniMax Code. `source-clis` covers MiMo,

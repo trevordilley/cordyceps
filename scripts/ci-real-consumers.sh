@@ -36,6 +36,7 @@ case "$consumer_group" in
     node node_modules/@playwright/test/cli.js install chromium
     baseline_status=0
     node examples/real-cli/run.mjs "$evidence_root/cli.json" || baseline_status=1
+    node examples/inherited-environment/verify-packed.mjs "$evidence_root/inherited-environment.json" || baseline_status=1
     node examples/real-acp/verify.mjs || baseline_status=1
     node examples/real-frontend/verify-packed.mjs || baseline_status=1
     test "$baseline_status" = 0
