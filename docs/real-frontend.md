@@ -10,7 +10,7 @@ From the repository root (after `bun install --frozen-lockfile`):
 
 ```sh
 CLAUDE_BINARY=/absolute/path/to/claude \
-  hivecontrol exec oneshot 5m -- /absolute/path/to/node \
+  /absolute/path/to/node \
   examples/real-frontend/verify-packed.mjs
 ```
 
@@ -42,10 +42,10 @@ For a manual demo, build and pack in the repository, copy `examples/real-fronten
 
 ```sh
 CLAUDE_BINARY=/absolute/path/to/claude \
-  hivecontrol exec service -- /absolute/path/to/node demo.mjs
+  /absolute/path/to/node demo.mjs
 ```
 
-Open the printed loopback URL. The demo route returns a fixed local provider greeting through the real process. Use Ctrl-C or the tracked process stop command when finished.
+Open the printed loopback URL. The demo route returns a fixed local provider greeting through the real process. Use Ctrl-C when finished.
 
 ## Recorded run
 

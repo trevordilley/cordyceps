@@ -5,11 +5,7 @@
 Reproduce on macOS with Bun for building and real Node 22 first on PATH:
 
 ```sh
-hivecontrol exec oneshot 3m -- env \
-  PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:/Users/20idemo/.bun/bin:/usr/bin:/bin \
-  AUGGIE_BINARY=/Users/20idemo/.bun/bin/auggie \
-  /Users/20idemo/.nvm/versions/node/v22.22.3/bin/node \
-  examples/real-auggie/verify.mjs /tmp/cordyceps-auggie-evidence.json
+node examples/real-auggie/verify.mjs /tmp/cordyceps-auggie-evidence.json
 ```
 
 The verifier accepts `AUGGIE_BINARY`; otherwise it resolves `auggie` on PATH. It rejects Bun masquerading as Node. The consumer's macOS sandbox denies outbound network except the mock's loopback port and denies writes outside its scratch root, `/dev/null`, and `/dev/tty`. HOME and XDG paths are scratch directories; the environment is explicitly constructed without inherited credentials. The fixture contains a random token never included in the prompt or scripted tool arguments. Actual tools run only in the disposable workspace. User auth and settings are not modified. Installing Auggie remains the developer's responsibility.

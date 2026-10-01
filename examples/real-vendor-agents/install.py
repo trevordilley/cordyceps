@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Consumer tooling: fetch official current distributions into a caller-owned scratch root.
-No vendor installer is executed. No login or shell/profile edits. Run with hivecontrol.
+No vendor installer is executed. No login or shell/profile edits.
 """
 import argparse
 import gzip

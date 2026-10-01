@@ -9,9 +9,8 @@
 Use real Node 22 or later; this environment's default `node` is a Bun shim. The diagnostic requires macOS `sandbox-exec` and the installed native Cursor executable. `CORDYCEPS_CURSOR_BINARY` overrides the observed default executable path. Installation/launch/cleanup remain consumer responsibilities.
 
 ```sh
-export PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH
-hivecontrol exec oneshot 3m -- bun install --frozen-lockfile
-hivecontrol exec oneshot 3m -- node examples/real-cursor/run.mjs /tmp/cordyceps-cursor-evidence.json
+bun install --frozen-lockfile
+node examples/real-cursor/run.mjs /tmp/cordyceps-cursor-evidence.json
 ```
 
 Successful completion means the boundary assertions passed. The report deliberately retains `passed: false`. There is no Cursor provider recipe or provider codec advertised as validated.

@@ -1,4 +1,4 @@
-// Repo-side consumer verifier. Run under real Node >=22 through hivecontrol.
+// Repo-side consumer verifier. Run under Node >=22.
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';

@@ -31,8 +31,7 @@ Hermes's official source deliberately rejects wheel builds and supports an
 editable installation; the executable above runs that unmodified source.
 This does not change the Cordyceps artifact requirement: the consumer always
 installs and imports the actual packed library. Remove the three setup
-directories when finished. Inside DevSwarm, run installs and verification
-through `hivecontrol exec oneshot 6m -- ...` for tracked execution.
+directories when finished.
 
 The optional final comma-separated argument selects one agent. Missing
 executables and failed assertions are errors, never successful skips. Versions

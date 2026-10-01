@@ -1,19 +1,16 @@
-# Real Amazon Q enum consumer
+# Real Amazon Q / Kiro consumer
 
-The DevSwarm `q` family was exercised through the installed `q` wrapper, which invokes Kiro CLI 2.3.0 on this machine. This is a native AWS service integration, not an OpenAI-compatible substitute. Cordyceps only supplies provider injection and HTTP replies; the developer's consumer owns binary paths, helper installation, process launch, permissions, isolation and cleanup.
+Amazon Q was exercised through the installed `q` wrapper, which invokes Kiro CLI 2.3.0 on this machine. This is a native AWS service integration, not an OpenAI-compatible substitute. Cordyceps only supplies provider injection and HTTP replies; the developer's consumer owns binary paths, helper installation, process launch, permissions, isolation and cleanup.
 
 ## Reproduce
 
 With dependencies installed, run from the repository root:
 
 ```sh
-PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH \
-  hivecontrol exec oneshot 3m -- \
-  /Users/20idemo/.nvm/versions/node/v22.22.3/bin/node \
-  examples/real-q/run.mjs /tmp/cordyceps-q-native.json
+node examples/real-q/run.mjs /tmp/cordyceps-q-native.json
 ```
 
-Outside DevSwarm omit the `hivecontrol exec oneshot 3m --` prefix. Use real Node >=22, not a Bun-backed `node` shim. `Q_BINARY` overrides the installed `q` executable; `Q_CHAT_BINARY` overrides the Kiro CLI chat helper (default `/Applications/Kiro CLI.app/Contents/MacOS/kiro-cli-chat`). These are consumer inputs, not library discovery logic.
+Use real Node >=22, not a Bun-backed `node` shim. `Q_BINARY` overrides the installed `q` executable; `Q_CHAT_BINARY` overrides the Kiro CLI chat helper (default `/Applications/Kiro CLI.app/Contents/MacOS/kiro-cli-chat`). These are consumer inputs, not library discovery logic.
 
 The verifier builds and packs the library, installs the tarball offline into a disposable project, copies the consumer there, and uses only public `cordyceps` imports. It loads `harnesses/amazon-q.json` from that installed artifact through the public registry. The library itself never launches or discovers Q.
 

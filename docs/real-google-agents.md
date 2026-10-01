@@ -7,11 +7,10 @@ This example builds and packs Cordyceps, installs that tarball into a disposable
 On macOS with the three real CLIs installed, use real Node 22 or newer (a Bun `node` shim is rejected):
 
 ```sh
-PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH \
-  hivecontrol exec oneshot 6m -- node examples/real-google-agents/run.mjs /tmp/cordyceps-google-evidence.json
+  node examples/real-google-agents/run.mjs /tmp/cordyceps-google-evidence.json
 ```
 
-Install project dependencies first with `hivecontrol exec oneshot 3m -- bun install --frozen-lockfile`. Outside DevSwarm the same Node command can be run directly. Optional final positional selection is `gemini`, `qwen`, or `mistral-vibe`. `GEMINI_BINARY`, `QWEN_BINARY` and `VIBE_BINARY` override the observed installed executable paths; executable choice belongs to this consumer. The model selections are observed test inputs, not supported-version gates.
+Install project dependencies first with `bun install --frozen-lockfile`. Optional final positional selection is `gemini`, `qwen`, or `mistral-vibe`. `GEMINI_BINARY`, `QWEN_BINARY` and `VIBE_BINARY` override the observed installed executable paths; executable choice belongs to this consumer. The model selections are observed test inputs, not supported-version gates.
 
 The example requires `/usr/bin/sandbox-exec` and fails on other platforms. Every agent runs with a fresh `HOME`, empty work directory, test API key, and a write boundary covering only consumer/session temporary directories plus `/dev/null` and `/dev/tty`. Outbound networking is denied except loopback. No user credentials, settings, shell startup, or paid provider are used. Proxy variables are absent: Gemini's configured proxy can override loopback routing even when `NO_PROXY` is set. The OS sandbox supplies the network boundary.
 

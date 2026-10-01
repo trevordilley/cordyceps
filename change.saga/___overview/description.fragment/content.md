@@ -1,6 +1,6 @@
 # Product intent {#product-intent}
 
-Cordyceps turns the mock-provider approach explored in DevSwarm into a reusable testing library. A developer selects an AI harness, and the library configures it to communicate with a mock of its model provider API. The actual harness binary participates in the test; prescribed provider responses let the developer exercise behavior in the application that consumes it.
+Cordyceps is a reusable library for testing applications with real AI harnesses and controlled model responses. A developer selects an AI harness, and the library configures it to communicate with a mock of its model provider API. The actual harness binary participates in the test; prescribed provider responses let the developer exercise behavior in the application that consumes it.
 
 The primary audience is developers building tools around AI harnesses. Their goal is confidence that those tools install and integrate the harnesses correctly and respond as expected to controlled harness behavior. Claude Code communicating with a mock Anthropic API is the motivating example. Expanding the approach to other harnesses and providers is part of the product intent; the initial support list is undecided.
 
@@ -61,8 +61,6 @@ Cordyceps will be distributed as an npm library; the consumer installs the AI bi
 # Evidence and maturity {#evidence-and-maturity}
 
 This repository has no product implementation yet. The user confirmed the initial six-story requirements baseline for committing before the next design step. These documents describe intended behavior, not delivered or verified capabilities. Accepted stories record user-confirmed requirements, not completed work; proposed stories remain drafts for discussion; there are no implementation or test-result claims for Cordyceps.
-
-The earlier DevSwarm work is precedent, not implementation evidence for this repository. DayLight Local session `66c622ec-f2fd-4763-a2c8-1f19bc89d3ff`, source-record branch `spike/tart-macos-vm-ai-e2e`, describes real Claude Code talking to a scripted Anthropic API, executing tools, and recording requests. Selected evidence was authored on 2026-09-19; the session runs through 2026-09-21. Its DevSwarm repository association is workspace-derived. Relevant document identifiers: `document-f9030ea8c0039611252ab5d0c255f160a96c9bf5fc14660de751e151be9b503f` and `document-914a0b7832e9896b564a9b506a376d8a605ed6b5d4c26833a1b5943c871ae6f0`. Team evidence was unavailable for this folder.
 
 # Confirmed audience {#confirmed-audience}
 

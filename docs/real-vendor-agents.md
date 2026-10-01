@@ -4,7 +4,7 @@ This investigation uses authentic current vendor distributions, not similarly na
 
 ## Identity and distribution
 
-Source snapshots: [Superset terminal agents](https://github.com/superset-sh/superset/blob/3049a3114bd1ae48b944aae3e4cafdb0f521d1a5/packages/shared/src/builtin-terminal-agents.ts) and [Orca TUI mappings](https://github.com/stablyai/orca/blob/98039676f363d6f0c06dbed25f3180463e5952af/src/shared/tui-agent-config.ts). Superset maps `grok`, `fx`, `muse`, and `devin` directly. Orca maps `ante` and deliberately uses `traecli` for TRAE CN because the unrelated `bytedance/trae-agent` also installs `trae-cli`. Orca's [supported-agent documentation](https://www.onorca.dev/docs/agents/supported) mentions MiniMax, but the inspected TUI enum/config has no distinct MiniMax executable entry. We therefore report the authentic official **MiniMax Code `mcode`** separately without asserting an Orca launch mapping; it is not the `mmx-cli` media client.
+MiniMax here means the official **MiniMax Code `mcode`** distribution, not the `mmx-cli` media client. TRAE CN uses `traecli`; the unrelated `bytedance/trae-agent` installs `trae-cli`.
 
 | Agent | Actual distribution observed | Result |
 | --- | --- | --- |
@@ -13,21 +13,20 @@ Source snapshots: [Superset terminal agents](https://github.com/superset-sh/supe
 | Devin CLI | `devin` 3000.11.3 (`9c803229faa4`), official native release bundle | Excluded: service bootstrap reached, no controlled model/text/read proof. |
 | fx | `fx` 0.0.11, vercel-labs/fx official release CDN | Text and real `read_file` verified. |
 | Ante | `ante` 0.2.6, Antigma official stable native release | Text and real `Read` verified. |
-| MiniMax Code | `@minimax-ai/code` 0.5.9, `mcode` | Text and real `read` verified; orchestrator mapping caveat above. |
+| MiniMax Code | `@minimax-ai/code` 0.5.9, `mcode` | Text and real `read` verified. |
 | TRAE CN CLI | Official `traecli` installer URLs | Excluded: both official download entry points return HTTP 403; the prior installer explicitly reports `denied by region block`. No substitute binary tested. |
 
 [Distribution receipts](../examples/real-vendor-agents/distribution-evidence.json) record exact URLs and SHA-256 values. Ante and Devin archive checksums matched their official manifests; Muse's downloaded binary matched both official size and checksum. Grok and fx hashes identify the downloaded artifacts but were not checked against separately advertised vendor checksums. `AntigmaLabs/ante-preview` redirects to the current official [AntigmaLabs/ante](https://github.com/AntigmaLabs/ante) repository; the distribution is from its documented `ante.run`/`download.ante.run` installer channel.
 
 ## Reproduce
 
-Use macOS arm64, Python 3 with tarfile's `filter='data'` support, Bun, npm, and actual Node 22+ first on PATH. The recorded Node executable is `/Users/20idemo/.nvm/versions/node/v22.22.3/bin/node`. The library does not install, discover or launch executables; the following are consumer examples.
+Use macOS arm64, Python 3 with tarfile's `filter='data'` support, Bun, npm, and actual Node 22+ first on PATH. The library does not install, discover or launch executables; the following are consumer examples.
 
 ```sh
-export PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH
-hivecontrol exec oneshot 3m -- bun install --frozen-lockfile
-hivecontrol exec oneshot 10m -- python3 examples/real-vendor-agents/install.py /tmp/cordyceps-vendor-investigation
-hivecontrol exec oneshot 5m -- node examples/real-vendor-agents/run.mjs /tmp/cordyceps-vendors.json fx,ante,grok-build,minimax,muse
-hivecontrol exec oneshot 2m -- node examples/real-vendor-agents/diagnose-devin.mjs /tmp/cordyceps-devin.json
+bun install --frozen-lockfile
+python3 examples/real-vendor-agents/install.py /tmp/cordyceps-vendor-investigation
+node examples/real-vendor-agents/run.mjs /tmp/cordyceps-vendors.json fx,ante,grok-build,minimax,muse
+node examples/real-vendor-agents/diagnose-devin.mjs /tmp/cordyceps-devin.json
 ```
 
 The installer resolves current public channel manifests and downloads binaries directly; it does not execute vendor install scripts or modify shell startup files. `--agents fx,ante` selects downloads. Set `CORDYCEPS_VENDOR_BIN_DIR` for a different scratch installation root; `CORDYCEPS_DEVIN_BINARY` overrides the diagnostic binary. `probe.mjs <output.json> <comma-separated agents>` records isolated native version/help output. The validation command builds, packs and offline-installs Cordyceps, copies the consumer into that independent directory, loads distinct recipes with `createRegistry({builtins:false}).loadFile()`, and asserts every selected case. Failure exits nonzero. The Devin command is explicitly diagnostic: successful collection is not an agent support pass.
@@ -36,7 +35,7 @@ The recipes select the native mode and inject the provider endpoint, model and t
 
 The [committed verification receipt](../examples/real-vendor-agents/verified-evidence.json) contains all ten passing cases, native commands/output, artifact integrity, request-body hashes, fixture tokens and native tool results. The full evidence is emitted to the requested output path; its SHA-256 is retained in the receipt. Regenerate a compact receipt with `node examples/real-vendor-agents/summarize.mjs <full.json> <receipt.json>`.
 
-The vendor branch's final regression command was `hivecontrol exec oneshot 4m -- sh -c 'bun run check && bun test tests && bun run test:node'`, with the Node 22 path above. TypeScript passed; Bun 1.3.13 passed 141 tests with 1,014 assertions and the two existing disconnect tests skipped on Bun; all 21 Node lifecycle tests passed, including both disconnect cases. These branch-local counts precede integration with other new agent recipes.
+The vendor branch's final regression command was `sh -c 'bun run check && bun test tests && bun run test:node'`, with Node 22 first on PATH. TypeScript passed; Bun 1.3.13 passed 141 tests with 1,014 assertions and the two existing disconnect tests skipped on Bun; all 21 Node lifecycle tests passed, including both disconnect cases. These branch-local counts precede integration with other new agent recipes.
 
 ## Injection details and boundaries
 
@@ -64,6 +63,6 @@ Muse sends functions inside a Responses `namespace` tool declaration. The earlie
 
 **Devin.** [Official installation](https://docs.devin.ai/cli/index) selects `https://cli.devin.ai/install.sh`; that script selects the checksum-backed manifest at `https://static.devin.ai/cli/current/manifest.json`. [Authentication documentation](https://docs.devin.ai/cli/enterprise/devin-auth) locates `credentials.toml` at `$XDG_DATA_HOME/devin/credentials.toml`. The empty-HOME attempt exits 1 with `Error: Login canceled` and no provider traffic. A scratch credentials file with test-only `windsurf_api_key`, `api_server_url`, `devin_api_url` and `devin_webapp_host` pointing to loopback crosses that initial gate. It reaches native protobuf service paths including `GetUserStatus`, `GetCliModelConfigs`, `GetCliTeamSettings` and `/v3/self`, then exits 1 with `Error: failed to start ACP agent session` when the diagnostic collector returns explicit 404s. The collector records original request bytes as base64 and does not fabricate account entitlement, model assignments, or remote agent actions. No locally injectable model protocol was established; no Devin recipe is supplied. This is a bounded unresolved service/bootstrap limit, not a claim that every future or authorized Devin deployment is impossible.
 
-**TRAE CN.** Orca's mapping and the [official quickstart](https://docs.trae.cn/cli_get-started-with-trae-code-cli-2) agree on `traecli`. The current v2 installer `https://trae.cn/trae-cli/install_v2.sh` and prior official `https://trae.cn/trae-cli/install.sh` both returned HTTP 403 from this host. The prior installer explicitly reports `denied by region block`; the v2 response is a generic CDN 403 without a stated reason. Exact bodies and headers are retained in the distribution receipt. We did not replace it with the unrelated open-source `trae-agent` or a name-matching npm package. No authentic binary execution, model control or tool success is claimed, and no recipe is supplied.
+**TRAE CN.** The [official quickstart](https://docs.trae.cn/cli_get-started-with-trae-code-cli-2) names `traecli`. The current v2 installer `https://trae.cn/trae-cli/install_v2.sh` and prior official `https://trae.cn/trae-cli/install.sh` both returned HTTP 403 from this host. The prior installer explicitly reports `denied by region block`; the v2 response is a generic CDN 403 without a stated reason. Exact bodies and headers are retained in the distribution receipt. We did not replace it with the unrelated open-source `trae-agent` or a name-matching npm package. No authentic binary execution, model control or tool success is claimed, and no recipe is supplied.
 
 The verified cases establish text and native file-read workflows on these observed macOS distributions only. They do not establish incremental terminal streaming, cancellation, ACP lifecycles, remote session orchestration, Windows/WSL support, or account authentication. The verifiers reap owned process groups before disposing listeners/config files and remove their scratch workspaces and package installation.

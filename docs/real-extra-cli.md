@@ -1,4 +1,4 @@
-# Additional Superset/Orca CLIs
+# Kilo, Continue, Autohand and Command Code
 
 Four native CLIs pass controlled text and real file reads through an externally installed, packed Cordyceps artifact. The separate [Codebuff source and Polygraph consumer](real-codebuff-polygraph.md) now exercises those two profiles as well; the published Codebuff 1.0.688 binary remains excluded.
 
@@ -16,8 +16,8 @@ Fifteen native cases passed on macOS 15.7.4 arm64, Node 22.22.3 and Bun 1.3.13: 
 Use real Node >=22 on PATH, not a Bun shim. Installation and downloads happen before isolated agent execution. No real credentials are needed.
 
 ```sh
-hivecontrol exec oneshot 10m -- node examples/real-extra-cli/install.mjs /tmp/cordyceps-extra-deps
-hivecontrol exec oneshot 10m -- node examples/real-extra-cli/run.mjs /tmp/extra-verified.json
+node examples/real-extra-cli/install.mjs /tmp/cordyceps-extra-deps
+node examples/real-extra-cli/run.mjs /tmp/extra-verified.json
 node examples/real-extra-cli/summarize.mjs /tmp/extra-verified.json examples/real-extra-cli/evidence.json
 ```
 

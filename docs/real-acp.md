@@ -16,12 +16,6 @@ node examples/real-acp/verify.mjs
 npm run test:real-acp
 ```
 
-Inside DevSwarm, run the bounded command through its process tracker:
-
-```sh
-hivecontrol exec oneshot 5m -- node examples/real-acp/verify.mjs
-```
-
 The script rejects Bun-backed `node` shims. If necessary, use the absolute path to
 a real Node binary; the bootstrap prepends that binary's directory to its child
 PATH. It builds the repository, runs `npm pack`, copies the locked example into a
@@ -146,7 +140,6 @@ reuse completed, and provider health passed after adapter shutdown.
 The initial current-adapter experiment exposed unsupported health/token-count
 requests. Explicit Anthropic codec response variants resolved those failures; no
 health check was skipped. The consumer itself found no further library API gap.
-
 
 A fresh hosted macOS run exposed a teardown race: `kill` reported `EPERM`
 after all ACP assertions completed while sandboxed descendants were exiting.

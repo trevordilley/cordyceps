@@ -29,7 +29,7 @@ function launch(cmd,args,options={}) {
 }
 function service(cmd,args,options={}) {
   if(!tracked) return launch(cmd,args,options);
-  // The tracking wrapper retains DevSwarm routing variables; the actual service
+  // The tracking wrapper retains routing variables; the actual service
   // receives only the consumer's explicit environment through env -i.
   const serviceEnv=options.env ?? {PATH:process.env.PATH};
   return launch('hivecontrol',['exec','service','--','/usr/bin/env','-i',`CORDYCEPS_TASK=${name}`,...Object.entries(serviceEnv).map(([key,value])=>`${key}=${value}`),cmd,...args],{...options,env:process.env});

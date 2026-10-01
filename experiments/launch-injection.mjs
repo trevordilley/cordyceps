@@ -91,7 +91,7 @@ try {
     realBinaryVersion = run(actualWrapper, ['--version'], { ...process.env });
   }
   console.log(JSON.stringify({ platform: process.platform, node: process.version, results, realBinaryVersion,
-    limits: 'Synthetic shell fixtures only; optional real binary --version; no real model request, PTY, Windows, or DevSwarm E2E run.' }, null, 2));
+    limits: 'Synthetic shell fixtures only; optional real binary --version; no real model request, PTY, Windows, or application E2E run.' }, null, 2));
 } finally {
   rmSync(root, { recursive: true, force: true });
 }

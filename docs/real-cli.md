@@ -5,14 +5,11 @@ Claude Code and Codex already installed on PATH. The recorded run used Claude
 Code **2.1.283** and Codex **0.155.1**; versions are observations, not gates:
 
 ```sh
-hivecontrol exec oneshot 3m -- node examples/real-cli/run.mjs /tmp/cordyceps-real-cli-evidence.json
+node examples/real-cli/run.mjs /tmp/cordyceps-real-cli-evidence.json
 node examples/real-cli/summarize.mjs /tmp/cordyceps-real-cli-evidence.json /tmp/cordyceps-real-cli-summary.json
 ```
 
-Without DevSwarm, run the same `node` command directly. This host's default
-`node` is a Bun shim; the executed command prepended
-`/Users/20idemo/.nvm/versions/node/v22.22.3/bin` to PATH and used that directory's
-Node binary. The runner rejects Bun. It builds, packs, installs the actual
+Use Node >=22 first on PATH. The runner rejects Bun-backed `node` shims. It builds, packs, installs the actual
 `.tgz` offline into an isolated consumer directory, and copies `consumer.mjs`
 there. That consumer imports only `cordyceps`; it has no source or dist imports,
 Playwright dependency, symlink to the checkout, or replacement CLI implementation.
@@ -75,8 +72,8 @@ other releases, platforms, interactive sessions or ACP adapters.
 With Python 3 available, run the installed Claude Code TUI in a consumer-owned PTY:
 
 ```sh
-hivecontrol exec oneshot 2m -- node examples/real-cli/run.mjs /tmp/cordyceps-real-cli-interactive.json --interactive-claude
-hivecontrol exec oneshot 30s -- node --test examples/real-cli/pty.test.mjs
+node examples/real-cli/run.mjs /tmp/cordyceps-real-cli-interactive.json --interactive-claude
+node --test examples/real-cli/pty.test.mjs
 ```
 
 The executed Claude Code 2.1.283 case types the prompt through the PTY (the
@@ -113,7 +110,7 @@ The optional Codex probe remains a **failing diagnostic**, separate from the
 successful noninteractive Codex cases and interactive Claude case:
 
 ```sh
-hivecontrol exec oneshot 2m -- node examples/real-cli/run.mjs /tmp/cordyceps-real-cli-codex-pty.json --interactive
+node examples/real-cli/run.mjs /tmp/cordyceps-real-cli-codex-pty.json --interactive
 ```
 
 On Codex 0.155.1, it draws the directory trust screen but captures zero provider

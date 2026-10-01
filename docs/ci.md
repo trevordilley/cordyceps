@@ -23,7 +23,7 @@ These jobs use `ubuntu-24.04` and standard arm64 `macos-15`, not paid larger run
   Qwen and Mistral Vibe; `editors` covers Cline and Aider; `auggie` and
   `openclaw` cover their named agents.
 
-That is an configured automated set of **34 native agent families**, plus ACP and
+That is a configured automated set of **34 native agent families**, plus ACP and
 browser scenarios. Other verified local integrations remain documented in
 `verification.md` and the source inventories; they are not silently counted
 as hosted CI coverage. The remaining nine are Amazon Q, Amp, Antigravity,
@@ -73,9 +73,7 @@ The ACP consumer verified eight prompts across separate sessions, 65 native
 messages, two permission requests, real file reading, incremental output,
 cancellation, same-session reuse and owned process-group cleanup. Provider
 auxiliary traffic varies between runs; native ACP messages are not counted as
-provider chunks. Compact [hosted receipts](../examples/orchestrator-agents/hosted-verification.json)
-retain actual outcomes, artifact integrity, full-receipt hashes and job URLs,
-including the earlier failures.
+provider chunks. The linked run retains job results and verification logs.
 
 Fresh runners exposed four corrections: Claude requires `CLAUDE_CODE_TMPDIR`
 inside owned scratch state; Auggie's optional `/find-missing` probe needs an
@@ -99,5 +97,4 @@ RUNNER_TEMP=/path/to/owned/scratch bash scripts/ci-real-consumers.sh baseline
 ```
 
 Use actual Node 24, Python 3.12 and Bun 1.3.13 first on PATH, with repository
-packages already installed. Inside DevSwarm, wrap that command with
-`hivecontrol exec oneshot 15m -- ...` so local resource usage remains tracked.
+packages already installed.

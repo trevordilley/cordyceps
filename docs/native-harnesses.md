@@ -1,21 +1,13 @@
-# Verified DevSwarm agent workflows
-
-Validation scope comes from DevSwarm commit `d7c33873380e092018140ccf6e90529e1605fff0`, `libs/shared/types/src/ai-agent.ts`, cross-checked against `libs/desktop/types/builder.ts` and the executable mappings in `libs/desktop/utils/src/agent.ts`. This is 20 agent families and 40 enum values, including Windows/WSL variants. OpenHands is absent from this enum. DevSwarm's Antigravity value launches `agy`; the installed `q` wrapper launches Kiro CLI, which is recorded rather than silently presented as a different executable.
-
-The machine-readable scope and results live in [inventory.json](../examples/devswarm-agents/inventory.json). Check for scope drift against a local DevSwarm checkout:
-
-```sh
-node examples/devswarm-agents/check-inventory.mjs /path/to/devswarm
-```
+# Verified native harnesses
 
 This inventory is a set of observed real-consumer outcomes, not a version certification matrix. A recipe's presence means injection data exists. Verification additionally requires a built and packed artifact installed outside the repository, public imports, actual agent requests and output, and an unpredictable disposable file token returned through the actual agent's tool workflow. No mock backend manufactures that file-read result.
 
 ## Supported native workflows
 
-Only the 18 families with verified packed-artifact text and actual file-read workflows are included below and in [supported.json](../examples/devswarm-agents/supported.json). Cursor and Qodo are excluded because we could not control their real model boundary. Unverified WSL variants are also excluded. The complete enum inventory is an audit trail, not a support list.
+These 18 families passed text and actual file-read workflows through an installed package. See [additional harnesses](additional-harnesses.md) for 25 more. Cursor, Qodo and unverified Windows/WSL variants are excluded.
 
 <!-- agent-results:start -->
-| DevSwarm family | Text + real read | Recipe / codec | Evidence and limits |
+| Harness | Text + real read | Recipe / codec | Evidence and limits |
 | --- | --- | --- | --- |
 | Amazon Q (`q`) | [Passed](real-q.md) | amazon-q / amazon-q | `fs_read`; installed `q` invokes Kiro 2.3.0. |
 | Claude Code (`claude`) | [Passed](real-cli.md) | claude-code / anthropic-messages | `Read`; separate real PTY, ACP and browser evidence. |
@@ -41,7 +33,7 @@ All runs use test credentials and isolated scratch configuration. Installed or p
 
 ## Reproduction groups
 
-Use real Node >=22 first on PATH. The known DevSwarm shell's default `node` is a Bun shim; use an actual Node executable. Inside DevSwarm wrap bounded commands with `hivecontrol exec oneshot 6m --` (see each group's exact timeout/setup).
+Use Node >=22 first on PATH. Each group below documents its prerequisites and commands.
 
 - [Claude and Codex](real-cli.md): `node examples/real-cli/run.mjs /tmp/cli.json`.
 - [Copilot, Goose, Droid, OpenCode and Crush](real-provider-agents.md): `node examples/real-provider-agents/run.mjs /tmp/providers.json`.
@@ -58,10 +50,9 @@ Exact executable observations, configuration inputs, arguments, package integrit
 
 ## Platform and protocol boundaries
 
-No Windows/WSL host was exercised. Each of the 20 `*_WSL` values is explicitly `excluded-platform` in the inventory; native macOS evidence is not WSL evidence. Linux/native Windows are likewise not inferred from these observations. The macOS consumers require `sandbox-exec` and fail rather than silently remove network isolation.
+These consumers run on macOS and require `sandbox-exec` for network isolation. Harness behavior on Linux, Windows and WSL has not been verified.
 
 Provider streaming, incremental agent output, process-disconnect cancellation and native ACP cancellation are distinct observations. Droid and OpenCode's selected JSON CLI modes consume streaming replies but buffer assistant output until completion. Vibe's headless mode requests nonstreaming JSON despite its `--output streaming` option. New CLI process-cancellation tests do not establish same-session reuse; the separate [real Claude ACP example](real-acp.md) establishes native ACP cancellation and reuse.
-
 
 ## Excluded integrations
 
@@ -70,7 +61,7 @@ bundled recipe or provider codec. They route agent orchestration through remote
 services; scripting assistant/tool decisions at that boundary would replace the
 agent being tested. Their diagnostic evidence is retained only to explain the
 exclusion, not as a passing example or a promise to support them. See the
-[Qodo boundary investigation](real-qodo.md), [Cursor boundary investigation](real-cursor.md), and the exact source inventory.
+[Qodo boundary investigation](real-qodo.md), [Cursor boundary investigation](real-cursor.md).
 
 Adding an excluded integration back requires a real model-injection path and a
 passing packed consumer with controlled text and an actual file-read result in

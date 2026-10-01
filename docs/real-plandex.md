@@ -14,21 +14,17 @@ upstream hardcodes its local LiteLLM readiness service there. The consumer
 refuses an occupied port instead of using or stopping someone else's service.
 The example fails explicitly on other platforms.
 
-On the validation host, Node must precede DevSwarm's Bun-backed `node` shim:
+Use Node >=22 first on PATH:
 
 ```sh
-export PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH
-hivecontrol exec oneshot 2m -- bun install --frozen-lockfile
-hivecontrol exec oneshot 15m -- node examples/real-plandex/bootstrap.mjs /tmp/cordyceps-plandex-source-path.txt
+bun install --frozen-lockfile
+node examples/real-plandex/bootstrap.mjs /tmp/cordyceps-plandex-source-path.txt
 PLANDEX_TEST_SOURCE="$(cat /tmp/cordyceps-plandex-source-path.txt)"
-hivecontrol exec oneshot 5m -- node examples/real-plandex/run.mjs /tmp/cordyceps-plandex-evidence.json "$PLANDEX_TEST_SOURCE"
+node examples/real-plandex/run.mjs /tmp/cordyceps-plandex-evidence.json "$PLANDEX_TEST_SOURCE"
 node examples/real-plandex/summarize.mjs /tmp/cordyceps-plandex-evidence.json /tmp/cordyceps-plandex-summary.json
 ```
 
-Without DevSwarm, omit the `hivecontrol exec oneshot TIME --` prefixes. The
-consumer detects DevSwarm and starts both PostgreSQL's attached Docker process
-and the Plandex backend through `hivecontrol exec service`. It stops only their
-unique tracked IDs. Outside DevSwarm it owns and reaps their process groups.
+The consumer owns the PostgreSQL and Plandex backend processes and stops them during cleanup.
 
 The bootstrap creates a fresh source directory, checks out upstream commit
 `e2d772072efadbe41d2946d97d79be55532dbab5`, builds both Go binaries without
@@ -44,13 +40,13 @@ The initial bootstrap was executed as these tracked commands against a fresh
 clone at `/tmp/cordyceps-plandex-source-59ae5b3c`:
 
 ```sh
-hivecontrol exec oneshot 5m -- git clone --depth 1 https://github.com/plandex-ai/plandex.git /tmp/cordyceps-plandex-source-59ae5b3c
+git clone --depth 1 https://github.com/plandex-ai/plandex.git /tmp/cordyceps-plandex-source-59ae5b3c
 # Working directory: SOURCE/app/cli
-hivecontrol exec oneshot 10m -- go build -o /tmp/cordyceps-plandex-source-59ae5b3c/plandex .
+go build -o /tmp/cordyceps-plandex-source-59ae5b3c/plandex .
 # Working directory: SOURCE/app/server
-hivecontrol exec oneshot 10m -- go build -o /tmp/cordyceps-plandex-source-59ae5b3c/plandex-server .
-hivecontrol exec oneshot 10m -- uv venv /tmp/cordyceps-plandex-source-59ae5b3c/venv
-hivecontrol exec oneshot 10m -- uv pip install --python /tmp/cordyceps-plandex-source-59ae5b3c/venv/bin/python 'litellm==1.72.6' 'fastapi==0.115.12' 'uvicorn==0.34.1'
+go build -o /tmp/cordyceps-plandex-source-59ae5b3c/plandex-server .
+uv venv /tmp/cordyceps-plandex-source-59ae5b3c/venv
+uv pip install --python /tmp/cordyceps-plandex-source-59ae5b3c/venv/bin/python 'litellm==1.72.6' 'fastapi==0.115.12' 'uvicorn==0.34.1'
 ```
 
 The recorded run used Node **22.22.3**, Go **1.26.1 darwin/arm64**, Python

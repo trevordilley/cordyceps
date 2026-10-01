@@ -1,4 +1,4 @@
-// Consumer-owned packaging/launch driver. Run through hivecontrol exec oneshot.
+// Consumer-owned packaging and launch driver.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';

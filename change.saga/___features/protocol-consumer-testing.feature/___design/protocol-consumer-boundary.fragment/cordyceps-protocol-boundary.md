@@ -20,7 +20,7 @@ flowchart LR
 
 ## Confirmed intent {#confirmed-intent}
 
-The same developer persona needs to test an ACP application or library, with DevSwarm as the concrete intended consumer. The real harness participates. Its client-facing launch mode and message/lifecycle interface must be explicit; a plain-text invocation and an ACP connection are not interchangeable. This extends the earlier interactive/non-interactive stories with protocol-specific outcomes. The three new stories are proposed wording and criteria, not accepted scope or implemented functionality.
+The same developer persona needs to test an ACP application or library. The real harness participates. Its client-facing launch mode and message/lifecycle interface must be explicit; a plain-text invocation and an ACP connection are not interchangeable. This extends the earlier interactive/non-interactive stories with protocol-specific outcomes. The three new stories are proposed wording and criteria, not accepted scope or implemented functionality.
 
 ## Proposed API implications {#proposed-api-implications}
 

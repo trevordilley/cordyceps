@@ -1,4 +1,4 @@
-// Read-only consumer tooling: compare the recorded scope with a local DevSwarm checkout.
+// Read-only tooling: compare the recorded scope with its source checkout.
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';

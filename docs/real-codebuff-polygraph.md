@@ -15,18 +15,18 @@ The Codebuff source profile is distinct from Freebuff. The source's direct selec
 
 ## Reproduce
 
-Use real Node 22 or newer and Bun on PATH. These setup commands install ordinary local dependencies and download official artifacts; they do not authenticate or launch an agent. Run expensive commands through the tracked process wrapper when using DevSwarm.
+Use real Node 22 or newer and Bun on PATH. These setup commands install ordinary local dependencies and download official artifacts; they do not authenticate or launch an agent.
 
 ```sh
-hivecontrol exec oneshot 10m -- node examples/real-extra-cli/install.mjs /tmp/cordyceps-extra-deps
-hivecontrol exec oneshot 5m -- node examples/real-extra-cli/download-diagnostics.mjs /tmp/cordyceps-extra-deps
-hivecontrol exec oneshot 10m -- node examples/real-extra-cli/install-source.mjs /tmp/cordyceps-extra-deps
-hivecontrol exec oneshot 4m -- node examples/real-extra-cli/probe.mjs /tmp/extra-workflows.json polygraph-text,polygraph-tool,codebuff-source-text,codebuff-source-tool workflow
-hivecontrol exec oneshot 2m -- node examples/real-extra-cli/probe.mjs /tmp/extra-released-codebuff.json codebuff
+node examples/real-extra-cli/install.mjs /tmp/cordyceps-extra-deps
+node examples/real-extra-cli/download-diagnostics.mjs /tmp/cordyceps-extra-deps
+node examples/real-extra-cli/install-source.mjs /tmp/cordyceps-extra-deps
+node examples/real-extra-cli/probe.mjs /tmp/extra-workflows.json polygraph-text,polygraph-tool,codebuff-source-text,codebuff-source-tool workflow
+node examples/real-extra-cli/probe.mjs /tmp/extra-released-codebuff.json codebuff
 node examples/real-extra-cli/summarize-boundaries.mjs /tmp/extra-workflows.json /tmp/extra-released-codebuff.json examples/real-extra-cli/boundary-evidence.json
 ```
 
-`EXTRA_CLI_DEPS` selects a different dependency directory. `CLAUDE_BINARY` selects the underlying installed Claude binary; its default in this reproduction environment is `/Users/20idemo/.local/bin/claude`. `BUN_BINARY` controls the source setup wrapper. Downloads are pinned by hash; a changed mutable Polygraph runtime download requires inspection and fresh verification, never silent reuse of an old receipt.
+`EXTRA_CLI_DEPS` selects a different dependency directory. Set `CLAUDE_BINARY` to the installed Claude executable. `BUN_BINARY` controls the source setup wrapper. Downloads are pinned by hash; a changed mutable Polygraph runtime download requires inspection and fresh verification, never silent reuse of an old receipt.
 
 Hosted setup on September 30 detected a real upstream runtime update from `2609.28.0005` (archive SHA-256 `f8f2409d79a04d9f0cd852e4fbabf89927b6e5836af7a31eabc4bf55f328cea6`) to `2609.29.0017` (archive SHA-256 `500aefb051bd7c868d67d38b7367b6c3002ef6b1e202d831c05c17422baab041`). A fresh local download matched the hosted hash: HTTP 200, `application/gzip`, filename `2609.29.0017.tar.gz`, and a valid portable JS/WASM archive. Five JavaScript payloads changed; this was neither a rate-limit response nor an architecture mismatch. The downloader now pins the newer archive's version, filename and hash, and writes `polygraph-runtime.json` with the verified version for the consumer's native cache directory. The earlier local receipt and profile above remain for `2609.28.0005`; the separate hosted run linked above verifies `2609.29.0017` text and real file reads.
 

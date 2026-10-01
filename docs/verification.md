@@ -1,6 +1,6 @@
 # Verification and remaining evidence gaps
 
-The library has been built, packed, installed into disposable Node consumer projects, and exercised with **43 native agent families**, an official ACP adapter, and a Chromium frontend. This comprises 18 families from DevSwarm’s `AiAgent` enum and 25 additional integrations from the [Superset/Orca inventory](orchestrator-agents.md). Text and real file-read workflows passed for those families; Cursor, Qodo and all unverified WSL variants are excluded from the supported workflow set. [The complete inventory](devswarm-agents.md) retains their diagnostic and platform limits. These tests use public package imports and the actual local Cordyceps provider. Process launch, client handlers, isolation and cleanup live in `examples/` as consumer code.
+The library has been built, packed, installed into disposable Node projects, and exercised with **43 native agent families**, an official ACP adapter, and a Chromium frontend. All 43 passed controlled text and actual file-read workflows. See [native harnesses](native-harnesses.md) and [additional harnesses](additional-harnesses.md) for evidence and limits. Process launch, isolation and cleanup live in `examples/` as consumer code.
 
 Reproduction context: macOS 15.7.4, Node 22.22.3, Bun 1.3.13, TypeScript 5.9.3, Playwright 1.56.1, installed Claude Code 2.1.283 and Codex 0.155.1. ACP uses `@agentclientprotocol/claude-agent-acp` 0.84.0, ACP SDK 1.5.1 and Claude Agent SDK 0.3.284. Executable versions are recorded observations, not support gates or a certification matrix. No npm publication, selected license or user review verdict is recorded.
 
@@ -28,10 +28,8 @@ Run from the repository root after `bun install --frozen-lockfile`. Put a real N
 | `node examples/real-gated-agents/run.mjs /tmp/rovo.json --rovo` | Four cases passed through the installed Rovo plugin, including actual `open_files`. |
 | `node examples/real-gated-agents/run.mjs /tmp/amp.json --amp` | Four cases passed for installed Amp, including native `Read`. |
 | `node examples/real-plandex/run.mjs /tmp/plandex.json "$PLANDEX_TEST_SOURCE"` | Text and real server-directed CLI context read passed with the unmodified self-hosted backend; see [required bootstrap](real-plandex.md). |
-| `node examples/devswarm-agents/check-inventory.mjs /path/to/devswarm` | The recorded set matches all 40 enum values, grouped into 20 native families. |
 
-
-Inside DevSwarm, run bounded commands with `hivecontrol exec oneshot 5m -- ...`; the example verifiers own and clean up their temporary projects and processes. The real examples currently use macOS `sandbox-exec` for their network boundary and fail explicitly on other platforms. They do not silently substitute synthetic harnesses. See [CLI reproduction](real-cli.md), [frontend reproduction](real-frontend.md) and [ACP reproduction](real-acp.md) for prerequisites, exact flags, evidence and consumer setup.
+The example verifiers own and clean up their temporary projects and processes. The real examples currently use macOS `sandbox-exec` for their network boundary and fail explicitly on other platforms. They do not silently substitute synthetic harnesses. See [CLI reproduction](real-cli.md), [frontend reproduction](real-frontend.md) and [ACP reproduction](real-acp.md) for prerequisites, exact flags, evidence and consumer setup.
 
 The earlier synthetic/package checks remain useful regression coverage. A synthetic handler reading a file is not counted as real harness evidence; the real examples independently verify an unpredictable fixture token returned by the actual harness tool in the next captured provider request.
 
@@ -42,11 +40,11 @@ The earlier synthetic/package checks remain useful regression coverage. A synthe
 - **Frontend:** Playwright drives a real HTML form through a consumer HTTP server to installed Claude's stdin. The UI renders Claude's parsed output. The file-read reply derives from the real tool result. Cancel stops a held process and aborts its provider exchange; another browser turn launches a fresh process and succeeds. Test fixture dependencies close the consumer before the Cordyceps mock, and the verifier checks that mock listeners are closed too.
 - **ACP:** the official adapter and standard ACP SDK negotiated protocol 1, created distinct sessions, retained follow-up context, emitted native updates before a gated stream completed, requested real permissions, and performed an actual fixture read. Acceptance and refusal use real offered permission IDs. A held turn ended with native `cancelled`, and the same session then completed another prompt. Complete native JSON-RPC observations and provider requests remain separate. The expanded-branch rerun produced eight prompt responses, 30 provider requests and 65 native messages; background request/message totals are context, not a fixed protocol contract.
 - **Shipped backend fix:** real Claude SDK consumers issued `HEAD /api/hello` and `POST /v1/messages/count_tokens?beta=true`. The old codec rejected them and `assertHealthy()` failed. The codec now recognizes only those exact method/path combinations, captures them normally, and requires explicit `{health: true}` or `{inputTokens: n}` routes. Token counts are scripted values, not tokenizer estimates. Incorrect response kinds, unknown endpoints and unhandled requests still fail visibly. See [provider codec details](provider-codecs.md).
-- **Verification runtime fix:** the workspace's default `node` was a DevSwarm shim running Bun 1.2.23. The Node lifecycle check failed, rather than providing Node evidence. Verification now diagnoses that case and accepts an explicit Node executable; the full checks passed with real Node 22.22.3.
+- **Verification runtime fix:** the workspace's default `node` was a shim running Bun 1.2.23. The Node lifecycle check failed, rather than providing Node evidence. Verification now diagnoses that case and accepts an explicit Node executable; the full checks passed with real Node 22.22.3.
 
 ## Expanded agent results and fixes
 
-The [exact DevSwarm enum inventory](devswarm-agents.md) records the first scope; the subsequent [Superset/Orca audit](orchestrator-agents.md) expands it. OpenHands is not in that enum. Each successful consumer requires a captured prompt, actual native output, and a fresh fixture token absent from the initial request but returned by the real agent in a later provider request. Independent integration-branch reruns are summarized in `examples/devswarm-agents/manager-verification.json`; per-agent documents retain executable versions and complete reproduction commands. In this phase, 59 assertion-based native cases passed across 18 families. That count excludes ACP, browser tests, historical diagnostics and transport-only checks.
+Each successful consumer requires a captured prompt, actual native output, and a fresh fixture token absent from the initial request but returned by the real agent in a later provider request. Per-agent documents retain executable versions and complete reproduction commands. The first 18 families passed 59 native cases, excluding ACP, browser tests, historical diagnostics and transport-only checks.
 
 - Chat Completions and Gemini codecs enabled additional agents through ordinary JSON recipes. Aider needed actual shell consent on stdin; Cline needed native XML tool/completion text. Their real results stay in conversation text, not invented function-call records.
 - Q required native service endpoint configuration and CRC-framed AWS event-stream responses. Auggie required native NDJSON and a successful explicit `/get-models` reply; returning 404 had silently discarded its initial prompt. The fixed example asserts the actual prompt is captured.
@@ -57,27 +55,11 @@ Streaming limits remain explicit: Droid, OpenCode, Rovo and Amp consume streamin
 
 Qodo’s [actual WebSocket diagnostic](real-qodo.md) crosses bootstrap and captures native queries/tool declarations, but does not reach a locally injectable model client. That diagnostic is not a successful text/read test. The [Cursor ACP diagnostic](real-cursor.md) likewise submits actual run requests and provider credentials to its remote agent service without local model traffic. Both agents are excluded under the user’s removal instruction. Remote decisions are not fabricated to turn missing model control into a pass.
 
-## Superset and Orca expansion
+## Additional harnesses
 
-All 48 source audit entries have an explicit outcome: 17 previously verified
-identities, 25 additional verified integrations, five excluded native
-identities and one excluded launch mode. Plandex belongs to the earlier
-DevSwarm set but neither new source roster, giving 43 verified native families
-overall. Codebuff's evidence is the unmodified official source commit
-`fb2a17d`; the published 1.0.688 binary still ignores endpoint overrides and
-is excluded. Polygraph is the actual launcher/plugin/MCP integration launching
-Claude, not a separate model engine. No Superset/Orca desktop UI is claimed.
+The additional 25 profiles bring the total to 43 native families. Codebuff is verified from official source commit `fb2a17d`; its published 1.0.688 binary remains excluded. Polygraph's verified profile launches Claude through its actual plugin and MCP integration.
 
-The integration branch independently reran 73 cases across the eight groups
-in `examples/orchestrator-agents/manager-verification.json`. The four additional
-Codebuff/Polygraph cases have child-workspace evidence in
-`examples/real-extra-cli/boundary-evidence.json` and now pass clean hosted setup.
-[CI run 36740569377](https://github.com/trevordilley/cordyceps/actions/runs/36740569377)
-passed all 13 jobs: 34 families, 107 native cases, real ACP and three browser
-tests. The [CI results](ci.md) and
-`examples/orchestrator-agents/hosted-verification.json` keep exact hosted
-receipts and the nine remaining locally verified profiles separate. Do not count launch aliases, TUI/headless
-modes, metadata requests or diagnostic failures as extra agent families.
+[CI run 36740569377](https://github.com/trevordilley/cordyceps/actions/runs/36740569377) passed 34 families, 107 native cases, real ACP and three browser tests. The [CI documentation](ci.md) lists the nine families verified only locally. Launch aliases, TUI/headless modes, metadata requests and diagnostic failures do not count as extra families.
 
 Actual failures led to narrow fixes: Hermes model-metadata probes, Grok
 prewarm and Muse model catalog routes require explicit consumer replies; Muse

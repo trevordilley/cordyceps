@@ -34,16 +34,9 @@ try {
 
 The setup boundary is the application's process launch, including any backend or extension host that launches the harness. A test callback alone does not propagate environment changes into an already-running application. Playwright's Electron launcher accepts an explicit environment; Node documents child environment and PATH lookup semantics.[^launch-env]
 
-# What DevSwarm actually does {#devswarm-findings}
+# Application startup constraints {#application-startup}
 
-Inspected the clean tracked source in `/Users/20idemo/Desktop/_/devswarm`, local `main` at `d7c33873380e092018140ccf6e90529e1605fff0`. This identifies the local checkout investigated, not a claim that it is the latest remote branch.
-
-- Unix terminals use `-li`, so both login and interactive startup run. Terminal initialization waits for readiness, then sources a generated script containing environment exports and PATH changes before sending the agent command. This is already a solution to startup files overwriting launch-time settings.[^terminal]
-- Background checks capture an environment from a real shell and cache it. Later merges reapply newly introduced PATH entries and a limited set of app variables; arbitrary provider variables changed in the parent after capture are not generally refreshed. Detection runs the binary's version command.[^snapshot]
-- The desktop PATH patcher merges the shell-derived path ahead of the previous process path. Therefore an inherited Cordyceps bin directory can lose priority.[^path]
-- Chat refreshes its environment, probes the agent with `which` or absolute `System32/where.exe`, validates candidates, and passes the selected executable to its adapter. The Claude adapter receives `CLAUDE_CODE_EXECUTABLE`. Once a real absolute path has been chosen, later PATH changes do not replace it.[^resolution]
-- Windows chat resolution accepts `.exe` and `.com`, rejects ordinary npm `.cmd` and extensionless launchers, and rejects candidates from the current directory. A POSIX shell script or npm command shim is not a universal wrapper for this application.[^resolution]
-- Claude workspace-trust preparation also reads `CLAUDE_CONFIG_DIR` in the consuming application. Giving only the wrapper an isolated configuration directory could leave the application's preparatory work targeting a different configuration store. Make the provider configuration visible to the application as well as the binary.[^trust]
+Configure the application before it captures a shell environment or starts extension hosts. Cached environments, shell startup files and absolute executable paths can bypass later changes to PATH or provider settings. Application-side permission and trust setup must use the same isolated configuration as the harness.
 
 # Integration choices {#integration-choices}
 
@@ -68,7 +61,7 @@ Proposed adapter behavior: use session-owned forwarding startup files, run the u
 
 The experiment proves this for controlled startup files only. Production support must account for existing `ZDOTDIR`, startup code changing it, shell functions/aliases, nested shells, startup failures, and hooks that alter state after initialization. Bash, fish, PowerShell and WSL require separate supported adapters or explicit environment/path integration; a zsh solution is not portable by itself. A shell that deliberately discards the supplied settings is outside a transparent guarantee.
 
-For DevSwarm, the strongest existing hook is its post-readiness environment setup. A consumer-facing explicit shell-overlay script could work there if the app already permits supplying it. The zero-call-site-change option is launch-time environment plus a supported shell adapter, initialized before DevSwarm captures its shell environment or starts extension hosts.
+Apply launch-time environment and configuration before the application captures its shell environment or starts extension hosts. Shell overlays require an explicit integration point in the application.
 
 # Provider configuration and process behavior {#provider-config}
 
@@ -81,7 +74,7 @@ Proposed session outputs:
 - `executablePath`: an optional explicit launcher for apps that expose that setting.
 - A shell-specific overlay option, plus an inspection report describing executable selection, configuration, and whether the mock actually received traffic.
 
-All surfaces refer to one backend session and share request handlers and observations. The wrapper uses an absolute real target, forwards argv and preserves cwd and inherited standard streams. A POSIX `exec` launcher is a useful starting point; signal, cancellation, PTY resizing, and terminal identity require explicit compatibility tests. Windows needs an actual native launcher for applications such as DevSwarm; npm distribution can include platform helpers. Renaming a script to `.exe` does not make one, and `.cmd` requires a shell.[^node-windows]
+All surfaces refer to one backend session and share request handlers and observations. The wrapper uses an absolute real target, forwards argv and preserves cwd and inherited standard streams. A POSIX `exec` launcher is a useful starting point; signal, cancellation, PTY resizing, and terminal identity require explicit compatibility tests. Windows needs an actual native launcher for native applications; npm distribution can include platform helpers. Renaming a script to `.exe` does not make one, and `.cmd` requires a shell.[^node-windows]
 
 A global `process.env` mutation around an async callback is process-wide and races other work. Prefer a separate application process per isolated session or an explicit session-routing contract for a shared app. A Playwright web server started before a test, an already-running Electron instance, a remote daemon, or a cached shell cannot be reconfigured merely by changing the test worker's environment. Apply configuration where those processes start. This is an integration constraint, not a reason to replace their internal binary invocation code.
 
@@ -107,30 +100,18 @@ Ran `node experiments/launch-injection.mjs /Users/20idemo/.local/bin/claude` on 
 10. An exec launcher preserves the tested stdin/stdout payload.
 11. An already-running child retains its launch environment.
 
-The optional real-binary check delegated `--version` to installed Claude Code and returned `2.1.283 (Claude Code)`. Most assertions use a synthetic executable and synthetic rc files; no personal dotfiles were changed. This is not a real model-protocol test, PTY test, Windows run, or full DevSwarm E2E. No Cordyceps library implementation has been built.
+The optional real-binary check delegated `--version` to installed Claude Code and returned `2.1.283 (Claude Code)`. Most assertions use a synthetic executable and synthetic rc files; no personal dotfiles were changed. This is not a real model-protocol test, PTY test, Windows run, or full application E2E. No Cordyceps library implementation has been built.
 
-Recommended next proof: launch packaged DevSwarm with session-owned environment/config before startup; exercise both a terminal and chat through the real installed Claude, then script a file-read tool call and verify the actual result. Follow with native Windows launch coverage before claiming cross-platform transparency. Those are proposed next experiments, not completed evidence.
+Recommended next proof: launch a packaged application with session-owned environment/config before startup; exercise both a terminal and chat through the real installed Claude, then script a file-read tool call and verify the actual result. Follow with native Windows launch coverage before claiming cross-platform transparency. Those are proposed next experiments, not completed evidence.
 
 # Sources {#sources}
 
 [^launch-env]: [Playwright Electron launch](https://playwright.dev/docs/api/class-electron#electron-launch) documents its `env` option. [Node child-process documentation](https://nodejs.org/api/child_process.html) documents child environment inheritance, PATH lookup and Windows key casing. Consulted 2026-09-29.
 
-[^terminal]: DevSwarm commit `d7c33873380e092018140ccf6e90529e1605fff0`: [shell flags](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/libs/desktop/constants/shells.constants.ts#L13), [post-readiness setup](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/desktop/electron/src/app/services/terminal.service.ts#L1026), and [POSIX environment script](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/desktop/electron/src/app/services/shell/posix-shell-command.service.ts#L141). Inspected locally.
-
-[^snapshot]: Same DevSwarm commit, [environment capture](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/desktop/electron/src/app/services/system-check.service.ts#L248), [merge](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/desktop/electron/src/app/services/system-check.service.ts#L344), and [version check](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/desktop/electron/src/app/services/system-check.service.ts#L531).
-
-[^path]: Same commit, [shell-first PATH merge](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/desktop/electron/src/app/services/shell/path-patcher.service.ts#L17).
-
-[^resolution]: Same commit, [candidate validation and lookup](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/ide/extensions/devswarm/src/dsai/acp/agentRegistry.ts#L80), and [chat preparation and launch](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/ide/extensions/devswarm/src/dsai/controller.ts#L1516).
-
-[^trust]: Same commit, [config directory selection](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/libs/desktop/utils/src/claude-workspace-trust.ts#L29), used by [Claude launch policy](https://github.com/twentyideas/devswarm/blob/d7c33873380e092018140ccf6e90529e1605fff0/apps/ide/extensions/devswarm/src/dsai/acp/providers/claude/policy.ts#L12).
-
 [^zsh]: [Official zsh startup-file documentation](https://zsh.sourceforge.io/Doc/Release/Files.html), consulted 2026-09-29. Startup-order summary plus the controlled probe, not a guarantee for arbitrary user scripts.
 
 [^claude]: [Claude Code environment variables and precedence](https://code.claude.com/docs/en/env-vars), consulted 2026-09-29. Actual supported routing and precedence must be tested against each supported binary version.
 
-[^node-windows]: [Node Windows batch-launch restrictions](https://nodejs.org/api/child_process.html#spawning-bat-and-cmd-files-on-windows), consulted 2026-09-29; DevSwarm's stricter extension filter is independently visible in its registry source above.
+[^node-windows]: [Node Windows batch-launch restrictions](https://nodejs.org/api/child_process.html#spawning-bat-and-cmd-files-on-windows), consulted 2026-09-29.
 
 [^probe]: Reproducible local experiment: `experiments/launch-injection.mjs`. Results described above were observed on 2026-09-29, before committing this investigation. This experiment is evidence about launch mechanics, not delivery evidence for the library.
-
-DayLight Local also recovered session `8a796949-5340-4fa5-8d9d-e5bb1fd9ab2c`, source-record branch `main`, workspace-derived DevSwarm repository association. Document `document-005f4b5029f849e5b28919533bb8f0f51be3edd3dc36a4efdc8a3ccb07298be6`, authored 2026-09-25, described related Orca shell work. It was a discovery lead; the findings above rely on directly inspected DevSwarm code and the experiment. Team search was unavailable for this folder.

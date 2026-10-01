@@ -10,7 +10,7 @@ node examples/real-editor-agents/verify.mjs /tmp/cordyceps-editors.json
 node examples/real-editor-agents/verify.mjs /tmp/cordyceps-cline.json cline
 ```
 
-In DevSwarm wrap the command with `hivecontrol exec oneshot 4m --`. Versions are recorded in evidence, not accepted/rejected as a compatibility gate. Other operating systems require an equivalent consumer network/filesystem boundary and are not verified here.
+Versions are recorded in evidence, not accepted/rejected as a compatibility gate. Other operating systems require an equivalent consumer network/filesystem boundary and are not verified here.
 
 The four cases each require real captured provider traffic and actual agent output. Text requires one request and a controlled completion. The read scenario writes an unpredictable disposable fixture token, verifies it is absent from the first request, scripts the agent's own read mechanism, and requires that token in its second provider request before responding with a completion. The mock never reads the fixture to manufacture a tool result.
 

@@ -527,7 +527,7 @@
       "status": "excluded-mode",
       "reason": "Orca native-pane team orchestration is a separate unverified launch mode; plain Claude Code proof is not team lifecycle proof.",
       "evidence": [
-        "docs/orchestrator-agents.md"
+        "docs/additional-harnesses.md"
       ]
     },
     {

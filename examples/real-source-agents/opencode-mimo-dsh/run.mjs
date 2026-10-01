@@ -1,4 +1,4 @@
-// Run under `hivecontrol exec oneshot 10m -- node ...` in DevSwarm.
+// Consumer-owned packaging and launch driver.
 // Builds a source copy, packs it, and runs public imports outside the checkout.
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';

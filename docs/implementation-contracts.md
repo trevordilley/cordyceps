@@ -1,6 +1,6 @@
 # Integration contracts
 
-Historical first-phase coordination contract. Current codecs, recipes and verified consumer workflows are documented in [provider-codecs.md](provider-codecs.md), [registry.md](registry.md) and [devswarm-agents.md](devswarm-agents.md).
+Historical first-phase coordination contract. Current codecs, recipes and verified consumer workflows are documented in [provider-codecs.md](provider-codecs.md), [registry.md](registry.md) and [native-harnesses.md](native-harnesses.md).
 
 Working implementation decisions: ESM npm package, Node >=22 runtime, Bun 1.3.13 development/build/tests and strict TypeScript declarations. No CLI or publication in this change. Node compatibility will be checked with the installed Node 22 runtime; this is not harness certification.
 
@@ -12,4 +12,4 @@ Registry contract: createRegistry({builtins?: boolean} = {}) returns register(un
 
 Core contract: prepare({harness,mode?,registry?,inputs?,signal?}) returns ai with baseUrl, apiKey, environment(base), args, configFiles, route(predicate,handler) -> remover, requests, waitForRequest(predicate,{timeout?,signal?}?), failures, assertHealthy(), dispose(). Matching newest registered route first; unmatched requests fail visibly with no upstream fallback. route exposes request, signal, fulfill(ScriptedResponse), untilAborted(), abort(). Handler exceptions are recorded and assertHealthy throws; Playwright teardown calls it after disposal. dispose cleans up but does not throw previously recorded handler failures (avoid masking an original test error); cleanup failures still surface. Requests and route state isolated per prepare. Core observations expose recordInput(data, metadata?) and recordProtocolMessage(direction,payload,metadata?) as explicit consumer instrumentation, preserving snapshots of complete native payloads separately from provider requests. No invented ACP client, IDs, runner, fake tools or process capture.
 
-Children commit bounded changes and report tests/limits; no Saga edits or child reviews. Use hivecontrol for coordination and tracked expensive commands. No process.env mutation, executable probes, shell handling, binary installation or runner.
+Children commit bounded changes and report tests/limits; no Saga edits or child reviews. No process.env mutation, executable probes, shell handling, binary installation or runner.

@@ -7,12 +7,11 @@
 ## Reproduce
 
 ```sh
-export PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH
-hivecontrol exec oneshot 2m -- bun install --frozen-lockfile
-hivecontrol exec oneshot 4m -- node examples/real-qodo/run.mjs /tmp/qodo.json
+bun install --frozen-lockfile
+node examples/real-qodo/run.mjs /tmp/qodo.json
 ```
 
-The consumer defaults to `/Users/20idemo/.bun/bin/qodo`; `CORDYCEPS_QODO_BINARY` can select another installed package executable. The version is recorded, not used as a compatibility gate. `run.mjs` builds and packs Cordyceps, installs that artifact and ordinary `ws@8.18.3` into a temporary external consumer, and imports only the public `cordyceps` entry. Package setup may use npm network access; the actual agent is subsequently confined to outbound loopback by `sandbox-exec`.
+Set `CORDYCEPS_QODO_BINARY` to your installed Qodo executable. The version is recorded, not used as a compatibility gate. `run.mjs` builds and packs Cordyceps, installs that artifact and ordinary `ws@8.18.3` into a temporary external consumer, and imports only the public `cordyceps` entry. Package setup may use npm network access; the actual agent is subsequently confined to outbound loopback by `sandbox-exec`.
 
 The consumer uses the existing isolated diagnostic launcher: disposable HOME, XDG directories, work directory, test credentials, denied Keychain access, denied browser launch, and writes restricted to the owned scratch directory. No user auth/config is copied or modified. The consumer owns installation, launch, WebSocket metadata service, process cancellation, and cleanup. Nothing is added to the public library's execution scope.
 
@@ -51,7 +50,7 @@ The official [agent configuration guide](https://docs.qodo.ai/qodo-documentation
 
 Qodo does document an on-premises deployment. Its [infrastructure requirements](https://docs.qodo.ai/qodo-documentation/on-prem/on-prem/overview/infrastructure-requirements) include Kubernetes, private Qodo container registries and access to model APIs or self-hosted models. The [critical prerequisites](https://docs.qodo.ai/qodo-documentation/on-prem/on-prem/overview/critical-prerequisites) require Qodo-provided Replicated registry credentials. These documents establish a plausible deployment route, but do not establish that those images implement this CLI's agent service or expose the required model override. Registry access, a compatible backend image/chart, and its model configuration would need to be supplied; a user CLI API key alone does not supply them. No private registry or user credentials were accessed.
 
-The current public [`@qodo/sdk`](https://www.npmjs.com/package/@qodo/sdk) 2.0.0 tarball was also inspected without installation scripts or runtime execution. [SDK inspection evidence](../examples/real-qodo/sdk-inspection.json) records verified tarball integrity and source hashes. `dist/client/options.d.ts` defines `baseUrl` as the Qodo Agent Runtime (QAR) deployment, deriving `/v2/qar/ws/connect`, `/v1/info`, and other service endpoints. Its `transport` hook replaces the WebSocket connection, not a model client; `TaskClient` sends task-start envelopes. Its README distinguishes QAR-native 2.0 from the legacy command-backend SDK. This newer package therefore does not supply the missing local backend or prove compatibility with the installed command's older WebSocket protocol. It was not substituted for the DevSwarm Qodo executable.
+The current public [`@qodo/sdk`](https://www.npmjs.com/package/@qodo/sdk) 2.0.0 tarball was also inspected without installation scripts or runtime execution. [SDK inspection evidence](../examples/real-qodo/sdk-inspection.json) records verified tarball integrity and source hashes. `dist/client/options.d.ts` defines `baseUrl` as the Qodo Agent Runtime (QAR) deployment, deriving `/v2/qar/ws/connect`, `/v1/info`, and other service endpoints. Its `transport` hook replaces the WebSocket connection, not a model client; `TaskClient` sends task-start envelopes. Its README distinguishes QAR-native 2.0 from the legacy command-backend SDK. This newer package therefore does not supply the missing local backend or prove compatibility with the installed command's older WebSocket protocol. It was not substituted for the tested Qodo executable.
 
 ## Missing prerequisite and alternatives
 

@@ -66,6 +66,66 @@ startup, permissions, and shutdown.
 There's also a `cordyceps/playwright` fixture that handles session setup and
 teardown. Install `@playwright/test` to use it.
 
+## Supported harnesses
+
+All 43 below passed controlled text and real file-read tests on macOS.
+**CI** means checked in GitHub Actions and the release flow (34); **Local** means
+verified locally with no hosted setup yet (9). Click a harness for setup and tested versions.
+
+“Streaming” means incremental agent output; “buffered” means output arrives after
+the provider stream finishes. Cancellation means terminating the agent process;
+Claude's ACP tests also cover protocol cancellation and session reuse. A dash means
+no additional checks are claimed.
+
+| Harness | Verification | Additional checks / limits |
+| --- | --- | --- |
+| [Aider](docs/real-editor-agents.md) | CI | — |
+| [Amazon Q / Kiro](docs/real-q.md) | Local | Streaming, cancellation; installed `q` wrapper |
+| [Amp](docs/real-gated-agents.md) | Local | Buffered stream, cancellation |
+| [Ante](docs/real-vendor-agents.md) | CI | — |
+| [Antigravity (`agy`)](docs/real-gated-agents.md) | Local | Streaming, cancellation |
+| [Auggie](docs/real-auggie.md) | CI | Streaming, cancellation |
+| [Autohand](docs/real-extra-cli.md) | CI | Cancellation; nonstreaming headless mode |
+| [Claude Code](docs/real-cli.md) | CI | Interactive terminal, [ACP](docs/real-acp.md), [browser](docs/real-frontend.md) |
+| [Cline](docs/real-editor-agents.md) | CI | — |
+| [CodeBuddy](docs/real-source-codebuddy-qoder.md) | Local | Both `codebuddy` and `cbc` aliases |
+| [Codebuff](docs/real-codebuff-polygraph.md) | CI | Pinned official source only; published binary excluded |
+| [Codex](docs/real-cli.md) | CI | Noninteractive mode |
+| [Command Code](docs/real-extra-cli.md) | CI | Streaming, cancellation |
+| [Continue CLI](docs/real-extra-cli.md) | CI | Buffered stream, cancellation |
+| [Crush](docs/real-provider-agents.md) | CI | Streaming, cancellation |
+| [DeepSeek Harness](docs/real-source-opencode-mimo-dsh.md) | CI | Headless and interactive terminal |
+| [Factory Droid](docs/real-provider-agents.md) | CI | Buffered stream, cancellation |
+| [Freebuff](docs/real-source-agents.md) | Local | Interactive terminal |
+| [fx](docs/real-vendor-agents.md) | CI | — |
+| [Gemini CLI](docs/real-google-agents.md) | CI | Streaming, cancellation |
+| [GitHub Copilot CLI](docs/real-provider-agents.md) | CI | Streaming, cancellation |
+| [Goose](docs/real-provider-agents.md) | CI | Streaming, cancellation |
+| [Grok Build](docs/real-vendor-agents.md) | CI | — |
+| [Hermes](docs/real-local-agents.md) | Local | Streaming, cancellation |
+| [Kilo Code](docs/real-extra-cli.md) | CI | Buffered stream, cancellation |
+| [Kimi Code](docs/real-pi-agents.md) | CI | Buffered stream, cancellation |
+| [Mastra Code](docs/real-pi-agents.md) | CI | Streaming, cancellation |
+| [MiniMax Code (`mcode`)](docs/real-vendor-agents.md) | CI | — |
+| [MiMo Code](docs/real-source-opencode-mimo-dsh.md) | CI | — |
+| [Mistral Vibe](docs/real-google-agents.md) | CI | Cancellation; nonstreaming headless mode |
+| [Muse Code](docs/real-vendor-agents.md) | CI | — |
+| [Oh My Pi](docs/real-pi-agents.md) | CI | Streaming, cancellation |
+| [OpenClaw](docs/real-local-agents.md) | CI | Buffered stream, cancellation |
+| [OpenClaude](docs/real-source-agents.md) | Local | — |
+| [OpenCode](docs/real-provider-agents.md) | CI | Buffered stream, cancellation |
+| [OpenCode 2 beta](docs/real-source-opencode-mimo-dsh.md) | CI | Headless and interactive terminal |
+| [Pi](docs/real-pi-agents.md) | CI | Streaming, cancellation |
+| [Plandex](docs/real-plandex.md) | Local | Example-local recipe; requires self-hosted backend |
+| [Polygraph](docs/real-codebuff-polygraph.md) | CI | Claude-launching profile only |
+| [Prime Agent](docs/real-pi-agents.md) | CI | Streaming; cancellation includes daemon shutdown |
+| [Qwen Code](docs/real-google-agents.md) | CI | Streaming, cancellation |
+| [Rovo Dev](docs/real-gated-agents.md) | Local | Installed `acli` plugin; buffered stream, cancellation |
+| [ZCode](docs/real-pi-agents.md) | CI | Buffered stream, cancellation |
+
+These are tested profiles, not guarantees for every version or operating system.
+[Verification details and exclusions](docs/verification.md).
+
 ## Examples and docs
 
 - [Real CLI tests](docs/real-cli.md) — Claude Code and Codex

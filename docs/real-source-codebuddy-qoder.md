@@ -1,10 +1,5 @@
 # Genuine CodeBuddy and Qoder source identities
 
-Scope authority is the read-only Orca checkout at commit
-`98039676f363d6f0c06dbed25f3180463e5952af`, specifically
-`src/shared/tui-agent-config.ts`, `codebuddy-agent.test.ts`,
-`qoder-agent.test.ts`, `agent-node-package-entrypoints.ts`, and the reference
-pages `docs/reference/codebuddy-harness.md` and `qoder-integration.md`.
 CodeBuddy's executable identities are `codebuddy` / `cbc`; Qoder's is
 `qodercli` (including versioned native binaries). Qoder is not Qodo, and no Qodo
 package, diagnostic or result is used here.
@@ -64,14 +59,14 @@ Use real Node >=22, npm, Bun and macOS `sandbox-exec`. Install dependencies into
 scratch, without changing the normal user's configuration:
 
 ```sh
-hivecontrol exec oneshot 5m -- /bin/zsh -c '
+/bin/zsh -c '
   mkdir -p /tmp/cordyceps-codebuddy-qoder-deps/home
   export HOME=/tmp/cordyceps-codebuddy-qoder-deps/home
   npm install --prefix /tmp/cordyceps-codebuddy-qoder-deps --no-audit --no-fund \
     @tencent-ai/codebuddy-code@2.160.0 @qoder-ai/qodercli@1.1.64
 '
-hivecontrol exec oneshot 5m -- bun install --frozen-lockfile
-hivecontrol exec oneshot 6m -- node \
+bun install --frozen-lockfile
+node \
   examples/real-source-agents/codebuddy-qoder/run.mjs \
   /tmp/cordyceps-codebuddy-qoder-evidence.json \
   /tmp/cordyceps-codebuddy-qoder-deps

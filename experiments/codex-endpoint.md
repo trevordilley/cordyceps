@@ -5,7 +5,7 @@ Observed on macOS, 2026-09-29, with installed `codex-cli 0.155.1`.
 Reproduce:
 
 ```sh
-hivecontrol exec oneshot 90s -- node experiments/codex-endpoint.mjs /Users/20idemo/.local/bin/codex
+node experiments/codex-endpoint.mjs /Users/20idemo/.local/bin/codex
 ```
 
 The probe starts two loopback HTTP servers, supplies a dummy API key, and runs

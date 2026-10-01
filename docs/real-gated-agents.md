@@ -1,20 +1,19 @@
 # Real proprietary-agent probes and Antigravity validation
 
-These are observations from **real installed binaries**, not a support/version gate. Seven native DevSwarm enum entries were exercised on macOS 15.7.4 with Node 22.22.3, against a packed, independently installed Cordyceps artifact. Antigravity passed text, real tool execution, streaming, and cancellation. Rovo and Amp passed controlled text, real file-read round trips, streamed-response consumption, and cancellation; their noninteractive stdout buffered the stream. Follow-up Q and Auggie validation is documented in [real Q](real-q.md) and [real Auggie](real-auggie.md). The original discovery failures below remain useful evidence of the initial seams, not current unsupported verdicts. Cursor and Qodo are excluded from the supported workflow set: [Cursor](real-cursor.md) and [Qodo](real-qodo.md) diagnostics establish remote-agent boundaries, not successful model control.
+These are observations from **real installed binaries**, not a support/version gate. Seven installed agents were exercised on macOS 15.7.4 with Node 22.22.3, against a packed, independently installed Cordyceps artifact. Antigravity passed text, real tool execution, streaming, and cancellation. Rovo and Amp passed controlled text, real file-read round trips, streamed-response consumption, and cancellation; their noninteractive stdout buffered the stream. Follow-up Q and Auggie validation is documented in [real Q](real-q.md) and [real Auggie](real-auggie.md). The original discovery failures below remain useful evidence of the initial seams, not current unsupported verdicts. Cursor and Qodo are excluded from the supported workflow set: [Cursor](real-cursor.md) and [Qodo](real-qodo.md) diagnostics establish remote-agent boundaries, not successful model control.
 
-The mapping was read from DevSwarm `d7c33873380e092018140ccf6e90529e1605fff0`, `libs/shared/types/src/ai-agent.ts` and `libs/desktop/utils/src/agent.ts`. In particular, Antigravity means **`agy`**, Rovo means **`acli rovodev`**, and Amazon Q means **the installed `q` command**. The local `q` wrapper invokes Kiro; that identity change is retained in the evidence. The corresponding `*-wsl` entries were not run on this macOS host.
+The tested commands are **`agy`** for Antigravity, **`acli rovodev`** for Rovo Dev, and **`q`** for Amazon Q. The installed `q` wrapper invokes Kiro; the evidence records that identity. Windows/WSL variants were not tested.
 
 ## Reproduce
 
 Use real Node first on PATH; the default development `node` shim can be Bun. No agent executable is discovered, downloaded, or launched by the public library.
 
 ```sh
-export PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH
-hivecontrol exec oneshot 3m -- bun install --frozen-lockfile
-hivecontrol exec oneshot 3m -- node examples/real-gated-agents/run.mjs /tmp/agy.json --antigravity
-hivecontrol exec oneshot 3m -- node examples/real-gated-agents/run.mjs /tmp/rovo.json --rovo
-hivecontrol exec oneshot 3m -- node examples/real-gated-agents/run.mjs /tmp/amp.json --amp
-hivecontrol exec oneshot 5m -- node examples/real-gated-agents/run.mjs /tmp/gated.json
+bun install --frozen-lockfile
+node examples/real-gated-agents/run.mjs /tmp/agy.json --antigravity
+node examples/real-gated-agents/run.mjs /tmp/rovo.json --rovo
+node examples/real-gated-agents/run.mjs /tmp/amp.json --amp
+node examples/real-gated-agents/run.mjs /tmp/gated.json
 ```
 
 The Antigravity, Rovo and Amp commands are assertion-based validations. The last is a **diagnostic collection**: successful completion means it saved observations, not that the agents passed. Its records retain `passed: false`, the exact command, stdout/stderr, raw HTTP, decoder failures, and unexercised tool/stream prerequisites. A final comma-separated argument selects diagnostic agents, for example `q,cursor,auggie`.
@@ -29,7 +28,7 @@ Committed raw evidence: [Antigravity validation](../examples/real-gated-agents/a
 
 ## Observed outcomes
 
-| DevSwarm entry / actual binary | Observed version | Result and narrow prerequisite |
+| Harness / actual binary | Observed version | Result and narrow prerequisite |
 | --- | --- | --- |
 | `Q=q` / `q` → installed `kiro-cli` | `kiro-cli 2.3.0` | The custom service setting reaches loopback and sends native AWS JSON requests, including the real prompt and tools. Initial discovery had no controlled reply; the native AWS event-stream codec and real validation now pass in [real Q](real-q.md). |
 | `ROVO=acli` / `acli rovodev` | `acli 1.3.13-stable`, Rovo plugin `0.13.68` | Wrapper authentication gate recorded. The same installed plugin invoked directly with isolated local service settings **passed** text, `open_files` fixture token in the next model request, streamed-response consumption and cancellation/provider abort. Noninteractive stdout buffered streaming. |
@@ -56,7 +55,7 @@ The `view_file` response names the real absolute fixture path with `toolSummary`
 
 ### Amazon Q mapping and Kiro service override
 
-The installed `q` file is a 74-byte shell wrapper invoking `/Users/20idemo/.local/bin/kiro-cli --show-legacy-warning`. A temporary `~/.local/bin/kiro-cli-chat` symlink points to the existing installed Kiro subprocess; without it, an isolated HOME produced `No such file or directory`. No different enum agent or synthetic client replaces `q`.
+The installed `q` file is a shell wrapper invoking `kiro-cli --show-legacy-warning`. A temporary `~/.local/bin/kiro-cli-chat` symlink points to the existing installed Kiro subprocess; without it, an isolated HOME produced `No such file or directory`. The test runs the installed `q` command.
 
 `KIRO_API_KEY` accepts a nonempty test key. `AWS_ENDPOINT_URL` did not redirect inference; the first run attempted the blocked `q.us-east-1.amazonaws.com` host. The installed binary includes `api.codewhisperer.service`, `api.q.service`, and `api.kiroauth.service` settings. The [upstream endpoint resolver](https://github.com/aws/amazon-q-developer-cli/blob/main/crates/chat-cli/src/api_client/endpoints.rs) supplies the `{endpoint, region}` shape. Writing those settings only to temporary `~/.kiro/settings/cli.json` successfully redirected the next actual run.
 
@@ -80,7 +79,6 @@ Auggie requires `{accessToken, tenantURL, scopes}` in `AUGMENT_SESSION_AUTH`; om
 
 Qodo's installed `dist/auth/index.js` defines `QODO_API_BASE_URL`, and `dist/utils/serverData.js` defines `QODO_BASE_URL` and the required `/v2/info/get-things` bootstrap. The actual CLI reaches that path and then exits. Its [official repository](https://github.com/qodo-ai/command) and [CLI docs](https://docs.qodo.ai/qodo-documentation/qodo-gen-cli) identify this package. No additional public provider recipe is bundled for these service protocols until there is a working codec and real text/tool evidence.
 
-
 ## Rovo native gateway validation
 
 [Committed evidence](../examples/real-gated-agents/rovo-evidence.json) retains selected native output, request hashes, tool results and assertions plus the full evidence hash. Run `--rovo` to reproduce all commands, raw requests and scripted responses in a caller-selected evidence file. The consumer explicitly invokes the **same installed** `atlassian_cli_rovodev` plugin behind `acli rovodev`; this is not evidence that the wrapper accepts test credentials. The observed plugin path is configurable with `CORDYCEPS_ROVO_BINARY`.
@@ -91,10 +89,9 @@ The `atlassian-rovo` adapter recognizes only the observed model path `/v1/openai
 
 Text has one model request plus two auxiliary requests. The tool scenario has two model requests plus those auxiliaries: a real `open_files` call reads a disposable fixture whose unpredictable token is absent from the first model request and present in the actual next tool-result message. The streamed case consumes two delayed SSE text chunks and prints the correct combined marker, but **no prefix appeared on native stdout before the final provider chunk was released**. This is a recorded noninteractive output limitation, not an incremental-output pass. Cancellation kills the consumer-owned process after its held model request arrives and proves provider abort. Every case verifies captured prompt, provider health and cleanup. No version gate, public runner, installer or discovery code is introduced.
 
-
 ## Amp native local tool loop
 
-[Committed evidence](../examples/real-gated-agents/amp-evidence.json) records the installed April binary, exact commands, native output, model request bodies, tool results and provider response outcomes. Run `--amp` for the full evidence file. This validates the DevSwarm-installed Amp; the separate September custom-URL provisioning attempts above remain bounded observations about that newer command, not prerequisites for the working installed-binary path.
+[Committed evidence](../examples/real-gated-agents/amp-evidence.json) records the installed April binary, exact commands, native output, model request bodies, tool results and provider response outcomes. Run `--amp` for the full evidence file. This validates the installed Amp; the separate September custom-URL provisioning attempts above remain bounded observations about that newer command, not prerequisites for the working installed-binary path.
 
 The installed binary's package source constructs an Anthropic client at `AMP_URL + /api/provider/anthropic`. With a disposable HOME and `AMP_API_KEY` test credential, explicit local service metadata establishes an isolated test account view: `getUserInfo` returns a user with `features: []`, `getThread` returns `thread-not-found`, `getUserFreeTierStatus` returns `canUseAmpFree: false`, and `uploadThread` acknowledges the captured local upload. These replies are scripted by the consumer, never defaulted by Cordyceps. No real Amp account state is read or changed.
 

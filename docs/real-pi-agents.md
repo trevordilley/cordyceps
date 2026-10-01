@@ -7,8 +7,8 @@ The consumer in `examples/real-pi-agents/` builds and packs Cordyceps, installs 
 Use macOS and real Node 24.15.0 or newer. The example rejects Bun masquerading as Node and fails on other platforms rather than removing its sandbox. OMP 18.4.4 requires Bun >=1.3.14; the observed scratch installation uses Bun 1.4.2. Repository build dependencies must be installed first:
 
 ```sh
-hivecontrol exec oneshot 3m -- bun install --frozen-lockfile
-hivecontrol exec oneshot 6m -- npm install --prefix /tmp/cordyceps-pi-tools \
+bun install --frozen-lockfile
+npm install --prefix /tmp/cordyceps-pi-tools \
   --no-audit --no-fund @earendil-works/pi-coding-agent@0.99.1 \
   @oh-my-pi/pi-coding-agent@18.4.4 mastracode@0.43.0 \
   @moonshot-ai/kimi-code@2.1.1 bun@1.4.2
@@ -17,9 +17,9 @@ hivecontrol exec oneshot 6m -- npm install --prefix /tmp/cordyceps-pi-tools \
 Use an actual Node installation first on `PATH` for npm and the example. Dependency installation is a separate developer step, before sandboxed agent execution; the verifier never installs agents or signs in automatically. `install-native.mjs` downloads the pinned official Prime and ZCode artifacts into a supplied scratch directory and verifies their SHA-256 checksums before extracting:
 
 ```sh
-hivecontrol exec oneshot 3m -- node examples/real-pi-agents/install-native.mjs /tmp/cordyceps-pi-tools
-hivecontrol exec oneshot 3m -- uv venv /tmp/cordyceps-pi-tools/prime-venv
-hivecontrol exec oneshot 3m -- uv pip install \
+node examples/real-pi-agents/install-native.mjs /tmp/cordyceps-pi-tools
+uv venv /tmp/cordyceps-pi-tools/prime-venv
+uv pip install \
   --python /tmp/cordyceps-pi-tools/prime-venv/bin/python \
   /tmp/cordyceps-pi-tools/prime/prime-agent-runtime \
   ipykernel requests httpx PyYAML tomli python-dotenv pandas numpy scipy beautifulsoup4 lxml
@@ -35,11 +35,11 @@ CORDYCEPS_BUN_DIR=/tmp/cordyceps-pi-tools/node_modules/.bin \
 PRIME_AGENT_BINARY=/tmp/cordyceps-pi-tools/prime/prime-agent \
 PRIME_AGENT_KERNEL_PYTHON=/tmp/cordyceps-pi-tools/prime-venv/bin/python \
 ZCODE_BINARY=/tmp/cordyceps-pi-tools/zcode-glm/zcode.cjs \
-  hivecontrol exec oneshot 6m -- node examples/real-pi-agents/run.mjs /tmp/pi-agents.json
+  node examples/real-pi-agents/run.mjs /tmp/pi-agents.json
 node examples/real-pi-agents/summarize.mjs /tmp/pi-agents.json /tmp/pi-observations.json
 ```
 
-After the evidence path, optional positional arguments select comma-separated candidates and scenarios, for example `pi,omp text,tool`. Executable overrides are `PI_BINARY`, `OMP_BINARY`, `MASTRA_CODE_BINARY`, `KIMI_CODE_BINARY`, `PRIME_AGENT_BINARY`, and `ZCODE_BINARY`; otherwise the runner uses `which` (`mastracode` and `kimi` for their respective IDs). Outside DevSwarm use the same commands without `hivecontrol exec oneshot`.
+After the evidence path, optional positional arguments select comma-separated candidates and scenarios, for example `pi,omp text,tool`. Executable overrides are `PI_BINARY`, `OMP_BINARY`, `MASTRA_CODE_BINARY`, `KIMI_CODE_BINARY`, `PRIME_AGENT_BINARY`, and `ZCODE_BINARY`; otherwise the runner uses `which` (`mastracode` and `kimi` for their respective IDs).
 
 ## Isolation and assertions
 
@@ -79,6 +79,6 @@ Sources were inspected on 2026-09-29 PDT (2026-09-30 UTC), including installed p
 
 All verified candidates use the existing `openai-chat-completions` codec. No library launch logic, provider emulation beyond model responses, or codec changes were needed. The six data recipes are selectable through the default registry; the consumer also demonstrates loading the same definitions privately.
 
-## Orchestrator identity mapping
+## Executables
 
-The source roster was checked against [Superset 3049a31](https://github.com/superset-sh/superset/blob/3049a3114bd1ae48b944aae3e4cafdb0f521d1a5/packages/shared/src/builtin-terminal-agents.ts) and [Orca 9803967](https://github.com/stablyai/orca/blob/98039676f363d6f0c06dbed25f3180463e5952af/src/shared/tui-agent-config.ts). Superset's `mastracode` and `kimi` IDs map here to recipe IDs `mastra-code` and `kimi-code`; `pi`, `omp`, `prime-agent` and `zcode` retain those names. The actual launchers are `pi`, `omp`, `mastracode`, `kimi`, `prime-agent`, and the official `zcode.cjs`. These tests establish the agents' native headless workflows, not a Superset/Orca UI or terminal lifecycle test. No additional identities are inferred from a shared Pi ancestry.
+The actual launchers are `pi`, `omp`, `mastracode`, `kimi`, `prime-agent`, and the official `zcode.cjs`. The `mastracode` and `kimi` executables use recipe IDs `mastra-code` and `kimi-code`. These tests cover native headless workflows.

@@ -9,8 +9,7 @@ The observed macOS binaries are GitHub Copilot CLI 1.0.88, Goose 1.27.2, Factory
 Install repository dependencies with `bun install --frozen-lockfile`. Use your installed binaries or install missing tools into a disposable npm project. The observed missing tools were obtained with:
 
 ```sh
-PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH \
-  hivecontrol exec oneshot 5m -- npm install \
+  npm install \
   --prefix /tmp/cordyceps-provider-tools --no-audit --no-fund \
   opencode-ai @charmland/crush
 ```
@@ -18,17 +17,16 @@ PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH \
 Run from the repository root, substituting real executable paths on your machine:
 
 ```sh
-PATH=/Users/20idemo/.nvm/versions/node/v22.22.3/bin:$PATH \
-COPILOT_BINARY=/opt/homebrew/bin/copilot \
-GOOSE_BINARY=/Users/20idemo/.local/bin/goose \
-DROID_BINARY=/Users/20idemo/.local/bin/droid \
+COPILOT_BINARY=/absolute/path/to/copilot \
+GOOSE_BINARY=/absolute/path/to/goose \
+DROID_BINARY=/absolute/path/to/droid \
 OPENCODE_BINARY=/tmp/cordyceps-provider-tools/node_modules/.bin/opencode \
 CRUSH_BINARY=/tmp/cordyceps-provider-tools/node_modules/@charmland/crush/bin/crush \
-  hivecontrol exec oneshot 6m -- node examples/real-provider-agents/run.mjs \
+  node examples/real-provider-agents/run.mjs \
   /tmp/cordyceps-provider-evidence.json
 ```
 
-Arguments after the evidence path optionally select comma-separated agent IDs and scenarios, for example `goose,crush text,tool`. Defaults run all five agents with `text,tool,stream,cancel`. If an executable environment override is absent, the runner uses `which`; it never installs anything implicitly. Outside DevSwarm invoke the same Node command directly. npm installation is a developer step before the isolated agent processes run.
+Arguments after the evidence path optionally select comma-separated agent IDs and scenarios, for example `goose,crush text,tool`. Defaults run all five agents with `text,tool,stream,cancel`. If an executable environment override is absent, the runner uses `which`; it never installs anything implicitly. npm installation is a developer step before the isolated agent processes run.
 
 Every agent invocation, including its version probe, uses macOS `sandbox-exec` with outbound network restricted to loopback and filesystem writes restricted to its disposable home/work area and Cordyceps-owned configuration directory. Its environment is allowlisted; it receives test-only credentials, isolated HOME/XDG/TMPDIR paths and dead external proxy endpoints. The example fails on other platforms instead of dropping the sandbox. There are no live provider calls, changes to user authentication/configuration, or npm publishing. Process groups close before the mock and disposable files are removed.
 
@@ -58,4 +56,4 @@ Streaming cases require a native streaming request, send a prefix, leave the res
 - **OpenCode:** [`harnesses/opencode.json`](../harnesses/opencode.json) generates an `OPENCODE_CONFIG` file with `provider.anthropic.options.baseURL` ending in `/v1` and `apiKey`. The consumer uses `run --pure --model anthropic/claude-sonnet-4-5-20250929 --title Cordyceps --format json`, isolates all XDG state, and disables model fetching, default plugins and auto-update. Source: [OpenCode provider configuration](https://opencode.ai/docs/providers/) and installed `opencode run --help`.
 - **Crush:** [`harnesses/crush.json`](../harnesses/crush.json) writes `crush.json` with a custom Anthropic provider, explicit model metadata and large/small model choices. `CRUSH_GLOBAL_CONFIG` points to the containing session **directory**, not to the JSON file. Provider auto-update and metrics are disabled. The consumer uses `run --quiet --model cordyceps/claude-sonnet-4-5-20250929 --small-model cordyceps/claude-sonnet-4-5-20250929`. Source: [Crush configuration and custom providers](https://github.com/charmbracelet/crush#custom-providers), [schema](https://github.com/charmbracelet/crush/blob/main/schema.json) and installed `crush run --help`.
 
-The consumer selects model and permissions; recipes only render provider injection data and the requested noninteractive mode. They do not discover/install/launch agents or certify versions. WSL variants of the DevSwarm enum were not executed on macOS. No ACP coverage beyond the separate existing ACP baseline is claimed here.
+The consumer selects model and permissions; recipes only render provider injection data and the requested noninteractive mode. They do not discover/install/launch agents or certify versions. Windows/WSL variants were not executed on macOS. No ACP coverage beyond the separate existing ACP baseline is claimed here.

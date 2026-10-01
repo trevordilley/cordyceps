@@ -1,4 +1,4 @@
-// Consumer installation helper. Run through a tracked one-shot in DevSwarm.
+// Consumer installation helper.
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { mkdtemp, writeFile } from 'node:fs/promises';
