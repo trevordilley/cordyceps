@@ -1,3 +1,4 @@
+import { pathToFileURL } from 'node:url';
 import { readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { DefinitionError, parseDefinition } from './manifest.js';
@@ -30,7 +31,8 @@ export function createRegistry({ builtins = true }: { builtins?: boolean } = {})
     list() { return [...definitions.values()].map(value => structuredClone(value)); },
   };
   if (builtins) for (const name of ['aider', 'amazon-q', 'amp', 'ante', 'antigravity', 'auggie', 'autohand', 'claude-code', 'claude-code-acp', 'cline', 'codebuddy', 'codebuff', 'codex', 'command-code', 'continue-cli', 'copilot', 'crush', 'droid', 'dsh', 'freebuff', 'fx', 'gemini', 'goose', 'grok-build', 'hermes', 'kilocode', 'kimi-code', 'mastra-code', 'mimo', 'minimax', 'mistral-vibe', 'muse', 'omp', 'openclaude', 'openclaw', 'opencode', 'opencode2', 'pi', 'polygraph', 'prime-agent', 'qwen', 'rovo-dev', 'zcode']) {
-    const url = new URL(`../harnesses/${name}.json`, import.meta.url);
+    const moduleUrl = typeof __filename === 'string' ? pathToFileURL(__filename) : import.meta.url;
+    const url = new URL(`../harnesses/${name}.json`, moduleUrl);
     registry.register(decodeJson(readFileSync(url, 'utf8'), url.pathname));
   }
   return registry;

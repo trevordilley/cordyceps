@@ -15,7 +15,7 @@ and which tools it calls, then checks what your app does with the result.
 Early alpha. Requires Node.js 22 or later.
 
 ```sh
-npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.1/cordyceps.tgz
+npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.2/cordyceps.tgz
 ```
 
 [Releases and curl downloads →](docs/releases.md)
@@ -151,6 +151,7 @@ These are tested profiles, not guarantees for every version or operating system.
 - [Browser tests](docs/real-frontend.md) — Playwright driving an app backed by Claude
 - [ACP sessions](docs/real-acp.md) — permissions, tools, and cancellation
 - [Supported agents and verification](docs/verification.md)
+- [Required scenarios and diagnostics](docs/scenarios.md) — call counts, ordering, redacted failures
 - [Provider controls](docs/provider-codecs.md)
 - [Adding an agent](docs/registry.md)
 

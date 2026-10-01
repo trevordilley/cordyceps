@@ -4,6 +4,21 @@ The library has been built, packed, installed into disposable Node projects, and
 
 Reproduction context: macOS 15.7.4, Node 22.22.3, Bun 1.3.13, TypeScript 5.9.3, Playwright 1.56.1, installed Claude Code 2.1.283 and Codex 0.155.1. ACP uses `@agentclientprotocol/claude-agent-acp` 0.84.0, ACP SDK 1.5.1 and Claude Agent SDK 0.3.284. Executable versions are recorded observations, not support gates or a certification matrix. No npm publication, selected license or user review verdict is recorded.
 
+## Consumer API checks
+
+The alpha.2 changes passed strict TypeScript, 168 Bun tests (two known Bun-only
+skips), and all 33 Node lifecycle/consumer API tests. Packed consumers cover ESM
+and CommonJS imports, declarations, ordinary Playwright `.spec.ts` projects,
+required-step failures, fast failure guards, redacted attachments and cleanup.
+
+The [app → worker → Codex example](testing-apps.md) passed controlled text and an
+actual file read through inherited configuration. The separate home-only Claude
+check passed using generated settings and `apiKeyHelper`, without provider URL or
+API-key environment overrides. Original consumer reproductions also passed:
+Claude 2.1.283 text and Edit/Read workflows, ordinary-route/raw-capture compatibility,
+and the CommonJS TypeScript import case. These checks do not establish a complete
+third-party desktop UI or VM journey.
+
 ## Reproduce the checks
 
 Run from the repository root after `bun install --frozen-lockfile`. Put a real Node >=22 installation first on `PATH` for these commands and npm's child processes. Some development shells expose a `node` shim that runs Bun; that is not Node verification. `node -p 'JSON.stringify(process.versions)'` must report Node without a `bun` field. `test:node` also accepts `CORDYCEPS_NODE_BINARY=/absolute/path/to/node`; the package check rejects non-Node runtimes explicitly.

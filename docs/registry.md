@@ -4,6 +4,10 @@ Cordyceps definitions describe provider injection data. The consumer chooses and
 
 `createRegistry()` loads the bundled definitions listed in the [native harnesses](native-harnesses.md) and [additional harnesses](additional-harnesses.md), including the separate `claude-code-acp` recipe. `createRegistry({ builtins: false })` starts empty. `register(unknown)` validates and snapshots a definition; `await loadFile(path)` parses a local JSON file through the same validator. Duplicate IDs fail rather than replace an entry. `get(id)` returns an independent definition snapshot or throws `DEFINITION_NOT_FOUND`. `list()` returns independent snapshots in registration order. Changes to input objects, inspection results, or later registry registrations cannot modify an already captured definition.
 
+For application startup, fixed ports and disposable Claude homes, see
+[testing apps](testing-apps.md). For required calls and transcript exports, see
+[scenarios](scenarios.md).
+
 ## Definition shape
 
 This custom example uses fictional environment names and adapter arguments. They are **not** Claude Code or Codex flags:

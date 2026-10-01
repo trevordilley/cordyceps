@@ -1,3 +1,10 @@
+import { encodeRaw } from "./raw-response.js";
+import type { RawHttpResponse } from "./raw-response.js";
+import { exportTranscript } from "./transcript.js";
+import type { TranscriptOptions } from "./transcript.js";
+import { normalizeMessages } from "./matching.js";
+import { createScenario } from "./scenario.js";
+import type { ScenarioStep, ScenarioOptions, StepExpectation, RouteMatch } from "./scenario.js";
 import { randomUUID } from "node:crypto";
 import { once } from "node:events";
 import { createServer } from "node:http";
@@ -7,7 +14,9 @@ import { createRegistry } from "./registry.js";
 import type { HarnessRegistry } from "./registry.js";
 import { renderInjection, validateSelection } from "./injection.js";
 import { getCodec } from "./provider/index.js";
-import type { CapturedRequest, RawHttpRequest, ScriptedResponse } from "./provider/types.js";
+import type { CapturedRequest, RawHttpRequest, ScriptedResponse, EncodedResponse } from "./provider/types.js";
+import { installClaudeSettings } from "./claude-settings.js";
+import type { ClaudeSettingsOptions, ClaudeSettingsInstallation } from "./claude-settings.js";
 import { createObservations } from "./observations.js";
 import type { ConsumerObservations } from "./observations.js";
 
@@ -18,6 +27,7 @@ export interface Route {
   readonly request: CapturedRequest;
   readonly signal: AbortSignal;
   fulfill(response: ScriptedResponse): Promise<void>;
+  fulfillRaw(response: RawHttpResponse): Promise<void>;
   /** Hold the response until client disconnect, explicit abort, or session disposal. */
   untilAborted(): Promise<void>;
   /** Break this provider connection, including a response already streaming. */
@@ -28,10 +38,14 @@ export interface WaitOptions {
   /** Milliseconds; defaults to 5000. Zero disables the timeout. */
   timeout?: number;
   signal?: AbortSignal;
+  /** Only inspect requests after this requestCursor() value. */
+  after?: number;
 }
 
 export interface PrepareOptions {
   harness: string;
+  /** Loopback listening port; 0 (the default) selects an available port. */
+  port?: number;
   mode?: string;
   registry?: HarnessRegistry;
   inputs?: Record<string, string>;
@@ -63,8 +77,19 @@ export interface AISession extends ConsumerObservations {
   readonly apiKey: string;
   readonly args: Injection["args"];
   readonly configFiles: Injection["configFiles"];
+  installClaudeSettings(options: ClaudeSettingsOptions): Promise<ClaudeSettingsInstallation>;
   environment: Injection["environment"];
-  route(predicate: RequestPredicate, handler: RouteHandler): () => void;
+  route(predicate: RequestPredicate, handler: RouteHandler, options?: { name?: string }): () => void;
+  scenario(steps: readonly ScenarioStep[], options?: ScenarioOptions): void;
+  readonly expectations: readonly StepExpectation[];
+  readonly matches: readonly RouteMatch[];
+  /** Aborts on the first provider/route/scenario failure, for consumer-owned cancellation. */
+  readonly failureSignal: AbortSignal;
+  guard<T>(work: PromiseLike<T> | (() => PromiseLike<T>)): Promise<T>;
+  requestCursor(): number;
+  waitForNextRequest(predicate: RequestPredicate, options?: Omit<WaitOptions, 'after'>): Promise<CapturedRequest>;
+  assertComplete(): void;
+  exportTranscript(options?: TranscriptOptions): unknown;
   readonly requests: readonly CapturedRequest[];
   readonly responses: readonly ResponseObservation[];
   readonly failures: readonly SessionFailure[];
@@ -132,13 +157,21 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
   validateSelection(definition, mode, options.inputs ?? {});
   const inputs = structuredClone(options.inputs ?? {});
   const codec = getCodec(definition.provider.adapter);
+  const port = options.port ?? 0;
+  if (!Number.isInteger(port) || port < 0 || port > 65535) throw new TypeError("port must be an integer between 0 and 65535");
+  const installations = new Set<Awaited<ReturnType<typeof installClaudeSettings>>>();
+  const installationTasks = new Set<Promise<ClaudeSettingsInstallation>>();
   const bodyLimit = options.maxRequestBodyBytes ?? 16 * 1024 * 1024;
   if (!Number.isSafeInteger(bodyLimit) || bodyLimit <= 0) throw new TypeError("maxRequestBodyBytes must be a positive safe integer");
 
   const requests: CapturedRequest[] = [];
   const responses: ResponseObservation[] = [];
   const failures: SessionFailure[] = [];
-  const routes: { predicate: RequestPredicate; handler: RouteHandler }[] = [];
+  const routes: { predicate: RequestPredicate; handler: RouteHandler; name: string }[] = [];
+  const matches: RouteMatch[] = [];
+  let scenario: ReturnType<typeof createScenario> | undefined;
+  let routeNumber = 0;
+  const failureController = new AbortController();
   const waiters = new Set<{ check(request: CapturedRequest): void; reject(error: unknown): void }>();
   const sockets = new Set<Socket>();
   const active = new Set<AbortController>();
@@ -153,6 +186,7 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
   const recordFailure = (error: unknown, requestId?: string) => {
     const failure = { timestamp: Date.now(), error: asError(error), ...(requestId === undefined ? {} : { requestId }) };
     failures.push(failure);
+    if (!failureController.signal.aborted) failureController.abort(failure.error);
     for (const waiter of [...waiters]) waiter.reject(failure.error);
   };
 
@@ -187,20 +221,23 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
       };
       if (!codec.matches(raw.method, raw.path)) throw new HttpFailure(404, `Unsupported provider request: ${raw.method} ${raw.path}`);
       try {
-        captured = structuredClone({ ...codec.decode(raw), id: randomUUID(), timestamp: Date.now(), raw });
+        const decoded = codec.decode(raw);
+        captured = structuredClone({ ...decoded, messages: normalizeMessages(decoded), id: randomUUID(), timestamp: Date.now(), raw });
       } catch (error) { throw new HttpFailure(400, `Invalid provider request: ${asError(error).message}`); }
       requests.push(captured);
       response = { requestId: captured.id, timestamp: Date.now(), status: null, headers: {}, chunks: [], outcome: "pending" };
       responses.push(response);
       for (const waiter of [...waiters]) waiter.check(captured);
       signal.throwIfAborted();
-      const selected = [...routes].reverse().find(route => route.predicate(structuredClone(captured!)));
+      const selected = scenario ? scenario.select(captured)
+        : [...routes].reverse().find(route => route.predicate(structuredClone(captured!)));
       if (!selected) throw new HttpFailure(500, `No route matched provider request ${captured.id}`);
+      matches.push({ requestId: captured.id, name: selected.name, kind: 'kind' in selected ? selected.kind : 'route' });
       let responseTask: Promise<void> | undefined;
       let claimed = false;
 
-      const deliver = async (script: ScriptedResponse) => {
-        const encoded = codec.encode(structuredClone(captured!), script, signal);
+      const deliver = async (encode: () => EncodedResponse) => {
+        const encoded = encode();
         response!.status = encoded.status;
         response!.headers = { ...encoded.headers };
         outgoing.writeHead(encoded.status, encoded.headers);
@@ -235,8 +272,16 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
           signal.throwIfAborted();
           if (claimed) throw new Error("Provider request already handled");
           claimed = true;
-          responseTask = deliver(script);
+          responseTask = deliver(() => codec.encode(structuredClone(captured!), script, signal));
           // Observe even an unawaited fulfill; dispatch also waits for its completion.
+          void responseTask.catch(fail);
+          return responseTask;
+        },
+        fulfillRaw(script) {
+          signal.throwIfAborted();
+          if (claimed) throw new Error("Provider request already handled");
+          claimed = true;
+          responseTask = deliver(() => encodeRaw(script));
           void responseTask.catch(fail);
           return responseTask;
         },
@@ -309,9 +354,12 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
         server.close(error => error ? reject(error) : resolve());
       });
       for (const socket of sockets) socket.destroy();
-      const results = await Promise.allSettled([closed, Promise.all([...tasks]), Promise.resolve().then(() => injection?.dispose())]);
+      await Promise.allSettled([...installationTasks]);
+      const results = await Promise.allSettled([closed, Promise.all([...tasks]), Promise.resolve().then(() => injection?.dispose()), ...[...installations].map(setup => setup.dispose())]);
       const errors = results.flatMap(result => result.status === "rejected" ? [result.reason] : []);
-      if (errors.length) throw new AggregateError(errors, "Cordyceps cleanup failed");
+      try { scenario?.assertComplete(); } catch (error) { errors.push(error); }
+      if (scenario && failures.length) errors.push(new AggregateError(failures.map(failure => failure.error), failures.map(failure => failure.error.message).join("; ")));
+      if (errors.length) throw new AggregateError(errors, `Cordyceps cleanup/completion failed: ${errors.map(error => asError(error).message).join('; ')}`);
     });
     return disposal;
   };
@@ -322,7 +370,7 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
       const error = (reason: Error) => { server.off("listening", listening); reject(reason); };
       const listening = () => { server.off("error", error); resolve(); };
       server.once("error", error).once("listening", listening);
-      server.listen(0, "127.0.0.1");
+      server.listen(port, "127.0.0.1");
     });
     options.signal?.throwIfAborted();
     const address = server.address();
@@ -333,8 +381,44 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
     options.signal?.throwIfAborted();
     options.signal?.addEventListener("abort", onAbort, { once: true });
     const prepared = injection;
-    return {
+    const session: AISession = {
       baseUrl, apiKey,
+      failureSignal: failureController.signal,
+      exportTranscript(options) {
+        return exportTranscript({ requests, responses: options?.redact === false ? responses : responses.map(({ chunks, ...response }) => ({
+          ...response, chunkCount: chunks.length, body: Buffer.concat(chunks.map(chunk => typeof chunk === 'string' ? Buffer.from(chunk, 'utf8') : Buffer.from(chunk))).toString('utf8'),
+        })), failures, matches,
+          expectations: scenario?.expectations ?? [], inputs: observations.inputs, protocolMessages: observations.protocolMessages }, options, [apiKey]);
+      },
+      guard(work) {
+        ensureActive();
+        failureController.signal.throwIfAborted();
+        return abortable(typeof work === 'function' ? Promise.resolve().then(work) : work, failureController.signal);
+      },
+      requestCursor() { ensureActive(); return requests.length; },
+      waitForNextRequest(predicate, options) { return session.waitForRequest(predicate, { ...options, after: requests.length }); },
+      scenario(steps, options) {
+        ensureActive();
+        if (scenario || requests.length || routes.length) throw new Error('Register one scenario before requests or routes; declare background traffic in its options');
+        scenario = createScenario(steps, options);
+      },
+      get expectations() { return scenario?.expectations ?? []; },
+      get matches() { return structuredClone(matches); },
+      assertComplete() { scenario?.assertComplete(); session.assertHealthy(); },
+      installClaudeSettings(options) {
+        ensureActive();
+        if (!['claude-code', 'claude-code-acp'].includes(definition.id)) throw new TypeError('Claude settings require a Claude Code recipe');
+        const task = installClaudeSettings(options, baseUrl, apiKey, base => { ensureActive(); return prepared.environment(base); })
+          .then(async setup => {
+            if (disposed) { await setup.dispose(); throw disposedError; }
+            installations.add(setup);
+            const { dispose: cleanup, ...publicSetup } = setup;
+            return publicSetup;
+          });
+        installationTasks.add(task);
+        void task.finally(() => installationTasks.delete(task)).catch(() => {});
+        return task;
+      },
       get args() { return structuredClone(prepared.args); },
       get configFiles() { return structuredClone(prepared.configFiles); },
       environment(base) { ensureActive(); return prepared.environment(base); },
@@ -345,18 +429,20 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
       get requests() { return structuredClone(requests); },
       get responses() { return structuredClone(responses); },
       get failures() { return structuredClone(failures); },
-      route(predicate, handler) {
+      route(predicate, handler, options = {}) {
         ensureActive();
         if (typeof predicate !== "function" || typeof handler !== "function") throw new TypeError("route requires a predicate and handler");
-        const registration = { predicate, handler };
+        if (scenario) throw new Error("Use explicit scenario background routes instead of route() after scenario registration");
+        const registration = { predicate, handler, name: options.name ?? `route-${++routeNumber}` };
         routes.push(registration);
         return () => { const index = routes.indexOf(registration); if (index >= 0) routes.splice(index, 1); };
       },
-      async waitForRequest(predicate, { timeout = 5000, signal } = {}) {
+      async waitForRequest(predicate, { timeout = 5000, signal, after = 0 } = {}) {
         ensureActive();
         signal?.throwIfAborted();
         if (!Number.isFinite(timeout) || timeout < 0 || timeout > 2 ** 31 - 1) throw new TypeError("timeout must be between 0 and 2147483647 milliseconds");
-        for (const request of requests) {
+        if (!Number.isSafeInteger(after) || after < 0 || after > requests.length) throw new TypeError("after must be a requestCursor() from this session");
+        for (const request of requests.slice(after)) {
           const snapshot = structuredClone(request);
           if (predicate(snapshot)) return structuredClone(request);
         }
@@ -385,6 +471,7 @@ export async function prepare(options: PrepareOptions): Promise<AISession> {
       },
       dispose,
     };
+    return session;
   } catch (error) {
     try { await dispose(); } catch (cleanupError) { throw new AggregateError([error, cleanupError], "Cordyceps preparation and cleanup failed"); }
     throw error;

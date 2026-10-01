@@ -1,3 +1,4 @@
+import type { CapturedMessage } from '../matching.js';
 /** Provider HTTP data only. No ACP identities are inferred here. */
 export interface RawHttpRequest {
   method: string;
@@ -16,6 +17,7 @@ export interface DecodedRequest {
   body: unknown;
 }
 export interface CapturedRequest extends DecodedRequest {
+  messages: CapturedMessage[];
   id: string;
   timestamp: number;
   raw: RawHttpRequest;

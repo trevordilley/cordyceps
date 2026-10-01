@@ -38,7 +38,7 @@ Every test asserts process and owned process-group disappearance, consumer liste
 - `frontend.spec.mjs`: consumer-owned provider controls and browser assertions through the packed optional Playwright public entry point.
 - `demo.mjs`: consumer-owned standalone composition through the packed root export; Ctrl-C closes the app, child, mock and temporary files.
 
-For a manual demo, build and pack in the repository, copy `examples/real-frontend` to a separate directory, and install the resulting `.tgz` there with `npm install --ignore-scripts /absolute/path/to/cordyceps-0.0.1-alpha.1.tgz`. Start that installed consumer using:
+For a manual demo, build and pack in the repository, copy `examples/real-frontend` to a separate directory, and install the resulting `.tgz` there with `npm install --ignore-scripts /absolute/path/to/cordyceps-0.0.1-alpha.2.tgz`. Start that installed consumer using:
 
 ```sh
 CLAUDE_BINARY=/absolute/path/to/claude \

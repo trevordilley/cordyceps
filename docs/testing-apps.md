@@ -129,3 +129,55 @@ checks process-group cleanup, and removes generated files. If the installed
 standalone binary lives inside the user's `.codex` directory, it stages a copy
 of that executable so the sandbox can keep the user's credential directory
 unreadable. It does not install or authenticate Codex.
+
+## Fixed endpoint and disposable Claude home
+
+For an app or VM image that already expects a particular port, select it when
+preparing the provider. Cordyceps still binds only to `127.0.0.1`; an occupied port
+fails rather than silently selecting another. VM port forwarding is app setup.
+
+```js
+import { prepare } from 'cordyceps';
+
+const ai = await prepare({ harness: 'claude-code', port: 47900 });
+try {
+  const settings = await ai.installClaudeSettings({
+    home: '/absolute/path/to/disposable-home',
+  });
+  // Launch your app with this home through its existing test-profile mechanism.
+  // If it accepts an environment, settings.environment(base) supplies HOME/config.
+  // Claude reads the provider URL and apiKeyHelper from the prepared home files.
+  // Keep ai alive until the app and all its workers have stopped.
+} finally {
+  await ai.dispose();
+}
+```
+
+The helper writes user-level `settings.json` and onboarding metadata for a fresh
+Claude profile. `apiKeyHelper` supplies the test key without the API-key
+environment approval path. Existing Claude files are never overwritten. The
+home must be an absolute disposable directory with an existing parent. The
+session removes its own files during disposal and leaves unrelated app files
+alone. This helper currently targets POSIX Claude Code startup; permissions,
+workspace trust, model selection, and process ownership remain with the app.
+
+If the app forwards an environment, use `settings.environment(base)` so an
+inherited `ANTHROPIC_API_KEY` doesn't take precedence over helper authentication.
+If it relies on home files alone, ensure its own environment/configuration doesn't
+select a different provider or credential source.
+
+Run the packed real-Claude setup check with:
+
+```sh
+CLAUDE_BINARY=/absolute/path/to/claude \
+  node examples/inherited-environment/verify-packed.mjs --claude-settings
+```
+
+This check launches the installed Claude CLI with a disposable `HOME`, without
+`ANTHROPIC_BASE_URL`, `ANTHROPIC_API_KEY`, or `CLAUDE_CONFIG_DIR` in its launch
+environment. It requires the scripted response through the prepared settings and
+helper, then checks cleanup. Like the nested-process verifier, its network sandbox
+requires macOS.
+
+For required steps, current-turn matching and failure artifacts, see
+[scenarios and diagnostics](scenarios.md).

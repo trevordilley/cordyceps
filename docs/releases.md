@@ -1,6 +1,10 @@
 # GitHub releases
 
-Cordyceps is initially versioned **0.0.1-alpha.1**. The release workflow attaches
+**0.0.1-alpha.2** adds CommonJS support, application setup, required scenarios,
+request matchers and redacted failure artifacts. Both package entry points support
+ESM and CommonJS, including Playwright TypeScript projects without `"type": "module"`.
+
+The release workflow attaches
 an installable npm tarball directly to a GitHub release; an npm registry account
 or npm publication is not required. Consumers need Node.js 22 or later. Bun is
 only needed to develop and build this repository.
@@ -12,17 +16,17 @@ and waits for owned process groups to exit before removing scratch files.
 
 ## Install a release
 
-After `v0.0.1-alpha.1` has been published, run this in the consuming application:
+After `v0.0.1-alpha.2` has been published, run this in the consuming application:
 
 ```sh
-npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.1/cordyceps.tgz
+npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.2/cordyceps.tgz
 ```
 
 Or download the package and checksum first:
 
 ```sh
-curl --fail --location --output cordyceps.tgz https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.1/cordyceps.tgz &&
-curl --fail --location --output SHA256SUMS https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.1/SHA256SUMS &&
+curl --fail --location --output cordyceps.tgz https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.2/cordyceps.tgz &&
+curl --fail --location --output SHA256SUMS https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.2/SHA256SUMS &&
 shasum -a 256 -c SHA256SUMS &&
 npm install --save-dev ./cordyceps.tgz
 ```
@@ -51,14 +55,14 @@ assets, not GitHub's automatic source archives, which do not contain `dist/`.
 ## Cut a prerelease or stable release
 
 1. Set `package.json` to the intended version and commit the change. The current
-   version is `0.0.1-alpha.1`; later candidates can use `0.0.1-alpha.2`,
-   `0.0.1-alpha.3`, or `0.0.1-rc.1`. A stable version has no suffix, such as `0.0.1`.
+   version is `0.0.1-alpha.2`; later candidates can use `0.0.1-alpha.3`
+   or `0.0.1-rc.1`. A stable version has no suffix, such as `0.0.1`.
 2. Push the reviewed commit and an annotated tag whose version matches exactly:
 
    ```sh
-   git tag -a v0.0.1-alpha.1 -m 'Cordyceps 0.0.1-alpha.1'
+   git tag -a v0.0.1-alpha.2 -m 'Cordyceps 0.0.1-alpha.2'
    git push origin HEAD
-   git push origin v0.0.1-alpha.1
+   git push origin v0.0.1-alpha.2
    ```
 
 3. Watch the **Release** workflow. The tag must contain the release workflow and
@@ -90,7 +94,7 @@ For a failure before release creation, rerun the failed workflow jobs. To start
 a fresh run for an existing tag after the workflow is on the default branch:
 
 ```sh
-gh workflow run release.yml --ref v0.0.1-alpha.1
+gh workflow run release.yml --ref v0.0.1-alpha.2
 ```
 
 Manual runs must select a version tag, not `main`. If an upload failure left a

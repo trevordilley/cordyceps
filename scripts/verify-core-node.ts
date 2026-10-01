@@ -15,13 +15,15 @@ const directory = await mkdtemp(join(tmpdir(), 'cordyceps-node-tests-'));
 try {
   await mkdir(join(directory, 'dist'));
   await cp('harnesses', join(directory, 'harnesses'), { recursive: true });
-  const output = join(directory, 'dist', 'core.test.mjs');
-  const build = Bun.spawn(['bun', 'build', 'tests/core.test.ts', '--target=node', '--outfile', output], {
+  const output = join(directory, 'dist', 'core.test.js');
+  const consumerOutput = join(directory, 'dist', 'consumer-api.test.js');
+  await Bun.write(join(directory, 'package.json'), '{"type":"module"}');
+  const build = Bun.spawn(['bun', 'build', 'tests/core.test.ts', 'tests/consumer-api.test.ts', '--target=node', '--outdir', join(directory, 'dist')], {
     stdout: 'inherit', stderr: 'inherit',
   });
   if (await build.exited) process.exitCode = 1;
   else {
-    const tests = Bun.spawn([node, '--test', output], { stdout: 'inherit', stderr: 'inherit' });
+    const tests = Bun.spawn([node, '--test', output, consumerOutput], { stdout: 'inherit', stderr: 'inherit' });
     process.exitCode = await tests.exited;
   }
 } finally {

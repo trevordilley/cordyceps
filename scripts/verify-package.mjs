@@ -27,6 +27,10 @@ const definition = {
 try {
   const packed = JSON.parse(run('npm', ['pack', '--json', '--pack-destination', root, '--ignore-scripts'], repo))[0];
   const paths = packed.files.map(f => f.path);
+  assert(paths.includes('dist/index.cjs'));
+  assert(paths.includes('dist/index.d.cts'));
+  assert(paths.includes('dist/playwright.cjs'));
+  assert(paths.includes('dist/playwright.d.cts'));
   assert(paths.includes('dist/index.js'));
   assert(paths.includes('dist/index.d.ts'));
   assert(paths.includes('dist/playwright.js'));
@@ -155,7 +159,75 @@ test('route failure is visible', async ({ ai }) => {
   const failedCleanup = JSON.parse(await readFile(join(playwright, 'failed-cleanup.json'), 'utf8'));
   await assert.rejects(fetch(failedCleanup.url));
   await assert.rejects(readFile(failedCleanup.path));
-  console.log('Packed Playwright: fixture HTTP, type declarations, teardown after success and handler failure.');
+  await writeFile(join(playwright, 'contracts.spec.ts'), `
+import { test, expect } from 'cordyceps/playwright';
+import { match, anthropic } from 'cordyceps';
+test.use({ cordyceps: { harness: 'claude-code' }, cordycepsSecrets: ['free-text-secret'] });
+test('missing required interaction', async ({ ai }) => {
+  ai.scenario([{ name: 'must happen', match: match.lastUserMessage('hello'), handle: route => route.fulfill({ text: 'hello' }) }]);
+});
+test('first failure interrupts a stalled consumer', async ({ ai }) => {
+  ai.route(() => true, () => { throw new Error('first route failure'); }, { name: 'broken reply' });
+  await ai.guard(async () => {
+    await fetch(ai.baseUrl + '/v1/messages?api_key=url-secret-value', { method: 'POST',
+      headers: { authorization: 'Bearer header-secret-value' },
+      body: JSON.stringify({ model: 'fixture', messages: [{ role: 'user', content: 'hello free-text-secret' }] }) });
+    await new Promise(() => {});
+  });
+});
+test('required scenario completes with background traffic', async ({ ai }) => {
+  ai.scenario([{ name: 'greeting', match: match.lastUserMessage('hello'), handle: route => route.fulfill({ text: 'hello' }) }],
+    { background: anthropic.background({ inputTokens: 32 }) });
+  await fetch(ai.baseUrl + '/api/hello', { method: 'HEAD' });
+  const response = await fetch(ai.baseUrl + '/v1/messages', { method: 'POST',
+    body: JSON.stringify({ model: 'fixture', messages: [{ role: 'user', content: 'hello' }] }) });
+  expect(response.status).toBe(200);
+});
+`);
+  const verifyContracts = () => {
+    const result = run(process.execPath, [pw, 'test', 'contracts.spec.ts', '--reporter=json'], playwright, true);
+    assert.equal(result.status, 1);
+    const report = JSON.parse(String(result.stdout));
+    assert.equal(report.stats.unexpected, 2);
+    assert.equal(report.stats.expected, 1);
+    const specs = report.suites.flatMap(suite => suite.specs);
+    const missing = specs.find(spec => spec.title === 'missing required interaction').tests[0].results[0];
+    assert.match(JSON.stringify(missing.errors), /must happen.*0\/1/);
+    for (const spec of specs.filter(spec => spec.title !== 'required scenario completes with background traffic')) {
+      const result = spec.tests[0].results[0];
+      const attachment = result.attachments.find(attachment => attachment.name === 'cordyceps-transcript');
+      assert.ok(attachment, 'Missing automatic failure transcript');
+      const text = Buffer.from(attachment.body, 'base64').toString();
+      assert.ok(!text.includes('header-secret-value') && !text.includes('url-secret-value') && !text.includes('free-text-secret'));
+      const transcript = JSON.parse(text);
+      if (spec.title === 'missing required interaction') {
+        assert.equal(transcript.expectations[0].received, 0);
+      } else {
+        assert.ok(result.duration < 5000, 'Guard must fail before the 10-second consumer timeout');
+        assert.equal(transcript.matches[0].name, 'broken reply');
+        assert.match(text, /first route failure/);
+      }
+    }
+  };
+  verifyContracts();
+  // Ordinary Playwright TypeScript projects commonly have no package module type.
+  await writeFile(join(playwright, 'package.json'), JSON.stringify({ private: true }));
+  verifyContracts();
+  console.log(run(process.execPath, [pw, 'test', 'fixture.spec.ts', '--reporter=line'], playwright).trim());
+  run(process.execPath, [tsc, '--noEmit', '--strict', '--target', 'ES2022', '--module', 'NodeNext', '--moduleResolution', 'NodeNext', '--types', 'node', '--typeRoots', resolve(repo, 'node_modules/@types'), 'fixture.spec.ts'], playwright);
+  await writeFile(join(standalone, 'smoke.cjs'), `
+const assert = require('node:assert/strict');
+const { cordyceps, validateToolCall } = require('cordyceps');
+assert.equal(validateToolCall({ tools: [{ name: 'Read', inputSchema: { type: 'object' }, raw: {} }] }, { id: 'call', name: 'Read', input: {} }).name, 'Read');
+assert.throws(() => require.resolve('@playwright/test'));
+(async () => {
+  const ai = await cordyceps.prepare({ harness: 'codex' });
+  try { assert.ok(ai.environment({}).CODEX_HOME); }
+  finally { await ai.dispose(); }
+})().catch(error => { console.error(error); process.exitCode = 1; });
+`);
+  console.log(run(process.execPath, ['smoke.cjs'], standalone).trim());
+  console.log('Packed ESM and CommonJS: root import/require, TypeScript Playwright fixtures, declarations and cleanup.');
   console.log('Artifact contents checked; standalone and optional-peer consumer checks passed.');
   // Retain exactly the bytes installed above, only after every check succeeds.
   if (values['pack-destination']) {

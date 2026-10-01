@@ -13,3 +13,12 @@ export type * from './observations.js';
 
 /** Standalone entry point. No Playwright import or executable lifecycle. */
 export const cordyceps = { prepare, createRegistry };
+
+export type { ClaudeSettingsOptions, ClaudeSettingsInstallation } from './claude-settings.js';
+export type { ScenarioStep, ScenarioRoute, ScenarioOptions, StepExpectation, RouteMatch } from './scenario.js';
+export { match } from './matching.js';
+export type { CapturedMessage, TextMatcher } from './matching.js';
+export { anthropic } from './anthropic.js';
+export type { RawHttpResponse } from './raw-response.js';
+export type { TranscriptOptions } from './transcript.js';
+export { validateToolCall } from './tools.js';
