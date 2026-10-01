@@ -6,11 +6,11 @@ This initial implementation ships ESM JavaScript and TypeScript declarations for
 
 ## Install the alpha
 
-The initial package version is **0.0.1-alpha**. Once the corresponding GitHub
+The initial package version is **0.0.1-alpha.1**. Once the corresponding GitHub
 prerelease is published, install its built package directly in your application:
 
 ```sh
-npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha/cordyceps.tgz
+npm install --save-dev https://github.com/trevordilley/cordyceps/releases/download/v0.0.1-alpha.1/cordyceps.tgz
 ```
 
 See [GitHub releases](docs/releases.md) for curl downloads, checksum verification,

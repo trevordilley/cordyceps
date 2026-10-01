@@ -1,6 +1,7 @@
 // Consumer-owned process isolation. No harness launch code belongs to Cordyceps.
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
+import { setTimeout as delay } from 'node:timers/promises';
 import { dirname, join } from 'node:path';
 import { homedir } from 'node:os';
 export function environment(home, root) {
@@ -11,6 +12,22 @@ export function environment(home, root) {
     NO_PROXY: '127.0.0.1,localhost', no_proxy: '127.0.0.1,localhost',
     HTTP_PROXY: 'http://127.0.0.1:1', HTTPS_PROXY: 'http://127.0.0.1:1', ALL_PROXY: 'http://127.0.0.1:1',
     DO_NOT_TRACK: '1', DISABLE_TELEMETRY: '1', CI: '1' };
+}
+export async function waitForProcessGroups(pids, timeout = 5000) {
+  const groups = new Set(pids.filter(Boolean));
+  if (!groups.size) return;
+  const deadline = Date.now() + timeout;
+  for (;;) {
+    const ps = spawnSync('/bin/ps', ['-axo', 'pid=,pgid=,stat='], { encoding: 'utf8', timeout: 1000 });
+    assert.equal(ps.status, 0, `Cannot verify owned process cleanup: ${ps.stderr}`);
+    const live = ps.stdout.trim().split('\n').some(line => {
+      const [, group, state] = line.trim().split(/\s+/);
+      return groups.has(Number(group)) && !state?.startsWith('Z');
+    });
+    if (!live) return;
+    assert.ok(Date.now() < deadline, 'Owned process group still has live members after termination');
+    await delay(50);
+  }
 }
 export async function launch(binary, args, cwd, env, writable, onStart, timeout = 45000, ptyMarker) {
   assert.equal(process.platform, 'darwin', 'macOS sandbox-exec required; do not remove isolation');
@@ -32,5 +49,5 @@ export async function launch(binary, args, cwd, env, writable, onStart, timeout 
   onStart?.({ kill, output: () => stdout });
   const timer = setTimeout(() => { timedOut = true; kill(); }, timeout);
   try { return { ...await new Promise((resolve, reject) => { child.once('error', reject); child.once('close', (code, signal) => { closed = true; resolve({code, signal}); }); }), stdout, stderr, timedOut }; }
-  finally { clearTimeout(timer); kill(); }
+  finally { clearTimeout(timer); kill(); await waitForProcessGroups([ptyGroup, child.pid]); }
 }

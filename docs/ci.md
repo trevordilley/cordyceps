@@ -53,7 +53,7 @@ only read access to repository contents. No job publishes npm or merges code.
 
 `.github/workflows/release.yml` runs on `v*` tag pushes. It validates that the tag
 matches `package.json`, calls all CI jobs above, and publishes the verified npm
-tarball and SHA-256 checksum as GitHub release assets. `v0.0.1-alpha` creates a
+tarball and SHA-256 checksum as GitHub release assets. `v0.0.1-alpha.1` creates a
 prerelease; a version without a suffix creates a stable release. Prereleases
 do not become the latest stable release. Only the final publishing job has
 repository write access. See [release and installation instructions](releases.md)

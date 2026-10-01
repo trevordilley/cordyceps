@@ -12,6 +12,7 @@ import {
   chmod,
   readdir,
   readFile,
+  access,
   symlink,
 } from "node:fs/promises";
 import { join } from "node:path";
@@ -415,7 +416,10 @@ for (const candidate of selection.split(",")) {
     await assert.rejects(fetch(ai.baseUrl));
     server.closeAllConnections();
     await new Promise((r) => server.close(r));
-    await rm(root, { recursive: true, force: true });
+    // Process groups have been reaped by launch; retry transient filesystem
+    // ENOTEMPTY/EBUSY while the OS finishes releasing their files.
+    await rm(root, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+    await assert.rejects(access(root));
     record.cleanedUp = true;
     await writeFile(destination, JSON.stringify(evidence, null, 2) + "\n");
     console.log(

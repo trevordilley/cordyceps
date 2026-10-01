@@ -1,6 +1,6 @@
 {
   "name": "cordyceps",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1-alpha.1",
   "description": "Mock model providers and declarative injection for consumer-owned AI harness tests",
   "type": "module",
   "engines": {

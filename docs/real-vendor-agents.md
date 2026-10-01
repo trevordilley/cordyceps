@@ -42,6 +42,12 @@ The vendor branch's final regression command was `hivecontrol exec oneshot 4m --
 
 **Grok Build.** The [official custom-model workflow](https://docs.x.ai/build/overview) and [settings reference](https://docs.x.ai/build/settings) define `$GROK_HOME/config.toml`, `[model.<id>]`, `base_url`, `env_key`, and `api_backend`. The recipe registers a named local Chat Completions model, isolates `GROK_HOME`, and uses test `XAI_API_KEY`. The downloaded binary contains the same custom-model documentation. [Headless mode](https://docs.x.ai/build/cli/headless-scripting) uses `-p` and `--model`. A real `GET /` origin prewarm originally made `assertHealthy()` fail even though the CLI printed the controlled marker. The narrow `grok-build` codec now captures that exact request and requires an explicit `{health:true}` response; the normal model requests delegate to Chat Completions. Other unknown routes still fail. `read_file` takes `target_file`, not `path`.
 
+The first release gate also observed Grok 1.0.46 making a separate, tool-free
+dashboard-summary request after the verified reply. The consumer explicitly
+handles that request only after completing the main turn and matching its
+summary prompt and original reply. The real file-read assertion remains required
+before the main tool turn can complete.
+
 **fx.** The [Vercel repository](https://github.com/vercel-labs/fx) points to `https://fx.sh/setup.sh`. Its current installer resolves `https://releases.fx.sh/latest.txt` and the native archive. [Custom model connections](https://fx.sh/docs/configure-fx/custom-model-connections) specify `~/.fx/settings.json`: named `providers`, `protocol: openai-chat-completions`, `base_url`, bearer auth from an environment variable, per-provider model selection and optional model limits. The recipe writes that file under a session-owned HOME. The consumer uses `fx ask` and validates real `read_file` execution.
 
 **Ante.** The [official catalog reference](https://docs.antigma.ai/reference/catalog-reference) describes `$ANTE_HOME/catalog.json`, `wire_style: OpenAiCompatible`, `base_url`, bearer `env_key`, and `preferred_models`. The recipe selects this provider/model; the consumer uses native headless `--prompt`. No account or hosted orchestration is needed. The actual `Read` tool receives the disposable absolute `file_path` and returns its unpredictable contents.

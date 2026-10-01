@@ -40,11 +40,20 @@ for(const harness of selection.split(','))for(const scenario of ['text','tool'])
     const settings=ai.configFiles.find(f=>f.path.endsWith('/config.toml'));
     assert.ok(settings);await appendFile(settings.path,'\n[cli]\nuse_leader = false\n');
    }
-   let issued=false,returned=false;
+   let issued=false,returned=false,completed=false;
    ai.route(()=>true,async route=>{
     assert.ok(ai.requests.length<=30,'unexpected provider retry');
     if(route.request.raw.path.startsWith('/v1/messages/count_tokens'))return route.fulfill({inputTokens:100});
     if(harness==='grok-build'&&route.request.raw.path==='/')return route.fulfill({health:true});
+    // Grok 1.0.46 can summarize a completed turn in a separate model request.
+    // This is not a second tool result; require the observed summary shape and
+    // an already completed main turn before supplying its explicit reply.
+    if(harness==='grok-build'&&completed&&route.request.tools.length===0&&
+       route.request.text.startsWith("Write an ultra-short dashboard line that captures the AGENT'S REPLY")&&
+       route.request.text.includes(`<agent_reply>\n${marker}\n</agent_reply>`)) {
+     record.dashboardSummaryRequests=(record.dashboardSummaryRequests??0)+1;
+     return route.fulfill({text:'Controlled reply completed'});
+    }
     if(harness==='muse'&&route.request.raw.path==='/muse-code/models')return route.fulfill({text:JSON.stringify({object:'list',data:[{id:'muse-spark-1.3',object:'model',created:0,owned_by:'meta',metadata:{'muse-code':{name:'Fixture model',family:'muse',attachment:false,reasoning:false,tool_call:true,modalities:{input:['text'],output:['text']},limit:{context:32768,output:2048},options:{},cost:{input:0,output:0,cached:0,currency:'USD'}}}}]})});
     const observer=route.request.tools.find(t=>t.name==='submit_reminder_decision');
     if(harness==='muse'&&observer){
@@ -67,7 +76,7 @@ for(const harness of selection.split(','))for(const scenario of ['text','tool'])
      return route.fulfill({toolCall:{id:'read_fixture',name,...(offered.namespace?{namespace:offered.namespace}:{}),input:args}});
     }
     if(scenario==='tool'){assert.ok(route.request.toolResults.some(result=>result.text.includes(token)),'real fixture token missing from native tool result in next provider request');returned=true;}
-    return route.fulfill({text:marker});
+    completed=true;return route.fulfill({text:marker});
    });
    const extra=ai.environment(env);const writable=[...new Set(ai.configFiles.map(f=>dirname(f.path)))];
    if(harness==='grok-build')Object.assign(extra,{GROK_TELEMETRY_ENABLED:'0',GROK_TELEMETRY_TRACE_UPLOAD:'0'});
