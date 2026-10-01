@@ -21,6 +21,7 @@
     "dist",
     "harnesses",
     "README.md",
+    "assets/cordyceps-256.png",
     "docs/acp-consumers.md",
     "docs/provider-codecs.md",
     "docs/registry.md",
